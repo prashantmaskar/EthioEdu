@@ -1,0 +1,926 @@
+body{
+    background: #f0f0f0;
+}
+.red-gradient-bg{
+    
+
+background: #e43a15; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #e43a15 , #e65245); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #e43a15 , #e65245); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+p{
+    margin: 0px;
+    color: #000;
+}
+.no-margin{
+    margin: 0px;
+}
+a:hover{
+    color:red;
+}
+.navbar-fix{ 
+    border-bottom: 8px solid #f44336;
+}
+.navbar-fix ul li a{
+    color: #fff;
+}
+.navbar-fix ul li a:hover{
+    color: red;  
+}
+.navbar-fix ul li .active{
+    color: red;  
+}
+nav .brand-logo {
+    color: red;
+}
+.header-top{
+    height: 40px;
+    color: #fff;
+    border-top: 8px solid #f44336;
+}
+.logo_bar{
+    height: 150px;
+    width: 75%;
+    margin-left: 25px;
+}
+.header-top1{
+    height: 110px;
+    color: #fff;
+}
+.upper_slider .item img{
+    height: 100px;
+}
+.mobile-nav li a{
+    color: #D32F2F !important;
+}
+
+.content_sec{
+    height: auto;
+    touch-action: pan-y;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+.calender_bar{
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+.date{
+
+    color: #FFF;
+    background-color: #E53935;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
+
+}
+.day{
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+}
+.monthyear{
+
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.top-nav{
+    margin: 0px;
+    float: right;
+}
+.top-nav li{
+    list-style: none;
+    display: inline-block;
+    line-height: 40px;
+}
+.top-nav li a{
+    text-decoration: none;
+    padding: 0px 5px;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+.dropdown-menu{
+    width: 200px !important;
+}
+.dropdown-menu  li a{
+    color: red !important;
+}
+.z-pad{
+    padding-right: 0.5em;
+}
+.content_sec h5{
+    font-size: 1.3rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #C7C7C7;
+    color: #E53935;
+}
+.content_sec ul li{
+    border-bottom: 1px solid #E2D9D9;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.slider .indicators .indicator-item.active {
+    background-color: #d32f2f;
+}
+.featured_schools{
+    margin: 10px auto;
+    border-top: 2px solid #E53935;
+}
+.featured_schools h5{
+    display: inline-block;
+    background: #D32F2F;
+    color: #fff;
+    padding: 10px;
+    margin: 0px -12px;
+}
+.featured_slider{
+    margin-top: 20px;
+}
+.button-collapse {
+    color: #26a69a;
+}
+.slider .indicators {
+    bottom: 45px;
+    z-index: 10;
+}
+.service-wrap{
+    margin-top: 10px;
+}
+.service_col{
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.service_col .service_icon{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    display: block;
+    margin: 8px auto;
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+}
+.service_col .service_icon i{
+    color: #fff;
+    font-size: 40px;
+    line-height: 2em;
+
+
+}
+.more_link{
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+}
+.service_col h5,p{
+    color: #fff;
+}
+.contetnt_container{
+    padding-top: 25px;
+}
+.sidebar_banner_content{
+    margin-top: 0.5em;
+}
+.post_bar{
+    background: #fff;
+}
+.header_section h3{
+    line-height: 30px;
+    word-spacing: 0px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+
+}
+.sidebar_banner_content .post_thumb img{
+    width: 100%;
+}
+.post_title_content .post_title{
+    color: rgba(0,0,0,0.75);
+}
+.post_date_bar .post_date{
+    font-size: 12px;
+    color: #9A9A9A;
+}
+.course_form_wrap,.banner_wrap{
+    margin-top: 10px;
+}
+.course_form_wrap .form_heading h3{
+    line-height: 30px;
+    word-spacing: 0px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+.s_duration{
+    line-height: 78px;
+}
+img{
+    width: 100%;
+}
+.blog_heading h3{
+    font-size: 24px;
+    margin: 10px 0px 10px 0px;
+}
+.blog_data{
+    margin-bottom: 5px;
+}
+.blog_data span{
+    color: #ddd;
+    font-size: 12px;
+}
+.footer-social-bookmark ul li {
+    display: inline-block;
+    line-height: 1;
+
+    padding-right: 14px;
+}
+/*=================================================
+ Owl Carousel
+=====================================================*/
+
+.owl-controls{
+
+}
+.owl-controls .owl-prev{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.owl-controls .owl-next{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.owl-controls .owl-prev,
+.owl-controls .owl-next{
+    background: #eaeaea;
+    width: 24px;
+    height: 24px;
+    color: #ccc;
+    text-align: center;
+    line-height: 24px;
+}
+
+.owl-controls .owl-prev .fa,
+.owl-controls .owl-next .fa{
+    font-weight: bold;
+}
+
+.owl-controls .owl-prev, .owl-controls .owl-next {
+    background: #D32F2F;
+    width: 24px;
+    height: 24px;
+    color: #ccc;
+    text-align: center;
+    line-height: 24px;
+}
+.owl-controls .owl-prev:hover, .owl-controls .owl-next:hover {
+    background: #D32F2F;
+    color: #fff;
+}
+.featured_schools .owl-prev,
+.featured_schools .owl-next{
+    -moz-transition: all 0.45s ease;
+    -webkit-transition: all 0.45s ease;
+    -o-transition: all 0.45s ease;
+    -ms-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+    opacity: 0;
+}
+.featured_schools .owl-next{
+    right: -50px;
+}
+.featured_schools .owl-prev{
+    left: -50px;
+}
+.featured_schools .owl-carousel:hover .owl-prev{
+    left: 0;
+    opacity: 1;
+    visibility: inherit;
+}
+.featured_schools .owl-carousel:hover .owl-next{
+    right: 0;
+    opacity: 1;
+    visibility: inherit;
+}
+footer{
+    border-top: 8px solid #f44336;
+}
+.footer-social-bookmark ul li{
+    display: inline-block;
+    margin-bottom: 25px;
+}
+.footer-social-bookmark {
+    margin-top: 25px;
+}
+.footer-social-bookmark ul li a{
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+.footer-social-bookmark ul li a:hover{
+    color: #f44336;
+    border-color: #f44336;
+}
+.footer-social-bookmark ul li a i{
+    width: 20px;
+    height: 20px;
+}
+
+.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span{
+    float:right;
+    font-size: 12px;
+    margin-top: -12px;
+}
+.about_details,.news_details p{
+    margin: 0px;
+    color: #000;
+    padding: 10px;
+    text-align: justify;
+}
+.about_content p{
+    padding: 10px;
+    color: #000;
+}
+.social_button_list li{
+    display: inline-block;
+}
+.social_button_list li a{
+    background: #0A88FF;
+    color: #fff;
+    padding: 10px 25px;
+
+}
+.social_button_list .social_facbook a{
+    background:#306199;
+}
+.social_button_list .social_mail a{
+    background:#0A88FF;
+}
+.social_button_list .social_linkedin a{
+    background:#007BB6;
+}
+.social_button_list .social_twitter a{
+    background:#26C4F1;
+}
+.social_button_list .social_google a{
+    background:#E93F2E;
+}
+.t20margin{
+    margin-top: 20px;
+}
+.news_list_wrap .news_list .news_content{
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+.news_list_wrap .news_list .news_content .news_link{
+    display: block;
+    font-size: 18px;
+}
+.news_list_wrap .news_list .news_content #newsdetailinfo{
+    font-size: 12px;
+}
+.latest_news_wrap, .Most_news_wrap{
+    margin-top: 10px;
+    border-top:  2px solid #EE6E73;
+}
+.latest_news_wrap .red_label_title, .Most_news_wrap .red_label_title{
+    margin: 0px;
+    background: #E53935;
+    display: inline-block;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+.latest_news_list .Latest_news_content,.Most_news_list .Most_news_content{
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+
+}
+.news_sort_form {
+    border-bottom:  1px solid red;
+}
+.news_sort_form p{
+    margin-top: 20px;
+}
+a.post-share {
+    display: block;
+    width: 94px;
+    height: 46px;
+    float: left;
+    margin: 10px 5px 10px 10px;
+    background: #3e599a url(sidebar-share.png) no-repeat 0 0;
+    text-decoration:none;
+    width: 197px;
+    text-indent: 50px;
+    font: 15px/46px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    color: #ffffff;
+}
+a.post-share:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.post-share span {
+    width: 45px;
+    height: 45px;
+    padding: 15px;
+    display: block;
+    float:right;
+    background-color: #4665af;
+    color: #ffffff;
+    vertical-align: middle;
+    font: 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-align: center;
+    text-indent: 0;
+}
+
+a.post-share.facebook {
+    background: #3e599a url(sidebar-share.png) no-repeat 0 1px;
+    margin-right: 10px;
+}
+a.post-share.facebook span {
+    background-color: #4665af;
+}
+a.post-share.twitter {
+    background: #4b8cbe url(sidebar-share.png) no-repeat -0px -111px;
+    margin-right: 10px;
+}
+a.post-share.twitter span {
+    background-color: #529fda;
+}
+a.post-share.gplus {
+    background: #b8382e url(sidebar-share.png) no-repeat -0px -50px;
+    margin-right: 10px;
+}
+a.post-share.gplus span {
+    background-color: #d24238;
+}
+a.post-share.stumble {
+    background: #e15131 url(sidebar-share.png) no-repeat -0px -165px;
+}
+a.post-share.stumble span {
+    background-color: #fd5d3b;
+}
+.news_heading{
+    padding: 10px;
+}
+.news_heading span{
+    font-size: 13px;
+}
+.news_heading h1{
+    margin-top: 10px;
+    font-size: 18px;
+}
+.news_img img{
+    height: 350px;
+    width: 100%;
+}
+.margin-b-10{
+    margin-bottom: 10px;
+}
+.margin-t-15{
+    margin-top: 15px;
+}
+.margin-t-10{
+    margin-top: 10px;
+}
+.course_info .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.course_info p{
+    color: #000;
+}
+.school_category  .page-heading-wrap .page-heading,.school_category  .page-heading-wrap .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.school_category .page-heading-wrap .page-heading span, .school_category  .page-heading-wrap .page-heading span{
+    float:right;
+    font-size: 12px;
+    margin-top: -12px;
+}
+.school_category_box .s_category_list li{
+    display: inline-block;
+    padding: 5px 5px;
+    margin-right: 3px;
+}
+.school_category_box .s_category_list li:after{
+    content: "|";
+    position: relative;
+    height: 5px;
+    left: 5px;
+    color: #0A88FF;
+
+}
+.school_name{
+    margin: 0px 0px 0px 5px;
+    padding: 10px;
+    font-size: 32px;
+    color: #fff;
+    margin: 10px auto;
+}
+.school_social{
+    margin: 10px; 
+}
+.school_social ul li{
+    display: inline-block;
+}
+.twitter{  
+    background: #00aced;
+}
+.facebook{
+    background: #3b5998;
+} 
+.googleplus{
+    background: #dd4b39;
+} 
+.linkedin{
+    background: #007bb6;
+} 
+.school-type{
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.school_desc{
+    margin: 10px;
+}
+.sch_det_title{
+    font-size: 24px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed red;
+}
+.school_detail_wrap p{
+    color: #000;
+}
+.school_country{
+    margin: 10px;
+}
+.border-b{
+    border-bottom: 1px solid #0A88FF; 
+}
+.page-heading{
+    line-height: 55px;
+}
+.school_short_info{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+}
+.school_short_info .row{
+    margin: 0px;
+}
+.school_short_info .s_logo{
+    text-align: center;
+}
+.school_short_info img{
+    width: 100px;
+    margin-top: 15px;
+    text-align: center;
+}
+.school_short_info h1{
+    font-size: 1.3em;
+    color: #000;
+    margin: 2px;
+    color: red;
+}
+.school_short_info p{
+    color: #000;
+    display: inline-block;
+    padding-right: 10px;
+}
+.coment_box{
+    margin-bottom: 35px;
+}
+.coment_box h2{
+    font-size: 28px;
+    padding: 10px;
+}
+.course_search_result h4{
+    font-size: 18px;
+    margin: 0px 0px;
+    padding: 10px;
+    background:  #0099ff;
+    color: #fff;
+}
+.course_details .course_title{
+    font-size: 24px;
+    margin: 15px auto;
+    line-height: 24px;
+    color: #0089ec;
+}
+.course_short_details h4{
+    margin: 5px;
+    font-size: 18px;
+    color: #fff;
+}
+.add_title{
+    font-size: 24px;
+    font-weight: bold;
+}
+.instrction_box{
+    border: 4px double #ff6666;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+.instrction_box ul li{
+    border: 0px;
+}
+.school_form form{
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+}
+.news_post_title{
+    font-size: 24px;
+    border-bottom: 1px solid #ff6666;
+    padding: 5px;
+}
+.captch img{
+    width: 250px;
+}
+.gist_dinfo{
+    font-size: 14px;
+}
+.gist_title h1{
+    font-size: 18px;
+    margin: 2px 0px;
+}
+.git_img{
+    text-align: center;
+}
+.git_img img{
+    width: 600px;
+    margin:15px auto;
+}
+.gits_content{
+    margin-bottom: 15px;
+}
+.featured_gist_title {
+    font-size: 20px;
+    border-bottom: 1px solid #ff6666;
+    padding-bottom: 5px;
+}
+.fgist_list li{
+    border-bottom:1px solid #333333;
+}
+.fgist_info{
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+.fgist_title h1{
+    font-size: 16px;
+    margin: 2px 0px;
+}
+
+
+.event_details .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.b_date{
+    font-size: 18px;
+    font-weight: bold;
+}
+.edate{
+    padding: 10px;
+}
+.event_count h2{
+    margin: 2px;
+    font-size: 20px;
+
+}
+.elist_content{
+    border-bottom: 1px dashed #666666;
+}
+/*=================
+Tender Style
+===================*/
+.tender_sinfo{
+    display: block;
+}
+.vacancy_list_wrap .vacancy_list .vacancy_content{
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+.vacancy_list_wrap .vacancy_list .vacancy_content .vacancy_link{
+    display: block;
+    font-size: 18px;
+}
+.vacancy_heading h1{
+    font-size: 24px;
+    margin: 5px auto;
+}
+.vacancy_count{
+    text-align: center;
+}
+.vacancy_count h3{
+    font-size: 26px;
+    margin: 5px auto;
+}
+.vacancy_count span{
+    font-size: 18px;
+}
+.vcount_wrap{
+    margin: 10px auto;
+}
+.icon_wrap{
+    display:block;
+    width: 80px;
+    height: 80px;
+    border: 1px solid red;
+    border-radius: 50%;
+    margin: 5px auto;
+    padding: 5px;
+}
+.icon_wrap i{
+    line-height: 70px;
+    color: red;
+} 
+.vacancy_count{
+    border-right:1px solid #ccc;
+}
+.no-border{
+    border-right: 1px solid transparent;
+}
+.vacn_details h2{
+    font-size: 24px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid red;
+}
+.vacn_details p{
+    text-align: justify;
+    color: #000;
+}
+#map{
+    overflow: hidden;
+}
+#map iframe{
+    width: 100%;
+}
+/*==============================
+connect2Me List and Form Csss
+===============================*/
+.connectme_form {
+    width: 80%;
+    margin: 30px auto;
+}
+.form_heading{
+    font-size: 22px;
+    margin: 5px auto;
+    text-align: center;
+    padding: 2px 0px 5px;
+    border-bottom: 1px solid #ccc;
+}
+.connectme_form  h3{
+    font-size: 18px;
+    margin: 5px auto; 
+}
+.online_std_list P{
+    color: #000;
+}
+.vr-line img{
+    width: 50%;
+}
+.lr_link-wrap{
+    margin-top: 30px;
+}
+.lr_link-wrap p{
+    color: #000;
+}
+.regist-wrap p{
+    color: #000;
+}
+.regist-wrap  h4{
+    font-size: 1.8em;
+}
+.cresult-wrap p{
+    color: #000;
+}
+.result_list_wrap h5{
+    padding: 0px 25px;
+}
+.result_list_wrap img{
+    width: 150px;
+    height: 150px;
+}
+/*===========================
+student Detail Page Info
+============================*/
+.sprofile_container,.ssocial_container{
+    padding: 10px;
+}
+.sname h1{
+    font-size: 24px;
+    margin: 5px;
+    font-weight: bold;
+}
+.sphoto{
+    overflow: hidden;
+}
+.sphoto img{
+    width: 100%;
+    height: 300px;
+}
+.sdetail p{
+    font-size: 13px;
+    color: #000;
+}
+.sdetail span{
+    font-weight: bold;
+    color:   #ff6666;
+}
+.wallupadte{
+    margin-top: 25px;
+}
+.wallupadte p{
+    color: #000;
+}
+.wall_head{
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+.score{
+    margin-top: 10px;
+    text-align: center;
+}
+.perc{
+    font-size: 35px;
+}
+
+.pm-title{
+    font-size: 28px;
+    margin: 10px;
+}
+.remsg{
+    font-size: 14px;
+}
+.datime{
+    color: #757575;
+}
+.ad_sbtitle{
+    font-size: 20px;
+    margin: 5px;
+    color: #730505;
+}
+.advertise_info ul{
+    margin: 5px 25px;
+}
+.advertise_info ul li{
+    list-style: circle
+}
+.bo_bor{
+    border-bottom: 1px solid black;
+}
+.padd_b5{
+    padding-bottom: 5px;
+}
+/*=================
+Media Query
+===================*/
+@media only screen  and (min-width : 1224px) and (max-width : 1280px) {
+    /* Styles */
+
+    nav ul a{
+        padding: 0 10px ;
+
+
+    } 
+}
