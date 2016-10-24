@@ -136,16 +136,16 @@
                                         Latest News
                                     </h5>
                                     <ul>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ETHIO/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
                                         <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
                                         </li>
 
@@ -261,10 +261,10 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc1.jpg"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc3.png"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
+                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc1.jpg"></div>
+                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc2.jpg"></div>
+                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc3.png"></div>
+                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc2.jpg"></div>
 
                         </div>
                     </div>
