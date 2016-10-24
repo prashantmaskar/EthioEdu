@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Forgotpassword extends CI_Controller {
+class Projectlist extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,10 +20,10 @@ class Forgotpassword extends CI_Controller {
 	 */
 	public function index()
 	{
-             $view_params = array(
-                'm_title' => 'Forgotpassword',
-                'title'   => 'Forgotpassword'
+                $view_params = array(
+                'm_title' => 'Projectlist',
+                'title'   => 'Projectlist'
             );
-		$this->load->view('forgotpasswordform',$view_params);
+		$this->load->view('Projectlist', $view_params);
 	}
 }
