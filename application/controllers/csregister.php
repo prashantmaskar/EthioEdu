@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class csregister extends CI_Controller {
+class Csregister extends CI_Controller {
 
     /**
      * Index Page for this controller.

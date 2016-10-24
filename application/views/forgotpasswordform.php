@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html lang="en">        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
+<html lang="en">      
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
 
     <head>
         <meta charset="utf-8">
@@ -10,45 +12,37 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
 
     </head>
-    <body class="red-gradient-bg">
-        <div id="login-page" class="row">
+
+<body>
+	 <body class="red-gradient-bg">
+        <div id="reset" class="row">
             <div class="col s3 offset-s4 z-depth-2 card-panel">
-                <form class="login-form">
+                <form class="forgotpasswordform">
                     <div class="row">
                         <div class="input-field col s12 center">
-                            <h4>EthioEdu Login</h4>
+                            <h4>click on send mail button for reset password</h4>
                         </div>
                     </div>
                     <div class="row no-margin">
                         <div class="input-field col s12">
-                            <input id="username" type="text">
-                            <label for="username" class="center-align">Username</label>
+                            <input id="email" type="text">
+                            <label for="email" class="center-align">email</label>
                         </div>
                     </div>
-                    <div class="row no-margin">
+                    
+                   
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="text">
-                            <label for="Password" class="center-align">password</label>
-                        </div>
-                    </div>
-                    <div class="row">          
-                        <div class="input-field col s12 m12 l12  login-text">
-                            <input type="checkbox" id="remember-me">
-                            <label for="remember-me">Remember me</label>
+                            <a href="index.html" class="btn waves-effect waves-light col s12">sendmail</a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
-                        </div>
-                    </div>
-                    <div class="row">
+
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a href="<?php echo base_url() . 'index.php/csregister' ?>">Register Now!</a></p>
+                           <div class="center-block">
+                            <p class="margin medium-small"><a href="<?php echo base_url() . 'index.php/csregister' ?>">	Register Now!</a></p>
                         </div>
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a href="<?php echo base_url() . 'index.php/Forgotpassword' ?>">Forgot password ?</a><p>
-                        </div>          
+                            </div>
                     </div>
                 </form>
             </div>
