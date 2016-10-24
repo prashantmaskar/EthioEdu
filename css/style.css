@@ -9,6 +9,7 @@ background: -webkit-linear-gradient(to left, #e43a15 , #e65245); /* Chrome 10-25
 background: linear-gradient(to left, #e43a15 , #e65245); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
 }
+
 p{
     margin: 0px;
     color: #000;
