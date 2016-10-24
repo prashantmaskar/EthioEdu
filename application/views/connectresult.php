@@ -104,7 +104,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -119,7 +119,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>

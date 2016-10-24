@@ -18,11 +18,12 @@
                     <ul class="top-nav">
                         <li><a href="#">INFO@ETHIOEDU.COM</a></li>
 
-                        <li><a href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/csregister' ?>">REGISTER </a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
 
+                        <li><a href="#">CONTACT/HOTLINE</a></li>
+                        <li><a href="<?php echo base_url().'index.php/About_us'?>">ABOUT US</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">REGISTER </a></li>
+                        <li><a href="#">LOGIN</a></li>
 
                     </ul>
 
@@ -64,8 +65,8 @@
                         <li><a class="dropdown-button home-btn" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS </a></li>
                         <li><a href="<?php echo base_url() . 'index.php/schools' ?>">SCHOOLS</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
+                        <li><a href="#">VACANCY/TENDER</a></li>
+                        <li><a href="#">CONNECT TO ME</a></li>
                         <li><a href="#">SERVICE</a></li>
 
                     </ul>

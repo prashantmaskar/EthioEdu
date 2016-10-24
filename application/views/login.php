@@ -44,10 +44,10 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a href="<?php echo base_url() . 'index.php/csregister' ?>">Register Now!</a></p>
+                            <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
                         </div>
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a href="<?php echo base_url() . 'index.php/Forgotpassword' ?>">Forgot password ?</a><p>
+                            <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
                         </div>          
                     </div>
                 </form>
