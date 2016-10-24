@@ -201,13 +201,13 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">News FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
-                                                    <div class="input-field col s12">
-                                                        <input id="Caption" type="text" class="validate">
+                                                <form id="addnews" class=" form-control col m12" action="#" method="post">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="Caption" name="caption" type="text" class="validate">
                                                         <label for="Caption">News Caption</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <textarea id="Description" class="materialize-textarea"></textarea>
+                                                    <div class="form-group input-field col s12">
+                                                        <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="input-field col s12">
@@ -237,20 +237,20 @@ and open the template in the editor.
                                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                                         </div>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="author" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="author" type="text" name="author" class="validate">
                                                         <label for="author">News written By</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="date" type="date" class="datepicker">
-                                                        <label for="date">Date of Posting</label>
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="date" name="date" type="date" class="datepicker">
+                                                        <label for="date"></label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="source_link" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="source_link" name="source_link" type="text" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="p_caption" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>
                                                     </div>
                                                     <div class="col s5 offset-s5">
@@ -271,3 +271,83 @@ and open the template in the editor.
                         </body>
 
                         </html>
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    $('#addnews').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter caption!!!..'
+                    }
+                }
+            },
+
+         Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    },
+                    stringLength:{
+                        message:'post Description must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+
+
+            author: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter auther name!!!..'
+                    }
+                }
+            },
+             
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: ' date can not be not Empty!!!..'
+                    }
+                }
+            },
+                source_link: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter source link!!!..'
+                    }
+                }
+            },
+                p_caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter photo caption!!!..'
+                    }
+                }
+            },
+
+
+               
+             
+
+
+
+
+             }
+    });
+});
+</script>

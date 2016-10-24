@@ -202,27 +202,26 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Question FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">Question Type</option>
-                                                            <option value="1">Academic Question</option>
-                                                            <option value="2">Study Question</option>
+                                                <form id="Queans" class="col m12" action="#" method="post">
+                                                     <div class="form-group input-field col s5">
+                                                        <select class="form-control browser-default" name="quetype">
 
+                                                            <option value="">Question type</option>
+                                                             <option value="Academic question">Academic question</option>
+                                                            <option value="Study question">Study question</option>
+                                                        
                                                         </select>
-
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">subject/Course Category</option>
-                                                            <option value="1">Academic Question</option>
-                                                            <option value="2">Study Question</option>
+                                                    <div class="form-group input-field col s5">
+                                                        <select class="form-control browser-default" name="subcat">
 
+                                                            <option value="">Subject/course catagory</option>
+                                                             <option value="Academic question">Academic question</option>
+                                                            <option value="Study question">Study question</option>
+                                                        
                                                         </select>
-
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="user_name" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="user_name" name="question" type="text" class="validate">
                                                         <label for="question">My Question</label>
                                                     </div>
 
@@ -284,3 +283,72 @@ and open the template in the editor.
     </body>
 
 </html>
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+
+    $('#Queans').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            quetype: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter question type!!!..'
+                    }
+                }
+            },
+              subcat: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter subject/cource category !!!..'
+                    }
+                }
+            },
+ 
+
+                  question: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter subject/cource category !!!..'
+                    }
+                }
+            },
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    });
+});
+</script>
