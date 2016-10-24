@@ -346,19 +346,19 @@ footer{
     height: 20px;
 }
 
-.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading {
+.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading, .project_details .page-heading-wrap .page-heading {
     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
-.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span{
+.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span, .project_details .page-heading-wrap .page-heading span{
     float:right;
     font-size: 12px;
     margin-top: -12px;
 }
-.about_details,.news_details p{
+.about_details,.news_details,.project_details{
     margin: 0px;
     color: #000;
     padding: 10px;
@@ -406,6 +406,19 @@ footer{
 .news_list_wrap .news_list .news_content #newsdetailinfo{
     font-size: 12px;
 }
+
+.project_list_wrap .project_list .project_content{
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+.project_list_wrap .project_list .project_content .project_link{
+    display: block;
+    font-size: 18px;
+}
+.project_list_wrap .project_list .project_content #projectdetailinfo{
+    font-size: 12px;
+}
+
 .latest_news_wrap, .Most_news_wrap{
     margin-top: 10px;
     border-top:  2px solid #EE6E73;
@@ -423,10 +436,10 @@ footer{
     border-bottom: 1px dotted #ccc;
 
 }
-.news_sort_form {
+.news_sort_form,.project_sort_form {
     border-bottom:  1px solid red;
 }
-.news_sort_form p{
+.news_sort_form ,.project_sort_form p{
     margin-top: 20px;
 }
 a.post-share {
@@ -489,13 +502,13 @@ a.post-share.stumble {
 a.post-share.stumble span {
     background-color: #fd5d3b;
 }
-.news_heading{
+.news_heading,.project_heading{
     padding: 10px;
 }
-.news_heading span{
+.news_heading,.project_heading span{
     font-size: 13px;
 }
-.news_heading h1{
+.news_heading,.project_heading h1{
     margin-top: 10px;
     font-size: 18px;
 }

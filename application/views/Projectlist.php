@@ -13,25 +13,25 @@
                         </a>
                     </div>
                 </div>
-                <div class="col s12 m7 grid-example">
-                    <div class="news_details">
+                <div class="col s12 m8 grid-example">
+                    <div class="project_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">News <span class="News-button"><a class="waves-effect waves-light btn">Report News</a></span></h1>
+                                <h1 class="page-heading">Projects <span class="Project-button"><a href="<?php echo base_url().'index.php/project_topics'?>"class="waves-effect waves-light btn">Post Project</a></span></h1>
                             </div>
                         </div>
                         <div class="col m12 s12">
-                            <div class="news_sort_form col m12">
+                            <div class="project_sort_form col m12">
                                 <div class="col s2">
-                                    <p>Sort News:</p>
+                                    <p>Sort Projects:</p>
                                 </div>
                                 <div class="input-field col s4">
                                         <input id="Caption" type="date" class=" datepicker validate">
-                                        <label for="Caption">News From</label>
+                                        <label for="Caption">Project From</label>
                                     </div>
                                 <div class="input-field col s4">
                                         <input id="Caption" type="date" class=" datepicker validate">
-                                        <label for="Caption">News To</label>
+                                        <label for="Caption">Project To</label>
                                     </div>
                                 <div class="input-field col s2">
                                          <button class="btn waves-effect waves-light" type="submit" name="action">search
@@ -41,65 +41,71 @@
                             </div>
                         </div>
                         <div class="col s12 m12 ">
-                            <div class="news_list_wrap">
-                                <ul class="news_list">
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>" class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                            <div class="project_list_wrap">
+                                <ul class="project_list">
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>" class="project_link">
+                                            <span class="Project_title">Administration Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Agricultural Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Art & Humanities Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Education Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Engineering,Environment $ Technology Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Low Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Medical,Pharmaceutical & Health Science Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                    <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Sciences Project Topics</span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
                                             </span></span>
                                     </li>
-
+                                         <li class="project_content">
+                                        <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
+                                            <span class="Project_title">Social & Management Sciences Project Topics</span>
+                                        </a>
+                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                            </span></span>
+                                    </li>
                                 </ul>
 
                                 <ul class="pagination">
@@ -117,106 +123,16 @@
                     </div>
                 </div>
 
-                <div class="col s12 m3 z-depth-1">
-                    <div class="latest_news_wrap ">
-                        <h1 class="red_label_title">Latest News</h1>
-                        <ul class="latest_news_list">
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            
-                        </ul>
+               <div class="col s12 m2 grid-example">
+                    <div class="service_col z-depth-1  darken-1">
+                        <a href="#">
+                            <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
+                        </a>
                     </div>
-                    
-                       <div class="Most_news_wrap ">
-                        <h1 class="red_label_title">Most Read</h1>
-                        <ul class="Most_news_list">
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li> <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                        </ul>
+                    <div class="service_col z-depth-1  darken-1">
+                        <a href="#">
+                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
+                        </a>
                     </div>
                 </div>
             </div>
