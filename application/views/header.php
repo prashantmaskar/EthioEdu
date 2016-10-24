@@ -59,6 +59,10 @@
                         <li class="divider"></li>
                         <li><a href="<?php echo base_url() . 'index.php/gist' ?>">Latest Gist & Gossip</a></li>
                     </ul>
+					<ul id="dropdown2" class="dropdown-content dropdown-menu">
+                        <li><a href="<?php echo base_url() . 'index.php/Projectlist' ?>">Project Topics</a></li>
+						<li><a href="<?php echo base_url() . 'index.php/event' ?>">Events</a></li>
+                    </ul>
                     <ul class="right hide-on-med-and-down">
                         <li><a class="active" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
 
@@ -67,7 +71,7 @@
                         <li><a href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
-                        <li><a href="#">SERVICE</a></li>
+                        <li><a class="dropdown-button home-btn" href="#" data-hover="true" data-activates="dropdown2">SERVICE</a></li>
 
                     </ul>
 
@@ -79,7 +83,7 @@
                         <li><a href="#">COURSES</a></li>
                         <li><a href="#">VACANCY/TENDER</a></li>
                         <li><a href="#">CONNECT TO ME</a></li>
-                        <li><a href="#">SERVICE</a></li>
+                        <li><a class="dropdown-button home-btn" href="#!">SERVICE</a></li>
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 </div>
