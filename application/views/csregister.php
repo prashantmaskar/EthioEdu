@@ -7,7 +7,7 @@
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
 
-                                <form id="csregister" action="#" method="post" class="row">
+                                <form id="csregister" action="/controllers/csregister/register" method="post" class="row">
                                     <h4 class="red-text">personal Information</h4>
                                     <div class="form-group input-field col s12">
                                         <input id="first_name" name="first_name" type="text" class="validate">

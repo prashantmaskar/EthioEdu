@@ -25,6 +25,19 @@ class csregister extends CI_Controller {
             'title' => 'Registration'
         );
         $this->load->view('csregister',$view_params);
+		$this->register();
     }
+	
+
+    function register()
+    {
+		  $data = array(
+                'uname' => $this->input->post('first_name'),
+                'email' => $this->input->post('email'),
+                'password' => $this->input->post('phone_number'),
+				'role' => $this->input->post('last_name'),
+            );  
+		
+	}
 
 }

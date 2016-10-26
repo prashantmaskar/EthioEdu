@@ -19,7 +19,7 @@
                                         <label for="Chic">Chic</label>
                                     </div>
                                     <div class="col s12">
-                                        <select >
+                                        <select name="choiceage">
                                             <option value="" disabled selected>Any Age</option>
                                             <option value="1">16-19</option>
                                             <option value="2">20-25</option>
@@ -150,3 +150,26 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+		
+		
+		<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+<script>
+$(document).ready(function() {
+alert('sfd');
+    $('#connectme').bootstrapValidator({
+        fields: {
+            choiceage: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter course name!!!..'
+                    }
+                }
+            }
+			
+			});
+			});
+  </script>
