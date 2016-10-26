@@ -20,14 +20,18 @@ class login extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('Loginmodel');
-		$res = $this->Loginmodel->getdata();
+		$this->load->model('init_models');
+		$res = $this->init_models->getdata();
              $view_params = array(
                 'm_title' => 'Login Page',
-                'title'   => 'Login Page'
+                'title'   => 'Login Page',
+				'id'  => $res['id'],
+				'uname'  => $res['username'],
+				'email'  => $res['user_email'],
+				'role'  => $res['user_role'],
             );
-		$data['title'] = $res['username'];
-		$this->load->view('login',$view_params,$data);
+		//$view_params['uname'] = $res['username'];
+		$this->load->view('login',$view_params);
 			
 	}
 	
