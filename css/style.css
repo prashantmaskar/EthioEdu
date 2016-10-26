@@ -176,6 +176,9 @@ nav .brand-logo {
     padding-bottom: 20px;
     margin-bottom: 5px;
 }
+/*.service_col h5{
+    color: #fff;
+}*/
 .service_col h5,p{
     color: #fff;
 }
@@ -346,25 +349,25 @@ footer{
     height: 20px;
 }
 
-.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading, .project_details .page-heading-wrap .page-heading {
+.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading, .project_details .page-heading-wrap .page-heading ,.Contacts_Hotline_details .page-heading-wrap .page-heading{
     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
-.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span, .project_details .page-heading-wrap .page-heading span{
+.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span, .project_details .page-heading-wrap .page-heading span,.event_details .page-heading-wrap .page-heading span{
     float:right;
     font-size: 12px;
     margin-top: -12px;
 }
-.about_details,.news_details,.project_details{
+.about_details,.news_details,.project_details,.Contacts_Hotline_details{
     margin: 0px;
     color: #000;
     padding: 10px;
     text-align: justify;
 }
-.about_content p{
+.about_content ,.contacts_hotline_content p{
     padding: 10px;
     color: #000;
 }
@@ -675,7 +678,7 @@ a.post-share.stumble span {
 .instrction_box ul li{
     border: 0px;
 }
-.school_form form{
+.school_form form,.new_events form{
     margin-bottom: 25px;
     padding-bottom: 25px;
 }
@@ -750,11 +753,11 @@ Tender Style
 .tender_sinfo{
     display: block;
 }
-.vacancy_list_wrap .vacancy_list .vacancy_content{
+.vacancy_list_wrap .vacancy_list .vacancy_content.project_list .project_content{
     padding: 5px;
     border-bottom: 1px dotted #ccc;
 }
-.vacancy_list_wrap .vacancy_list .vacancy_content .vacancy_link{
+.vacancy_list_wrap .vacancy_list .vacancy_content .vacancy_link .project_list .project_content{
     display: block;
     font-size: 18px;
 }
@@ -811,6 +814,23 @@ Tender Style
 }
 
 /*==============================
+Contact/Hotline List and Form Csss
+===============================*/
+
+
+.contacts_hotline_content_right {
+    padding:45px 20px;
+}
+.contacts_hotline_content_left {
+   padding: 65px 20px;
+}
+
+.contant_hotline_social {
+    margin-top: 60px;
+}
+
+
+/*==============================
 Contact Us List and Form Csss
 ===============================*/
 
@@ -818,7 +838,7 @@ Contact Us List and Form Csss
 .contact-us_form {
     margin-bottom: 25px;
 }
-
+.Contacts_Hotline_details p{color:#000;}
 
 /*==============================
 connect2Me List and Form Csss
@@ -865,6 +885,13 @@ connect2Me List and Form Csss
 .result_list_wrap img{
     width: 150px;
     height: 150px;
+}
+
+/*===========================
+Project Detail Page Info
+============================*/
+.green_text {
+    color: #690;
 }
 /*===========================
 student Detail Page Info

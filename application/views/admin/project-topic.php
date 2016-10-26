@@ -202,34 +202,34 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Project Topic FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
-                                                    <div class="input-field col s12">
-                                                        <input id="Project_name" type="text" class="validate">
+                                                <form id="project_topic" action="#" method="post" class="col m12">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="Project_name" name="Project_name" type="text" class="validate">
                                                         <label for="Project_name">Project Name</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="course_name" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="course_name" name="course_name" type="text" class="validate">
                                                         <label for="course_name">Course Name</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">Year</option>
-                                                            <option value="1">2016</option>
-                                                            <option value="2">2017</option>
+                                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="Year">
+                                                            <option  value="">Year</option>
+                                                            <option value="2016">2016</option>
+                                                            <option value="2017">2017</option>
 
                                                         </select>
 
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">File Format</option>
-                                                            <option value="1">Word</option>
-                                                            <option value="2">Pdf</option>
-                                                            <option value="3">Rtf</option>
+                                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="fileformat">
+                                                            <option  value="">File Format</option>
+                                                            <option value="Word">Word</option>
+                                                            <option value="Pdf">Pdf</option>
+                                                            <option value="Rtf">Rtf</option>
                                                         </select>
                                                     </div>
-                                                    <div class="file-field input-field col s12">
-                                                        <div class="btn">
+                                                    <div class="form-group file-field input-field col s12">
+                                                        <div class="btn" name="upload1">
                                                             <span>Attach File</span>
                                                             <input type="file" multiple>
                                                         </div>
@@ -296,3 +296,73 @@ and open the template in the editor.
     </body>
 
 </html>
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+
+
+<script>
+$(document).ready(function() {
+
+    $('#project_topic').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            Project_name: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter the name of project!!!..'
+                    }
+                }
+            },
+              course_name: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter cource name !!!..'
+                    }
+                }
+            },
+ 
+
+                  Year: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select Year!!!..'
+                    }
+                }
+            },
+ 
+              
+                  fileformat: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select file format!!!..'
+                    }
+                }
+            },
+ 
+               
+                  upload1: {
+                validators: {
+                    notEmpty: {
+                        message: ' you must upload file!!!..'
+                    }
+                }
+            },
+ 
+
+
+
+
+        }
+    });
+});
+</script>

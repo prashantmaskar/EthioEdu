@@ -7,35 +7,35 @@
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
 
-                                <form class="row">
+                                <form id="csregister" action="#" method="post" class="row">
                                     <h4 class="red-text">personal Information</h4>
-                                    <div class="input-field col s12">
-                                        <input id="first_name" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="first_name" name="first_name" type="text" class="validate">
                                         <label for="Caption"> first Name</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="last_name" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="last_name" name="last_name" type="text" class="validate">
                                         <label for="Caption"> Last Name</label>
                                     </div>
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Select gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="gender">
 
-                                        </select>
-                                        <label>Gender</label>
+                                                            <option value="">Gender</option>
+                                                             <option value="Male">Male</option>
+                                                            <option value="female">female</option>
+                                                        
+                                                        </select>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="mobile" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="mobile" name="phone_number" type="text" class="validate">
                                         <label for="Caption">Mobile Number</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="email" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="email" name="email" type="text" class="validate">
                                         <label for="Caption">Email Id</label>
                                     </div>
-                                    <div class="file-field input-field col s12">
-                                        <div class="btn">
+                                    <div class="form-group file-field input-field col s12">
+                                        <div class="btn" name="attachphoto">
                                             <span>Attach Photo</span>
                                             <input type="file" multiple>
                                         </div>
@@ -47,38 +47,39 @@
 
                                     <h4 class="red-text">Connect2Me Information</h4>
 
-                                    <div class="input-field col s12">
-                                        <input id="date" type="date" class="datepicker">
+                                    <div class="form-group input-field col s12">
+                                        <input id="date" type="date" name="Bdate"class="datepicker">
                                         <label for="date">Date of Birth</label>
                                     </div>
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Currently Single</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="status">
 
-                                        </select>
-                                        <label>Currently</label>
+                                                            <option value="">Currently single</option>
+                                                             <option value="Male">Male</option>
+                                                            <option value="female">female</option>
+                                                        
+                                                        </select>
                                     </div>
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Interested In</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="interestedIn">
 
-                                        </select>
-                                        <label>Interested In</label>
+                                                            <option value="">Interested In</option>
+                                                             <option value="Male">Male</option>
+                                                            <option value="female">female</option>
+                                                        
+                                                        </select>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="aboutme" class="materialize-textarea"></textarea>
+
+                                    <div class="form-group input-field col s12">
+                                        <textarea id="aboutme" name="aboutme" class="materialize-textarea"></textarea>
                                         <label for="aboutme">About Me</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="myinterest" class="materialize-textarea"></textarea>
+                                    <div class="form-group input-field col s12">
+                                        <textarea id="myinterest" name="myinterest" class="materialize-textarea"></textarea>
                                         <label for="myinterest">My Interests</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="myhobby" class="materialize-textarea"></textarea>
+                                    <div class="form-group input-field col s12">
+                                        <textarea id="myhobby" name="myhobby" class="materialize-textarea"></textarea>
                                         <label for="myhobby">My Hobby</label>
                                     </div>
                                     <div class="col m12 margin-t-15 center-align">
@@ -147,3 +148,160 @@
             </div>
         </div>
        <?php $this->load->view('footer'); ?>
+
+
+ 
+     <!-- <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">  -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+
+    $('#csregister').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            first_name: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter firtst name!!!..'
+                    }
+                }
+            },
+              last_name: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter last name!!!..'
+                    }
+                }
+            },
+              gender: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select gender!!!..'
+                    }
+                }
+            },
+ 
+                  phone_number: {
+                validators: {
+                    notEmpty: {
+                        message: 'contact required!!!..'
+                    },
+                    digits:{
+                         message:'contact number is invalid'
+
+                    },
+                    stringLength: {
+                        min:10,
+                        max: 10,
+                        message: 'contact number must contains 10 digits'
+                    }
+
+                }
+            },
+               email:{
+                validators:{
+                    notEmpty:{
+                         message:'Email address is required!!!'
+                    },
+                    emailAddress:{
+                        message:'The input is not a valid email adddress!!'
+                    }
+                }
+            },
+              
+                  attachphoto: {
+                validators: {
+                    notEmpty: {
+                        message: ' please attach imagee!!!..'
+                    }
+                }
+            },
+ 
+               
+                  Bdate: {
+                validators: {
+                    notEmpty:{ 
+                        message:'please enter birthdate!!'
+
+                    }
+                  
+                }
+            },
+                  
+                  status: {
+                validators: {
+                    notEmpty:{ 
+                        message:'please select choice!!'
+
+                    }
+                  
+                }
+            },
+               
+                
+                  
+                  interestedIn: {
+                validators: {
+                    notEmpty:{ 
+                        message:'please select choice!!'
+
+                    }
+                  
+                }
+            },
+                  aboutme:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter information about you !!!'
+                    },
+                    stringLength:{
+                        message:'post descreeption must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+              myinterest:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please write your interest !!!'
+                    },
+                    stringLength:{
+                        message:'post descreeption   must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+
+               myhobby:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please write your hobby !!!'
+                    },
+                    stringLength:{
+                        message:'post descreeption   must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+
+
+        }
+    });
+});
+</script>

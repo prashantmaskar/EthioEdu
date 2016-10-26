@@ -45,66 +45,57 @@
                                 <ul class="project_list">
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>" class="project_link">
-                                            <span class="Project_title">Administration Project Topics</span>
+                                            <span class="Project_title">Administration Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                       
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Agricultural Project Topics</span>
+                                            <span class="Project_title">Agricultural Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                        
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Art & Humanities Project Topics</span>
+                                            <span class="Project_title">Art & Humanities Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                       
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Education Project Topics</span>
+                                            <span class="Project_title">Education Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                      
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Engineering,Environment $ Technology Project Topics</span>
+                                            <span class="Project_title">Engineering,Environment $ Technology Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                      
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Low Project Topics</span>
+                                            <span class="Project_title">Low Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                       
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Medical,Pharmaceutical & Health Science Project Topics</span>
+                                            <span class="Project_title">Medical,Pharmaceutical & Health Science Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                      
                                     </li>
                                     <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Sciences Project Topics</span>
+                                            <span class="Project_title">Sciences Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                      
                                     </li>
                                          <li class="project_content">
                                         <a href="<?php echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Social & Management Sciences Project Topics</span>
+                                            <span class="Project_title">Social & Management Sciences Project Topics</span><span> [9]</span>
                                         </a>
-                                        <span id="projectdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
-                                            </span></span>
+                                       
                                     </li>
                                 </ul>
 
