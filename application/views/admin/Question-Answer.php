@@ -285,7 +285,7 @@ and open the template in the editor.
 </html>
 
 
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
@@ -319,7 +319,7 @@ $(document).ready(function() {
             },
  
 
-                  question: {
+                  Question: {
                 validators: {
                     notEmpty: {
                         message: ' please enter subject/cource category !!!..'

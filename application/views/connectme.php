@@ -6,16 +6,16 @@
                         <div class="row">
                             <div class="col m12 s12"><h2 class="form_heading">Find Friends/Student</h2></div>
                             <div class="col m6 s12">
-                                <form class="row">
+                                <form id="connectme" action="#" method="post" class="row">
                                     <div class=" col s4">
                                         <label for="Caption">I am Looking For:</label>
                                     </div>
                                     <div class=" col s4">
-                                        <input type="checkbox" id="Guy" />
+                                        <input type="checkbox" name="Caption[]" id="Guy" />
                                         <label for="Guy">Guy</label>
                                     </div>
                                     <div class=" col s4">
-                                        <input type="checkbox" id="Chic" />
+                                        <input type="checkbox" name="caption[]" id="Chic" />
                                         <label for="Chic">Chic</label>
                                     </div>
                                     <div class="col s12">

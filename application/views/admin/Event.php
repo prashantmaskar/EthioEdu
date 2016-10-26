@@ -201,22 +201,22 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Event FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
-                                                    <div class="input-field col s12">
-                                                        <input id="event_name" type="text" class="validate">
+                                                <form id="addevent" action="#" method="post" class="col m12">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="event_name" name="event_name" type="text" class="validate">
                                                         <label for="event_name">Event Name</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="event_tital" type="text" class="validate">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="event_tital" name="event_tital" type="text" class="validate">
                                                         <label for="event_tital">Event Tital</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <textarea id="Description" class="materialize-textarea"></textarea>
+                                                    <div class="form-group input-field col s12">
+                                                        <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
 
-                                                    <div class="file-field input-field col s12">
-                                                        <div class="btn">
+                                                    <div class="form-group file-field input-field col s12">
+                                                        <div class="btn" name="uploadimg">
                                                             <span>Attach Image</span>
                                                             <input type="file" multiple>
                                                         </div>
@@ -224,8 +224,8 @@ and open the template in the editor.
                                                             <input class="file-path validate" type="text" placeholder="Upload Image">
                                                         </div>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="post_by" type="text" class="validate">
+                                                    <div class=" form-group input-field col s12">
+                                                        <input id="post_by" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>
                                                     </div>
 
@@ -247,3 +247,87 @@ and open the template in the editor.
                         </body>
 
                         </html>
+ 
+
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+
+
+<script>
+$(document).ready(function() {
+
+    $('#addevent').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            event_name: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please write event_name!!!..'
+                    }
+                }
+            },
+              event_tital: {
+                validators: {
+                    notEmpty: {
+                        message: ' please write event title!!!..'
+                    }
+                }
+            },
+ 
+                Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    },
+                    stringLength:{
+                        message:'post Description must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+ 
+              
+                  uploadimg: {
+                validators: {
+                    notEmpty: {
+                        message: ' please attach imagee!!!..'
+                    }
+                }
+            },
+ 
+               
+                  upload: {
+                validators: {
+                    notEmpty: {
+                        message: ' you must upload file!!!..'
+                    }
+                }
+            },
+                 
+                  eventby: {
+                validators: {
+                    notEmpty: {
+                        message: ' must write!!!..'
+                    }
+                }
+            },
+ 
+
+
+
+
+        }
+    });
+});
+</script>

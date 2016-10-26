@@ -228,8 +228,8 @@ and open the template in the editor.
                                                         </select>
                                                         <label>Category</label>
                                                     </div>
-                                                    <div class="file-field input-field col s12">
-                                                        <div class="btn">
+                                                    <div class="form-group file-field input-field col s12">
+                                                        <div class="btn" name="upload">
                                                             <span>Attach Photo</span>
                                                             <input type="file" multiple>
                                                         </div>
@@ -294,6 +294,15 @@ $(document).ready(function() {
                     }
                 }
             },
+
+            upload: {
+                validators: {
+                    notEmpty: {
+                        message: ' you must upload a photo!!!..'
+                    }
+                }
+            },
+
 
          Description:{
                 validators:{
