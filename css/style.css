@@ -349,19 +349,32 @@ footer{
     height: 20px;
 }
 
-.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading, .project_details .page-heading-wrap .page-heading ,.Contacts_Hotline_details .page-heading-wrap .page-heading{
+.about_details .page-heading-wrap .page-heading,.news_details .page-heading-wrap .page-heading,.vacancy_details .page-heading-wrap .page-heading, .project_details .page-heading-wrap .page-heading ,.Contacts_Hotline_details .page-heading-wrap .page-heading {
     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
-.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span, .project_details .page-heading-wrap .page-heading span,.event_details .page-heading-wrap .page-heading span{
+.QuesAns_details .page-heading-wrap .page-heading{
+	 font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.about_details .page-heading-wrap .page-heading span, .news_details .page-heading-wrap .page-heading span, .project_details .page-heading-wrap .page-heading span,.event_details .page-heading-wrap .page-heading span {
     float:right;
     font-size: 12px;
     margin-top: -12px;
 }
-.about_details,.news_details,.project_details,.Contacts_Hotline_details{
+.QuesAns_details .page-heading-wrap .page-heading span
+{
+	 float:right;
+    font-size: 12px;
+    margin-top: -12px;
+}
+.about_details,.news_details,.project_details,.Contacts_Hotline_details,.Ques_details{
     margin: 0px;
     color: #000;
     padding: 10px;
@@ -398,11 +411,19 @@ footer{
 .t20margin{
     margin-top: 20px;
 }
-.news_list_wrap .news_list .news_content{
+.news_list_wrap .news_list .news_content {
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+.QuesAns_list_wrap .QuesAns_list .QuesAns_content {
     padding: 5px;
     border-bottom: 1px dotted #ccc;
 }
 .news_list_wrap .news_list .news_content .news_link{
+    display: block;
+    font-size: 18px;
+}
+.QuesAns_list_wrap .QuesAns_list .QuesAns_content .QuesAns_link{
     display: block;
     font-size: 18px;
 }
@@ -439,7 +460,7 @@ footer{
     border-bottom: 1px dotted #ccc;
 
 }
-.news_sort_form,.project_sort_form {
+.news_sort_form,.project_sort_form,.QuesAns_sort_form {
     border-bottom:  1px solid red;
 }
 .news_sort_form ,.project_sort_form p{
@@ -842,7 +863,7 @@ Contact Us List and Form Csss
 .contact-us_form {
     margin-bottom: 25px;
 }
-
+/*.Contacts_Hotline_details p{color:#000;}
 
 /*==============================
 connect2Me List and Form Csss

@@ -73,7 +73,7 @@
 
                     </div>
                 </div>
-
+</div>
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
                         <a href="#">
@@ -86,7 +86,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            
         </div>
         <?php $this->load->view('footer'); ?>
 

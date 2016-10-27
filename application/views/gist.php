@@ -19,7 +19,7 @@
                             <div class="page-heading-wrap">
                                 <h1 class="page-heading">  Featured Gist from Student Bloggers </h1>
                             </div>
-                            <p>Gist us about your day. Become an Eye Withness, Report your School, Riots, Queues, SUG, Stress, Roads, Groove, Parties, Events, Student Celebrities, Lectures, Tests, Exams, Hook-ups, break-ups, Outings... Anything.</p>
+                            <p class="black-text">Gist us about your day. Become an Eye Withness, Report your School, Riots, Queues, SUG, Stress, Roads, Groove, Parties, Events, Student Celebrities, Lectures, Tests, Exams, Hook-ups, break-ups, Outings... Anything.</p>
                         </div>
                         <div class="col s12 m12 ">
                             <div class="gist_wrap">
@@ -45,7 +45,7 @@
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p>STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
@@ -75,7 +75,7 @@
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p>STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
@@ -105,7 +105,7 @@
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p>STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
@@ -135,7 +135,7 @@
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p>STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
@@ -165,7 +165,7 @@
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p>STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
