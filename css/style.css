@@ -829,6 +829,10 @@ Contact/Hotline List and Form Csss
     margin-top: 60px;
 }
 
+.has-error .help-block {
+    color: red;
+}
+
 
 /*==============================
 Contact Us List and Form Csss

@@ -174,10 +174,10 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc1.jpg"></div>
-                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc2.jpg"></div>
-                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc3.png"></div>
-                            <div class="item"><img src="http://localhost/ethioedu/images/slider_upper/featured_sc2.jpg"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc1.jpg' ?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
 
                         </div>
                     </div>
@@ -185,12 +185,12 @@
                 <div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="http://localhost/ETHIO/images/slider/Banner-Vertical.jpg">
+                            <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
                     </div>
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="http://localhost/ETHIO/images/slider/Banner_Vertical.jpg">
+                            <img src="<?php echo base_url().'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
 
 
