@@ -13,7 +13,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col s12 m7 grid-example z-depth-1">
+                <div class="col s12 m8 grid-example z-depth-1">
                     <div class="news_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
@@ -23,7 +23,7 @@
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s3">
-                                    <p>Sort Tenders:</p>
+                                    <p class="black-text">Sort Tenders:</p>
                                 </div>
                                 <div class="input-field col s3">
                                     <input id="Caption" type="date" class=" datepicker validate">
@@ -97,106 +97,16 @@
                     </div>
                 </div>
 
-                <div class="col s12 m3 z-depth-1">
-                    <div class="latest_news_wrap ">
-                        <h1 class="red_label_title">Latest News</h1>
-                        <ul class="latest_news_list">
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-
-                        </ul>
+                <div class="col s12 m2 grid-example">
+                    <div class="service_col z-depth-1  darken-1">
+                        <a href="#">
+                            <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
+                        </a>
                     </div>
-
-                    <div class="Most_news_wrap ">
-                        <h1 class="red_label_title">Most Read</h1>
-                        <ul class="Most_news_list">
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li> <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Most_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                        </ul>
+                    <div class="service_col z-depth-1  darken-1">
+                        <a href="#">
+                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
+                        </a>
                     </div>
                 </div>
             </div>

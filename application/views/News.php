@@ -23,7 +23,7 @@
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s2">
-                                    <p>Sort News:</p>
+                                    <p class="black-text">Sort News:</p>
                                 </div>
                                 <div class="input-field col s4">
                                         <input id="Caption" type="date" class=" datepicker validate">
