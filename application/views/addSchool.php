@@ -237,11 +237,6 @@
                                 </section>
                             </div>
                         </div>
-                        <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
-                        <script type="text/javascript" src="../js/materialize.js"></script>
-                        </body>
-
-                        </html>
                          <div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
@@ -258,6 +253,8 @@
                 </div>
             </div>
         </div>
+		</div>
+		</div>
         <?php $this->load->view('footer'); ?>
 
 <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
