@@ -66,14 +66,14 @@
                         <li><a href="<?php echo base_url() . 'index.php/QuesAns' ?>">Questions & Answers</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
-                        <li><a  href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
+                        <li><a  class="<?php if($this->uri->segment(1)=="home"){echo "active";}?>" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
 
                         <li><a class="dropdown-button home-btn" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/schools' ?>">SCHOOLS</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
-                        <li><a class="dropdown-button home-btn" href="#" data-hover="true" data-activates="dropdown2">SERVICE</a></li>
+                        <li><a class="<?php if($this->uri->segment(1)=="schools"){echo "active";}?>" href="<?php echo base_url() . 'index.php/schools' ?>">SCHOOLS</a></li>
+                        <li><a class="<?php if($this->uri->segment(1)=="course"){echo "active";}?>" href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
+                        <li><a class="<?php if($this->uri->segment(1)=="vactender"){echo "active";}?>" href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
+                        <li><a class="<?php if($this->uri->segment(1)=="connectme"){echo "active";}?>" href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
+                        <li><a class="dropdown-button home-btn <?php if($this->uri->segment(1)=="news"){echo "active";}?>" href="" data-hover="true" data-activates="dropdown2">SERVICE</a></li>
 
                     </ul>
 
@@ -91,3 +91,5 @@
                 </div>
             </nav>
         </div>
+
+
