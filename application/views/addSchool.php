@@ -268,9 +268,3 @@
 <script type="text/javascript" src="../js/addschool.js"></script>
 
 
-
-
-
-<script>
-
-</script>

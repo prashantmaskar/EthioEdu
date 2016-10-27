@@ -78,7 +78,7 @@
                                             <label for="Username">Enter Ethioedu user name</label>
                                         </div>
                                         <div class="col m12">
-                                            <button class="btn waves-effect waves-light" type="submit" name="action">Connect2Me
+                                            <a btn="btn waves-effect waves-light" type="submit" name="action">Connect2Me
                                             </button>
                                         </div>
                                     </form>
@@ -152,6 +152,7 @@
         </div>
         <?php $this->load->view('footer'); ?>
 		
+<<<<<<< HEAD
 		
 		<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
 <!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
@@ -177,3 +178,6 @@ $(document).ready(function() {
     });
 }); 
 </script>
+=======
+		
+>>>>>>> 16b45f15f79e08b5fee4182014fba84ba0d6041a
