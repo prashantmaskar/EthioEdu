@@ -13,7 +13,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col s12 m8 grid-example">
+                <div class="col s12 m8 grid-example z-depth-1">
                     <div class="Contacts_Hotline_details">
                          <div class="col m12 s12">
                             <div class="page-heading-wrap">
