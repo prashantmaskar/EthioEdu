@@ -18,13 +18,13 @@
                                         <input type="checkbox" name="caption[]" id="Chic" />
                                         <label for="Chic">Chic</label>
                                     </div>
-                                    <div class="col s12">
-                                        <select name="choiceage">
-                                            <option value="" disabled selected>Any Age</option>
-                                            <option value="1">16-19</option>
-                                            <option value="2">20-25</option>
-                                            <option value="3">26-29</option>
-                                            <option value="4">30+</option>
+                                    <div class="form-group col s12">
+                                        <select class="form-control " name="choiceage">
+                                            <option value="">Any Age</option>
+                                            <option value="16-19">16-19</option>
+                                            <option value="20-25">20-25</option>
+                                            <option value="26-29">26-29</option>
+                                            <option value="30+">30+</option>
 
                                         </select>
                                         <label>Between The Age</label>
@@ -57,11 +57,12 @@
                                         </select>
                                         <label>Special Interest In</label>
                                     </div>
-                                    <div class="col m12">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">Find
-
+                                   
+                                <div class="new_account input-field col s12">
+                                    <button class="btn waves-effect waves-light " type="submit" name="action">FIND
                                         </button>
-                                    </div>
+                                    
+                                </div>
                                 </form>
                             </div>
                             <div class="vr-line col m1">
@@ -153,13 +154,14 @@
 		
 		
 		<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
 
-<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
-<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+
+
 <script>
 $(document).ready(function() {
-alert('sfd');
     $('#connectme').bootstrapValidator({
         fields: {
             choiceage: {
@@ -168,8 +170,10 @@ alert('sfd');
                         message: ' please enter course name!!!..'
                     }
                 }
-            }
+            },
 			
-			});
-			});
-  </script>
+			
+        }
+    });
+}); 
+</script>
