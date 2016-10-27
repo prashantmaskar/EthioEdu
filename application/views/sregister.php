@@ -133,10 +133,6 @@
         </div>
         <?php $this->load->view('footer'); ?>
 
-
-
-
-
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">

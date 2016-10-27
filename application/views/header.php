@@ -62,11 +62,13 @@
 					<ul id="dropdown2" class="dropdown-content dropdown-menu">
                         <li><a href="<?php echo base_url() . 'index.php/Projectlist' ?>">Project Topics</a></li>
 						<li><a href="<?php echo base_url() . 'index.php/event' ?>">Events</a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/tips' ?>">Tips</a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/event' ?>">Questions & Answers</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="active" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
+                        <li><a  href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
 
-                        <li><a class="dropdown-button home-btn" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS </a></li>
+                        <li><a class="dropdown-button home-btn" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/schools' ?>">SCHOOLS</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
@@ -76,7 +78,7 @@
                     </ul>
 
                     <ul id="nav-mobile" class="side-nav mobile-nav">
-                        <li><a class="active" href="#">HOME</a></li>
+                        <li><a href="#">HOME</a></li>
 
                         <li><a class="dropdown-button home-btn" href="#!" >LATEST NEWS</a></li>
                         <li><a href="#">SCHOOLS</a></li>
