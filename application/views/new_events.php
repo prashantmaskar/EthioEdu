@@ -24,43 +24,43 @@
                             </ul>-->
                         </div>
                         <div class="new_events_form">
-                            <form class="col m12">
-                               
-                                <div class="input-field col s12">
-                                    <input id="event_name" type="text" class="validate">
-                                    <label for="Event_name">Event Name</label>
+                           <form id="postevent" method="post" class="col m12">
+                               <div class="form-group input-field col s12">
+                                        <input id="event_name" name="event_name" type="text" class="validate">
+                                        <label for="Caption"> Event Name</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <input id="event_title" type="text" class="validate">
-                                    <label for="Event_title">Event Title</label>
+                               <div class="form-group input-field col s12">
+                                    <input id="event_title" name="event_title" type="text" class="validate">
+                                    <label for="Caption">Event Title</label>
                                 </div>
                                 
-                                <div class="input-field col s12">
-                                    <input id="subject" type="text" class="validate">
+                                <div class="form-group input-field col s12">
+                                    <input id="subject" type="text" name="subject" class="validate">
                                     <label for="Subject">Subject</label>
                                 </div>
-								 <div class="file-field input-field col s12">
+								 <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach Photo</span>
-                                            <input type="file" multiple>
+                                            <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                         </div>
                                     </div>
-								  <div class="input-field col s12">
-                                    <textarea id="description" class="materialize-textarea"></textarea>
-                                    <label for="Description">Description</label>
+								  <div class="form-group input-field col s12">
+                                    <textarea id="description" name="Description" class="materialize-textarea"></textarea>
+                                    <label for="Caption">Description</label>
                                 </div>
 								
-                                <div class="input-field col s12">
-                                    <input id="postedby" type="text" class="validate">
-                                    <label for="Postedby">Posted by</label>
+                                <div class="form-group input-field col s12">
+                                    <input id="postedby" name="postedby" type="text" class="validate">
+                                    <label for="Caption">Posted by</label>
                                 </div>
                                
                            
                                 <div class="new_account input-field col s12">
-                                    <a class="btn waves-effect waves-light">Submit</a>
+                                    <button class="btn waves-effect waves-light red" type="submit" name="action">Register
+                                        </button>
                                     
                                 </div>
                              
@@ -87,3 +87,13 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+
+
+
+     <!-- <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">  -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../js/events-validate.js"></script>
+                                    
