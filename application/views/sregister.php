@@ -12,51 +12,51 @@
                                     <p>2.Aspirants should select the institution they intend to get into.</p>
                                     <p>3.Graduates should select the institute they graduated from.</p>
                                 </div>
-                                <form class="row" action="<?php echo base_url(). 'index.php/csregister'?>">
+                                <form id="sregister" method="post"class="row" action="<?php echo base_url(). 'index.php/csregister'?>">
                                     <h4 class="red-text">Community Information</h4>
 
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Select your school type</option>
-                                            <option value="1">Anything</option>
-                                            <option value="2">Friendship</option>
-                                            <option value="3">Dating</option>
-                                        </select>
-                                        <label>Institutes</label>
+                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="schooltype">
+
+                                                            <option value="">select your school type</option>
+                                                             <option value="Male">anything</option>
+                                                            <option value="female">friendship</option>
+                                                             <option value="female">friendship</option>
+                                                        </select>
                                     </div>
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Select School</option>
-                                            <option value="1">Anything</option>
-                                            <option value="2">Friendship</option>
-                                            <option value="3">Dating</option>
-                                        </select>
-                                        <label>School</label>
+                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="school">
+
+                                                            <option value="">select your school</option>
+                                                             <option value="Male">anything</option>
+                                                            <option value="female">friendship</option>
+                                                             <option value="female">friendship</option>
+                                                        </select>
                                     </div>
-                                    <div class="col s12">
-                                        <select>
-                                            <option value="" disabled selected>Select Level </option>
-                                            <option value="1">Anything</option>
-                                            <option value="2">Friendship</option>
-                                            <option value="3">Dating</option>
-                                        </select>
-                                        <label>Level</label>
+                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="level">
+
+                                                            <option value="">select level</option>
+                                                             <option value="Male">anything</option>
+                                                            <option value="female">friendship</option>
+                                                             <option value="female">friendship</option>
+                                                        </select>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
-                                        <label for="Caption">Department</label>
+                                    <div class="form-group input-field col s12">
+                                        <input id="department" name="department" type="text" class="validate">
+                                        <label for="department">Department</label>
                                     </div>
                                     <h4 class="red-text">Login Information</h4>
-                                    <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="Caption" type="text" name="username" class="validate">
                                         <label for="Caption">Username</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="Caption" type="text" name="password" class="validate">
                                         <label for="Caption">password</label>
                                     </div>
-                                     <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                     <div class="form-group input-field col s12">
+                                        <input id="Caption" name="cpassword" type="text" class="validate">
                                         <label for="Caption"> verify password</label>
                                     </div>
                                       <div class=" col s2">
@@ -145,3 +145,4 @@
 -->
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../js/sregister-validate.js"></script>
