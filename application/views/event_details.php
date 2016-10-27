@@ -14,15 +14,15 @@
                     </div>
                 </div>
                 <div class="col s12 m8 grid-example">
-                    <div class="news_details z-depth-1">
+                    <div class="event_details z-depth-1">
                         <div class="col m12 s12 ">
-                            <div class="news_heading ">
+                            <div class="event_heading ">
                                 <span>Posted: 28-Jun-2016 [10:23:16] into Post-UTME by Peteworld for school | 155 Comments </span>
                                 <h1>FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded</h1>
                             </div>
                         </div>
 
-                        <div class="news_img">
+                        <div class="event_img">
                             <img src="<?php echo base_url() . 'images/about.jpg' ?>">
                         </div>
                         <div class="col s12">
@@ -33,7 +33,7 @@
                             <a class="post-share gplus" href="https://plus.google.com/share?url=http://medialoot.com/blog/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
                                     return false;">Google Plus<span>120</span></a>
                         </div>
-                        <div class="news_detal_content">
+                        <div class="event_details_content">
                             <p>The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
                             <p>The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
 
