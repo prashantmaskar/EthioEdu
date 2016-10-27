@@ -22,7 +22,7 @@
                         <li><a href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
-                        <li><a href="<?php echo base_url() . 'index.php/csregister' ?>">REGISTER </a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/sregister' ?>">REGISTER </a></li>
                         <li><a href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
 
                     </ul>
