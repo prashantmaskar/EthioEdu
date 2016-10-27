@@ -77,8 +77,8 @@
                                             <input id="Username" type="text" class="validate">
                                             <label for="Username">Enter Ethioedu user name</label>
                                         </div>
-                                        <div class="col m12">
-                                            <a btn="btn waves-effect waves-light" type="submit" name="action">Connect2Me
+                                        <div class="new_account input-field col s12">
+                                            <button class="btn waves-effect waves-light " type="submit" name="action">Connect2Me
                                             </button>
                                         </div>
                                     </form>
