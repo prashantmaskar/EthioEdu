@@ -25,14 +25,14 @@
                             <div class="contacts_hotline_content_left z-depth-1">
                            <!-- <p>ETHIOEDU.com is a community website dedicated to providing free information on educational institutions in ETHIOPIA. Our free online directory contains very useful information on all schools, colleges and universities in ETHIOPIA. ETHIOEDU.com also contains very useful resources such as past examinations question papers for schools, colleges and universities. We also have a very interactive and mederated discussion forum. ETHIOEDU.com was started with the aim of easing the process of searching for educational information in ETHIOPIA. We hope that you will find information on this website useful. Please feel free to Contact Us in case of any queries, comments or suggestions.</p>
                             <p >ETHIOEDU.com is a community website dedicated to providing free information on educational institutions in ETHIOPIA. Our free online directory contains very useful information on all schools, colleges and universities in ETHIOPIA. ETHIOEDU.com also contains very useful resources such as past examinations question papers for schools, colleges and universities. We also have a very interactive and mederated discussion forum. ETHIOEDU.com was started with the aim of easing the process of searching for educational information in ETHIOPIA. We hope that you will find information on this website useful. Please feel free to Contact Us in case of any queries, comments or suggestions.</p>-->
-                            <p><span>Hotline:</span><span>   <i class="fa fa-phone"></i>   2144-007-1566</span></p>
-							<p><span>Email:</span><span>     <i class="fa fa-envelope"></i>   info@ethioedu.com</span></p>
+                            <p class="black-text"><span>Hotline:</span><span>   <i class="fa fa-phone"></i>   2144-007-1566</span></p>
+							<p class="black-text"><span>Email:</span><span>     <i class="fa fa-envelope"></i>   info@ethioedu.com</span></p>
 							
 							                            </div>
                         </div>
 						<div class="col s6 m6 t20margin">
 						 <div class="contacts_hotline_content_right z-depth-1">
-						 <p><span>Adress:</span><span>    <i class="fa fa-map-marker" ></i><br>        No 48 Season street,<br>Living stone,<br>Ethiopia,Africa</span></p>
+						 <p class="black-text"><span>Adress:</span><span>    <i class="fa fa-map-marker" ></i><br>        No 48 Season street,<br>Living stone,<br>Ethiopia,Africa</span></p>
 						 </div>
 						</div>
 						
