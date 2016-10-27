@@ -234,10 +234,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                </section>
                             </div>
                         </div>
-                         <div class="col s12 m2 ">
+                         
+            </div>
+        </div>
+		<div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
                             <img src="http://localhost/ETHIO/images/slider/Banner-Vertical.jpg">
@@ -251,8 +253,6 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
 		</div>
 		</div>
         <?php $this->load->view('footer'); ?>
