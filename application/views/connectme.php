@@ -152,7 +152,6 @@
         </div>
         <?php $this->load->view('footer'); ?>
 		
-<<<<<<< HEAD
 		
 		<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
 <!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
@@ -178,6 +177,4 @@ $(document).ready(function() {
     });
 }); 
 </script>
-=======
 		
->>>>>>> 16b45f15f79e08b5fee4182014fba84ba0d6041a
