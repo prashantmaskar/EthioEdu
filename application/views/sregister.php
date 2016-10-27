@@ -12,7 +12,7 @@
                                     <p>2.Aspirants should select the institution they intend to get into.</p>
                                     <p>3.Graduates should select the institute they graduated from.</p>
                                 </div>
-                                <form class="row">
+                                <form class="row" action="<?php echo base_url(). 'index.php/csregister'?>">
                                     <h4 class="red-text">Community Information</h4>
 
                                     <div class="col s12">
@@ -136,8 +136,8 @@
 
 
 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/bootstrapValidator.css">
-<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
