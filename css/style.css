@@ -103,6 +103,10 @@ nav .brand-logo {
 
 }
 
+.header-top .active {
+    color: red;
+}
+
 .dropdown-menu{
     width: 200px !important;
 }
