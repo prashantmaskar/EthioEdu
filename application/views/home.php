@@ -59,7 +59,7 @@
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/news_detail'?>">READ MORE</a>
+                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/news'?>">READ MORE</a>
                                         </li>
 
                                     </ul>

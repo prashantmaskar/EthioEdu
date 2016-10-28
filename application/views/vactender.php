@@ -44,37 +44,37 @@
                             <div class="vacancy_list_wrap">
                                 <ul class="vacancy_list">
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="vacancy_link">
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
                                             <span class="vacancy_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">14-Aug-2016</span>&nbsp;[13:40:50]</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
