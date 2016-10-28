@@ -49,16 +49,16 @@
                                         Latest News
                                     </h5>
                                     <ul>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="http://localhost/ethioedu/index.php/news_detail">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
                                         <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
                                         </li>
 
