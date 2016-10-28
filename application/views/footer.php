@@ -9,11 +9,11 @@
                     <h5 class="red-text">Navigation</h5>
                     <ul>
                         <li><a class="white-text" href="#">HOME</a></li>
-                        <li><a class="white-text" href="#">LATEST NEWS</a></li>
-                        <li><a class="white-text" href="#">SCHOOLS</a></li>
-                        <li><a class="white-text" href="#">COURSES</a></li>
-                        <li><a class="white-text"  href="#">VACANCY/TENDER</a></li>
-                        <li><a class="white-text" href="#">CONNECT TO ME</a></li>
+                        <li><a class="white-text" href="<?php echo base_url() . 'index.php/news' ?>">LATEST NEWS</a></li>
+                        <li><a class="white-text" href="<?php echo base_url() . 'index.php/schools' ?>">SCHOOLS</a></li>
+                        <li><a class="white-text" href="<?php echo base_url() . 'index.php/course' ?>">COURSES</a></li>
+                        <li><a class="white-text"  href="<?php echo base_url() . 'index.php/vactender' ?>">VACANCY/TENDER</a></li>
+                        <li><a class="white-text" href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
                         <li><a class="white-text" href="#">SERVICE</a></li>
 						<li><a class="white-text" href="<?php echo base_url().'index.php/PrivacyPolicy'?>">PRIVACY POLICY</a></li>
                         <li><a class="white-text" href="#">HOW TO PAY USING <span class="red-text"> M-BIRR</span> / <span class="red-text"> Hello-Cash</span></a></li>
