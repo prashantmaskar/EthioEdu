@@ -18,7 +18,7 @@
                         <div class="col m12 s12 ">
                             <div class="news_heading ">
                                 <span>Posted: 28-Jun-2016 [10:23:16] into Post-UTME by Peteworld for school | 155 Comments </span>
-                                <h1>FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded</h1>
+                                <h1 >FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded</h1>
                             </div>
                         </div>
 

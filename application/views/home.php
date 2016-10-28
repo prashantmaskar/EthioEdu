@@ -59,7 +59,7 @@
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
                                         <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/news_detail'?>">READ MORE</a>
                                         </li>
 
                                     </ul>
@@ -70,17 +70,17 @@
                                     Search For School
                                 </h5>
                                 <ul>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
                                     </li>
 
 
@@ -89,17 +89,17 @@
                                     Universities
                                 </h5>
                                 <ul>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
                                     </li>
 
                                 </ul></div>
@@ -115,14 +115,14 @@
                                         Coming Events
                                     </h5>
                                     <ul>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="#">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="#">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="#">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="#">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="#">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
 
 
-                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/event'?>">READ MORE</a>
                                         </li>
 
                                     </ul>
@@ -133,17 +133,17 @@
                                     List Of Vacancy/Tender
                                 </h5>
                                 <ul>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/vactender'?>" >READ MORE</a>
                                     </li>
 
 
