@@ -160,20 +160,3 @@
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 
 
-<script>
-$(document).ready(function() {
-    $('#connectme').bootstrapValidator({
-        fields: {
-            choiceage: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter course name!!!..'
-                    }
-                }
-            },
-			
-			
-        }
-    });
-}); 
-</script>
