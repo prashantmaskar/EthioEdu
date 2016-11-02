@@ -18,6 +18,7 @@
                     <div class="content_sec add-school">
                         <h1 class="add_title">Add/Edit Schools</h1>
                         <div class="instrction_box">
+                        <?php //echo $uid; ?>
                             EthioEdu is the leading educational directory in Ethiopia and we offer two options for listing your institution.
                             <ul><li><strong>Free/Basic Listing</strong> - Due to workload, free listings take a longer time (Upto a month and not guaranteed) to appear online and are placed below paid/premium listings. Only basic information is published.</li>
                                 <li><strong>Paid/Premium listings</strong> - Premium listings appear online within 24 hours of payment. They are usually placed among the top in the colleges listings page. We publish detailed institution's information for premium listing. The cost is  1,000 Birr per year only.</li>
@@ -34,7 +35,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                 <form id="homeaddschoolform" action="#" method="post">
+                                                 <form id="homeaddschoolform" action="<?php echo site_url('index.php/addschool')?>" method="post">
                                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice">
 
@@ -93,7 +94,7 @@
                                                        </div>                                                              
                                                                
                                                             <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="choice2">
+                                                        <select class="form-control browser-default" name="choice4">
 
                                                             <option value="">Other catagogory</option>
                                                              <option value="Account">Account </option>
@@ -261,7 +262,7 @@
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrapValidator.js"></script> -->
 <script type="text/javascript" src="../js/addschool.js"></script>
 
 

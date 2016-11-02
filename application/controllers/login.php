@@ -25,7 +25,7 @@ class login extends CI_Controller {
              $view_params = array(
                 'm_title' => 'Login Page',
                 'title'   => 'Login Page',
-				'id'  => $res['id'],
+				'id'  => $res['user_id'],
 				'uname'  => $res['username'],
 				'email'  => $res['user_email'],
 				'role'  => $res['user_role'],
