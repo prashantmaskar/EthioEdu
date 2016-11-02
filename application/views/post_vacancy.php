@@ -11,38 +11,38 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="Vacancy_post">
-                                <form method="post" class="col m12" action="<?php echo site_url('index.php/post_vacancy')?>">
-                                    <div class="input-field col s12">
+                                <form id="postvacuncy" method="post" class="col m12" action="<?php echo site_url('index.php/post_vacancy')?>">
+                                    <div class="form-group input-field col s12">
                                         <input id="Caption" name="title" type="text" class="validate">
                                         <label for="Caption">Post Caption</label>
                                     </div>
-                                    <div class="input-field col s12">
+                                    <div class="form-group input-field col s12">
                                         <input id="Sch_name" name="sname" type="text" class="validate">
                                         <label for="Sch_name">School/Collage Name</label>
                                     </div>
-                                    <div class="input-field col s12">
+                                    <div class="form-group input-field col s12">
                                         <input id="no_vacancy" name="vcount" type="text" class="validate">
                                         <label for="no_vacancy">No.of Vacancy</label>
                                     </div>
-                                    <div class="input-field col s12">
+                                    <div class="form-group input-field col s12">
                                         <input id="date" type="date" name="sdate" class="datepicker">
                                         <label for="date">Date of Bidding</label>
                                     </div>
-                                    <div class="input-field col s12">
+                                    <div class="form-group input-field col s12">
                                         <input id="date" name="edate" type="date" class="datepicker">
                                         <label for="date">Last Date of Bidding</label>
                                     </div>
 
-                                    <div class="input-field col s12">
-                                        <select name="vstatus">
-                                            <option value="" disabled selected>Status</option>
-                                            <option value="1">Close</option>
-                                            <option value="2">Open</option>
+                                    <div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="vstatus">
+                                            <option value="">Status</option>
+                                            <option value="Close">Close</option>
+                                            <option value="Open">Open</option>
 
                                         </select>
-                                        <label>Status</label>
+                                        
                                     </div>
-                                    <div class="input-field col s12">
+                                    <div class="form-group input-field col s12">
                                         <textarea name="vdesc" id="Description" class="materialize-textarea"></textarea>
                                         <label for="Description">Description</label>
                                     </div>
@@ -124,3 +124,12 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../js/post_vacuncy-validate.js"></script>

@@ -11,35 +11,35 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="news_add">
-                                <form class="col m12">
-                                    <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                <form id="reportnews" class="col m12">
+                                    <div class=" form-group input-field col s12">
+                                        <input id="Caption" name="caption" type="text" class="validate">
                                         <label for="Caption">News Caption</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <textarea id="Description" class="materialize-textarea"></textarea>
+                                    <div class="form-group input-field col s12">
+                                        <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
                                         <label for="Description">Description</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <select >
-                                            <option value="" disabled selected>Category</option>
-                                            <option value="1">Admission</option>
-                                            <option value="2">Departmental</option>
-                                            <option value="3">Entertainments</option>
-                                            <option value="4">Events</option>
-                                            <option value="5">General</option>
-                                            <option value="6">Part Time</option>
-                                            <option value="7">Full Time</option>
-                                             <option value="8">Sport</option>
-                                             <option value="9">Pre Degree</option>
-                                             <option value="10">Post Degree</option>
-                                             <option value="8">Scholarship</option>
-                                             <option value="8">Other</option>
+                                    <div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="catagory">
+                                            <option value="">Catagory</option>
+                                           
+                                            <option value="Admission">Admission</option>
+                                            <option value="Departmental">Departmental</option>
+                                            <option value="Entertainments">Entertainments</option>
+                                            <option value="Events">Events</option>
+                                            <option value="General">General</option>
+                                            <option value=">Part Time">Part Time</option>
+                                            <option value="Full Time">Full Time</option>
+                                             <option value="Sport">Sport</option>
+                                             <option value="Pre Degree">Pre Degree</option>
+                                             <option value="Post Degree">Post Degree</option>
+                                             <option value="Scholarship">Scholarship</option>
+                                             <option value="Other">Other</option>
                                         </select>
-                                        <label>Category</label>
                                     </div>
-                                    <div class="file-field input-field col s12">
-                                        <div class="btn">
+                                    <div class="form-group file-field input-field col s12">
+                                        <div class="btn" name="upload">
                                             <span>Attach Photo</span>
                                             <input type="file" multiple>
                                         </div>
@@ -47,20 +47,20 @@
                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                         </div>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="author" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="author" type="text" name="auther" class="validate">
                                         <label for="author">News written By</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="date" type="date" class="datepicker">
+                                    <div class="form-group input-field col s12">
+                                        <input id="date" type="date" name="date" class="datepicker">
                                         <label for="date">Date of Posting</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="source_link" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="source_link" type="text" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <input id="p_caption" type="text" class="validate">
+                                    <div class="form-group input-field col s12">
+                                        <input id="p_caption" name="p_caption"type="text" class="validate">
                                         <label for="p_caption">Photo Caption</label>
                                     </div>
                                     <div class="col s5 offset-s5">
@@ -148,3 +148,14 @@
             </div>
         </div>
        <?php $this->load->view('footer'); ?>
+
+
+       <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../js/reportnews-validate.js"></script>
+
+
+
+       
