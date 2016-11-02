@@ -47,7 +47,7 @@
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
                                     
@@ -55,49 +55,49 @@
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
 									<li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title">School development policy of Ethiopia?</span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
                                             </span></span>
                                     </li>
                                    
