@@ -41,7 +41,7 @@
 
                                                             <option value="">Registration type</option>
                                                              <option value="Normal Registration">Normal Registration</option>
-                                                            <option value="Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)</option>
+                                                            <option value="Premium Registration">Premium Registration</option>
                                                         
                                                         </select>
                                                        </div>
