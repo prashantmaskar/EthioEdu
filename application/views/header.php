@@ -8,6 +8,14 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
+         
+  
+
+
+
+
+
+
 
     </head>
     <body>

@@ -21,15 +21,17 @@ $(document).ready(function() {
                     }
                 }
             },
-            fullname:{
+             fullname: {
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter Full name!!!'
-
+                        message:'full name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
                     }
                 }
             },
-        
             email:{
                 validators:{
                     notEmpty:{

@@ -8,9 +8,13 @@ $(document).ready(function() {
         },*/
         fields: {
             first_name: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please enter firtst name!!!..'
+                validators:{
+                    notEmpty:{
+                        message:'first name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
                     }
                 }
             },

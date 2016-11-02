@@ -22,10 +22,13 @@ $(document).ready(function() {
                 }
             },
             fullname:{
-                validators:{
+                 validators:{
                     notEmpty:{
-                        message:  ' please Enter Full name!!!'
-
+                        message:'full name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
                     }
                 }
             },
@@ -276,7 +279,6 @@ $(document).ready(function() {
                 }
                }
            },
-          
         }
     });
 });
