@@ -3,7 +3,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class addschool extends CI_Controller {
-
     /**
      * Index Page for this controller.
      *
@@ -19,7 +18,7 @@ class addschool extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-
+    public $res;
     public function __construct()
     {
         parent::__construct();
@@ -31,23 +30,21 @@ class addschool extends CI_Controller {
 
 
     public function index() {
-        // $res = $this->init_models->getuserid();
         $view_params = array(
             'm_title' => 'Add School',
             'title' => 'Add School',
-          //  'uid'  => $res['user_id'],
         );
         $this->load->view('addschool',$view_params);
     
-     if(isset($_POST['action'])){
+ /*    if(isset($_POST['action'])){
         $this->insertuserdata();
         } 
-
-      /*   if(isset($_POST['action'])){
-        $this->get_user_id();
-        } */
-
+*/
       if(isset($_POST['action'])){
+        $this->get_user_id();
+        }  
+
+    if(isset($_POST['action'])){
         $this->insertschooldata();
         } 
     }
@@ -69,14 +66,16 @@ class addschool extends CI_Controller {
 }
 
 
- function get_user_id(){
-        
+function get_user_id(){
+    $res = $this->init_models->getueserid();
+        $data = array( 
 
-        $res = $this->init_models->getuserid();
-         $view_params = array(
-                'uid'  => $res['user_id'],
+            'uid'  => $res['user_id'],
+
             );
-         $this->load->view('addschool',$view_params);
+echo $res['user_id'];
+
+          
 }
 
 
@@ -109,7 +108,7 @@ function insertschooldata(){
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
-                'user_id' => $insert_id
+               // 'user_id' => $this->uid,
                 );
 
      if ($this->init_models->addschooldata($data))
@@ -118,3 +117,4 @@ function insertschooldata(){
             }
 }
 }
+
