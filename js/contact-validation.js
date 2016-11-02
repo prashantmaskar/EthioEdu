@@ -8,9 +8,13 @@
         },*/
         fields: {
             full_name: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter the full name!!!..'
+                validators:{
+                    notEmpty:{
+                        message:'full name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
                     }
                 }
             },
