@@ -255,7 +255,7 @@ and open the template in the editor.
                                                     </div>
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish
-                                                            <i class="material-icons right">send</i>
+                                                            <i class="material-icons right"></i>
                                                         </button>
                                                     </div>
                                                 </form>
@@ -271,92 +271,9 @@ and open the template in the editor.
                         </body>
 
                         </html>
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
 <script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
-
-<script>
-$(document).ready(function() {
-
-    $('#addnews').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
-            caption: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter caption!!!..'
-                    }
-                }
-            },
-
-            upload: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must upload a photo!!!..'
-                    }
-                }
-            },
-
-
-         Description:{
-                validators:{
-                    notEmpty:{
-                        message:  ' Description required!!!'
-                    },
-                    stringLength:{
-                        message:'post Description must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
-                    }
-                }
-             },
-
-
-            author: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter auther name!!!..'
-                    }
-                }
-            },
-             
-            date: {
-                validators: {
-                    notEmpty: {
-                        message: ' date can not be not Empty!!!..'
-                    }
-                }
-            },
-                source_link: {
-                validators: {
-                    notEmpty: {
-                        message: ' enter source link!!!..'
-                    }
-                }
-            },
-                p_caption: {
-                validators: {
-                    notEmpty: {
-                        message: ' enter photo caption!!!..'
-                    }
-                }
-            },
-
-
-               
-             
-
-
-
-
-             }
-    });
-});
-</script>
+<script type="text/javascript" src="../../js/admin/admin-Addnews.js"></script>

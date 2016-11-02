@@ -31,9 +31,10 @@
           <label for="email_adress">Email Address</label>
        </div>
 	            <div class="form-group input-field col s12">
-               <select class="form-control" name="community">
-                 <option value="" >School Community:</option>
-                 <option value="Abdul-gusau Polytechnic, Nigeria">Abdul-gusau Polytechnic, Nigeria</option>
+                                        <select class="form-control browser-default" name="community">
+                                            <option value="">School community</option>
+                                           
+                                          <option value="Abdul-gusau Polytechnic, Nigeria">Abdul-gusau Polytechnic, Nigeria</option>
                  <option value="Abia State College Of Education, Nigeria">Abia State College Of Education, Nigeria</option>
                  <option value="Abia State College of Health Sciences and Management Technology, Nigeria">Abia State College of Health Sciences and Management Technology, Nigeria</option>
                  <option value="Abia State polytechnic , Nigeria">Abia State polytechnic , Nigeria</option>
@@ -49,13 +50,12 @@
                  <option value="Adeleke University, Nigeria">Adeleke University, Nigeria</option>
                  <option value="Adeniran Ogunsanya College of Education, Nigeria">Adeniran Ogunsanya College of Education, Nigeria</option>
                
-              </select>
-                <label>School Community</label>
-       </div>
+                                        </select>
+                                    </div>
 
 	   <div class="form-group input-field col s12">
-               <select class="form-control" name="msg_cate"  id="msg_cate">
-<option value="">School Community:</option>
+               <select class="form-control browser-default" name="msg_cate"  id="msg_cate">
+<option value="">School Community</option>
 <option value="Advert Placement">Advert Placement</option>
 <option value="Complain">Complain</option>
 <option value="Suggestion">Suggestion</option>
@@ -109,98 +109,6 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 
-
-<script>
-
-       $(document).ready(function() {
-
-    $('#contactform').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
-            full_name: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter the full name!!!..'
-                    }
-                }
-            },
-              email:{
-                validators:{
-                    notEmpty:{
-                         message:'Email address is required!!!'
-                    },
-                    emailAddress:{
-                        message:'The input is not a valid email adddress!!'
-                    }
-                }
-            },
- 
-
-           community : {
-                validators: {
-                    notEmpty: {
-                        message: ' please select community!!!..'
-                    }
-                }
-            },
-
-            msg_cate:{
-            	validators:{
-            		notEmpty:{
-            			message:'please select community'
-            		}
-            	}
-            },
-
-                  subject: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter subject!!!..'
-                    }
-                }
-            },
-             message:{
-                validators:{
-                    notEmpty:{
-                        message:  ' please write some messsage !!!'
-                    },
-                    stringLength:{
-                        message:'post descreeption must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
-                    }
-                }
-             },
- 
-              
-                  fileformat: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select file format!!!..'
-                    }
-                }
-            },
- 
-               
-                  upload1: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must upload file!!!..'
-                    }
-                }
-            },
- 
+<script type="text/javascript" src="../js/contact-validation.js"></script>
 
 
-
-
-        }
-    });
-});
-
-</script>

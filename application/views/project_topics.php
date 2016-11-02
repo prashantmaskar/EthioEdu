@@ -34,12 +34,12 @@
                                     <div class="form-group input-field col s12">
                                        <select class="form-control browser-default" name="catagory">
                                             <option value="" disabled selected>Category</option>
-                                            <option value="1">Admission</option>
-                                            <option value="2">Departmental</option>
-                                            <option value="3">Entertainments</option>
-                                            <option value="4">Events</option>
+                                            <option value="Admission">Admission</option>
+                                            <option value="Departmental">Departmental</option>
+                                            <option value="Entertainments">Entertainments</option>
+                                            <option value="Events">Events</option>
                                             <option value="5">General</option>
-                                            <option value="6">Part Time</option>
+                                            <option value="General">Part Time</option>
                                             <option value="7">Full Time</option>
                                             <option value="8">Sport</option>
                                             <option value="9">Pre Degree</option>
@@ -51,7 +51,7 @@
                                    
                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="fileformat">
-                                                            <option  value="File Format">File Format</option>
+                                                            <option  value="">File Format</option>
                                                             <option value="Word">Word</option>
                                                             <option value="Pdf">Pdf</option>
                                                             <option value="Rtf">Rtf</option>
@@ -91,73 +91,9 @@
         <?php $this->load->view('footer'); ?>
 
 
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+      <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../js/admin/admin-project-topic.js"></script>
-
-
-<script>
-   $(document).ready(function() {
-
-    $('#project_topic').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
-            Project_name: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter the name of project!!!..'
-                    }
-                }
-            },
-              course_name: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter cource name !!!..'
-                    }
-                }
-            },
- 
-
-                  catagory: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select catagory!!!..'
-                    }
-                }
-            },
- 
-              
-                  fileformat: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select file format!!!..'
-                    }
-                }
-            },
- 
-               
-                  upload1: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must upload file!!!..'
-                    }
-                }
-            },
- 
+<script type="text/javascript" src="../js/project_topics-validate.js"></script>
 
 
 
-
-        }
-    });
-});
-
-
-
-</script>

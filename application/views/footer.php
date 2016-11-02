@@ -27,7 +27,7 @@
                         <li>No 48, Season street,</li>
                         <li>Livingstone,</li>
                         <li>ETHIOPIA, Africa</li>
-                        <li>Email : <a href="mailto:info@example.com">info@ethioedu.com</a></li>
+                        <li>Email : <a href="#">info@ethioedu.com</a></li>
                     </ul>
                 </div>
                 <div class="col l3 s12">
