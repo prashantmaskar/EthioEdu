@@ -231,7 +231,7 @@ and open the template in the editor.
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn" name="upload">
                                                             <span>Attach Photo</span>
-                                                            <input type="file" multiple>
+                                                            <input type="file"  name="avatar">
                                                         </div>
                                                         <div class="file-path-wrapper">
                                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">

@@ -21,7 +21,7 @@ $(document).ready(function() {
                     }
                 }
             },
-             fullname: {
+             c: {
                 validators:{
                     notEmpty:{
                         message:'full name required'
