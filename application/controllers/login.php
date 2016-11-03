@@ -18,22 +18,75 @@ class login extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form','url'));
+        $this->load->library(array('session', 'form_validation', 'email'));
+        $this->load->database();
+        $this->load->model('init_models');
+    }
+
 	public function index()
 	{
-		$this->load->model('init_models');
-		$res = $this->init_models->getdata();
              $view_params = array(
                 'm_title' => 'Login Page',
                 'title'   => 'Login Page',
-				'id'  => $res['user_id'],
-				'uname'  => $res['username'],
-				'email'  => $res['user_email'],
-				'role'  => $res['user_role'],
             );
-		//$view_params['uname'] = $res['username'];
 		$this->load->view('login',$view_params);
+
+     if(isset($_POST['action'])){
+        $this->get_db_credentils();
+     	} 
+
+
+     if(isset($_POST['action'])){
+        $this->checkcredentials();
+     	}
 			
 	}
-	
-	
+
+
+
+	public function get_db_credentils(){
+
+		$row = $this->init_models->get_user_credentials();
+        $result = array( 
+
+           'uname'  => $row['username'],
+           'pass'  => $row['password'],
+           'email'  => $row['user_email'],
+
+            );
+        //echo $row['username'];
+       // echo $row['password'];
+        return $result;
+
+	}
+
+	public function checkcredentials(){
+
+    $dbdata = $this->get_db_credentils();
+    	$username = $this->input->post("username");
+		 $pass = $this->input->post("password");
+    	//echo $dbdata['uname']."<br/>".$dbdata['pass'];
+
+    	if($username == $dbdata['uname'] && $pass == $dbdata['pass'] ){
+    		echo"<script>alert('Logged IN');</script>";
+
+    		$sessdata = array(
+    		   'username'  => $dbdata['uname'],
+               'email'     => $dbdata['email'],
+               'logged_in' => TRUE
+           );
+
+			$this->session->set_userdata($sessdata);
+
+			//$name = $this->session->userdata('username');
+			redirect('index.php/home');
+
+    	}
+	}
+
 }

@@ -10,9 +10,9 @@
       }  
 	  
       //Select User tables data	  
-      public function getdata()  
+      public function get_user_credentials()  
       {  
-				$query = $this->db->query("SELECT * FROM tbl_users ORDER BY user_id DESC LIMIT 1");
+				$query = $this->db->query("SELECT username, password, user_email FROM tbl_users");
 				return $query->row_array();
       }
 
@@ -34,8 +34,6 @@
       public function addschooluser($data)  
       {  
             return $this->db->insert('tbl_users', $data);
-            $userid = $this->db->insert_id();
-            return $userid;
       }
 
 
@@ -44,6 +42,7 @@
       {  
             $query = $this->db->query("SELECT user_id FROM tbl_users ORDER BY user_id DESC LIMIT 1");
             return $query->row_array();
+
       }
 
 

@@ -7,10 +7,10 @@ class addschool extends CI_Controller {
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -18,7 +18,7 @@ class addschool extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public $userid;
+    //public $uname;
     public function __construct()
     {
         parent::__construct();
@@ -36,23 +36,24 @@ class addschool extends CI_Controller {
         );
         $this->load->view('addschool',$view_params);
     
-     if(isset($_POST['action'])){
+    if(isset($_POST['action'])){
         $this->insertuserdata();
      } 
 
-   /*   if(isset($_POST['action'])){
+     if(isset($_POST['action'])){
         $this->get_user_id();
-        }  */
+        }  
 
-    if(isset($_POST['action'])){
+  if(isset($_POST['action'])){
         $this->insertschooldata();
         } 
-    }
+    } 
 
 
         
 
      function insertuserdata(){
+        //echo "</script>alert('userdata');</script>";
         $data = array( 
                 'username' => $this->input->post('user_name'),
                 'password' => $this->input->post('password'),
@@ -60,31 +61,27 @@ class addschool extends CI_Controller {
                 'user_role' => 'admin',
 
             );
-
         $this->init_models->addschooluser($data);
-        echo $userid;
-          
 }
 
 
-/* function get_user_id(){
-    $res = $this->init_models->getueserid();
+ function get_user_id(){
+    $ress = $this->init_models->getueserid();
         $data = array( 
 
-            'uid'  => $res['user_id'],
+           'uid'  => $ress['user_id'],
 
             );
-echo $res['user_id'];
-
+        return $data;
           
 }
 
-*/
 
 
 
 function insertschooldata(){
-
+    $getid = $this->get_user_id();
+//echo $tempp['uname'];
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
@@ -109,13 +106,17 @@ function insertschooldata(){
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
-               // 'user_id' => $this->uid,
+                'user_id' => $getid['uid'],
                 );
 
      if ($this->init_models->addschooldata($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    echo"<script>alert('Registration Success');</script>";
             }
 }
+
+
+
+
 }
 

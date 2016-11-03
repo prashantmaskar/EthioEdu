@@ -13,7 +13,7 @@
     <body class="red-gradient-bg">
         <div id="login-page" class="row">
             <div class="col s3 offset-s4 z-depth-2 card-panel">
-                <form class="login-form">
+                <form class="login-form" action="<?php echo site_url('index.php/login')?>" method="post">
                     <div class="row">
                         <div class="input-field col s12 center">
                             <h4>EthioEdu Login</h4>
@@ -21,13 +21,13 @@
                     </div>
                     <div class="row no-margin">
                         <div class="input-field col s12">
-                            <input id="username" type="text">
+                            <input name="username" id="username" type="text">
                             <label for="username" class="center-align">Username</label>
                         </div>
                     </div>
                     <div class="row no-margin">
                         <div class="input-field col s12">
-                            <input id="password" type="text">
+                            <input name="password" id="password" type="text">
                             <label for="Password" class="center-align">password</label>
                         </div>
                     </div>
@@ -39,7 +39,8 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+                         <!--   <a href="index.html" class="btn waves-effect waves-light col s12">Login</a> -->
+                            <button class="btn waves-effect waves-light col s12" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Login</button>
                         </div>
                     </div>
                     <div class="row">
@@ -53,7 +54,7 @@
                 </form>
             </div>
         </div>
-		<?php echo $id." ".$uname." ".$email." ".$role; ?>
+		<?php //echo $id." ".$uname." ".$email." ".$role; ?>
         <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/materialize.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/owl.carousel.min.js' ?>"></script>
