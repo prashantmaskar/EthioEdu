@@ -58,7 +58,7 @@ class addschool extends CI_Controller {
                 'username' => $this->input->post('user_name'),
                 'password' => $this->input->post('password'),
                 'user_email' => $this->input->post('email'),
-                'user_role' => 'admin',
+                'user_role' => 'schooluser',
 
             );
         $this->init_models->addschooluser($data);

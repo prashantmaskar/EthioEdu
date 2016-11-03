@@ -24,15 +24,20 @@
             <div class="row">
                 <div class="col s12 ">
                     <ul class="top-nav">
-                        <li><a href="#">INFO@ETHIOEDU.COM<?php echo $this->session->userdata('username'); ?></a></li>
+                        <li><a href="#">INFO@ETHIOEDU.COM</a></li>
 
 
                         <li><a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
                         <li><a class="<?php if($this->uri->segment(1)=="About_us"){echo "active";}?>" href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
                         <li><a class="<?php if($this->uri->segment(1)=="contact"){echo "active";}?>" href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
+                            <?php if (!$this->session->userdata('logged_in'))
+                             { ?>
                         <li><a class="<?php if($this->uri->segment(1)=="sregister"){echo "active";}?>" href="<?php echo base_url() . 'index.php/sregister' ?>">REGISTER </a></li>
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
-
+                            <?php }
+                            else{ ?>
+                            <li><a href="#"><?php echo "Welcome ".$this->session->userdata('username'); ?></a></li>
+                            <?php } ?>
                     </ul>
 
                 </div>
