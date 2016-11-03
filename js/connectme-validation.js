@@ -8,26 +8,41 @@ $(document).ready(function(){
 
  $("#connectme").validate({
         rules: {
-            
+            choiceage: {
+                required: true,
+               
+            },
+            institutions: {
+                required: true,
+                
+            },
+            level: {
+                required: true,
+               
+            },
+            interest: {
+                required: true,
+               
+            }
+        
+        },
+        //For custom messages
+        messages: {
             choiceage:{
-            
-                required: true
+                required: "Select choiceage",
                
             },
              institutions:{
-                required:true
+                required: "select  institutions",
+               
             },
-            level:{
-                required:true
+             level:{
+                required: "select level",
+               
             },
             interest:{
-                required:true
-            }
-           
-        },
-        message:{
-            choiceage:{
-                required:"enter choiceage"
+                required: "select interest",
+               
             }
         },
         //For custom messages
@@ -58,12 +73,15 @@ $(document).ready(function(){
             }
            
         },
-        message:{
-            choiceage:{
-                required:"enter user name"
+        
+        messages:{
+            username:{
+                required:"enter username",
             }
         },
-        //For custom messages
+
+
+
        errorClass:"invalid form-error",
         errorElement : 'div',
         errorPlacement: function(error, element) {

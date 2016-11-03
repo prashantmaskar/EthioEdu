@@ -870,7 +870,7 @@ Contact/Hotline List and Form Csss
 }
 
 .has-error .help-block {
-    color: red;
+    color: #D8000C;
 }
 
 
@@ -890,6 +890,9 @@ connect2Me List and Form Csss
 .connectme_form {
     width: 80%;
     margin: 30px auto;
+}
+#connectme .form-error, #userform .form-error {
+    color: #D8000C;
 }
 .form_heading{
     font-size: 22px;
@@ -1008,6 +1011,7 @@ student Detail Page Info
 .padd_b5{
     padding-bottom: 5px;
 }
+
 /*=================
 Media Query
 ===================*/
