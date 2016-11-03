@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class reportnews extends CI_Controller {
+class header extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -19,7 +19,7 @@ class reportnews extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function __construct()
+     public function __construct()
     {
         parent::__construct();
         $this->load->helper(array('form','url'));
@@ -31,10 +31,10 @@ class reportnews extends CI_Controller {
 
     public function index() {
         $view_params = array(
-            'm_title' => 'Report News',
-            'title' => 'Report News'
+            'm_title' => 'WelCome To EthioEdu',
+            'title' => 'WelCome To EthioEdu'
         );
-        $this->load->view('reportnews',$view_params);
+        $this->load->view('header',$view_params);
     }
 
 }

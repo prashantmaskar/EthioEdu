@@ -5,7 +5,6 @@
                     <div class="service_col z-depth-1  darken-1">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
-                            <?php echo $this->session->userdata('username'); ?>
 
                         </a>
                     </div>

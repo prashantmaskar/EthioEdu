@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col s12 ">
                     <ul class="top-nav">
-                        <li><a href="#">INFO@ETHIOEDU.COM</a></li>
+                        <li><a href="#">INFO@ETHIOEDU.COM<?php echo $this->session->userdata('username'); ?></a></li>
 
 
                         <li><a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>

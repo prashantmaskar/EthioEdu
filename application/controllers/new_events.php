@@ -19,6 +19,16 @@ class new_events extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form','url'));
+        $this->load->library(array('session', 'form_validation', 'email'));
+        $this->load->database();
+        $this->load->model('init_models');
+    }
+
+
     public function index() {
         $view_params = array(
             'm_title' => 'new_events',
