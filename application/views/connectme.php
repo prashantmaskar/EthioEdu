@@ -30,7 +30,7 @@
                                         <label>Between The Age</label>
                                     </div>
                                     <div class="col s12">
-                                        <select >
+                                        <select class="form-control" name="institutions">
                                             <option value="" disabled selected>Institutions</option>
                                             <option value="1">Ethiopian</option>
                                             <option value="2">Ethiopian</option>
@@ -40,7 +40,7 @@
                                         <label>Institutions</label>
                                     </div>
                                     <div class="col s12">
-                                        <select >
+                                        <select ="form-control" name="level">
                                             <option value="" disabled selected>At Level Of</option>
                                             <option value="1">Anything</option>
                                             <option value="2">Student</option>
@@ -49,7 +49,7 @@
                                         <label>At Level Of</label>
                                     </div>
                                     <div class="col s12">
-                                        <select >
+                                        <select class="form-control" name="interest">
                                             <option value="" disabled selected>Special Interest In</option>
                                             <option value="1">Anything</option>
                                             <option value="2">Friendship</option>
@@ -72,9 +72,9 @@
 
                                 <h3>Find User Name</h3>
                                 <div class="col m12 s12">
-                                    <form>
-                                        <div class="input-field col s12">
-                                            <input id="Username" type="text" class="validate">
+                                    <form id="userform" method="post" action="#">
+                                        <div class="form-group input-field col s12">
+                                            <input id="Username" name="username" type="text" class="validate">
                                             <label for="Username">Enter Ethioedu user name</label>
                                         </div>
                                         <div class="new_account input-field col s12">
@@ -158,5 +158,5 @@
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-
-
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/connectme-validation.js"></script>
