@@ -55,7 +55,7 @@
 
 	   <div class="form-group input-field col s12">
                <select class="form-control browser-default" name="msg_cate"  id="msg_cate">
-<option value="">School Community</option>
+<option value="">Message Catagory</option>
 <option value="Advert Placement">Advert Placement</option>
 <option value="Complain">Complain</option>
 <option value="Suggestion">Suggestion</option>

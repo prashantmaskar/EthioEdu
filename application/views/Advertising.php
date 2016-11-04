@@ -30,21 +30,21 @@
                                     <li> 2.3 Million Sessions Per Month [Average]</li>
                                 </ul>
                                 <h4 class="ad_sbtitle red-text bo_bor padd_b5">Let's get started... Let's know what you need. Write us using the form below</h4>
-                                <form class="col m12">
-                                    <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                <form id="advertiseform" class="col m12">
+                                    <div class=" form-group" input-field col s12">
+                                        <input id="Caption" name="Caption" type="text" class="validate">
                                         <label for="Caption">Name</label>
                                     </div>
-                                <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                <div class="form-group" input-field col s12">
+                                        <input id="Caption" name="email" type="email" class="validate">
                                         <label for="Caption">Email</label>
                                     </div>
-                                      <div class="input-field col s12">
-                                        <input id="Caption" type="text" class="validate">
+                                      <div class="form-group input-field col s12">
+                                        <input id="Caption" name="contact" type="number" class="validate">
                                         <label for="Caption">Contact</label>
                                     </div>
                                     <div class="input-field col s12">
-                                        <select >
+                                        <select class="form-control" name="catagory" >
                                             <option value="" disabled selected>Category</option>
                                             <option value="1">Admission</option>
                                             <option value="2">Departmental</option>
@@ -89,3 +89,10 @@
             </div>
         </div>
        <?php $this->load->view('footer'); ?>
+
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/advertising-validation.js"></script>
+
