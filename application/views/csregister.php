@@ -1,11 +1,15 @@
 <?php  $this->load->view('header'); ?>
 <?php
-               $_SESSION['schooltype']= $this->input->post('schooltype');
-               $_SESSION['school']= $this->input->post('school');
-               $_SESSION['level']= $this->input->post('level');
-               $_SESSION['department']= $this->input->post('department');
-            echo   $_SESSION['username']= $this->input->post('username');
-               $_SESSION['password']= $this->input->post('password');
+$this->session->set_userdata(array(               
+                'schooltype' => $this->input->post('schooltype'),
+               'school' => $this->input->post('school'),
+               'level' => $this->input->post('level'),
+               'dept' => $this->input->post('department'),
+               'suname' => $this->input->post('username'),
+               'spass' => $this->input->post('password'),
+               ));
+
+//$this->session->set_userdata($newdata);
 
 ?>
 

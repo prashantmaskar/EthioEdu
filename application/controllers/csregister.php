@@ -45,23 +45,31 @@ echo $_SESSION['username'];
 	
  function addfrontuser(){
         
-        $_SESSION['schooltype'];
+     /*   $_SESSION['schooltype'];
         $_SESSION['school'];
         $_SESSION['level'];
         $_SESSION['department'];
-      echo $_SESSION['username'];
-        $_SESSION['password'];
+        $_SESSION['username'];
+        $_SESSION['password'];  */
+$this->session->all_userdata();
+      //echo  $session_id = $this->session->userdata('suname');
+echo $suname    = $this->session->userdata('suname');
+   echo $pass   = $this->session->userdata('suname');
+
 
         $data = array( 
 
-                'username' => 'abc',
-                'password' => 'ddddd',
+                'username' => $this->session->userdata('suname'),
+                'password' => $_SESSION['password'],
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
             );
-       $this->init_models->add_front_user($data);
-
+     //  $this->init_models->add_front_user($data);
+if ($this->init_models->add_front_user($data))
+            {
+    echo"<script>alert('Registration Success');</script>";
+            }
         //echo "sdfdsfsdfsdfsdfsd". $_SESSION['schooltype'];
 }
 
