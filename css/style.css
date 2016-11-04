@@ -1011,6 +1011,13 @@ student Detail Page Info
 .padd_b5{
     padding-bottom: 5px;
 }
+.Advertising {
+    width: 80%;
+    margin: 30px auto;
+}
+#Advertising .form-error, #advertiseform .form-error {
+    color: #D8000C;
+}
 
 /*=================
 Media Query
