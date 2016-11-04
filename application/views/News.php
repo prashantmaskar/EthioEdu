@@ -29,11 +29,11 @@
                                     <p class="black-text">Sort News:</p>
                                 </div>
                                 <div class="input-field col s4">
-                                           <input id="startdate" type="date" class=" datepicker validate" name="d1" >
+                                           <input id="startdate" type="date" class=" datepicker validate" name="newsd1" >
                                         <label for="Caption">News From</label>
                                     </div>
                                 <div class="input-field col s4">
-                                        <input id="enddate" type="date" class=" datepicker validate" name="d2">
+                                        <input id="enddate" type="date" class=" datepicker validate" name="newsd2">
                                         <label for="Caption">News To</label>
                                     </div>
                                 <div class="input-field col s2">
@@ -165,11 +165,12 @@ $('.datepicker').pickadate({
 
             if((date2_ms -date1_ms ) <0 )
             {
-              alert('End date cannot be a previous date!');
+			 this.clear();
+			  alert('End date cannot be a previous date!');
               $('#startdate').val(d2);  
-}
+			  }
             },
-              today: 'Today',
+			  today: 'Today',
               clear: 'Clear',
               close: 'Cancel'
              // showMonthsShort: false
