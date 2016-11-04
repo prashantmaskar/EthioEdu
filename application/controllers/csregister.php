@@ -35,37 +35,50 @@ class csregister extends CI_Controller {
             'title' => 'Registration'
         );
         $this->load->view('csregister',$view_params);
-		
-echo $_SESSION['username'];
         if(isset($_POST['laction'])){
+
         $this->addfrontuser();
-     } 
+
+        
+        $sdata['schooltype'] = $_SESSION['schooltype'];
+        $sdata['school']  = $_SESSION['school'];
+        $sdata['level']  = $_SESSION['level'];
+        $sdata['department']  = $_SESSION['department'];
+        echo $sdata['username']  = $_SESSION['username'];
+        $sdata['password']  = $_SESSION['password'];
+     }
+ 
 
     }
-	
- function addfrontuser(){
-        
-     /*   $_SESSION['schooltype'];
-        $_SESSION['school'];
-        $_SESSION['level'];
-        $_SESSION['department'];
-        $_SESSION['username'];
-        $_SESSION['password'];  */
-$this->session->all_userdata();
-      //echo  $session_id = $this->session->userdata('suname');
-echo $suname    = $this->session->userdata('suname');
-   echo $pass   = $this->session->userdata('suname');
 
+
+
+   /* public function getsessiondata(){
+echo"<script>alert('1');</script>";
+        $sdata['schooltype'] = $_SESSION['schooltype'];
+        $sdata['school']  = $_SESSION['school'];
+        $sdata['level']  = $_SESSION['level'];
+        $sdata['department']  = $_SESSION['department'];
+       echo $sdata['username']  = $_SESSION['username'];
+        $sdata['password']  = $_SESSION['password'];
+
+        $this -> addfrontuser($sdata);
+
+    }
+*/
+     
+      
+	
+ public function addfrontuser(){
 
         $data = array( 
-
-                'username' => $this->session->userdata('suname'),
+                'username' => $sdata['username'],
                 'password' => $_SESSION['password'],
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
             );
-     //  $this->init_models->add_front_user($data);
+
 if ($this->init_models->add_front_user($data))
             {
     echo"<script>alert('Registration Success');</script>";
