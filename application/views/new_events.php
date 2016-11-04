@@ -41,7 +41,7 @@
 								 <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach Photo</span>
-                                            <input name="attach" type="file" multiple>
+                                            <input name="avatar" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
@@ -59,7 +59,7 @@
                                
                            
                                 <div class="new_account input-field col s12">
-                                    <button class="btn waves-effect waves-light red" type="submit" name="action">Register
+                                    <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
                                         </button>
                                     
                                 </div>

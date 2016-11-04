@@ -215,13 +215,13 @@ and open the template in the editor.
                                                         <label for="Description">Description</label>
                                                     </div>
 
-                                                    <div class="form-group file-field input-field col s12">
-                                                        <div class="btn" name="uploadimg">
-                                                            <span>Attach Image</span>
-                                                            <input type="file" multiple>
+                                                     <div class="form-group file-field input-field col s12">
+                                                        <div class="btn">
+                                                            <span>Attach Photo</span>
+                                                            <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Image">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                                         </div>
                                                     </div>
                                                     <div class=" form-group input-field col s12">

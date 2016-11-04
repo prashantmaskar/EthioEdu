@@ -38,17 +38,26 @@ $(document).ready(function() {
                 }
              },
 
-                   attach: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please attach file!!!..'
+           avatar:{
+            validators:{
+                notEmpty:{
+                    message:'please select an image'
+                },
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
                     }
-                }
-            },
+                 }
+           },
+
+
+
              postedby: {
                 validators: {
                     notEmpty: {
-                        message: 'Please enter subject!!!..'
+                        message: 'required field!!!..'
                     }
                 }
             },
