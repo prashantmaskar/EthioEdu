@@ -16,6 +16,7 @@
                         <li><a class="white-text" href="<?php echo base_url() . 'index.php/connectme' ?>">CONNECT TO ME</a></li>
                         <li><a class="white-text" href="#">SERVICE</a></li>
 						<li><a class="white-text" href="<?php echo base_url().'index.php/PrivacyPolicy'?>">PRIVACY POLICY</a></li>
+                        <li><a class="white-text" href="<?php echo base_url().'index.php/Advertising'?>">ADVERTISE WITH US</a></li>
                         <li><a class="white-text" href="#">HOW TO PAY USING <span class="red-text"> M-BIRR</span> / <span class="red-text"> Hello-Cash</span></a></li>
                     </ul>
 

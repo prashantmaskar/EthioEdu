@@ -1,4 +1,14 @@
 <?php  $this->load->view('header'); ?>
+<?php
+               $_SESSION['schooltype']= $this->input->post('schooltype');
+               $_SESSION['school']= $this->input->post('school');
+               $_SESSION['level']= $this->input->post('level');
+               $_SESSION['department']= $this->input->post('department');
+            echo   $_SESSION['username']= $this->input->post('username');
+               $_SESSION['password']= $this->input->post('password');
+
+?>
+
         <div class="regist-wrap ">
             <div class="row">
                 <div class="col s12 m9">
@@ -7,7 +17,7 @@
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
 
-                                <form id="csregister" action="/controllers/csregister/register" method="post" class="row">
+                                <form id="csregister" action="<?php echo site_url('index.php/csregister')?>" method="post" class="row">
                                     <h4 class="red-text">personal Information</h4>
                                     <div class="form-group input-field col s12">
                                         <input id="first_name" name="first_name" type="text" class="validate">
@@ -83,7 +93,7 @@
                                         <label for="myhobby">My Hobby</label>
                                     </div>
                                     <div class="col m12 margin-t-15 center-align">
-                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Register
+                                        <button class="btn waves-effect waves-light red" type="submit" name="laction">Register
                                         </button>
                                     </div>
                                 </form>
@@ -155,6 +165,6 @@
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrapValidator.js"></script> -->
 
 <script type="text/javascript" src="../js/csregister.js"></script>

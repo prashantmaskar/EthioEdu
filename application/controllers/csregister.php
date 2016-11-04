@@ -35,19 +35,34 @@ class csregister extends CI_Controller {
             'title' => 'Registration'
         );
         $this->load->view('csregister',$view_params);
-		$this->register();
+		
+echo $_SESSION['username'];
+        if(isset($_POST['laction'])){
+        $this->addfrontuser();
+     } 
+
     }
 	
+ function addfrontuser(){
+        
+        $_SESSION['schooltype'];
+        $_SESSION['school'];
+        $_SESSION['level'];
+        $_SESSION['department'];
+      echo $_SESSION['username'];
+        $_SESSION['password'];
 
-    function register()
-    {
-		  $data = array(
-                'uname' => $this->input->post('first_name'),
-                'email' => $this->input->post('email'),
-                'password' => $this->input->post('phone_number'),
-				'role' => $this->input->post('last_name'),
-            );  
-		
-	}
+        $data = array( 
+
+                'username' => 'abc',
+                'password' => 'ddddd',
+                'user_email' => $this->input->post('email'),
+                'user_role' => 'schooluser',
+
+            );
+       $this->init_models->add_front_user($data);
+
+        //echo "sdfdsfsdfsdfsdfsd". $_SESSION['schooltype'];
+}
 
 }

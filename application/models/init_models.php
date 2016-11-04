@@ -52,6 +52,13 @@
             return $this->db->insert('tbl_school_meta', $data);
       }
 
+
+       //Insert User registration data
+      public function add_front_user($data)  
+      {  
+            return $this->db->insert('tbl_users', $data);
+      }
+
 	  
    }  
 ?>  

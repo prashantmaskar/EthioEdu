@@ -19,27 +19,27 @@
                                                         <select class="form-control browser-default" name="schooltype">
 
                                                             <option value="">select your school type</option>
-                                                             <option value="Male">anything</option>
-                                                            <option value="female">friendship</option>
-                                                             <option value="female">friendship</option>
+                                                             <option value="anything">anything</option>
+                                                            <option value="friendship">friendship</option>
+                                                             <option value="friendship">friendship</option>
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="school">
 
                                                             <option value="">select your school</option>
-                                                             <option value="Male">anything</option>
-                                                            <option value="female">friendship</option>
-                                                             <option value="female">friendship</option>
+                                                             <option value="anything">anything</option>
+                                                            <option value="anything">anything</option>
+                                                             <option value="friendship">friendship</option>
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="level">
 
                                                             <option value="">select level</option>
-                                                             <option value="Male">anything</option>
-                                                            <option value="female">friendship</option>
-                                                             <option value="female">friendship</option>
+                                                             <option value="anything">anything</option>
+                                                            <option value="friendship">friendship</option>
+                                                             <option value="friendship">friendship</option>
                                                         </select>
                                     </div>
                                     <div class="form-group input-field col s12">
@@ -66,7 +66,7 @@
                                         <label for="Chic">Enable Connect2me! Allow my profile to be viewed so people can connect2me</label>
                                     </div>
                                     <div class="col m12 margin-t-15 center-align">
-                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Register:continue
+                                        <button class="btn waves-effect waves-light red" type="submit" name="faction">Register:continue
 
                                         </button>
                                     </div>
@@ -144,5 +144,5 @@
 
 -->
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrapValidator.js"></script> -->
 <script type="text/javascript" src="../js/sregister-validate.js"></script>
