@@ -59,6 +59,22 @@
             return $this->db->insert('tbl_users', $data);
       }
 
+       //Select User tables data    
+      public function getfrontueserid()  
+      {  
+            $query = $this->db->query("SELECT user_id FROM tbl_users ORDER BY user_id DESC LIMIT 1");
+            return $query->row_array();
+
+      }
+
+        //Insert School Information data
+      public function adduserdetails($data)  
+      {  
+            return $this->db->insert('tbl_user_meta', $data);
+      }
+
+
+
 	  
    }  
 ?>  

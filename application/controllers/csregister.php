@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class csregister extends CI_Controller {
 
+
+
     /**
      * Index Page for this controller.
      *
@@ -26,67 +28,96 @@ class csregister extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+
+          
     }
-
-
     public function index() {
+
         $view_params = array(
             'm_title' => 'Registration',
             'title' => 'Registration'
         );
         $this->load->view('csregister',$view_params);
-        if(isset($_POST['laction'])){
 
-        $sdata['schooltype'] = $_SESSION['schooltype'];
-        $sdata['school']  = $_SESSION['school'];
-        $sdata['level']  = $_SESSION['level'];
-        $sdata['department']  = $_SESSION['department'];
-        echo $sdata['username']  = $_SESSION['username'];
-        $sdata['password']  = $_SESSION['password'];
 
-         $this -> addfrontuser($sdata);
-     }
-
-/* if(isset($_POST['laction'])){
-echo "<script>alert('lastfunction');</script>";
+ if(isset($_POST['laction'])){
         $this->addfrontuser();
  
-} */
-    }
+} 
+
+if(isset($_POST['laction'])){
+        $this->get_frontuser_id();
+ 
+} 
+
+if(isset($_POST['laction'])){
+        $this->user_details();
+        }  
 
 
-
-   /* public function getsessiondata(){
-echo"<script>alert('1');</script>";
-        $sdata['schooltype'] = $_SESSION['schooltype'];
-        $sdata['school']  = $_SESSION['school'];
-        $sdata['level']  = $_SESSION['level'];
-        $sdata['department']  = $_SESSION['department'];
-       echo $sdata['username']  = $_SESSION['username'];
-        $sdata['password']  = $_SESSION['password'];
-
-        $this -> addfrontuser($sdata);
+        $this->form_validation->set_rules('username', 'Username', 'required');
 
     }
-*/
-     
-      
-	
+
+
+
  public function addfrontuser(){
 
+            $password = $this->input->post('password', true);
+            //Hash Password
+            $password = password_hash($password, PASSWORD_BCRYPT);
         $data = array( 
-                'username' => $sdata['username'],
-                'password' => $_SESSION['password'],
+               'username' => $this->input->post('username'),
+                'password' => $password,
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
             );
 
-if ($this->init_models->add_front_user($data))
+        $this->init_models->add_front_user($data);
+}
+
+
+       public function get_frontuser_id(){
+           $result_id = $this->init_models->getfrontueserid();
+        $data = array( 
+
+           'uid'  => $result_id['user_id'],
+
+            );
+        return $data;
+
+          }
+
+         public function user_details(){
+$getid = $this->get_frontuser_id();
+            $data = array( 
+
+                'school_type' => $this->input->post('schooltype'),
+                'user_school' => $this->input->post('school'),
+                'user_level' => $this->input->post('level'),
+                'user_dept' => $this->input->post('department'),
+                'user_first_name' => $this->input->post('first_name'),
+                'user_last_name' => $this->input->post('last_name'),
+                'user_gender' => $this->input->post('gender'),
+                'mobile_no' => $this->input->post('phone_number'),
+                'user_avatar' => $this->input->post('user_avatar'),
+                'marital_status' => $this->input->post('status'),
+                'interested_in' => $this->input->post('interestedIn'),
+                'about_user' => $this->input->post('aboutme'),
+                'user_interest' => $this->input->post('myinterest'),
+                'user_hobby' => $this->input->post('myhobby'),
+                'user_id' => $getid['uid'],
+                );
+
+
+             if ($this->init_models->adduserdetails($data))
             {
     echo"<script>alert('Registration Success');</script>";
             }
-        //echo "sdfdsfsdfsdfsdfsd". $_SESSION['schooltype'];
-}
+
+
+
+          }
 
 }

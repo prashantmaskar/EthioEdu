@@ -1,11 +1,11 @@
 <?php  $this->load->view('header'); ?>
 <?php
-               $_SESSION['schooltype']= $this->input->post('schooltype');
-               $_SESSION['school']= $this->input->post('school');
-               $_SESSION['level']= $this->input->post('level');
-               $_SESSION['department']= $this->input->post('department');
-              echo $_SESSION['username']= $this->input->post('username');
-               $_SESSION['password']= $this->input->post('password');
+               $schooltype= $this->input->post('schooltype');
+               $school= $this->input->post('school');
+               $level = $this->input->post('level');
+               $department = $this->input->post('department');
+               $username = $this->input->post('username');
+               $password = $this->input->post('password');
 
 ?>
 
@@ -47,7 +47,7 @@
                                     <div class="form-group file-field input-field col s12">
                                         <div class="btn" name="attachphoto">
                                             <span>Attach Photo</span>
-                                            <input type="file" multiple>
+                                            <input type="file" name="user_avatar" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Upload Photo">
@@ -96,6 +96,12 @@
                                         <button class="btn waves-effect waves-light red" type="submit" name="laction">Register
                                         </button>
                                     </div>
+                                    <input type="hidden" name="schooltype" value="<?php echo $schooltype; ?>">
+                                    <input type="hidden" name="school" value="<?php echo $school; ?>">
+                                    <input type="hidden" name="level" value="<?php echo $level; ?>">
+                                    <input type="hidden" name="department" value="<?php echo $department; ?>">
+                                    <input type="hidden" name="username" value="<?php echo $username; ?>">
+                                    <input type="hidden" name="password" value="<?php echo $password; ?>">
                                 </form>
                             </div>
                         </div>
