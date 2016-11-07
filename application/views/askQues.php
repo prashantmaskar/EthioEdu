@@ -21,24 +21,25 @@
                                         <div class="card-panel">
                                             <h4 class="header2">Question FORM</h4>
                                             <div class="row">
-                                                <form id="askque" class="col m12" action="#" method="post">
-                                                     <div class="form-group input-field col s5">
-                                                        <select class="form-control browser-default" name="quetype">
-
-                                                            <option value="">Question type</option>
-                                                             <option value="Academic question">Academic question</option>
-                                                            <option value="Study question">Study question</option>
-                                                        
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group input-field col s5">
-                                                        <select class="form-control browser-default" name="subcat">
-
-                                                            <option value="">Subject/course catagory</option>
-                                                             <option value="Academic question">Academic question</option>
-                                                            <option value="Study question">Study question</option>
-                                                        
-                                                        </select>
+                                                  <form id="askque" action="#" method="post" class="row">
+                                                     <div class="form-group col s12">
+                                        <select class="form-control " name="quetype">
+                                            <option value="">Question type</option>
+                                            <option value="16-19">Academic question</option>
+                                            <option value="20-25">Study question</option>
+                                          
+                                        </select>
+                                        <label>Question type</label>
+                                    </div>
+                                                 <div class="form-group col s12">
+                                                   <select class="form-control " name="subject">
+                                            <option value="">Subject/course category</option>
+                                            <option value="16-19">Academic question</option>
+                                            <option value="20-25">Study question</option>
+                                          
+                                        </select>
+                                        <label>subject/course category</label>
+                                    </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="user_name" name="question" type="text" class="validate">
                                                         <label for="question">My Question</label>
@@ -71,10 +72,9 @@
             </div>
 			 </div>
 			<?php $this->load->view('footer'); ?>
-            <script type="text/javascript" src="../js/materialize.js"></script>
-			 <script type="text/javascript" src="../js/bootstrap.min.js"></script> 
-			<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-			<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+            <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 			<script type="text/javascript" src="../js/askQues.js"></script>
         
 			</body>

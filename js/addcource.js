@@ -67,7 +67,7 @@ $(document).ready(function() {
                         message:  ' details required!!!'
                     },
                     stringLength:{
-                        message:'post adddress must be less than 120 characters',
+                        message:'post details must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }

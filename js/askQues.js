@@ -1,57 +1,49 @@
-$(document).ready(function() {
 
-    $('#askque').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
-            quetype: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter question type!!!..'
-                    }
-                }
-            },
-              subcat: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter subject/cource category !!!..'
-                    }
-                }
-            },
- 
-
-                  Question: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter subject/cource category !!!..'
-                    }
-                }
-            },
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+$(document).ready(function(){
+    //alert('in');
+    $.validator.setDefaults({
+        ignore: []
     });
+
+ $("#askque").validate({
+        rules: {
+            quetype: {
+                required: true,
+               
+            },
+            subject: {
+                required: true,
+                
+            },
+            question: {
+                required: true,
+               
+            }
+            
+        },
+        //For custom messages
+        messages: {
+            quetype:{
+                required: "Select que type",
+               
+            },
+             subject:{
+                required: "select  Subject",
+               
+            },
+            
+            question:{
+                required: "you must ask yor question",
+               
+            }
+        },
+        //For custom messages
+       errorClass:"invalid form-error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          error.appendTo( element.parent() );
+          }
+        
+     });
 });
+     
