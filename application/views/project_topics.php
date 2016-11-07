@@ -41,19 +41,15 @@
 
                                                     </div>
                                    
-                                    <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="fileformat">
-                                                            <option  value="">File Format</option>
-                                                            <option value="Word">Word</option>
-                                                            <option value="Pdf">Pdf</option>
-                                                            <option value="Rtf">Rtf</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group file-field input-field col s12">
-                                                        <div class="btn" name="upload1">
-                                                            <span>Attach File</span>
-                                                            <input type="file" multiple>
-                                                        </div>
+                                     <div class="form-group file-field input-field col s12">
+                                        <div class="btn">
+                                            <span>Attach file</span>
+                                            <input name="fileformat" type="file" multiple>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format">
+                                        </div>
+                                    </div>
                                     <div class="col s5 offset-s5 margin-b-10">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Add
                                            
