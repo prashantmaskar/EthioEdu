@@ -37,18 +37,21 @@ class csregister extends CI_Controller {
         $this->load->view('csregister',$view_params);
         if(isset($_POST['laction'])){
 
-        $this->addfrontuser();
-
-        
         $sdata['schooltype'] = $_SESSION['schooltype'];
         $sdata['school']  = $_SESSION['school'];
         $sdata['level']  = $_SESSION['level'];
         $sdata['department']  = $_SESSION['department'];
         echo $sdata['username']  = $_SESSION['username'];
         $sdata['password']  = $_SESSION['password'];
-     }
- 
 
+         $this -> addfrontuser($sdata);
+     }
+
+/* if(isset($_POST['laction'])){
+echo "<script>alert('lastfunction');</script>";
+        $this->addfrontuser();
+ 
+} */
     }
 
 
