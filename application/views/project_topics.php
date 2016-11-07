@@ -31,23 +31,15 @@
                                                         <input id="course_name" name="course_name" type="text" class="validate">
                                                         <label for="course_name">Course Name</label>
                                                     </div>
-                                    <div class="form-group input-field col s12">
-                                       <select class="form-control browser-default" name="catagory">
-                                            <option value="" disabled selected>Category</option>
-                                            <option value="Admission">Admission</option>
-                                            <option value="Departmental">Departmental</option>
-                                            <option value="Entertainments">Entertainments</option>
-                                            <option value="Events">Events</option>
-                                            <option value="5">General</option>
-                                            <option value="General">Part Time</option>
-                                            <option value="7">Full Time</option>
-                                            <option value="8">Sport</option>
-                                            <option value="9">Pre Degree</option>
-                                            <option value="10">Post Degree</option>
-                                            <option value="8">Scholarship</option>
-                                            <option value="8">Other</option>
-                                        </select>
-                                 </div>
+                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="Year">
+                                                            <option  value="">Year</option>
+                                                            <option value="2016">2016</option>
+                                                            <option value="2017">2017</option>
+
+                                                        </select>
+
+                                                    </div>
                                    
                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="fileformat">

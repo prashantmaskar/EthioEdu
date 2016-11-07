@@ -22,18 +22,18 @@
                                 <h1 class="page-heading">Vacancies/Tender <span class="News-button"><a href="http://localhost/ETHIO/index.php/post_vacancy" class="waves-effect waves-light btn">Post Vacancy</a></span></h1>
                             </div>
                         </div>
-						<form id="vactender" method="post" action="#">
+						<form id="sorttender" method="post" action="#">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s3">
                                     <p class="black-text">Sort Tenders:</p>
                                 </div>
                                 <div class="form-control input-field col s3">
-                                    <input id="startdate" type="date" class=" datepicker validate" name="d1">
+                                    <input id="startdate" type="date" class=" datepicker validate" name="vacd1">
                                     <label for="Caption"> From</label>
                                 </div>
                                 <div class="form-control  input-field col s3">
-                                    <input id="enddate" type="date" class=" datepicker validate" name="d2">
+                                    <input id="enddate" type="date" class=" datepicker validate" name="vacd2">
                                     <label for="Caption"> To</label>
                                 </div>
                                 <div class="input-field col s2">
@@ -142,6 +142,7 @@ $('.datepicker').pickadate({
 
             if((date2_ms -date1_ms ) <0 )
             {
+				this.clear();
               alert('End date cannot be a previous date!');
               $('#startdate').val(d2);  
 }
@@ -166,7 +167,7 @@ $('.datepicker').pickadate({
 </script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script> 
-<script type="text/javascript" src="../js/vactender.js"></script>
+<script type="text/javascript" src="../js/sorttender.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 </body>
 </html>

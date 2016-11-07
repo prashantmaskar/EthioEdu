@@ -1,16 +1,16 @@
-$(document).ready(function(){
+ $(document).ready(function(){
     //alert('in');
     $.validator.setDefaults({
         ignore: []
     });
 
- $("#vactender").validate({
+ $("#sorttender").validate({
         rules: {
-            d1: {
+            vacd1: {
                 required: true,
                
             },
-            d2: {
+            vacd2: {
                 required: true,
                 
             }
@@ -19,19 +19,19 @@ $(document).ready(function(){
         },
         //For custom messages
         messages: {
-            d1:{
+            vacd1:{
                 required: "select from date",
                
             },
-             d2:{
+             vacd2:{
                 required: "select to date",
                
             }
         },
         //For custom messages
-       errorClass:"invalid form-error",
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
+         errorClass:"invalid form-error",
+         errorElement : 'div',
+          errorPlacement: function(error, element) {
           error.appendTo( element.parent() );
           }
         

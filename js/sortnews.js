@@ -6,11 +6,11 @@ $(document).ready(function(){
 
  $("#sortnews").validate({
         rules: {
-            d1: {
+            newsd1: {
                 required: true,
                
             },
-            d2: {
+            newsd2: {
                 required: true,
                 
             }
@@ -19,11 +19,11 @@ $(document).ready(function(){
         },
         //For custom messages
         messages: {
-            d1:{
+            newsd1:{
                 required: "select from date",
                
             },
-             d2:{
+             newsd2:{
                 required: "select to date",
                
             }
