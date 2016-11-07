@@ -36,14 +36,19 @@
                 }
             },
 
-
-            upload: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must upload a photo!!!..'
+             fileformat:{
+            validators:{
+                notEmpty:{
+                    message:'please select an image'
+                },
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
                     }
-                }
-            },
+                 }
+           },
 
 
         

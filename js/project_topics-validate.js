@@ -23,31 +23,36 @@
             },
  
 
-                  catagory: {
+                  Year: {
                 validators: {
                     notEmpty: {
-                        message: ' please select catagory!!!..'
+                        message: ' please select Year!!!..'
                     }
                 }
             },
  
               
-                  fileformat: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select file format!!!..'
-                    }
-                }
-            },
- 
+                 fileformat: {
+                 validators: {
+                   file: {
+                     extension: 'doc,docx,pdf,rtf',
+                      type: 'application/pdf,application/msword,application/rtf',
+                          maxSize: 5120 * 5120 * 5120 * 5120 * 5120,   // 5 MB
+                          message: 'The selected file is not valid, it should be (doc,docx,pdf,rtf) and 5 MB at maximum.'
+                            },
+                          notEmpty: {
+                        message: 'File format  is required.'
+                          }
+                        }
+                     },
                
-                  upload1: {
+                 /* upload1: {
                 validators: {
                     notEmpty: {
                         message: ' you must upload file!!!..'
                     }
                 }
-            },
+            },*/
  
 
 

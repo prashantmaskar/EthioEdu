@@ -32,7 +32,7 @@
        </div>
 	            <div class="form-group input-field col s12">
                                         <select class="form-control browser-default" name="community">
-                                            <option value="">School community</option>
+                                            <option value=""disabled selected>School community</option>
                                            
                                           <option value="Abdul-gusau Polytechnic, Nigeria">Abdul-gusau Polytechnic, Nigeria</option>
                  <option value="Abia State College Of Education, Nigeria">Abia State College Of Education, Nigeria</option>

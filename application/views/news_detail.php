@@ -48,15 +48,15 @@
                         <div class="comment_box row">
                             <div class="col m12">
                                 <h3>Leave a Reply</h3>
-                                <form>
+                                <form id="newsdetails" method="post" action="#">
                                 <div class="input-field col m5">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" type="text" class="validate">
+                                    <input id="icon_prefix" name="username" type="text" class="validate">
                                     <label for="icon_prefix">Name</label>
                                 </div>
                                 <div class="input-field col m12">
                                     <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                    <textarea id="icon_prefix2" name="comment" class="materialize-textarea"></textarea>
                                     <label for="icon_prefix2">Comment</label>
                                 </div>
                                 <button class="btn waves-effect waves-light col m2 offset-m1 margin-b-10" type="submit" name="action">Submit
@@ -84,3 +84,19 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/newsdetails-validate.js"></script>
+
+
+
+
+
+
+

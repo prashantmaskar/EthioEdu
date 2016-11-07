@@ -40,7 +40,7 @@
                                         <label for="Caption">Email</label>
                                     </div>
                                       <div class="form-group input-field col s12">
-                                        <input id="Caption" name="contact" type="number" class="validate">
+                                        <input id="Caption" name="contact" type="text" class="validate">
                                         <label for="Caption">Contact</label>
                                     </div>
                                     <div class="form-group input-field col s12">
