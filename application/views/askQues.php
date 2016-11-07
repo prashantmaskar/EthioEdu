@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                 </div>
-                </div>
+               
 
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
@@ -71,6 +71,7 @@
                 </div>
             </div>
 			 </div>
+			  </div>
 			<?php $this->load->view('footer'); ?>
             <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>

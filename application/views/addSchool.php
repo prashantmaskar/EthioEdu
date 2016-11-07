@@ -64,8 +64,11 @@
                                                         <select class="form-control browser-default" name="choice1">
 
                                                             <option value="">School catagory</option>
-                                                             <option value="Account">Account </option>
-                                                            <option value="Agreeculture">Agreeculture</option>
+                                                             <option value="">KINDERGARTENS and NURSERY </option>
+                                                            <option value="">PRIMARY</option>
+															 <option value="">SECONDARY</option>
+															 <option value="">PREPARATORY</option>
+															 
                                                         
                                                         </select>
                                                        </div>
@@ -75,8 +78,8 @@
                                                         <select class="form-control browser-default" name="choice2">
 
                                                             <option value="">university</option>
-                                                             <option value="Account">Account </option>
-                                                            <option value="Agreeculture">Agreeculture</option>
+                                                             <option value="">Account </option>
+                                                            <option value="">Agreeculture</option>
                                                         
                                                         </select>
                                                        </div>
@@ -85,9 +88,15 @@
                                                             <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice3">
 
-                                                            <option value="">Institute</option>
-                                                             <option value="Account">Account </option>
-                                                            <option value="Agreeculture">Agreeculture</option>
+                                                            <option value="">Colleges</option>
+                                                             <option value="">Commerce and business </option>
+                                                            <option value="">Computer training and IT</option>
+															<option value="">Distance education</option>
+															<option value="">Engineering</option>
+															<option value="">Medical schools</option>
+															<option value="">University-Colleges</option>
+															<option value="">Theology and bible</option>
+															<option value="">Agriculture</option>
                                                         
                                                         </select>
                                                        </div>                                                              
@@ -128,9 +137,17 @@
                                                     <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice7">
                                                             <option value="" >Choose Region</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Africa">Africa</option>
+                                                            <option value="addisababa">ADDIS ABABA</option>
+                                                            <option value="oromia">OROMIA</option>
+                                                            <option value="amhara">AMHARA</option>
+															 <option value="tigray">TIGRAY</option>
+															  <option value="snnp">SNNP</option>
+															   <option value="somali">SOMALI</option>
+															    <option value="afar">AFAR</option>
+																 <option value="ben">BENISHANGUL - GUMUZ</option>
+																  <option value="diredawa">DIRE DAWA</option> 
+																  <option value="gambella">GAMBELLA</option>
+																   <option value="horari">HORARI</option>
                                                         </select>
                                                     </div>
 
