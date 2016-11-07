@@ -44,7 +44,7 @@
                                             <input name="fileformat" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload rtr or word or pdf file only">
+                                            <input class="file-path validate" type="text" placeholder="attach image only">
                                         </div>
                                     </div>
                                     <div class="form-group input-field col s12">

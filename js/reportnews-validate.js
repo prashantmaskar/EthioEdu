@@ -36,7 +36,7 @@
                 }
             },
 
-  avatar:{
+             fileformat:{
             validators:{
                 notEmpty:{
                     message:'please select an image'
