@@ -199,17 +199,17 @@
                                 <h2>Add New Comment</h2>
                             </div>
                             <div class="coment_form">
-                                <form>
+                                <form id="schooldetails" action="#" method="post">
                                     <div class="input-field col s6">
-                                        <input id="Name" type="text" class="validate">
+                                        <input id="Name" type="text" name="username" class="validate">
                                         <label for="Name">Your Name</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="Subject" type="text" class="validate">
+                                        <input id="Subject" name="subject" type="text" class="validate">
                                         <label for="Subject">Subject</label>
                                     </div>
                                     <div class="input-field col s12">
-                                        <textarea id="Comment" class="materialize-textarea"></textarea>
+                                        <textarea id="Comment" name="comment" class="materialize-textarea"></textarea>
                                         <label for="Comment">Comment</label>
                                     </div>
                                     <div class="col m12">
@@ -288,3 +288,62 @@
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
+<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+
+<script>
+$(document).ready(function(){
+    //alert('in');
+    $.validator.setDefaults({
+        ignore: []
+    });
+
+ $("#schooldetails").validate({
+        rules: {
+            
+            username:{
+            
+                required: true
+               
+            },
+            subject:{
+                required: true
+
+            },
+            comment:{
+                required: true,
+                minlength:5
+            }
+           
+        },
+        
+        messages:{
+            username:{
+                required:"enter username",
+            },
+            subject:{
+                required:"enter Subject"
+            },
+            comment:{
+                required:"please give some comment"
+            }
+        },
+
+
+
+       errorClass:"invalid form-error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          error.appendTo( element.parent() );
+          }
+        
+     });
+});
+     
+
+</script>
