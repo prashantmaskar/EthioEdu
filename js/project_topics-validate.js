@@ -23,10 +23,10 @@
             },
  
 
-                  catagory: {
+                  Year: {
                 validators: {
                     notEmpty: {
-                        message: ' please select catagory!!!..'
+                        message: ' please select Year!!!..'
                     }
                 }
             },
@@ -41,13 +41,13 @@
             },
  
                
-                  upload1: {
+                 /* upload1: {
                 validators: {
                     notEmpty: {
                         message: ' you must upload file!!!..'
                     }
                 }
-            },
+            },*/
  
 
 
