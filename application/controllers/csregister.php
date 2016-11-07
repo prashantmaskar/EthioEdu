@@ -35,33 +35,57 @@ class csregister extends CI_Controller {
             'title' => 'Registration'
         );
         $this->load->view('csregister',$view_params);
-		
-echo $_SESSION['username'];
         if(isset($_POST['laction'])){
+
+        $sdata['schooltype'] = $_SESSION['schooltype'];
+        $sdata['school']  = $_SESSION['school'];
+        $sdata['level']  = $_SESSION['level'];
+        $sdata['department']  = $_SESSION['department'];
+        echo $sdata['username']  = $_SESSION['username'];
+        $sdata['password']  = $_SESSION['password'];
+
+         $this -> addfrontuser($sdata);
+     }
+
+/* if(isset($_POST['laction'])){
+echo "<script>alert('lastfunction');</script>";
         $this->addfrontuser();
-     } 
+ 
+} */
+    }
+
+
+
+   /* public function getsessiondata(){
+echo"<script>alert('1');</script>";
+        $sdata['schooltype'] = $_SESSION['schooltype'];
+        $sdata['school']  = $_SESSION['school'];
+        $sdata['level']  = $_SESSION['level'];
+        $sdata['department']  = $_SESSION['department'];
+       echo $sdata['username']  = $_SESSION['username'];
+        $sdata['password']  = $_SESSION['password'];
+
+        $this -> addfrontuser($sdata);
 
     }
+*/
+     
+      
 	
- function addfrontuser(){
-        
-        $_SESSION['schooltype'];
-        $_SESSION['school'];
-        $_SESSION['level'];
-        $_SESSION['department'];
-      echo $_SESSION['username'];
-        $_SESSION['password'];
+ public function addfrontuser(){
 
         $data = array( 
-
-                'username' => 'abc',
-                'password' => 'ddddd',
+                'username' => $sdata['username'],
+                'password' => $_SESSION['password'],
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
             );
-       $this->init_models->add_front_user($data);
 
+if ($this->init_models->add_front_user($data))
+            {
+    echo"<script>alert('Registration Success');</script>";
+            }
         //echo "sdfdsfsdfsdfsdfsd". $_SESSION['schooltype'];
 }
 

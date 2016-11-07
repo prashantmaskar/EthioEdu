@@ -4,7 +4,7 @@
                $_SESSION['school']= $this->input->post('school');
                $_SESSION['level']= $this->input->post('level');
                $_SESSION['department']= $this->input->post('department');
-            echo   $_SESSION['username']= $this->input->post('username');
+              echo $_SESSION['username']= $this->input->post('username');
                $_SESSION['password']= $this->input->post('password');
 
 ?>
