@@ -37,6 +37,7 @@
                             <?php }
                             else{ ?>
                             <li><a href="#"><?php echo "Welcome ".$this->session->userdata('username'); ?></a></li>
+                            
                             <?php } ?>
                     </ul>
 

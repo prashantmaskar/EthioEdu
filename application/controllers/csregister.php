@@ -64,11 +64,10 @@ if(isset($_POST['laction'])){
  public function addfrontuser(){
 
             $password = $this->input->post('password', true);
-            //Hash Password
-            $password = password_hash($password, PASSWORD_BCRYPT);
+            $pass = md5($password);
         $data = array( 
                'username' => $this->input->post('username'),
-                'password' => $password,
+                'password' => $pass,
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
