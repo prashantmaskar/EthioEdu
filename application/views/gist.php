@@ -50,7 +50,7 @@
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
                                         <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Replay</a></span>
+                                        <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
                                 <div class="gits_content row">
@@ -80,7 +80,7 @@
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
                                         <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Replay</a></span>
+                                        <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
                                 <div class="gits_content row">
@@ -110,7 +110,7 @@
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
                                         <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Replay</a></span>
+                                        <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
                                 <div class="gits_content">
@@ -140,7 +140,7 @@
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
                                         <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Replay</a></span>
+                                        <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
                                 <div class="gits_content row">
@@ -170,7 +170,7 @@
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
                                         <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Replay</a></span>
+                                        <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
                             </div>
