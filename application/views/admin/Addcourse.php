@@ -210,10 +210,29 @@ and open the template in the editor.
                                                         <input id="Major_sub" name="Major_sub" type="text" class="validate">
                                                         <label for="Major_sub">Major Subject</label>
                                                     </div>
-                                                    <div class=" form-group input-field col s12">
+                                                    <!--<div class=" form-group input-field col s12">
                                                         <input id="course_cat" name="course_cat" type="text" class="validate">
                                                         <label for="course_cat">Course Category</label>
+                                                    </div>-->
+													
+													           <div class=" form-group input-field col s12">
+                                                        <select class=" form-control browser-default" name="course_cat">
+                                                            <option value="">Course Category</option>
+                                                            <option value="advancediploma">Advance Diploma</option>
+                                                            <option value="bridging">Bridging</option>
+                                                            <option value="certificate">Certificate</option>
+															<option value="degree">Degree</option>
+															<option value="diploma">Diploma</option>
+															<option value="graduatediploma">Graduate Diploma</option>
+															<option value="higherdiploma">Higher Diploma</option>
+															<option value="masters">Masters</option>
+															<option value="postgraduatediploma">Post Graduate Diploma</option>
+															<option value="preuniversity">Pre University</option>
+                                                        </select>
                                                     </div>
+													
+													
+													
                                                     <div class="col s2">
                                                         <label class="s_duration">Study Duration</label>
                                                     </div>

@@ -25,19 +25,19 @@
                         </div>
                         <div class="new_events_form">
                            <form id="postevent" method="post" class="col m12">
-                               <div class="form-group input-field col s12">
+                              <!-- <div class="form-group input-field col s12">
                                         <input id="event_name" name="event_name" type="text" class="validate">
                                         <label for="Caption"> Event Name</label>
-                                </div>
+                                </div>-->
                                <div class="form-group input-field col s12">
                                     <input id="event_title" name="event_title" type="text" class="validate">
                                     <label for="Caption">Event Title</label>
                                 </div>
                                 
-                                <div class="form-group input-field col s12">
+                                <!--<div class="form-group input-field col s12">
                                     <input id="subject" type="text" name="subject" class="validate">
                                     <label for="Subject">Subject</label>
-                                </div>
+                                </div>-->
 								 <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach Photo</span>
@@ -47,6 +47,7 @@
                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                         </div>
                                     </div>
+									
 								  <div class="form-group input-field col s12">
                                     <textarea id="description" name="Description" class="materialize-textarea"></textarea>
                                     <label for="Caption">Description</label>

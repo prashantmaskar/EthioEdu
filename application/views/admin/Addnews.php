@@ -204,7 +204,7 @@ and open the template in the editor.
                                                 <form id="addnews" class=" form-control col m12" action="#" method="post">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" class="validate">
-                                                        <label for="Caption">News Caption</label>
+                                                        <label for="Caption">News Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
@@ -249,10 +249,10 @@ and open the template in the editor.
                                                         <input id="source_link" name="source_link" type="text" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                                    <!--<div class="form-group input-field col s12">
                                                         <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish
                                                             <i class="material-icons right"></i>

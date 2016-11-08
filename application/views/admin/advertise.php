@@ -201,53 +201,87 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Advertise FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
-                                                    <div class="input-field col s12">
-                                                        <input id="Client_name" type="text" class="validate">
-                                                        <label for="Client_name">Client Name</label>
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="Email" type="text" class="validate">
-                                                        <label for="Email">Email Id</label>
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <input id="Mobile" type="text" class="validate">
-                                                        <label for="Mobile">Mobile No</label>
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">Add Position</option>
+                                               <form id="advertise" class="col m12">
+                                    <div class=" form-group input-field col s12">
+                                        <input id="Caption" name="name" type="text" class="validate">
+                                        <label for="Caption">Client Name</label>
+                                    </div>
+                                <div class="form-group input-field col s12">
+                                        <input id="Caption" name="email" type="email" class="validate">
+                                        <label for="Caption">Email</label>
+                                    </div>
+                                      <div class="form-group input-field col s12">
+                                        <input id="Caption" name="contact" type="text" class="validate">
+                                        <label for="Caption">Contact</label>
+                                    </div>
+                                    <div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="catagory" >
+                                            <option value="" disabled selected>Category</option>
+                                            <option value="1">Admission</option>
+                                            <option value="2">Departmental</option>
+                                            <option value="3">Entertainments</option>
+                                            <option value="4">Events</option>
+                                            <option value="5">General</option>
+                                            <option value="6">Part Time</option>
+                                            <option value="7">Full Time</option>
+                                            <option value="8">Sport</option>
+                                            <option value="9">Pre Degree</option>
+                                            <option value="10">Post Degree</option>
+                                            <option value="8">Scholarship</option>
+                                            <option value="8">Other</option>
+                                        </select>
+                                        <!--<label>Category</label>-->
+                                    </div>
+									<div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="addposition" >
+                                           <option  value="" disabled="" selected="">Add Position</option>
                                                             <option value="1">Top</option>
                                                             <option value="2">Left</option>
                                                             <option value="2">Right</option>
-
-                                                        </select>
-
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option  value="" disabled="" selected="">Payment Method</option>
+                                        </select>
+                                      <!--  <label>Add Position</label>-->
+                                    </div>
+									<div class="form-group input-field col s12">
+                                        <select class="form-control browser-default " name="paymentmethod" >
+                                           <option  value="" disabled="" selected="">Payment Method</option>
                                                             <option value="1">M-Birr</option>
                                                             <option value="2">Hello-Cash</option>
-                                                        </select>
+                                        </select>
+                                       <!-- <label>Payment Method</label>-->
+                                    </div>
+									<div class="form-group input-field col s12">
+                                                        <input id="subject" type="text" class="validate" name="subject">
+                                                        <label for="subject">Subject</label>
                                                     </div>
+													
 
-                                                    <div class="file-field input-field col s12">
+                                                    <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Add</span>
-                                                            <input type="file" multiple>
+                                                            <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
                                                             <input class="file-path validate" type="text" placeholder="Upload Add baner">
                                                         </div>
                                                     </div>
+													<div class="form-group input-field col s12">
+                                                        <textarea id="message" class="materialize-textarea" name="message"></textarea>
+                                                        <label for="message">Message</label>
+                                                    </div> 
+													<!-- <div class="captch">
+                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
+                                                       </div>
+													<div class=" form-group input-field col s12">
+                                                 <input id="captch" type="text" name="captcha" class="validate">
+                                                  <label for="captch">Add Above Code</label>
+                                                    </div>-->
 
-                                                    <div class="input-field col s4">
-                                                        <div class="input-field col s12">
-                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Add</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                    <div class="col s5 offset-s5 margin-b-10">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </form>
                                             </div> 
                                         </div>
                                     </div>
@@ -299,6 +333,12 @@ and open the template in the editor.
         </div>
         <script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
         <script type="text/javascript" src="../../js/materialize.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/bootstrapValidator.css">
+<script type="text/javascript" src="../../js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="../../js/admin/admin-advertise.js"></script>
     </body>
 
 </html>
+<!-- <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"> -->
