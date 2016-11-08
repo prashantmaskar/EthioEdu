@@ -53,10 +53,11 @@ class addschool extends CI_Controller {
         
 
      function insertuserdata(){
-        //echo "</script>alert('userdata');</script>";
+         $password = $this->input->post('password', true);
+          $pass = md5($password);
         $data = array( 
                 'username' => $this->input->post('user_name'),
-                'password' => $this->input->post('password'),
+                'password' => $pass,
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
 
