@@ -44,7 +44,7 @@
                                         <label for="Caption">Contact</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <select class="form-control" name="catagory" >
+                                        <select class="form-control browser-default" name="catagory" >
                                             <option value="" disabled selected>Category</option>
                                             <option value="1">Admission</option>
                                             <option value="2">Departmental</option>
@@ -59,8 +59,51 @@
                                             <option value="8">Scholarship</option>
                                             <option value="8">Other</option>
                                         </select>
-                                        <label>Category</label>
+                                        <!--<label>Category</label>-->
                                     </div>
+									<div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="addposition" >
+                                           <option  value="" disabled="" selected="">Add Position</option>
+                                                            <option value="1">Top</option>
+                                                            <option value="2">Left</option>
+                                                            <option value="2">Right</option>
+                                        </select>
+                                      <!--  <label>Add Position</label>-->
+                                    </div>
+									<div class="form-group input-field col s12">
+                                        <select class="form-control browser-default " name="paymentmethod" >
+                                           <option  value="" disabled="" selected="">Payment Method</option>
+                                                            <option value="1">M-Birr</option>
+                                                            <option value="2">Hello-Cash</option>
+                                        </select>
+                                       <!-- <label>Payment Method</label>-->
+                                    </div>
+									<div class="form-group input-field col s12">
+                                                        <input id="subject" type="text" class="validate" name="subject">
+                                                        <label for="subject">Subject</label>
+                                                    </div>
+													
+
+                                                    <div class="form-group file-field input-field col s12">
+                                                        <div class="btn">
+                                                            <span>Attach Add</span>
+                                                            <input type="file" name="fileformat" multiple>
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner">
+                                                        </div>
+                                                    </div>
+													<div class="form-group input-field col s12">
+                                                        <textarea id="message" class="materialize-textarea" name="message"></textarea>
+                                                        <label for="message">Message</label>
+                                                    </div> 
+													 <div class="captch">
+                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
+                                                       </div>
+													<div class=" form-group input-field col s12">
+                                                 <input id="captch" type="text" name="captcha" class="validate">
+                                                  <label for="captch">Add Above Code</label>
+                                                    </div>
 
                                     <div class="col s5 offset-s5 margin-b-10">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Send
@@ -94,5 +137,5 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
-<script type="text/javascript" src="../js/advertising-validation.js"></script>
+<script type="text/javascript" src="../js/advertise.js"></script>
 
