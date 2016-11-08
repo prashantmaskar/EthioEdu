@@ -81,7 +81,6 @@ class addschool extends CI_Controller {
 
 function insertschooldata(){
     $getid = $this->get_user_id();
-//echo $tempp['uname'];
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
