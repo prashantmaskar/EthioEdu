@@ -1,3 +1,4 @@
+
 <?php  $this->load->view('header'); ?>
         <div class="service-wrap ">
             <div class="row">
@@ -34,7 +35,64 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
-                                <div class="review_info"></div>
+                                <div class="review_info"><form id="reviewform" action="#" method="post" class="col m12">
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="Reviewer_name" name="Reviewer_name" type="text" class="validate">
+                                                        <label for="Reviewer_name">Reviewer's Name</label>
+                                                    </div>
+													<div class=" form-group input-field col s12">
+                                                        <input id="email" type="text" name="email" class="form-control">
+                                                        <label for="email">Reviewer's Email</label>
+                                                    </div>
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="Review_title" name="Review_title" type="text" class="validate">
+                                                        <label for="Review_title">Review Title</label>
+                                                    </div>
+                                                    <!--<div class=" form-group input-field col s12">
+                                                        <input id="course_cat" name="course_cat" type="text" class="validate">
+                                                        <label for="course_cat">Course Category</label>
+                                                    </div>-->
+													
+													          
+													
+													
+													
+                                                    <div class="col s4">
+                                                        <label class="s_duration">Rating</label>
+                                                    </div>
+                                                    <div class="form-group input-field col s8">
+                                                        <div class="stars">
+												 <!-- <form action="">-->
+													<input class="star star-5" id="star-5" type="radio" name="star" />
+													<label class="star star-5" for="star-5"></label>
+													<input class="star star-4" id="star-4" type="radio" name="star"/>
+													<label class="star star-4" for="star-4"></label>
+													<input class="star star-3" id="star-3" type="radio" name="star"/>
+													<label class="star star-3" for="star-3"></label>
+													<input class="star star-2" id="star-2" type="radio" name="star"/>
+													<label class="star star-2" for="star-2"></label>
+													<input class="star star-1" id="star-1" type="radio" name="star"/>
+													<label class="star star-1" for="star-1"></label>
+												  <!--</form>-->
+                                                         </div>              
+                                                    </div>
+                                                    
+
+
+                                                   
+
+                                                    <div class=" form-group input-field col s12">
+                                                        <textarea id="Review_Contents" class="materialize-textarea" name="Review_Contents"></textarea>
+                                                        <label for="Review_Contents">Review Contents</label>
+                                                    </div>
+
+                                                    <div class="col s12">
+                                                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                                            <i class="mdi-content-send right"></i>
+                                                        </button>
+
+                                                    </div>
+                                                </form></div>
                                 <a href="#">
                                     Rate and review this course
                                 </a>
@@ -108,5 +166,7 @@
 
     </div>
 </div>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <?php $this->load->view('footer'); ?>
-
+</body>
+</html>
