@@ -36,7 +36,8 @@
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
                             <?php }
                             else{ ?>
-                            <li><a href="#"><?php echo "Welcome ".$this->session->userdata('username'); ?></a></li>
+                            <li><a href="#"><?php echo "Welcome ".$this->session->userdata('susername'); ?></a></li>
+                            <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
                             
                             <?php } ?>
                     </ul>

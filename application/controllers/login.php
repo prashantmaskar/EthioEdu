@@ -26,6 +26,11 @@ class login extends CI_Controller {
        $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+           $this->load->model('init_models');
+       if ($this->session->userdata('logged_in'))
+    { 
+       $this->session->sess_destroy();
+    }
     }
 
 	public function index()
@@ -51,17 +56,20 @@ class login extends CI_Controller {
 
                     foreach ( $usr_result as $row)
                       {
-                            echo  $suname = $row['username'];
-                            echo  $spass =  $row['password'];
+                              $suname = $row['username'];
+                              $suserid =  $row['user_id'];
                       }
-
+                      echo $suname;
+                      echo "<br/>";
+                      echo $suserid;
                     $sessiondata = array(
-                              'username' => $suname,
+                              'susername' => $suname,
+                              'suserid' => $suserid,
                               'logged_in' => TRUE
                          );
 
-                        $this->session->set_userdata($sessiondata);
-                        redirect("index.php/home");
+                        //$this->session->set_userdata($sessiondata);
+                       // redirect("index.php/home");
                     }
                     
                     
