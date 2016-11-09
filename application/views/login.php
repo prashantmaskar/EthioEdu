@@ -13,6 +13,7 @@
     <body class="red-gradient-bg">
         <div id="login-page" class="row">
             <div class="col s3 offset-s4 z-depth-2 card-panel">
+            <?php echo $this->session->flashdata('msg'); ?>
                 <form class="login-form" action="<?php echo site_url('index.php/login')?>" method="post">
                     <div class="row">
                         <div class="input-field col s12 center">
