@@ -42,17 +42,7 @@ class reportnews extends CI_Controller {
     }
        public function add()
        {
-            $data=array(
-                'post_title' => $this->input->post('caption'),
-                'post_desc'  => $this->input->post('Description'),
-                'post_category'=>$this->input->post('catagory'),
-                 'post_attachment' =>'',
-                 'post_author'=>  $this->input->post('auther'),
-                   'post_date' => $this->input ->post('date'),
-                  'post_source' => $this->input->post('source_link'),
-                 'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=>''
-        );
+            
 
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
@@ -62,7 +52,7 @@ class reportnews extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('avatar'))
+                if ( ! $this->upload->do_upload('fileformat'))
                 {
                         $error = array('error' => $this->upload->display_errors());
 
@@ -74,17 +64,21 @@ class reportnews extends CI_Controller {
                 {
                         $data1 = array('upload_data' => $this->upload->data());
 
-                        //$db = $this->db->conn_id;
-
-                        
-
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
-                            'mime_type' => $data1['upload_data']['file_type'],
-                            'blob' => $data1['upload_data']['full_path']
-                        );
+                            );
 
-                        $data['post_attachment']=$this->init_models->add_attachment($filedata);
+                        $data=array(
+                'post_title' => $this->input->post('caption'),
+                'post_desc'  => $this->input->post('Description'),
+                'post_category'=>$this->input->post('catagory'),
+                 'post_attachment' => $filedata['file_name'],
+                 'post_author'=>  $this->input->post('auther'),
+                   'post_date' => $this->input ->post('date'),
+                  'post_source' => $this->input->post('source_link'),
+                 'post_type'=>  $this->input->post('post_type'),
+                 'user_id'=> 
+        );
                         $isinserted = $this->init_models->add_anews($data);
                         
 
