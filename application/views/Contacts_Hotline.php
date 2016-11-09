@@ -63,12 +63,12 @@
                 <div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="http://localhost/ETHIO/images/slider/Banner-Vertical.jpg">
+                            <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg'?>">
                         </a>
                     </div>
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="http://localhost/ETHIO/images/slider/Banner_Vertical.jpg">
+                            <img src="<?php echo base_url().'images/slider/Banner_Vertical.jpg'?>">
                         </a>
 
 
