@@ -14,6 +14,11 @@
       {  
 			 $query = $this->db->query("SELECT username, password, user_email FROM tbl_users where username='".$username."'  and password = '" . md5($password) . "'");
 			return $query->result_array();
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2f805a998354c99d6ee36601262cc8458045cba3
       }
       // Insert vacancy data
       public function insertprivacy($data)  

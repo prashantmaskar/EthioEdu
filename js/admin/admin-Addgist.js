@@ -1,6 +1,6 @@
- $(document).ready(function() {
+$(document).ready(function() {
 
-    $('#reportnews').bootstrapValidator({
+    $('#addgist').bootstrapValidator({
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -10,11 +10,14 @@
             caption: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter news title!!!..'
+                        message: ' Please enter Gist name!!!..'
                     }
                 }
             },
-             Description:{
+
+
+
+         Description:{
                 validators:{
                     notEmpty:{
                         message:  ' Description required!!!'
@@ -27,21 +30,13 @@
                     }
                 }
              },
-             catagory: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select catagory !!!..'
-                           
-                    }
-                }
-            },
 
-             fileformat:{
+           avatar:{
             validators:{
                 notEmpty:{
                     message:'please select an image'
                 },
-                 file:{
+                 file: {
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
                         maxSize: 2097152,   // 2048 * 1024
@@ -50,10 +45,7 @@
                  }
            },
 
-
-        
-
-            auther: {
+            author: {
                 validators: {
                     notEmpty: {
                         message: ' please enter auther name!!!..'

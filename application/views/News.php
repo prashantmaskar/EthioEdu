@@ -19,7 +19,7 @@
                     <div class="news_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">News <span class="News-button"><a class="waves-effect waves-light btn"href="http://localhost/ETHIO/index.php/reportnews">Report News</a></span></h1>
+                                <h1 class="page-heading">News <span class="News-button"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportnews')?>">Report News</a></span></h1>
                             </div>
                         </div>
 						<form id="sortnews" method="post" action="#">

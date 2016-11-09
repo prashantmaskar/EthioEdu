@@ -29,7 +29,7 @@ $(document).ready(function(){
         //For custom messages
         messages: {
             choiceage:{
-                required: "Select choiceage",
+                required: "Select age",
                
             },
              institutions:{

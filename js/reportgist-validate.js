@@ -1,6 +1,6 @@
  $(document).ready(function() {
 
-    $('#reportnews').bootstrapValidator({
+    $('#reportgist').bootstrapValidator({
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -10,7 +10,7 @@
             caption: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter news title!!!..'
+                        message: ' please enter caption!!!..'
                     }
                 }
             },

@@ -37,26 +37,33 @@ class login extends CI_Controller {
 		$this->load->view('login',$view_params);
     
 
-   echo $username = $this->input->post("username");
-   echo $password = $this->input->post('password');
-
-
+   $username = $this->input->post("username");
+   $password = $this->input->post('password');
 
      if(isset($_POST['action'])){
 
        $usr_result = $this->init_models->get_user_credentials($username, $password);
+     
       
       if ($usr_result > 0) //active user record is present
-                    {
-                         //set the session variables
-                         $sessiondata = array(
-                              'username' => $username,
-                              'loginuser' => TRUE
-                         );
-                         $this->session->set_userdata($sessiondata);
-                         redirect("index.php/home");
-                    }
+    
+                   {
 
+                    foreach ( $usr_result as $row)
+                      {
+                            echo  $suname = $row['username'];
+                            echo  $spass =  $row['password'];
+                      }
+
+                    $sessiondata = array(
+                              'username' => $suname,
+                              'logged_in' => TRUE
+                         );
+
+                        $this->session->set_userdata($sessiondata);
+                        redirect("index.php/home");
+                    }
+                    
                     
         
      	}

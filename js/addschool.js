@@ -17,14 +17,14 @@ $(document).ready(function() {
             user_name: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter user_name!!!..'
+                        message: ' please enter username!!!..'
                     }
                 }
             },
             fullname:{
                  validators:{
                     notEmpty:{
-                        message:'full name required'
+                        message:'please enter fullname!!!..'
                     },
                     regexp:{
                               regexp: /^[a-z\s]+$/i,
@@ -39,7 +39,7 @@ $(document).ready(function() {
                          message:'Email address is required!!!'
                     },
                     emailAddress:{
-                        message:'The input is not a valid email adddress!!'
+                        message:'The input is Not a valid email adddress!!'
                     }
                 }
             },
@@ -129,17 +129,17 @@ $(document).ready(function() {
              student_population:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter student_population!!!'
+                        message:  ' please Enter student population!!!'
                     }
                 }
              },
              t_staff:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter amount of teaching staff!!!'
+                        message:  ' please Enter number of teaching staff!!!'
                     },
                      digits:{
-                         message:'price invalid'
+                         message:'invalid number of teaching staff'
 
                             }
                 }
@@ -147,10 +147,10 @@ $(document).ready(function() {
              non_teach:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter amount of non_teaching staff!!!'
+                        message:  ' please enter number of non_teaching staff!!!'
                     },
                      digits:{
-                         message:'price invalid'
+                         message:'invalid of non_teaching staff'
 
                             }
                 }
@@ -158,24 +158,24 @@ $(document).ready(function() {
              past_award:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter name of past award !!!'
+                        message:  ' please enter name of past award !!!'
                     }
                 }
              },
              year:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter name of year !!!'
+                        message:  ' please enter acadamic year !!!'
                     }
                 }
              },
              fee:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter fee !!!'
+                        message:  ' please enter acadamic fee !!!'
                     },
                      digits:{
-                         message:'price invalid'
+                         message:'invalid acadamic fee'
 
                             }
                 }
@@ -183,7 +183,7 @@ $(document).ready(function() {
                 Admissios_pro:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter Admission Procedures !!!'
+                        message:  ' please enter Admission Procedures !!!'
                     },
                     stringLength:{
                         message:'post Procedures content must be less than 120 characters',
@@ -196,10 +196,10 @@ $(document).ready(function() {
              Description:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter academic requierement descreeption !!!'
+                        message:  ' please enter academic requierement descreption !!!'
                     },
                     stringLength:{
-                        message:'post descreeption must be less than 120 characters',
+                        message:'descreption must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
@@ -209,17 +209,17 @@ $(document).ready(function() {
              scolership:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter scolership!!!'
+                        message:  ' please enter scholarship!!!'
                     }
                 }
              },
            address:{
                 validators:{
                     notEmpty:{
-                        message:  ' address required!!!'
+                        message:  ' please enter address!!!'
                     },
                     stringLength:{
-                        message:'post adddress must be less than 120 characters',
+                        message:'adddress must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
@@ -232,17 +232,17 @@ $(document).ready(function() {
                         message:  ' website address is not valid!!!'
                     },
                     notEmpty:{
-                         message:'enter web url'
+                         message:'enter website address'
                     }
                 }
              },
               tell_us:{
                 validators:{
                     notEmpty:{
-                        message:  ' please tell us about yourslef  !!!'
+                        message:  ' please tell us about yourself  !!!'
                     },
                     stringLength:{
-                        message:'post tell us must be less than 120 characters',
+                        message:'information must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
@@ -253,7 +253,7 @@ $(document).ready(function() {
       password: {
                 validators: {
                     notEmpty: {
-                        message: 'The password is required and can\'t be empty'
+                        message: 'The password cannot be empty'
                     },
                     identical: {
                         field: 'cpassword',
@@ -264,7 +264,7 @@ $(document).ready(function() {
             cpassword: {
                 validators: {
                     notEmpty: {
-                        message: 'The confirm password is required and can\'t be empty'
+                        message: 'The confirm password cannot be empty'
                     },
                     identical: {
                         field: 'password',
