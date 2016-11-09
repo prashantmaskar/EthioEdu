@@ -43,17 +43,18 @@ class login extends CI_Controller {
 
 
  if(isset($_POST['action'])){
-
+   // echo"<script>alert('1');</script>";
           $username = $this->input->post("username");
           $password = $this->input->post('password');
 
           $this->form_validation->set_rules("username", "Username", "trim|required");
           $this->form_validation->set_rules("password", "Password", "trim|required");
-
+//echo"<script>alert('2');</script>";
           if ($this->form_validation->run() == FALSE)
-          {
+          {//echo"<script>alert('3');</script>";
 
               $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+
           }
       else{
 
