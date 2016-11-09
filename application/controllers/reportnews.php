@@ -77,7 +77,7 @@ class reportnews extends CI_Controller {
                    'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                  'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> 
+                 'user_id'=> ''
         );
                         $isinserted = $this->init_models->add_anews($data);
                         
