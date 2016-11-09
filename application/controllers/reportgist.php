@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class reportnews extends CI_Controller {
+class reportgist extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -35,10 +35,10 @@ class reportnews extends CI_Controller {
 
     public function index() {
         $view_params = array(
-            'm_title' => 'Report News',
-            'title' => 'Report News'
+            'm_title' => 'Report Gist',
+            'title' => 'Report Gist'
         );
-        $this->load->view('reportnews',$view_params);
+        $this->load->view('reportgist',$view_params);
     }
 
 }
