@@ -58,6 +58,23 @@
       {  
             return $this->db->insert('tbl_user_meta', $data);
       }
+
+
+       public function add_attachment($data){
+         $file_data = $this->db->escape_str(file_get_contents($data['blob']));
+         $data['blob']=$file_data;
+         $this->db->insert('tbl_attachments', $data);
+         $insert_id = $this->db->insert_id();
+         return  $insert_id;
+      }
+
+      public function add_anews($data){
+         $this->db->insert('tbl_posts', $data);
+         $insert_id = $this->db->insert_id();
+         return  $insert_id;
+      }
+
+      
      
    }  
 ?>  
