@@ -728,6 +728,11 @@ a.post-share.stumble span {
     border-bottom: 1px solid #ff6666;
     padding: 5px;
 }
+.gist_post_title{
+    font-size: 24px;
+    border-bottom: 1px solid #ff6666;
+    padding: 5px;
+}
 
 .news_details .news_heading h1, .event_details .event_heading h1{
     font-size: 36px;

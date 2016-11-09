@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="form-group input-field col s12">
                                         <input id="author" type="text" name="auther" class="validate">
-                                        <label for="author">News written By</label>
+                                        <label for="author">Gist written By</label>
                                     </div>
                                     <div class="form-group input-field col s12">
                                         <input id="date" type="date" name="date" class="datepicker">
@@ -76,70 +76,70 @@
                 </div>
 
                 <div class="col s12 m3 z-depth-1">
-                    <div class="old_news_list">
-                        <h2 class="news_post_title">Previously Posted News</h2>
-                        <ul class="news_list">
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                    <div class="old_gist_list">
+                        <h2 class="gist_post_title">Previously Posted Gists</h2>
+                        <ul class="gist_list">
+                            <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                             <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                            <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                            <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                             <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                            <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                             <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                            <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>"  class="news_link">
-                                    <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                             <li class="gist_content">
+                                <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
+                                    <span class="gist_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="http://myschool.com.ng/ibbu/">ibbu</a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
                                     </span></span>
                             </li>
                         </ul>

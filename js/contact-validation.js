@@ -59,7 +59,7 @@
                         message:  ' please write some messsage !!!'
                     },
                     stringLength:{
-                        message:'post descreeption must be less than 120 characters',
+                        message:'post description must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }

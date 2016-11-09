@@ -180,11 +180,11 @@ and open the template in the editor.
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">List News</h5>
+                                    <h5 class="breadcrumbs-title">List Gist</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List News</a>
+                                        <li><a href="#">List Gist</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -193,7 +193,7 @@ and open the template in the editor.
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">List Of All News</p>
+                            <p class="caption">List Of All Gist</p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">
@@ -201,15 +201,15 @@ and open the template in the editor.
                                         <table class="bordered">
                                             <thead>
                                                 <tr>
-                                                    <th data-field="id">News Title</th>
-                                                    <th data-field="name">News Category</th>
+                                                    <th data-field="id">Gist Title</th>
+                                                    <th data-field="name">Gist Category</th>
                                                     <th data-field="price">Posting Date</th>
                                                     <th data-field="price">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>New Course Started </td>
+                                                    <td>Gist Course Started </td>
                                                     <td>Course </td>
                                                     <td>5/sep/2016</td>
                                                     <td>
@@ -218,7 +218,7 @@ and open the template in the editor.
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>New Course Started </td>
+                                                    <td>Gist Course Started </td>
                                                     <td>Course </td>
                                                     <td>5/sep/2016</td>
                                                     <td>

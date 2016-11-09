@@ -24,16 +24,16 @@ $(document).ready(function(){
         //For custom messages
         messages: {
             quetype:{
-                required: "Select que type",
+                required: "Select question type",
                
             },
              subject:{
-                required: "select  Subject",
+                required: "Select  Subject",
                
             },
             
             question:{
-                required: "you must ask yor question",
+                required: "Ask a question",
                
             }
         },
