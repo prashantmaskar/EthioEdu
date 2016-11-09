@@ -40,48 +40,47 @@ class login extends CI_Controller {
                 'title'   => 'Login Page',
             );
 		$this->load->view('login',$view_params);
-    
 
-   $username = $this->input->post("username");
-   $password = $this->input->post('password');
 
-     if(isset($_POST['action'])){
+ if(isset($_POST['action'])){
+
+          $username = $this->input->post("username");
+          $password = $this->input->post('password');
+
+          $this->form_validation->set_rules("username", "Username", "trim|required");
+          $this->form_validation->set_rules("password", "Password", "trim|required");
+
+          if ($this->form_validation->run() == FALSE)
+          {
+
+              $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+          }
+      else{
 
        $usr_result = $this->init_models->get_user_credentials($username, $password);
      
-      
-      if ($usr_result > 0) //active user record is present
-    
-                   {
 
+      if ($usr_result){ 
                     foreach ( $usr_result as $row)
                       {
                               $suname = $row['username'];
                               $suserid =  $row['user_id'];
                       }
-                      echo $suname;
-                      echo "<br/>";
-                      echo $suserid;
                     $sessiondata = array(
                               'susername' => $suname,
                               'suserid' => $suserid,
                               'logged_in' => TRUE
                          );
 
-                        //$this->session->set_userdata($sessiondata);
-                       // redirect("index.php/home");
+                        $this->session->set_userdata($sessiondata);
+                        redirect("index.php/home");
                     }
                     
                     
         
-     	}
+     	}  
+      }
 	}
 
-
-
-
-
-
-	
 
 }
