@@ -201,9 +201,9 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">News FORM</h4>
                                             <div class="row">
-                                                <form id="addnews" class=" form-control col m12" action="#" method="post">
+                                                <form id="addnews" class=" form-control col m12" action="Addnews/add" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
-                                                        <input id="Caption" name="caption" type="text" class="validate">
+                                                        <input id="Caption" name="caption" type="text" class="validate ">
                                                         <label for="Caption">News Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">

@@ -11,7 +11,7 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="news_add">
-                                <form id="reportnews" class="col m12">
+                                <form id="reportnews" method="post" action="reportnews/add"  class="col m12" enctype="multipart/form-data">
                                     <div class=" form-group input-field col s12">
                                         <input id="Caption" name="caption" type="text" class="validate">
                                         <label for="Caption">News Title</label>
@@ -59,6 +59,8 @@
                                         <input id="source_link" type="text" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
+                                    <input type="hidden" name="post_type" value="news">
+
                                    <!-- <div class="form-group input-field col s12">
                                         <input id="p_caption" name="p_caption"type="text" class="validate">
                                         <label for="p_caption">Photo Caption</label>

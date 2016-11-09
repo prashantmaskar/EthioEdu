@@ -61,13 +61,13 @@
                 }
             },
              
-            date: {
+            /*date: {
                 validators: {
                     notEmpty: {
                         message: ' date can not be Empty!!!..'
                     }
                 }
-            },
+            },*/
                 source_link: {
                 validators: {
                     notEmpty: {

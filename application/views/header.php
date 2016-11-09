@@ -8,14 +8,13 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
-         
-  
+       
+        <!-- Create Session Variable -->
+        <?php
 
-
-
-
-
-
+        $sessname = $this->session->userdata('susername');
+        $sessid= $this->session->userdata('suserid');
+        ?>
 
     </head>
     <body>
@@ -36,7 +35,8 @@
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
                             <?php }
                             else{ ?>
-                            <li><a href="#"><?php echo "Welcome ".$this->session->userdata('username'); ?></a></li>
+                            <li><a href="#"><?php echo "Welcome ".$sessname; ?></a></li>
+                            <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
                             
                             <?php } ?>
                     </ul>
