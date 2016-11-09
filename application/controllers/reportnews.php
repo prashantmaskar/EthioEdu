@@ -40,5 +40,68 @@ class reportnews extends CI_Controller {
         );
         $this->load->view('reportnews',$view_params);
     }
+       public function add()
+       {
+            $data=array(
+                'post_title' => $this->input->post('caption'),
+                'post_desc'  => $this->input->post('Description'),
+                'post_category'=>$this->input->post('catagory'),
+                 'post_attachment' =>'',
+                 'post_author'=>  $this->input->post('auther'),
+                   'post_date' => $this->input ->post('date'),
+                  'post_source' => $this->input->post('source_link'),
+                 'post_type'=>  $this->input->post('post_type'),
+                 'user_id'=>''
+        );
+
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100000;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('avatar'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        var_dump($error);
+
+                       // $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data1 = array('upload_data' => $this->upload->data());
+
+                        //$db = $this->db->conn_id;
+
+                        
+
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            'mime_type' => $data1['upload_data']['file_type'],
+                            'blob' => $data1['upload_data']['full_path']
+                        );
+
+                        $data['post_attachment']=$this->init_models->add_attachment($filedata);
+                        $isinserted = $this->init_models->add_anews($data);
+                        
+
+                        //
+                }
+
+               if(isset($isinserted)){
+                    $res=array('success'=>true,"msg"=>'data added successfully');
+                    //$this->load->view('upload_success', $res);
+               }else{
+                    $res=array('success'=>false,"msg"=>'data add failed');
+                    //$this->load->view('upload_success', $res);
+               }
+               var_dump($res);
+
+    }
+
+
 
 }
