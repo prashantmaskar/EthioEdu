@@ -12,7 +12,7 @@
       //Select User tables data	  
       public function get_user_credentials($username, $password)  
       {  
-			 $query = $this->db->query("SELECT username, password, user_email FROM tbl_users where username='".$username."'  and password = '" . md5($password) . "'");
+			 $query = $this->db->query("SELECT * FROM tbl_users where username='".$username."'  and password = '" . md5($password) . "'");
 			return $query->result_array();
       }
       // Insert vacancy data
