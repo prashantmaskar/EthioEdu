@@ -24,7 +24,7 @@ $(document).ready(function() {
             course_cat:{
                 validators:{
                     notEmpty:{
-                        message:  ' please Enter course catagory!!!'
+                        message:  ' please enter course catagory!!!'
 
                     }
                 }

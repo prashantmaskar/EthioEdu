@@ -10,7 +10,7 @@ $(document).ready(function() {
             caption: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter caption!!!..'
+                        message: ' please enter news title!!!..'
                     }
                 }
             },
@@ -34,7 +34,7 @@ $(document).ready(function() {
            avatar:{
             validators:{
                 notEmpty:{
-                    message:'please select an image'
+                    message:'Please select an image'
                 },
                  file: {
                         extension: 'jpeg,jpg,png',
@@ -48,7 +48,7 @@ $(document).ready(function() {
             author: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter auther name!!!..'
+                        message: ' Please enter auther name!!!..'
                     }
                 }
             },
@@ -56,21 +56,21 @@ $(document).ready(function() {
             date: {
                 validators: {
                     notEmpty: {
-                        message: ' date can not be Empty!!!..'
+                        message: ' Date can not be Empty!!!..'
                     }
                 }
             },
                 source_link: {
                 validators: {
                     notEmpty: {
-                        message: ' enter source link!!!..'
+                        message: ' Enter source link!!!..'
                     }
                 }
             },
                 p_caption: {
                 validators: {
                     notEmpty: {
-                        message: ' enter photo caption!!!..'
+                        message: ' Enter photo caption!!!..'
                     }
                 }
             },

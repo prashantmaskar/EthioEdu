@@ -1,5 +1,5 @@
 $(document).ready(function() {
-alert("ssdfg");
+
     $('#addgist').bootstrapValidator({
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -10,7 +10,7 @@ alert("ssdfg");
             caption: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter caption!!!..'
+                        message: ' Please enter Gist name!!!..'
                     }
                 }
             },

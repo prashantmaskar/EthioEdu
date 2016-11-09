@@ -10,7 +10,7 @@
             caption: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter caption!!!..'
+                        message: ' please enter news title!!!..'
                     }
                 }
             },

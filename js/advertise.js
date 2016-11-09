@@ -12,7 +12,7 @@ $(document).ready(function() {
             Caption:{
                  validators:{
                     notEmpty:{
-                        message:'Name required'
+                        message:'Please enter name!!!'
                     },
                     regexp:{
                               regexp: /^[a-z\s]+$/i,
