@@ -17,7 +17,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -25,14 +25,14 @@
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="http://localhost:1234/ETHIO/index.php/sdetail">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li> 
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -40,14 +40,14 @@
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="http://localhost:1234/ETHIO/index.php/sdetail">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li>
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -55,14 +55,14 @@
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="http://localhost:1234/ETHIO/index.php/sdetail">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li>
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -70,14 +70,14 @@
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="http://localhost:1234/ETHIO/index.php/sdetail">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li>
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -85,14 +85,14 @@
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">School: <span><strong>federal University</strong></span></p>
                                         <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="http://localhost:1234/ETHIO/index.php/sdetail">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li>
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
@@ -216,7 +216,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -228,7 +228,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -240,7 +240,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -252,7 +252,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost:1234/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>

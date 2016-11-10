@@ -125,7 +125,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -148,7 +148,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -170,7 +170,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -193,7 +193,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -216,7 +216,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -239,7 +239,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -262,7 +262,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -285,7 +285,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
                                                         <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
-                                                        <a href="http://localhost/ETHIO/index.php/schooldetails">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
 
@@ -333,10 +333,10 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc1.jpg"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc3.png"></div>
-                            <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc1.jpg'?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png'?>"></div>
+                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
 
                         </div>
                     </div>
