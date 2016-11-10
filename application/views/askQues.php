@@ -21,7 +21,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">Question FORM</h4>
                                             <div class="row">
-                                                  <form id="askque" action="#" method="post" class="row">
+                                                  <form id="askque" action="<?php echo site_url('index.php/askQues')?>" method="post" class="row">
                                                      <div class="form-group col s12">
                                         <select class="form-control " name="quetype">
                                             <option value="">Question type</option>
@@ -33,12 +33,12 @@
                                     </div>
                                                  <div class="form-group col s12">
                                                    <select class="form-control " name="subject">
-                                            <option value="">Subject/course category</option>
+                                            <option value="">Question category</option>
                                             <option value="16-19">Academic question</option>
                                             <option value="20-25">Study question</option>
                                           
                                         </select>
-                                        <label>subject/course category</label>
+                                        <label>Question category</label>
                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="user_name" name="question" type="text" class="validate">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2016 at 06:59 AM
+-- Generation Time: Nov 10, 2016 at 11:02 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -34,6 +34,7 @@ CREATE TABLE `tbl_advertise` (
   `advertise_category` varchar(50) NOT NULL,
   `advertise_position` varchar(20) NOT NULL,
   `advertise_subject` varchar(200) NOT NULL,
+  `advertise_file` varchar(200) NOT NULL,
   `advertise_desc` varchar(500) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -138,6 +139,20 @@ CREATE TABLE `tbl_projects` (
   `project_year` varchar(50) NOT NULL,
   `project_format` int(10) NOT NULL,
   `project_upload` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_questions`
+--
+
+CREATE TABLE `tbl_questions` (
+  `question_id` int(11) NOT NULL,
+  `question_type` varchar(50) NOT NULL,
+  `question_category` int(50) NOT NULL,
+  `question_desc` int(200) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -338,6 +353,13 @@ ALTER TABLE `tbl_projects`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `tbl_questions`
+--
+ALTER TABLE `tbl_questions`
+  ADD PRIMARY KEY (`question_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `tbl_school_comments`
 --
 ALTER TABLE `tbl_school_comments`
@@ -405,6 +427,11 @@ ALTER TABLE `tbl_posts_comments`
 --
 ALTER TABLE `tbl_projects`
   MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_questions`
+--
+ALTER TABLE `tbl_questions`
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_school_comments`
 --

@@ -86,7 +86,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -98,7 +98,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                       <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -110,7 +110,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">   
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -122,7 +122,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                       <img src="<?php echo base_url().'images/user.jpg'?>">   
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>

@@ -30,7 +30,7 @@
                                     <li> 2.3 Million Sessions Per Month [Average]</li>
                                 </ul>
                                 <h4 class="ad_sbtitle red-text bo_bor padd_b5">Let's get started... Let's know what you need. Write us using the form below</h4>
-                                <form id="advertiseform" class="col m12">
+                                <form id="advertiseform" method="post"action="<?php echo site_url('index.php/Advertising')?>" class="col m12" enctype="multipart/form-data">
                                     <div class=" form-group input-field col s12">
                                         <input id="Caption" name="Caption" type="text" class="validate">
                                         <label for="Caption">Name</label>
@@ -104,6 +104,7 @@
                                                  <input id="captch" type="text" name="captcha" class="validate">
                                                   <label for="captch">Add Above Code</label>
                                                     </div>
+                                                    
 
                                     <div class="col s5 offset-s5 margin-b-10">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Send

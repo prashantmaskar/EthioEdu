@@ -20,6 +20,7 @@
       {  
             return $this->db->insert('tbl_vacancy', $data);
       }
+
       //Insert course data
       public function insertcourse($data)  
       {  
@@ -58,7 +59,11 @@
       {  
             return $this->db->insert('tbl_user_meta', $data);
       }
-
+//Insert Post Project
+      public function insert_project($data)
+      {
+        return $this->db->insert('tbl_projects', $data);
+      }
 /*
        public function add_attachment($data){
          $file_data = $this->db->escape_str(file_get_contents($data['blob']));
@@ -73,7 +78,13 @@
          $insert_id = $this->db->insert_id();
          return  $insert_id;
       }
+          
 
+      public function add_advertise($data){
+         $this->db->insert('tbl_advertise', $data);
+         $insert_id = $this->db->insert_id();
+         return  $insert_id;
+      }
       
      
    }  
