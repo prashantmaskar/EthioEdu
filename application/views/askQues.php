@@ -33,7 +33,7 @@
                                     </div>
                                                  <div class="form-group col s12">
                                                    <select class="form-control " name="subject">
-                                            <option value="">Question category</option>
+                                            <option value="">Subject/Course category</option>
                                             <option value="16-19">Academic question</option>
                                             <option value="20-25">Study question</option>
                                           
