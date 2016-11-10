@@ -26,8 +26,8 @@ class home extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
-      // echo  $sessname = $this->session->userdata('susername');
-      // echo $sessid= $this->session->userdata('suserid');
+        $sessname = $this->session->userdata('susername');
+        $sessid= $this->session->userdata('suserid');
     }
 
 

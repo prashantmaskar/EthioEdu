@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
-
+<html lang="en">        
     <head>
         <meta charset="utf-8">
         <title><?php echo $m_title ?></title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/bootstrapValidator.css'?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
        
         <!-- Create Session Variable -->

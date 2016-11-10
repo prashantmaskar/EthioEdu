@@ -27,7 +27,13 @@ class post_vacancy extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+
+        $sessname = $this->session->userdata('susername');
+       // $sessid= $this->session->userdata('suserid');
+        if ( !$this->session->userdata('logged_in'))
+
       /*  if ( !$this->session->userdata('logged_in'))
+
     { 
         redirect('index.php/login');
     }*/
@@ -44,12 +50,14 @@ class post_vacancy extends CI_Controller {
 
 
         if(isset($_POST['action'])){
+
         $this->insertdata();
     }
 
     }
 
     function insertdata(){
+        $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
                 'vacancy_school_name' => $this->input->post('sname'),
@@ -58,7 +66,7 @@ class post_vacancy extends CI_Controller {
                 'vacancy_to_date' => $this->input->post('edate'),
                 'vacancy_status' => $this->input->post('vstatus'),
                 'vacancy_desc' => $this->input->post('vdesc'),
-                'user_id' => '1'
+                'user_id' => $sessid
 
             );
 

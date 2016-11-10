@@ -158,6 +158,10 @@
 
             </div>
         </div>
+<<<<<<< HEAD
+    </div>
+</div>
+=======
 
 
 
@@ -166,5 +170,6 @@
 
 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+>>>>>>> d53d6ea40c269052fc823180c823352433bcbbdc
 <?php $this->load->view('footer'); ?>
 
