@@ -134,8 +134,5 @@
        <?php $this->load->view('footer'); ?>
 
 
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 <script type="text/javascript" src="../js/advertise.js"></script>
 

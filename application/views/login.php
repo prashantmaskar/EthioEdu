@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
+<html lang="en">       
 
     <head>
         <meta charset="utf-8">
@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
+         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
 
     </head>
@@ -55,7 +56,6 @@
                 </form>
             </div>
         </div>
-		<?php //echo $id." ".$uname." ".$email." ".$role; ?>
         <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/materialize.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/owl.carousel.min.js' ?>"></script>

@@ -19,14 +19,15 @@ class header extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-     public function __construct()
+      public function __construct()
     {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
-    
+       $sessname = $this->session->userdata('susername');
+        $sessid= $this->session->userdata('suserid');
     }
 
 

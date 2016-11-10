@@ -122,11 +122,5 @@
         </div>
         <?php $this->load->view('footer'); ?>
 
-
-
-
-     <!--   <script type="text/javascript" src="../js/bootstrap.min.js"></script>-->
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 <script type="text/javascript" src="../js/addcource.js"></script>
 

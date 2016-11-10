@@ -66,15 +66,22 @@ class login extends CI_Controller {
                       {
                               $suname = $row['username'];
                               $suserid =  $row['user_id'];
+                              $userrole =  $row['user_role'];
                       }
                     $sessiondata = array(
                               'susername' => $suname,
                               'suserid' => $suserid,
+                              'role' => $userrole,
                               'logged_in' => TRUE
                          );
 
                         $this->session->set_userdata($sessiondata);
+                        if($this->session->userdata('role') == 'admin'){
+                        redirect("index.php/admin/dashboard");
+                      }
+                      else{
                         redirect("index.php/home");
+                      }
                     }
                     
                     
