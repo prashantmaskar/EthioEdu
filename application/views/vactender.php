@@ -96,6 +96,7 @@
                                     <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
+							
                         </div>
 
                     </div>

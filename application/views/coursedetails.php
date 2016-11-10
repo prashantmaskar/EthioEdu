@@ -132,10 +132,10 @@
 
                             <h5>Featured Course</h5>
                             <div class="featured_slider">
-                                <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc1.jpg"></div>
-                                <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
-                                <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc3.png"></div>
-                                <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
+                                       <div class="item"><img src="<?php echo base_url(). 'images/slider_upper/featured_sc1.jpg'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
 
                             </div>
                         </div>
@@ -164,9 +164,7 @@
 
 
 
-    </div>
-</div>
+
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <?php $this->load->view('footer'); ?>
-</body>
-</html>
+

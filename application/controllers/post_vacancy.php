@@ -27,10 +27,10 @@ class post_vacancy extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
-        if ( !$this->session->userdata('logged_in'))
+      /*  if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
-    }
+    }*/
     }
 
 

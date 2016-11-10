@@ -26,55 +26,33 @@
        <input id="full_name" name="full_name" type="text" class="validate">
         <label for="full_name">Full Name</label>
       </div>
+	  <div class= "form-group input-field col s12">
+         <input type="text"  id="phone_number" name="phone_number" class="form-control">
+       <label for="phone_number">Phone Number</label>
+       </div>
+
 	  <div class="form-group input-field col s12">
          <input id="email" name="email" type="text" class="validate">
           <label for="email_adress">Email Address</label>
        </div>
-	            <div class="form-group input-field col s12">
-                                        <select class="form-control browser-default" name="community">
-                                            <option value=""disabled selected>School community</option>
-                                           
-                                          <option value="Abdul-gusau Polytechnic, Nigeria">Abdul-gusau Polytechnic, Nigeria</option>
-                 <option value="Abia State College Of Education, Nigeria">Abia State College Of Education, Nigeria</option>
-                 <option value="Abia State College of Health Sciences and Management Technology, Nigeria">Abia State College of Health Sciences and Management Technology, Nigeria</option>
-                 <option value="Abia State polytechnic , Nigeria">Abia State polytechnic , Nigeria</option>
-                 <option value="Abia State University, Nigeria">Abia State University, Nigeria</option>
-                 <option value="Abraham Adesanya Polytechnic, Nigeria">Abraham Adesanya Polytechnic, Nigeria</option>
-                 <option value="Abubakar Tafawa Balewa University, Nigeria">Abubakar Tafawa Balewa University, Nigeria</option>
-                 <option value="Abubakar Tatari Ali Polytechnic, Nigeria">Abubakar Tatari Ali Polytechnic, Nigeria</option>
-                 <option value="Achievers University, Nigeria">Achievers University, Nigeria</option>
-                 <option value="Adamawa State polytechnic, Nigeria">Adamawa State polytechnic, Nigeria</option>
-                 <option value="Adamawa State University, Nigeria">Adamawa State University, Nigeria</option>
-                 <option value="Adamu Augie College Of Education, Nigeria">Adamu Augie College Of Education, Nigeria</option>
-                 <option value="Adekunle Ajasin University, Nigeria">Adekunle Ajasin University, Nigeria</option>
-                 <option value="Adeleke University, Nigeria">Adeleke University, Nigeria</option>
-                 <option value="Adeniran Ogunsanya College of Education, Nigeria">Adeniran Ogunsanya College of Education, Nigeria</option>
-               
-                                        </select>
-                                    </div>
+	           
 
+	  
 	   <div class="form-group input-field col s12">
-               <select class="form-control browser-default" name="msg_cate"  id="msg_cate">
-<option value="">Message Catagory</option>
-<option value="Advert Placement">Advert Placement</option>
-<option value="Complain">Complain</option>
-<option value="Suggestion">Suggestion</option>
-<option value="Observation">Observation</option>
-<option value="Commendation">Commendation</option>
-</select>
-	  </div>
-	   <div class="form-group input-field col s12">
-       <input id="subject" name="subject" type="text" class="validate">
-        <label for="subject">Subject</label>
-      </div>
-	   <div class="form-group input-field col s12">
-        <textarea id="message" name="message" class="materialize-textarea"></textarea>
-         <label for="message">Message</label>
+        <textarea id="description" name="description" class="materialize-textarea"></textarea>
+         <label for="description">Description</label>
+        </div>
+		 <div class="captch">
+              <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
+         </div>
+       <div class=" form-group input-field col s12">
+            <input id="captch" type="text" name="captcha" class="validate">
+            <label for="captch">Add Above Code</label>
         </div>
 		
 		 <div class="col s5 offset-s5">
                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
+              <i class="material-icons right"></i>
                </button>
          </div>
 	 </form>

@@ -10,7 +10,7 @@
                                         <h1 class="red-text">Falmata</h1>
                                     </div>
                                     <div class="sphoto">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                       <img src="<?php echo base_url().'images/user.jpg'?>">   
 
                                     </div>
                                     <div class="sdetail">
@@ -29,7 +29,7 @@
                                         <a href="#" class="btn waves-effect waves-light red">
                                             Add Friend
                                         </a>
-                                        <a href="http://localhost/ETHIO/index.php/privatemessage" class="btn waves-effect waves-light red">
+                                        <a href="<?php echo base_url().'index.php/privatemessage'?>" class="btn waves-effect waves-light red">
                                             Send PM
                                         </a>
                                         <a href="#" class="btn waves-effect waves-light red">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="wall_acti">
                                             <div class="row">
-                                                <div class="col m1"> <img src="http://localhost/ETHIO/images/user.jpg"> </div>
+                                                <div class="col m1"> <img src="<?php echo base_url().'images/user.jpg'?>">   </div>
                                                 <div class="col m11">
                                                     <p><strong>fayrat.Kb</strong> Completed his CBT EXAM</p>
                                                     <span class="dateinfo">06-feb-2016 10:30:22</span>
@@ -77,7 +77,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col m1"> <img src="http://localhost/ETHIO/images/user.jpg"> </div>
+                                                <div class="col m1"> <img src="<?php echo base_url().'images/user.jpg'?>">   </div>
                                                 <div class="col m11">
                                                     <p><strong>fayrat.Kb</strong> joined <a href="#">Aku</a></p>
                                                     <span class="dateinfo">06-feb-2016 10:30:22</span>
@@ -110,7 +110,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -122,7 +122,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                      <img src="<?php echo base_url().'images/user.jpg'?>">    
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -134,7 +134,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>
@@ -146,7 +146,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#">Sudhir Lahave</a></p>

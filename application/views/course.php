@@ -74,33 +74,29 @@
                         <div class="row">
                             <div class="col m12">
                                 <div class="collection">
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-header"><h4>Course Name</h4></a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="http://localhost/ETHIO/index.php/coursedetails" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-header"><h4>Course Name</h4></a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
                                 </div>
                             </div>
                             <div class="featured_schools col s12 m12">
 
                                 <h5>Featured Course</h5>
                                 <div class="featured_slider">
-                                    <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc1.jpg"></div>
-                                    <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
-                                    <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc3.png"></div>
-                                    <div class="item"><img src="http://localhost/ETHIO/images/slider_upper/featured_sc2.jpg"></div>
+                                    <div class="item"><img src="<?php echo base_url(). 'images/slider_upper/featured_sc1.jpg'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png'?>"></div>
+                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
 
                                 </div>
                             </div>
@@ -111,10 +107,5 @@
             </div>
         </div>
 
-    </div>
-</div>
 
-
-</div>
-</div>
 <?php $this->load->view('footer'); ?>
