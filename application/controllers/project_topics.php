@@ -45,19 +45,67 @@ class Project_topics extends CI_Controller {
 		}
 	}
 	function insertproject(){
-		echo"<script>alert('dfdf');</script>";
+		 $config['upload_path']          = './uploads/Documents';
+                $config['allowed_types']        = 'pdf|docx|doc|rtf';
+                $config['max_size']             = 100000;
+               
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('fileformat'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        var_dump($error);
+
+                       // $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data1 = array('upload_data' => $this->upload->data());
+
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
+
+
+
+
+
 		$data = array(
 			'project_title' =>$this->input->post('Project_name'),
 			'project_course' =>$this->input->post('course_name'),
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
-			'project_upload' =>$this->input->post('fileformat'),
+			'project_upload' =>$filedata['file_name'],
             'user_id' => '1'
 			);
-			
-		 if ($this->init_models->insert_project($data))
-            {
-    echo"<script>alert('Data Inserted Successfully');</script>";
-            }
-	}
+
+
+  
+                        $isinserted = $this->init_models->insert_project($data);
+                        
+
+                        //
+                }
+
+               if(isset($isinserted)){
+                    echo"<script>alert('Success');</script>";
+               }else{
+                    echo"<script>alert('Failed');</script>";
+               }
+
+    }
+
+
+
+
 }
+
+
+
+
+
+
+
+

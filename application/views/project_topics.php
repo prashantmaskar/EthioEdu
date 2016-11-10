@@ -22,7 +22,7 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="news_add">
-                               <form id="project_topic" action="<?php echo site_url('index.php/project_topics')?>" method="post" class="col m12">
+                               <form id="project_topic" action="<?php echo site_url('index.php/project_topics')?>" method="post" class="col m12" enctype="multipart/form-data">
                                      <div class="form-group input-field col s12">
                                                         <input id="Project_name" name="Project_name" type="text" class="validate">
                                                         <label for="Project_name">Project Name</label>
@@ -90,8 +90,8 @@
 
 
       <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../js/project_topics-validate.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrapValidator.js"></script> 
+<script type="text/javascript" src="../js/project_topics-validate.js"></script> -->
 
 
 
