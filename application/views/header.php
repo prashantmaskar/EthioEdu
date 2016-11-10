@@ -12,7 +12,7 @@
         <!-- Create Session Variable -->
         <?php
 
-        $sessname = $this->session->userdata('susername');
+       $sessname = $this->session->userdata('susername');
         $sessid= $this->session->userdata('suserid');
         ?>
 
