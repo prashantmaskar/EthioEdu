@@ -11,7 +11,7 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="gist_add">
-                                <form id="reportgist" class="col m12">
+                                <form id="reportgist" action="<?php echo site_url('index.php/reportgist')?>" class="col m12" enctype="multipart/form-data">
                                     <div class=" form-group input-field col s12">
                                         <input id="Caption" name="caption" type="text" class="validate">
                                         <label for="Caption">Gist Title</label>

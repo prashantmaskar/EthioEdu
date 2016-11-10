@@ -1,4 +1,4 @@
-<?php  $this->load->view('header'); ?>
+    <?php  $this->load->view('header'); ?>
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
@@ -24,7 +24,7 @@
                             </ul>-->
                         </div>
                         <div class="new_events_form">
-                           <form id="postevent" method="post" class="col m12">
+                           <form id="postevent" method="post" action="<?php echo site_url('index.php/new_events')?>" class="col m12" enctype="multipart/form-data">
                               <!-- <div class="form-group input-field col s12">
                                         <input id="event_name" name="event_name" type="text" class="validate">
                                         <label for="Caption"> Event Name</label>
@@ -57,6 +57,7 @@
                                     <input id="postedby" name="postedby" type="text" class="validate">
                                     <label for="Caption">Posted by</label>
                                 </div>
+                                <input type="hidden" name="post_type" value="event">
                                
                            
                                 <div class="new_account input-field col s12">
