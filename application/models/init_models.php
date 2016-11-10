@@ -62,7 +62,7 @@
 //Insert Post Project
       public function insert_project($data)
       {
-        return $this->db->insert('tbl_projects',$data);
+        return $this->db->insert('tbl_projects', $data);
       }
 /*
        public function add_attachment($data){

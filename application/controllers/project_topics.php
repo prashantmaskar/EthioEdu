@@ -32,26 +32,26 @@ class Project_topics extends CI_Controller {
     }*/
     }
 
-
-
 	public function index()
 	{
+
              $view_params = array(
                 'm_title' => ' Project Topic',
                 'title'   => ' Project Topic'
             );
 		$this->load->view('project_topics',$view_params);
-		if (isset($POST['action'])){
+		if (isset($_POST['action'])){
 			$this->insertproject();
 		}
 	}
 	function insertproject(){
+		echo"<script>alert('dfdf');</script>";
 		$data = array(
-			'project_title'=>$this->input->post('Project_name'),
-			'project_course'=>$this->input->post('course_name'),
-			'project_year'=>$this->input->post('Year'),
-			'project_format'=>$this->input->post('format_type'),
-			'project_upload'=>$this->input->post('fileformat'),
+			'project_title' =>$this->input->post('Project_name'),
+			'project_course' =>$this->input->post('course_name'),
+			'project_year' =>$this->input->post('Year'),
+			'project_format' =>$this->input->post('format_type'),
+			'project_upload' =>$this->input->post('fileformat'),
             'user_id' => '1'
 			);
 			

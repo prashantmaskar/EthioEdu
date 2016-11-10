@@ -36,5 +36,15 @@ class askQues extends CI_Controller {
                 'title'   => 'askQues'
             );
 		$this->load->view('askQues', $view_params);
+		if(isset($_POST['action'])){
+			$this->insertquestion();
+		}
+	}
+	function insertquestion(){
+		$data=array(
+			'quetype'
+			'subject'
+			'question'
+			);
 	}
 }
