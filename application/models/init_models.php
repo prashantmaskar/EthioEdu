@@ -78,7 +78,13 @@
          $insert_id = $this->db->insert_id();
          return  $insert_id;
       }
+          
 
+      public function add_advertise($data){
+         $this->db->insert('tbl_advertise', $data);
+         $insert_id = $this->db->insert_id();
+         return  $insert_id;
+      }
       
      
    }  

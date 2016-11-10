@@ -11,7 +11,7 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="gist_add">
-                                <form id="reportgist" action="<?php echo site_url('index.php/reportgist')?>" class="col m12" enctype="multipart/form-data">
+                                <form id="reportgist" method="post" action="<?php echo site_url('index.php/reportgist')?>" class="col m12" enctype="multipart/form-data">
                                     <div class=" form-group input-field col s12">
                                         <input id="Caption" name="caption" type="text" class="validate">
                                         <label for="Caption">Gist Title</label>
@@ -59,6 +59,7 @@
                                         <input id="source_link" type="text" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
+                                    <input type="hidden" name="post_type" value="gistreport">
                                    <!-- <div class="form-group input-field col s12">
                                         <input id="p_caption" name="p_caption"type="text" class="validate">
                                         <label for="p_caption">Photo Caption</label>
