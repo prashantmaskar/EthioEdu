@@ -26,10 +26,10 @@ class reportnews extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
-     /*   if (!$this->session->userdata('logged_in'))
+       if (!$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
-    }*/
+    }
     }
 
 
@@ -77,7 +77,7 @@ class reportnews extends CI_Controller {
                    'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                  'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> 
+                 'user_id'=> ''
         );
                         $isinserted = $this->init_models->add_anews($data);
                         

@@ -41,7 +41,7 @@
                           message: 'The selected file is not valid, it should be (doc,docx,pdf,rtf) and 5 MB at maximum.'
                             },
                           notEmpty: {
-                        message: 'File format  is required.'
+                        message: 'File is required.'
                           }
                         }
                      },

@@ -78,6 +78,7 @@
 						<li><a href="<?php echo base_url() . 'index.php/event' ?>">Events</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/tips' ?>">Tips</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/QuesAns' ?>">Questions & Answers</a></li>
+						<li><a href="<?php echo base_url() . 'index.php/advertising' ?>">Advertise with us</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
                         <li><a  class="<?php if($this->uri->segment(1)=="home"){echo "active";}?>" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>

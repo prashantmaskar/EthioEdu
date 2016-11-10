@@ -29,62 +29,53 @@
                 }
             },
  
-
-           community : {
-                validators: {
-                    notEmpty: {
-                        message: ' please select community!!!..'
+phone_number:{
+	validators:{
+		notEmpty:{
+                        message:'phone number is required!!!'
+                    },
+		digit:{
+			message:'invalid Phone number!!'
+		},
+		 stringLength: {
+                        min:10,
+                        max: 10,
+                        message: 'contact number must contains 10 digits'
                     }
-                }
-            },
+	}
+},
+           
 
-            msg_cate:{
-            	validators:{
-            		notEmpty:{
-            			message:'please select community'
-            		}
-            	}
-            },
+           
 
-                  subject: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter subject!!!..'
-                    }
-                }
-            },
-             message:{
+                
+             description:{
                 validators:{
                     notEmpty:{
                         message:  ' please write some messsage !!!'
                     },
                     stringLength:{
-                        message:'post description must be less than 120 characters',
+                        message:'description must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
                     }
                 }
              },
+			 captcha:{
+				 validators:
+				 {
+					 notEmpty:
+					 {
+						 message:'please add above code!!!'
+					 }
+				 }
+			 },
  
               
-                  fileformat: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select file format!!!..'
-                    }
-                }
-            },
- 
+                 
                
-                  upload1: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must upload file!!!..'
-                    }
-                }
-            },
- 
+                 
 
 
 

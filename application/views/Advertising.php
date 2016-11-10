@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col s12 m8 grid-example z-depth-1">
-                    <div class="news_details">
+                    <div class="advertise_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
                                 <h1 class="page-heading">Advertising On EthioEdu.com</h1>
