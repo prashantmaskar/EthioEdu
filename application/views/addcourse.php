@@ -122,5 +122,5 @@
         </div>
         <?php $this->load->view('footer'); ?>
 
-<script type="text/javascript" src="../js/addcource.js"></script>
+<script type="text/javascript" src="<?php echo base_url() . 'js/addcource.js' ?>"></script>
 

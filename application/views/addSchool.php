@@ -274,5 +274,5 @@
 		</div>
         <?php $this->load->view('footer'); ?>
 
-<script type="text/javascript" src="../js/addschool.js"></script>
+<script type="text/javascript" src="<?php echo base_url() .'js/addschool.js' ?>"></script>
 
