@@ -26,11 +26,11 @@
                                     <p class="black-text">Sort Projects:</p>
                                 </div>
                                 <div class="input-field col s4">
-                                        <input id="Caption" type="date" class=" datepicker validate">
+                                        <input id="startdate" type="date" class=" datepicker validate" name="newsd1" >
                                         <label for="Caption">Project From</label>
                                     </div>
                                 <div class="input-field col s4">
-                                        <input id="Caption" type="date" class=" datepicker validate">
+                                        <input id="enddate" type="date" class=" datepicker validate" name="newsd2">
                                         <label for="Caption">Project To</label>
                                     </div>
                                 <div class="input-field col s2">
@@ -129,3 +129,9 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
+
+<script type="text/javascript" src="../js/dateValidation.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>

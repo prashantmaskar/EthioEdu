@@ -27,14 +27,14 @@ $('.datepicker').pickadate({
             },
 			  today: 'Today',
               clear: 'Clear',
-              close: 'Cancel'
+              close: 'Cancel',
               
              // showMonthsShort: false
 			 //min: new Date(),
 			 
               //closeOnSelect:true
               //closeOnClear: true
-               // min: true
+               min: true
                // max: [2016,11,30],
 				//disable: [
 				//{ from: [2016,10,14], to: [2016,10,27] }
