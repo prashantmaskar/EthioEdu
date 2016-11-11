@@ -75,7 +75,7 @@ class new_events extends CI_Controller {
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-
+                               $sessid= $this->session->userdata('suserid');
                      
                         $data=array(
                 'post_title' => $this->input->post('event_title'),
@@ -86,7 +86,7 @@ class new_events extends CI_Controller {
                    'post_date' => '',
                   'post_source' => '',
                  'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> ''
+                 'user_id'=> $sessid
         );
                         
                         $isinserted = $this->init_models->add_anews($data);

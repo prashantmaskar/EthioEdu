@@ -71,6 +71,7 @@ class advertising extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                            $sessid= $this->session->userdata('suserid');
 
 
 
@@ -82,9 +83,9 @@ class advertising extends CI_Controller {
                  'advertise_category' => $this->input->post('catagory'),
                  'advertise_position'=>  $this->input->post('addposition'),
                 'advertise_subject' => $this->input->post('subject'),
-                  'advertise_file' => $filedata['file_name'],
+                  'advertise_attachment' => $filedata['file_name'],
                  'advertise_desc'=>  $this->input->post('message'),
-                 'user_id'=> ''
+                 'user_id'=> $sessid
         );
 
 
