@@ -61,45 +61,40 @@
                                                         <label for="School_name">School Name</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="choice1">
+                                                        <select class="form-control browser-default" name="cat">
 
-                                                            <option value="">School catagory</option>
-                                                             <option value="">KINDERGARTENS and NURSERY </option>
-                                                            <option value="">PRIMARY</option>
-															 <option value="">SECONDARY</option>
-															 <option value="">PREPARATORY</option>
-															 
-                                                        
+                                                            <option value="">School category</option>
+                                                             <option value="KINDERGARTENS and NURSERY ">KINDERGARTENS and NURSERY </option>
+                                                            <option value="PRIMARY">PRIMARY</option>
+                                                         <option value="PRIMARY">SECONDARY</option>
+                                                          <option value="PRIMARY">PREPARATORY</option>
                                                         </select>
                                                        </div>
-                                 
 
                                                             <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice2">
 
-                                                            <option value="">university</option>
-                                                             <option value="">Account </option>
-                                                            <option value="">Agreeculture</option>
-                                                        
+                                                            <option value="">University</option>
+                                                             <option value="Agriculture ">Agriculture </option>
+                                                            <option value="Account">Account</option>
+                                                         
                                                         </select>
                                                        </div>
                                                                
-
-                                                            <div class="form-group input-field col s12">
+                                                      <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice3">
 
                                                             <option value="">Colleges</option>
-                                                             <option value="">Commerce and business </option>
-                                                            <option value="">Computer training and IT</option>
-															<option value="">Distance education</option>
-															<option value="">Engineering</option>
-															<option value="">Medical schools</option>
-															<option value="">University-Colleges</option>
-															<option value="">Theology and bible</option>
-															<option value="">Agriculture</option>
-                                                        
+                                                             <option value="KINDERGARTENS and NURSERY ">Commerce and business </option>
+                                                            <option value="PRIMARY">Computer training and IT</option>
+                                                         <option value="PRIMARY">Distance education</option>
+                                                          <option value="PRIMARY">Engineering</option>
+                                                            <option value="PRIMARY">Medical schools</option>
+                                                              <option value="PRIMARY">University-Colleges</option>
+                                                                <option value="PRIMARY">Theology and bible</option>
+                                                                 <option value="PRIMARY">Agriculture</option>
                                                         </select>
-                                                       </div>                                                              
+                                                       </div>                                                 
                                                                
                                                             <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice4">
