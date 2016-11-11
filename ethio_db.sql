@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2016 at 12:28 PM
+-- Generation Time: Nov 11, 2016 at 01:58 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -49,11 +49,35 @@ CREATE TABLE `tbl_contact` (
   `contact_id` int(11) NOT NULL,
   `contact_person_name` varchar(100) NOT NULL,
   `contact_person_email` varchar(50) NOT NULL,
-  `school_community` varchar(50) NOT NULL,
-  `message_category` varchar(50) NOT NULL,
-  `contact_subject` varchar(50) NOT NULL,
-  `contact_message` varchar(200) NOT NULL
+  `contact_number` varchar(50) NOT NULL,
+  `contact_desc` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_contact`
+--
+
+INSERT INTO `tbl_contact` (`contact_id`, `contact_person_name`, `contact_person_email`, `contact_number`, `contact_desc`) VALUES
+(1, '', '', '', ''),
+(2, 'dfdsf', 'sdfs', 'sdfds', 'sdff'),
+(3, 'd', 'dsf', 'dsf', ''),
+(4, '', 'jklj', 'jklj', 'jklj'),
+(5, 'hg', 'fgh', 'fghfgh', 'gh'),
+(6, 'dff', 'sdfsdfds', 'sdf', ''),
+(7, 'dfgdfg', '', 'dfgd', ''),
+(8, 'dfgd', '', 'dfg', ''),
+(9, 'dfg', 'dfg', 'dfg', 'dfg'),
+(10, 'sdf', '', 'df', ''),
+(11, '', 'sdfadffdfasd@dsfsdf.com', '', 'sdf'),
+(12, '', 'fgh', 'fgh', 'fgh'),
+(13, '', 'sdfsdfds', 'sdf', 'sdf'),
+(14, 'dfgd', 'dfg', 'dfg', 'dfg'),
+(15, '', 'sdfsdf', 'sdf', 'df'),
+(16, '', 'dfg', 'dfg', 'dfgf'),
+(17, 'dfg', 'dfg', '', ''),
+(18, '', 'sdfg', 'dfgd', 'sdf'),
+(19, 'df', 'asd', 'asda', 'asd'),
+(20, 'sdf', 'sdfsdf', 'sdf', 'sdf');
 
 -- --------------------------------------------------------
 
@@ -78,7 +102,8 @@ CREATE TABLE `tbl_course` (
 --
 
 INSERT INTO `tbl_course` (`course_id`, `course_name`, `course_subject`, `course_category`, `course_duration`, `course_school`, `course_university`, `course_desc`, `user_id`) VALUES
-(1, 'dfg', 'dfg', 'df', 0, 'Kenya', '1', 'dfdf', 1);
+(1, 'dfg', 'dfg', 'df', 0, 'Kenya', '1', 'dfdf', 1),
+(2, '', '', '', 0, '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -90,6 +115,24 @@ CREATE TABLE `tbl_course_meta` (
   `course_rating` varchar(50) NOT NULL,
   `course_review` varchar(50) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_enquiry`
+--
+
+CREATE TABLE `tbl_enquiry` (
+  `enquiry_id` int(11) NOT NULL,
+  `enquiry_school_name` varchar(50) NOT NULL,
+  `enquiry_person_name` varchar(50) NOT NULL,
+  `enquiry_person_email` varchar(50) NOT NULL,
+  `enquiry_person_location` varchar(100) NOT NULL,
+  `enquiry_person_number` varchar(10) NOT NULL,
+  `enquiry_subject` varchar(100) NOT NULL,
+  `enquiry_message` varchar(300) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -234,7 +277,8 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`user_id`, `username`, `password`, `user_email`, `user_role`) VALUES
 (1, 'dnyanesh', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin'),
-(55, 'santosh', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser');
+(55, 'santosh', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
+(56, 'testuser', '92eb5ffee6ae2fec3ad71c777531578f', 'sdfasdffdfasd@dsfsdf.com', 'schooluser');
 
 -- --------------------------------------------------------
 
@@ -293,15 +337,16 @@ CREATE TABLE `tbl_vacancy` (
 --
 
 INSERT INTO `tbl_vacancy` (`vacancy_id`, `vacancy_name`, `vacancy_school_name`, `vacancy_count`, `vacancy_from_date`, `vacancy_to_date`, `vacancy_status`, `vacancy_desc`, `user_id`) VALUES
-(1, 'Web Developer', 'VIIT', 2, '2 October, 2016', '29 October, 2016', '2', 'Test', 1),
-(4, 'Software Engineer', 'VIIT', 2, '22 October, 2016', '29 October, 2016', '2', 'Test', 1),
+(1, 'Web Developer', 'VIIT', 2, '2 October, 2016', '29 October, 2016', '', 'Test', 1),
+(4, 'Software Engineer', 'VIIT', 2, '22 October, 2016', '29 October, 2016', '', 'Test', 1),
 (6, '', '', 0, '', '', '', '', 1),
 (7, '', '', 0, '', '', '', '', 1),
 (8, '', '', 0, '', '', '', '', 1),
 (9, '', '', 0, '', '', '', '', 1),
 (10, '', '', 0, '', '', '', '', 1),
-(11, 'sdfs', 'sdf', 0, '7 November, 2016', '14 November, 2016', 'Close', 'sdfsfd', 55),
-(12, 'sdfs', 'sdf', 0, '29 November, 2016', '20 November, 2016', 'Close', 'dsfsf', 55);
+(11, 'sdfs', 'sdf', 0, '7 November, 2016', '14 November, 2016', '', 'sdfsfd', 55),
+(12, 'sdfs', 'sdf', 0, '29 November, 2016', '20 November, 2016', '', 'dsfsf', 55),
+(13, '', '', 0, '', '', '', '', 1);
 
 --
 -- Indexes for dumped tables
@@ -332,6 +377,12 @@ ALTER TABLE `tbl_course`
 --
 ALTER TABLE `tbl_course_meta`
   ADD KEY `course_id` (`course_id`,`user_id`);
+
+--
+-- Indexes for table `tbl_enquiry`
+--
+ALTER TABLE `tbl_enquiry`
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `tbl_posts`
@@ -408,12 +459,12 @@ ALTER TABLE `tbl_advertise`
 -- AUTO_INCREMENT for table `tbl_contact`
 --
 ALTER TABLE `tbl_contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `tbl_course`
 --
 ALTER TABLE `tbl_course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_posts`
 --
@@ -443,12 +494,12 @@ ALTER TABLE `tbl_school_comments`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `tbl_vacancy`
 --
 ALTER TABLE `tbl_vacancy`
-  MODIFY `vacancy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `vacancy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

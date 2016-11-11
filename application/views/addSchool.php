@@ -24,20 +24,7 @@
         </div>
     <?php
     }
-
-
-if ($this->session->flashdata('errormessage')) {
-    ?>
-    <div class="message flash">
-      <div class="message-data">
-        <p class="error-msg"><?php echo $this->session->flashdata('errormessage'); ?></p>
-        <button class="btn error-close">Close</button>
-        </div>   
-        </div>
-    <?php
-    }
 ?>
-
                 <div class="col s12 m8 z-depth-1 white ">
 
                     <div class="content_sec add-school">
