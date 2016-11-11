@@ -73,6 +73,6 @@
 			 </div>
 			  </div>
 			<?php $this->load->view('footer'); ?>
-			<script type="text/javascript" src="../js/askQues.js"></script>
+			<script type="text/javascript" src="<?php echo base_url() .'js/askQues.js' ?>"></script>
        
 		 

@@ -64,7 +64,7 @@ class reportgist extends CI_Controller {
 
                         var_dump($error);
 
-                       // $this->load->view('upload_form', $error);
+                       //$this->load->view('upload_form', $error);
                 }
                 else
                 {
@@ -74,7 +74,7 @@ class reportgist extends CI_Controller {
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-
+                             $sessid= $this->session->userdata('suserid');
                      
                         $data=array(
                 'post_title' => $this->input->post('caption'),
@@ -85,7 +85,7 @@ class reportgist extends CI_Controller {
                    'post_date' => $this->input->post('date'),
                   'post_source' => $this->input->post('source_link'),
                  'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> ''
+                 'user_id'=>  $sessid
         );
                         
                         $isinserted = $this->init_models->add_anews($data);

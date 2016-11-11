@@ -68,6 +68,8 @@ class reportnews extends CI_Controller {
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
+                         $sessid= $this->session->userdata('suserid');
+
                         $data=array(
                 'post_title' => $this->input->post('caption'),
                 'post_desc'  => $this->input->post('Description'),
@@ -77,7 +79,7 @@ class reportnews extends CI_Controller {
                    'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                  'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> ''
+                 'user_id'=>  $sessid
         );
                         $isinserted = $this->init_models->add_anews($data);
                         

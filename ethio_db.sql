@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2016 at 11:02 AM
+-- Generation Time: Nov 10, 2016 at 12:28 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -34,7 +34,7 @@ CREATE TABLE `tbl_advertise` (
   `advertise_category` varchar(50) NOT NULL,
   `advertise_position` varchar(20) NOT NULL,
   `advertise_subject` varchar(200) NOT NULL,
-  `advertise_file` varchar(200) NOT NULL,
+  `advertise_attachment` varchar(200) NOT NULL,
   `advertise_desc` varchar(500) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -151,8 +151,8 @@ CREATE TABLE `tbl_projects` (
 CREATE TABLE `tbl_questions` (
   `question_id` int(11) NOT NULL,
   `question_type` varchar(50) NOT NULL,
-  `question_category` int(50) NOT NULL,
-  `question_desc` int(200) NOT NULL,
+  `question_category` varchar(50) NOT NULL,
+  `question_desc` varchar(200) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -299,7 +299,9 @@ INSERT INTO `tbl_vacancy` (`vacancy_id`, `vacancy_name`, `vacancy_school_name`, 
 (7, '', '', 0, '', '', '', '', 1),
 (8, '', '', 0, '', '', '', '', 1),
 (9, '', '', 0, '', '', '', '', 1),
-(10, '', '', 0, '', '', '', '', 1);
+(10, '', '', 0, '', '', '', '', 1),
+(11, 'sdfs', 'sdf', 0, '7 November, 2016', '14 November, 2016', 'Close', 'sdfsfd', 55),
+(12, 'sdfs', 'sdf', 0, '29 November, 2016', '20 November, 2016', 'Close', 'dsfsf', 55);
 
 --
 -- Indexes for dumped tables
@@ -446,7 +448,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_vacancy`
 --
 ALTER TABLE `tbl_vacancy`
-  MODIFY `vacancy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `vacancy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
