@@ -68,6 +68,10 @@
       {
         return $this->db->insert('tbl_questions', $data);
       }
+       public function insert_contact($data)
+      {
+        return $this->db->insert('tbl_contact', $data);
+      }
 /*
        public function add_attachment($data){
          $file_data = $this->db->escape_str(file_get_contents($data['blob']));

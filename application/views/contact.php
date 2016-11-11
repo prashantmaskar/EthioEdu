@@ -21,7 +21,7 @@
                             Do you know that most related questions about your school have already been answered? Also, you will likely get a response 10 times faster if you ask the entire school community of members. It's easy to ask a question;
                         </div>
   <div class="content_sec contact-us">
-     <form id="contactform" action="#" method="post" class="col m12 contact-us_form">
+     <form id="contactform" action="<?php echo site_url('index.php/contact') ?>" method="post" class="col m12 contact-us_form">
 	 <div class="form-group input-field col s12">
        <input id="full_name" name="full_name" type="text" class="validate">
         <label for="full_name">Full Name</label>

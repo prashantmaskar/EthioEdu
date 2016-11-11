@@ -191,7 +191,7 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Inquiry</h2>
-                                <p>Want More Details about School? &nbsp;<a href="#" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
+                                <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() . 'index.php/enquiry' ?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
                         <div class="coment_box row">

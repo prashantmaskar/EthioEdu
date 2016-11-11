@@ -34,7 +34,24 @@ class Contact extends CI_Controller {
             'm_title' => 'Contact',
             'title' => 'Contact'
         );
-        $this->load->view('contact',$view_params);
+           $this->load->view('contact',$view_params);
+           if(isset($_POST['action']))
+        {
+            $this->insertcontact();
+        }
+    }
+    function insertcontact(){
+        $data=array(
+            'contact_person_name' =>$this->input->post('full_name'),
+            'contact_person_email' =>$this->input->post('email'),
+            'contact_number' =>$this->input->post('phone_number'),
+            'contact_desc' =>$this->input->post('description'),
+             
+            );
+        if ($this->init_models->insert_contact($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
     }
 
 }
