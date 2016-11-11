@@ -29,7 +29,7 @@
                     </div>
                     <div class="row no-margin">
                         <div class="input-field col s12">
-                            <input name="password" id="password" type="text">
+                            <input name="password" id="password" type="password">
                             <label for="Password" class="center-align">password</label>
                         </div>
                     </div>

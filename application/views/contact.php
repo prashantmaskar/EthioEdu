@@ -13,7 +13,18 @@
                         </a>
                     </div>
                 </div>
-              
+              <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
                   
  <div class="col s12 m8 z-depth-1 white ">
   <h1 class="add_title">Contact Us</h1>
@@ -74,6 +85,6 @@
             </div>
         </div>
        <?php $this->load->view('footer'); ?>
-<script type="text/javascript" src="<?php echo base_url() .'js/contact-validation.js' ?>"></script>
+<!--<script type="text/javascript" src="<?php //echo base_url() .'js/contact-validation.js' ?>"></script>  -->
 
 

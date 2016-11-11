@@ -34,12 +34,6 @@ class Addnews extends CI_Controller {
       redirect('index.php/home');
     }
     }
-    
-
-	function __construct() {
-	parent::__construct();
-	$this->load->model('init_models');
-	}
 	public function index()
 	{
              $view_params = array(

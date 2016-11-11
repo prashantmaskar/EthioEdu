@@ -50,7 +50,9 @@ class Contact extends CI_Controller {
             );
         if ($this->init_models->insert_contact($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/contact");
             }
     }
 

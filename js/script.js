@@ -52,4 +52,8 @@ loop: true,
 
 });
 
+ $('.success-close').click(function(){
 
+$('.message.flash').hide();
+
+});

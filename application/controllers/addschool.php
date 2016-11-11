@@ -111,7 +111,9 @@ function insertschooldata(){
 
      if ($this->init_models->addschooldata($data))
             {
-    echo"<script>alert('Registration Success');</script>";
+    //echo"<script>alert('Registration Success');</script>";
+                $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                redirect("index.php/addSchool");
             }
 }
 

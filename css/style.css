@@ -479,6 +479,33 @@ page-heading-wrap page-heading
 	
 	
 }
+.message.flash  p{
+    color: #2bbbad;
+	font-size: 18px;
+}
+.message-data {
+    margin-top: 50px;
+}
+button.btn.success-close{
+    margin-top: 15px;
+}
+.message.flash {
+    width: 300px;
+    background-color: #fff;
+    display: inline-block;
+    position: absolute;
+    height: 200px;
+    z-index: 1;    
+	top: 50%;
+    left: 40%;
+    -webkit-box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
+    right: auto;
+	text-align:center;
+}
+
+
 .QuesAns_sort_form {
  border-top: 1px solid red;
 	
@@ -903,7 +930,7 @@ connect2Me List and Form Csss
     width: 80%;
     margin: 30px auto;
 }
-#connectme .form-error, #userform .form-error {
+#connectme .form-error, #userform .form-error, #schooldetails .form-error{
     color: #D8000C;
 }
 .form_heading{
