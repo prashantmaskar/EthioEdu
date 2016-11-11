@@ -130,6 +130,10 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter student population!!!'
+                    },
+                     digits:{
+                         message:'population should be in digits'
+
                     }
                 }
              },
