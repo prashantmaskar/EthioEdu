@@ -25,17 +25,17 @@
                                                      <div class="form-group col s12">
                                         <select class="form-control " name="quetype">
                                             <option value="">Question type</option>
-                                            <option value="16-19">Academic question</option>
-                                            <option value="20-25">Study question</option>
+                                            <option value="Acadamic Question">Academic question</option>
+                                            <option value="Study Question">Study question</option>
                                           
                                         </select>
                                         <label>Question type</label>
                                     </div>
                                                  <div class="form-group col s12">
                                                    <select class="form-control " name="subject">
-                                            <option value="">Question category</option>
-                                            <option value="16-19">Academic question</option>
-                                            <option value="20-25">Study question</option>
+                                            <option value="">Subject/Course category</option>
+                                            <option value="Acadamic Question">Academic question</option>
+                                            <option value="Study Question">Study question</option>
                                           
                                         </select>
                                         <label>Question category</label>
@@ -73,6 +73,6 @@
 			 </div>
 			  </div>
 			<?php $this->load->view('footer'); ?>
-			<script type="text/javascript" src="../js/askQues.js"></script>
+			<script type="text/javascript" src="<?php echo base_url() .'js/askQues.js' ?>"></script>
        
 		 

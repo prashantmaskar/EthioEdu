@@ -30,7 +30,6 @@ class post_vacancy extends CI_Controller {
 
         $sessname = $this->session->userdata('susername');
        // $sessid= $this->session->userdata('suserid');
-        if ( !$this->session->userdata('logged_in'))
 
       /*  if ( !$this->session->userdata('logged_in'))
 

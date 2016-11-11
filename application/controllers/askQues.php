@@ -42,9 +42,14 @@ class askQues extends CI_Controller {
 	}
 	function insertquestion(){
 		$data=array(
-			'quetype'
-			'subject'
-			'question'
+			'question_type' =>$this->input->post('quetype'),
+			'question_category' =>$this->input->post('subject'),
+			'question_desc' =>$this->input->post('question'),
+			 'user_id' => '1'
 			);
+		if ($this->init_models->insert_question($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
 	}
 }
