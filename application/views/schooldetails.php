@@ -219,8 +219,6 @@
                             </div>
 
                         </div>
-
-
                     </div>
                 </div>
                 <div class="col s12 m3 ">
@@ -275,75 +273,9 @@
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
-
-
-
-
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
-
-
-
-
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
-
-<script>
-$(document).ready(function(){
-    //alert('in');
-    $.validator.setDefaults({
-        ignore: []
-    });
-
- $("#schooldetails").validate({
-        rules: {
-            
-            username:{
-            
-                required: true
-               
-            },
-            subject:{
-                required: true
-
-            },
-            comment:{
-                required: true,
-                minlength:5
-            }
-           
-        },
-        
-        messages:{
-            username:{
-                required:"enter username",
-            },
-            subject:{
-                required:"enter Subject"
-            },
-            comment:{
-                required:"please give some comment"
-            }
-        },
-
-
-
-       errorClass:"invalid form-error",
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-          error.appendTo( element.parent() );
-          }
-        
-     });
-});
-     
-
-</script>
+<script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>

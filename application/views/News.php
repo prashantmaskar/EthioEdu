@@ -1,6 +1,4 @@
 <?php  $this->load->view('header'); ?>
-<html>
-<body>
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
@@ -136,60 +134,10 @@
             </div>
         </div>
 <?php $this->load->view('footer'); ?>
-		
-		
-		
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
-<script> 
-		  $(document).ready(function() {
-$('.datepicker').pickadate({
-	 selectMonths: true, 
-	 selectYears:true,
-	 //format: 'yyyy-mm-dd',
-	     onSet: function( arg ){
-              if ( 'select' in arg ){ //prevent closing on selecting month/year
-            this.close();
-			}
-			
-			var d1 = $('#startdate').val();
-            var d2 = $('#enddate').val();
-
-            var date1 = new Date(d1);
-            var date2 = new Date(d2);
-
-           var date1_ms = date1.getTime();
-           var date2_ms = date2.getTime();
-
-            if((date2_ms -date1_ms ) <0 )
-            {
-			 this.clear();
-			  alert('End date cannot be a previous date!');
-              $('#startdate').val(d2);  
-			  }
-            },
-			  today: 'Today',
-              clear: 'Clear',
-              close: 'Cancel'
-             // showMonthsShort: false
-			 //min: new Date(),
-			 
-              //closeOnSelect:true
-              //closeOnClear: true
-                //min: [2016,11,1],
-               // max: [2016,11,30],
-				//disable: [
-				//{ from: [2016,10,14], to: [2016,10,27] }
-				//  ]
-	})
-});
-</script>
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script> 
-<script type="text/javascript" src="../js/sortnews.js"></script>
+ <script type="text/javascript" src="../js/sortnews.js"></script>
+<script type="text/javascript" src="../js/dateValidation.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
-</body>
-</html>
-        
