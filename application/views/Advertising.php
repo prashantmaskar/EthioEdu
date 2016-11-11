@@ -133,7 +133,5 @@
             </div>
         </div>
        <?php $this->load->view('footer'); ?>
-
-
-<script type="text/javascript" src="../js/advertise.js"></script>
+<script type="text/javascript" src="<?php echo base_url() .'js/advertise.js' ?>"></script>
 

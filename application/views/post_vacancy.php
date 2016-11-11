@@ -124,12 +124,4 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
-
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.css">
-<script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../js/post_vacuncy-validate.js"></script>
+<script type="text/javascript" src="<?php echo base_url() .'js/post_vacuncy-validate.js' ?>"></script>
