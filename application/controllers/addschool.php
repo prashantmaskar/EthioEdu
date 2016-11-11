@@ -115,6 +115,11 @@ function insertschooldata(){
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
                 redirect("index.php/addSchool");
             }
+            else{
+                $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 
+                redirect("index.php/addSchool");
+
+            }
 }
 
 
