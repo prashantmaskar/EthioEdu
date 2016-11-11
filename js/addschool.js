@@ -50,7 +50,7 @@ $(document).ready(function() {
                         }
                     }
             },
-            choice1: {
+            cat: {
                 validators: {
                     notEmpty: {
                         message: ' please select  school catagory!!!..'
