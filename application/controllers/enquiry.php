@@ -35,5 +35,31 @@ class enquiry extends CI_Controller {
                 'title'   => 'enquiry'
             );
 		$this->load->view('enquiry',$view_params);
+		
+		if(isset($_POST['action'])){
+
+        $this->insertenquiry();
+    }
+
 	}
+	 function insertenquiry(){
+       $sessid= $this->session->userdata('suserid');
+        $data = array(
+                'enquiry_school_name' => $this->input->post('school'),
+                'enquiry_person_name' => $this->input->post('fullname'),
+                'enquiry_person_email' => $this->input->post('email'),
+                'enquiry_person_location' => $this->input->post('address'),
+                'enquiry_person_number' => $this->input->post('phone_number'),
+                'enquiry_subject' => $this->input->post('subject'),
+                'enquiry_message' => $this->input->post('enquirybox'),
+                'user_id' => $sessid
+
+            );
+
+        if ($this->init_models->insert_enquiry($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
+
+}
 }

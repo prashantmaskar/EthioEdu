@@ -85,7 +85,7 @@ function insertschooldata(){
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
-                'school_category' => $this->input->post('choice1'),
+                'school_category' => $this->input->post('cat'),
                 'school_university' => $this->input->post('choice2'),
                 'school_institute' => $this->input->post('choice3'),
                 'other_category' => $this->input->post('choice4'),

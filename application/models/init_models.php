@@ -72,6 +72,10 @@
       {
         return $this->db->insert('tbl_contact', $data);
       }
+      public function insert_enquiry($data)
+      {
+        return $this->db->insert('tbl_enquiry', $data);
+      }
 /*
        public function add_attachment($data){
          $file_data = $this->db->escape_str(file_get_contents($data['blob']));
