@@ -8,9 +8,13 @@
         },*/
         fields: {
             caption: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter news title!!!..'
+                validators:{
+                  notEmpty:{
+                        message:'name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
                     }
                 }
             },
@@ -57,6 +61,10 @@
                 validators: {
                     notEmpty: {
                         message: ' please enter auther name!!!..'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
                     }
                 }
             },

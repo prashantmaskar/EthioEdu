@@ -56,7 +56,7 @@
                                         <label for="date">Date of Posting</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="source_link" type="text" name="source_link"class="validate">
+                                        <input id="source_link" type="url" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
                                     <input type="hidden" name="post_type" value="gistreport">

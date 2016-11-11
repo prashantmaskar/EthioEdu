@@ -57,6 +57,10 @@
                 validators: {
                     notEmpty: {
                         message: ' please enter auther name!!!..'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
                     }
                 }
             },
