@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Event FORM</h4>
                                             <div class="row">
-                                                <form id="addevent" action="#" method="post" class="col m12">
+                                                <form id="addevent" action"<?php echo site_url('index.php/admin/Event')?>" method="post" enctype="multipart/form-data" method="post" class="col m12">
                                                    
                                                     <div class="form-group input-field col s12">
                                                         <input id="event_tital" name="event_tital" type="text" class="validate">
@@ -115,6 +115,7 @@ and open the template in the editor.
                                                         <input id="post_by" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>
                                                     </div>
+                                                    <input type="hidden" name="post_type" value="Event">
 
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish

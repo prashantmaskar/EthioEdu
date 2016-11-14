@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">News FORM</h4>
                                             <div class="row">
-                                                <form id="addnews" class=" form-control col m12" action="Addnews/add" method="post" enctype="multipart/form-data">
+                                                <form id="addnews" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addnews')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" class="validate ">
                                                         <label for="Caption">News Title</label>
@@ -135,7 +135,7 @@ and open the template in the editor.
                                                         <label for="date"></label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="source_link" name="source_link" type="text" class="validate">
+                                                        <input id="source_link" name="source_link" type="url" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
                                                     <!--<div class="form-group input-field col s12">
