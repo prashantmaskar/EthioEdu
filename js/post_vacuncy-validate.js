@@ -32,7 +32,7 @@ $(document).ready(function() {
                 }
             },
              
-            sdate: {
+           /* sdate: {
                 validators: {
                     notEmpty: {
                         message: ' date can not be Empty!!!..'
@@ -45,7 +45,7 @@ $(document).ready(function() {
                         message: ' enter last date of Binding !!!..'
                     }
                 }
-            },
+            },*/
                 vstatus: {
                 validators: {
                     notEmpty: {
