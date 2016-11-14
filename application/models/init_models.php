@@ -110,5 +110,12 @@
         return $query->result_array();
       }
      
+       public function selectproject()  
+      {  
+        $query = $this->db->query("select * from  tbl_projects"); 
+        return $query->result_array();
+      }
+
+
    }  
 ?>  
