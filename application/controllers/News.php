@@ -34,6 +34,9 @@ class News extends CI_Controller {
                 'm_title' => 'News',
                 'title'   => 'News'
             );
-		$this->load->view('News', $view_params);
+		
+
+		$view_params['news'] = $this->init_models->selectnews();
+        $this->load->view('News', $view_params);
 	}
 }
