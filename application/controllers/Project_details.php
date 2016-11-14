@@ -35,6 +35,7 @@ class project_details extends CI_Controller {
             'm_title' => 'Project Details',
             'title' => 'Project Details'
         );
+          $view_params['project_topics']=$this->init_models->selectproject();
         $this->load->view('project_details',$view_params);
     }
 
