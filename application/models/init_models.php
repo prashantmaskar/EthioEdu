@@ -15,11 +15,6 @@
           $query = $this->db->query("SELECT * FROM tbl_users where username='".$username."'  and password = '" . md5($password) . "'");
          return $query->result_array();
       }
-      // Insert vacancy data
-      public function insertprivacy($data)  
-      {  
-            return $this->db->insert('tbl_vacancy', $data);
-      }
 
       //Insert course data
       public function insertcourse($data)  
@@ -76,14 +71,6 @@
       {
         return $this->db->insert('tbl_enquiry', $data);
       }
-/*
-       public function add_attachment($data){
-         $file_data = $this->db->escape_str(file_get_contents($data['blob']));
-         $data['blob']=$file_data;
-         $this->db->insert('tbl_attachments', $data);
-         $insert_id = $this->db->insert_id();
-         return  $insert_id;
-      }*/
 
       public function add_anews($data){
          $this->db->insert('tbl_posts', $data);
@@ -97,7 +84,21 @@
          $insert_id = $this->db->insert_id();
          return  $insert_id;
       }
+
+
+
+       // Pravacy Table Actions
+
+      public function insertprivacy($data)  
+      {  
+            return $this->db->insert('tbl_vacancy', $data);
+      }
       
+      public function selectnews()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'news'"); 
+        return $query->result_array();
+      }
      
    }  
 ?>  

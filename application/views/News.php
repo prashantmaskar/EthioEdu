@@ -45,65 +45,18 @@
                         <div class="col s12 m12 ">
                             <div class="news_list_wrap">
                                 <ul class="news_list">
+                                <?php
+                                foreach ($news as $row){ ?>
                                     <li class="news_content">
                                         <a href="<?php echo base_url().'index.php/news_detail'?>" class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
+                                            <span class="News_title"><?php echo $row['post_title']; ?> </span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
-                                            </span></span>
-                                    </li>
-                                    <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>"  class="news_link">
-                                            <span class="News_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span>
-                                        </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> for <a href="#">ibbu</a> | Comments [7]  
+                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong> <?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_category'];?></a> | Comments [7]  
                                             </span></span>
                                     </li>
 
+                                <?php } ?>
                                 </ul>
-
                                 <ul class="pagination">
                                     <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                     <li class="active"><a href="#!">1</a></li>
