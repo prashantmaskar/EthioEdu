@@ -33,6 +33,10 @@
                                     <input id="event_title" name="event_title" type="text" class="validate">
                                     <label for="Caption">Event Title</label>
                                 </div>
+                                <div class="form-group input-field col s12">
+                                    <input id="event_venue" name="event_venue" type="text" class="validate">
+                                    <label for="Caption">Event Happening in</label>
+                                </div>
                                 
                                 <!--<div class="form-group input-field col s12">
                                     <input id="subject" type="text" name="subject" class="validate">
@@ -52,6 +56,10 @@
                                     <textarea id="description" name="Description" class="materialize-textarea"></textarea>
                                     <label for="Caption">Description</label>
                                 </div>
+                                 <div class="form-group input-field col s12">
+                                        <input id="date" type="date" name="date" class="datepicker">
+                                        <label for="date">Date of Posting</label>
+                                    </div>
 								
                                 <div class="form-group input-field col s12">
                                     <input id="postedby" name="postedby" type="text" class="validate">
