@@ -99,6 +99,23 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'news'"); 
         return $query->result_array();
       }
+       public function selectgist()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'gistreport'"); 
+        return $query->result_array();
+      }
+       public function selectevent()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'event'"); 
+        return $query->result_array();
+      }
      
+       public function selectproject()  
+      {  
+        $query = $this->db->query("select * from  tbl_projects"); 
+        return $query->result_array();
+      }
+
+
    }  
 ?>  

@@ -23,6 +23,10 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="gist_wrap">
+
+
+                            <?php
+                                foreach ($gist as $row){ ?>
                                 <div class="gits_content row">
                                     <div class="gist_ainfo">
                                         <div class="col s1">
@@ -31,21 +35,22 @@
                                         </div>
                                         <div class="col s11">
                                             <div class="gist_dinfo">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
+                                                <span class="green-text"><?php echo $row['post_date'];?></span>
+                                                <a href="#"><?php echo $row['post_author'];?></a>
                                                 <span>Writes for School</span>
                                             </div>
                                             <div class="gist_title">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
+                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="git_img col m12">
-                                        <img class="materialboxed" src="<?php echo base_url() . 'images/about.jpg' ?>">
+                                          <?php $gist_attachment = $row['post_attachment']; ?>
+                                        <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
-                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
+                                        <p class="black-text"><?php echo $row['post_desc']; ?></p>
                                     </div>
                                     <div class="social_share col m12">
                                         <span><a href="#">Like</a></span>&nbsp;
@@ -53,131 +58,13 @@
                                         <span><a href="#">Reply</a></span>
                                     </div>
                                 </div>
-                                <div class="gits_content row">
-                                    <div class="gist_ainfo">
-                                        <div class="col s1">
-                                            <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-
-                                        </div>
-                                        <div class="col s11">
-                                            <div class="gist_dinfo">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="gist_title">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="git_img col m12">
-                                        <img class="materialboxed" src="<?php echo base_url() . 'images/about.jpg' ?>">
-                                        <span class="see_more"><a href="#">See More Photos</a></span>
-                                    </div>
-                                    <div class="col m12 git_desc">
-                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
-                                    </div>
-                                    <div class="social_share col m12">
-                                        <span><a href="#">Like</a></span>&nbsp;
-                                        <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Reply</a></span>
-                                    </div>
-                                </div>
-                                <div class="gits_content row">
-                                    <div class="gist_ainfo">
-                                        <div class="col s1">
-                                            <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-
-                                        </div>
-                                        <div class="col s11">
-                                            <div class="gist_dinfo">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="gist_title">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="git_img col m12">
-                                        <img class="materialboxed" src="<?php echo base_url() . 'images/about.jpg' ?>">
-                                        <span class="see_more"><a href="#">See More Photos</a></span>
-                                    </div>
-                                    <div class="col m12 git_desc">
-                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
-                                    </div>
-                                    <div class="social_share col m12">
-                                        <span><a href="#">Like</a></span>&nbsp;
-                                        <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Reply</a></span>
-                                    </div>
-                                </div>
-                                <div class="gits_content">
-                                    <div class="gist_ainfo">
-                                        <div class="col s1">
-                                            <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-
-                                        </div>
-                                        <div class="col s11">
-                                            <div class="gist_dinfo">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="gist_title">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="git_img col m12">
-                                        <img class="materialboxed" src="<?php echo base_url() . 'images/about.jpg' ?>">
-                                        <span class="see_more"><a href="#">See More Photos</a></span>
-                                    </div>
-                                    <div class="col m12 git_desc">
-                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
-                                    </div>
-                                    <div class="social_share col m12">
-                                        <span><a href="#">Like</a></span>&nbsp;
-                                        <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Reply</a></span>
-                                    </div>
-                                </div>
-                                <div class="gits_content row">
-                                    <div class="gist_ainfo">
-                                        <div class="col s1">
-                                            <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-
-                                        </div>
-                                        <div class="col s11">
-                                            <div class="gist_dinfo">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="gist_title">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="git_img col m12">
-                                        <img class="materialboxed" src="<?php echo base_url() . 'images/about.jpg' ?>">
-                                        <span class="see_more"><a href="#">See More Photos</a></span>
-                                    </div>
-                                    <div class="col m12 git_desc">
-                                        <p class="black-text">STUDENTS OF GARBA NOMA JUNIOR SECONDARY SCHOOL, BAUCHI, SITTING ON THE FLOOR IN THEIR CLASSROOM ON MONDAY - NAN</p>
-                                    </div>
-                                    <div class="social_share col m12">
-                                        <span><a href="#">Like</a></span>&nbsp;
-                                        <span><a href="#">52 Comments</a></span>&nbsp;
-                                        <span><a href="#">Reply</a></span>
-                                    </div>
-                                </div>
+                               <?php } ?>
                             </div>
                         </div>
 
                     </div>
                 </div>
+
 
                 <div class="col s12 m3 z-depth-1">
                     <div class="featured_gist row">
@@ -186,139 +73,29 @@
                         </div>
                         <div class="fgist_list_wrap col m12">
                             <ul class="fgist_list">
+                              <?php  
+                               foreach ($gist as $row){ ?>
                                 <li>
                                     <div class="row">
                                         <div class="fgist col s12">
                                             <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
+                                                <span class="green-text"><?php echo $row['post_date'];?></span>
+                                                <a href="#"><?php echo $row['post_author'];?></a>
+                                                <span><?php echo $row['post_category'];?></span>
                                             </div>
                                             <div class="fgist_thumb col s3">
                                                 <img src="<?php echo base_url() . 'images/user.jpg' ?>">
                                             </div>
                                             <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
+                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
 
                                             </div>
 
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                     <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                     <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                     <li>
-                                    <div class="row">
-                                        <div class="fgist col s12">
-                                            <div class="fgist_info col s12">
-                                                <span class="green-text">20-Jul-2016 10:31:44 </span>
-                                                <a href="#">Ethioedu Amos</a>
-                                                <span>Writes for School</span>
-                                            </div>
-                                            <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
-                                            </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#">Bauchi Secondary Students Sitting On The Floor To Learn</a></h1>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
+                                </li>  
+                                <?php } ?>
+                                
                             </ul>
                         </div>
                     </div>

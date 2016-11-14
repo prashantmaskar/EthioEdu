@@ -22,146 +22,32 @@
                         </div>
                         <div class="col s12 m12 ">
                             <div class="event_list">
+                            <?php foreach($event as $row){ ?>
+                           
                                    <div class="col m12 event_content">
                                     <div class="event_date col m2">
                                         <div class="edate z-depth-1 red lighten-1 white-text center-align">
-                                            <strong>Sunday</strong><br>
-                                            <span class="b_date">2th</span><br>
-                                            <span>jul 2016</span>
+                                            <strong></strong><br>
+                                            <span class="b_date"><?php echo $row['post_date']; ?></span><br>
+                                            <span></span>
                                         </div>
                                     </div>
                                     <div class="event_list_content col m10">
                                         <div class="event_count green-text">
-                                            <h2>2 Event Available</h2>
+                                            <!--<h2>2 Event Available</h2>-->
                                         </div>
                                     
                                             <div class="elist_content row ">
                                                     <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
+                                                        <a href="<?php echo base_url().'index.php/event_details'?>"> <?php echo $row['post_title']; ?> <span class="green-text">Add Comment</span></a><br>
+                                                        <span>Posted By:<a href="#"><?php echo $row['post_author'];?></a> Happening In <a href="#"><?php echo $row['post_venue'];  ?></a></span><br>
                                                         <a href="#" class="green-text">Click here for news reference</a>
                                                     </div>  
                                             </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
+                                           
                                         </div>
                                     </div>
-                                </div>
-                                   <div class="col m12 event_content">
-                                    <div class="event_date col m2">
-                                        <div class="edate z-depth-1 red lighten-1 white-text center-align">
-                                            <strong>Monday</strong><br>
-                                            <span class="b_date">24th</span><br>
-                                            <span>jul 2016</span>
-                                        </div>
-                                    </div>
-                                    <div class="event_list_content col m10">
-                                        <div class="event_count green-text">
-                                            <h2>3 Event Available</h2>
-                                        </div>
-                                        <div class="elist col m12">
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                   <div class="col m12 event_content">
-                                    <div class="event_date col m2">
-                                        <div class="edate z-depth-1 red lighten-1 white-text center-align">
-                                            <strong>Monday</strong><br>
-                                            <span class="b_date">24th</span><br>
-                                            <span>jul 2016</span>
-                                        </div>
-                                    </div>
-                                    <div class="event_list_content col m10">
-                                        <div class="event_count green-text">
-                                            <h2>3 Event Available</h2>
-                                        </div>
-                                        <div class="elist col m12">
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col m12 event_content">
-                                    <div class="event_date col m2">
-                                        <div class="edate z-depth-1 red lighten-1 white-text center-align">
-                                            <strong>Monday</strong><br>
-                                            <span class="b_date">24th</span><br>
-                                            <span>jul 2016</span>
-                                        </div>
-                                    </div>
-                                    <div class="event_list_content col m10">
-                                        <div class="event_count green-text">
-                                            <h2>3 Event Available</h2>
-                                        </div>
-                                        <div class="elist col m12">
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                            <div class="elist_content row ">
-                                                    <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>">MOUAU Admission Screening Exercise 2016 Begins (0) <span class="green-text">Add Comment</span></a><br>
-                                                        <span>Posted By:<a href="#">Myschool Paul</a> Happening In <a href="#"> maou</a></span><br>
-                                                        <a href="#" class="green-text">Click here for news reference</a>
-                                                    </div>  
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

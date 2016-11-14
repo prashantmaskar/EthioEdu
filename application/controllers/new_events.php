@@ -83,8 +83,9 @@ class new_events extends CI_Controller {
                 'post_category'=>'',
                  'post_attachment' => $filedata['file_name'],
                  'post_author'=>  $this->input->post('postedby'),
-                   'post_date' => '',
+                   'post_date' => $this->input->post('date'),
                   'post_source' => '',
+                  'post_venue' => $this->input->post('event_venue'),
                  'post_type'=>  $this->input->post('post_type'),
                  'user_id'=> $sessid
         );
