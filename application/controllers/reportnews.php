@@ -38,6 +38,7 @@ class reportnews extends CI_Controller {
             'm_title' => 'Report News',
             'title' => 'Report News'
         );
+        $view_params['news'] = $this->init_models->selectnews();
         $this->load->view('reportnews',$view_params);
     }
        public function add()

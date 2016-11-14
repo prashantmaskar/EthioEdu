@@ -48,8 +48,9 @@
                                 <?php
                                 foreach ($news as $row){ ?>
                                     <li class="news_content">
-                                        <a href="<?php echo base_url().'index.php/news_detail'?>" class="news_link">
-                                            <span class="News_title"><?php echo $row['post_title']; ?> </span>
+                                        <?php $news_id = $row['post_id'];
+                                        ?>
+                                        <a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>" class="news_link"><span class="News_title"><?php echo $row['post_title']; ?> </span>
                                         </a>
                                         <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong> <?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_category'];?></a> | Comments [7]  
                                             </span></span>
