@@ -11,10 +11,6 @@
      
     
       
-      public function insert_project($data)
-      {
-        return $this->db->insert('tbl_projects', $data);
-      }
       
      
    }  

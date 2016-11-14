@@ -41,23 +41,17 @@ class Addnews extends CI_Controller {
                 'title'   => 'Admin AddNews'
             );
 		$this->load->view('admin/Addnews',$view_params);
+
+    if(isset($_POST['action'])){
+        $this->add();
+        }
 	}
 
     public function add()
-    {
-    	$data = array(
-		'post_title' => $this->input->post('caption'),
-		'post_desc' => $this->input->post('Description'),
-		'post_attachment'=> '',
-		'post_author' => $this->input->post('author'),
-		'post_date' => $this->input->post('date'),
-		'post_source' => $this->input->post('source_link'),
-		'post_category'=>'',
-		'post_type'=>'',
-		'user_id'=>''
-		);
+       {
+            
 
-				$config['upload_path']          = './uploads/';
+                $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
@@ -77,34 +71,42 @@ class Addnews extends CI_Controller {
                 {
                         $data1 = array('upload_data' => $this->upload->data());
 
-                        //$db = $this->db->conn_id;
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
 
+                               $sessid= $this->session->userdata('suserid');
+                     
+                        $data=array(
+                'post_title' => $this->input->post('caption'),
+                'post_desc'  => $this->input->post('Description'),
+                'post_category'=>'',
+                 'post_attachment' => $filedata['file_name'],
+                 'post_author'=>  $this->input->post('author'),
+                   'post_date' => $this->input->post('date'),
+                  'post_source' => $this->input->post('date'),
+                 'post_type'=>  $this->input->post('source_link'),
+                 'user_id'=> $sessid
+        );
                         
-
-                    	$filedata= array(
-                    		'file_name' => $data1['upload_data']['file_name'],
-                    		'mime_type' => $data1['upload_data']['file_type'],
-                    		'blob' => $data1['upload_data']['full_path']
-                    	);
-
-                    	$data['post_attachment']=$this->init_models->add_attachment($filedata);
-                    	$isinserted = $this->init_models->add_anews($data);
+                        $isinserted = $this->init_models->add_anews($data);
                         
 
                         //
                 }
 
                if(isset($isinserted)){
-               		$res=array('success'=>true,"msg"=>'data added successfully');
-               		//$this->load->view('upload_success', $res);
+                    $res=array('success'=>true,"msg"=>'data added successfully');
+                    //$this->load->view('upload_success', $res);
                }else{
-               		$res=array('success'=>false,"msg"=>'data add failed');
-               		//$this->load->view('upload_success', $res);
+                    $res=array('success'=>false,"msg"=>'data add failed');
+                    //$this->load->view('upload_success', $res);
                }
                var_dump($res);
 
     }
-
-
-
 }
+                
+
+
+

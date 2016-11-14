@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">GIST FORM</h4>
                                             <div class="row">
-                                                <form id="addgist" class=" form-control col m12" action="#" method="post">
+                                                <form id="addgist" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addgist')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" class="validate">
                                                         <label for="Caption">Gist Title</label>
@@ -99,24 +99,24 @@ and open the template in the editor.
                                                         <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
-                                                    <div class="input-field col s12">
-                                                        <select >
-                                                            <option value="" disabled selected>Category</option>
-                                                            <option value="1">Admission</option>
-                                                            <option value="2">Departmental</option>
-                                                            <option value="3">Entertainments</option>
-                                                            <option value="4">Events</option>
-                                                            <option value="5">General</option>
-                                                            <option value="6">Part Time</option>
-                                                            <option value="7">Full Time</option>
-                                                            <option value="8">Sport</option>
-                                                            <option value="9">Pre Degree</option>
-                                                            <option value="10">Post Degree</option>
-                                                            <option value="8">Scholarship</option>
-                                                            <option value="8">Other</option>
-                                                        </select>
-                                                        <label>Category</label>
-                                                    </div>
+                                                    <div class="form-group input-field col s12">
+                                        <select class="form-control browser-default" name="catagory">
+                                            <option value="">Catagory</option>
+                                           
+                                            <option value="Admission">Admission</option>
+                                            <option value="Departmental">Departmental</option>
+                                            <option value="Entertainments">Entertainments</option>
+                                            <option value="Events">Events</option>
+                                            <option value="General">General</option>
+                                            <option value=">Part Time">Part Time</option>
+                                            <option value="Full Time">Full Time</option>
+                                             <option value="Sport">Sport</option>
+                                             <option value="Pre Degree">Pre Degree</option>
+                                             <option value="Post Degree">Post Degree</option>
+                                             <option value="Scholarship">Scholarship</option>
+                                             <option value="Other">Other</option>
+                                        </select>
+                                    </div>
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
@@ -138,6 +138,7 @@ and open the template in the editor.
                                                         <input id="source_link" name="source_link" type="text" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
+                                                    <input type="hidden" name="post_type" value="gistreport">
                                                     <!--<div class="form-group input-field col s12">
                                                         <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>

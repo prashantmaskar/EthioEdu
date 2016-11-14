@@ -41,11 +41,12 @@ class askQues extends CI_Controller {
 		}
 	}
 	function insertquestion(){
+		$sessid= $this->session->userdata('suserid');
 		$data=array(
 			'question_type' =>$this->input->post('quetype'),
 			'question_category' =>$this->input->post('subject'),
 			'question_desc' =>$this->input->post('question'),
-			 'user_id' => '1'
+			 'user_id' => $sessid
 			);
 		if ($this->init_models->insert_question($data))
             {

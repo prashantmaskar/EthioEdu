@@ -90,38 +90,31 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Vacancy/Tender FORM</h4>
                                             <div class="row">
-                                                <form class="col m12">
+                                                <form class="col m12" id="postvacancyform" method="post" action="<?php echo site_url('index.php/admin/Addtender')?>">
                                                     <div class="input-field col s12">
-                                                        <input id="Caption" type="text" class="validate">
+                                                        <input id="Caption" type="text" class="validate" name="title">
                                                         <label for="Caption">Post Caption</label>
                                                     </div>
                                                     <div class="input-field col s12">
-                                                        <input id="Sch_name" type="text" class="validate">
+                                                        <input id="Sch_name" type="text" class="validate"  name="sname">
                                                         <label for="Sch_name">School/Collage Name</label>
                                                     </div>
                                                     <div class="input-field col s12">
-                                                        <input id="no_vacancy" type="text" class="validate">
+                                                        <input id="no_vacancy" type="text" class="validate" name="vcount">
                                                         <label for="no_vacancy">No.of Vacancy</label>
                                                     </div>
                                                     <div class="input-field col s12">
-                                                        <input id="date" type="date" class="datepicker">
+                                                        <input id="date" type="date" class="datepicker" name="sdate">
                                                         <label for="date">Date of Bidding</label>
                                                     </div>
                                                     <div class="input-field col s12">
-                                                        <input id="date" type="date" class="datepicker">
+                                                        <input id="date" type="date" class="datepicker" name="edate">
                                                         <label for="date">Last Date of Bidding</label>
                                                     </div>
 
+                                                   
                                                     <div class="input-field col s12">
-                                                        <select class="browser-default">
-                                                            <option value="" disabled selected>Status</option>
-                                                            <option value="1">Close</option>
-                                                            <option value="2">Open</option>
-
-                                                        </select>
-                                                    </div>
-                                                    <div class="input-field col s12">
-                                                        <textarea id="Description" class="materialize-textarea"></textarea>
+                                                        <textarea id="Description" class="materialize-textarea" name="vdesc"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="col s5 offset-s5">
