@@ -58,7 +58,7 @@ class login extends CI_Controller {
           }
       else{
 
-       $usr_result = $this->init_models->selectprivacy($username, $password);
+       $usr_result = $this->init_models->get_user_credentials($username, $password);
      
 
       if ($usr_result){ 
