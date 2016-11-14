@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                 <form id="addschoolform" action="#" method="post">
+                                                 <form id="addschoolform" action="<?php echo site_url('index.php/admin/Addschool')?>" method="post">
                                                     <div class="form-group">
                                                        <select class="form-control" name="choice">
                                                              <option value="">Registration type</option>

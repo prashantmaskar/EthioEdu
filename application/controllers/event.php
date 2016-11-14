@@ -34,6 +34,7 @@ class event extends CI_Controller {
             'm_title' => 'Events',
             'title' => 'Events'
         );
+        $view_params['event'] = $this->init_models->selectevent();
         $this->load->view('event',$view_params);
     }
 

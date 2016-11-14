@@ -42,5 +42,49 @@ class Addschool extends CI_Controller {
                 'title'   => 'Admin Addschool'
             );
 		$this->load->view('admin/Addschool',$view_params);
+		 if(isset($_POST['action'])){
+        $this->insertschooldata();
+        } 
 	}
+	function insertschooldata(){
+    
+     $data = array( 
+                'registration_type' => $this->input->post('choice'),
+                'school_name' => $this->input->post('schoolname'),
+                'school_category' => $this->input->post('choice1'),
+                'school_university' => $this->input->post('choice2'),
+                'school_institute' => $this->input->post('choice3'),
+                'other_category' => $this->input->post('choice4'),
+                'school_number' => $this->input->post('phone_number'),
+                'school_country' => $this->input->post('choice5'),
+                'school_city' => $this->input->post('choice6'),
+                'school_region' => $this->input->post('choice7'),
+                'school_type' => $this->input->post('choice8'),
+                'school_population' => $this->input->post('student_population'),
+                'teaching_staff' => $this->input->post('t_staff'),
+                'non_teaching_staff' => $this->input->post('non_teach'),
+                'school_awards' => $this->input->post('past_award'),
+                'school_acadamic_year' => $this->input->post('year'),
+                'school_acadamic_fee' => $this->input->post('fee'),
+                'admission_procedure' => $this->input->post('Admissios_pro'),
+                'acadamic_requirment' => $this->input->post('Description'),
+                'school_scholarship' => $this->input->post('scolership'),
+                'school_address' => $this->input->post('address'),
+                'school_url' => $this->input->post('website'),
+                'school_desc' => $this->input->post('tell_us'),
+                'user_id' => '1'
+                );
+
+     if ($this->init_models->addschooldata($data))
+            {
+    //echo"<script>alert('Registration Success');</script>";
+                $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                redirect("index.php/addSchool");
+            }
+            else{
+                $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 
+                redirect("index.php/addSchool");
+
+            }
+}
 }
