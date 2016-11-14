@@ -92,7 +92,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Project Topic FORM</h4>
                                             <div class="row">
-                                                <form id="project_topic" action="#" method="post" class="col m12">
+                                                <form id="project_topic" action="<?php echo site_url('index.php/admin/Project_Topic')?>" method="post" class="col m12" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Project_name" name="Project_name" type="text" class="validate">
                                                         <label for="Project_name">Project Name</label>
@@ -107,6 +107,15 @@ and open the template in the editor.
                                                             <option value="2016">2016</option>
                                                             <option value="2017">2017</option>
 
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="format_type">
+                                                            <option  value="">Format type</option>
+                                                            <option value="pdf">PDF</option>
+                                                            <option value="word">WORD</option>
+                                                            <option value="rtf">RTF</option>
                                                         </select>
 
                                                     </div>
