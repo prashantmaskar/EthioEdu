@@ -69,11 +69,11 @@ and open the template in the editor.
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Course</h5>
+                                    <h5 class="breadcrumbs-title">Add Tender</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Course</a>
+                                        <li><a href="#">Add Tender</a>
                                         </li>
                                     </ol>
                                 </div>
