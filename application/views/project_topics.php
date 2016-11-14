@@ -45,7 +45,7 @@
                                                             <option  value="">Format type</option>
                                                             <option value="pdf">PDF</option>
                                                             <option value="word">WORD</option>
-<option value="rtf">RTF</option>
+                                                            <option value="rtf">RTF</option>
                                                         </select>
 
                                                     </div>
