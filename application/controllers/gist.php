@@ -35,6 +35,7 @@ class gist extends CI_Controller {
             'm_title' => 'Gist & Gossip',
             'title' => 'Gist & Gossip'
         );
+        $view_params['gist'] = $this->init_models->selectgist();
         $this->load->view('gist',$view_params);
     }
 
