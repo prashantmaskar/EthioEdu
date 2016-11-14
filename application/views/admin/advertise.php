@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Advertise FORM</h4>
                                             <div class="row">
-                                               <form id="advertise" class="col m12">
+                                               <form id="advertise" class="col m12" method="post" action="<?php echo site_url('index.php/admin/Advertise')?>" enctype="multipart/form-data">
                                     <div class=" form-group input-field col s12">
                                         <input id="Caption" name="name" type="text" class="validate">
                                         <label for="Caption">Client Name</label>

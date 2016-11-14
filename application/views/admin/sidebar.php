@@ -83,6 +83,60 @@
                                 </li>
                             </ul>
                         </li>
+                         <li class="bold">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        Gist Manage
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/Addgist' ?>">Add Gist</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/listgist' ?>">List Gist</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bold">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        Tender Manage
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/Addtender' ?>">Add Tender</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/listtender' ?>">List Tender</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="bold">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        Event Manage
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/Events' ?>">Add Event</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/listevent' ?>">List Event</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
@@ -92,18 +146,18 @@
                                     </a>
                                     <div class="collapsible-body" >
                                         <ul>
+                                         <li><a href="<?php echo base_url() . 'index.php/admin/Project_Topic' ?>">Project Topics</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/advertise' ?>">Advertise</a>
+                                            </li>
                                             <li><a href="#">Past Exam</a>
                                             </li>
                                             <li><a href="#">Tips</a>
                                             </li>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/quesanswer' ?>">Questions & Answers</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/Project_Topic' ?>">Project Topics</a>
-                                            </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/Events' ?>">Add Events</a>
-                                            </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/ListEvent' ?>"> List Events</a>
-                                            </li>
+                                           
+                                            
                                         </ul>
                                     </div>
                                 </li>

@@ -69,11 +69,11 @@ and open the template in the editor.
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Course</h5>
+                                    <h5 class="breadcrumbs-title">Add Tender</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Course</a>
+                                        <li><a href="#">Add Tender</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">Vacancy/Tender FORM</h4>
                                             <div class="row">
-                                                <form class="col m12" id="postvacancyform" method="post" action="<?php echo site_url('index.php/admin/Addtender')?>">
+                                                <form  id="postvacancyform" method="post" action="<?php echo site_url('index.php/admin/Addtender')?>" class="col m12">
                                                     <div class="input-field col s12">
                                                         <input id="Caption" type="text" class="validate" name="title">
                                                         <label for="Caption">Post Caption</label>
@@ -130,12 +130,20 @@ and open the template in the editor.
                                 </section>
                             </div>
                         </div>
-                        <script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
-                        <script type="text/javascript" src="../../js/materialize.js"></script>
+                          <script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
+                            <script type="text/javascript" src="<?php echo base_url() . 'js/bootstrapValidator.js' ?>"></script>
+                            <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+                             <script type="text/javascript" src="../../js/materialize.js"></script>
+                         <script type="text/javascript" src="../../js/admin/admin-Addtender.js"></script>
+                  
+                      
+                        
+                       <!-- <script type="text/javascript" src="<?php// echo base_url() .'js/admin/admin-Addtender.js' ?>"></script>-->
+                       
                         </body>
 
                         </html>
-<?php
+
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
