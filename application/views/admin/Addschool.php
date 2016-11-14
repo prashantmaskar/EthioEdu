@@ -102,7 +102,7 @@ and open the template in the editor.
                                                     </div>
                                                     <div class= "form-group input-field col s12">
                                                         <input type="text"  id="user_name" name="user_name" class="form-control">
-                                                        <label for="user_name">user_name</label>
+                                                        <label for="user_name">User Name</label>
                                                     </div>
                                                     <div class= "form-group input-field col s12">
                                                         <input type="text"  id="fullname" name="fullname" class="form-control">
@@ -117,7 +117,7 @@ and open the template in the editor.
                                                         <label for="School_name">School Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                      <select class="form-control" name="choice1">
+                                                      <select class="form-control browser-default" name="choice1">
                                                              <option value="">School catagory</option>
                                                               <option value="Account">Account</option>
                                                             <option value="Agriculture">Agriculture</option>
@@ -128,7 +128,7 @@ and open the template in the editor.
                                                     </div>
 
                                                            <div class=" form-group input-field col s12">
-                                                      <select class="form-control" name="choice2">
+                                                      <select class="form-control browser-default" name="choice2">
                                                              <option value="">University</option>
                                                               <option value="">School catagory</option>
                                                               <option value="Account">Account</option>
@@ -140,7 +140,7 @@ and open the template in the editor.
                                                     </div>
 
                                                                <div class=" form-group input-field col s12">
-                                                      <select class="form-control" name="choice3">
+                                                      <select class="form-control browser-default" name="choice3">
 
                                                              <option value="">Institute</option>
                                                              <option value="">School catagory</option>
@@ -153,7 +153,7 @@ and open the template in the editor.
                                                     </div>
                                                               
                                                                <div class="form-group input-field col s12">
-                                                             <select class="form-control" name="choice4">
+                                                             <select class="form-control browser-default" name="choice4">
                                                              <option value="">other catagory</option>
                                                              <option value="">School catagory</option>
                                                               <option value="Account">Account</option>
