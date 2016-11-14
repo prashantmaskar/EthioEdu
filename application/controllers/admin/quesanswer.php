@@ -43,5 +43,21 @@ class quesanswer extends CI_Controller {
                 'title'   => 'Admin Question-Answer'
             );
 		$this->load->view('admin/Question-Answer',$view_params);
+		if(isset($_POST['action'])){
+			$this->insertquestion();
+		}
+	}
+	function insertquestion(){
+		$sessid= $this->session->userdata('suserid');
+		$data=array(
+			'question_type' =>$this->input->post('quetype'),
+			'question_category' =>$this->input->post('subcat'),
+			'question_desc' =>$this->input->post('question'),
+			 'user_id' => $sessid
+			);
+		if ($this->init_models->insert_question($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
 	}
 }

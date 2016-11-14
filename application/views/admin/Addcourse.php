@@ -90,7 +90,7 @@ and open the template in the editor.
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                <form id="addcourseform" action="#" method="post" class="col m12">
+                                                <form id="addcourseform" action="<?php echo site_url('index.php/admin/Addcourse')?>" method="post" class="col m12">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Course_name" name="Course_name" type="text" class="validate">
                                                         <label for="Course_name">Course Name</label>

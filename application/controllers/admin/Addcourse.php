@@ -41,5 +41,42 @@ class Addcourse extends CI_Controller {
                 'title'   => 'Admin Add course'
             );
 		$this->load->view('admin/Addcourse',$view_params);
+
+        if(isset($_POST['action'])){
+        $this->insertdata();
+        }
 	}
+	function insertdata(){
+        $duration = $this->input->post('duration');
+        $cduration = $this->input->post('c_duration');
+        if($duration == 'year'){
+           $fduration = $cduration*365;
+        }
+        elseif($duration == 'Month'){
+$fduration = $cduration*30;
+        }
+        else
+        {
+         $fduration = $cduration;
+        }
+         $sessid= $this->session->userdata('suserid');
+        $data = array(
+                'course_name' => $this->input->post('Course_name'),
+                'course_subject' => $this->input->post('Major_sub'),
+                'course_category' => $this->input->post('course_cat'),
+                'course_duration' => $fduration,
+                'course_school' => $this->input->post('addschool'),
+                'course_university' => $this->input->post('adduniversity'),
+                'course_desc' => $this->input->post('details'),
+                'user_id' => $sessid
+
+            );
+
+        if ($this->init_models->insertcourse($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
+
+}
+
 }

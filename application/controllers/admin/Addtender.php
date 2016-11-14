@@ -42,5 +42,30 @@ class Addtender extends CI_Controller {
                 'title'   => 'Admin Add Tender'
             );
 		$this->load->view('admin/Addtender',$view_params);
+
+        if(isset($_POST['action'])){
+
+        $this->insertdata();
+    }
 	}
+	function insertdata(){
+        $sessid= $this->session->userdata('suserid');
+        $data = array(
+                'vacancy_name' => $this->input->post('title'),
+                'vacancy_school_name' => $this->input->post('sname'),
+                'vacancy_count' => $this->input->post('vcount'),
+                'vacancy_from_date' => $this->input->post('sdate'),
+                'vacancy_to_date' => $this->input->post('edate'),
+                
+                'vacancy_desc' => $this->input->post('vdesc'),
+                'user_id' => $sessid
+
+            );
+
+        if ($this->init_models->insertprivacy($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
+
+}
 }
