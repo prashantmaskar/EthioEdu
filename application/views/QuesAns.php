@@ -139,7 +139,7 @@
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title"><?php echo $row['question_desc']; ?></span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> Acadamic</a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> <?php echo $row['question_category'];?></a> | Answers [0]  
                                             </span></span>
                                     </li>
                                      <?php } ?>

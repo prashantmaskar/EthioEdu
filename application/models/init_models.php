@@ -135,6 +135,11 @@
         $query = $this->db->query("select * from tbl_questions"); 
         return $query->result_array();
       }
+       public function selectadvertise()  
+      {  
+        $query = $this->db->query("select * from tbl_advertise"); 
+        return $query->result_array();
+      }
 
       public function edit_news($data){
         echo $id = $data['post_id'];

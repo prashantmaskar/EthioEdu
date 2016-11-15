@@ -87,16 +87,19 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                            <?php
+                                                        foreach ($question as $row){ ?>
                                                                 <tr>
-                                                                    <td>Mater Science</td>
-                                                                    <td>Science</td>
-                                                                    <td>How to apply to engineering?</td>
+                                                                <td><?php echo $row['question_type']; ?></td>
+                                                            <td><?php echo $row['question_category']; ?></td>
+                                                            
+                                                            <td><?php echo $row['question_desc']; ?></td>
                                                                     <td>
                                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>
-
+                                                                    <?php } ?>
                                                             </tbody>
                                                         </table>
                                                     </div>

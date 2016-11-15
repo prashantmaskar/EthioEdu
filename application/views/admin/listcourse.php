@@ -41,15 +41,35 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php
+                                foreach ($course as $row){ 
+                               $duration = $row['course_duration'];
+                                    if($duration>=365){
+                                        $year=(int)($duration/365);
+                                        $days=$duration%365;
+                                        $month=(int)($days/30);
+                                        $days=(int)($days%30);
+                                          }elseif($duration<365 && $duration>30){
+                                           $month=(int)($duration/30);
+                                           $days=(int)($duration%30);
+                                          }else{
+                                            $days = $duration;
+                                          }
+                                    
+                                    ?>
                                                 <tr>
-                                                    <td>Mater Science</td>
-                                                    <td>Science</td>
-                                                    <td>5 Month</td>
+                                                    <td><?php echo $row['course_name']; ?></td>
+                                                    <td><?php echo $row['course_category']; ?></td>
+                                                    <td><?php if(isset($year)){
+                                       echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";}
+                                    if(isset($days) && $days!==0){echo $days." Day ";}
+                                       ?></td>
                                                     <td>
                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
+                                                 <?php } ?>
                                                 <tr>
                                                     <td>Mater Science</td>
                                                     <td>Science</td>

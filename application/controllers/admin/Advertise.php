@@ -41,6 +41,7 @@ class Advertise extends CI_Controller {
                 'm_title' => 'Admin Advertise',
                 'title'   => 'Admin Advertise'
             );
+              $view_params['advertise'] = $this->init_models->selectadvertise();
 		$this->load->view('admin/advertise',$view_params);
 
 		if(isset($_POST['action'])){

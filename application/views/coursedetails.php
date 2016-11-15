@@ -46,9 +46,9 @@
                                     <li class="collection-item"><div><span><strong>Course Name:</strong></span> <?php echo $row['course_name']; ?></div></li>
                                     <li class="collection-item"><div><span><strong>Major Subject:</strong></span><?php echo $row['course_subject']; ?></div></li>
                                     <li class="collection-item"><div><span><strong>Course Category:</strong></span><?php echo $row['course_category']; ?></div></li>
-                                    <li class="collection-item"><div><span><strong>Average Study Duration:</strong> </span> <?php if(isset($year)){
-                                       echo $year." Year "; } if(isset($month)){echo $month." Month ";}
-                                    if(isset($days)){echo $days." Day ";}
+                                    <li class="collection-item"><div><span><strong>Average Study Duration:</strong> </span><?php if(isset($year)){
+                                       echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";}
+                                    if(isset($days) && $days!==0){echo $days." Day ";}
                                        ?></div></li>
                                 </ul>
                                 <p class="black-text">This course aims at adequately preparing trainees for clerical and management jobs in the maritime and commercial shipping related transport logistics industry.</p>

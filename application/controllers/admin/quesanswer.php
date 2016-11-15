@@ -42,6 +42,7 @@ class quesanswer extends CI_Controller {
                 'm_title' => 'Admin Question-Answer',
                 'title'   => 'Admin Question-Answer'
             );
+             $view_params['question'] = $this->init_models->selectquestion();
 		$this->load->view('admin/Question-Answer',$view_params);
 		if(isset($_POST['action'])){
 			$this->insertquestion();

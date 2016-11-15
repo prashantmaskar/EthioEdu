@@ -11,24 +11,17 @@
                 validators:{
                   notEmpty:{
                         message:'name required'
-                    },
-                    regexp:{
-                              regexp: /^[a-z\s]+$/i,
-                                message: 'The  name can consist of alphabetical characters and spaces only'
                     }
+                    
                 }
             },
              Description:{
                 validators:{
                     notEmpty:{
                         message:  ' Description required!!!'
-                    },
-                    stringLength:{
-                        message:'post Description must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
                     }
+                   
+                    
                 }
              },
              catagory: {

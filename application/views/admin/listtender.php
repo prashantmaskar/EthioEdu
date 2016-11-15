@@ -41,25 +41,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php
+                                           foreach ($tender as $row){ ?>
                                                 <tr>
-                                                    <td>Vacancy Name</td>
-                                                    <td>Science collage</td>
-                                                    <td>55</td>
+                                                    <td><?php echo $row['vacancy_name']; ?></td>
+                                                    <td><?php echo $row['vacancy_school_name']; ?></td>
+                                                    <td><?php echo $row['vacancy_count']; ?></td>
                                                     <td>
                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Vacancy Name</td>
-                                                    <td>Science collage</td>
-                                                    <td>55</td>
-                                                    <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
-                                                </tr>
-                                            </tbody>
+                                                <?php } ?>
+                                                </tbody>
                                         </table>
                                     </div>
                                 </div>

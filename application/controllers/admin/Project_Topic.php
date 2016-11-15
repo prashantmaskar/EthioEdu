@@ -41,6 +41,7 @@ class Project_Topic extends CI_Controller {
                 'm_title' => 'Admin Project Topic',
                 'title'   => 'Admin Project Topic'
             );
+             $view_params['project_topics']=$this->init_models->selectproject();
 		$this->load->view('admin/project-topic',$view_params);
 		if (isset($_POST['action'])){
 			$this->insertproject();

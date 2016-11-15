@@ -43,6 +43,7 @@ class listcourse extends CI_Controller {
                 'm_title' => 'Admin listcourse',
                 'title'   => 'Admin listcourse'
             );
+             $view_params['course'] = $this->init_models->selectcourse();
 		$this->load->view('admin/listcourse',$view_params);
 	}
 }

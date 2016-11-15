@@ -41,6 +41,7 @@ class listtender extends CI_Controller {
                 'm_title' => 'Admin List Tender',
                 'title'   => 'Admin List Tender'
             );
+             $view_params['tender'] = $this->init_models->selecttender();
 		$this->load->view('admin/listtender',$view_params);
 	}
 }
