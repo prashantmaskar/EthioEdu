@@ -31,11 +31,11 @@ class post_vacancy extends CI_Controller {
         $sessname = $this->session->userdata('susername');
        // $sessid= $this->session->userdata('suserid');
 
-      /*  if ( !$this->session->userdata('logged_in'))
+       if ( !$this->session->userdata('logged_in'))
 
     { 
         redirect('index.php/login');
-    }*/
+    }
     }
 
 
@@ -63,8 +63,7 @@ class post_vacancy extends CI_Controller {
                 'vacancy_count' => $this->input->post('vcount'),
                 'vacancy_from_date' => $this->input->post('sdate'),
                 'vacancy_to_date' => $this->input->post('edate'),
-                
-                'vacancy_desc' => $this->input->post('vdesc'),
+                 'vacancy_desc' => $this->input->post('vdesc'),
                 'user_id' => $sessid
 
             );
