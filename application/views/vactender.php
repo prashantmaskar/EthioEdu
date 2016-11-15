@@ -50,7 +50,9 @@
                                   <?php
                                 foreach ($tender as $row){ ?>
                                     <li class="vacancy_content">
-                                        <a href="<?php echo base_url() . 'index.php/vacancy-details' ?>" class="vacancy_link">
+                                     <?php $vac_id = $row['vacancy_id'];
+                                        ?>
+                                        <a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>" class="vacancy_link">
                                             <span class="vacancy_title"><?php echo $row['vacancy_name']; ?></span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date"><?php echo $row['vacancy_from_date']; ?></span>&nbsp;</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>

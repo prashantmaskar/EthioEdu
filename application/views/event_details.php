@@ -16,14 +16,21 @@
                 <div class="col s12 m8 grid-example">
                     <div class="event_details z-depth-1">
                         <div class="col m12 s12 ">
+                        <?php $event_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                    
+                        ?>
                             <div class="event_heading ">
-                                <span>Posted: 28-Jun-2016 [10:23:16] into Post-UTME by Peteworld for school | 155 Comments </span>
-                                <h1>FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded</h1>
+                                <span>Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | 155 Comments </span>
+                                <h1><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
 
                         <div class="event_img">
-                            <img src="<?php echo base_url() . 'images/about.jpg' ?>">
+                        <?php $news_attachment = $row['post_attachment']; ?>
+                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
                         </div>
                         <div class="col s12">
                             <a class="post-share facebook" href="http://www.facebook.com/plugins/like.php?href=http://medialoot.com/blog/&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');
@@ -34,15 +41,8 @@
                                     return false;">Google Plus<span>120</span></a>
                         </div>
                         <div class="event_details_content">
-                            <p class="black-text">The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
-                            <p class="black-text">The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
-
-                            <p class="black-text">The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
-
-                            <p class="black-text">The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
-
-                            <p class="black-text">The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.</p>
-
+                            <p class="black-text"></p>
+                            <?php echo $row['post_desc']; ?>
                         </div>
 
                         <div class="comment_box row">
@@ -68,7 +68,7 @@
 
                     </div>
                 </div>
-
+<?php } ?>
                  <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
                         <a href="#">

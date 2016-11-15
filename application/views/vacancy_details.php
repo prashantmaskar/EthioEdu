@@ -16,6 +16,12 @@
                 <div class="col s12 m7 grid-example">
                     <div class="vacancy_details col m12 z-depth-1">
                         <div class="col m12 s12">
+                        <?php $vac_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_vacancy where vacancy_id = '" .$vac_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                    
+                        ?>
                             <div class="page-heading-wrap">
                                 <h1 class="page-heading">Vacancy Details</h1>
                             </div>
@@ -24,7 +30,7 @@
                             <div class="vacancy_detail_wrap">
                                 <div class="col m12 s12">
                                     <div class="vacancy_heading">
-                                        <h1>Ethiopia Collage Invite To All Vender For school Maintenance And Other Work.</h1>
+                                        <h1><?php echo $row['vacancy_name']; ?></h1>
                                     </div>
                                 </div>
                                 <div class="vcount_wrap col m12">
@@ -34,7 +40,7 @@
                                                 <i class="fa fa-users fa-2x"></i>
                                             </span>
                                             <h3>Vacancies</h3>
-                                            <span class="count">2500</span>
+                                            <span class="count"><?php echo $row['vacancy_count']; ?></span>
                                         </div>
                                     </div>
                                     <div class="col m4 s4">
@@ -43,7 +49,7 @@
                                                 <i class="fa fa-calendar fa-2x"></i>
                                             </span>
                                             <h3>Last Date</h3>
-                                            <span class="count">10-Aug-2016</span>
+                                            <span class="count"><?php echo $row['vacancy_to_date']; ?></span>
                                         </div>
                                     </div>
                                     <div class="col m4 s4">
@@ -59,13 +65,12 @@
                                 <div class="col m12">
                                     <div class="vacn_details">
                                         <h2>Vacancy Details</h2>
-                                        <p>The call to reduce the national minimum wage of 18,000 naira by some governors is unfair, callous, insensitive and parochial. Governors who rather can no longer pay the meager 18000 minimum should speedily tender their resignation letters and pave way for more serious politicians who would put the interests of the poor masses first on their agenda for governance. We citizens are also fed up of indolent and corrupt elements as leaders in our government.</p> 
-                                        <p>The call to reduce the national minimum wage of 18,000 naira by some governors is unfair, callous, insensitive and parochial. Governors who rather can no longer pay the meager 18000 minimum should speedily tender their resignation letters and pave way for more serious politicians who would put the interests of the poor masses first on their agenda for governance. We citizens are also fed up of indolent and corrupt elements as leaders in our government.</p> 
-                                        <p>The call to reduce the national minimum wage of 18,000 naira by some governors is unfair, callous, insensitive and parochial. Governors who rather can no longer pay the meager 18000 minimum should speedily tender their resignation letters and pave way for more serious politicians who would put the interests of the poor masses first on their agenda for governance. We citizens are also fed up of indolent and corrupt elements as leaders in our government.</p> 
-                                        <p>The call to reduce the national minimum wage of 18,000 naira by some governors is unfair, callous, insensitive and parochial. Governors who rather can no longer pay the meager 18000 minimum should speedily tender their resignation letters and pave way for more serious politicians who would put the interests of the poor masses first on their agenda for governance. We citizens are also fed up of indolent and corrupt elements as leaders in our government.</p> 
-
+                                        <p></p>
+                                        <?php echo $row['vacancy_desc']; ?> 
+                                        
                                     </div>
                                 </div>
+                                 <?php } ?>
                                 <div class="col m12">
                                     <div class="school_social">
                                         <ul>
@@ -85,6 +90,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="col s12 m3 z-depth-1">
                     <div class="latest_news_wrap ">

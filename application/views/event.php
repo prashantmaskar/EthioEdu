@@ -23,7 +23,8 @@
                         <div class="col s12 m12 ">
                             <div class="event_list">
                             <?php foreach($event as $row){ ?>
-                           
+                           <?php $event_id = $row['post_id'];
+                                        ?>
                                    <div class="col m12 event_content">
                                     <div class="event_date col m2">
                                         <div class="edate z-depth-1 red lighten-1 white-text center-align">
@@ -39,7 +40,7 @@
                                     
                                             <div class="elist_content row ">
                                                     <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details'?>"> <?php echo $row['post_title']; ?> <span class="green-text">Add Comment</span></a><br>
+                                                        <a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"> <?php echo $row['post_title']; ?> <span class="green-text">Add Comment</span></a><br>
                                                         <span>Posted By:<a href="#"><?php echo $row['post_author'];?></a> Happening In <a href="#"><?php echo $row['post_venue'];  ?></a></span><br>
                                                         <a href="#" class="green-text">Click here for news reference</a>
                                                     </div>  
