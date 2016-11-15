@@ -115,6 +115,11 @@
         $query = $this->db->query("select * from  tbl_projects"); 
         return $query->result_array();
       }
+       public function selecttender()  
+      {  
+        $query = $this->db->query("select * from tbl_vacancy"); 
+        return $query->result_array();
+      }
 
 
    }  

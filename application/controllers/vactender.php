@@ -35,6 +35,7 @@ class vactender extends CI_Controller {
             'm_title' => 'Vacancy/Tenders',
             'title' => 'Vacancy/Tenders'
         );
+        $view_params['tender'] = $this->init_models->selecttender();
         $this->load->view('vactender',$view_params);
     }
 
