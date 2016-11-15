@@ -74,8 +74,6 @@ class edit_news extends CI_Controller {
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-                         $sessid= $this->session->userdata('suserid');
-
                         $data=array(
                 'post_id' => $this->input->post('post_id'),
                 'post_title' => $this->input->post('caption'),
@@ -85,8 +83,7 @@ class edit_news extends CI_Controller {
                  'post_author'=>  $this->input->post('auther'),
                    'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
-                 'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=>  $sessid
+                 'post_type'=>  $this->input->post('post_type')
         );
                         $isinserted = $this->init_models->edit_news($data);
                         
@@ -96,12 +93,9 @@ class edit_news extends CI_Controller {
 
                if(isset($isinserted)){
                     $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
                }else{
                     $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
                }
-               var_dump($res);
 
     }
   }

@@ -136,5 +136,11 @@
         return $query->result_array();
       }
 
+      public function edit_news($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
+
    }  
 ?>  
