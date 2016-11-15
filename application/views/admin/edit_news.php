@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add News</h5>
+                                    <h5 class="breadcrumbs-title">Edit News</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add News</a>
+                                        <li><a href="#">Edit News</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -25,6 +25,12 @@
                         </div>
                     </div>
                     <div class="container">
+
+                        <?php $news_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                        ?>
                         <div class="section">
                             <p class="caption">Fill all required fields.</p>
                             <div class="divider"></div>
@@ -36,16 +42,16 @@
                                             <div class="row">
                                                 <form id="addnews" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addnews')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
-                                                        <input id="Caption" name="caption" type="text" class="validate ">
+                                                        <input id="Caption" name="caption" type="text" value="<?php  echo $row['post_title'];?>" class="validate">
                                                         <label for="Caption">News Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
+                                                        <textarea id="Description" name="Description"class="materialize-textarea"><?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="form-group input-field col s12 has-success">
-                                                        <select class="form-control browser-default" name="catagory">
-                                                            <option value="" disabled selected>Category</option>
+                                                        <select value="<?php echo $row['post_category']; ?>" class="form-control browser-default" name="catagory">
+                                                            <option value="">Category</option>
                                                             <option value="1">Admission</option>
                                                             <option value="2">Departmental</option>
                                                             <option value="3">Entertainments</option>
@@ -70,24 +76,25 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="author" type="text" name="author" class="validate">
+                                                        <input id="author" type="text" value="<?php echo $row['post_author'];?>" name="author" class="validate">
                                                         <label for="author">News written By</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="date" name="date" type="date" class="datepicker">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
                                                         <label for="date"></label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="source_link" name="source_link" type="url" class="validate">
+                                                        <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
-                                                    <input value="news" name="post_type" type="hidden">
+                                                    <input value="<?php echo $row['post_type']; ?>" name="post_type" type="hidden">
+                                                    <input value="<?php echo $row['post_id']; ?>" name="post_id" type="hidden">
                                                     <!--<div class="form-group input-field col s12">
                                                         <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>
                                                     </div>-->
                                                     <div class="col s5 offset-s5">
-                                                        <button class="btn waves-effect waves-light" type="submit" name="action">Publish
+                                                        <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="material-icons right"></i>
                                                         </button>
                                                     </div>
@@ -95,6 +102,10 @@
                                             </div> 
                                         </div>
                                     </div>
+                                </div>
+                                </div>
+                                </div>
+                                <?php } ?>
                                 </div>
                                 </section>
                             </div>

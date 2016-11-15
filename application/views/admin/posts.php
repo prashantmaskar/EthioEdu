@@ -42,10 +42,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php $news_id = $_GET['post_type'];
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                                            <?php    if(isset($_GET['post_type'])){
+                                             $post_type = $_GET['post_type'];
+                                            }
+                        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                    $post_id = $row['post_id'];
                                     
                         ?>
 
@@ -55,7 +58,7 @@
                                                     <td><?php echo $row['post_author']; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>
                                                     <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>

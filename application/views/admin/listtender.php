@@ -1,4 +1,4 @@
-<?php  $this->load->view('admin/footer'); ?>
+<?php  $this->load->view('admin/header'); ?>
         <!--start main-->
         <div id="main">
             <div class="wrapper">
