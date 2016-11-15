@@ -17,22 +17,46 @@
                 <div class="col s12 m8 grid-example ">
                     <div class="course_details row z-depth-1">
                         <div class="col m12">
-                            <h1 class="course_title"> Diploma in Maritime Transport and Logistics Management(Maritime Transport)
-                                Colleges and Universities Offering Diploma in Maritime Transport and Logistics Management(Maritime Transport) in Ethiopia</h1>
+                           <!-- <h1 class="course_title"> Diploma in Maritime Transport and Logistics Management(Maritime Transport)
+                                Colleges and Universities Offering Diploma in Maritime Transport and Logistics Management(Maritime Transport) in Ethiopia</h1>-->
                         </div>
                         <div class="col m12">
+                         <?php $c_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_course where course_id = '" .$c_id. "'");
+
+                        
+                                foreach ($query->result_array() as $row){ 
+                                $duration = $row['course_duration'];
+                                    if($duration>=365){
+                                        $year=(int)($duration/365);
+                                        $days=$duration%365;
+                                        $month=(int)($days/30);
+                                        $days=(int)($days%30);
+                                          }elseif($duration<365 && $duration>30){
+                                           $month=(int)($duration/30);
+                                           $days=(int)($duration%30);
+                                          }else{
+                                            $days = $duration;
+                                          }
+                                    
+                        ?>
                             <div class="course_short_details">
                                 <ul class="collection with-header">
                                     <li class="collection-header red"><h4>Course Details</h4></li>
-                                    <li class="collection-item"><div><span><strong>Course Name:</strong></span> Diploma in Maritime Transport and Logistics Management(Maritime Transport)</div></li>
-                                    <li class="collection-item"><div><span><strong>Major Subject:</strong></span>Maritime Transport</div></li>
-                                    <li class="collection-item"><div><span><strong>Course Category:</strong></span> Diploma</div></li>
-                                    <li class="collection-item"><div><span><strong>Average Study Duration:</strong> </span> Two Years</div></li>
+                                    <li class="collection-item"><div><span><strong>Course Name:</strong></span> <?php echo $row['course_name']; ?></div></li>
+                                    <li class="collection-item"><div><span><strong>Major Subject:</strong></span><?php echo $row['course_subject']; ?></div></li>
+                                    <li class="collection-item"><div><span><strong>Course Category:</strong></span><?php echo $row['course_category']; ?></div></li>
+                                    <li class="collection-item"><div><span><strong>Average Study Duration:</strong> </span> <?php if(isset($year)){
+                                       echo $year." Year "; } if(isset($month)){echo $month." Month ";}
+                                    if(isset($days)){echo $days." Day ";}
+                                       ?></div></li>
                                 </ul>
                                 <p class="black-text">This course aims at adequately preparing trainees for clerical and management jobs in the maritime and commercial shipping related transport logistics industry.</p>
                             </div>
+                              <?php } ?>
                         </div>
                         <div class="col m12">
+
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
                                 <div class="review_info"><form id="reviewform" action="#" method="post" class="col m12">

@@ -130,6 +130,11 @@
         $query = $this->db->query("select * from tbl_course"); 
         return $query->result_array();
       }
+      public function selectquestion()  
+      {  
+        $query = $this->db->query("select * from tbl_questions"); 
+        return $query->result_array();
+      }
 
    }  
 ?>  

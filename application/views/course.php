@@ -77,7 +77,9 @@
                                     <h4>Course Name</h4>
                                     <?php
                                 foreach ($course as $row){ ?>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s"><?php echo $row['course_name']; ?></a>
+                                <?php $c_id = $row['course_id'];
+                                        ?>
+                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row['course_name']; ?></a>
                                       <?php } ?>
                              </div>
                             </div>

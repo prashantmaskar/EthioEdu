@@ -35,6 +35,7 @@ class QuesAns extends CI_Controller {
             'm_title' => 'QuesAns',
             'title' => 'QuesAns'
         );
+            $view_params['question'] = $this->init_models->selectquestion();
         $this->load->view('QuesAns',$view_params);
     }
 
