@@ -104,11 +104,14 @@
                             </form>
                         </div>
                     </div>
+
                     <div class="school_search_result">
                         <div class="row">
                             <div class="col m12">
                                 <div class="school_short_info ">
                                     <div class="row">
+                                                                <?php
+                                foreach ($schools as $row){ ?>
                                         <div class="col m3">
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
@@ -117,14 +120,14 @@
                                                     </div>
 
                                                 </div>
-
+                
                                                 <div class="col m12">
                                                     <div class="s_detail">
 
-                                                        <h1>Lukenya High School</h1>
+                                                        <h1><?php echo $row['school_name'];?></h1>
                                                         <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
-                                                        <p><i class=" red-text fa fa-phone"></i>  +254 (0)20-2064566</p>
-                                                        <p>Wynberg Boys’ Junior School is a school with a long history, having been established in 1841. As such it is the second oldest boys’ school...</p>
+                                                        <p><i class=" red-text fa fa-phone"></i> <?php echo $row['school_number'];?></p>
+                                                        <p><?php echo $row['school_desc'];?></p>
                                                         <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
@@ -132,7 +135,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="col m3">
+                                        <?php } ?>
+                                       <!--  <div class="col m3">
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
                                                     <div class="s_logo">
@@ -296,7 +300,7 @@
 
                                 </div>
                             </div>
-
+ -->
 
                             <!--                                        <div class="col m12">
                                                                         <div class="school_short_info ">

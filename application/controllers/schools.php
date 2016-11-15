@@ -35,6 +35,7 @@ class schools extends CI_Controller {
             'm_title' => 'Schools',
             'title' => 'Schools'
         );
+          $view_params['schools'] = $this->init_models->selectschool();
         $this->load->view('schools',$view_params);
     }
 
