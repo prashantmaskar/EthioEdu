@@ -34,6 +34,7 @@ class course extends CI_Controller {
             'm_title' => 'Course',
             'title' => 'Course'
         );
+            $view_params['course'] = $this->init_models->selectcourse();
         $this->load->view('course',$view_params);
     }
 

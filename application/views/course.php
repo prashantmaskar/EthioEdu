@@ -74,20 +74,12 @@
                         <div class="row">
                             <div class="col m12">
                                 <div class="collection">
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-header"><h4>Course Name</h4></a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item">Diploma in Furniture Technology and Interior Design(Furniture Technology and Interior Design)</a>
-                                </div>
+                                    <h4>Course Name</h4>
+                                    <?php
+                                foreach ($course as $row){ ?>
+                                    <a href="<?php echo base_url().'index.php/coursedetails'?>" class="collection-item s"><?php echo $row['course_name']; ?></a>
+                                      <?php } ?>
+                             </div>
                             </div>
                             <div class="featured_schools col s12 m12">
 
