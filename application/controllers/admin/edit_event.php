@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class edit_news extends CI_Controller {
+class edit_event extends CI_Controller {
 
   /**
    * Index Page for this controller.
@@ -40,15 +40,15 @@ class edit_news extends CI_Controller {
   public function index()
   {
              $view_params = array(
-                'm_title' => 'Edit News',
-                'title'   => 'Edit News'
+                'm_title' => 'Edit Event',
+                'title'   => 'Edit Event'
             );
-    $this->load->view('admin/edit_news',$view_params);
+    $this->load->view('admin/edit_event',$view_params);
 if(isset($_POST['action'])){
-        $this->edit_news();
+        $this->edit_event();
         }
       }
-    function edit_news()
+    function edit_event()
        {
             
 
@@ -87,7 +87,7 @@ if(isset($_POST['action'])){
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type')
         );
-                  $isinserted = $this->init_models->edit_news($data);
+                  $isinserted = $this->init_models->edit_event($data);
                         
 
                         

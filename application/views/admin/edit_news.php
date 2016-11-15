@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
 
-                        <?php $news_id = $_GET['id'];
+                        <?php if(isset($_GET['id'])){$news_id = $_GET['id'];}
                         $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
@@ -40,7 +40,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">News FORM</h4>
                                             <div class="row">
-                                                <form id="addnews" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addnews')?>" method="post" enctype="multipart/form-data">
+                                                <form id="addnews" class=" form-control col m12" action="<?php echo site_url('index.php/admin/edit_news')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" value="<?php  echo $row['post_title'];?>" class="validate">
                                                         <label for="Caption">News Title</label>
@@ -50,20 +50,21 @@
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="form-group input-field col s12 has-success">
-                                                        <select value="<?php echo $row['post_category']; ?>" class="form-control browser-default" name="catagory">
+                                                    <?php  $options = $row['post_category']; ?>
+                                                        <select class="form-control browser-default" name="catagory">
                                                             <option value="">Category</option>
-                                                            <option value="1">Admission</option>
-                                                            <option value="2">Departmental</option>
-                                                            <option value="3">Entertainments</option>
-                                                            <option value="4">Events</option>
-                                                            <option value="5">General</option>
-                                                            <option value="6">Part Time</option>
-                                                            <option value="7">Full Time</option>
-                                                            <option value="8">Sport</option>
-                                                            <option value="9">Pre Degree</option>
-                                                            <option value="10">Post Degree</option>
-                                                            <option value="8">Scholarship</option>
-                                                            <option value="8">Other</option>
+                                                            <option value="Admission" <?php if($options=="Admission") echo 'selected="selected"'; ?>>Admission</option>
+                                                            <option value="Departmental" <?php if($options=="Departmental") echo 'selected="selected"'; ?>>Departmental</option>
+                                                            <option value="Entertainments" <?php if($options=="Entertainments") echo 'selected="selected"'; ?>>Entertainments</option>
+                                                            <option value="Events" <?php if($options=="Events") echo 'selected="selected"'; ?>>Events</option>
+                                                            <option value="General" <?php if($options=="General") echo 'selected="selected"'; ?>>General</option>
+                                                            <option value="Part Time" <?php if($options=="Part Time") echo 'selected="selected"'; ?>>Part Time</option>
+                                                            <option value="Full Time" <?php if($options=="Full Time") echo 'selected="selected"'; ?>>Full Time</option>
+                                                            <option value="Sport" <?php if($options=="Sport") echo 'selected="selected"'; ?>>Sport</option>
+                                                            <option value="Pre Degree" <?php if($options=="Pre Degree") echo 'selected="selected"'; ?>>Pre Degree</option>
+                                                            <option value="Post Degree" <?php if($options=="Post Degree") echo 'selected="selected"'; ?>>Post Degree</option>
+                                                            <option value="Scholarship" <?php if($options=="Scholarship") echo 'selected="selected"'; ?>>Scholarship</option>
+                                                            <option value="Scholarship" <?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group file-field input-field col s12">
