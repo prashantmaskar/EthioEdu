@@ -40,9 +40,10 @@ class listnews extends CI_Controller {
 	public function index()
 	{
              $view_params = array(
-                'm_title' => 'Admin ListNews',
-                'title'   => 'Admin ListNews'
+                'm_title' => 'Post',
+                'title'   => 'Post'
             );
-		$this->load->view('admin/listnews',$view_params);
+        $view_params['news'] = $this->init_models->selectnews();
+		$this->load->view('admin/post',$view_params);
 	}
 }

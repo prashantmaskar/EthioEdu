@@ -42,7 +42,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach($news as $row){ ?>
+                                            <?php $news_id = $_GET['post_type'];
+                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                    
+                        ?>
+
                                                 <tr>
                                                     <td><?php echo $row['post_title']; ?></td>
                                                     <td><?php echo $row['post_category']; ?></td>

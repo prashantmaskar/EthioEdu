@@ -59,7 +59,7 @@
                                         <input id="source_link" type="url" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
-                                    <input type="hidden" name="post_type" value="gistreport">
+                                    <input type="hidden" name="post_type" value="gist">
                                    <!-- <div class="form-group input-field col s12">
                                         <input id="p_caption" name="p_caption"type="text" class="validate">
                                         <label for="p_caption">Photo Caption</label>

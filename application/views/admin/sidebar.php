@@ -76,7 +76,7 @@
                                         <ul>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/Addnews' ?>">Add News</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/listnews' ?>">List News</a>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/posts'.'?post_type=newslist'?>">List News</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -94,7 +94,7 @@
                                         <ul>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/Addgist' ?>">Add Gist</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/listgist' ?>">List Gist</a>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/posts'.'?post_type=gistlist'?>">List Gist</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -130,7 +130,7 @@
                                         <ul>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/Events' ?>">Add Event</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/listevent' ?>">List Event</a>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/posts'.'?post_type=listevent'?>">List Event</a>
                                             </li>
                                         </ul>
                                     </div>

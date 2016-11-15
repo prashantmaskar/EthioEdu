@@ -87,7 +87,7 @@
 
 
 
-       // Pravacy Table Actions
+       // Privacy Table Actions
 
       public function insertprivacy($data)  
       {  
@@ -101,7 +101,7 @@
       }
        public function selectgist()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'gistreport'"); 
+        $query = $this->db->query("select * from tbl_posts where post_type = 'gist'"); 
         return $query->result_array();
       }
        public function selectevent()  

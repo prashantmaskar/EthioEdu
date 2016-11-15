@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class listgist extends CI_Controller {
+class Posts extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,6 +18,7 @@ class listgist extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 
 	public function __construct()
     {
@@ -39,10 +40,10 @@ class listgist extends CI_Controller {
 	public function index()
 	{
              $view_params = array(
-                'm_title' => 'Admin ListGist',
-                'title'   => 'Admin ListGist'
+                'm_title' => 'Post',
+                'title'   => 'Post'
             );
-        $view_params['gist'] = $this->init_models->selectgist();
-		$this->load->view('admin/listgist',$view_params);
+       // $view_params['news'] = $this->init_models->selectnews();
+		$this->load->view('admin/posts',$view_params);
 	}
 }
