@@ -82,7 +82,7 @@
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
-                                                        <label for="date"></label>
+                                                        <label for="date">Date of Posting</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">

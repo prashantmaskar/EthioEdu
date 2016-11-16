@@ -148,7 +148,7 @@
       }
 
       public function edit_event($data){
-        echo $id = $data['post_id'];
+         $id = $data['post_id'];
         $this->db->where('post_id', $id);
         return $this->db->update('tbl_posts', $data);
       }

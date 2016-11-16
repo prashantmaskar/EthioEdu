@@ -34,8 +34,8 @@
                                         <table class="bordered">
                                             <thead>
                                                 <tr>
-                                                    <th data-field="id">News Title</th>
-                                                    <th data-field="name">News Category</th>
+                                                    <th data-field="id">Post Title</th>
+                                                    <th data-field="name">Post Category</th>
                                                     <th data-field="name">Author</th>
                                                     <th data-field="price">Posting Date</th>
                                                     <th data-field="price">Action</th>
@@ -57,10 +57,22 @@
                                                     <td><?php echo $row['post_category']; ?></td>
                                                     <td><?php echo $row['post_author']; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>
-                                                    <td>
+                                                    <td><?php if($_GET['post_type'] == 'news'){  ?>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                     <?php   } ?>
+                                                     <?php if($_GET['post_type'] == 'event'){  ?>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                     <?php   } ?>
+                                                     <?php if($_GET['post_type'] == 'gist'){  ?>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                     <?php   } ?>
+                                                        </td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

@@ -13,7 +13,7 @@ and open the template in the editor.
         <link href="<?php echo base_url().'/css/font-awesome.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url().'/css/bootstrapValidator.css' ?>">
         <link href="<?php echo base_url().'/css/admin.css" type="text/css' ?>" rel="stylesheet" media="screen">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     </head>
     <body>
         <header id="header" class="page-topbar ">
