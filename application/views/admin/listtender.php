@@ -43,12 +43,13 @@
                                             <tbody>
                                             <?php
                                            foreach ($tender as $row){ ?>
+                                           <?php $vac_id = $row['vacancy_id']; ?>
                                                 <tr>
                                                     <td><?php echo $row['vacancy_name']; ?></td>
                                                     <td><?php echo $row['vacancy_school_name']; ?></td>
                                                     <td><?php echo $row['vacancy_count']; ?></td>
                                                     <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/Edit_tender?id='.$vac_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
