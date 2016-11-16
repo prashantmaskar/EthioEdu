@@ -68,9 +68,9 @@
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
                                                      <?php   } ?>
                                                      <?php if($_GET['post_type'] == 'gist'){  ?>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
                                                      <?php   } ?>
                                                         </td>
                                                 </tr>

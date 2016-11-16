@@ -69,7 +69,7 @@
                                                     </div>
                                                   <input value="<?php echo $row['vacancy_id']; ?>" name="vacancy_id" type="hidden">
                                                     <div class="col s5 offset-s5">
-                                                        <?php } ?>
+                                                      
 
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="mdi-content-send right"></i>
@@ -79,6 +79,7 @@
                                             </div> 
                                         </div>
                                     </div>
+                                      <?php } ?>
                                 </div>
                                 </section>
                             </div>

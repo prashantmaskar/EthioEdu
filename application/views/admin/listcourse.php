@@ -43,6 +43,7 @@
                                             <tbody>
                                             <?php
                                 foreach ($course as $row){ 
+                                    $course_id = $row['course_id'];
                                $duration = $row['course_duration'];
                                     if($duration>=365){
                                         $year=(int)($duration/365);
@@ -65,12 +66,12 @@
                                     if(isset($days) && $days!==0){echo $days." Day ";}
                                        ?></td>
                                                     <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_course?id='.$course_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
                                                  <?php } ?>
-                                                <tr>
+                                             <!--   <tr>
                                                     <td>Mater Science</td>
                                                     <td>Science</td>
                                                     <td>5 Month</td>
@@ -78,7 +79,7 @@
                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>

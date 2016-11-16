@@ -152,6 +152,16 @@
         $this->db->where('post_id', $id);
         return $this->db->update('tbl_posts', $data);
       }
+       public function edit_gist($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
+       public function edit_course($data){
+        echo $id = $data['course_id'];
+        $this->db->where('course_id', $id);
+        return $this->db->update('tbl_course', $data);
+      }
 
       public function edit_tender($data){
         echo $id = $data['vacancy_id'];
