@@ -178,6 +178,11 @@
         $this->db->where('school_id', $id);
         return $this->db->update('tbl_school_meta', $data);
       }
+      public function edit_question($data){
+        echo $id = $data['question_id'];
+        $this->db->where('question_id', $id);
+        return $this->db->update('tbl_questions', $data);
+      }
 
    }  
 ?>  
