@@ -117,7 +117,7 @@
       }
        public function selecttender()  
       {  
-        $query = $this->db->query("select * from tbl_vacancy"); 
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
         return $query->result_array();
       }
       public function selectschool()  
