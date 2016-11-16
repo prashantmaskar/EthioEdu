@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Advertise</h5>
+                                    <h5 class="breadcrumbs-title">Edit Advertise</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Advertise</a>
+                                        <li><a href="#">Editu Advertise</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -101,6 +101,7 @@
                                                         <textarea id="message" class="materialize-textarea" name="message"></textarea>
                                                         <label for="message">Message</label>
                                                     </div> 
+                                                       <input value="<?php echo $row['advertise_id']; ?>" name="advertise_id" type="hidden">
 													<!-- <div class="captch">
                                                      <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
                                                        </div>
@@ -110,8 +111,8 @@
                                                     </div>-->
 
                                     <div class="col s5 offset-s5 margin-b-10">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">Send
-                                            <i class="material-icons right">send</i>
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">update
+                                            <i class="material-icons right">update</i>
                                         </button>
                                     </div>
                                 </form>
@@ -141,14 +142,13 @@
                                                             <tbody>
                                                              <?php
                                                         foreach ($advertise as $row){ ?>
-                                                         <?php $adv_id = $row['advertise_id'];  ?>
                                                                 <tr>
                                                             <td><?php echo $row['advertise_name']; ?></td>
                                                             <td><?php echo $row['advertise_email']; ?></td>
                                                         <td><?php echo $row['advertise_position']; ?></td>
                                                                     <td>M-Birr</td>
                                                                     <td>
-                                                                        <a href="<?php echo base_url() . 'index.php/admin/Edit_advertise?id='.$adv_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>

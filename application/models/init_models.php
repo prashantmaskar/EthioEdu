@@ -158,6 +158,11 @@
         $this->db->where('vacancy_id', $id);
         return $this->db->update(' tbl_vacancy', $data);
       }
+        public function edit_advertise($data){
+        echo $id = $data['advertise_id'];
+        $this->db->where('advertise_id', $id);
+        return $this->db->update('tbl_advertise', $data);
+      }
 
    }  
 ?>  
