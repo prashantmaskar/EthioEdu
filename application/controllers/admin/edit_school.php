@@ -48,7 +48,7 @@ if(isset($_POST['action'])){
         $this->edit_school();
         }
       }
-   function insertschooldata(){
+   function edit_school(){
     
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
@@ -77,7 +77,7 @@ if(isset($_POST['action'])){
                 'school_id' => $this->input->post('school_id')
                 );
 
-     if ($this->init_models->addschooldata($data))
+     if ($this->init_models->edit_school($data))
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 

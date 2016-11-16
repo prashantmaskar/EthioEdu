@@ -48,7 +48,7 @@ if(isset($_POST['action'])){
         $this->edit_question();
         }
       }
-  function insertquestion(){
+  function edit_question(){
    
     $data=array(
       'question_type' =>$this->input->post('quetype'),
@@ -58,7 +58,7 @@ if(isset($_POST['action'])){
        );
     if ($this->init_models->edit_question($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    redirect('index.php/admin/quesanswer');
             }
   }
   
