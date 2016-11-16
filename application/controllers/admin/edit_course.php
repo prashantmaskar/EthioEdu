@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class edit_news extends CI_Controller {
+class edit_course extends CI_Controller {
 
   /**
    * Index Page for this controller.
@@ -48,58 +48,37 @@ if(isset($_POST['action'])){
         $this->edit_course();
         }
       }
-    function edit_course()
-       {
-            
+    function edit_course(){
+        $duration = $this->input->post('duration');
+        $cduration = $this->input->post('c_duration');
+        if($duration == 'year'){
+           $fduration = $cduration*365;
+        }
+        elseif($duration == 'Month'){
+$fduration = $cduration*30;
+        }
+        else
+        {
+         $fduration = $cduration;
+        }
+         
+        $data = array(
+                'course_name' => $this->input->post('Course_name'),
+                'course_subject' => $this->input->post('Major_sub'),
+                'course_category' => $this->input->post('course_cat'),
+                'course_duration' => $fduration,
+                'course_school' => $this->input->post('addschool'),
+                'course_university' => $this->input->post('adduniversity'),
+                'course_desc' => $this->input->post('details'),
+               'course_id' => $this->input->post('course_id')
 
-                $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 100000;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 768;
+            );
 
-                $this->load->library('upload', $config);
+        if ($this->init_models->insertcourse($data))
+            {
+    echo"<script>alert('Data Inserted Successfully');</script>";
+            }
 
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
-
-                        $filedata= array(
-                            'file_name' => $data1['upload_data']['file_name'],
-                            );
-
-                        $data=array(
-                  'post_id' => $this->input->post('post_id'),
-                  'post_title' => $this->input->post('caption'),
-                  'post_desc'  => $this->input->post('Description'),
-                  'post_category'=>$this->input->post('catagory'),
-                  'post_attachment' => $filedata['file_name'],
-                  'post_author'=>  $this->input->post('author'),
-                  'post_date' => $this->input ->post('date'),
-                  'post_source' => $this->input->post('source_link'),
-                  'post_type'=>  $this->input->post('post_type')
-        );
-                  $isinserted = $this->init_models->edit_news($data);
-                        
-
-                        
-                }
-
-               if(isset($isinserted)){
-               // echo"<script>alert('Data Inserted Successfully');</script>";
-                redirect("index.php/admin/posts?post_type=news");
-               }else{
-                   echo"<script>alert('Failed');</script>";
-               }
-
-    }
+}
   
 }

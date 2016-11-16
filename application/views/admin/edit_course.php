@@ -82,7 +82,7 @@
                                                             <option value="">select duration</option>
                                                              <option value="year">year</option>
                                                             <option value="Month">Month</option>
-                                                            <option value="Day">Day</option>
+                                                            <option value="Day" selected>Day</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group input-field col s5">
