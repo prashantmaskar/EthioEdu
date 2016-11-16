@@ -163,5 +163,11 @@
         return $this->db->update('tbl_course', $data);
       }
 
+      public function edit_tender($data){
+        echo $id = $data['vacancy_id'];
+        $this->db->where('vacancy_id', $id);
+        return $this->db->update(' tbl_vacancy', $data);
+      }
+
    }  
 ?>  
