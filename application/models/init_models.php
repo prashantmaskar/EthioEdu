@@ -168,6 +168,21 @@
         $this->db->where('vacancy_id', $id);
         return $this->db->update(' tbl_vacancy', $data);
       }
+        public function edit_advertise($data){
+        echo $id = $data['advertise_id'];
+        $this->db->where('advertise_id', $id);
+        return $this->db->update('tbl_advertise', $data);
+      }
+       public function edit_school($data){
+        echo $id = $data['school_id'];
+        $this->db->where('school_id', $id);
+        return $this->db->update('tbl_school_meta', $data);
+      }
+      public function edit_question($data){
+        echo $id = $data['question_id'];
+        $this->db->where('question_id', $id);
+        return $this->db->update('tbl_questions', $data);
+      }
 
    }  
 ?>  
