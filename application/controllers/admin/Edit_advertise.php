@@ -84,7 +84,7 @@ if(isset($_POST['action'])){
                   'advertise_category'=>  $this->input->post('catagory'),
                   'advertise_position' => $this->input ->post('addposition'),
                   'advertise_subject' => $this->input->post('subject'),
-                  'post_attachment' => $filedata['file_name'],
+                  'advertise_attachment' => $filedata['file_name'],
                   'advertise_desc' => $this->input->post('message'),
                   
                   
@@ -101,7 +101,7 @@ if(isset($_POST['action'])){
 
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";
-                redirect("index.php/admin/posts?post_type=news");
+                redirect("index.php/admin/advertise");
                }else{
                    echo"<script>alert('Failed');</script>";
                }
