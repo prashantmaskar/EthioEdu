@@ -78,13 +78,12 @@ if(isset($_POST['action'])){
 
                         $data=array(
                   'post_id' => $this->input->post('post_id'),
-                  'post_title' => $this->input->post('caption'),
+                  'post_title' => $this->input->post('event_tital'),
                   'post_desc'  => $this->input->post('Description'),
-                  'post_category'=>$this->input->post('catagory'),
                   'post_attachment' => $filedata['file_name'],
-                  'post_author'=>  $this->input->post('author'),
+                  'post_author'=>  $this->input->post('eventby'),
+                  'post_venue'=>  $this->input->post('event_venue'),
                   'post_date' => $this->input ->post('date'),
-                  'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type')
         );
                   $isinserted = $this->init_models->edit_event($data);
@@ -94,7 +93,7 @@ if(isset($_POST['action'])){
                 }
 
                if(isset($isinserted)){
-                echo"<script>alert('Data Inserted Successfully');</script>";
+                redirect("index.php/admin/posts?post_type=event");
                }else{
                    echo"<script>alert('Failed');</script>";
                }

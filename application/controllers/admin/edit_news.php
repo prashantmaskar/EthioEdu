@@ -94,7 +94,8 @@ if(isset($_POST['action'])){
                 }
 
                if(isset($isinserted)){
-                echo"<script>alert('Data Inserted Successfully');</script>";
+               // echo"<script>alert('Data Inserted Successfully');</script>";
+                redirect("index.php/admin/posts?post_type=news");
                }else{
                    echo"<script>alert('Failed');</script>";
                }

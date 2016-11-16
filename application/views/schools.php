@@ -322,7 +322,11 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>-->
-                            <ul class="pagination">
+                           
+                        </div>
+                    </div>
+                    <div>
+                     <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
                                 <li class="waves-effect"><a href="#!">2</a></li>
@@ -331,8 +335,7 @@
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
-                        </div>
-                    </div>
+                            </div>
                     <div class="featured_schools col s12 m12">
 
                         <h5>Featured Schools</h5>

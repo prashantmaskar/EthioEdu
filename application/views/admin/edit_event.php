@@ -25,6 +25,11 @@
                         </div>
                     </div>
                     <div class="container">
+                    <?php if(isset($_GET['id'])){$event_id = $_GET['id'];}
+                        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                        ?>
                         <div class="section">
                             <p class="caption">Fill all required fields.</p>
                             <div class="divider"></div>
@@ -37,10 +42,14 @@
                                                 <form id="addevent" action"<?php echo site_url('index.php/admin/Event')?>" method="post" enctype="multipart/form-data" method="post" class="col m12">
                                                    
                                                     <div class="form-group input-field col s12">
-                                                        <input id="event_tital" name="event_tital" type="text" class="validate">
+                                                        <input id="event_tital" name="event_tital" value="<?php  echo $row['post_title'];?>" type="text" class="validate">
                                                         <label for="event_tital">Event Title</label>
                                                     </div>
                                                     
+                                                    <div class="form-group input-field col s12">
+                                                        <input id="event_venue" name="event_venue" type="text" class="validate">
+                                                        <label for="Caption">Event Happening in</label>
+                                                    </div>
 
                                                      <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
@@ -52,16 +61,20 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
+                                                        <textarea id="Description" name="Description" class="materialize-textarea"><?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
+
+                                                     <div class="form-group input-field col s12">
+                                                            <input id="date" type="date" name="date" class="datepicker">
+                                                            
+                                                    </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="post_by" type="text" name="eventby" class="validate">
+                                                        <input id="post_by" value="<?php echo $row['post_author'];?>" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>
                                                     </div>
                                                     <input value="<?php echo $row['post_type']; ?>" name="post_type" type="hidden">
                                                     <input value="<?php echo $row['post_id']; ?>" name="post_id" type="hidden">
-
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="mdi-action-done right"></i>
@@ -72,6 +85,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
+                                </div>
+                                <?php } ?>
+                                </div>
+
                                 </section>
                             </div>
                         </div>
