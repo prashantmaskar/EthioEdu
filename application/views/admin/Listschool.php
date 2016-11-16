@@ -42,13 +42,15 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                           foreach ($school as $row){ ?>
+                                           foreach ($school as $row){
+                                             $school_id = $row['school_id'];
+                                            ?>
                                                 <tr>
                                                     <td><?php echo $row['school_name']; ?></td>
                                                     <td>monica@gmail.com</td>
                                                     <td><?php echo $row['school_country']; ?></td>
                                                     <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_school?id='.$school_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>

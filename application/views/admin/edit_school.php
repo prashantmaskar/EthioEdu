@@ -40,11 +40,12 @@
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
                                                  <form id="addschoolform" action="<?php echo site_url('index.php/admin/Addschool')?>" method="post">
-                                                    <div class="form-group">
-                                                       <select class="form-control" name="choice">
+                                                    <div class="form-group input-field col s12">
+                                                       <select class="form-control browser-default" name="choice">
+                                                        <?php  $options = $row['registration_type']; ?>
                                                              <option value="">Registration type</option>
-                                                            <option value="Normal Registration">Normal Registration</option>
-                                                            <option value="Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)</option>
+                                                            <option value="Normal Registration" <?php if($options=="Normal Registration") echo 'selected="selected"'; ?>>Normal Registration</option>
+                                                            <option value="Premium Registration (1,000 Birr per year)" <?php if($options=="Premium Registration") echo 'selected="selected"'; ?>>Premium Registration (1,000 Birr per year)</option>
 
                                                         </select>
 
@@ -91,12 +92,12 @@
 
                                                                <div class=" form-group input-field col s12">
                                                       <select class="form-control browser-default" name="choice3">
+                                                       <?php  $options = $row['school_institute']; ?>
 
                                                              <option value="">Institute</option>
-                                                             <option value="">School catagory</option>
-                                                              <option value="Account">Account</option>
-                                                            <option value="Agriculture">Agriculture</option>
-                                                             <option value="Account">Account</option>
+                                                              <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
+                                                            <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
+                                                             <option value="Account" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Account</option>
 
                                                         </select>
 
@@ -104,55 +105,60 @@
                                                               
                                                                <div class="form-group input-field col s12">
                                                              <select class="form-control browser-default" name="choice4">
-                                                             <option value="">other catagory</option>
-                                                             <option value="">School catagory</option>
-                                                              <option value="Account">Account</option>
-                                                            <option value="Agriculture">Agriculture</option>
-                                                             <option value="Account">Account</option>
+                                                             <?php  $options = $row['other_category']; ?>
+
+                                                            <option value="">Institute</option>
+                                                              <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
+                                                            <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
+                                                             <option value="Account" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Account</option>
+
 
                                                           
                                                         </select>
 
                                                     </div>
                                                    <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="phone_number" name="phone_number" value="<?php  echo $row['school_name'];?>" class="form-control">
+                                                        <input type="text"  id="phone_number" name="phone_number"  class="form-control">
                                                         <label for="phone_number">phone_number</label>
                                                     </div>
 
                                                    
                                                                <div class="form-group input-field col s12">
                                                              <select class="form-control browser-default " name="choice5">
-                                                      
+                                                       <?php  $options = $row['other_category']; ?>
                                                             <option value="">Choose Country</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Africa">Africa</option>
+                                                            <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
+                                                            <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
+                                                            <option value="Africa" <?php if($options=="Africa") echo 'selected="selected"'; ?>>Africa</option>
                                                         </select>
 
                                                     </div>
                                                     <div class=" form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice6">
-                                                            <option value="">Choose City</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Africa">Africa</option>
+                                                        <?php  $options = $row['school_city']; ?>
+                                                             <option value="">Choose Country</option>
+                                                            <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
+                                                            <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
+                                                            <option value="Africa" <?php if($options=="Africa") echo 'selected="selected"'; ?>>Africa</option>
                                                         </select>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice7">
-                                                            <option value="" >Choose Region</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Africa">Africa</option>
+                                                         <?php  $options = $row['school_region']; ?>
+                                                            <option value="">Choose Country</option>
+                                                            <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
+                                                            <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
+                                                            <option value="Africa" <?php if($options=="Africa") echo 'selected="selected"'; ?>>Africa</option>
                                                         </select>
                                                     </div>
 
 
                                                           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice8">
+                                                         <?php  $options = $row['school_type']; ?>
                                                             <option value="" >School type</option>
-                                                            <option value="Ethiopia">public</option>
-                                                            <option value="Kenya">private</option>
+                                                            <option value="public" <?php if($options=="public") echo 'selected="selected"'; ?>>public</option>
+                                                            <option value="private" <?php if($options=="private") echo 'selected="selected"'; ?>>private</option>
                                                          
                                                         </select>
                                                     </div>
@@ -160,43 +166,43 @@
 
                                                   
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="student_population" name="student_population" type="text" class="validate">
+                                                        <input id="student_population" name="student_population" type="text" value="<?php  echo $row['school_population'];?>" class="validate">
                                                         <label for="student_population">Student Population</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="t_staff" type="text" name="t_staff" class="validate">
+                                                        <input id="t_staff" type="text" name="t_staff" value="<?php  echo $row['teaching_staff'];?>" class="validate">
                                                         <label for="staff">Teaching Staff</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="non_teach" type="text" name="non_teach" class="validate">
+                                                        <input id="non_teach" type="text" name="non_teach" value="<?php  echo $row['non_teaching_staff'];?>" class="validate">
                                                         <label for="non_teach">Non-Teaching Staff</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="past_award" type="text" name="past_award" class="validate">
+                                                        <input id="past_award" type="text" name="past_award" value="<?php  echo $row['school_awards'];?>" class="validate">
                                                         <label for="past_award">Past Awards</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="year" type="text" name="year" class="validate">
+                                                        <input id="year" type="text" name="year" value="<?php  echo $row['school_acadamic_year'];?>" class="validate">
                                                         <label for="year">Acadamic Year</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="Fee" type="text" name="fee" class="validate">
+                                                        <input id="Fee" type="text" name="fee" value="<?php  echo $row['school_acadamic_fee'];?>" class="validate">
                                                         <label for="Fee">Acadamic Fee</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Admissios_pro" class="materialize-textarea" name="Admissios_pro"></textarea>
+                                                        <textarea id="Admissios_pro" class="materialize-textarea" name="Admissios_pro"><?php echo $row['admission_procedure'];?></textarea>
                                                         <label for="Description">Admission Procedures</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" class="materialize-textarea" name="Description"></textarea>
+                                                        <textarea id="Description" class="materialize-textarea" name="Description"><?php echo $row['acadamic_requirment'];?></textarea>
                                                         <label for="Description">Acadamic Requirement</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="scolership" type="text" class="validate" name="scolership">
+                                                        <input id="scolership" type="text" value="<?php  echo $row['school_scholarship'];?>" class="validate" name="scolership">
                                                         <label for="password">Scholarships</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="address" type="text" class="validate" name="address">
+                                                        <input id="address" type="text" value="<?php  echo $row['school_address'];?>" class="validate" name="address">
                                                         <label for="password">Address</label>
                                                     </div>
                                                     <div id="map"class="col m12">     
@@ -204,17 +210,19 @@
 
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="web" type="text" name="website" class="validate">
+                                                        <input id="web" type="text" name="website" value="<?php  echo $row['school_url'];?>" class="validate">
                                                         <label for="password">Web Url</label>
                                                     </div>
 
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" class="materialize-textarea" name="tell_us"></textarea>
+                                                        <textarea id="Description" class="materialize-textarea" name="tell_us"><?php echo $row['school_desc'];?></textarea>
                                                         <label for="Description">Tell Us About yourself</label>
                                                     </div>
+                                                    <input value="<?php echo $row['school_id']; ?>" name="school_id" type="hidden">
+
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
-                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Register</button>
+                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Update</button>
                                                         </div>
                                                     </div>
                                                 </form>

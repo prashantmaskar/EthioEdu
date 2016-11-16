@@ -173,6 +173,11 @@
         $this->db->where('advertise_id', $id);
         return $this->db->update('tbl_advertise', $data);
       }
+       public function edit_school($data){
+        echo $id = $data['school_id'];
+        $this->db->where('school_id', $id);
+        return $this->db->update('tbl_school_meta', $data);
+      }
 
    }  
 ?>  
