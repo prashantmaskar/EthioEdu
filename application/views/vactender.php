@@ -55,7 +55,7 @@
                                         <a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>" class="vacancy_link">
                                             <span class="vacancy_title"><?php echo $row['vacancy_name']; ?></span>
                                         </a>
-                                        <span class="tender_sinfo"><strong><span class="t_date"><?php echo $row['vacancy_from_date']; ?></span>&nbsp;</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
+                                        <span class="tender_sinfo"><strong><span class="t_date">Last Date:<?php echo $row['vacancy_to_date']; ?></span>&nbsp;</strong> This tender for the school renovation and other work of school. for apply to this vacancy click on above link.</span>
                                     </li>
                                     <?php } ?>
                                    </ul>

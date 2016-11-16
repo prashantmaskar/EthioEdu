@@ -169,7 +169,7 @@
                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
-                                                </tr
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

@@ -60,10 +60,7 @@
                                         <label for="source_link">Source</label>
                                     </div>
                                     <input type="hidden" name="post_type" value="gist">
-                                   <!-- <div class="form-group input-field col s12">
-                                        <input id="p_caption" name="p_caption"type="text" class="validate">
-                                        <label for="p_caption">Photo Caption</label>
-                                    </div>-->
+                                   
                                     <div class="col s5 offset-s5">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish
                                             <i class="material-icons right">send</i>

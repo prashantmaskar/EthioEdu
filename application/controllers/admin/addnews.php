@@ -80,12 +80,12 @@ class Addnews extends CI_Controller {
                         $data=array(
                 'post_title' => $this->input->post('caption'),
                 'post_desc'  => $this->input->post('Description'),
-                'post_category'=>'',
+                'post_category'=>$this->input->post('catagory'),
                  'post_attachment' => $filedata['file_name'],
                  'post_author'=>  $this->input->post('author'),
                    'post_date' => $this->input->post('date'),
-                  'post_source' => $this->input->post('date'),
-                 'post_type'=>  $this->input->post('source_link'),
+                  'post_source' => $this->input->post('source_link'),
+                 'post_type'=>  $this->input->post('post_type'),
                  'user_id'=> $sessid
         );
                         
