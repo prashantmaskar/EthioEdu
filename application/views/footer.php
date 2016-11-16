@@ -71,7 +71,7 @@
         <script type="text/javascript" src="<?php echo base_url() . 'js/materialize.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/owl.carousel.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/bootstrapValidator.js' ?>"></script>
-       <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?php echo base_url() . 'js/jquery.validate.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/script.js' ?>"></script>
 
     </body>

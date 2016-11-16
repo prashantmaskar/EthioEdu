@@ -64,6 +64,7 @@ class post_vacancy extends CI_Controller {
                 'vacancy_from_date' => $this->input->post('sdate'),
                 'vacancy_to_date' => $this->input->post('edate'),
                  'vacancy_desc' => $this->input->post('vdesc'),
+                 'vacancy_approve' => $this->input->post('approve_status'),
                 'user_id' => $sessid
 
             );

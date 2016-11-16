@@ -117,7 +117,7 @@
       }
        public function selecttender()  
       {  
-        $query = $this->db->query("select * from tbl_vacancy"); 
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
         return $query->result_array();
       }
       public function selectschool()  
@@ -151,6 +151,16 @@
          $id = $data['post_id'];
         $this->db->where('post_id', $id);
         return $this->db->update('tbl_posts', $data);
+      }
+       public function edit_gist($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
+       public function edit_course($data){
+        echo $id = $data['course_id'];
+        $this->db->where('course_id', $id);
+        return $this->db->update('tbl_course', $data);
       }
 
       public function edit_tender($data){
