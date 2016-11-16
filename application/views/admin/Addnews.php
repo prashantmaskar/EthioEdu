@@ -46,18 +46,18 @@
                                                     <div class="form-group input-field col s12 has-success">
                                                         <select class="form-control browser-default" name="catagory">
                                                             <option value="" disabled selected>Category</option>
-                                                            <option value="1">Admission</option>
-                                                            <option value="2">Departmental</option>
-                                                            <option value="3">Entertainments</option>
-                                                            <option value="4">Events</option>
-                                                            <option value="5">General</option>
-                                                            <option value="6">Part Time</option>
-                                                            <option value="7">Full Time</option>
-                                                            <option value="8">Sport</option>
-                                                            <option value="9">Pre Degree</option>
-                                                            <option value="10">Post Degree</option>
-                                                            <option value="8">Scholarship</option>
-                                                            <option value="8">Other</option>
+                                                            <option value="Admission">Admission</option>
+                                                        <option value="Departmental">Departmental</option>
+                                                 <option value="Entertainments">Entertainments</option>
+                                                            <option value="Events">Events</option>
+                                                            <option value="General">General</option>
+                                                            <option value="Part Time">Part Time</option>
+                                                            <option value="Full Time">Full Time</option>
+                                                            <option value="Sport">Sport</option>
+                                                            <option value="Pre Degree">Pre Degree</option>
+                                                            <option value="Post Degree">Post Degree</option>
+                                                            <option value="Scholarship">Scholarship</option>
+                                                            <option value="Other">Other</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group file-field input-field col s12">
@@ -74,10 +74,10 @@
                                                         <label for="author">News written By</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="date" name="date" type="date" class="datepicker">
+                                                        <input id="date" name="date" type="text" class="datepicker validate">
                                                         <label for="date"></label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                             <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" type="url" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
@@ -101,3 +101,7 @@
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
                         <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addnews.js' ?>"></script>
+                       <script> $('.datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+});</script>
