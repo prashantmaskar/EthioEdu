@@ -84,7 +84,8 @@ if(isset($_POST['action'])){
                   'post_author'=>  $this->input->post('eventby'),
                   'post_venue'=>  $this->input->post('event_venue'),
                   'post_date' => $this->input ->post('date'),
-                  'post_type'=>  $this->input->post('post_type')
+                  'post_type'=>  $this->input->post('post_type'),
+                   'post_approve' => $this->input->post('approve_status')
         );
                   $isinserted = $this->init_models->edit_event($data);
                         

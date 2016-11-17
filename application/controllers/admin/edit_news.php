@@ -85,7 +85,8 @@ if(isset($_POST['action'])){
                   'post_author'=>  $this->input->post('author'),
                   'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
-                  'post_type'=>  $this->input->post('post_type')
+                  'post_type'=>  $this->input->post('post_type'),
+                  'post_approve' => $this->input->post('approve_status')
         );
                   $isinserted = $this->init_models->edit_news($data);
                         

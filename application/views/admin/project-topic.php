@@ -69,7 +69,8 @@
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format">
                                         </div>
-                                    </div>
+                                    </div> 
+                                    <input type="hidden" name="approve_status" value="0">
 
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">

@@ -41,7 +41,7 @@ class Project_Topic extends CI_Controller {
                 'm_title' => 'Admin Project Topic',
                 'title'   => 'Admin Project Topic'
             );
-             $view_params['project_topics']=$this->init_models->selectproject();
+             $view_params['project_topics']=$this->init_models->selectallproject();
 		$this->load->view('admin/project-topic',$view_params);
 		if (isset($_POST['action'])){
 			$this->insertproject();
@@ -81,6 +81,7 @@ class Project_Topic extends CI_Controller {
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
+            'project_approve'=>$this->input->post('approve_status'),
             'user_id' => $sessid
 			);
 

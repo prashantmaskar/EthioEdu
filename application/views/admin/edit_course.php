@@ -39,7 +39,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                <form id="addcourseform" action="<?php echo site_url('index.php/admin/Addcourse')?>" method="post" class="col m12">
+                                                <form id="addcourseform" action="<?php echo site_url('index.php/admin/edit_course')?>" method="post" class="col m12">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Course_name" name="Course_name" type="text" value="<?php  echo $row['course_name'];?>" class="validate">
                                                         <label for="Course_name">Course Name</label>
@@ -115,7 +115,7 @@
                                                         <label for="Details">Details</label>
                                                     </div>
                                                     <input value="<?php echo $row['course_id']; ?>" name="course_id" type="hidden">
-
+                                                      <input type="hidden" name="approve_status" value="<?php echo $row['course_approve']; ?>">
                                                     <div class="col s12">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="mdi-content-send right"></i>

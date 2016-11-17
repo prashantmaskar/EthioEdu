@@ -74,18 +74,19 @@ if(isset($_POST['action'])){
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
-                'school_id' => $this->input->post('school_id')
+                'school_id' => $this->input->post('school_id'),
+                  'school_approve'=>$this->input->post('approve_status')
                 );
 
      if ($this->init_models->edit_school($data))
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-                redirect("index.php/admin/edit_school");
+                redirect("index.php/admin/listschool");
             }
             else{
                 $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 
-                redirect("index.php/admin/edit_school");
+                redirect("index.php/admin/listschool");
 
             }
 }

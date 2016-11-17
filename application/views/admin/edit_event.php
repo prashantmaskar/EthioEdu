@@ -75,6 +75,7 @@
                                                     </div>
                                                     <input value="<?php echo $row['post_type']; ?>" name="post_type" type="hidden">
                                                     <input value="<?php echo $row['post_id']; ?>" name="post_id" type="hidden">
+                                                    <input type="hidden" name="approve_status" value="<?php echo $row['post_approve']; ?>">
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="mdi-action-done right"></i>

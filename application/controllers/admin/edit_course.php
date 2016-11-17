@@ -70,13 +70,14 @@ $fduration = $cduration*30;
                 'course_school' => $this->input->post('addschool'),
                 'course_university' => $this->input->post('adduniversity'),
                 'course_desc' => $this->input->post('details'),
-               'course_id' => $this->input->post('course_id')
+               'course_id' => $this->input->post('course_id'),
+               'course_approve' => $this->input->post('approve_status')
 
             );
 
-        if ($this->init_models->insertcourse($data))
+        if ($this->init_models->edit_course($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+   redirect('index.php/admin/listcourse');
             }
 
 }

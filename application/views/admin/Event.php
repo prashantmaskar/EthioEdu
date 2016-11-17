@@ -60,7 +60,7 @@
                                                         <label for="post_by">Event Posted By</label>
                                                     </div>
                                                     <input type="hidden" name="post_type" value="Event">
-
+                                                     <input type="hidden" name="approve_status" value="0">
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish
                                                             <i class="mdi-action-done right"></i>

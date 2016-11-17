@@ -94,6 +94,7 @@
                                                         <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>
                                                     </div>-->
+                                                     <input type="hidden" name="approve_status" value="<?php echo $row['post_approve']; ?>">
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                                             <i class="material-icons right"></i>

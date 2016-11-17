@@ -39,7 +39,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                 <form id="addschoolform" action="<?php echo site_url('index.php/admin/Addschool')?>" method="post">
+                                                 <form id="addschoolform" action="<?php echo site_url('index.php/admin/edit_school')?>" method="post">
                                                     <div class="form-group input-field col s12">
                                                        <select class="form-control browser-default" name="choice">
                                                         <?php  $options = $row['registration_type']; ?>
@@ -219,7 +219,7 @@
                                                         <label for="Description">Tell Us About yourself</label>
                                                     </div>
                                                     <input value="<?php echo $row['school_id']; ?>" name="school_id" type="hidden">
-
+                                                          <input type="hidden" name="approve_status" value="<?php echo $row['school_approve']; ?>">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
                                                             <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Update</button>

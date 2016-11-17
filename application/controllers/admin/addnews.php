@@ -86,6 +86,7 @@ class Addnews extends CI_Controller {
                    'post_date' => $this->input->post('date'),
                   'post_source' => $this->input->post('source_link'),
                  'post_type'=>  $this->input->post('post_type'),
+                   'post_approve' => $this->input->post('approve_status'),
                  'user_id'=> $sessid
         );
                         

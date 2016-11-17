@@ -99,9 +99,19 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'news' && post_approve = 1"); 
         return $query->result_array();
       }
+       public function selectallnews()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'news'"); 
+        return $query->result_array();
+      }
        public function selectgist()  
       {  
         $query = $this->db->query("select * from tbl_posts where post_type = 'gist'  && post_approve = 1"); 
+        return $query->result_array();
+      }
+       public function selectallgist()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'gist'"); 
         return $query->result_array();
       }
        public function selectevent()  
@@ -109,10 +119,20 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'event' && post_approve = 1"); 
         return $query->result_array();
       }
+      public function selectallevent()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'event'"); 
+        return $query->result_array();
+      }
      
        public function selectproject()  
       {  
         $query = $this->db->query("select * from  tbl_projects where project_approve = 1"); 
+        return $query->result_array();
+      }
+       public function selectallproject()  
+      {  
+        $query = $this->db->query("select * from  tbl_projects"); 
         return $query->result_array();
       }
        public function selecttender()  
@@ -129,6 +149,11 @@
       public function selectschool()  
       {  
         $query = $this->db->query("select * from  tbl_school_meta where school_approve = 1"); 
+        return $query->result_array();
+      }
+      public function selectallschool()  
+      {  
+        $query = $this->db->query("select * from  tbl_school_meta"); 
         return $query->result_array();
       }
        public function selectcourse()  

@@ -39,7 +39,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">GIST FORM</h4>
                                             <div class="row">
-                                                <form id="addgist" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addgist')?>" method="post" enctype="multipart/form-data">
+                                                <form id="addgist" class=" form-control col m12" action="<?php echo site_url('index.php/admin/edit_gist')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" value=" <?php echo $row['post_title'];?>" class="validate">
                                                         <label for="Caption">Gist Title</label>
@@ -95,6 +95,7 @@
                                                         <input id="p_caption" name="p_caption" type="text" class="validate">
                                                         <label for="p_caption">Photo Caption</label>
                                                     </div>-->
+                                                    <input type="hidden" name="approve_status" value="<?php echo $row['post_approve']; ?>">
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Publish
                                                             <i class="material-icons right"></i>

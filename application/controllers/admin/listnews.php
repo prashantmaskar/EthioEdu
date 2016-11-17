@@ -43,7 +43,7 @@ class listnews extends CI_Controller {
                 'm_title' => 'Post',
                 'title'   => 'Post'
             );
-        $view_params['news'] = $this->init_models->selectnews();
+        $view_params['news'] = $this->init_models->selectallnews();
 		$this->load->view('admin/post',$view_params);
 	}
 }

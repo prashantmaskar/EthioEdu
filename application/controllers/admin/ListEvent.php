@@ -43,6 +43,7 @@ class ListEvent extends CI_Controller {
                 'm_title' => 'Admin List Event',
                 'title'   => 'Admin List Event'
             );
+              $view_params['event'] = $this->init_models->selectallevent();
 		$this->load->view('admin/listevent',$view_params);
 	}
 }

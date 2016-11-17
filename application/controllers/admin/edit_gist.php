@@ -85,7 +85,8 @@ if(isset($_POST['action'])){
                   'post_author'=>  $this->input->post('author'),
                   'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
-                  'post_type'=>  $this->input->post('post_type')
+                  'post_type'=>  $this->input->post('post_type'),
+                   'post_approve' => $this->input->post('approve_status')
         );
                   $isinserted = $this->init_models->edit_gist($data);
                         
@@ -95,7 +96,7 @@ if(isset($_POST['action'])){
 
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";
-                redirect("index.php/admin/posts?post_type=news");
+                redirect("index.php/admin/posts?post_type=gist");
                }else{
                    echo"<script>alert('Failed');</script>";
                }
