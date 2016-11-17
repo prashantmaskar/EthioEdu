@@ -105,6 +105,8 @@
                                                         <textarea id="Details" class="materialize-textarea" name="details"></textarea>
                                                         <label for="Details">Details</label>
                                                     </div>
+                                                    <input type="hidden" name="approve_status" value="0">
+
 
                                                     <div class="col s12">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Submit

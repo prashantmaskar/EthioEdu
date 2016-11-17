@@ -36,17 +36,23 @@ class askQues extends CI_Controller {
                 'title'   => 'askQues'
             );
 		$this->load->view('askQues', $view_params);
+		
 		if(isset($_POST['action'])){
 			$this->insertquestion();
 		}
 	}
 	function insertquestion(){
+		$date = date('d F, Y');
+		date_default_timezone_set('Asia/Kolkata');
+		$time = date('h:i:s A', time());
 		$sessid= $this->session->userdata('suserid');
 		$data=array(
 			'question_type' =>$this->input->post('quetype'),
 			'question_category' =>$this->input->post('subject'),
 			'question_desc' =>$this->input->post('question'),
-			//'question_date' =>date("d/m/Y");
+			'question_date' => $date,
+			'question_time' => $time,
+			'question_approve' => $this->input->post('approve_status'),
 		     'user_id' => $sessid
 			);
 		if ($this->init_models->insert_question($data))

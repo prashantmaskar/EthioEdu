@@ -96,23 +96,23 @@
       
       public function selectnews()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'news'"); 
+        $query = $this->db->query("select * from tbl_posts where post_type = 'news' && post_approve = 1"); 
         return $query->result_array();
       }
        public function selectgist()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'gist'"); 
+        $query = $this->db->query("select * from tbl_posts where post_type = 'gist'  && post_approve = 1"); 
         return $query->result_array();
       }
        public function selectevent()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'event'"); 
+        $query = $this->db->query("select * from tbl_posts where post_type = 'event' && post_approve = 1"); 
         return $query->result_array();
       }
      
        public function selectproject()  
       {  
-        $query = $this->db->query("select * from  tbl_projects"); 
+        $query = $this->db->query("select * from  tbl_projects where project_approve = 1"); 
         return $query->result_array();
       }
        public function selecttender()  
@@ -128,17 +128,22 @@
 
       public function selectschool()  
       {  
-        $query = $this->db->query("select * from  tbl_school_meta"); 
+        $query = $this->db->query("select * from  tbl_school_meta where school_approve = 1"); 
         return $query->result_array();
       }
        public function selectcourse()  
+      {  
+        $query = $this->db->query("select * from tbl_course where course_approve = 1"); 
+        return $query->result_array();
+      }
+       public function selectallcourse()  
       {  
         $query = $this->db->query("select * from tbl_course"); 
         return $query->result_array();
       }
       public function selectquestion()  
       {  
-        $query = $this->db->query("select * from tbl_questions"); 
+        $query = $this->db->query("select * from tbl_questions where question_approve = 1"); 
         return $query->result_array();
       }
        public function selectadvertise()  

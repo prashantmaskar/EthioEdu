@@ -106,6 +106,7 @@ function insertschooldata(){
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
+                  'school_approve' => $this->input->post('approve_status'),
                 'user_id' => $getid['uid'],
                 );
 
