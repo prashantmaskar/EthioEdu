@@ -98,9 +98,13 @@
                                                             
                                                             <td><?php echo $row['question_desc']; ?></td>
                                                                     <td>
-                                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_question?id='.$question_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                            <a href="<?php echo base_url() . 'index.php/admin/edit_question?id='.$question_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                                                 <?php if($row['question_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $question_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $question_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $question_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>
                                                                     <?php } ?>
                                                             </tbody>
@@ -120,3 +124,68 @@
         <?php  $this->load->view('admin/footer'); ?>
 <script type="text/javascript" src="../../js/admin/admin-question-ans.js"></script>
 
+ 
+       <script>
+
+            function deleted(id)
+            {
+                var Qdelete_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {Qdelete_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var Qstatus_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {Qstatus_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var Qustatus_id = id;
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {Qustatus_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>

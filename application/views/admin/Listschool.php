@@ -51,8 +51,12 @@
                                                     <td><?php echo $row['school_country']; ?></td>
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_school?id='.$school_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                       <?php if($row['school_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $school_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $school_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $school_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -66,3 +70,67 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
+       <script>
+
+            function deleted(id)
+            {
+                var deleteschool_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deleteschool_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var statusschool_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {statusschool_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var ustatusschool_id = id;
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {ustatusschool_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>
