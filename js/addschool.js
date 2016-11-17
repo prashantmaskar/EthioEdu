@@ -189,12 +189,12 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' please enter Admission Procedures !!!'
                     },
-                    stringLength:{
+                   /* stringLength:{
                         message:'post Procedures content must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
              Description:{

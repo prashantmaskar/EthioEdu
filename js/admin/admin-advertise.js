@@ -26,6 +26,9 @@ $(document).ready(function() {
             },
 			contact: {
                 validators: {
+                    notEmpty:{
+                        message:'contact number required'
+                    },
                     digits:{
                          message:'contact number is invalid'
 
@@ -89,13 +92,13 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please enter message  !!!'
-                    },
-                    stringLength:{
+                    }
+                  /*  stringLength:{
                         message:'post tell us must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
           

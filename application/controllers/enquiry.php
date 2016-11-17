@@ -43,7 +43,10 @@ class enquiry extends CI_Controller {
 
 	}
 	 function insertenquiry(){
-       $sessid= $this->session->userdata('suserid');
+        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
+        $sessid= $this->session->userdata('suserid');
         $data = array(
                 'enquiry_school_name' => $this->input->post('school'),
                 'enquiry_person_name' => $this->input->post('fullname'),
@@ -52,6 +55,8 @@ class enquiry extends CI_Controller {
                 'enquiry_person_number' => $this->input->post('phone_number'),
                 'enquiry_subject' => $this->input->post('subject'),
                 'enquiry_message' => $this->input->post('enquirybox'),
+                'enquiry_date' => $date,
+                'enquiry_time' => $time,
                 'user_id' => $sessid
 
             );

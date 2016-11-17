@@ -74,21 +74,25 @@ class new_events extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
-                               $sessid= $this->session->userdata('suserid');
+                        $date = date('d F, Y');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
+                        $sessid= $this->session->userdata('suserid');
                      
                         $data=array(
-                'post_title' => $this->input->post('event_title'),
-                'post_desc'  => $this->input->post('Description'),
-                'post_category'=>'',
-                 'post_attachment' => $filedata['file_name'],
-                 'post_author'=>  $this->input->post('postedby'),
-                   'post_date' => $this->input->post('date'),
-                  'post_source' => '',
-                  'post_venue' => $this->input->post('event_venue'),
-                 'post_type'=>  $this->input->post('post_type'),
-                  'post_approve' => $this->input->post('approve_status'),
-                 'user_id'=> $sessid
+                        'post_title' => $this->input->post('event_title'),
+                        'post_desc'  => $this->input->post('Description'),
+                        'post_category'=>'',
+                        'post_attachment' => $filedata['file_name'],
+                        'post_author'=>  $this->input->post('postedby'),
+                        'post_date' => $this->input->post('date'),
+                        'post_date' => $date,
+                        'post_time' => $time,
+                        'post_source' => '',
+                        'post_venue' => $this->input->post('event_venue'),
+                        'post_type'=>  $this->input->post('post_type'),
+                        'post_approve' => $this->input->post('approve_status'),
+                        'user_id'=> $sessid
         );
                         
                         $isinserted = $this->init_models->add_anews($data);

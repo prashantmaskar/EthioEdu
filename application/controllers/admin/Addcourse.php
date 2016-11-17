@@ -59,7 +59,10 @@ $fduration = $cduration*30;
         {
          $fduration = $cduration;
         }
-         $sessid= $this->session->userdata('suserid');
+        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
+        $sessid= $this->session->userdata('suserid');
         $data = array(
                 'course_name' => $this->input->post('Course_name'),
                 'course_subject' => $this->input->post('Major_sub'),
@@ -68,7 +71,12 @@ $fduration = $cduration*30;
                 'course_school' => $this->input->post('addschool'),
                 'course_university' => $this->input->post('adduniversity'),
                 'course_desc' => $this->input->post('details'),
+<<<<<<< HEAD
                 'course_approve' => $this->input->post('approve_status'),
+=======
+                'course_date' => $date,
+                'course_time' => $time,
+>>>>>>> 1e5693c353e21c912cc4143486a3540cbb533924
                 'user_id' => $sessid
 
             );

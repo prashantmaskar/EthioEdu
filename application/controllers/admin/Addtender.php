@@ -49,6 +49,9 @@ class Addtender extends CI_Controller {
     }
 	}
 	function insertdata(){
+        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
@@ -56,6 +59,8 @@ class Addtender extends CI_Controller {
                 'vacancy_count' => $this->input->post('vcount'),
                 'vacancy_from_date' => $this->input->post('sdate'),
                 'vacancy_to_date' => $this->input->post('edate'),
+                 'vacancy_date' => $date,
+                'vacancy_time' => $time,
                 'vacancy_desc' => $this->input->post('vdesc'),
                 'vacancy_approve' => $this->input->post('approve_status'),
                 'user_id' => $sessid
