@@ -51,7 +51,7 @@
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/Edit_tender?id='.$vac_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <?php if($row['vacancy_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);" data-position="bottom" data-delay="50" data-tooltip="Approved" onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <a href="javascript:void(0);"  onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
                                                         <?php }else{?>
                                                         <a href="javascript:void(0);" onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
                                                         <?php }?>
@@ -79,7 +79,7 @@
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "delete_tender",
+                            url: "approve_delete",
                             data: {delete_id},
                             success: function(data) {
                                 console.log(data);
@@ -100,7 +100,7 @@
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "delete_tender",
+                            url: "approve_delete",
                             data: {status_id},
                             success: function(data) {
                                 console.log(data);

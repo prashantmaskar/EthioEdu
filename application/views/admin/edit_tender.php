@@ -68,7 +68,7 @@
                                                         <label for="Description">Description</label>
                                                     </div>
                                                   <input value="<?php echo $row['vacancy_id']; ?>" name="vacancy_id" type="hidden">
-                                                  <input type="hidden" name="approve_status" value="<?php echo $row['   vacancy_approve']; ?>">
+                                                  <input type="hidden" name="approve_status" value="<?php  echo $row['vacancy_approve']; ?>">
                                                     <div class="col s5 offset-s5">
                                                       
 

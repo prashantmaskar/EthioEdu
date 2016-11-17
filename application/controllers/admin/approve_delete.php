@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class delete_tender extends CI_Controller {
+class approve_delete extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -38,9 +38,9 @@ class delete_tender extends CI_Controller {
 	public function index()
 	{
              $view_params = array(
-                'm_title' => 'Delete Tender',
-                'title'   => 'Delete Tender'
+                'm_title' => 'Approve Delete',
+                'title'   => 'Approve Delete'
             );
-		$this->load->view('admin/delete_tender',$view_params);
+		$this->load->view('admin/approve_delete',$view_params);
 	}
 }
