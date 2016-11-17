@@ -89,4 +89,35 @@ if(isset($ustatus_id)){
 $query = $this->db->query("UPDATE tbl_projects set project_approve = '0' where project_id = '" .$ustatus_id. "'");
 }
 
+
+
+//apprvove and delete code for question and ans page 
+
+ $Qdelete_id = $_POST['Qdelete_id'];
+ if(isset($Qdelete_id)){
+$query = $this->db->query("delete from tbl_questions where question_id = '" .$Qdelete_id. "'");
+}
+
+  $Qstatus_id = $_POST['Qstatus_id'];
+if(isset($Qstatus_id)){
+	//echo $status_id;
+$query = $this->db->query("UPDATE tbl_questions set question_approve = '1' where question_id = '" .$Qstatus_id. "'");
+}
+
+
+$Qustatus_id = $_POST['Qustatus_id'];
+if(isset($Qustatus_id)){
+	//echo $status_id;
+$query = $this->db->query("UPDATE tbl_questions set question_approve = '0' where question_id = '" .$Qustatus_id. "'");
+}
+
+
+
+
+//advertise
+$Adelete_id = $_POST['Adelete_id'];
+ if(isset($Adelete_id)){
+$query = $this->db->query("delete from tbl_advertise where advertise_id = '" .$Adelete_id. "'");
+}
+
 ?>
