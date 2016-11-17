@@ -79,19 +79,22 @@ class Events extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
-                               $sessid= $this->session->userdata('suserid');
+                        $date = date('d F, Y');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
+                        $sessid= $this->session->userdata('suserid');
                      
                         $data=array(
-                'post_title' => $this->input->post('event_tital'),
-                'post_desc'  => $this->input->post('Description'),
-                'post_category'=>'',
-                 'post_attachment' => $filedata['file_name'],
-                 'post_author'=>  $this->input->post('eventby'),
-                   'post_date' => '',
-                  'post_source' => '',
-                 'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=> $sessid
+                    'post_title' => $this->input->post('event_tital'),
+                    'post_desc'  => $this->input->post('Description'),
+                    'post_category'=>'',
+                    'post_attachment' => $filedata['file_name'],
+                    'post_author'=>  $this->input->post('eventby'), 
+                    'post_date' => $date,
+                    'post_time' => $time,
+                    'post_source' => '',
+                    'post_type'=>  $this->input->post('post_type'),
+                    'user_id'=> $sessid
         );
                         
                         $isinserted = $this->init_models->add_anews($data);
