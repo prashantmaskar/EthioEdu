@@ -54,7 +54,8 @@ if(isset($_POST['action'])){
       'question_type' =>$this->input->post('quetype'),
       'question_category' =>$this->input->post('subcat'),
       'question_desc' =>$this->input->post('question'),
-       'question_id' => $this->input->post('question_id')
+       'question_id' => $this->input->post('question_id'),
+        'question_approve'=>$this->input->post('approve_status')
        );
     if ($this->init_models->edit_question($data))
             {

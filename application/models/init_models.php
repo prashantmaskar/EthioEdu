@@ -171,6 +171,11 @@
         $query = $this->db->query("select * from tbl_questions where question_approve = 1"); 
         return $query->result_array();
       }
+       public function selectallquestion()  
+      {  
+        $query = $this->db->query("select * from tbl_questions"); 
+        return $query->result_array();
+      }
        public function selectadvertise()  
       {  
         $query = $this->db->query("select * from tbl_advertise"); 

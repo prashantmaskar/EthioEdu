@@ -63,7 +63,7 @@
                                                         <label for="question">My Question</label>
                                                     </div>
                                                   <input value="<?php echo $row['question_id']; ?>" name="question_id" type="hidden">
-
+                                                    <input type="hidden" name="approve_status" value="<?php echo $row['question_approve']; ?>">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
                                                             <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i>Update</button>
