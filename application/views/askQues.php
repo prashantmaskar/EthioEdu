@@ -44,6 +44,7 @@
                                                         <input id="user_name" name="question" type="text" class="validate">
                                                         <label for="question">My Question</label>
                                                     </div>
+                                                    <input type="hidden" name="approve_status" value="0">
 
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">

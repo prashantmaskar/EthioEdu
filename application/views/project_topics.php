@@ -60,6 +60,7 @@
                                             <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format">
                                         </div>
                                     </div>
+                                    <input type="hidden" name="approve_status" value="0">
                                     <div class="col s5 offset-s5 margin-b-10">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Add
                                            

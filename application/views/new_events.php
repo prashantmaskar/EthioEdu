@@ -66,7 +66,7 @@
                                     <label for="Caption">Posted by</label>
                                 </div>
                                 <input type="hidden" name="post_type" value="event">
-                               
+                                <input type="hidden" name="approve_status" value="0">
                            
                                 <div class="new_account input-field col s12">
                                     <button class="btn waves-effect waves-light red" type="submit" name="action">Submit

@@ -50,8 +50,13 @@ class askQues extends CI_Controller {
 			'question_type' =>$this->input->post('quetype'),
 			'question_category' =>$this->input->post('subject'),
 			'question_desc' =>$this->input->post('question'),
+<<<<<<< HEAD
 			'question_date' => $date,
 			'question_time' => $time,
+=======
+			'question_approve' => $this->input->post('approve_status'),
+			//'question_date' =>date("d/m/Y");
+>>>>>>> 4bc29997d6de0a86ee796081ae4c1422034a40e7
 		     'user_id' => $sessid
 			);
 		if ($this->init_models->insert_question($data))
