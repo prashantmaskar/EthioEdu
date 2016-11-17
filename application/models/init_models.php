@@ -179,14 +179,14 @@
         $this->db->where('advertise_id', $id);
         return $this->db->update('tbl_advertise', $data);
       }
-<<<<<<< HEAD
+
        public function edit_project_topic($data){
         echo $id = $data['project_id'];
         $this->db->where('project_id', $id);
         return $this->db->update('tbl_projects', $data);
       }
      
-=======
+
        public function edit_school($data){
         echo $id = $data['school_id'];
         $this->db->where('school_id', $id);
@@ -198,6 +198,6 @@
         return $this->db->update('tbl_questions', $data);
       }
 
->>>>>>> 09a65d24e8a777d50970a90c46bf16748c5d57f0
+
    }  
 ?>  
