@@ -57,7 +57,8 @@ class Edit_tender extends CI_Controller {
                 'vacancy_from_date' => $this->input->post('sdate'),
                 'vacancy_to_date' => $this->input->post('edate'),
                 'vacancy_desc' => $this->input->post('vdesc'),
-                'vacancy_id' => $this->input->post('vacancy_id')
+                'vacancy_id' => $this->input->post('vacancy_id'),
+                'vacancy_approve' => $this->input->post('approve_status')
 
             );
 
