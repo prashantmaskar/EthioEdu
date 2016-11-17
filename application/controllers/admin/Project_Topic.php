@@ -72,7 +72,9 @@ class Project_Topic extends CI_Controller {
                             );
 
 
-
+                        $date = date('d F, Y');
+                    date_default_timezone_set('Asia/Kolkata');
+                    $time = date('h:i:s A', time());
 
  $sessid= $this->session->userdata('suserid');
 		$data = array(
@@ -81,6 +83,8 @@ class Project_Topic extends CI_Controller {
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
+            'project_date' => $date,
+            'project_time' => $time,
             'user_id' => $sessid
 			);
 

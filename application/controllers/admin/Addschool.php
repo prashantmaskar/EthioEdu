@@ -47,6 +47,9 @@ class Addschool extends CI_Controller {
         } 
 	}
 	function insertschooldata(){
+        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
     
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
@@ -68,6 +71,8 @@ class Addschool extends CI_Controller {
                 'school_acadamic_fee' => $this->input->post('fee'),
                 'admission_procedure' => $this->input->post('Admissios_pro'),
                 'acadamic_requirment' => $this->input->post('Description'),
+                'school_date' => $date,
+                'school_time' => $time,
                 'school_scholarship' => $this->input->post('scolership'),
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),

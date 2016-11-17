@@ -74,19 +74,23 @@ class Addgist extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
-                             $sessid= $this->session->userdata('suserid');
+                        $date = date('d F, Y');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
+                        $sessid= $this->session->userdata('suserid');
                      
                         $data=array(
-                'post_title' => $this->input->post('caption'),
-                'post_desc'  => $this->input->post('Description'),
-                'post_category'=>$this->input->post('catagory'),
-                 'post_attachment' => $filedata['file_name'],
-                 'post_author'=>  $this->input->post('author'),
-                   'post_date' => $this->input->post('date'),
-                  'post_source' => $this->input->post('source_link'),
-                 'post_type'=>  $this->input->post('post_type'),
-                 'user_id'=>  $sessid
+                        'post_title' => $this->input->post('caption'),
+                        'post_desc'  => $this->input->post('Description'),
+                        'post_category'=>$this->input->post('catagory'),
+                        'post_attachment' => $filedata['file_name'],
+                        'post_author'=>  $this->input->post('author'),
+                        'post_date' => $this->input->post('date'),
+                        'post_date' => $date,
+                        'post_time' => $time,
+                        'post_source' => $this->input->post('source_link'),
+                        'post_type'=>  $this->input->post('post_type'),
+                        'user_id'=>  $sessid
         );
                         
                         $isinserted = $this->init_models->add_anews($data);
