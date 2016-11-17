@@ -11,4 +11,11 @@ if(isset($status_id)){
 $query = $this->db->query("UPDATE tbl_vacancy set vacancy_approve = '1' where vacancy_id = '" .$status_id. "'");
 }
 
+
+$ustatus_id = $_POST['ustatus_id'];
+if(isset($ustatus_id)){
+	//echo $status_id;
+$query = $this->db->query("UPDATE tbl_vacancy set vacancy_approve = '0' where vacancy_id = '" .$ustatus_id. "'");
+}
+
 ?>
