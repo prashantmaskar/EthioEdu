@@ -82,6 +82,7 @@
                                         </div>
                                     </div>
                                     <input value="<?php echo $row['project_id']; ?>" name="project_id" type="hidden">
+                                    <input type="hidden" name="approve_status" value="<?php echo $row['project_approve']; ?>">
 
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
