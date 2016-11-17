@@ -72,7 +72,8 @@
        <?php  $this->load->view('admin/footer'); ?>
        <script>
 
-            function deleted(id){
+            function deleted(id)
+            {
                 var delete_id = id;
             if (confirm('Sure to Delete ?'))
                     {
