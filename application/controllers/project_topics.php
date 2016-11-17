@@ -78,6 +78,7 @@ class Project_topics extends CI_Controller {
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
+            'project_approve' => $this->input->post('approve_status'),
             'user_id' => '1'
 			);
 

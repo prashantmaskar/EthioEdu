@@ -244,7 +244,7 @@
                                                      <label for="filled-in-box">I accept terms & conditions</label>
                                                       </div>
 
-                                                   
+                                                    <input type="hidden" name="approve_status" value="0">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
                                                             <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Register</button>

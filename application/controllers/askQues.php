@@ -46,6 +46,7 @@ class askQues extends CI_Controller {
 			'question_type' =>$this->input->post('quetype'),
 			'question_category' =>$this->input->post('subject'),
 			'question_desc' =>$this->input->post('question'),
+			'question_approve' => $this->input->post('approve_status'),
 			//'question_date' =>date("d/m/Y");
 		     'user_id' => $sessid
 			);
