@@ -59,6 +59,9 @@ class post_vacancy extends CI_Controller {
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+        $enddate = $this->input->post('edate');
+
+        //if(strtotime($date) > strtotime($enddate))
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
