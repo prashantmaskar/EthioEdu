@@ -72,23 +72,20 @@ class Project_Topic extends CI_Controller {
                             );
 
 
-                        $date = date('d F, Y');
-                    date_default_timezone_set('Asia/Kolkata');
-                    $time = date('h:i:s A', time());
+        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
 
- $sessid= $this->session->userdata('suserid');
+        $sessid= $this->session->userdata('suserid');
 		$data = array(
 			'project_title' =>$this->input->post('Project_name'),
 			'project_course' =>$this->input->post('course_name'),
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
-<<<<<<< HEAD
-            'project_approve'=>$this->input->post('approve_status'),
-=======
             'project_date' => $date,
-            'project_time' => $time,
->>>>>>> 1e5693c353e21c912cc4143486a3540cbb533924
+            'project_date' => $time,
+            'project_approve'=>$this->input->post('approve_status'),
             'user_id' => $sessid
 			);
 
@@ -97,7 +94,6 @@ class Project_Topic extends CI_Controller {
                         $isinserted = $this->init_models->insert_project($data);
                         
 
-                        //
                 }
 
                if(isset($isinserted)){
