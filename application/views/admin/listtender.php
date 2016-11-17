@@ -50,8 +50,13 @@
                                                     <td><?php echo $row['vacancy_count']; ?></td>
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/Edit_tender?id='.$vac_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <?php if($row['vacancy_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);" data-position="bottom" data-delay="50" data-tooltip="Approved" onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-done"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating green" ><i class="small not_interested"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $vac_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        
                                                 </tr>
                                                 <?php } ?>
                                                 </tbody>
@@ -65,3 +70,47 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
+       <script>
+
+            function deleted(id){
+                var delete_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "delete_tender",
+                            data: {delete_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var status_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "delete_tender",
+                            data: {status_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>

@@ -88,14 +88,16 @@
                                                             </thead>
                                                             <tbody>
                                                             <?php
-                                                        foreach ($question as $row){ ?>
+                                                        foreach ($question as $row){ 
+                                                                $question_id = $row['question_id'];
+                                                            ?>
                                                                 <tr>
                                                                 <td><?php echo $row['question_type']; ?></td>
                                                             <td><?php echo $row['question_category']; ?></td>
                                                             
                                                             <td><?php echo $row['question_desc']; ?></td>
                                                                     <td>
-                                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_question?id='.$question_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>

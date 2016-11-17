@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Addtender extends CI_Controller {
+class delete_tender extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -34,38 +34,13 @@ class Addtender extends CI_Controller {
     	redirect('index.php/home');
     }
     }
-    
+
 	public function index()
 	{
              $view_params = array(
-                'm_title' => 'Admin Add Tender',
-                'title'   => 'Admin Add Tender'
+                'm_title' => 'Delete Tender',
+                'title'   => 'Delete Tender'
             );
-		$this->load->view('admin/Addtender',$view_params);
-
-        if(isset($_POST['action'])){
-
-        $this->insertdata();
-    }
+		$this->load->view('admin/delete_tender',$view_params);
 	}
-	function insertdata(){
-        $sessid= $this->session->userdata('suserid');
-        $data = array(
-                'vacancy_name' => $this->input->post('title'),
-                'vacancy_school_name' => $this->input->post('sname'),
-                'vacancy_count' => $this->input->post('vcount'),
-                'vacancy_from_date' => $this->input->post('sdate'),
-                'vacancy_to_date' => $this->input->post('edate'),
-                'vacancy_desc' => $this->input->post('vdesc'),
-                'vacancy_approve' => $this->input->post('approve_status'),
-                'user_id' => $sessid
-
-            );
-
-        if ($this->init_models->insertprivacy($data))
-            {
-    echo"<script>alert('Data Inserted Successfully');</script>";
-            }
-
-}
 }

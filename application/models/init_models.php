@@ -120,6 +120,12 @@
         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
         return $query->result_array();
       }
+      public function selectalltender()
+      {  
+        $query = $this->db->query("select * from tbl_vacancy"); 
+        return $query->result_array();
+      }
+
       public function selectschool()  
       {  
         $query = $this->db->query("select * from  tbl_school_meta"); 
@@ -173,11 +179,25 @@
         $this->db->where('advertise_id', $id);
         return $this->db->update('tbl_advertise', $data);
       }
+<<<<<<< HEAD
        public function edit_project_topic($data){
         echo $id = $data['project_id'];
         $this->db->where('project_id', $id);
         return $this->db->update('tbl_projects', $data);
       }
      
+=======
+       public function edit_school($data){
+        echo $id = $data['school_id'];
+        $this->db->where('school_id', $id);
+        return $this->db->update('tbl_school_meta', $data);
+      }
+      public function edit_question($data){
+        echo $id = $data['question_id'];
+        $this->db->where('question_id', $id);
+        return $this->db->update('tbl_questions', $data);
+      }
+
+>>>>>>> 09a65d24e8a777d50970a90c46bf16748c5d57f0
    }  
 ?>  
