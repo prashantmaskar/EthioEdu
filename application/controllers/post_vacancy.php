@@ -53,6 +53,8 @@ class post_vacancy extends CI_Controller {
         $this->insertdata();
     }
 
+    
+
     }
 
     function insertdata(){
@@ -61,7 +63,12 @@ class post_vacancy extends CI_Controller {
         $time = date('h:i:s A', time());
         $enddate = $this->input->post('edate');
 
-        //if(strtotime($date) > strtotime($enddate))
+        if(strtotime($date) > strtotime($enddate)){
+            $vacancy_status = 'Closed';
+        }
+        else{
+            $vacancy_status = 'Open';
+        }
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
@@ -71,6 +78,7 @@ class post_vacancy extends CI_Controller {
                 'vacancy_to_date' => $this->input->post('edate'),
                 'vacancy_date' => $date,
                 'vacancy_time' => $time,
+                'vacancy_status' => $vacancy_status,
                  'vacancy_desc' => $this->input->post('vdesc'),
                  'vacancy_approve' => $this->input->post('approve_status'),
                 'user_id' => $sessid

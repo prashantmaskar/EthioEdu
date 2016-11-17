@@ -37,7 +37,7 @@
                                     <label for="Caption"> To</label>
                                 </div>
                                 <div class="input-field col s2">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">search
+                                    <button class="btn waves-effect waves-light" type="submit" name="searchaction">search
                                         <i class="material-icons ">search</i>
                                     </button>
                                 </div>
@@ -49,6 +49,8 @@
                                 <ul class="vacancy_list">
                                   <?php
                                 foreach ($tender as $row){ ?>
+                             
+
                                     <li class="vacancy_content">
                                      <?php $vac_id = $row['vacancy_id'];
                                         ?>
