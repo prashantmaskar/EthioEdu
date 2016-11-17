@@ -179,6 +179,14 @@
         $this->db->where('advertise_id', $id);
         return $this->db->update('tbl_advertise', $data);
       }
+
+       public function edit_project_topic($data){
+        echo $id = $data['project_id'];
+        $this->db->where('project_id', $id);
+        return $this->db->update('tbl_projects', $data);
+      }
+     
+
        public function edit_school($data){
         echo $id = $data['school_id'];
         $this->db->where('school_id', $id);
@@ -189,6 +197,7 @@
         $this->db->where('question_id', $id);
         return $this->db->update('tbl_questions', $data);
       }
+
 
    }  
 ?>  

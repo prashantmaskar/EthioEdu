@@ -101,13 +101,15 @@
                                                             </thead>
                                                             <tbody>
                                                             <?php
-                                                        foreach ($project_topics as $row){ ?>
+                                                        foreach ($project_topics as $row){ 
+                                             $topic_id = $row['project_id'];
+                                                            ?>
                                                                 <tr>
                                                                     <td><?php echo $row['project_title']; ?></td>
                                                                     <td><?php echo $row['project_course']; ?></td>
                                                                     <td><?php echo $row['project_year']; ?></td>
                                                                     <td>
-                                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                                        <a href="<?php echo base_url() . 'index.php/admin/Edit_project_topic?id='.$topic_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>
