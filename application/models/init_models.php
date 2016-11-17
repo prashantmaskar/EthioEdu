@@ -120,6 +120,12 @@
         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
         return $query->result_array();
       }
+      public function selectalltender()
+      {  
+        $query = $this->db->query("select * from tbl_vacancy"); 
+        return $query->result_array();
+      }
+
       public function selectschool()  
       {  
         $query = $this->db->query("select * from  tbl_school_meta"); 

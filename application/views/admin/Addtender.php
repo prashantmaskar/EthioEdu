@@ -60,6 +60,7 @@
                                                         <textarea id="Description" class="materialize-textarea" name="vdesc"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
+                                                    <input type="hidden" name="approve_status" value="0">
                                                     <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Post
                                                             <i class="mdi-content-send right"></i>
