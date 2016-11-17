@@ -178,5 +178,6 @@
         $this->db->where('project_id', $id);
         return $this->db->update('tbl_projects', $data);
       }
+     
    }  
 ?>  
