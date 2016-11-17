@@ -59,18 +59,30 @@
                                                     <td><?php echo $row['post_date']; ?></td>
                                                     <td><?php if($_GET['post_type'] == 'news'){  ?>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                        <?php if($row['post_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
                                                      <?php   } ?>
                                                      <?php if($_GET['post_type'] == 'event'){  ?>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                         <?php if($row['post_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
                                                      <?php   } ?>
                                                      <?php if($_GET['post_type'] == 'gist'){  ?>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                         <?php if($row['post_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
                                                      <?php   } ?>
                                                         </td>
                                                 </tr>
@@ -86,3 +98,67 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
+       <script>
+
+            function deleted(id)
+            {
+                var deletepost_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletepost_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var statuspost_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {statuspost_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var ustatuspost_id = id;
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {ustatuspost_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>

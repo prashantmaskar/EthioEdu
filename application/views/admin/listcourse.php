@@ -67,8 +67,12 @@
                                        ?></td>
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_course?id='.$course_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <?php if($row['course_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $course_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $course_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $course_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
                                                  <?php } ?>
                                              <!--   <tr>
@@ -91,3 +95,67 @@
             </div>
         </div>
         <?php  $this->load->view('admin/footer'); ?>
+          <script>
+
+            function deleted(id)
+            {
+                var deletecourse_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletecourse_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var statuscourse_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {statuscourse_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var ustatuscourse_id = id;
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {ustatuscourse_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>

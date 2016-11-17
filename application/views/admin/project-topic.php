@@ -109,10 +109,14 @@
                                                                     <td><?php echo $row['project_title']; ?></td>
                                                                     <td><?php echo $row['project_course']; ?></td>
                                                                     <td><?php echo $row['project_year']; ?></td>
-                                                                    <td>
-                                                                        <a href="<?php echo base_url() . 'index.php/admin/Edit_project_topic?id='.$topic_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                   <td>
+                                             <a href="<?php echo base_url() . 'index.php/admin/Edit_project_topic?id='.$topic_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <?php if($row['project_approve'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $topic_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $topic_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <?php }?>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $topic_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                                 </tr>
                                                             <?php } ?>
                                                             </tbody>
@@ -131,3 +135,67 @@
         </div>
         <?php  $this->load->view('admin/footer'); ?>
         <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-project-topic.js' ?>"></script>
+<script>
+
+            function deleted(id)
+            {
+                var deleteproject_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deleteproject_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+
+
+                function cstatus(id){
+                var statusproject_id = id;
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {statusproject_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var ustatusproject_id = id;
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {ustatusproject_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+       </script>
