@@ -76,7 +76,7 @@ if(isset($_POST['action'])){
 
 
                         $data=array(
-                    'project_id' => $this->input->post('project_id'),
+                'project_id' => $this->input->post('project_id'),
                   'project_title' => $this->input->post('Project_name'),
                   'project_course' => $this->input->post('course_name'),
                   'project_year'  => $this->input->post('Year'),

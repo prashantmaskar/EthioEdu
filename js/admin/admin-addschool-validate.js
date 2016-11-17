@@ -21,7 +21,7 @@ $(document).ready(function() {
                     }
                 }
             },
-             c: {
+             fullname: {
                 validators:{
                     notEmpty:{
                         message:'full name required'
@@ -183,26 +183,18 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter Admission Procedures !!!'
-                    },
-                    stringLength:{
-                        message:'post Procedures content must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
                     }
+                  
+                    
                 }
              },
              Description:{
                 validators:{
                     notEmpty:{
                         message:  ' please Enter academic requierement descreeption !!!'
-                    },
-                    stringLength:{
-                        message:'post descreeption must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
                     }
+                   
+                    
                 }
              },
              scolership:{
@@ -217,12 +209,8 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' address required!!!'
                     },
-                    stringLength:{
-                        message:'post adddress must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
-                    }
+                  
+                    
                 }
              },
                    website:{
@@ -239,13 +227,13 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please tell us about yourslef  !!!'
-                    },
-                    stringLength:{
+                    }
+                   /* stringLength:{
                         message:'post tell us must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
 

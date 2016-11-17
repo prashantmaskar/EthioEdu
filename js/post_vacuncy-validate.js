@@ -60,13 +60,13 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' Description required!!!'
-                    },
-                    stringLength:{
+                    }
+                   /* stringLength:{
                         message:'post Description must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
              

@@ -105,26 +105,26 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter information about you !!!'
-                    },
-                    stringLength:{
+                    }
+                    /*stringLength:{
                         message:'post descreeption must be less than 100 characters',
                         max:function(value,validator,$field){
                             return 100 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
               myinterest:{
                 validators:{
                     notEmpty:{
                         message:  ' please write your interest !!!'
-                    },
-                    stringLength:{
+                    }
+                   /* stringLength:{
                         message:'post descreeption   must be less than 100 characters',
                         max:function(value,validator,$field){
                             return 100 - (value.match(/\r/g) || []).length;
                         }
-                    }
+                    }*/
                 }
              },
 
