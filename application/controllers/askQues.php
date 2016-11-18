@@ -57,7 +57,9 @@ class askQues extends CI_Controller {
 			);
 		if ($this->init_models->insert_question($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Post your question Successfully'); 
+            redirect("index.php/QuesAns");
             }
 	}
 }

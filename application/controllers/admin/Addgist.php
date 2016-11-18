@@ -94,12 +94,18 @@ class Addgist extends CI_Controller {
                         'user_id'=>  $sessid
         );
                         
-                        $isinserted = $this->init_models->add_anews($data);
+                        /*$isinserted = $this->init_models->add_anews($data);
                         
 
 
-                }
-
+                }*/ if ($this->init_models->add_anews($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/AddGist");
+            }
+  
+/*
                if(isset($isinserted)){
                     $res=array('success'=>true,"msg"=>'data added successfully');
                     //$this->load->view('upload_success', $res);
@@ -107,7 +113,7 @@ class Addgist extends CI_Controller {
                     $res=array('success'=>false,"msg"=>'data add failed');
                     //$this->load->view('upload_success', $res);
                }
-               var_dump($res);
-
+               var_dump($res);*/
+}
     }
 }

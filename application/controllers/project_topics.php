@@ -86,19 +86,22 @@ $sessid= $this->session->userdata('suserid');
             'user_id' => $sessid
 			);
 
+ if ($this->init_models->insert_project($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/project_topics");
+            }
 
-  
-                        $isinserted = $this->init_models->insert_project($data);
-                        
 
                         //
                 }
 
-               if(isset($isinserted)){
+              /* if(isset($isinserted)){
                     echo"<script>alert('Success');</script>";
                }else{
                     echo"<script>alert('Failed');</script>";
-               }
+               }*/
 
     }
 

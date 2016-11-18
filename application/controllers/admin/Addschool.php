@@ -80,7 +80,7 @@ class Addschool extends CI_Controller {
                 'school_approve'=>$this->input->post('approve_status'),
                 'user_id' => '1'
                 );
-
+/*
      if ($this->init_models->addschooldata($data))
             {
     //echo"<script>alert('Registration Success');</script>";
@@ -91,6 +91,13 @@ class Addschool extends CI_Controller {
                 $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 
                 redirect("index.php/admin/AddSchool");
 
+            }*/
+             if ($this->init_models->addschooldata($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/Addschool");
             }
+  
 }
 }

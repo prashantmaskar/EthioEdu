@@ -9,6 +9,19 @@
                                 <h1 class="page-heading">Post Vacancies</h1>
                             </div>
                         </div>
+                        <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
                         <div class="col s12 m12 ">
                             <div class="Vacancy_post">
                                 <form id="postvacuncy" method="post" class="col m12" action="<?php echo site_url('index.php/post_vacancy')?>">
