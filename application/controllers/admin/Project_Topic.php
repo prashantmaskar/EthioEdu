@@ -90,7 +90,7 @@ class Project_Topic extends CI_Controller {
 			);
 
 
-  
+  /*
                         $isinserted = $this->init_models->insert_project($data);
                         
 
@@ -100,9 +100,14 @@ class Project_Topic extends CI_Controller {
                     echo"<script>alert('Success');</script>";
                }else{
                     echo"<script>alert('Failed');</script>";
-               }
+               }*/if ($this->init_models->insert_project($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/project-topic");
+            }
 
-    }
+    }}
 
 
 }

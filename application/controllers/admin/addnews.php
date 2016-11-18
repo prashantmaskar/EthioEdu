@@ -35,7 +35,7 @@ class Addnews extends CI_Controller {
     }
     }
 	public function index()
-	{
+	{  
              $view_params = array(
                 'm_title' => 'Admin AddNews',
                 'title'   => 'Admin AddNews'
@@ -94,23 +94,25 @@ class Addnews extends CI_Controller {
 
         );
                         
-                        $isinserted = $this->init_models->add_anews($data);
-                        
+              if ($this->init_models->add_anews($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/Addnews");
+            }
 
-                }
-
-               if(isset($isinserted)){
+               /*if(isset($isinserted)){
                     $res=array('success'=>true,"msg"=>'data added successfully');
                     //$this->load->view('upload_success', $res);
                }else{
                     $res=array('success'=>false,"msg"=>'data add failed');
                     //$this->load->view('upload_success', $res);
                }
-               var_dump($res);
+               var_dump($res);*/
 
     }
 }
                 
-
+}
 
 

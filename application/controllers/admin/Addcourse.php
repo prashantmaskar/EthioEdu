@@ -77,12 +77,19 @@ $fduration = $cduration*30;
                 'user_id' => $sessid
 
             );
-
+/*
         if ($this->init_models->insertcourse($data))
             {
     echo"<script>alert('Data Inserted Successfully');</script>";
             }
-
+*/
+              if ($this->init_models->insertcourse($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/Addcourse");
+            }
+  
 }
 
 }

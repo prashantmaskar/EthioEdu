@@ -67,9 +67,15 @@ class Addtender extends CI_Controller {
 
             );
 
-        if ($this->init_models->insertprivacy($data))
+        /*if ($this->init_models->insertprivacy($data))
             {
     echo"<script>alert('Data Inserted Successfully');</script>";
+            }*/
+            if ($this->init_models->insertprivacy($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/Addtender");
             }
 
 }

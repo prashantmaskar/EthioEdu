@@ -9,6 +9,19 @@
                                 <h1 class="page-heading">Report News</h1>
                             </div>
                         </div>
+  <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
                         <div class="col s12 m12 ">
                             <div class="news_add">
                                 <form id="reportnews" method="post" action="reportnews/add"  class="col m12" enctype="multipart/form-data">
@@ -56,7 +69,7 @@
                                         <label for="date">Date of Posting</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="source_link" type="text" name="source_link"class="validate">
+                                        <input id="source_link" type="url" name="source_link"class="validate">
                                         <label for="source_link">Source</label>
                                     </div>
                                     <input type="hidden" name="post_type" value="news">

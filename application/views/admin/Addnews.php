@@ -24,6 +24,20 @@
                             </div>
                         </div>
                     </div>
+
+ <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+                    
                     <div class="container">
                         <div class="section">
                             <p class="caption">Fill all required fields.</p>

@@ -62,9 +62,15 @@ class quesanswer extends CI_Controller {
 			 'question_approve'=>$this->input->post('approve_status'),
 			 'user_id' => $sessid
 			);
-		if ($this->init_models->insert_question($data))
+		/*if ($this->init_models->insert_question($data))
             {
     echo"<script>alert('Data Inserted Successfully');</script>";
+            }*/
+            if ($this->init_models->insert_question($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/quesanswer");
             }
 	}
 }

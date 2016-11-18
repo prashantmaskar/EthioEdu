@@ -155,6 +155,7 @@
       {  
         $query = $this->db->query("select * from  tbl_school_meta"); 
         return $query->result_array();
+
       }
        public function selectcourse()  
       {  

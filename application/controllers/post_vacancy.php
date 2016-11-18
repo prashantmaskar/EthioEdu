@@ -78,7 +78,9 @@ class post_vacancy extends CI_Controller {
 
         if ($this->init_models->insertprivacy($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/post_vacancy");
             }
 
 }

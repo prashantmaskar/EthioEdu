@@ -58,7 +58,7 @@ class reportnews extends CI_Controller {
                         $error = array('error' => $this->upload->display_errors());
 
                         var_dump($error);
-
+                         
                        // $this->load->view('upload_form', $error);
                 }
                 else
@@ -87,13 +87,13 @@ class reportnews extends CI_Controller {
                 'post_approve' => $this->input->post('approve_status'),
                 'user_id'=>  $sessid
         );
-                        $isinserted = $this->init_models->add_anews($data);
+                      /*  $isinserted = $this->init_models->add_anews($data);*/
                         
 
                         //
                 }
 
-               if(isset($isinserted)){
+             /*  if(isset($isinserted)){
                     $res=array('success'=>true,"msg"=>'data added successfully');
                     //$this->load->view('upload_success', $res);
                }else{
@@ -101,7 +101,12 @@ class reportnews extends CI_Controller {
                     //$this->load->view('upload_success', $res);
                }
                var_dump($res);
-
+*/            if ($this->init_models->add_anews($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/reportnews");
+            }
     }
 
 

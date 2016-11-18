@@ -14,6 +14,7 @@ and open the template in the editor.
         <link href="<?php echo base_url().'/css/bootstrapValidator.css' ?>" rel="stylesheet" type="text/css" media="screen">
         <link href="<?php echo base_url().'/css/admin.css" type="text/css' ?>" rel="stylesheet" type="text/css" media="screen">
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
     </head>
     <body>
         <header id="header" class="page-topbar ">
