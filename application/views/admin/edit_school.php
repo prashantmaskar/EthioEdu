@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add School</h5>
+                                    <h5 class="breadcrumbs-title">Edit School</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add School</a>
+                                        <li><a href="#">Edit School</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                      <?php if(isset($_GET['id'])){$sch_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                        $query = $this->db->query("select tbl_users.username, tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_id = '" .$sch_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
                         ?>
@@ -51,7 +51,7 @@
 
                                                     </div>
                                                     <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="user_name" name="user_name" class="form-control">
+                                                        <input type="text"  id="user_name" name="user_name" class="form-control" value="<?php  echo $row['username'];?>" readonly>
                                                         <label for="user_name">User Name</label>
                                                     </div>
                                                     <div class= "form-group input-field col s12">
@@ -59,7 +59,7 @@
                                                         <label for="fullname">Full Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" class="form-control">
+                                                        <input id="email" type="text" name="email" class="form-control" value="<?php  echo $row['user_email'];?>" readonly>
                                                         <label for="email">Email Id</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
@@ -105,7 +105,7 @@
                                                       <select class="form-control browser-default" name="choice3">
                                                        <?php  $options = $row['school_institute']; ?>
 
-                                                             <option value="">Institute</option>
+                                                             <option value="">Institute/College</option>
                                                               <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
                                                             <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
                                                              <option value="Account" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Account</option>
@@ -118,7 +118,7 @@
                                                              <select class="form-control browser-default" name="choice4">
                                                              <?php  $options = $row['other_category']; ?>
 
-                                                            <option value="">Institute</option>
+                                                            <option value="">Other catagory</option>
                                                               <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
                                                             <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
                                                              <option value="Account" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Account</option>
@@ -147,7 +147,7 @@
                                                     <div class=" form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice6">
                                                         <?php  $options = $row['school_city']; ?>
-                                                             <option value="">Choose Country</option>
+                                                             <option value="">Choose City</option>
                                                             <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
                                                             <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
                                                             <option value="Africa" <?php if($options=="Africa") echo 'selected="selected"'; ?>>Africa</option>
