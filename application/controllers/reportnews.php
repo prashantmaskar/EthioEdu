@@ -58,7 +58,7 @@ class reportnews extends CI_Controller {
                         $error = array('error' => $this->upload->display_errors());
 
                         var_dump($error);
-
+                         
                        // $this->load->view('upload_form', $error);
                 }
                 else

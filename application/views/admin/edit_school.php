@@ -39,7 +39,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                 <form id="addschoolform" action="<?php echo site_url('index.php/admin/edit_school')?>" method="post">
+                                                 <form id="addschoolform" action="<?php echo site_url('index.php/admin/edit_school')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                        <select class="form-control browser-default" name="choice">
                                                         <?php  $options = $row['registration_type']; ?>
@@ -66,6 +66,17 @@
                                                         <input id="School_name" name="schoolname" type="text" value="<?php  echo $row['school_name'];?>"  class="validate">
                                                         <label for="School_name">School Name</label>
                                                     </div>
+
+                                                   <div class="form-group file-field input-field col s12">
+                                        <div class="btn">
+                                            <span>Attach logo</span>
+                                            <input name="fileformat" type="file" multiple>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="attach image only">
+                                        </div>
+                                    </div>
+
                                                     <div class=" form-group input-field col s12">
                                                     <?php  $options = $row['school_category']; ?>
                                                       <select class="form-control browser-default" name="choice1">
