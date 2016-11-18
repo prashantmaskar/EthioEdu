@@ -57,8 +57,20 @@
                                             <span class="icon_wrap">
                                                 <i class="fa fa-cog fa-2x"></i>
                                             </span>
+
                                             <h3>Status</h3>
-                                            <span class="count">Open</span>
+                                            <?php 
+
+                                            $date = date('d F, Y');
+                                            $enddate = $row['vacancy_to_date'];
+
+                                            if(strtotime($date) > strtotime($enddate)){ ?>
+
+                                            <span class="count">Closed</span>
+                                       <?php     }
+                                            else{ ?>
+                                             <span class="count">Open</span>
+                                          <?php  } ?>
                                         </div>
                                     </div>
                                 </div>

@@ -50,6 +50,7 @@ class Addschool extends CI_Controller {
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+         $sessid= $this->session->userdata('suserid');
     
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
@@ -78,7 +79,7 @@ class Addschool extends CI_Controller {
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
                 'school_approve'=>$this->input->post('approve_status'),
-                'user_id' => '1'
+                'user_id' => $sessid
                 );
 
      if ($this->init_models->addschooldata($data))

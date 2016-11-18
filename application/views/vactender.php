@@ -29,7 +29,7 @@
                                     <p class="black-text">Sort Tenders:</p>
                                 </div>
                                 <div class="form-control input-field col s3">
-                                    <input id="startdate" type="date" class=" datepicker validate" name="vacd1">
+                                    <input id="startdate" type="date" class="datepicker validate" name="vacd1">
                                     <label for="Caption"> From</label>
                                 </div>
                                 <div class="form-control  input-field col s3">
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="input-field col s2">
                                     <button class="btn waves-effect waves-light" type="submit" name="searchaction">search
-                                        <i class="material-icons ">search</i>
+                                        <i class="material-icons">search</i>
                                     </button>
                                 </div>
                             </div>
