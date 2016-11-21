@@ -55,14 +55,21 @@
                                                     </div>
                                                     <div class="input-field col s12">
                                                         <input id="date" type="date" class="datepicker" name="sdate" value="<?php  echo $row['vacancy_from_date'];?>">
-                                                        <label for="date">Date of Bidding</label>
+                                                        <label for="date">Start Date of Bidding</label>
                                                     </div>
                                                     <div class="input-field col s12">
                                                         <input id="date" type="date" class="datepicker" name="edate"  value="<?php  echo $row['vacancy_to_date'];?>">
                                                         <label for="date">Last Date of Bidding</label>
                                                     </div>
 
-                                                   
+                                                   <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['vacancy_date'];?>" class="datepicker">
+                                                        <label for="date">Date of Posting</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['vacancy_time'];?>">
+                                                        <label for="date">Time</label>
+                                                    </div>
                                                     <div class="input-field col s12">
                                                         <textarea id="Description" class="materialize-textarea" name="vdesc" ><?php  echo $row['vacancy_desc'];?></textarea>
                                                         <label for="Description">Description</label>

@@ -66,11 +66,19 @@
                                                         <select class="form-control browser-default" name="format_type">
                                                              <?php  $options = $row['project_format']; ?>
                                                             <option value="pdf" <?php if($options=="pdf") echo 'selected="selected"'; ?>>pdf</option>
-                                                            <option value="word" <?php if($options=="pdf") echo 'selected="selected"'; ?>>word</option>
-                                                            <option value="rtf" <?php if($options=="pdf") echo 'selected="selected"'; ?>>rtf</option>
+                                                            <option value="word" <?php if($options=="word") echo 'selected="selected"'; ?>>word</option>
+                                                            <option value="rtf" <?php if($options=="rtf") echo 'selected="selected"'; ?>>rtf</option>
                                                            
                                                         </select>
 
+                                                    </div>
+                                                    <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['project_date'];?>" class="datepicker">
+                                                        <label for="date">Date</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['project_time'];?>">
+                                                        <label for="date">Time</label>
                                                     </div>
                                                      <div class="form-group file-field input-field col s12">
                                         <div class="btn">

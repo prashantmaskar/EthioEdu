@@ -87,6 +87,7 @@ class Addgist extends CI_Controller {
                         'post_attachment' => $filedata['file_name'],
                         'post_author'=>  $this->input->post('author'),
                         'post_date' => $this->input->post('date'),
+                         'post_approve' => $this->input->post('approve_status'),
                         'post_date' => $date,
                         'post_time' => $time,
                         'post_source' => $this->input->post('source_link'),

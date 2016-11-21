@@ -84,7 +84,7 @@ class Project_Topic extends CI_Controller {
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
             'project_date' => $date,
-            'project_date' => $time,
+            'project_time' => $time,
             'project_approve'=>$this->input->post('approve_status'),
             'user_id' => $sessid
 			);

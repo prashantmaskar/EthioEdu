@@ -86,6 +86,8 @@ if(isset($_POST['action'])){
                   'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
                   'advertise_desc' => $this->input->post('message'),
+                   'advertise_date' => $this->input->post('date'),
+                'advertise_time' => $this->input->post('time')
                   
                   
                   

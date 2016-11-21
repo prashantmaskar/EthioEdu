@@ -47,7 +47,7 @@
                                                     </div>
                                                     
                                                     <div class="form-group input-field col s12">
-                                                        <input id="event_venue" name="event_venue" type="text" class="validate">
+                                                        <input id="event_venue" name="event_venue" type="text" value="<?php  echo $row['post_venue'];?>" class="validate">
                                                         <label for="Caption">Event Happening in</label>
                                                     </div>
 
@@ -60,15 +60,23 @@
                                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
+                                                        <label for="date">Date of posting</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+                                                        <label for="date">Time</label>
+                                                    </div>
                                                     <div class="form-group input-field col s12">
                                                         <textarea id="Description" name="Description" class="materialize-textarea"><?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
 
-                                                     <div class="form-group input-field col s12">
+                                                    <!-- <div class="form-group input-field col s12">
                                                             <input id="date" type="date" name="date" class="datepicker">
                                                             
-                                                    </div>
+                                                    </div>-->
                                                     <div class=" form-group input-field col s12">
                                                         <input id="post_by" value="<?php echo $row['post_author'];?>" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>

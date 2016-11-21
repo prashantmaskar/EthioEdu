@@ -75,6 +75,9 @@ class Advertise extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                        $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
                             $sessid= $this->session->userdata('suserid');
 
 
@@ -89,6 +92,8 @@ class Advertise extends CI_Controller {
                 'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
                  'advertise_desc'=>  $this->input->post('message'),
+                 'advertise_date' =>$date,
+                 'advertise_time' =>$time,
                  'user_id'=> $sessid
         );
 
