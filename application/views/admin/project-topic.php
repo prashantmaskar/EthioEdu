@@ -79,7 +79,7 @@
                                             <input name="fileformat" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format">
+                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format" >
                                         </div>
                                     </div> 
                                     <input type="hidden" name="approve_status" value="0">

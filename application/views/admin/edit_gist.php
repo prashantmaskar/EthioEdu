@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Gist</h5>
+                                    <h5 class="breadcrumbs-title">Edit Gist</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Gist</a>
+                                        <li><a href="#">Edit Gist</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -31,7 +31,7 @@
                                 foreach ($query->result_array() as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -73,7 +73,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">

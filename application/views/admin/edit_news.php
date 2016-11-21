@@ -32,7 +32,7 @@
                                 foreach ($query->result_array() as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -73,7 +73,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">

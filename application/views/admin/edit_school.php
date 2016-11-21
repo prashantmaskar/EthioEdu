@@ -26,12 +26,12 @@
                     </div>
                     <div class="container">
                      <?php if(isset($_GET['id'])){$sch_id = $_GET['id'];}
-                        $query = $this->db->query("select tbl_users.username, tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_id = '" .$sch_id. "'");
+                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -50,8 +50,8 @@
                                                         </select>
 
                                                     </div>
-                                                    <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="user_name" name="user_name" class="form-control" value="<?php  echo $row['username'];?>" readonly>
+                                                  <!--  <div class= "form-group input-field col s12">
+                                                        <input type="text"  id="user_name" name="user_name" class="form-control" value="<?php  //echo $row['username'];?>" readonly>
                                                         <label for="user_name">User Name</label>
                                                     </div>
                                                     <div class= "form-group input-field col s12">
@@ -59,9 +59,9 @@
                                                         <label for="fullname">Full Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" class="form-control" value="<?php  echo $row['user_email'];?>" readonly>
+                                                        <input id="email" type="text" name="email" class="form-control" value="<?php  //echo $row['user_email'];?>" readonly>
                                                         <label for="email">Email Id</label>
-                                                    </div>
+                                                    </div>-->
                                                     <div class=" form-group input-field col s12">
                                                         <input id="School_name" name="schoolname" type="text" value="<?php  echo $row['school_name'];?>"  class="validate">
                                                         <label for="School_name">School Name</label>
@@ -70,10 +70,10 @@
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach logo</span>
-                                            <input name="fileformat" type="file" multiple>
+                                            <input name="fileformat" type="file" multiple >
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach image only">
+                                            <input class="file-path validate" type="text" placeholder="attach image only" value="<?php //echo $row['school_logo']?>">
                                         </div>
                                     </div>
 

@@ -56,7 +56,7 @@
                                                         </select>
 
                                                     </div>
-                                                    <div class= "form-group input-field col s12">
+                                                    <!--<div class= "form-group input-field col s12">
                                                         <input type="text"  id="user_name" name="user_name" class="form-control">
                                                         <label for="user_name">User Name</label>
                                                     </div>
@@ -67,7 +67,7 @@
                                                     <div class=" form-group input-field col s12">
                                                         <input id="email" type="text" name="email" class="form-control">
                                                         <label for="email">Email Id</label>
-                                                    </div>
+                                                    </div>-->
                                                     <div class=" form-group input-field col s12">
                                                         <input id="School_name" name="schoolname" type="text" class="validate">
                                                         <label for="School_name">School Name</label>
@@ -76,7 +76,7 @@
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach logo</span>
-                                            <input name="fileformat" type="file" multiple>
+                                            <input name="fileformat" type="file" multiple >
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="attach image only">
@@ -97,7 +97,7 @@
                                                            <div class=" form-group input-field col s12">
                                                       <select class="form-control browser-default" name="choice2">
                                                              <option value="">University</option>
-                                                              <option value="">School catagory</option>
+                                                              
                                                               <option value="Account">Account</option>
                                                             <option value="Agriculture">Agriculture</option>
                                                              <option value="Account">Account</option>
@@ -110,7 +110,7 @@
                                                       <select class="form-control browser-default" name="choice3">
 
                                                              <option value="">Institute</option>
-                                                             <option value="">School catagory</option>
+                                                            
                                                               <option value="Account">Account</option>
                                                             <option value="Agriculture">Agriculture</option>
                                                              <option value="Account">Account</option>
@@ -122,7 +122,7 @@
                                                                <div class="form-group input-field col s12">
                                                              <select class="form-control browser-default" name="choice4">
                                                              <option value="">other catagory</option>
-                                                             <option value="">School catagory</option>
+                                                            
                                                               <option value="Account">Account</option>
                                                             <option value="Agriculture">Agriculture</option>
                                                              <option value="Account">Account</option>
@@ -168,8 +168,8 @@
                                                           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice8">
                                                             <option value="" >School type</option>
-                                                            <option value="Ethiopia">public</option>
-                                                            <option value="Kenya">private</option>
+                                                            <option value="public">public</option>
+                                                            <option value="private">private</option>
                                                          
                                                         </select>
                                                     </div>

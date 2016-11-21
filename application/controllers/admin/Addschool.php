@@ -36,13 +36,13 @@ class Addschool extends CI_Controller {
         );
         $this->load->view('admin/addschool',$view_params);
     
-    if(isset($_POST['action'])){
+    /*if(isset($_POST['action'])){
         $this->insertuserdata();
      } 
 
      if(isset($_POST['action'])){
         $this->get_user_id();
-        }  
+        }  */
 
   if(isset($_POST['action'])){
         $this->insertschooldata();
@@ -52,7 +52,7 @@ class Addschool extends CI_Controller {
 
         
 
-     function insertuserdata(){
+   /*  function insertuserdata(){
          $password = $this->input->post('password', true);
           $pass = md5($password);
         $data = array( 
@@ -75,7 +75,7 @@ class Addschool extends CI_Controller {
             );
         return $data;
           
-}
+}*/
 
 
 
@@ -114,7 +114,7 @@ else{
          $sessid= $this->session->userdata('suserid');
     
 
-    $getid = $this->get_user_id();
+   // $getid = $this->get_user_id();
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),

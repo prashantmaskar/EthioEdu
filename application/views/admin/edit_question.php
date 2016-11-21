@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Question</h5>
+                                    <h5 class="breadcrumbs-title">Edit Question</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Question</a>
+                                        <li><a href="#">Edit Question</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -31,7 +31,7 @@
                                 foreach ($query->result_array() as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

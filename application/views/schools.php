@@ -109,17 +109,17 @@
                         <div class="row">
                             <div class="col m12">
                                 <div class="school_short_info ">
-                                    <div class="row schools-row">        <!--     <?php 
+                                    <div class="row schools-row">            <?php 
                                    
 
-                              //  foreach ($schools as $row){ ?>
+                                foreach ($schools as $row){ ?>
 
                                         <div class="col m3">
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
                                                     <div class="s_logo">
-                                                    <?php //$img = $row['school_logo'];  ?>
-                                                        <img src="<?php //echo base_url().'uploads/'.$img ?>">
+                                                    <?php $img = $row['school_logo'];  ?>
+                                                        <img src="<?php echo base_url().'uploads/'.$img ?>">
                                                         
                                                         
                                                     </div>
@@ -129,37 +129,10 @@
                                                 <div class="col m12">
                                                     <div class="s_detail">
 
-                                                        <h1><?php //echo $row['school_name'];?></h1>
-                                                        <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
-                                                        <p><i class=" red-text fa fa-phone"></i> <?php //echo $row['school_number'];?></p>
-                                                        <p><?php //echo $row['school_desc'];?></p>
-                                                        <a href="<?php// echo base_url().'index.php/schooldetails'?>">View More >></a>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                      <?php //} ?>
--->
-                                       <div class="col m3">
-                                            <div class="row">
-                                                <div class="col m6 offset-m2">
-                                                    <div class="s_logo">
-                                                        <img src="<?php echo base_url().'images/schools.png' ?>">
-                                                        
-                                                        
-                                                    </div>
-
-                                                </div>
-                
-                                                <div class="col m12">
-                                                    <div class="s_detail">
-
-                                                        <h1 class="stitle"></h1>
-                                                        <p class="email"><i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
-                                                        <p class="snumber"><i class=" red-text fa fa-phone"></i></p>
-                                                        <p class="sdesc"></p>
+                                                        <h1><?php echo $row['school_name'];?></h1>
+                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row['user_email'];?></p>
+                                                        <p><i class=" red-text fa fa-phone"></i> <?php echo $row['school_number'];?></p>
+                                                        <p><?php echo $row['school_desc'];?></p>
                                                         <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
                                                     </div>
                                                 </div>
@@ -167,6 +140,9 @@
 
                                             </div>
                                         </div>
+                                      <?php } ?>
+
+                                     
                            
                         </div>
                     </div>
@@ -199,7 +175,7 @@
         </div>
     </div>
 </div>
-
+</div>
 <?php $this->load->view('footer'); ?>
 
 <script>
@@ -239,4 +215,3 @@ $(document).ready(function(){
                          });
 });               
 </script>
-

@@ -34,7 +34,7 @@
 
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -86,7 +86,7 @@
                                             <input name="fileformat" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format">
+                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format" value="<?php //echo $row['project_upload'];?>">
                                         </div>
                                     </div>
                                     <input value="<?php echo $row['project_id']; ?>" name="project_id" type="hidden">

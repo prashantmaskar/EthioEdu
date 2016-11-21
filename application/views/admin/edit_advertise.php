@@ -17,7 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Editu Advertise</a>
+                                        <li><a href="#">Edit Advertise</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -32,7 +32,7 @@
 
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption" style="color:black"; >Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -113,7 +113,7 @@
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php //echo $row['advertise_attachment'];?>">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">
