@@ -80,10 +80,18 @@
                                                         <input id="author" type="text" name="author" value="<?php echo $row['post_author'];?>" class="validate">
                                                         <label for="author">Gist written By</label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                                    <div class="form-group input-field col s6">
                                                         <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
-                                                        <label for="date"></label>
+                                                        <label for="date">Date</label>
                                                     </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+                                                        <label for="date">Time</label>
+                                                    </div>
+                                                   <!-- <div class="form-group input-field col s12">
+                                                        <input id="date" name="date" type="date" value="<?php //echo $row['post_date'];?>" class="datepicker">
+                                                        <label for="date"></label>
+                                                    </div>-->
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" type="text" value="<?php echo $row['post_source'];?>" class="validate">
                                                         <label for="source_link">Source</label>

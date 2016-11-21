@@ -80,14 +80,27 @@
                                                         <input id="author" type="text" value="<?php echo $row['post_author'];?>" name="author" class="validate">
                                                         <label for="author">News written By</label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                                    <div class="form-group input-field col s6">
                                                         <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
                                                         <label for="date">Date of Posting</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+                                                        <label for="date">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
+
+                                                    <!-- <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php //echo $row['course_date'];?>" class="datepicker">
+                                                        <label for="date">Date</label>
+                                                    </div>
+                                                    <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php //echo $row['course_time'];?>" ">
+                                                        <label for="date">Time</label>
+                                                    </div>-->
                                                     <input value="<?php echo $row['post_type']; ?>" name="post_type" type="hidden">
                                                     <input value="<?php echo $row['post_id']; ?>" name="post_id" type="hidden">
                                                     <!--<div class="form-group input-field col s12">

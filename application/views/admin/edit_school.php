@@ -129,14 +129,14 @@
 
                                                     </div>
                                                    <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="phone_number" name="phone_number"  class="form-control">
+                                                        <input type="text"  id="phone_number" name="phone_number"  class="form-control" value="<?php echo $row['school_number'];?>">
                                                         <label for="phone_number">phone_number</label>
                                                     </div>
 
                                                    
                                                                <div class="form-group input-field col s12">
                                                              <select class="form-control browser-default " name="choice5">
-                                                       <?php  $options = $row['other_category']; ?>
+                                                       <?php  $options = $row['school_country']; ?>
                                                             <option value="">Choose Country</option>
                                                             <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
                                                             <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
@@ -156,7 +156,7 @@
                                                     <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice7">
                                                          <?php  $options = $row['school_region']; ?>
-                                                            <option value="">Choose Country</option>
+                                                            <option value="">Choose Region</option>
                                                             <option value="Ethiopia" <?php if($options=="Ethiopia") echo 'selected="selected"'; ?>>Ethiopia</option>
                                                             <option value="Kenya" <?php if($options=="Kenya") echo 'selected="selected"'; ?>>Kenya</option>
                                                             <option value="Africa" <?php if($options=="Africa") echo 'selected="selected"'; ?>>Africa</option>
@@ -228,6 +228,14 @@
                                                     <div class="form-group input-field col s12">
                                                         <textarea id="Description" class="materialize-textarea" name="tell_us"><?php echo $row['school_desc'];?></textarea>
                                                         <label for="Description">Tell Us About yourself</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['school_date'];?>" class="datepicker">
+                                                        <label for="date">Date</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['school_time'];?>">
+                                                        <label for="date">Time</label>
                                                     </div>
                                                     <input value="<?php echo $row['school_id']; ?>" name="school_id" type="hidden">
                                                           <input type="hidden" name="approve_status" value="<?php echo $row['school_approve']; ?>">

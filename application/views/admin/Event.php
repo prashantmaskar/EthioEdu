@@ -52,7 +52,10 @@
                                                         <input id="event_tital" name="event_tital" type="text" class="validate">
                                                         <label for="event_tital">Event Title</label>
                                                     </div>
-                                                    
+                                                     <div class="form-group input-field col s12">
+                                    <input id="event_venue" name="event_venue" type="text" class="validate">
+                                    <label for="Caption">Event Happening in</label>
+                                </div>
 
                                                      <div class="form-group file-field input-field col s12">
                                                         <div class="btn">

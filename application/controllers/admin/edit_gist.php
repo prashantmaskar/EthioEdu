@@ -86,7 +86,9 @@ if(isset($_POST['action'])){
                   'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type'),
-                   'post_approve' => $this->input->post('approve_status')
+                   'post_approve' => $this->input->post('approve_status'),
+                     'post_date' => $this->input->post('date'),
+                'post_time' => $this->input->post('time')
         );
                   $isinserted = $this->init_models->edit_gist($data);
                         

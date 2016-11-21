@@ -84,7 +84,8 @@ if(isset($_POST['action'])){
                   
                   'project_upload' => $filedata['file_name'],
                   
-                  
+                  'project_date' => $this->input->post('date'),
+                'project_time' => $this->input->post('time')
                   
                   
                 

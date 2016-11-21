@@ -94,6 +94,8 @@ class Events extends CI_Controller {
                     'post_time' => $time,
                     'post_source' => '',
                     'post_type'=>  $this->input->post('post_type'),
+                     'post_venue' => $this->input->post('event_venue'),
+                      'post_approve' => $this->input->post('approve_status'),
                     'user_id'=> $sessid
         );
                         

@@ -114,6 +114,15 @@
                                                         <textarea id="Details" class="materialize-textarea" name="details"><?php echo $row['course_desc'];?></textarea>
                                                         <label for="Details">Details</label>
                                                     </div>
+
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['course_date'];?>" class="datepicker">
+                                                        <label for="date">Date</label>
+                                                    </div>
+                                                    <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['course_time'];?>" ">
+                                                        <label for="date">Time</label>
+                                                    </div>
                                                     <input value="<?php echo $row['course_id']; ?>" name="course_id" type="hidden">
                                                       <input type="hidden" name="approve_status" value="<?php echo $row['course_approve']; ?>">
                                                     <div class="col s12">

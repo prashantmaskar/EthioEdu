@@ -87,10 +87,10 @@
                                                         <input id="author" type="text" name="author" class="validate">
                                                         <label for="author">News written By</label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                                    <!--<div class="form-group input-field col s12">
                                                         <input id="date" name="date" type="text" class="datepicker validate">
-                                                        <label for="date"></label>
-                                                    </div>
+                                                        <label for="date">Date of posting</label>
+                                                    </div>-->
                                              <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" type="url" class="validate">
                                                         <label for="source_link">Source</label>

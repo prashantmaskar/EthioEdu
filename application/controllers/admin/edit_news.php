@@ -83,10 +83,12 @@ if(isset($_POST['action'])){
                   'post_category'=>$this->input->post('catagory'),
                   'post_attachment' => $filedata['file_name'],
                   'post_author'=>  $this->input->post('author'),
-                  'post_date' => $this->input ->post('date'),
+                 // 'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type'),
-                  'post_approve' => $this->input->post('approve_status')
+                  'post_approve' => $this->input->post('approve_status'),
+                   'post_date' => $this->input->post('date'),
+                'post_time' => $this->input->post('time')
         );
                   $isinserted = $this->init_models->edit_news($data);
                         

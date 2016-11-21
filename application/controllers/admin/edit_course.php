@@ -71,7 +71,9 @@ $fduration = $cduration*30;
                 'course_university' => $this->input->post('adduniversity'),
                 'course_desc' => $this->input->post('details'),
                'course_id' => $this->input->post('course_id'),
-               'course_approve' => $this->input->post('approve_status')
+               'course_approve' => $this->input->post('approve_status'),
+                'course_date' => $this->input->post('date'),
+                'course_time' => $this->input->post('time')
 
             );
 

@@ -99,7 +99,9 @@ if(isset($_POST['action'])){
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
                 'school_id' => $this->input->post('school_id'),
-                  'school_approve'=>$this->input->post('approve_status')
+                  'school_approve'=>$this->input->post('approve_status'),
+                  'school_date' => $this->input->post('date'),
+                'school_time' => $this->input->post('time')
                 );
 
      if ($this->init_models->edit_school($data))

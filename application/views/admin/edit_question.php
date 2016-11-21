@@ -41,7 +41,7 @@
                                             <div class="row">
    
                                                 <form id="Queans" class="col m12" action="<?php echo site_url('index.php/admin/edit_question')?>" method="post">
-                                                     <div class="form-group input-field col s5">
+                                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="quetype">
                                                     <?php  $options = $row['question_type']; ?>
                                                             <option value="">Question type</option>
@@ -50,7 +50,7 @@
                                                         
                                                         </select>
                                                     </div>
-                                                    <div class="form-group input-field col s5">
+                                                    <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="subcat">
                                                         <?php  $options = $row['question_category']; ?>
                                                             <option value="">Subject/course catagory</option>
@@ -58,9 +58,18 @@
                                                             <option value="Study question" <?php if($options=="Study question") echo 'selected="selected"'; ?>>Study question</option>
                                                         
                                                         </select>
+                                                        </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="user_name" name="question" type="text" value="<?php  echo $row['question_desc'];?>" class="validate">
                                                         <label for="question">My Question</label>
+                                                    </div>
+                                                    <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['question_date'];?>" class="datepicker">
+                                                        <label for="date">Date of posting</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['question_time'];?>">
+                                                        <label for="date">Time</label>
                                                     </div>
                                                   <input value="<?php echo $row['question_id']; ?>" name="question_id" type="hidden">
                                                     <input type="hidden" name="approve_status" value="<?php echo $row['question_approve']; ?>">

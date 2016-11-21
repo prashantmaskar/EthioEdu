@@ -75,13 +75,14 @@
                                          <?php  $options = $row['advertise_position']; ?>
                                         <select class="form-control browser-default" name="addposition" >
                                            <option  value="" disabled="" selected="">Add Position</option>
-                                                           <option value="Top" <?php if($options=="Admission") echo 'selected="selected"'; ?>>Top</option>
-                                                            <option value="left" <?php if($options=="Admission") echo 'selected="selected"'; ?>>left</option>
-                                                            <option value="Right" <?php if($options=="Admission") echo 'selected="selected"'; ?>>Right</option>
+                                                           <option value="Top" <?php if($options=="Top") echo 'selected="selected"'; ?>>Top</option>
+                                                            <option value="left" <?php if($options=="left") echo 'selected="selected"'; ?>>left</option>
+                                                            <option value="Right" <?php if($options=="Right") echo 'selected="selected"'; ?>>Right</option>
                                         </select>
                                       <!--  <label>Add Position</label>-->
                                     </div>
 									<div class="form-group input-field col s12">
+                                    <?php  $options = $row['advertise_position']; ?>
                                         <select class="form-control browser-default " name="paymentmethod" >
                                            <option  value="" disabled="" selected="">Payment Method</option>
                                                             <option value="1">M-Birr</option>
@@ -89,6 +90,17 @@
                                         </select>
                                        <!-- <label>Payment Method</label>-->
                                     </div>
+
+
+                                                   <div class="form-group input-field col s6">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['advertise_date'];?>" class="datepicker">
+                                                        <label for="date">Date of posting</label>
+                                                    </div>
+                                                     <div class="form-group input-field col s6">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['advertise_time'];?>">
+                                                        <label for="date">Time</label>
+                                                    </div>
+
 									<div class="form-group input-field col s12">
                                                         <input id="subject" type="text" class="validate" name="subject" value="<?php  echo $row['advertise_subject'];?>">
                                                         <label for="subject">Subject</label>
