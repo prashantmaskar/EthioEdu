@@ -68,10 +68,10 @@
                                     <textarea id="description" name="Description" class="materialize-textarea"></textarea>
                                     <label for="Caption">Description</label>
                                 </div>
-                                 <div class="form-group input-field col s12">
+                                <!-- <div class="form-group input-field col s12">
                                         <input id="date" type="date" name="date" class="datepicker">
                                         <label for="date">Date of Posting</label>
-                                    </div>
+                                    </div>-->
 								
                                 <div class="form-group input-field col s12">
                                     <input id="postedby" name="postedby" type="text" class="validate">

@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">List Of All Registered Schools.</p>
+                            <p class="caption black-text">List Of All Registered Schools.</p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

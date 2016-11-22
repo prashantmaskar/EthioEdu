@@ -769,6 +769,7 @@ a.post-share.stumble span {
 .captch img{
     width: 250px;
 }
+.gistbrdr_bottom{border-bottom: 2px solid red;}
 .gist_dinfo{
     font-size: 14px;
 }

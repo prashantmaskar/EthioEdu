@@ -37,7 +37,7 @@
 ?>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption black-text">Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

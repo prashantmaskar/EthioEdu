@@ -38,7 +38,7 @@
 ?>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption black-text">Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -107,9 +107,9 @@
                                                     <div class="form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="adduniversity">
                                                             <option value="">Add University</option>
-                                                            <option value="1">Ethiopia</option>
-                                                            <option value="2">Kenya</option>
-                                                            <option value="3">Africa</option>
+                                                            <option value="Ethiopia">Ethiopia</option>
+                                                            <option value="Kenya">Kenya</option>
+                                                            <option value="Africa">Africa</option>
                                                         </select>
                                                     </div>
 
