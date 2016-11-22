@@ -109,11 +109,9 @@
                         <div class="row">
                             <div class="col m12">
                                 <div class="school_short_info ">
-                                    <div class="row schools-row">            <?php 
-                                   
-
+                                    <div class="row schools-row">
+                                                                <?php
                                 foreach ($schools as $row){ ?>
-
                                         <div class="col m3">
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
@@ -128,21 +126,20 @@
                 
                                                 <div class="col m12">
                                                     <div class="s_detail">
-
+                                                    <?php $sid = $row['school_id'];?>
                                                         <h1><?php echo $row['school_name'];?></h1>
-                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row['user_email'];?></p>
+                                                        <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
                                                         <p><i class=" red-text fa fa-phone"></i> <?php echo $row['school_number'];?></p>
                                                         <p><?php echo $row['school_desc'];?></p>
-                                                        <a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a>
+                                                        <a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>">View More >></a>
                                                     </div>
                                                 </div>
 
 
                                             </div>
                                         </div>
-                                      <?php } ?>
-
-                                     
+                                        <?php } ?>
+                                      
                            
                         </div>
                     </div>
@@ -173,15 +170,16 @@
 
             </div>
         </div>
+
     </div>
 </div>
-</div>
 <?php $this->load->view('footer'); ?>
-
 <script>
 $(document).ready(function(){
-    $('#privates').click(function(){
-                var search_id = 1;
+    $('#publics').click(function(){
+                var search_id = 'public';
+
+        alert(search_id);
                         $.ajax({
                             context: this,
                             type: 'POST',
@@ -190,22 +188,10 @@ $(document).ready(function(){
                        success: function(data) {
                         console.log(data);
                         var obj = $.parseJSON(data); 
-                        //console.log(obj);
-                        //console.log(obj[1].school_name );
-                       /* $.each(obj, function(i, item) {
-                            $('.schools-row').append('<div class="col m3">');
-                            $('.schools-row').append('<div class="row">');
-                            $('.stitle').append("<h1>" + item.school_name + "</h1>");
-                            $('.snumber').append("<p>" + item.school_number + "</p>");
-                            $('.sdesc').append("<p>" + item.school_desc + "</p>");
-                            $('.schools-row').append('</div></div>');
-                        }); */
-                    
-
                           for (var i = 0; i < obj.length; i++)
                             {
 
-                        var rw = '<div class="col m3"><div class="row"><div class="col s6">' + obj[i].school_id + '</div></div></div>';
+                         var rw = '<div class="col m3"><div class="row"><div class="col m6 offset-m2"><div class="s_logo">'  + obj[i].school_id + '</div></div><div class="col m12"><div class="s_detail"><h1>' + obj[i].school_name + '</h1><p><i class="red-text fa fa-envelope"></i> '+ obj[i].school_type +'</p> <p><i class=" red-text fa fa-phone"></i>'+ obj[i].school_number +'</p> <p>'+ obj[i].school_desc +'</p><a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a></div></div></div></div>';
                         $(".schools-row").append(rw);
                     }
 
@@ -214,4 +200,30 @@ $(document).ready(function(){
                         });
                          });
 });               
+
+
+
+$(document).ready(function(){
+    $('#privates').click(function(){
+                var search_id = 'private';
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "search",
+                            data: {search_id},
+                       success: function(data) {
+                        console.log(data);
+                        var obj = $.parseJSON(data); 
+                          for (var i = 0; i < obj.length; i++)
+                            {
+
+                         var rw = '<div class="col m3"><div class="row"><div class="col m6 offset-m2"><div class="s_logo">'  + obj[i].school_id + '</div></div><div class="col m12"><div class="s_detail"><h1>' + obj[i].school_name + '</h1><p><i class="red-text fa fa-envelope"></i> '+ obj[i].school_type +'</p> <p><i class=" red-text fa fa-phone"></i>'+ obj[i].school_number +'</p> <p>'+ obj[i].school_desc +'</p><a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a></div></div></div></div>';
+                        $(".schools-row").append(rw);
+                    }
+
+                              
+                       }
+                        });
+                         });
+});  
 </script>
