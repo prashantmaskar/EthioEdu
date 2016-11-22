@@ -10,7 +10,8 @@
                                     
                         ?>
                         <div class="school_banner col m12">
-                            <img src="<?php echo $row['school_logo'] ?>" class="responsive-img" />
+                        <?php $img=$row['school_logo'] ?>
+                            <img src="<?php echo base_url().'uploads/'.$img ?>" class="responsive-img" />
 
                         </div>
                         <div class="school_name-wrap col m12">
