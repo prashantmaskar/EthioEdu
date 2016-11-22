@@ -1,4 +1,4 @@
-$(document).ready(function() {
+ $(document).ready(function() {
 
     $('#csregister').bootstrapValidator({
         /*feedbackIcons: {
@@ -61,16 +61,21 @@ $(document).ready(function() {
                 }
             },
               
-                  attachphoto: {
-                validators: {
-                    notEmpty: {
-                        message: ' please attach imagee!!!..'
+                  attach:{
+            validators:{
+                notEmpty:{
+                    message:'please select an image'
+                },
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
                     }
-                }
-            },
- 
+                 }
+           },
                
-                  Bdate: {
+                  date: {
                 validators: {
                     notEmpty:{ 
                         message:'please enter birthdate!!'
