@@ -3,14 +3,21 @@
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
+                    <?php $sch_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                    
+                        ?>
                         <div class="school_banner col m12">
-                            <img src="<?php echo base_url() . 'images/school_banner.jpg' ?>" class="responsive-img" />
+                        <?php $img=$row['school_logo'] ?>
+                            <img src="<?php echo base_url().'uploads/'.$img ?>" class="responsive-img" />
 
                         </div>
                         <div class="school_name-wrap col m12">
                             <div class="red col m12">
-                                <h2 class="school_name col s8"><i class="material-icons dp48">verified_user</i> Christian Brothers College, Pretoria</h2>
-                                <span class=" school-type col s4"><span><strong>Category:</strong></span> Secondary/High School</span>
+                                <h2 class="school_name col s8"><i class="material-icons dp48">verified_user</i><?php echo $row['school_name']?></h2>
+                                <span class=" school-type col s4"><span><strong>Category:</strong></span> <?php echo $row['school_category']?></span>
                             </div>
                         </div>
                         <div class="col m12">
@@ -31,36 +38,38 @@
                         <div class="col m12">
                             <div class="school_desc">
                                 <h2 class="sch_det_title">Description/Background</h2>
-                                <p class="sch_desc">CBC Mount Edmund is an independent English medium Catholic school that provides quality Christian education for boys and girls from Gr RRR - 12</p>
+                                <p class="sch_desc"><?php echo $row['school_desc']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Country</h2>
-                                <p class="sch_country">Ethiopia</p>
+                                <p class="sch_country"><?php echo $row['school_country']?></p>
+
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">City</h2>
-                                <p class="sch_country">Ghana</p>
+                                <p class="sch_country"><?php echo $row['school_city']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Region</h2>
-                                <p class="sch_country">South Africa</p>
+                                <p class="sch_country"><?php echo $row['school_region']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Type</h2>
-                                <ul>
+                                <p class="sch_country"><?php echo $row['school_type']?></p>
+                                <!--<ul>
                                     <li><i class="fa fa-check"></i> Day Only</li>
                                     <li><i class="fa fa-check"></i> Day & Night</li>
                                     <li><i class="fa fa-check"></i> Boarding Only</li>
                                     <li><i class="fa fa-check"></i> Boarding & Day</li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </div>
                         <div class="col m12">
@@ -116,37 +125,37 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Student Population</h2>
-                                <p>5000 Students</p>
+                                <p><?php echo $row['school_population']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Teaching Staff</h2>
-                                <p>500 Teaching Staff</p>
+                                <p><?php echo $row['teaching_staff']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Non-Teaching Staff</h2>
-                                <p>255 Non-Teaching Staff</p>
+                                <p><?php echo $row['non_teaching_staff']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Admission Fees</h2>
-                                <p>25 Birr</p>
+                                <p><?php echo $row['school_acadamic_fee']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Admission Requirement</h2>
-                                <p>60% marks</p>
+                                <p><?php echo $row['acadamic_requirment']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Admission Procedure</h2>
-                                <p>Online</p>
+                                <p><?php echo $row['admission_procedure']?></p>
                             </div>
                         </div>
                         <div class="col m12">
@@ -158,19 +167,19 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Past Awards</h2>
-                                <p>Best School of Ethiopia 2015</p>
+                                <p><?php echo $row['school_awards']?></p>
                             </div>
                         </div>                     
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Scholarships</h2>
-                                <p>Ethiopia Scholarships </p>
+                                <p><?php echo $row['school_scholarship']?></p>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Address</h2>
-                                <p>Post: P. O. Box Ks 1993, Kumasi, Ethiopia </p>
+                                <p><?php echo $row['school_address']?></p>
                                 <div id="map">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8067573.325322677!2d36.00181604982493!3d9.132349675141633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1635d0cedd6cfd2b%3A0x7bf6a67f5348c55a!2sEthiopia!5e0!3m2!1sen!2sin!4v1470819730373"  height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 </div>
@@ -179,13 +188,13 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Website</h2>
-                                <a href="#" target="_blank">http://prempehcollege.edu.gh/</a>
+                                <a href="#" target="_blank"><?php echo $row['school_url']?></a>
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Contact</h2>
-                                <p><i class="fa fa-phone"></i> Ph.No. 8600249785</p>
+                                <p><i class="fa fa-phone"></i> Ph.No. <?php echo $row['school_number']?></p>
                             </div>
                         </div>
                         <div class="col m12">
@@ -218,7 +227,11 @@
                                 </form>
                             </div>
 
+
                         </div>
+
+<?php } ?>
+
                     </div>
                 </div>
                 <div class="col s12 m3 ">
