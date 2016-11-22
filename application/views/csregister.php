@@ -44,22 +44,21 @@
                                         <input id="email" name="email" type="text" class="validate">
                                         <label for="Caption">Email Id</label>
                                     </div>
-                                    <div class="form-group file-field input-field col s12">
-                                        <div class="btn" name="attachphoto">
+                                   <div class="form-group file-field input-field col s12">
+                                        <div class="btn">
                                             <span>Attach Photo</span>
-                                            <input type="file" name="user_avatar" multiple>
+                                            <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload Photo">
+                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
                                         </div>
                                     </div>
-
 
                                     <h4 class="red-text">Connect2Me Information</h4>
 
                                     <div class="form-group input-field col s12">
-                                        <input id="date" type="date" name="Bdate"class="datepicker">
-                                        <label for="date">Date of Birth</label>
+                                        <input id="date" type="date" name="date" >
+                                        <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="status">

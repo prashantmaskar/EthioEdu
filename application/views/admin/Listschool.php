@@ -47,7 +47,7 @@
                                             ?>
                                                 <tr>
                                                     <td><?php echo $row['school_name']; ?></td>
-                                                    <td>monica@gmail.com</td>
+                                                    <td><?php echo $row['user_email']; ?></td>
                                                     <td><?php echo $row['school_country']; ?></td>
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_school?id='.$school_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
