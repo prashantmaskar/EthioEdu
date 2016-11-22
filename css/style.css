@@ -495,7 +495,7 @@ button.btn.success-close{
     display: inline-block;
     position: absolute;
     height: 200px;
-    z-index: 1;    
+    z-index: 2;    
 	top: 50%;
     left: 40%;
     -webkit-box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
