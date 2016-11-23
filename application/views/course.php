@@ -51,19 +51,19 @@
                     <div class="serch_schools col m12 ">
                         <div class="row">
 
-                            <form class="col s12">
+                            <form class="col s12" action="<?php echo site_url('index.php/course')?>" method="post">
                                 <div class="row border-b">
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Course Name:</h6>
                                     </div>
                                     <div class="input-field col s12 m3">
-                                        <input id="Course_name" type="text" class="validate">
+                                        <input id="Course_name" name="course_name" type="text" class="validate">
                                         <label for="Course_name">Course Name</label>
                                     </div>
 
 
                                     <div class="input-field col s2">
-                                        <a class="waves-effect waves-light btn margin-t-15">Search</a>
+                                        <button class="waves-effect waves-light btn margin-t-15" type="submit" name="search">Search</button>
                                     </div>
                                 </div>
 
@@ -76,7 +76,18 @@
                                 <div class="collection">
                                     <h4>Course Name</h4>
                                     <?php
-                                foreach ($course as $row){ ?>
+                                    if(isset($_POST['search'])){
+
+                                        $search_string = $_POST['course_name'];
+
+                                    $query = $this->db->query("select * from tbl_course where course_name LIKE '%".$search_string."%' ");
+
+                                    }else{
+
+                                        $query = $this->db->query("select * from tbl_course where course_approve = 1");
+
+                                    }
+                                foreach ($query->result_array() as $row){ ?>
                                 <?php $c_id = $row['course_id'];
                                         ?>
                                     <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row['course_name']; ?></a>

@@ -22,7 +22,7 @@
                                 <h1 class="page-heading">Vacancies/Tender <span class="News-button"><a href="http://localhost/ETHIO/index.php/post_vacancy" class="waves-effect waves-light btn">Post Vacancy</a></span></h1>
                             </div>
                         </div>
-						<form id="sorttender" method="post" action="#">
+						<form id="sorttender" method="post" action="<?php echo base_url() . 'index.php/vactender' ?>">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s3">
@@ -48,7 +48,19 @@
                             <div class="vacancy_list_wrap">
                                 <ul class="vacancy_list">
                                   <?php
-                                foreach ($tender as $row){ ?>
+                                  if(isset($_POST['searchaction'])){
+
+                                    echo $sdate = $_POST['vacd1'];
+                                    echo $edate = $_POST['vacd2'];
+
+                                    $query = $this->db->query("select * from  tbl_vacancy where course_name LIKE '%".$search_string."%' ");
+
+                                    }else{
+
+                                        $query = $this->db->query("select * from  tbl_vacancy where vacancy_approve = 1");
+
+                                    }
+                                foreach ($query->result_array() as $row){ ?>
                              
 
                                     <li class="vacancy_content">
