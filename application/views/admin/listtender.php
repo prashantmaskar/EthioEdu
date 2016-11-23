@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">List Of All Tenders/vacancies.</p>
+                            <p class="caption black-text">List Of All Tenders/vacancies.</p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

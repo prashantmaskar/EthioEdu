@@ -95,9 +95,9 @@
                                                     <div class="form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="adduniversity">
                                                             <option value="">Add University</option>
-                                                            <option value="1">Ethiopia</option>
-                                                            <option value="2">Kenya</option>
-                                                            <option value="3">Africa</option>
+                                                            <option value="Ethiopia">Ethiopia</option>
+                                                            <option value="Kenya">Kenya</option>
+                                                            <option value="Africa">Africa</option>
                                                         </select>
                                                     </div>
 
@@ -111,9 +111,9 @@
                                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                                         <i class="material-icons right">send</i>
                                     </button>
-                                    <button class="btn waves-effect waves-light red" type="submit" name="action">cancel
+                                  <!--  <button class="btn waves-effect waves-light red" type="submit" name="action">cancel
                                         <i class="material-icons right">cancel</i>
-                                    </button>
+                                    </button>-->
                                 </div>
                             </form>
                         </div>

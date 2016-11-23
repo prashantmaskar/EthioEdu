@@ -19,7 +19,9 @@
                             <div class="page-heading-wrap">
                                 <h1 class="page-heading">  Featured Gist from Student Bloggers<span class="News-button"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportgist')?>">Report Gist</a></span> </h1>
                             </div>
+                            <div class="gistbrdr_bottom">
                             <p class="black-text">Gist us about your day. Become an Eye Withness, Report your School, Riots, Queues, SUG, Stress, Roads, Groove, Parties, Events, Student Celebrities, Lectures, Tests, Exams, Hook-ups, break-ups, Outings... Anything.</p>
+                            </div>
                         </div>
                         <div class="col s12 m12 ">
                             <div class="gist_wrap">

@@ -51,7 +51,7 @@
                                     if(isset($days) && $days!==0){echo $days." Day ";}
                                        ?></div></li>
                                 </ul>
-                                <p class="black-text">This course aims at adequately preparing trainees for clerical and management jobs in the maritime and commercial shipping related transport logistics industry.</p>
+                                <p class="black-text"><?php echo $row['course_desc'];?></p>
                             </div>
                               <?php } ?>
                         </div>

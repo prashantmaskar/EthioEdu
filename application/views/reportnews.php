@@ -64,10 +64,10 @@
                                         <input id="author" type="text" name="auther" class="validate">
                                         <label for="author">News written By</label>
                                     </div>
-                                    <div class="form-group input-field col s12">
+                                    <!--<div class="form-group input-field col s12">
                                         <input id="date" type="date" name="date" class="datepicker">
                                         <label for="date">Date of Posting</label>
-                                    </div>
+                                    </div>-->
                                     <div class="form-group input-field col s12">
                                         <input id="source_link" type="url" name="source_link"class="validate">
                                         <label for="source_link">Source</label>

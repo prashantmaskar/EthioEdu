@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption black-text">Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -50,35 +50,35 @@
                                     <div class="form-group input-field col s12">
                                         <select class="form-control browser-default" name="catagory" >
                                             <option value="" disabled selected>Category</option>
-                                            <option value="1">Admission</option>
-                                            <option value="2">Departmental</option>
-                                            <option value="3">Entertainments</option>
-                                            <option value="4">Events</option>
-                                            <option value="5">General</option>
-                                            <option value="6">Part Time</option>
-                                            <option value="7">Full Time</option>
-                                            <option value="8">Sport</option>
-                                            <option value="9">Pre Degree</option>
-                                            <option value="10">Post Degree</option>
-                                            <option value="8">Scholarship</option>
-                                            <option value="8">Other</option>
+                                            <option value="Admission">Admission</option>
+                                            <option value="Departmental">Departmental</option>
+                                            <option value="Entertainments">Entertainments</option>
+                                            <option value="Events">Events</option>
+                                            <option value="General">General</option>
+                                            <option value="Part Time">Part Time</option>
+                                            <option value="Full Time">Full Time</option>
+                                            <option value="Sport">Sport</option>
+                                            <option value="Pre Degree">Pre Degree</option>
+                                            <option value="Post Degree">Post Degree</option>
+                                            <option value="Scholarship">Scholarship</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                         <!--<label>Category</label>-->
                                     </div>
 									<div class="form-group input-field col s12">
                                         <select class="form-control browser-default" name="addposition" >
                                            <option  value="" disabled="" selected="">Add Position</option>
-                                                            <option value="1">Top</option>
-                                                            <option value="2">Left</option>
-                                                            <option value="2">Right</option>
+                                                            <option value="Top">Top</option>
+                                                            <option value="Left">Left</option>
+                                                            <option value="Right">Right</option>
                                         </select>
                                       <!--  <label>Add Position</label>-->
                                     </div>
 									<div class="form-group input-field col s12">
                                         <select class="form-control browser-default " name="paymentmethod" >
                                            <option  value="" disabled="" selected="">Payment Method</option>
-                                                            <option value="1">M-Birr</option>
-                                                            <option value="2">Hello-Cash</option>
+                                                            <option value="M-Birr">M-Birr</option>
+                                                            <option value="Hello-Cash">Hello-Cash</option>
                                         </select>
                                        <!-- <label>Payment Method</label>-->
                                     </div>
