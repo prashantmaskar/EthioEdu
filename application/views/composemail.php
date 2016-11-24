@@ -28,61 +28,24 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="inbox-list" class="col m9 s10 card-panel">
-                            <ul class="collection">
-                                <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div id="compose-mail" class="col m9 s10 card-panel">
+                            <form>
+                                <div class="form-group input-field col s6">
+                                    <input id="username" type="text" class="validate" name="username">
+                                    <label for="username">EthioEdu UserName</label>
+                                </div>
+                                <div class="form-group input-field col s12">
+                                    <input id="subject" type="text" class="validate" name="subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                                <div class="form-group input-field col s12">
+                                    <textarea id="message" class="materialize-textarea" name="Message"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                                <div class="col s6 offset-s4 margin-b-10">
+                                    <button type="submit" class="btn blue waves-light">Send Message</button>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
