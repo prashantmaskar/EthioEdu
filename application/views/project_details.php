@@ -37,36 +37,7 @@
                                          <span class="project_sinfo">Course:<a href="#"><?php echo $row['project_course'];?></a> Format: <a href="#"><?php echo $row['project_format'];?></a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
                                     </li>
                                     <?php } ?>
-                                    <li class="project_content">
-                                        <a href="#" class="vacancy_link">
-                                            <span class="project_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span><br>
-                                        </a>
-                                        <span class="project_sinfo">Course:<a href="#">Accountancy/Accounting</a> Format: <a href="#">Word-Printable</a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="#" class="vacancy_link">
-                                            <span class="project_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span><br>
-                                        </a>
-                                        <span class="project_sinfo">Course:<a href="#">Accountancy/Accounting</a> Format: <a href="#">Word-Printable</a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="#" class="vacancy_link">
-                                            <span class="project_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span><br>
-                                        </a>
-                                         <span class="project_sinfo">Course:<a href="#">Accountancy/Accounting</a> Format: <a href="#">Word-Printable</a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="#" class="vacancy_link">
-                                            <span class="project_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span><br>
-                                        </a>
-                                        <span class="project_sinfo">Course:<a href="#">Accountancy/Accounting</a> Format: <a href="#">Word-Printable</a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="#" class="vacancy_link">
-                                            <span class="project_title">IBBU Online Admission Screening Exercise 2016: Eligibility, Screening And Registration Details</span><br>
-                                        </a>
-                                       <span class="project_sinfo">Course:<a href="#">Accountancy/Accounting</a> Format: <a href="#">Word-Printable</a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
-                                    </li>
+                                  
 
                                 </ul>
                                 <ul class="pagination">

@@ -20,9 +20,48 @@
                                 <h1 class="page-heading">Upcoming Events In Schools<span class="Event-button"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">Post A New Event</a></span></h1>
                             </div>
                         </div>
+                          <div class="col m12 s12">
+                            <div class="event_sort_form col m12">
+                            <form id="sortevent" method="post" action="<?php echo base_url() . 'index.php/event' ?>">
+                                <div class="col s2">
+                                    <p class="black-text">Sort Events:</p>
+                                </div>
+                                
+                                <div class="input-field col s4">
+                                        <input id="startdate" type="date" class=" datepicker validate" name="newsd1" >
+                                        <label for="Caption">Event From</label>
+                                    </div>
+                                <div class="input-field col s4">
+                                        <input id="enddate" type="date" class=" datepicker validate" name="newsd2">
+                                        <label for="Caption">Event To</label>
+                                    </div>
+                                <div class="input-field col s2">
+                                         <button class="btn waves-effect waves-light" type="submit" name="searchaction">search
+                                            <i class="material-icons ">search</i>
+                                        </button>
+                                    </div></form>
+                            </div>
+                        </div>
                         <div class="col s12 m12 ">
                             <div class="event_list">
-                            <?php foreach($event as $row){ ?>
+                            <?php
+                              
+                                  if(isset($_POST['searchaction'])){
+
+                                    $sdate = $_POST['newsd1'];
+                                    $edate = $_POST['newsd2'];
+
+                                    $query = $this->db->query("select * from tbl_posts where post_date between '".$sdate."' and '".$edate."' and  post_type = 'event' and post_approve = 1");
+
+                                    }else{
+
+                                        $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
+
+                                    }
+
+
+                             foreach($query->result_array() as $row)
+                                { ?>
                            <?php $event_id = $row['post_id'];
                                         ?>
                                    <div class="col m12 event_content">
