@@ -9,6 +9,19 @@
                                 <h1 class="page-heading">Report Gist</h1>
                             </div>
                         </div>
+                         <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
                         <div class="col s12 m12 ">
                             <div class="gist_add">
                                 <form id="reportgist" method="post" action="<?php echo site_url('index.php/reportgist')?>" class="col m12" enctype="multipart/form-data">

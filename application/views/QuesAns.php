@@ -17,7 +17,7 @@
                     <div class="QuesAns_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">Academic Questions Categories <span class="QuesAns-button"><a class="waves-effect waves-light btn"href="<?php echo base_url().'index.php/askQues'?>">Ask a question</a></span></h1>
+                                <h1 class="page-heading">Questions Categories <span class="QuesAns-button"><a class="waves-effect waves-light btn"href="<?php echo base_url().'index.php/askQues'?>">Ask a question</a></span></h1>
                             </div>
                         </div>
 						<div class="col m12 s12">

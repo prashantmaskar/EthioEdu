@@ -272,11 +272,11 @@
                                                     <?php if (!$this->session->userdata('logged_in'))
                                                         { ?>
                                                      <div class=" form-group input-field col s12">
-                                                   <input id="password" name="password" type="text"  class="validate">
+                                                   <input id="password" name="password" type="password"  class="validate">
                                                 <label for="password">password</label>
                                                       </div>
                                                        <div class="form-group input-field col s12">
-                                                      <input id="cpassword" name="cpassword" type="text" class="validate">
+                                                      <input id="cpassword" name="cpassword" type="password" class="validate">
                                                     <label for="cpassword">Confirm password</label>
                                                       </div>
                                                       <?php } ?>
@@ -287,17 +287,20 @@
                                                  <input id="captch" type="text" name="captcha" class="validate">
                                                   <label for="captch">Add Above Code</label>
                                                     </div>
+                                                     <?php if (!$this->session->userdata('logged_in')){ ?>
                                                        <div class="form-group input-field col s12">
                                                       <input type="checkbox" name="filled-in-box"class="filled-in" id="filled-in-box" checked="checked" />
                                                      <label for="filled-in-box">I accept terms & conditions</label>
                                                       </div>
-
+                                                       <?php }?>
                                                     <input type="hidden" name="approve_status" value="0">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
-                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Register</button>
-                                                              &nbsp;&nbsp;<span>Already A User? <a href="#">Login</a> </span>
-                                    <p class="t20margin"><a href="#">Forgot Password?</a> </p>
+                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Submit</button>
+                                                              &nbsp;&nbsp;
+                                                <?php if (!$this->session->userdata('logged_in')){ ?>
+                                                        <span>Already A User? <a href="#">Login</a> </span> <?php }?>
+                                   <!--  <p class="t20margin"><a href="#">Forgot Password?</a> </p> -->
                                 </div>
                                                         </div>
                                                     </div>
