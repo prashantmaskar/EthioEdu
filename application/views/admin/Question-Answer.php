@@ -57,6 +57,7 @@
                                                         
                                                         </select>
                                                     </div>
+                                                    <div>
                                                     <div class="form-group input-field col s5">
                                                         <select class="form-control browser-default" name="subcat">
 
@@ -89,6 +90,8 @@
                                             <option value="Social_Science">Social Science</option>
                                                         
                                                         </select>
+                                                    </div>
+
                                                     <div class="form-group input-field col s12">
                                                         <input id="user_name" name="question" type="text" class="validate">
                                                         <label for="question">My Question</label>
