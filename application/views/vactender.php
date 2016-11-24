@@ -61,7 +61,6 @@
 
                                     }
                                 foreach ($query->result_array() as $row){ ?>
-                                <?phpv echo ?>
 
                                     <li class="vacancy_content">
                                      <?php $vac_id = $row['vacancy_id'];

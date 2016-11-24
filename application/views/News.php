@@ -48,8 +48,8 @@
                                 <?php
                                 if(isset($_POST['action'])){
 
-                                   echo  $sdate = $_POST['newsd1'];
-                                   echo $edate = $_POST['newsd2'];
+                                    $sdate = $_POST['newsd1'];
+                                    $edate = $_POST['newsd2'];
 
                                     $query = $this->db->query("select * from tbl_posts where post_date between '".$sdate."' and '".$edate."' and  post_type = 'news' and post_approve = 1");
 
@@ -58,7 +58,7 @@
                                         $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
 
                                     }
-                                foreach ($news as $row){ ?>
+                                foreach ($query->result_array() as $row){ ?>
                                     <li class="news_content">
                                         <?php $news_id = $row['post_id'];
                                         ?>
