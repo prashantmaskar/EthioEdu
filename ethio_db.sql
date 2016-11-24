@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2016 at 07:46 AM
+-- Generation Time: Nov 23, 2016 at 08:17 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -183,6 +183,7 @@ CREATE TABLE `tbl_projects` (
   `project_id` int(11) NOT NULL,
   `project_title` varchar(100) NOT NULL,
   `project_course` varchar(50) NOT NULL,
+  `project_category` varchar(200) NOT NULL,
   `project_year` varchar(50) NOT NULL,
   `project_format` varchar(50) NOT NULL,
   `project_upload` varchar(50) NOT NULL,
@@ -196,8 +197,8 @@ CREATE TABLE `tbl_projects` (
 -- Dumping data for table `tbl_projects`
 --
 
-INSERT INTO `tbl_projects` (`project_id`, `project_title`, `project_course`, `project_year`, `project_format`, `project_upload`, `project_date`, `project_time`, `project_approve`, `user_id`) VALUES
-(1, 'test project', 'test course', '2016', 'pdf', 'test.docx', '23 November, 2016', '12:15:51 PM', '0', 1);
+INSERT INTO `tbl_projects` (`project_id`, `project_title`, `project_course`, `project_category`, `project_year`, `project_format`, `project_upload`, `project_date`, `project_time`, `project_approve`, `user_id`) VALUES
+(1, 'test project', 'test course', '', '2016', 'pdf', 'test.docx', '23 November, 2016', '12:15:51 PM', '0', 1);
 
 -- --------------------------------------------------------
 

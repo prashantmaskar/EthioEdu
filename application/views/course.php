@@ -50,14 +50,19 @@
 
                     <div class="serch_schools col m12 ">
                         <div class="row">
+                        <datalist id="coursenames">
+    <?php  foreach ($course as $row){ ?>
+    <option value="<?php echo $row['course_name'];?>"><?php echo $row['course_name'];?></option>
+     <?php }   ?>
 
+</datalist>
                             <form class="col s12" action="<?php echo site_url('index.php/course')?>" method="post">
                                 <div class="row border-b">
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Course Name:</h6>
                                     </div>
                                     <div class="input-field col s12 m3">
-                                        <input id="Course_name" name="course_name" type="text" class="validate">
+                                        <input id="Course_name" name="course_name" type="text" list="coursenames" class="validate">
                                         <label for="Course_name">Course Name</label>
                                     </div>
 
