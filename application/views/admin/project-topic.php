@@ -81,7 +81,7 @@
                                                         </select>
 
                                                     </div>
-                                                    <div class="form-group input-field col s12">
+                                                    <!-- <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="format_type">
                                                             <option  value="">Format type</option>
                                                             <option value="pdf">PDF</option>
@@ -89,7 +89,7 @@
                                                             <option value="rtf">RTF</option>
                                                         </select>
 
-                                                    </div>
+                                                    </div> -->
                                                      <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach file</span>

@@ -30,6 +30,7 @@ $(document).ready(function(){
         messages: {
             choiceage:{
                 required: "Select age",
+                
                
             },
              institutions:{
