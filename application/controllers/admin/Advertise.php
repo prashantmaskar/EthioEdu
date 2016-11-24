@@ -98,24 +98,13 @@ class Advertise extends CI_Controller {
         );
 
 
-
-
-  
-                        $isinserted = $this->init_models->add_advertise($data);
-                        
-
-                        //
-                }
-
-               if(isset($isinserted)){
-                    $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
-               }else{
-                    $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
-               }
-               var_dump($res);
-
+}
+                   if($isinserted = $this->init_models->add_advertise($data))
+                        {
+                           $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                            redirect("index.php/admin/advertise");
+                      }
+               
     }
 
 }

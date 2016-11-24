@@ -24,14 +24,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                                            <?php if(isset($_GET['id'])){$topic_id = $_GET['id'];}
-                        $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
-                        ?>
-
                     <div class="container">
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -42,6 +34,13 @@
                                         <div class="card-panel">
                                             <h4 class="header2">Edit Project Topic FORM</h4>
                                             <div class="row">
+                                            <?php if(isset($_GET['id'])){$topic_id = $_GET['id'];}
+                        $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                    
+                        ?>
+
                                                 <form id="project_topic" action="<?php echo site_url('index.php/admin/Edit_Project_Topic')?>" method="post" class="col m12" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Project_name" name="Project_name" type="text" class="validate" value="<?php  echo $row['project_title'];?>">
@@ -52,6 +51,25 @@
                                                         <input id="course_name" name="course_name" type="text" class="validate"  value="<?php  echo $row['project_course'];?>">
                                                         <label for="course_name">Course Name</label>
                                                     </div>
+
+                                           <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="project_category">
+                                                         <?php  $options = $row['project_category']; ?>
+                                                            <option  value="">Project Catagory</option>
+                                                            <option value="Administration" <?php if($options=="Administration") echo 'selected="selected"'; ?>>Administration</option>
+                                                           <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
+                                                           <option value="Arts_Humanity" <?php if($options=="Arts_Humanity") echo 'selected="selected"'; ?>>Arts & Humanity</option>
+                                                           <option value="Education" <?php if($options=="Education") echo 'selected="selected"'; ?>>Education</option>
+                                                           <option value="EET" <?php if($options=="EET") echo 'selected="selected"'; ?>>Engineering, Environment & Technology</option>
+                                                           <option value="Law" <?php if($options=="Law") echo 'selected="selected"'; ?>>Law</option>
+                                                           <option value="MPH" <?php if($options=="MPH") echo 'selected="selected"'; ?>>Medical, pharmaceutical & Health sciences</option>
+                                                           <option value="Science" <?php if($options=="Science") echo 'selected="selected"'; ?>>Science</option>
+                                                           <option value="SM" <?php if($options=="SM") echo 'selected="selected"'; ?>>Social & management</option>
+ -->
+                                                        </select>
+
+                                                    </div>
+
                                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="Year">
                                                          <?php  $options = $row['project_year']; ?>

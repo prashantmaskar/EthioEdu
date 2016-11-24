@@ -57,18 +57,49 @@
                                                         
                                                         </select>
                                                        </div>
+                                                       <?php if ($this->session->userdata('logged_in'))
+                                                        {
+                                                             $sessid= $this->session->userdata('suserid');
+                                                             $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                                            ?>
+      
                                                     <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="user_name" name="user_name" class="form-control">
+                                                        <input type="text"  id="user_name" name="user_name" value="<?php echo $row['username'];?>" class="form-control" readonly>
                                                         <label for="user_name">user_name</label>
                                                     </div>
                                                     <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="fullname" name="fullname" class="form-control">
-                                                        <label for="fullname">Full Name</label>
+                                                        <input type="text"  id="firstname" name="firstname"  value="<?php echo $row['first_name'];?>"class="form-control" readonly>
+                                                        <label for="firstname">First Name</label>
+                                                    </div>
+                                                     <div class= "form-group input-field col s12">
+                                                        <input type="text"  id="lastname" name="lastname" value="<?php echo $row['last_name'];?>"  class="form-control" readonly>
+                                                        <label for="lastname">Last Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" class="form-control">
+                                                        <input id="email" type="text" name="email" value="<?php echo $row['user_email'];?>" class="form-control" readonly>
                                                         <label for="email">Email Id</label>
                                                     </div>
+                                                   <?php    } } else{
+                                                    ?>
+                                                    <div class= "form-group input-field col s12">
+                                                        <input type="text"  id="user_name" name="user_name"  class="form-control" >
+                                                        <label for="user_name">user_name</label>
+                                                    </div>
+                                                   <div class= "form-group input-field col s12">
+                                                        <input type="text"  id="firstname" name="firstname"  class="form-control" >
+                                                        <label for="firstname">First Name</label>
+                                                    </div>
+                                                     <div class= "form-group input-field col s12">
+                                                        <input type="text"  id="lastname" name="lastname"  class="form-control" >
+                                                        <label for="lastname">Last Name</label>
+                                                    </div>
+                                                    <div class=" form-group input-field col s12">
+                                                        <input id="email" type="text" name="email"  class="form-control" >
+                                                        <label for="email">Email Id</label>
+                                                    </div>
+                                                    <?php }?>
                                                     <div class=" form-group input-field col s12">
                                                         <input id="School_name" name="schoolname" type="text" class="validate">
                                                         <label for="School_name">School Name</label>
@@ -238,7 +269,8 @@
                                                         <label for="password">Web Url</label>
                                                     </div>
                     
-
+                                                    <?php if (!$this->session->userdata('logged_in'))
+                                                        { ?>
                                                      <div class=" form-group input-field col s12">
                                                    <input id="password" name="password" type="text"  class="validate">
                                                 <label for="password">password</label>
@@ -247,6 +279,7 @@
                                                       <input id="cpassword" name="cpassword" type="text" class="validate">
                                                     <label for="cpassword">Confirm password</label>
                                                       </div>
+                                                      <?php } ?>
                                                       <div class="captch">
                                                      <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
                                                        </div>

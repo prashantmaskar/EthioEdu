@@ -13,20 +13,66 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">List News</h5>
-                                    <ol class="breadcrumbs">
+                                    
+                                    <?php if(isset($_GET['post_type']))
+                                    {
+                                        $type = $_GET['post_type'];
+                                    }
+                                     if($type=='news')
+                                        { ?>
+                                            <h5 class="breadcrumbs-title"><?php echo 'List of News'; ?></h5>
+                                            <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List News</a>
+                                        <li><a href="#"><?php echo "List News"; ?></a>
                                         </li>
                                     </ol>
+                                     <?php   }
+
+                                        elseif($type=='event')
+                                            { ?>
+                                                <h5 class="breadcrumbs-title"><?php echo 'List of Event'; ?></h5>
+                                                <ol class="breadcrumbs">
+                                        <li><a href="index.html">Dashboard</a>
+                                        </li>
+                                        <li><a href="#"><?php echo "List Event"; ?></a>
+                                        </li>
+                                    </ol>
+                                         <?php   }
+                                            else
+                                                { ?>
+                                                    <h5 class="breadcrumbs-title"><?php echo 'List of Gist'; ?></h5>
+                                                    <ol class="breadcrumbs">
+                                        <li><a href="index.html">Dashboard</a>
+                                        </li>
+                                        <li><a href="#"><?php echo "List Gist" ?></a>
+                                        </li>
+                                    </ol>
+                                            <?php    }
+
+                                    ?>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All News</p>
+                            <p class="caption black-text">
+                        <?php 
+                            if($type=='news')
+                                        { 
+                                            echo'List Of All News';
+                                        } 
+                                        elseif($type=='event')
+                                            { 
+                                                echo'List Of All Events';
+                                            } 
+                                        else
+                                            { echo'List Of All Gist';} 
+
+
+                                        ?> </p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

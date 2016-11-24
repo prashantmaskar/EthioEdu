@@ -50,8 +50,9 @@
                                        echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";}
                                     if(isset($days) && $days!==0){echo $days." Day ";}
                                        ?></div></li>
+                                       <li class="collection-item"><div><span><strong>Course Description:</strong></span><?php echo $row['course_desc']; ?></div></li>
                                 </ul>
-                                <p class="black-text"><?php echo $row['course_desc'];?></p>
+                                <p class="black-text"></p>
                             </div>
                               <?php } ?>
                         </div>
@@ -117,25 +118,39 @@
 
                                                     </div>
                                                 </form></div>
-                                <a href="#">
-                                    Rate and review this course
-                                </a>
+                               
                             </div>
                         </div>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">More Courses</h2>
+                            <?php if(isset($_GET['id'])){$crs_id = $_GET['id'];}
+                                $query = $this->db->query("select * from  tbl_course where   
+                                 course_id != '" .$crs_id. "'");
+                                foreach ($query->result_array() as $row)
+                                { 
+                                    $c_id = $row['course_id'];
+                             ?>
                                 <ul>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
-                                    <li><a href="#">Diploma in Coffee Technology and Cupping(Coffee Technology)</a></li>
+                                    <li><a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>"><?php echo $row['course_name'];?></a></li>
+                                   
                                 </ul>
+                                <?php } ?>
                             </div>
-                        </div>
+                     </div>
+
+
+                     <div>
+                            <ul class="pagination">
+                                <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
+                                <li class="active"><a href="#!">1</a></li>
+                                <li class="waves-effect"><a href="#!">2</a></li>
+                                <li class="waves-effect"><a href="#!">3</a></li>
+                                <li class="waves-effect"><a href="#!">4</a></li>
+                                <li class="waves-effect"><a href="#!">5</a></li>
+                                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
+                            </ul>
+                  </div>
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>

@@ -24,6 +24,19 @@
                             </div>
                         </div>
                     </div>
+
+                     <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
                     <div class="container">
                         <div class="section">
                             <p class="caption black-text">Fill all required fields.</p>
@@ -140,8 +153,8 @@
                                                             </thead>
                                                             <tbody>
                                                              <?php
-                                                        foreach ($advertise as $row){ ?>
-                                                         <?php $adv_id = $row['advertise_id'];  ?>
+                                                        foreach ($advertise as $row){ 
+                                                         $adv_id = $row['advertise_id'];  ?>
                                                                 <tr>
                                                             <td><?php echo $row['advertise_name']; ?></td>
                                                             <td><?php echo $row['advertise_email']; ?></td>

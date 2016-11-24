@@ -77,6 +77,7 @@ $sessid= $this->session->userdata('suserid');
 		$data = array(
 			'project_title' =>$this->input->post('Project_name'),
 			'project_course' =>$this->input->post('course_name'),
+            'project_category' =>$this->input->post('project_category'),
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],

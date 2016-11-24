@@ -80,6 +80,7 @@ class Project_Topic extends CI_Controller {
 		$data = array(
 			'project_title' =>$this->input->post('Project_name'),
 			'project_course' =>$this->input->post('course_name'),
+            'project_category' =>$this->input->post('project_category'),
 			'project_year' =>$this->input->post('Year'),
 			'project_format' =>$this->input->post('format_type'),
 			'project_upload' =>$filedata['file_name'],
@@ -88,21 +89,9 @@ class Project_Topic extends CI_Controller {
             'project_approve'=>$this->input->post('approve_status'),
             'user_id' => $sessid
 			);
-
-
-  /*
-                        $isinserted = $this->init_models->insert_project($data);
-                        
-
-                }
-
-               if(isset($isinserted)){
-                    echo"<script>alert('Success');</script>";
-               }else{
-                    echo"<script>alert('Failed');</script>";
-               }*/if ($this->init_models->insert_project($data))
+        
+        if ($this->init_models->insert_project($data))
             {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/admin/project-topic");
             }

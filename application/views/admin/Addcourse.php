@@ -120,7 +120,7 @@
                                                     <input type="hidden" name="approve_status" value="0">
 
 
-                                                    <div class="col s12">
+                                                    <div class="col s5 offset-s5">
                                                         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                                                             <i class="mdi-content-send right"></i>
                                                         </button>
