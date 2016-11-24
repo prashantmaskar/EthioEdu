@@ -114,7 +114,7 @@ $(document).ready(function() {
              choice5: {
                 validators: {
                     notEmpty: {
-                        message: ' please select  school catagory!!!..'
+                        message: ' please select  country!!!..'
                            
                     }
                 }

@@ -10,6 +10,13 @@ $(document).ready(function() {
                     }
                 }
             },
+            event_venue: {
+                validators: {
+                    notEmpty: {
+                        message: 'required!!!..'
+                    }
+                }
+            },
              event_title: {
                 validators: {
                     notEmpty: {

@@ -1,4 +1,5 @@
 
+
 $(document).ready(function(){
     //alert('in');
     $.validator.setDefaults({
@@ -11,31 +12,38 @@ $(document).ready(function(){
                 required: true,
                
             },
-            subject: {
+             subject: {
                 required: true,
                 
             },
-            question: {
+               question: {
                 required: true,
                
             }
-            
+            /*interest: {
+                required: true,
+               
+            }*/
+        
         },
         //For custom messages
         messages: {
             quetype:{
-                required: "Select question type",
+                required: "Select age",
                
             },
              subject:{
-                required: "Select  Subject",
+                required: "select  institutions",
                
             },
-            
-            question:{
-                required: "Ask a question",
+             question:{
+                required: "select level",
                
             }
+           /* interest:{
+                required: "select interest",
+               
+            }*/
         },
         //For custom messages
        errorClass:"invalid form-error",
@@ -47,3 +55,40 @@ $(document).ready(function(){
      });
 });
      
+
+
+$(document).ready(function(){
+    //alert('in');
+    $.validator.setDefaults({
+        ignore: []
+    });
+
+ $("#userform").validate({
+        rules: {
+            
+            username:{
+            
+                required: true
+               
+            }
+           
+        },
+        
+        messages:{
+            username:{
+                required:"enter username",
+            }
+        },
+
+
+
+       errorClass:"invalid form-error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          error.appendTo( element.parent() );
+          }
+        
+     });
+});
+     
+

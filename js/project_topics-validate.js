@@ -30,6 +30,13 @@
                     }
                 }
             },
+            format_type: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select format type!!!..'
+                    }
+                }
+            },
  
               
                  fileformat: {

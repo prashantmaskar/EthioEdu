@@ -213,11 +213,11 @@
                                                         <label for="password">Scholarships</label>
                                                     </div>
                                                    <div class="col m12">
-                                    <div class="school_country">
-                                   <h2 class="sch_det_title">Address</h2>
-                                     <div id="address"><?php echo $row['school_address']; ?></p>
-                                <div id="map" style="height:200px;width:100%;" ></div>
-                                    </div>
+                                                  <div class="school_country">
+                                                 <h2 class="sch_det_title">Address</h2>
+                                                   <div id="address"><?php echo $row['school_address']; ?></p>
+                                              <div id="map" style="height:200px;width:100%;" ></div>
+                                                  </div>
                                                     
                                                     <div class="form-group input-field col s12">
                                                         <input id="web" type="text" name="website" value="<?php  echo $row['school_url'];?>" class="validate">
@@ -254,7 +254,7 @@
                         </div>
                          <?php  $this->load->view('admin/footer'); ?>
                          <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-addschool-validate.js' ?>"></script>
-  <?php $this->load->view('footer'); ?>
+
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script>
       function initMap() {

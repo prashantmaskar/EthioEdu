@@ -28,11 +28,15 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: ' please enter no of vacuncy !!!..'
-                    }
+                    },
+                    digits:{
+                         message:'invalid input'
+
+                            }
                 }
             },
              
-           /* sdate: {
+            sdate: {
                 validators: {
                     notEmpty: {
                         message: ' date can not be Empty!!!..'
@@ -45,7 +49,7 @@ $(document).ready(function() {
                         message: ' enter last date of Binding !!!..'
                     }
                 }
-            },*/
+            },
                 vstatus: {
                 validators: {
                     notEmpty: {
