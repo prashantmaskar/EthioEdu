@@ -30,6 +30,15 @@ $(document).ready(function() {
                     }*/
                 }
              },
+             catagory:{
+                validators:{
+                    notEmpty:{
+                        message:  ' select category!!!'
+                    }
+                    
+                }
+             },
+
 
            avatar:{
             validators:{
