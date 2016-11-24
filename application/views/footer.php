@@ -73,6 +73,7 @@
         <script type="text/javascript" src="<?php echo base_url() . 'js/bootstrapValidator.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/jquery.validate.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/script.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url() . 'js/dateValidation.js' ?>"></script>
 
     </body>
 </html>

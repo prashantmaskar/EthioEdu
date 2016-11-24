@@ -93,19 +93,22 @@ if(isset($_POST['action'])){
                   
                  
         );
-                  $isinserted = $this->init_models->edit_project_topic($data);
-                        
+                 if ($this->init_models->edit_project_topic($data))
+            {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data updated successfully'); 
+            redirect("index.php/admin/project_topic");
+            }
 
-                        
+
+                        //
                 }
 
-               if(isset($isinserted)){
-               // echo"<script>alert('Data Inserted Successfully');</script>";
-                redirect("index.php/admin/project_topic");
+              /* if(isset($isinserted)){
+                    echo"<script>alert('Success');</script>";
                }else{
-                   echo"<script>alert('Failed');</script>";
-               }
+                    echo"<script>alert('Failed');</script>";
+               }*/
 
     }
-  
 }
