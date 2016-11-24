@@ -17,6 +17,7 @@ $(document).ready(function(){
 
             vcount: {
                 required: true,
+                 digits: true
                 
             },
             sdate: {
@@ -44,6 +45,7 @@ $(document).ready(function(){
             },
             vcount:{
                 required: "field compulsary",
+                ispass:"should be in digit"
                
             },
              sdate:{
@@ -67,5 +69,7 @@ $(document).ready(function(){
           }
         
      });
+
+
 });
      

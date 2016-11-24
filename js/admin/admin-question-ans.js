@@ -23,10 +23,10 @@ $(document).ready(function() {
             },
  
 
-                  Question: {
+                  question: {
                 validators: {
                     notEmpty: {
-                        message: ' please enter subject/cource category !!!..'
+                        message: ' please ask your question !!!..'
                     }
                 }
             },
