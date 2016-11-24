@@ -42,7 +42,11 @@ $(document).ready(function() {
                     validators:{
                         notEmpty:{
                             message:'please enter course duration in day/month/year!'
-                        }
+                        },
+                        digits:{
+                         message:'Enter valid duration'
+
+                            }
                     }
             },
                addschool: {

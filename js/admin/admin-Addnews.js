@@ -27,6 +27,17 @@ $(document).ready(function() {
                 
              },
 
+         catagory:{
+                validators:{
+                    notEmpty:{
+                        message:  'select category required!!!'
+                    }
+                    
+                    }
+                
+             },
+
+
            avatar:{
             validators:{
                 notEmpty:{
