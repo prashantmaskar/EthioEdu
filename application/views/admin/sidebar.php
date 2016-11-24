@@ -24,7 +24,7 @@
                             </div>
                         </li> 
                         <li class="bold active">
-                            <a href="#" class="waves-effect waves-cyan">
+                            <a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>" class="waves-effect waves-cyan">
                                 <i class="mdi-action-dashboard"></i> 
                                 Dashboard
                             </a>
