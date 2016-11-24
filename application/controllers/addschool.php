@@ -35,11 +35,12 @@ class addschool extends CI_Controller {
             'title' => 'Add School',
         );
         $this->load->view('addschool',$view_params);
-    
+    if (!$this->session->userdata('logged_in'))
+    { 
     if(isset($_POST['action'])){
         $this->insertuserdata();
      } 
-
+}
      if(isset($_POST['action'])){
         $this->get_user_id();
         }  
@@ -56,7 +57,9 @@ class addschool extends CI_Controller {
          $password = $this->input->post('password', true);
           $pass = md5($password);
         $data = array( 
-                'username' => $this->input->post('user_name'),
+                   'username' => $this->input->post('user_name'),
+                'first_name' => $this->input->post('firstname'),
+                'last_name' => $this->input->post('lastname'),
                 'password' => $pass,
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
@@ -66,6 +69,16 @@ class addschool extends CI_Controller {
 }
 
 
+ function get_session_id(){
+   // $ress = $this->init_models->getueserid();
+        $data = array( 
+
+           'uid'  => $this->session->userdata('suserid'),
+
+            );
+        return $data;
+          
+}
  function get_user_id(){
     $ress = $this->init_models->getueserid();
         $data = array( 
@@ -76,7 +89,6 @@ class addschool extends CI_Controller {
         return $data;
           
 }
-
 
 
 
@@ -110,7 +122,13 @@ else{
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+         $sessid= $this->session->userdata('suserid');
+          if ($this->session->userdata('logged_in'))
+    {
+      $getid = $this->get_session_id();
+    }else{
     $getid = $this->get_user_id();
+  }
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
@@ -139,9 +157,10 @@ else{
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
                   'school_approve' => $this->input->post('approve_status'),
-                'user_id' => $getid['uid'],
-                );
-
+                  'user_id' => $getid['uid'],
+                      
+                    
+);
      if ($this->init_models->addschooldata($data))
             {
     //echo"<script>alert('Registration Success');</script>";

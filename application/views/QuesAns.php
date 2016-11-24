@@ -109,6 +109,19 @@
          </div>
 
 						</div>
+						
+<?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
 					
                         <div class="col m12 s12">
                             <div class="QuesAns_sort_form col m12">

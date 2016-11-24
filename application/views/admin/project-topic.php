@@ -56,6 +56,23 @@
                                                         <label for="course_name">Course Name</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="project_category">
+                                                            <option  value="">Project Catagory</option>
+                                                    <option value="Administration">Administration </option>
+                                                    <option value="Agriculture">Agriculture </option>
+                                             <option value="Arts_Humanity ">Arts and humanity  </option>
+                                                      <option value="Education">Education  </option>
+                                        <option value="EET">Engineering, Environment & Technology  </option>
+                                                        <option value="Law">Law  </option>
+                            <option value="MPH">Medical, pharmaceutical & Health sciences  </option>
+                             <option value="Science">Science </option>
+                              <option value="SM">Social & management  </option>
+
+
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="Year">
                                                             <option  value="">Year</option>
                                                             <option value="2016">2016</option>

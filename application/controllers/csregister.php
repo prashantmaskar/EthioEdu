@@ -67,9 +67,12 @@ if(isset($_POST['laction'])){
             $pass = md5($password);
         $data = array( 
                'username' => $this->input->post('username'),
+               'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),
                 'password' => $pass,
                 'user_email' => $this->input->post('email'),
                 'user_role' => 'schooluser',
+
 
             );
 
@@ -89,6 +92,9 @@ if(isset($_POST['laction'])){
           }
 
          public function user_details(){
+            $date = date('d F, Y');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
 $getid = $this->get_frontuser_id();
             $data = array( 
 
@@ -96,8 +102,6 @@ $getid = $this->get_frontuser_id();
                 'user_school' => $this->input->post('school'),
                 'user_level' => $this->input->post('level'),
                 'user_dept' => $this->input->post('department'),
-                'user_first_name' => $this->input->post('first_name'),
-                'user_last_name' => $this->input->post('last_name'),
                 'user_gender' => $this->input->post('gender'),
                 'mobile_no' => $this->input->post('phone_number'),
                 'user_avatar' => $this->input->post('attach'),
@@ -106,7 +110,9 @@ $getid = $this->get_frontuser_id();
                 'about_user' => $this->input->post('aboutme'),
                 'user_interest' => $this->input->post('myinterest'),
                 'user_hobby' => $this->input->post('myhobby'),
-                'user_id' => $getid['uid'],
+                'user_date' => $date,
+                'user_time' => $time,
+                'user_id' => $getid['uid']
                 );
 
 

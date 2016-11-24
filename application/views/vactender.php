@@ -51,9 +51,9 @@
                                   if(isset($_POST['searchaction'])){
 
                                     echo $sdate = $_POST['vacd1'];
-                                    echo $edate = $_POST['vacd2'];
+                                     echo $edate = $_POST['vacd2'];
 
-                                    $query = $this->db->query("select * from  tbl_vacancy where course_name LIKE '%".$search_string."%' ");
+                                    $query = $this->db->query("select * from  tbl_vacancy where (vacancy_from_date > '".$sdate."' and vacancy_to_date < '".$edate."') and vacancy_approve = 1");
 
                                     }else{
 
@@ -61,7 +61,7 @@
 
                                     }
                                 foreach ($query->result_array() as $row){ ?>
-                             
+                                <?phpv echo ?>
 
                                     <li class="vacancy_content">
                                      <?php $vac_id = $row['vacancy_id'];

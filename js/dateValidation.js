@@ -3,7 +3,7 @@
 $('.datepicker').pickadate({
 	 selectMonths: true, 
 	 selectYears:true,
-	 //format: 'yyyy-mm-dd',
+	 format: 'yyyy-mm-dd',
 	     onSet: function( arg ){
               if ( 'select' in arg ){ //prevent closing on selecting month/year
             this.close();

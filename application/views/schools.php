@@ -73,14 +73,19 @@
 
                     <div class="serch_schools col m12 " style="border-bottom: 1px solid #4c4e4e;">
                         <div class="row">
+<datalist id="schoolnames">
+    <?php  foreach ($schools as $row){ ?>
+    <option value="<?php echo $row['school_name'];?>"><?php echo $row['school_name'];?></option>
+     <?php }   ?>
 
-                            <form class="col s12" action="<?php echo site_url('index.php/schools')?>" method="post">
+</datalist>
+                            <form class="col s12">
                                 <div class="row border-b">
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Schools Name:</h6>
                                     </div>
                                     <div class="input-field col s12 m3">
-                                        <input id="schools_name" type="text" class="validate" name="school_name"/>
+                                        <input id="schools_name" type="text" class="validate" name="school_name" list="schoolnames"/>
                                         <label for="schools_name">Schools Name</label>
                                     </div>
                                     <div class="input-field col s12 m2">
@@ -97,7 +102,7 @@
                                     </div>
 
                                     <div class="input-field col s2">
-                                        <button class="waves-effect waves-light btn margin-t-15" type="submit" name="search">Search</button>
+                                        <a id="serach_but_id"  class="waves-effect waves-light btn margin-t-15" >Search</a>
                                     </div>
                                 </div>
 
@@ -110,32 +115,9 @@
                             <div class="col m12">
                                 <div class="school_short_info ">
                                     <div class="row schools-row">
-                                                                <?php
-               if(isset($_POST['search'])){
-                if(isset($_POST['school_name'])){
-                
-               echo $value = $_POST['school_name'];
-                $dbcolumn = 'school_name';
-                }
-                if(isset($_POST['school_type'])){
-
-                 $_POST['school_type'];
-                foreach($_POST['school_type'] as $selected) {
-                $school_type =  $selected;
-                }
-                }
-                echo $school_type;
-}
-
-if(isset($_POST['school_name']) || isset($_POST['private'])){
-$query = $this->db->query("select tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_approve = 1 and '".$dbcolumn."' = '".$value."'");}else{
-
-
-$query = $this->db->query("select tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_approve = 1");
-
-}
-
-                                foreach ($query->result_array() as $row){ ?>
+                                <?php
+               
+                                foreach ($schools as $row){ ?>
                                         <div class="col m3">
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
@@ -167,7 +149,7 @@ $query = $this->db->query("select tbl_users.user_email, tbl_school_meta.school_i
                         </div>
                     </div>
                     <div>
-                     <ul class="pagination">
+                            <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
                                 <li class="waves-effect"><a href="#!">2</a></li>
@@ -176,7 +158,7 @@ $query = $this->db->query("select tbl_users.user_email, tbl_school_meta.school_i
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
-                            </div>
+                  </div>
                     <div class="featured_schools col s12 m12">
 
                         <h5>Featured Schools</h5>
@@ -197,29 +179,61 @@ $query = $this->db->query("select tbl_users.user_email, tbl_school_meta.school_i
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
-<!--<script>
-$(document).ready(function(){
-    $('#privates').change(function(){
-        if(this.checked) {
-            window.location.href =  '<?php //echo site_url('index.php/schools'); ?>' + "?search=private";
+<script>
+$(document).ready(function()
+{
+    $("#serach_but_id").click(function()
+    {
+        var isprivatesel=$("#privates").prop("checked");
+        var ispublicssel=$("#publics").prop("checked");
 
-                    }else{
-                        window.location.href = '<?php //echo site_url('index.php/schools'); ?>';
+        var school_val=$.trim($("#schools_name").val());
+
+        var choice="";
+        if(isprivatesel && !ispublicssel)
+        {
+            choice="1";
+        }
+        else if(!isprivatesel && ispublicssel)
+        {
+            choice="2";
+        }
+        else if(isprivatesel && ispublicssel)
+        {
+            choice="3";
+        }
+        else
+        {
+            choice=$("#schools_name").val();
+        }
+        if(choice!="")
+        {
+          $.ajax({
+                type:"POST",
+                url:"search",
+                data:{"choice":choice,"school_nm":school_val},
+                datatype:"json",
+                success:function(response,testStatus,jqXHR)
+                {
+                   //alert(response); 
+                   $(".schools-row").children().remove();
+                   console.log(response);
+                        var obj = $.parseJSON(response); 
+                          for (var i = 0; i < obj.length; i++)
+                            {
+
+                         var rw = '<div class="col m3"><div class="row"><div class="col m6 offset-m2"><div class="s_logo"><img src=<?php echo base_url()?>/uploads/'  + obj[i].school_logo + '></div></div><div class="col m12"><div class="s_detail"><h1>' + obj[i].school_name + '</h1><p><i class="red-text fa fa-envelope"></i> '+ obj[i].school_type +'</p> <p><i class=" red-text fa fa-phone"></i>'+ obj[i].school_number +'</p> <p>'+ obj[i].school_desc +'</p><a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a></div></div></div></div>';
+                        $(".schools-row").append(rw);
                     }
-                         });
-});               
+                },
+                error:function(response,testStatus,jqXHR)
+                {
+                    alert(response);
+                }
+            });
+       
+      }
+    });
 
-
-
-$(document).ready(function(){
-    $('#publics').change(function(){
-        if(this.checked) {
-            window.location.href = '<?php //echo site_url('index.php/schools'); ?>' + "?search=public";
-                    }
-                    else{
-
-                        window.location.href = '<?php// echo site_url('index.php/schools'); ?>';
-                    }
-                         });
 });  
-</script> -->
+</script>
