@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Project Topic</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Project Topic</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Project_Topic' ?>">Add Project Topic</a>
                                         </li>
                                     </ol>
                                 </div>

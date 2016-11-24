@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Gist</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Gist</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addgist' ?>">Add Gist</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -38,7 +38,7 @@
 ?>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">Fill all required fields.</p>
+                            <p class="caption black-text">Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
