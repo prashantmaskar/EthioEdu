@@ -93,21 +93,19 @@ class reportgist extends CI_Controller {
                         'post_approve' => $this->input->post('approve_status'),
                         'user_id'=>  $sessid
         );
-                        
-                        $isinserted = $this->init_models->add_anews($data);
+                }         
+                      if($this->init_models->add_anews($data));
+                      {
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/reportgist");
+            }
                         
 
                         //
-                }
+               
 
-               if(isset($isinserted)){
-                    $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
-               }else{
-                    $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
-               }
-               var_dump($res);
+              
 
     }
 
