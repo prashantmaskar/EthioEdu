@@ -212,14 +212,13 @@
                                                         <input id="scolership" type="text" value="<?php  echo $row['school_scholarship'];?>" class="validate" name="scolership">
                                                         <label for="password">Scholarships</label>
                                                     </div>
-                                                    <div class="form-group input-field col s12">
-                                                        <input id="address" type="text" value="<?php  echo $row['school_address'];?>" class="validate" name="address">
-                                                        <label for="password">Address</label>
-                                                    </div>
-                                                    <div id="map"class="col m12">     
-                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8067573.325322677!2d36.00181604982493!3d9.132349675141633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1635d0cedd6cfd2b%3A0x7bf6a67f5348c55a!2sEthiopia!5e0!3m2!1sen!2sin!4v1470819730373"  height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                                                    </div>
+                                                   <div class="col m12">
+                                    <div class="school_country">
+                                   <h2 class="sch_det_title">Address</h2>
+                                     <div id="address"><?php echo $row['school_address']; ?></p>
+                                <div id="map" style="height:200px;width:100%;" ></div>
+                                    </div>
+                                                    
                                                     <div class="form-group input-field col s12">
                                                         <input id="web" type="text" name="website" value="<?php  echo $row['school_url'];?>" class="validate">
                                                         <label for="password">Web Url</label>
@@ -255,3 +254,41 @@
                         </div>
                          <?php  $this->load->view('admin/footer'); ?>
                          <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-addschool-validate.js' ?>"></script>
+  <?php $this->load->view('footer'); ?>
+<script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
+<script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+       // document.getElementById('address').addEventListener("focusout", function() {
+            var address = "<?php echo $row['school_address'] ?>";
+           // alert(address);
+            if(address.length>2){
+                geocodeAddress(geocoder, map);
+            }
+          
+      //  });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = "<?php echo $row['school_address'] ?>";
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
+    </script>
