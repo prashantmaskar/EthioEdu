@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+    $("input[type=checkbox][name=agree]").click(function()
+    {
+        var ischeck=$(this).prop("checked");
+        if(ischeck)
+            $(this).val("agree");
+        else
+            $(this).val("");
+    });
+
     $('#homeaddschoolform').bootstrapValidator({
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -297,6 +306,13 @@ $(document).ready(function() {
                 }
                }
            },
+           agree: {
+                validators: {
+                    notEmpty: {
+                        message: 'You must agree with the terms and conditions'
+                    }
+                }
+            }
         }
     });
 });

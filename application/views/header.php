@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">        
     <head>
+        <?php
+                header("Cache-Control:no-cache, no-store, must-revalidate");
+                header("Pragma:no-cache");
+                header("Expires:0");
+         ?>
         <meta charset="utf-8">
         <title><?php echo $m_title ?></title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

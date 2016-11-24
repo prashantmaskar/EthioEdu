@@ -289,7 +289,7 @@
                                                     </div>
                                                      <?php if (!$this->session->userdata('logged_in')){ ?>
                                                        <div class="form-group input-field col s12">
-                                                      <input type="checkbox" name="filled-in-box"class="filled-in" id="filled-in-box" checked="checked" />
+                                                      <input type="checkbox" name="agree" value="" class="filled-in" id="filled-in-box"  />
                                                      <label for="filled-in-box">I accept terms & conditions</label>
                                                       </div>
                                                        <?php }?>
