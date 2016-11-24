@@ -1,6 +1,8 @@
 $(document).ready(function() {
+    
 
     $('#advertiseform').bootstrapValidator({
+
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
