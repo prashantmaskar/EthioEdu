@@ -20,7 +20,7 @@
                                 <h1 class="page-heading">News <span class="News-button"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportnews')?>">Report News</a></span></h1>
                             </div>
                         </div>
-						<form id="sortnews" method="post" action="#">
+						<form id="sortnews" method="post" action="<?php echo base_url() . 'index.php/news' ?>">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s2">
@@ -46,6 +46,18 @@
                             <div class="news_list_wrap">
                                 <ul class="news_list">
                                 <?php
+                                if(isset($_POST['action'])){
+
+                                   echo  $sdate = $_POST['newsd1'];
+                                   echo $edate = $_POST['newsd2'];
+
+                                    $query = $this->db->query("select * from tbl_posts where post_date between '".$sdate."' and '".$edate."' and  post_type = 'news' and post_approve = 1");
+
+                                    }else{
+
+                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
+
+                                    }
                                 foreach ($news as $row){ ?>
                                     <li class="news_content">
                                         <?php $news_id = $row['post_id'];

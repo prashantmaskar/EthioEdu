@@ -122,18 +122,18 @@
     <?php
     }
 ?>
-					
+					<form id="sortquesitons" method="post" action="<?php echo base_url() . 'index.php/QuesAns' ?>">
                         <div class="col m12 s12">
                             <div class="QuesAns_sort_form col m12">
                                 <div class="col s2">
                                     <p class="black-text">Sort Questions:</p>
                                 </div>
                                 <div class="input-field col s4">
-                                        <input id="Caption" type="date" class=" datepicker validate">
+                                        <input id="Caption" type="date" class=" datepicker validate" name="sdate">
                                         <label for="Caption">Questions From</label>
                                     </div>
                                 <div class="input-field col s4">
-                                        <input id="Caption" type="date" class=" datepicker validate">
+                                        <input id="Caption" type="date" class=" datepicker validate" name="edate">
                                         <label for="Caption">Questions To</label>
                                     </div>
                                 <div class="input-field col s2">
@@ -143,11 +143,25 @@
                                     </div>
                             </div>
                         </div>
+                        </form>
                        <div class="col s12 m12 ">
                             <div class="QuesAns_list_wrap">
                              <ul class="QuesAns_list">
                              <?php
-                                foreach ($question as $row){ ?>
+                             if(isset($_POST['action'])){
+
+                                    $sdate = $_POST['sdate'];
+                                    $edate = $_POST['edate'];
+
+                                    $query = $this->db->query("select * from tbl_questions where question_date between '".$sdate."' and '".$edate."' and question_approve = 1");
+
+                                    }else{
+
+
+                                        $query = $this->db->query("select * from tbl_questions where question_approve = 1");
+
+                                    }
+                                foreach ($query->result_array() as $row){ ?>
                                     <li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title"><?php echo $row['question_desc']; ?></span><br>

@@ -50,14 +50,14 @@
                                   <?php
                                   if(isset($_POST['searchaction'])){
 
-                                    echo $sdate = $_POST['vacd1'];
-                                     echo $edate = $_POST['vacd2'];
+                                    $sdate = $_POST['vacd1'];
+                                    $edate = $_POST['vacd2'];
 
-                                    $query = $this->db->query("select * from  tbl_vacancy where (vacancy_from_date > '".$sdate."' and vacancy_to_date < '".$edate."') and vacancy_approve = 1");
+                                    $query = $this->db->query("select * from tbl_vacancy where vacancy_date between '".$sdate."' and '".$edate."' and vacancy_approve = 1");
 
                                     }else{
 
-                                        $query = $this->db->query("select * from  tbl_vacancy where vacancy_approve = 1");
+                                        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
 
                                     }
                                 foreach ($query->result_array() as $row){ ?>

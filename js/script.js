@@ -57,3 +57,11 @@ loop: true,
 $('.message.flash').hide();
 
 });
+
+ $(document).ready(function() {
+$('.datepicker').pickadate({
+         selectMonths: true, 
+         selectYears:true,
+         format: 'yyyy-mm-dd',
+                })
+});
