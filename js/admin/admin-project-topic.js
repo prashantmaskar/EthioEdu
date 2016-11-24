@@ -32,13 +32,13 @@ $(document).ready(function() {
             },
  
               
-                 /* fileformat: {
+                  format_type: {
                 validators: {
                     notEmpty: {
                         message: ' please select file format!!!..'
                     }
                 }
-            },*/
+            },
                    
                  fileformat: {
                 validators: {

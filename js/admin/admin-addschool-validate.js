@@ -178,6 +178,9 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter name of year !!!'
+                    },
+                    digits:{
+                      message:'should be in year format'
                     }
                 }
              },
