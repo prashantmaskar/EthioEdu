@@ -41,8 +41,20 @@
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
                             <?php }
                             else{ ?>
-                            <li><a href="#"><?php echo "Welcome ".$sessname; ?></a></li>
-                            <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
+                            <li class="user-opt-list"><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo "Welcome ".$sessname; ?></a>
+
+ <ul id='dropdownl' class='dropdown-content'>
+    <li><a href="#!">inbox</a></li>
+      <li class="divider"></li>
+    <li><a href="#!">comments</a></li>
+      <li class="divider"></li>
+     <li><a href="#!">ans to question</a></li>
+       <li class="divider"></li>
+      <li><a href="#!">events</a></li>
+    <li class="divider"></li>
+   <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
+  
+                            
                             
                             <?php } ?>
                     </ul>

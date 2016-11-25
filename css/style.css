@@ -103,6 +103,25 @@ nav .brand-logo {
 
 }
 
+.header-top .dropdown-content li{
+    min-height: 0px;
+}
+
+.header-top li.user-opt-list {
+    line-height: 10px;
+}
+
+.user-opt-list li a:hover {
+    background-color: #000;
+}
+
+.header-top li.user-opt-list ul#dropdownl {
+    top: 40px !important;
+}
+
+.header-top .user-opt-list .dropdown-content {
+    background-color: #000;
+}
 .header-top .active {
     color: red;
 }
