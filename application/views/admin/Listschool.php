@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">List School</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List School</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Listschool' ?>">List School</a>
                                         </li>
                                     </ol>
                                 </div>

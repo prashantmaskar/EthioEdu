@@ -36,6 +36,7 @@ class Projectlist extends CI_Controller {
                 'm_title' => 'Projectlist',
                 'title'   => 'Projectlist'
             );
+                 $view_params['project_topics']=$this->init_models->selectproject();
 		$this->load->view('Projectlist', $view_params);
 	}
 }

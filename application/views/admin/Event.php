@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Events</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Events</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Events' ?>">Add Events</a>
                                         </li>
                                     </ol>
                                 </div>

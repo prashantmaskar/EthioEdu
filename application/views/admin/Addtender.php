@@ -14,9 +14,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Tender</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Tender</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addtender' ?>">Add Tender</a>
                                         </li>
                                     </ol>
                                 </div>
