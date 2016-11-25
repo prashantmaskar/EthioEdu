@@ -30,6 +30,24 @@
                                 Dashboard
                             </a>
                         </li>
+                         <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        User Manage
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                           <!--  <li><a href="<?php //echo base_url() . 'index.php/admin/Addschool' ?>">Add School</a>
+                                            </li> -->
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/Listuser' ?>">List User</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
