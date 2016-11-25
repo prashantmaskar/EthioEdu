@@ -33,7 +33,7 @@ $(document).ready(function() {
              catagory:{
                 validators:{
                     notEmpty:{
-                        message:  ' select category!!!'
+                        message:  ' select category !!!'
                     }
                     
                 }
