@@ -129,6 +129,12 @@ $user_id = $_POST['deleteuser_id'];
 $query = $this->db->query("delete from tbl_users where user_id = '" .$user_id . "'");
 }
 
+//listtips
+$tips_id = $_POST['deletetips_id'];
+ if(isset($tips_id)){
+$query = $this->db->query("delete from tbl_posts where post_id = '" .$tips_id . "'");
+}
+
 
 ?>
 
