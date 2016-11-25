@@ -14,74 +14,87 @@
                                 3. First select your institution then wait for the page to reload the list of schools. Once the page reloads, you can now 
                                 </p>
                         </div>
+                        <?php $sessid= $this->session->userdata('suserid');
+
+                        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
+
+
+                        //$query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
+                        
+                                foreach ($query->result_array() as $row){ 
+                                      $school_type = $row['school_type']; 
+                        ?>
                         <form id="edituser">
                                <div class="form-group input-field col s12">
                                  <select class="form-control browser-default" name="schooltype">
                                     <option value="">select  school type</option>
-                                    <option value="anything">anything</option>
-                                    <option value="friendship">friendship</option>
-                                    <option value="friendship">friendship</option>
+                                    <option value="anything" <?php if($school_type=="anything") echo 'selected="selected"'; ?>>anything</option>
+                                    <option value="friendship"<?php if($school_type=="friendship") echo 'selected="selected"'; ?>>friendship</option>
+                                    <option value="friendships"<?php if($school_type=="friendships") echo 'selected="selected"'; ?>>friendship</option>
                             </select>
                         </div>
                                 <div class="form-group input-field col s12">
+                                 <?php $school = $row['user_school']; ?>
                                                         <select class="form-control browser-default" name="school">
 
                                                             <option value="">select your school</option>
-                                                             <option value="anything">anything</option>
-                                                            <option value="anything">anything</option>
-                                                             <option value="friendship">friendship</option>
+                                                             <option value="anything" <?php if($school=="anything") echo 'selected="selected"'; ?>>anything</option>
+                                                            <option value="anything" <?php if($school=="anything") echo 'selected="selected"'; ?>>anything</option>
+                                                             <option value="friendship" <?php if($school=="friendship") echo 'selected="selected"'; ?>>friendship</option>
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
+                                     <?php $level = $row['user_level']; ?>
                                                         <select class="form-control browser-default" name="level">
 
                                                             <option value="">select level</option>
-                                                             <option value="anything">anything</option>
-                                                            <option value="friendship">friendship</option>
-                                                             <option value="friendship">friendship</option>
+                                                             <option value="anything" <?php if($level=="anything") echo 'selected="selected"'; ?>>anything</option>
+                                                            <option value="friendship" <?php if($level=="friendship") echo 'selected="selected"'; ?>>friendship</option>
+                                                             <option value="friendship" <?php if($level=="friendship") echo 'selected="selected"'; ?>>friendship</option>
                                                         </select>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="department" name="department" type="text" class="validate">
+                                        <input id="department" name="department" type="text" value="<?php echo $row['user_dept']; ?>" class="validate">
                                         <label for="department">Department</label>
                                     </div>
                                         <h5 class="red-text">Login Information</h5>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" name="username" class="validate">
+                                        <input id="Caption" type="text" value="<?php echo $row['username']; ?>" name="username" class="validate">
                                         <label for="Caption">Username</label>
                                     </div>
                                     <div class="form-group input-field col s12">
                                         <input id="Caption" type="text" name="password" class="validate">
-                                        <label for="Caption">password</label>
+                                        <label for="Caption">New Password</label>
                                     </div>
                                      <div class="form-group input-field col s12">
                                         <input id="Caption" name="cpassword" type="text" class="validate">
-                                        <label for="Caption"> verify password</label>
+                                        <label for="Caption"> Confirm New Password</label>
                                     </div>
                                            <h5 class="red-text">personal Information</h5>
                                     <div class="form-group input-field col s12">
-                                        <input id="first_name" name="first_name" type="text" class="validate">
+                                        <input id="first_name" value="<?php echo $row['first_name']; ?>" name="first_name" type="text" class="validate">
                                         <label for="Caption"> first Name</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="last_name" name="last_name" type="text" class="validate">
+                                        <input id="last_name" value="<?php echo $row['last_name']; ?>" name="last_name" type="text" class="validate">
                                         <label for="Caption"> Last Name</label>
                                     </div>
                                      <div class="form-group input-field col s12">
+                                     <?php $gender = $row['user_gender']; ?>
                                                         <select class="form-control browser-default" name="gender">
 
                                                             <option value="">Gender</option>
-                                                             <option value="Male">Male</option>
-                                                            <option value="female">female</option>
+                                                             <option value="Male" <?php if($gender=="Male") echo 'selected="selected"'; ?>>Male</option>
+                                                            <option value="female" <?php if($gender=="female") echo 'selected="selected"'; ?>>female</option>
                                                         
                                                         </select>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="mobile" name="phone_number" type="text" class="validate">
+                                        <input id="mobile" value="<?php echo $row['mobile_no']; ?>" name="phone_number" type="text" class="validate">
                                         <label for="Caption">Mobile Number</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="email" name="email" type="text" class="validate">
+                                        <input id="email" value="<?php echo $row['user_email']; ?>" name="email" type="text" class="validate">
                                         <label for="Caption">Email Id</label>
                                     </div>
                                     <div class="col s2 user-icon form-group input-field">
@@ -103,41 +116,44 @@
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="status">
 
+                                                        <select class="form-control browser-default" name="status">
+                                                        <?php $status = $row['marital_status']; ?>
                                                             <option value="">Currently single</option>
-                                                             <option value="Male">Male</option>
-                                                            <option value="female">female</option>
+                                                             <option value="Male" <?php if($gender=="Male") echo 'selected="selected"'; ?>>Male</option>
+                                                            <option value="female" <?php if($gender=="female") echo 'selected="selected"'; ?>>female</option>
                                                         
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="interestedIn">
-
+                                                        <?php $interest = $row['interested_in']; ?>
                                                             <option value="">Interested In</option>
-                                                             <option value="Male">Male</option>
-                                                            <option value="female">female</option>
+                                                             <option value="Male" <?php if($interest=="Male") echo 'selected="selected"'; ?>>Male</option>
+                                                            <option value="female" <?php if($interest=="female") echo 'selected="selected"'; ?>>female</option>
                                                         
                                                         </select>
                                     </div>
 
                                     <div class="form-group input-field col s12">
-                                        <textarea id="aboutme" name="aboutme" class="materialize-textarea"></textarea>
+                                        <textarea id="aboutme" name="aboutme" class="materialize-textarea"><?php echo $row['about_user']; ?></textarea>
                                         <label for="aboutme">About Me</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <textarea id="myinterest" name="myinterest" class="materialize-textarea"></textarea>
+                                        <textarea id="myinterest" name="myinterest" class="materialize-textarea"><?php echo $row['user_interest']; ?></textarea>
                                         <label for="myinterest">My Interests</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <textarea id="myhobby" name="myhobby" class="materialize-textarea"></textarea>
+                                        <textarea id="myhobby"  name="myhobby" class="materialize-textarea"><?php echo $row['user_hobby']; ?></textarea>
                                         <label for="myhobby">My Hobby</label>
                                     </div>
+                                    <input type="hidden" name="role" value="<?php echo $row['user_role']; ?>">
                                     <div class="col m12 margin-t-15 center-align">
-                                        <button class="btn waves-effect waves-light red" type="submit" name="laction">Register
+                                        <button class="btn waves-effect waves-light red" type="submit" name="uaction">Update
                                         </button>
                                     </div>
                         </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
