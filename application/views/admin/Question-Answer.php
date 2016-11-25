@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Question</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Question</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/quesanswer' ?>">Add Question</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -57,6 +57,7 @@
                                                         
                                                         </select>
                                                     </div>
+                                                    <div>
                                                     <div class="form-group input-field col s5">
                                                         <select class="form-control browser-default" name="subcat">
 
@@ -89,6 +90,8 @@
                                             <option value="Social_Science">Social Science</option>
                                                         
                                                         </select>
+                                                    </div>
+
                                                     <div class="form-group input-field col s12">
                                                         <input id="user_name" name="question" type="text" class="validate">
                                                         <label for="question">My Question</label>

@@ -21,6 +21,19 @@ $(document).ready(function() {
                     }
                 }
             },
+            fileformat:{
+            validators:{
+                notEmpty:{
+                    message:'Please select a logo'
+                },
+                 file: {
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
              fullname: {
                 validators:{
                     notEmpty:{
@@ -165,6 +178,9 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter name of year !!!'
+                    },
+                    digits:{
+                      message:'should be in year format'
                     }
                 }
              },

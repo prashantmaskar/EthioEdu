@@ -31,7 +31,7 @@ and open the template in the editor.
                                 <span class="logo-text">Ethioedu</span>
                             </li>
                         </ul>
-                        <ul class="right hid-mid-screen">
+                       <!-- <ul class="right hid-mid-screen">
                             <li>
                                 <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
                                     <i class="mdi-action-settings-overscan"></i>
@@ -48,7 +48,7 @@ and open the template in the editor.
                                     <i class="mdi-communication-chat"></i>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
 
                 </nav>

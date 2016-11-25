@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Projectlist extends CI_Controller {
+class listuser extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,6 +19,7 @@ class Projectlist extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+
 	public function __construct()
     {
         parent::__construct();
@@ -26,17 +27,23 @@ class Projectlist extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+        if ( !$this->session->userdata('logged_in'))
+    { 
+        redirect('index.php/login');
     }
-
+    if (!($this->session->userdata('role') == 'admin')){
+    	redirect('index.php/home');
+    }
+    }
 
 
 	public function index()
 	{
-                $view_params = array(
-                'm_title' => 'Projectlist',
-                'title'   => 'Projectlist'
+             $view_params = array(
+                'm_title' => 'Admin Listuser',
+                'title'   => 'Admin Listuser'
             );
-                 $view_params['project_topics']=$this->init_models->selectproject();
-		$this->load->view('Projectlist', $view_params);
+             $view_params['user'] = $this->init_models->selectalluser();
+		$this->load->view('admin/Listuser',$view_params);
 	}
 }

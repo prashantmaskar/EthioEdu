@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">List Course</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List Course</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/listcourse' ?>">List Course</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All Registered Schools.</p>
+                            <p class="caption black-text">List Of All Course.</p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

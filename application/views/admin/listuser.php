@@ -2,7 +2,7 @@
         <!--start main-->
         <div id="main">
             <div class="wrapper">
-              <?php  $this->load->view('admin/sidebar'); ?>
+             <?php  $this->load->view('admin/sidebar'); ?>
                 <section id="content">
                     <div id="breadcrumbs-wrapper">
                         <!-- Search for small screen -->
@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">List News</h5>
+                                    <h5 class="breadcrumbs-title">List User</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=news' ?>">List News</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Listuser' ?>">List User</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All News</p>
+                            <p class="caption black-text">List Of All Registered Users.</p>
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">
@@ -34,24 +34,26 @@
                                         <table class="bordered">
                                             <thead>
                                                 <tr>
-                                                    <th data-field="id">News Title</th>
-                                                    <th data-field="name">News Category</th>
-                                                    <th data-field="name">Author</th>
-                                                    <th data-field="price">Posting Date</th>
+                                                    <th data-field="id">User Name</th>
+                                                    <th data-field="name">First Name</th>
+                                                    <th data-field="price">Last Name</th>
+                                                    <th data-field="price">Email Id</th>
                                                     <th data-field="price">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach($news as $row){ ?>
+                                            <?php
+                                           foreach ($user as $row){
+                                             $user_id = $row['user_id'];
+                                            ?>
                                                 <tr>
-                                                    <td><?php echo $row['post_title']; ?></td>
-                                                    <td><?php echo $row['post_category']; ?></td>
-                                                    <td><?php echo $row['post_author']; ?></td>
-                                                    <td><?php echo $row['post_date']; ?></td>
+                                                    <td><?php echo $row['username']; ?></td>
+                                                    <td><?php echo $row['first_name']; ?></td>
+                                                    <td><?php echo $row['last_name']; ?></td>
+                                                     <td><?php echo $row['user_email']; ?></td>
                                                     <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                       
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $user_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -65,3 +67,25 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
+       <script>
+
+            function deleted(id)
+            {
+                var deleteuser_id = id;
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deleteuser_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+ </script>

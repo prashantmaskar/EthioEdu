@@ -12,7 +12,7 @@
                             <div class="card-panel">
                                 <ul class="collection">
                                     <li class="collection-item">
-                                        <a href="#" class="btn red text-white">Compose</a>
+                                        <a href="<?php echo base_url() . 'index.php/composemail' ?>" class="btn red text-white">Compose</a>
                                     </li>
                                     <li class="collection-item">
                                         <a href="#">Inbox</a>

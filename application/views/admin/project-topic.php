@@ -15,9 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Add Project Topic</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add Project Topic</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/Project_Topic' ?>">Add Project Topic</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -67,6 +67,17 @@
                             <option value="MPH">Medical, pharmaceutical & Health sciences  </option>
                              <option value="Science">Science </option>
                               <option value="SM">Social & management  </option>
+
+
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="format_type">
+                                                            <option  value="">file format</option>
+                                                            <option value="2016">pdf</option>
+                                                            <option value="2017">word</option>
+                                                            <option value="2017">rtf</option>
 
 
                                                         </select>

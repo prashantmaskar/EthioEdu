@@ -22,9 +22,9 @@
                                         { ?>
                                             <h5 class="breadcrumbs-title"><?php echo 'List of News'; ?></h5>
                                             <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#"><?php echo "List News"; ?></a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=news' ?>"><?php echo "List News"; ?></a>
                                         </li>
                                     </ol>
                                      <?php   }
@@ -33,9 +33,9 @@
                                             { ?>
                                                 <h5 class="breadcrumbs-title"><?php echo 'List of Event'; ?></h5>
                                                 <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#"><?php echo "List Event"; ?></a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=event' ?>"><?php echo "List Event"; ?></a>
                                         </li>
                                     </ol>
                                          <?php   }
@@ -43,9 +43,9 @@
                                                 { ?>
                                                     <h5 class="breadcrumbs-title"><?php echo 'List of Gist'; ?></h5>
                                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#"><?php echo "List Gist" ?></a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=gist' ?>"><?php echo "List Gist" ?></a>
                                         </li>
                                     </ol>
                                             <?php    }

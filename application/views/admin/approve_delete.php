@@ -120,4 +120,15 @@ $Adelete_id = $_POST['Adelete_id'];
 $query = $this->db->query("delete from tbl_advertise where advertise_id = '" .$Adelete_id. "'");
 }
 
+
+
+
+//listuser
+$user_id = $_POST['deleteuser_id'];
+ if(isset($user_id)){
+$query = $this->db->query("delete from tbl_users where user_id = '" .$user_id . "'");
+}
+
+
 ?>
+

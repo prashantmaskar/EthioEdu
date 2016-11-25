@@ -21,6 +21,13 @@ $(document).ready(function() {
                     }
                 }
             },
+             event_venue: {
+                validators: {
+                    notEmpty: {
+                        message: ' required!!!..'
+                    }
+                }
+            },
  
                 Description:{
                 validators:{

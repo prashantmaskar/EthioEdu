@@ -8,7 +8,8 @@
                                 </div>
                                 <div class="col col s8 m8 l8">
                                     <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
-                                        Fikreman
+                                    <?php $susername = $this->session->userdata('susername');
+                                        echo $susername;  ?>
                                         <i class="mdi-navigation-arrow-drop-down right"></i>
                                     </a>
                                     <ul id="profile-dropdown" class="dropdown-content">
@@ -28,6 +29,24 @@
                                 <i class="mdi-action-dashboard"></i> 
                                 Dashboard
                             </a>
+                        </li>
+                         <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        User Manage
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                           <!--  <li><a href="<?php //echo base_url() . 'index.php/admin/Addschool' ?>">Add School</a>
+                                            </li> -->
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/Listuser' ?>">List User</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">

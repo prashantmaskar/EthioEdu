@@ -145,6 +145,11 @@
         $query = $this->db->query("select * from tbl_vacancy"); 
         return $query->result_array();
       }
+      public function selectalluser()
+      {  
+        $query = $this->db->query("select * from tbl_users"); 
+        return $query->result_array();
+      }
 
       public function selectschool()  
       {  

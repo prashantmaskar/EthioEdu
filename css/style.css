@@ -474,10 +474,14 @@ page-heading-wrap page-heading
     border-bottom: 1px dotted #ccc;
 
 }
-.news_sort_form,.project_sort_form,.QuesAns_sort_form {
+.news_sort_form,.QuesAns_sort_form,.project_sort_form,.event_sort_form {
     border-bottom:  1px solid red;
 	
 	
+}
+.project_sort_form{
+    border-top:  1px solid red;
+
 }
 .message.flash  p{
     color: #2bbbad;
