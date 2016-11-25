@@ -14,6 +14,19 @@
                                 3. First select your institution then wait for the page to reload the list of schools. Once the page reloads, you can now 
                                 </p>
                         </div>
+                         <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
                         <?php $sessid= $this->session->userdata('suserid');
 
                         $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
@@ -24,7 +37,7 @@
                                 foreach ($query->result_array() as $row){ 
                                       $school_type = $row['school_type']; 
                         ?>
-                        <form id="edituser">
+                        <form id="edituser" method="post" action="<?php echo site_url('index.php/edituser')?>">
                                <div class="form-group input-field col s12">
                                  <select class="form-control browser-default" name="schooltype">
                                     <option value="">select  school type</option>

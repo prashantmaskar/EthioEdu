@@ -41,7 +41,7 @@ class edituser extends CI_Controller {
 		$this->load->view('edituser',$view_params);
 
 
- if(isset($_POST['laction'])){
+ if(isset($_POST['uaction'])){
         $this->addfrontuser();
  
 } 
@@ -52,11 +52,12 @@ class edituser extends CI_Controller {
 	}
 
 	public function addfrontuser(){
-
+        	$sessid= $this->session->userdata('suserid');
             $password = $this->input->post('password', true);
             $pass = md5($password);
 	        $data = array( 
-	               'username' => $this->input->post('username'),
+	        		'user_id' => $sessid,
+	               	'username' => $this->input->post('username'),
 	               'first_name' => $this->input->post('first_name'),
 	                'last_name' => $this->input->post('last_name'),
 	                'password' => $pass,
@@ -73,8 +74,8 @@ class edituser extends CI_Controller {
 	public function update_user(){
             $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
+        $sessid= $this->session->userdata('suserid');
         $time = date('h:i:s A', time());
-$getid = $this->get_frontuser_id();
             $data = array( 
 
                 'school_type' => $this->input->post('schooltype'),
@@ -91,14 +92,14 @@ $getid = $this->get_frontuser_id();
                 'user_hobby' => $this->input->post('myhobby'),
                 'user_date' => $date,
                 'user_time' => $time,
-                'user_id' => $getid['uid']
+                'user_id' => $sessid,
                 );
 
 
              if ($this->init_models->updateuserdetails($data))
             {
-    echo"<script>alert('Registration Success');</script>";
-            }
+    $this->session->set_flashdata('message', 'Data Updated Successfully'); 
+            redirect("index.php/edituser");            }
 
 
 

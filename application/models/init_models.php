@@ -256,5 +256,18 @@
       }
 
 
+      public function update_front_user($data){
+        echo $id = $data['user_id'];
+        $this->db->where('user_id', $id);
+        return $this->db->update('tbl_users', $data);
+      }
+
+      public function updateuserdetails($data){
+        echo $id = $data['user_id'];
+        $this->db->where('user_id', $id);
+        return $this->db->update('tbl_user_meta', $data);
+      }
+
+
    }  
 ?>  
