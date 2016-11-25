@@ -50,19 +50,15 @@
                                         Latest News
                                     </h5>
                                     <ul>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li><a href="<?php echo base_url().'/index.php/news_detail'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/news'?>">READ MORE</a>
-                                        </li>
+                                        <?php 
+                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
 
+                                        foreach ($query->result_array() as $row){
+
+                                        $news_id = $row['post_id'];
+                                         ?>
+                                        <li><a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>"><?php echo $row['post_title']; ?></a></li>
+                                        <?php } ?>
                                     </ul>
 
                                 </div>
@@ -70,20 +66,19 @@
                             <div class="col sm12 m4 z-pad z-depth-1"><h5>
                                     Search For School
                                 </h5>
-                                <ul>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
-                                    </li>
+                                <ul><?php
+                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1");
+                                       foreach ($query->result_array() as $row){ 
+                                          $sid = $row['school_id'];
 
+
+
+
+                                        ?>
+
+                                    <li><a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>"><?php echo $row['school_name'];?></a></li>
+                                  
+                                   <?php } ?>
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
@@ -115,16 +110,19 @@
                                     <h5>
                                         Coming Events
                                     </h5>
-                                    <ul>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'/index.php/event_details'?>">AKSU Notice On Extension </a><div class="happen_loc"><span>Happning at:<a href="#">ETHOPIA</a></span></div><div class="event_by"><span>Event By:Ethioedu.com</span></div> </div></li>
+                                    <ul> 
+                                        <?php 
+                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
 
+                                        foreach ($query->result_array() as $row){ 
 
-                                        <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/event'?>">READ MORE</a>
+                                          $event_id = $row['post_id'];
+                                            ?>
+
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
+                                       
                                         </li>
+                                          <?php } ?>
 
                                     </ul>
 
@@ -133,20 +131,16 @@
                             <div class="col sm12 m4 z-pad z-depth-1"><h5>
                                     List Of Vacancy/Tender
                                 </h5>
-                                <ul>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php//vacancy-details'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/vactender'?>" >READ MORE</a>
-                                    </li>
+                                <ul> <?php 
+                                 $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
+                                    foreach ($query->result_array() as $row){ 
+                                          $vac_id = $row['vacancy_id'];
 
+                                            ?>
+                                    <li><a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>"><?php echo $row['vacancy_name']; ?></a>
+                                    
+                                    </li>
+                                             <?php } ?>
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
