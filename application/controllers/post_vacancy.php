@@ -61,12 +61,15 @@ class post_vacancy extends CI_Controller {
         $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+        $formdate = $this->input->post('sdate');
+        $totimedate = strtotime($formdate);
+       echo $fdate = date("Y-m-d", $totimedate);
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
                 'vacancy_school_name' => $this->input->post('sname'),
                 'vacancy_count' => $this->input->post('vcount'),
-                'vacancy_from_date' => $this->input->post('sdate'),
+                'vacancy_from_date' => $fdate,
                 'vacancy_to_date' => $this->input->post('edate'),
                 'vacancy_date' => $date,
                 'vacancy_time' => $time,
