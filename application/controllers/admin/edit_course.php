@@ -61,7 +61,9 @@ $fduration = $cduration*30;
         {
          $fduration = $cduration;
         }
-         
+        $formdata =  $this->input->post('date');
+        $adate = strtotime($formdata);
+        $date = date('Y-m-d', $adate);
         $data = array(
                 'course_name' => $this->input->post('Course_name'),
                 'course_subject' => $this->input->post('Major_sub'),
@@ -72,7 +74,7 @@ $fduration = $cduration*30;
                 'course_desc' => $this->input->post('details'),
                'course_id' => $this->input->post('course_id'),
                'course_approve' => $this->input->post('approve_status'),
-                'course_date' => $this->input->post('date'),
+                'course_date' => $date,
                 'course_time' => $this->input->post('time')
 
             );

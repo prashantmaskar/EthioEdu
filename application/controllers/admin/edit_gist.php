@@ -75,6 +75,9 @@ if(isset($_POST['action'])){
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                         $formdate = $this->input ->post('date');
+                $adate = strtotime($formdate);
+                $date = date('Y-m-d',$adate);
 
                         $data=array(
                   'post_id' => $this->input->post('post_id'),
@@ -87,7 +90,7 @@ if(isset($_POST['action'])){
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status'),
-                     'post_date' => $this->input->post('date'),
+                     'post_date' => $date,
                 'post_time' => $this->input->post('time')
         );
                   $isinserted = $this->init_models->edit_gist($data);

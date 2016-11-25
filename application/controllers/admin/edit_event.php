@@ -75,6 +75,9 @@ if(isset($_POST['action'])){
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                $formdate = $this->input ->post('date');
+                $adate = strtotime($formdate);
+                $date = date('Y-m-d',$adate);
 
                         $data=array(
                   'post_id' => $this->input->post('post_id'),
@@ -83,7 +86,8 @@ if(isset($_POST['action'])){
                   'post_attachment' => $filedata['file_name'],
                   'post_author'=>  $this->input->post('eventby'),
                   'post_venue'=>  $this->input->post('event_venue'),
-                  'post_date' => $this->input ->post('date'),
+                  'post_date' => $date,
+                  'post_time' => $this->input->post('time'),
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status')
         );

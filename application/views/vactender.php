@@ -50,8 +50,13 @@
                                   <?php
                                   if(isset($_POST['searchaction'])){
 
-                                    $sdate = $_POST['vacd1'];
-                                    $edate = $_POST['vacd2'];
+                                    $date1 = $_POST['vacd1'];
+                                 $totimedate = strtotime($date1);
+                                 $sdate = date("Y-m-d", $totimedate);
+                                 
+                                    $date2 = $_POST['vacd2'];
+                                 $totimedate = strtotime($date2);
+                                 $edate = date("Y-m-d", $totimedate);
 
                                     $query = $this->db->query("select * from tbl_vacancy where vacancy_date between '".$sdate."' and '".$edate."' and vacancy_approve = 1");
 

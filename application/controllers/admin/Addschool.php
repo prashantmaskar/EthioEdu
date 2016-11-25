@@ -107,7 +107,7 @@ else{
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-        $date = date('d F, Y');
+        $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
 

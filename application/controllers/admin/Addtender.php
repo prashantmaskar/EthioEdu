@@ -49,16 +49,22 @@ class Addtender extends CI_Controller {
     }
 	}
 	function insertdata(){
-        $date = date('d F, Y');
+        $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+         $formdate = $this->input->post('sdate');
+        $totimedate = strtotime($formdate);
+        $fdate = date("Y-m-d", $totimedate);
+         $formdate1 = $this->input->post('edate');
+        $totimedate1 = strtotime($formdate1);
+        $f1date = date("Y-m-d", $totimedate1);
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
                 'vacancy_school_name' => $this->input->post('sname'),
                 'vacancy_count' => $this->input->post('vcount'),
-                'vacancy_from_date' => $this->input->post('sdate'),
-                'vacancy_to_date' => $this->input->post('edate'),
+                'vacancy_from_date' =>  $fdate,
+                'vacancy_to_date' => $f1date,
                  'vacancy_date' => $date,
                 'vacancy_time' => $time,
                 'vacancy_desc' => $this->input->post('vdesc'),

@@ -118,10 +118,10 @@ else{
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
+/*
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
-        $time = date('h:i:s A', time());
+        $time = date('h:i:s A', time());*/
          $sessid= $this->session->userdata('suserid');
           if ($this->session->userdata('logged_in'))
     {
@@ -129,6 +129,11 @@ else{
     }else{
     $getid = $this->get_user_id();
   }
+
+  
+        $date = date('Y-m-d');
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('h:i:s A', time());
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),

@@ -74,7 +74,9 @@ if(isset($_POST['action'])){
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-
+           $formdate = $this->input ->post('date');
+                $adate = strtotime($formdate);
+                $date = date('Y-m-d',$adate);
                         $data=array(
                 'project_id' => $this->input->post('project_id'),
                   'project_title' => $this->input->post('Project_name'),
@@ -85,7 +87,7 @@ if(isset($_POST['action'])){
                   
                   'project_upload' => $filedata['file_name'],
                   
-                  'project_date' => $this->input->post('date'),
+                  'project_date' => $date,
                 'project_time' => $this->input->post('time')
                   
                   

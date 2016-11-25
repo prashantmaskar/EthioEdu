@@ -48,8 +48,14 @@
                                 <?php
                                 if(isset($_POST['action'])){
 
-                                    $sdate = $_POST['newsd1'];
-                                    $edate = $_POST['newsd2'];
+                                    $date1 = $_POST['newsd1'];
+                                    $xyz = strtotime($date1);
+                                    $sdate = date('Y-m-d',$xyz);
+
+                                    $date2 = $_POST['newsd2'];
+                                    $pqr = strtotime($date2);
+                                    $edate = date('Y-m-d',$pqr);
+
 
                                     $query = $this->db->query("select * from tbl_posts where post_date between '".$sdate."' and '".$edate."' and  post_type = 'news' and post_approve = 1");
 
@@ -101,8 +107,8 @@
         </div>
 <?php $this->load->view('footer'); ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
 <script type="text/javascript" src="../js/dateValidation.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script> -->

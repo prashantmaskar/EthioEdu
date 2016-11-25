@@ -70,6 +70,9 @@ if(isset($_POST['action'])){
                 }
                 else
                 {
+                  $formdate =  $this->input->post('date');
+                  $adate = strtotime($formdate);
+                  $date = date('Y-m-d', $adate);
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
@@ -87,7 +90,7 @@ if(isset($_POST['action'])){
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type'),
                   'post_approve' => $this->input->post('approve_status'),
-                   'post_date' => $this->input->post('date'),
+                   'post_date' => $date,
                 'post_time' => $this->input->post('time')
         );
                   $isinserted = $this->init_models->edit_news($data);

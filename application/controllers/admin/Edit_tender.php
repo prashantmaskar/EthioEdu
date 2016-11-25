@@ -49,13 +49,21 @@ class Edit_tender extends CI_Controller {
     
   }
   function Edit_tender(){
+
+     $formdate1 = $this->input->post('sdate');
+    $xyz = strtotime( $formdate1);
+    $startdate = date('Y-m-d',$xyz);
+
+    $formdate2 = $this->input->post('edate');
+    $pqr = strtotime( $formdate1);
+    $enddate = date('Y-m-d',$pqr);
         $sessid= $this->session->userdata('suserid');
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
                 'vacancy_school_name' => $this->input->post('sname'),
                 'vacancy_count' => $this->input->post('vcount'),
-                'vacancy_from_date' => $this->input->post('sdate'),
-                'vacancy_to_date' => $this->input->post('edate'),
+                'vacancy_from_date' => $startdate,
+                'vacancy_to_date' =>  $enddate,
                 'vacancy_desc' => $this->input->post('vdesc'),
                 'vacancy_id' => $this->input->post('vacancy_id'),
                 'vacancy_approve' => $this->input->post('approve_status'),

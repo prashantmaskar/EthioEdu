@@ -150,8 +150,13 @@
                              <?php
                              if(isset($_POST['action'])){
 
-                                    $sdate = $_POST['sdate'];
-                                    $edate = $_POST['edate'];
+                                    $date1 = $_POST['sdate'];
+                                    $xyz=strtotime($date1);
+                                    $sdate=date('Y-m-d',$xyz);
+
+                                    $date2 = $_POST['edate'];
+                                    $pqr=strtotime($date2);
+                                    $edate=date('Y-m-d',$pqr);
 
                                     $query = $this->db->query("select * from tbl_questions where question_date between '".$sdate."' and '".$edate."' and question_approve = 1");
 
@@ -166,7 +171,7 @@
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title"><?php echo $row['question_desc']; ?></span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> [22-Jun-2016 [11:32:43]]<span class="infoText1"> type  <a href="#"> <?php echo $row['question_category'];?></a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row['question_date'];  ?>            <span>[<?php echo $row['question_time'];?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row['question_category'];?></a> | Answers [0]  
                                             </span></span>
                                     </li>
                                      <?php } ?>
