@@ -49,7 +49,7 @@
                                                  <form id="addschoolform" action="<?php echo site_url('index.php/admin/Addschool')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                        <select class="form-control browser-default" name="choice">
-                                                             <option value="">Registration type</option>
+                                                             <option value="Registration type">Registration type</option>
                                                             <option value="Normal Registration">Normal Registration</option>
                                                             <option value="Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)</option>
 

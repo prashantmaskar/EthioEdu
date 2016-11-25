@@ -79,8 +79,23 @@
                                                         </select>
 
                                                     </div>
+<<<<<<< HEAD
+                                                     -->
+                                   <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="format_type">
+                                                            <option  value="">fileformat</option>
+                                                            <option value="pdf">pdf</option>
+                                                            <option value="rtf">rtf</option>
+                                                            <option value="doc">doc</option>
+
+
+                                                        </select>
+
+                                                    </div>
+=======
                                                      
                                    
+>>>>>>> c24c5bf417f6bcbd43347fa1a8fd6eac09606441
                                      <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach file</span>

@@ -73,6 +73,17 @@
 
                                                     </div>
                                                     <div class="form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="format_type">
+                                                            <option  value="">file format</option>
+                                                            <option value="2016">pdf</option>
+                                                            <option value="2017">word</option>
+                                                            <option value="2017">rtf</option>
+
+
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="Year">
                                                             <option  value="">Year</option>
                                                             <option value="2016">2016</option>
