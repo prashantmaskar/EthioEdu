@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Search extends CI_Controller {
+class edituser extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,7 +22,7 @@ class Search extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper(array('form','url'));
-        $this->load->library(array('session', 'form_validation', 'email','pagination'));
+        $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
     }
@@ -31,9 +31,9 @@ class Search extends CI_Controller {
 	public function index()
 	{
              $view_params = array(
-                'm_title' => 'Search',
-                'title'   => 'Search'
+                'm_title' => 'Edit UserProfile',
+                'title'   => 'Edit UserProfile'
             );
-		$this->load->view('search',$view_params);
+		$this->load->view('edituser',$view_params);
 	}
 }

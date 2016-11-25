@@ -1058,7 +1058,47 @@ student Detail Page Info
 #Advertising .form-error, #advertiseform .form-error {
     color: #D8000C;
 }
-
+/*=================
+User Dashboard style
+===================*/
+.user-pic-name{
+    text-align: center;
+}
+.user-img{
+    width: 150px;
+    height: 150px;
+}
+.user-name-title{
+    font-size: 18px;
+    margin: 10px auto;
+}
+.user-info-content p{
+    color: #000;
+    font-size: 15px;
+}
+.user-icon{
+    width: 50px;
+    height: 50px;
+}
+.container-header{
+    margin-top: 5px;
+    border-bottom: 1px dashed #ccc;
+}
+.container-header p{
+    color: #000;
+    padding-left: 5px;
+}
+.page-title{
+    font-size: 24px;
+    margin: 10px auto;
+}
+.basic-info p{
+    color: #000;
+}
+.user-icon  img{
+    width: 50px;
+    height: 50px;
+}
 /*=================
 Media Query
 ===================*/
