@@ -104,9 +104,19 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'news'"); 
         return $query->result_array();
       }
+       public function selectalltips()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'tips'"); 
+        return $query->result_array();
+      }
        public function selectgist()  
       {  
         $query = $this->db->query("select * from tbl_posts where post_type = 'gist'  && post_approve = 1"); 
+        return $query->result_array();
+      }
+       public function selecttips()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'tips'"); 
         return $query->result_array();
       }
        public function selectallgist()  
@@ -193,6 +203,12 @@
         $this->db->where('post_id', $id);
         return $this->db->update('tbl_posts', $data);
       }
+      public function edit_tips($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
+
 
       public function edit_event($data){
          $id = $data['post_id'];
