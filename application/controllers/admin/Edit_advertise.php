@@ -75,6 +75,9 @@ if(isset($_POST['action'])){
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                         $formdate =  $this->input->post('date');
+                          $temp = strtotime( $formdate);
+                          $date = date('Y-m-d',$temp);
 
                         $data=array(
                   'advertise_id' => $this->input->post('advertise_id'),
@@ -86,7 +89,7 @@ if(isset($_POST['action'])){
                   'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
                   'advertise_desc' => $this->input->post('message'),
-                   'advertise_date' => $this->input->post('date'),
+                   'advertise_date' => $date,
                 'advertise_time' => $this->input->post('time')
                   
                   

@@ -13,11 +13,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Tips</h5>
+                                    <h5 class="breadcrumbs-title">Add About Us</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addtips' ?>">Add Tips</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/AddAbout' ?>">Add About Us</a>
                                         </li>
                                     </ol>
                                 </div>
@@ -46,12 +46,12 @@
                                 <div class="row">
                                     <div class="col s12 m12 l12">
                                         <div class="card-panel">
-                                            <h4 class="header2">Tips FORM</h4>
+                                            <h4 class="header2">About Us FORM</h4>
                                             <div class="row">
-                                                <form id="addnews" class=" form-control col m12" action="<?php echo site_url('index.php/admin/Addtips')?>" method="post" enctype="multipart/form-data">
+                                                <form id="addabout" class=" form-control col m12" action="<?php echo site_url('index.php/admin/AddAbout')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Caption" name="caption" type="text" class="validate ">
-                                                        <label for="Caption">Tips Title</label>
+                                                        <label for="Caption">Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
@@ -68,7 +68,7 @@
                                                         </div>
                                                     </div>
                                                   
-                                                    <input value="tips" name="post_type" type="hidden">
+                                                    <input value="aboutus" name="post_type" type="hidden">
                                                    
 
                                                     <div class="col s5 offset-s5">
@@ -86,7 +86,8 @@
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
                        
-                       <script> $('.datepicker').pickadate({
+                       <!-- <script> $('.datepicker').pickadate({
 selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
 });</script>
+ -->

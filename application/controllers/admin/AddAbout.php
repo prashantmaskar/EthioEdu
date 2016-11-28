@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Advertise extends CI_Controller {
+class AddAbout extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,8 +18,8 @@ class Advertise extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	
-	public function __construct()
+  
+  public function __construct()
     {
         parent::__construct();
         $this->load->helper(array('form','url'));
@@ -31,24 +31,23 @@ class Advertise extends CI_Controller {
         redirect('index.php/login');
     }
     if (!($this->session->userdata('role') == 'admin')){
-    	redirect('index.php/home');
+      redirect('index.php/home');
     }
     }
-
 	public function index()
-	{
+	{  
              $view_params = array(
-                'm_title' => 'Admin Advertise',
-                'title'   => 'Admin Advertise'
+                'm_title' => 'Admin AddAbout',
+                'title'   => 'Admin AddAbout'
             );
-              $view_params['advertise'] = $this->init_models->selectadvertise();
-		$this->load->view('admin/advertise',$view_params);
+		$this->load->view('admin/AddAbout',$view_params);
 
-		if(isset($_POST['action'])){
-        $this->addvertise();
+    if(isset($_POST['action'])){
+        $this->add();
         }
 	}
-	 public function addvertise()
+
+    public function add()
        {
             
 
@@ -60,7 +59,7 @@ class Advertise extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
+                if ( ! $this->upload->do_upload('avatar'))
                 {
                         $error = array('error' => $this->upload->display_errors());
 
@@ -75,36 +74,33 @@ class Advertise extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-                        $date = date('Y-m-d');
-        date_default_timezone_set('Asia/Kolkata');
-        $time = date('h:i:s A', time());
-                            $sessid= $this->session->userdata('suserid');
-
-
-
-                  
+                         $date = date('Y-m-d');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
+                        $sessid= $this->session->userdata('suserid');
+                     
                         $data=array(
-                'advertise_name' => $this->input->post('name'),
-                'advertise_email'  => $this->input->post('email'),
-                'advertise_number'=>$this->input->post('contact'),
-                 'advertise_category' => $this->input->post('catagory'),
-                 'advertise_position'=>  $this->input->post('addposition'),
-                'advertise_subject' => $this->input->post('subject'),
-                  'advertise_attachment' => $filedata['file_name'],
-                 'advertise_desc'=>  $this->input->post('message'),
-                 'advertise_date' =>$date,
-                 'advertise_time' =>$time,
-                 'user_id'=> $sessid
+                'post_title' => $this->input->post('caption'),
+                'post_desc'  => $this->input->post('Description'),
+                 'post_attachment' => $filedata['file_name'],
+               'post_date' => $date,
+                'post_time' => $time,
+                'post_type'=>  $this->input->post('post_type'), 
+                'user_id'=> $sessid
+
         );
+                        
+              if ($this->init_models->add_anews($data))
+            {
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            redirect("index.php/admin/AddAbout");
+            }
 
-
-}
-                   if($isinserted = $this->init_models->add_advertise($data))
-                        {
-                           $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-                            redirect("index.php/admin/advertise");
-                      }
                
-    }
 
+    }
 }
+                
+}
+
+

@@ -109,6 +109,11 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'tips'"); 
         return $query->result_array();
       }
+        public function selectabout()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'aboutus'"); 
+        return $query->result_array();
+      }
        public function selectgist()  
       {  
         $query = $this->db->query("select * from tbl_posts where post_type = 'gist'  && post_approve = 1"); 
@@ -172,9 +177,10 @@
         return $query->result_array();
 
       }
-       public function selectcourse()  
+       public function selectcourse($limit, $start)  
       {  
-        $query = $this->db->query("select * from tbl_course where course_approve = 1"); 
+        $sql = "select * from tbl_course where course_approve = 1 limit " .$start. " , " .$limit; 
+        $query = $this->db->query($sql);
         return $query->result_array();
       }
        public function selectallcourse()  
@@ -267,6 +273,21 @@
         $this->db->where('user_id', $id);
         return $this->db->update('tbl_user_meta', $data);
       }
+
+     function get_course($limit, $start, $st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_course where course_name like '%$st%' limit " . $start . ", " . $limit;
+        $query = $this->db->query($sql);
+         return $query->result_array();
+    }
+      function get_course_count($st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_course where course_name like '%$st%'";
+        $query = $this->db->query($sql);
+        return $query->num_rows();
+    }
 
 
    }  

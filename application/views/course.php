@@ -56,7 +56,7 @@
      <?php }   ?>
 
 </datalist>
-                            <form class="col s12" action="<?php echo site_url('index.php/course')?>" method="post">
+                            <form class="col s12" action="<?php echo site_url('index.php/course/search')?>" method="post">
                                 <div class="row border-b">
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Course Name:</h6>
@@ -80,25 +80,27 @@
                             <div class="col m12">
                                 <div class="collection">
                                     <h4>Course Name</h4>
-                                    <?php
-                                    if(isset($_POST['search'])){
-
-                                        $search_string = $_POST['course_name'];
-
-                                    $query = $this->db->query("select * from tbl_course where course_name LIKE '%".$search_string."%' ");
-
-                                    }else{
-
-                                        $query = $this->db->query("select * from tbl_course where course_approve = 1");
-
-                                    }
-                                foreach ($query->result_array() as $row){ ?>
+                             
+                                <?php
+               
+                                foreach ($course as $row){ ?>
                                 <?php $c_id = $row['course_id'];
                                         ?>
                                     <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row['course_name']; ?></a>
                                       <?php } ?>
                              </div>
                             </div>
+                            <div>
+                            
+                                <!-- <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
+                                <li class="active"><a href="#!">1</a></li>
+                                <li class="waves-effect"><a href="#!">2</a></li>
+                                <li class="waves-effect"><a href="#!">3</a></li>
+                                <li class="waves-effect"><a href="#!">4</a></li>
+                                <li class="waves-effect"><a href="#!">5</a></li>
+                                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li> --><?php echo $pagination?>
+                           
+                  </div>
                             <div class="featured_schools col s12 m12">
 
                                 <h5>Featured Course</h5>

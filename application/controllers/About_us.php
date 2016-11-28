@@ -34,6 +34,7 @@ class About_us extends CI_Controller {
                 'm_title' => 'About Us',
                 'title'   => 'About Us'
             );
+              $view_params['about'] = $this->init_models->selectabout();
 		$this->load->view('About_us',$view_params);
 	}
 }

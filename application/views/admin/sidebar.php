@@ -161,13 +161,17 @@
                                 <li class="bold">
                                     <a class="collapsible-header waves-effect waves-cyan">
                                         <i class="mdi-action-wallet-travel"></i>
-                                        Tips Manage
+                                        Tips & About Us
                                     </a>
                                     <div class="collapsible-body" >
                                         <ul>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/Addtips' ?>">Add Tips</a>
                                             </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/AddAbout' ?>">Add AboutUs</a>
+                                            </li>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/listtips'?>">List Tips</a>
+                                            </li>
+                                             <li><a href="<?php echo base_url() . 'index.php/admin/listtips'?>">List AboutUs</a>
                                             </li>
                                         </ul>
                                     </div>

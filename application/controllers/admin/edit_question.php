@@ -49,6 +49,9 @@ if(isset($_POST['action'])){
         }
       }
   function edit_question(){
+    $formdate = $this->input->post('date');
+    $temp = strtotime( $formdate);
+    $date = date('Y-m-d',$temp);
    
     $data=array(
       'question_type' =>$this->input->post('quetype'),
@@ -56,7 +59,7 @@ if(isset($_POST['action'])){
       'question_desc' =>$this->input->post('question'),
        'question_id' => $this->input->post('question_id'),
         'question_approve'=>$this->input->post('approve_status'),
-         'question_date' => $this->input->post('date'),
+         'question_date' =>  $date,
                 'question_time' => $this->input->post('time')
                   
        );
