@@ -82,22 +82,19 @@
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
-                                    Universities
+                                  Latest Project Topics
                                 </h5>
-                                <ul>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="<?php echo base_url().'/index.php/schooldetails'?>">AKSU Notice On Extension of Students' Registration</a></li>
+                                <ul><?php 
+                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1");
+                                    foreach ($query->result_array() as $row){ 
+                                          $pro_id = $row['project_id'];
+                                 ?>
+
+                                   <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php echo $row['project_title']; ?></a></li> 
+                                     <?php } ?>
                                     <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
                                     </li>
-
+                                        
                                 </ul></div>
 
                         </div>
@@ -144,21 +141,17 @@
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
-                                    List Of Services
+                                   questions and answers
                                 </h5>
-                                <ul>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">Myschool Service For 2016 JAMB Change Of Course/Institution Closes On Thursday!</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
-                                    <li><a href="#">AKSU Notice On Extension of Students' Registration</a></li>
+                                <ul><?php 
+                                     $query = $this->db->query("select * from tbl_questions where question_approve=1");
+                                     foreach ($query->result_array() as $row){
+                                        $que_id=$row['question_id'];
+                                     ?>
+                                     <li><a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?></a></li> <?php } ?>
                                     <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
                                     </li>
+                                   
 
                                 </ul></div>
 

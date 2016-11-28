@@ -134,7 +134,7 @@
                                                     <div class="s_detail">
                                                     <?php $sid = $row['school_id'];?>
                                                         <h1><?php echo $row['school_name'];?></h1>
-                                                        <p>  <i class="red-text fa fa-envelope"></i> Lukenya@mail.com</p>
+                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row['user_email'];?></p>
                                                         <p><i class=" red-text fa fa-phone"></i> <?php echo $row['school_number'];?></p>
                                                         <p><?php echo $row['school_desc'];?></p>
                                                         <a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>">View More >></a>

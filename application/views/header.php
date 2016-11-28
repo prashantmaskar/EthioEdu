@@ -42,19 +42,36 @@
                             <?php }
                             else{ ?>
                             <li class="user-opt-list"><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo "Welcome ".$sessname; ?></a>
+<?php
+// foreach($event->result_array() as $row){
+{
+  $sessid= $this->session->userdata('suserid');
+    $query = $this->db->query("select count(*) from tbl_posts where post_type='event' and post_id= '" .$sessid. "'");
 
+
+    ?>
+
+
+  <?php
+      $sessid=$this->session->userdata('suserid');
+      $query=$this->db->query("select count(*) from tbl_questions where question_id= '" .$sessid."'");
+
+
+
+
+  ?>  
  <ul id='dropdownl' class='dropdown-content'>
-    <li><a href="#!">inbox</a></li>
+    <li><a href="#!">Inbox( )</a></li>
       <li class="divider"></li>
-    <li><a href="#!">comments</a></li>
+    <li><a href="#!">Comments( )</a></li>
       <li class="divider"></li>
-     <li><a href="#!">ans to question</a></li>
+     <li><a href="#!">Askaquestion(<?php echo $query->num_rows(); ?>)</a></li>
        <li class="divider"></li>
-      <li><a href="#!">events</a></li>
+      <li><a href="#!">Events(<?php echo $query->num_rows(); ?>  )</a></li>
     <li class="divider"></li>
    <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
   
-                            
+                           <!--   <?php } ?> -->
                             
                             <?php } ?>
                     </ul>

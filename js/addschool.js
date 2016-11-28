@@ -193,6 +193,9 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please enter acadamic year !!!'
+                    },
+                    digits:{
+                        message:'select year format'
                     }
                 }
              },
