@@ -289,6 +289,12 @@
         return $query->num_rows();
     }
 
+    public function getadvertisebanners()  
+      {  
+          $query = $this->db->query("SELECT * FROM tbl_advertise where isactive=true");
+         return $query->result_array();
+      }
+
 
    }  
 ?>  

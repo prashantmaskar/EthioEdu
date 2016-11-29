@@ -30,9 +30,16 @@ class advertising extends CI_Controller {
 
 	public function index()
 	{
+
+        $banners = $this->init_models->getadvertisebanners();
+
+        
+
+    
              $view_params = array(
                 'm_title' => ' Advertising',
-                'title'   => ' Advertising'
+                'title'   => ' Advertising',
+                'banners' => $banners
             );
 		$this->load->view('Advertising',$view_params);
 
@@ -50,7 +57,7 @@ class advertising extends CI_Controller {
 
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 100000;
+                $config['max_size']             = 100000000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
 

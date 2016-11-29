@@ -46,18 +46,16 @@
 // foreach($event->result_array() as $row){
 {
   $sessid= $this->session->userdata('suserid');
-    $query = $this->db->query("select count(*) from tbl_posts where post_type='event' and post_id= '" .$sessid. "'");
+    $query1 = $this->db->query("select count(*) as row_count from tbl_posts where post_type='event' and user_id= '" .$sessid. "'");
 
-
+    /*var_dump("select count(*) as row_count from tbl_posts where post_type='event' and user_id= '" .$sessid. "'");
+    exit();*/
     ?>
 
 
   <?php
       $sessid=$this->session->userdata('suserid');
-      $query=$this->db->query("select count(*) from tbl_questions where question_id= '" .$sessid."'");
-
-
-
+      $query2=$this->db->query("select count(*) as row_count from tbl_questions where user_id= '" .$sessid."'");
 
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
@@ -65,9 +63,9 @@
       <li class="divider"></li>
     <li><a href="#!">Comments( )</a></li>
       <li class="divider"></li>
-     <li><a href="#!">Askaquestion(<?php echo $query->num_rows(); ?>)</a></li>
+     <li><a href="#!">Askaquestion(<?php echo $query2->result()[0]->row_count; ?>)</a></li>
        <li class="divider"></li>
-      <li><a href="#!">Events(<?php echo $query->num_rows(); ?>  )</a></li>
+      <li><a href="#!">Events(<?php echo $query1->result()[0]->row_count; ?>  )</a></li>
     <li class="divider"></li>
    <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
   
@@ -87,6 +85,10 @@
                 </div>
                 <div class="col s9 ">
                     <div class="upper_slider">
+                         <?php foreach ($banners as $key => $value) {
+                                if($value['advertise_position']=='Top')
+                                    echo "<div class='item'><img src='../uploads/".$value['advertise_attachment']."'></div>";
+                            }?>
                         <div class="item"><img src="<?php echo base_url() . 'images/slider_upper/banner_Horizontal.jpg' ?>"></div>
                         <div class="item"><img src="<?php echo base_url() . 'images/slider_upper/benner_Horizontal1.jpg' ?>"></div>
                         <div class="item"><img src="<?php echo base_url() . 'images/slider_upper/banner_Horizontal2.png' ?>"></div>
