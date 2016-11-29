@@ -124,6 +124,11 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'tips'"); 
         return $query->result_array();
       }
+       public function selectprivacy()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'privacy'"); 
+        return $query->result_array();
+      }
        public function selectallgist()  
       {  
         $query = $this->db->query("select * from tbl_posts where post_type = 'gist'"); 

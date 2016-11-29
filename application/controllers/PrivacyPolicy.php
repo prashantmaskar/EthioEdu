@@ -33,6 +33,7 @@ class PrivacyPolicy extends CI_Controller {
                 'm_title' => 'PrivacyPolicy',
                 'title'   => 'PrivacyPolicy'
             );
+                 $view_params['tips'] = $this->init_models->selecttips();
 		$this->load->view('PrivacyPolicy', $view_params);
 	}
 }
