@@ -95,7 +95,7 @@ class course extends CI_Controller {
         $config['total_rows'] = $this->init_models->get_course_count($course_name);
         $config['per_page'] = "1";
         $config["uri_segment"] = 4;
-        $choice = $config["total_rows"]/$c
+        $choice = $config["total_rows"]/$config["per_page"];
         $config["num_links"] = floor($choice);
 
         // integrate bootstrap pagination

@@ -169,10 +169,11 @@
                                             </li>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/AddAbout' ?>">Add AboutUs</a>
                                             </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/privacy_policy' ?>">Add P_Policy</a>
+                                            </li>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/listtips'?>">List Tips</a>
                                             </li>
-                                             <li><a href="<?php echo base_url() . 'index.php/admin/listtips'?>">List AboutUs</a>
-                                            </li>
+                                             
                                         </ul>
                                     </div>
                                 </li>
