@@ -32,10 +32,12 @@ class home extends CI_Controller {
 
 
     public function index() {
+         $banners = $this->init_models->getadvertisebanners();
 
         $view_params = array(
             'm_title' => 'WelCome To EthioEdu',
-            'title' => 'WelCome To EthioEdu'
+            'title' => 'WelCome To EthioEdu',
+               'banners' => $banners    
         );
         $this->load->view('home',$view_params);
     }

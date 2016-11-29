@@ -30,9 +30,11 @@ class event extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Events',
-            'title' => 'Events'
+            'title' => 'Events',
+            'banners' => $banners
         );
         $view_params['event'] = $this->init_models->selectevent();
         $this->load->view('event',$view_params);

@@ -30,9 +30,11 @@ class enquiry extends CI_Controller {
 
 	public function index()
 	{
+        $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'enquiry',
-                'title'   => 'enquiry'
+                'title'   => 'enquiry',
+                'banners' =>$banners
             );
 		$this->load->view('enquiry',$view_params);
 		

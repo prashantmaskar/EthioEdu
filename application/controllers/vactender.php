@@ -31,9 +31,11 @@ class vactender extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy/Tenders',
-            'title' => 'Vacancy/Tenders'
+            'title' => 'Vacancy/Tenders',
+            'banners' => $banners
         );
         $view_params['tender'] = $this->init_models->selecttender();
         $this->load->view('vactender',$view_params);

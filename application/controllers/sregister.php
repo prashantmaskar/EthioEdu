@@ -32,9 +32,11 @@ class sregister extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Register',
-            'title' => 'Register'
+            'title' => 'Register',
+            'banners' => $banners
         );
         $this->load->view('sregister',$view_params);
     }

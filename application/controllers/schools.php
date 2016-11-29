@@ -31,9 +31,11 @@ class schools extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Schools',
-            'title' => 'Schools'
+            'title' => 'Schools',
+            'banners' => $banners
         );
           $view_params['schools'] = $this->init_models->selectschool();
         $this->load->view('schools',$view_params);

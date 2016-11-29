@@ -32,9 +32,11 @@ class Projectlist extends CI_Controller {
 
 	public function index()
 	{
+		$banners = $this->init_models->getadvertisebanners();
                 $view_params = array(
                 'm_title' => 'Projectlist',
-                'title'   => 'Projectlist'
+                'title'   => 'Projectlist',
+                'banners' => $banners
             );
                  $view_params['project_topics']=$this->init_models->selectproject();
 		$this->load->view('Projectlist', $view_params);
