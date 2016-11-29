@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AddAbout extends CI_Controller {
+class privacy_policy extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -37,10 +37,10 @@ class AddAbout extends CI_Controller {
 	public function index()
 	{  
              $view_params = array(
-                'm_title' => 'Admin AddAbout',
-                'title'   => 'Admin AddAbout'
+                'm_title' => 'Admin privacy_policy',
+                'title'   => 'Admin privacy_policy'
             );
-		$this->load->view('admin/AddAbout',$view_params);
+		$this->load->view('admin/privacy_policy',$view_params);
 
     if(isset($_POST['addaction'])){
         $this->add();
@@ -55,7 +55,7 @@ class AddAbout extends CI_Controller {
        {
             
 
-                $config['upload_path']          = './uploads/';
+                /*$config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
@@ -72,12 +72,12 @@ class AddAbout extends CI_Controller {
                        // $this->load->view('upload_form', $error);
                 }
                 else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                {*/
+                        /*$data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
-                            );
+                            );*/
                          $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -86,7 +86,7 @@ class AddAbout extends CI_Controller {
                         $data=array(
                 'post_title' => $this->input->post('caption'),
                 'post_desc'  => $this->input->post('Description'),
-                 'post_attachment' => $filedata['file_name'],
+                /* 'post_attachment' => $filedata['file_name'],*/
                'post_date' => $date,
                 'post_time' => $time,
                 'post_type'=>  $this->input->post('post_type'), 
@@ -97,14 +97,14 @@ class AddAbout extends CI_Controller {
               if ($this->init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/AddAbout");
+            redirect("index.php/admin/privacy_policy");
             }
 
                
 
-    }
+   /* }*/
 }
- public function edit()
+ /*public function edit()
       {
             
 
@@ -155,7 +155,7 @@ class AddAbout extends CI_Controller {
                }
 
     }
-  
+  */
                 
 }
 
