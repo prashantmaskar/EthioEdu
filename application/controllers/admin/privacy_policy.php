@@ -55,29 +55,7 @@ class privacy_policy extends CI_Controller {
        {
             
 
-                /*$config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 100000;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 768;
-
-                $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {*/
-                        /*$data1 = array('upload_data' => $this->upload->data());
-
-                        $filedata= array(
-                            'file_name' => $data1['upload_data']['file_name'],
-                            );*/
+                
                          $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -86,7 +64,7 @@ class privacy_policy extends CI_Controller {
                         $data=array(
                 'post_title' => $this->input->post('caption'),
                 'post_desc'  => $this->input->post('Description'),
-                /* 'post_attachment' => $filedata['file_name'],*/
+               
                'post_date' => $date,
                 'post_time' => $time,
                 'post_type'=>  $this->input->post('post_type'), 
@@ -102,7 +80,7 @@ class privacy_policy extends CI_Controller {
 
                
 
-   /* }*/
+   
 }
  public function edit()
       {
