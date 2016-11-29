@@ -34,9 +34,11 @@ class edituser extends CI_Controller {
 
 	public function index()
 	{
+        $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Edit UserProfile',
-                'title'   => 'Edit UserProfile'
+                'title'   => 'Edit UserProfile',
+                'banners' => $banners
             );
 		$this->load->view('edituser',$view_params);
 

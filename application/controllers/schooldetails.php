@@ -31,9 +31,12 @@ class schooldetails extends CI_Controller {
 
 
     public function index() {
+        
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'School Details',
-            'title' => 'School Details'
+            'title' => 'School Details',
+            'banners' => $banners
         );
         $this->load->view('schooldetails',$view_params);
     }

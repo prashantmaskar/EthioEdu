@@ -34,10 +34,12 @@ class Project_topics extends CI_Controller {
 
 	public function index()
 	{
+        $banners = $this->init_models->getadvertisebanners();
 
              $view_params = array(
                 'm_title' => ' Project Topic',
-                'title'   => ' Project Topic'
+                'title'   => ' Project Topic',
+                'banners' => $banners
             );
 		$this->load->view('project_topics',$view_params);
 		if (isset($_POST['action'])){

@@ -30,9 +30,11 @@ class sdetail extends CI_Controller {
 
 	public function index()
 	{
+		$banners = $this->init_models->getadvertisebanners();
             $view_params = array(
                 'm_title' => 'Studenet Detail',
-                'title'   => 'Studenet Details'
+                'title'   => 'Studenet Details',
+                'banners' => $banners
             );
 		$this->load->view('sdetails', $view_params);
 	}

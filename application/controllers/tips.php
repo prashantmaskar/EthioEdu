@@ -31,9 +31,11 @@ class tips extends CI_Controller {
 
 	public function index()
 	{
+           $banners = $this->init_models->getadvertisebanners();
                 $view_params = array(
                 'm_title' => 'tips',
-                'title'   => 'tips'
+                'title'   => 'tips',
+                'banners' => $banners
             );
                  $view_params['tips'] = $this->init_models->selecttips();
 		$this->load->view('tips', $view_params);

@@ -31,9 +31,11 @@ class askQues extends CI_Controller {
 
 	public function index()
 	{
+		  $banners = $this->init_models->getadvertisebanners();
                 $view_params = array(
                 'm_title' => 'askQues',
-                'title'   => 'askQues'
+                'title'   => 'askQues',
+                'banners' => $banners
             );
 		$this->load->view('askQues', $view_params);
 		

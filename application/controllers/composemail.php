@@ -30,9 +30,11 @@ class composemail extends CI_Controller {
 
 	public function index()
 	{
+		$banners = $this->init_models->getadvertisebanners();
             $view_params = array(
                 'm_title' => 'Studenet inbox',
-                'title'   => 'Studenet inbox'
+                'title'   => 'Studenet inbox',
+                'banners' => $banners
             );
 		$this->load->view('composemail', $view_params);
 	}

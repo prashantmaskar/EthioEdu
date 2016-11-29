@@ -4,13 +4,17 @@
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
                         <a href="#">
-                            <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
+                            <?php foreach ($banners as $key => $value) {
+                            if($value['advertise_position']=='Left')
+                                 echo "<img src='../uploads/".$value['advertise_attachment']."'>";
+                                    }?>
+                            <!-- <img src="<?php //echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>"> -->
 
                         </a>
                     </div>
                     <div class="service_col z-depth-1  darken-1">
-                        <a href="#">
-                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
+                        <a href="#"> 
+                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>"> 
                         </a>
                     </div>
                 </div>
@@ -173,7 +177,11 @@
                 <div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg' ?>">
+                            <?php foreach ($banners as $key => $value) {
+                            if($value['advertise_position']=='Right')
+                                 echo "<img src='../uploads/".$value['advertise_attachment']."'>";
+                                    }?>
+                            <!-- <img src="<?php //echo base_url().'images/slider/Banner-Vertical.jpg' ?>"> -->
                         </a>
                     </div>
                     <div class="service_col z-depth-1 darken-1">

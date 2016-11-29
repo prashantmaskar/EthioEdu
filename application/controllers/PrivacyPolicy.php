@@ -29,9 +29,11 @@ class PrivacyPolicy extends CI_Controller {
 
 	public function index()
 	{
+		$banners = $this->init_models->getadvertisebanners();
                 $view_params = array(
                 'm_title' => 'PrivacyPolicy',
-                'title'   => 'PrivacyPolicy'
+                'title'   => 'PrivacyPolicy',
+                'banners' => $banners
             );
 		$this->load->view('PrivacyPolicy', $view_params);
 	}

@@ -31,9 +31,11 @@ class QuesAns extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'QuesAns',
-            'title' => 'QuesAns'
+            'title' => 'QuesAns',
+            'banners' => $banners
         );
             $view_params['question'] = $this->init_models->selectquestion();
         $this->load->view('QuesAns',$view_params);

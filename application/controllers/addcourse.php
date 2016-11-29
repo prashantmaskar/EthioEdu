@@ -37,9 +37,11 @@ class addcourse extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Add Course',
-            'title' => 'Add Course'
+            'title' => 'Add Course',
+            'banners' => $banners;
         );
         $this->load->view('addcourse',$view_params);
 

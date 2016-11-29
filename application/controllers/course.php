@@ -31,9 +31,11 @@ class course extends CI_Controller {
 
 
     public function index() {
+         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Course',
-            'title' => 'Course'
+            'title' => 'Course',
+           'banners' => $banners
         );
 
  //pagination settings
