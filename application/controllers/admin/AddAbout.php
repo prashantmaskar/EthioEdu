@@ -131,6 +131,9 @@ class AddAbout extends CI_Controller {
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                          $date = date('Y-m-d');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
 
         $data=array(
                   'post_id' => $this->input->post('post_id'),
@@ -138,12 +141,15 @@ class AddAbout extends CI_Controller {
                   'post_desc'  => $this->input->post('Description'),
                    'post_attachment' => $filedata['file_name'],
                   'post_type'=>  $this->input->post('post_type'),
-                  'post_date' => $this->input->post('date'),
-                  'post_time' => $this->input->post('time')
+                  'post_date' => $date,
+                  'post_time' => $time
              );
-                  $isinserted = $this->init_models->edit_tips($data);
+       /* var_dump($data);
+        exit();*/
+                  $isinserted = $this->init_models->edit_about($data);
                         
-
+ /*var_dump($data);
+        exit();*/
                         
                 }
 

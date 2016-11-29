@@ -57,6 +57,7 @@
                         
                             foreach ($query->result_array() as $row){ 
                              ?>
+                              <input id="post_id" name="post_id" type="hidden" class="validate " value="<?php  echo $row['post_id'];?>">
                                  <div class="form-group input-field col s12">
                                   <input id="Caption" name="caption" type="text" class="validate " value="<?php  echo $row['post_title'];?>">
                                   <label for="Caption">Title</label>
