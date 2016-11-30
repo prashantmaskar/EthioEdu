@@ -41,7 +41,7 @@
                         <?php } ?>
 
                     </div>
-                </div>
+                
 
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
@@ -54,6 +54,7 @@
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

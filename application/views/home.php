@@ -152,8 +152,8 @@
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
                                      ?>
-                                     <li><a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?></a></li> <?php } ?>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?>(7)</a>     <a href="#"><p class="green-text">Ans this</p></a></li> <?php } ?>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/QuesAns'?>">More Question</a>
                                     </li>
                                    
 

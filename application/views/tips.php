@@ -44,7 +44,7 @@
                                 </div>
                                <?php } ?>
                         <div class="col s12 m12 ">
-                        <div>
+                        <!-- <div>
                             <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
@@ -54,13 +54,13 @@
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
-                  </div>
+                  </div> -->
                             
                         </div>
 
                     </div>
                 </div>
-                 <div>
+                 <!-- <div>
                             <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
@@ -70,7 +70,7 @@
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
-                  </div>
+                  </div> -->
 
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
