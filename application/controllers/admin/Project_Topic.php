@@ -48,10 +48,13 @@ class Project_Topic extends CI_Controller {
 		}
 	}
 	function insertproject(){
-		 $config['upload_path']          = './uploads/Documents';
+        date_default_timezone_set('Asia/Kolkata');
+            $TopicPrefix = date("d-m-Y-h-i-s"); 
+            $Topicname = $TopicPrefix.$value['name'];
+		 $config['upload_path'] = './uploads/Documents';
                 $config['allowed_types']        = 'pdf|docx|doc|rtf';
                 $config['max_size']             = 100000;
-               
+                $config['file_name'] = $Topicname;
 
                 $this->load->library('upload', $config);
 

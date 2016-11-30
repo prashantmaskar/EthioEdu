@@ -49,6 +49,10 @@ class Addtips extends CI_Controller {
 
     public function add()
        {
+        date_default_timezone_set('Asia/Kolkata');
+            $imagePrefix = date("d-m-Y-h-i-s"); 
+            $imagename = $imagePrefix.$value['name'];
+
             
 
                 $config['upload_path']          = './uploads/';
@@ -56,6 +60,8 @@ class Addtips extends CI_Controller {
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
+                $config['file_name'] = $imagename; // set the name here
+
 
                 $this->load->library('upload', $config);
 

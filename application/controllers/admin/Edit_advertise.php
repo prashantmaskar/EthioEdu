@@ -50,6 +50,9 @@ if(isset($_POST['action'])){
       }
     function edit_advertise()
        {
+        date_default_timezone_set('Asia/Kolkata');
+            $imagePrefix = date("d-m-Y-h-i-s"); 
+            $imagename = $imagePrefix.$value['name'];
             
 
                 $config['upload_path']          = './uploads/';
@@ -57,6 +60,7 @@ if(isset($_POST['action'])){
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
+                 $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
 
