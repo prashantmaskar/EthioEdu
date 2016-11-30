@@ -37,6 +37,6 @@ class Search extends CI_Controller {
                 'banners' => $banners
 
             );
-		$this->load->view('search',$view_params);
+		$this->load->view('course/search',$view_params);
 	}
 }
