@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class askQues extends CI_Controller {
+class ansQues extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -33,34 +33,32 @@ class askQues extends CI_Controller {
 	{
 		  $banners = $this->init_models->getadvertisebanners();
                 $view_params = array(
-                'm_title' => 'askQues',
-                'title'   => 'askQues',
+                'm_title' => 'ansQues',
+                'title'   => 'ansQues',
                 'banners' => $banners
             );
-		$this->load->view('askQues', $view_params);
+		$this->load->view('ansQues', $view_params);
 		
 		if(isset($_POST['action'])){
-			$this->insertquestion();
+			$this->insertAnswer();
 		}
 	}
-	function insertquestion(){
+	function insertAnswer(){
 		$date = date('Y-m-d');
 		date_default_timezone_set('Asia/Kolkata');
 		$time = date('h:i:s A', time());
 		$sessid= $this->session->userdata('suserid');
 		$data=array(
-			'question_type' =>$this->input->post('quetype'),
-			'question_category' =>$this->input->post('subject'),
-			'question_desc' =>$this->input->post('question'),
-			'question_date' => $date,
-			'question_time' => $time,
-			'question_approve' => $this->input->post('approve_status'),
-		     'user_id' => $sessid
+			'post_title' =>$this->input->post('caption'),
+			'post_desc' =>$this->input->post('Description'),
+			'post_date' => $date,
+			'post_time' => $time,
+		    'user_id' => $sessid
 			);
 		if ($this->init_models->insert_question($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Question added Successfully'); 
+            $this->session->set_flashdata('message', 'Answer posted Successfully'); 
             redirect("index.php/QuesAns");
             }
 	}

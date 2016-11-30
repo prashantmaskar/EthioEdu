@@ -30,9 +30,11 @@ class sentmail extends CI_Controller {
 
 	public function index()
 	{
+             $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Search',
-                'title'   => 'Search'
+                'title'   => 'Search',
+                'banners' => $banners
             );
 		$this->load->view('sentmail',$view_params);
 	}

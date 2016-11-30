@@ -41,9 +41,11 @@ class post_vacancy extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Post Vacancy',
-            'title' => 'Post Vacancy'
+            'title' => 'Post Vacancy',
+            'banners' => $banners
         );
         $this->load->view('post_vacancy',$view_params);
 

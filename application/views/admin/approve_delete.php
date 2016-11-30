@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 //list tender
  $delete_id = $_POST['delete_id'];
  if(isset($delete_id)){

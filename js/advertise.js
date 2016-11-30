@@ -81,12 +81,12 @@ $(document).ready(function() {
 			fileformat:{
             validators:{
                 notEmpty:{
-                    message:'please select an image'
+                    message:'please select an banner upto 1163*100 pixel'
                 },
                  file:{
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
-                        maxSize: 2097152,   // 2048 * 1024
+                        maxSize: 4194304,   // 2048 * 1024
                         message: 'The selected file is not valid'
                     }
                  }

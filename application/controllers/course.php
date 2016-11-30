@@ -31,11 +31,19 @@ class course extends CI_Controller {
 
 
     public function index() {
-        $view_params = array(
-            'm_title' => 'Course',
-            'title' => 'Course'
-        );
+         //$banners = $this->init_models->getadvertisebanners();
+        // $view_params = array(
+        //     'm_title' => 'Course',
+        //     'title' => 'Course',
+        //    'banners' => $banners
+        // );
+$banners = $this->init_models->getadvertisebanners();
+             $view_params = array(
+                'm_title' => 'Search',
+                'title'   => 'Search',
+                'banners' => $banners
 
+            );
  //pagination settings
         $config['base_url'] = base_url('index.php/course/index');
         $config['total_rows'] = $this->db->count_all('tbl_course');
@@ -80,10 +88,14 @@ class course extends CI_Controller {
     }
 
      function search(){
-          $view_params = array(
-            'm_title' => 'Course',
-            'title' => 'Course'
-        );
+        
+          $banners = $this->init_models->getadvertisebanners();
+             $view_params = array(
+                'm_title' => 'Search',
+                'title'   => 'Search',
+                'banners' => $banners
+
+            );
         $course_name = $this->input->post('course_name');
         $course_name = ($this->uri->segment(3)) ? $this->uri->segment(3) : $course_name;
 
@@ -93,7 +105,7 @@ class course extends CI_Controller {
         $config['total_rows'] = $this->init_models->get_course_count($course_name);
         $config['per_page'] = "1";
         $config["uri_segment"] = 4;
-        $choice = $config["total_rows"]/$c
+        $choice = $config["total_rows"]/$config["per_page"];
         $config["num_links"] = floor($choice);
 
         // integrate bootstrap pagination
@@ -124,6 +136,7 @@ class course extends CI_Controller {
         $view_params['pagination']= $this->pagination->create_links();
 
         //load view
+        //print_r($view_params);
         $this->load->view('course',$view_params);
     }
 

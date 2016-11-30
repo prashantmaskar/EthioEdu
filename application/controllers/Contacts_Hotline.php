@@ -30,9 +30,11 @@ class Contacts_Hotline extends CI_Controller {
 
 
     public function index() {
+          $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Contacts_Hotline',
-            'title' => 'Contacts_Hotline'
+            'title' => 'Contacts_Hotline',
+               'banners' => $banners
         );
         $this->load->view('contacts_hotline',$view_params);
     }

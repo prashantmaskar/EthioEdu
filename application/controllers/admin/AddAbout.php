@@ -42,22 +42,31 @@ class AddAbout extends CI_Controller {
             );
 		$this->load->view('admin/AddAbout',$view_params);
 
-    if(isset($_POST['action'])){
+    if(isset($_POST['addaction'])){
         $this->add();
+        }
+
+        if(isset($_POST['editaction'])){
+        $this->edit();
         }
 	}
 
     public function add()
-       {
-            
+       {    
+        date_default_timezone_set('Asia/Kolkata');
+            $imagePrefix = date("d-m-Y-h-i-s"); 
+            $imagename = $imagePrefix.$value['name'];
+
 
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
+                $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
+              
 
                 if ( ! $this->upload->do_upload('avatar'))
                 {
@@ -100,6 +109,67 @@ class AddAbout extends CI_Controller {
 
     }
 }
+ public function edit()
+      {
+             date_default_timezone_set('Asia/Kolkata');
+             $imagePrefix = date("d-m-Y-h-i"); 
+             $imagename = $imagePrefix.$value['name'];
+
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100000;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+                 $config['file_name'] = $imagename; // set the name here
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('avatar'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        var_dump($error);
+
+                       // $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data1 = array('upload_data' => $this->upload->data());
+
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
+                          $date = date('Y-m-d');
+                        date_default_timezone_set('Asia/Kolkata');
+                        $time = date('h:i:s A', time());
+
+        $data=array(
+                  'post_id' => $this->input->post('post_id'),
+                  'post_title' => $this->input->post('caption'),
+                  'post_desc'  => $this->input->post('Description'),
+                   'post_attachment' => $filedata['file_name'],
+                  'post_type'=>  $this->input->post('post_type'),
+                  'post_date' => $date,
+                  'post_time' => $time
+             );
+       /* var_dump($data);
+        exit();*/
+                  $isinserted = $this->init_models->edit_about($data);
+                        
+ /*var_dump($data);
+        exit();*/
+                        
+                }
+
+               if(isset($isinserted)){
+            echo"<script>alert('Data Edited Successfully');</script>";
+                redirect("index.php/admin/AddAbout");
+               }else{
+                   echo"<script>alert('Failed');</script>";
+               }
+
+    }
+  
                 
 }
 

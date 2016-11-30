@@ -8,10 +8,10 @@ class vactender extends CI_Controller {
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -31,9 +31,11 @@ class vactender extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy/Tenders',
-            'title' => 'Vacancy/Tenders'
+            'title' => 'Vacancy/Tenders',
+            'banners' => $banners
         );
         $view_params['tender'] = $this->init_models->selecttender();
         $this->load->view('vactender',$view_params);

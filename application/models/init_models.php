@@ -124,6 +124,11 @@
         $query = $this->db->query("select * from tbl_posts where post_type = 'tips'"); 
         return $query->result_array();
       }
+       public function selectprivacy()  
+      {  
+        $query = $this->db->query("select * from tbl_posts where post_type = 'privacy'"); 
+        return $query->result_array();
+      }
        public function selectallgist()  
       {  
         $query = $this->db->query("select * from tbl_posts where post_type = 'gist'"); 
@@ -152,8 +157,8 @@
       }
        public function selecttender()  
       {  
-        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
-        return $query->result_array();
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 " ); 
+         return $query->result_array();
       }
       public function selectalltender()
       {  
@@ -214,6 +219,17 @@
         $this->db->where('post_id', $id);
         return $this->db->update('tbl_posts', $data);
       }
+      
+      public function edit_about($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
+       public function edit_privacy($data){
+        echo $id = $data['post_id'];
+        $this->db->where('post_id', $id);
+        return $this->db->update('tbl_posts', $data);
+      }
 
 
       public function edit_event($data){
@@ -268,6 +284,18 @@
         return $this->db->update('tbl_users', $data);
       }
 
+public function edit_front_user($data){
+        $id = $data['user_id'];
+        $uname = $data['username'];
+        $fname = $data['first_name'];
+        $lname = $data['last_name'];
+        $email = $data['user_email'];
+        $role = $data['role'];
+         $query = $this->db->query("insert into tbl_users (username, first_name, last_name, user_email, role) values('".$uname."', '".$fname."', '".$lname."', '".$email."', '".$role."') where user_id ='".$id."'"); 
+        return $query->result_array();
+      }
+      
+
       public function updateuserdetails($data){
         echo $id = $data['user_id'];
         $this->db->where('user_id', $id);
@@ -294,6 +322,139 @@
           $query = $this->db->query("SELECT * FROM tbl_advertise where isactive=true");
          return $query->result_array();
       }
+
+
+
+
+      function get_school($limit, $start, $st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_school_meta where school_name like '%$st%' limit " . $start . ", " . $limit;
+        $query = $this->db->query($sql);
+         return $query->result_array();
+    }
+    function get_school_count($st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_school_meta where school_name like '%$st%'";
+        $query = $this->db->query($sql);
+        return $query->num_rows();
+    }
+
+
+    function search($query_array, $limit,$offset, $sort_by,$sort_order){
+
+      $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('school_name','school_type1','school_type2');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'school_name';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_school_meta')
+                     ->join('tbl_users','tbl_users.user_id = tbl_school_meta.user_id')
+                     ->where('school_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['school_name'])){
+$q->like('school_name',$query_array['school_name']);
+$q->where('school_approve = 1');
+    }
+       if (strlen($query_array['school_type1'])){
+$q->where('school_type',$query_array['school_type1'] );
+$q->where('school_approve = 1');
+    }
+       if (strlen($query_array['school_type2'])){
+$q->where('school_type',$query_array['school_type2'] );
+$q->where('school_approve = 1');
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+    $q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_school_meta')
+                  -> where('school_approve = 1') ;
+                 
+
+    if (strlen($query_array['school_name'])){
+$q->like('school_name',$query_array['school_name']);
+
+    }
+       if (strlen($query_array['school_type1'])){
+$q->where('school_type',$query_array['school_type1']);
+
+    }
+       if (strlen($query_array['school_type2'])){
+$q->where('school_type',$query_array['school_type2']);
+
+    }
+  
+
+    $tem = $q->get()->result();
+    $ret['num_rows'] = $tem[0]->count;
+   return $ret;
+
+   }
+
+
+       //News Search Result Query
+
+   function search_news($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'post_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_posts')
+                     ->where('post_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_posts')
+                   -> where('post_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
 
 
    }  

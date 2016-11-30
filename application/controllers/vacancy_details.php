@@ -32,9 +32,11 @@ class vacancy_details extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy Details',
-            'title' => 'Vacancy Details'
+            'title' => 'Vacancy Details',
+            'banners' => $banners
         );
         $this->load->view('vacancy_details',$view_params);
     }

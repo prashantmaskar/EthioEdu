@@ -36,9 +36,11 @@ class new_events extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'new_events',
-            'title' => 'new_events'
+            'title' => 'new_events',
+            'banners' => $banners
         );
         $this->load->view('new_events',$view_params);
 
@@ -50,12 +52,15 @@ class new_events extends CI_Controller {
      public function add()
        {
             
-
+          date_default_timezone_set('Asia/Kolkata');
+            $imagePrefix = date("d-m-Y-h-i-s"); 
+            $imagename = $imagePrefix.$value['name'];
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
+                   $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
 

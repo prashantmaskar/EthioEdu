@@ -37,7 +37,7 @@ class header extends CI_Controller {
         $view_params = array(
             'm_title' => 'WelCome To EthioEdu',
             'title' => 'WelCome To EthioEdu',
-            'banners' => $banners
+            'banners' => $banners;
         );
         $this->load->view('header',$view_params);
 

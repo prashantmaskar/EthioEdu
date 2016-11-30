@@ -4,13 +4,17 @@
                 <div class="col s12 m2 grid-example">
                     <div class="service_col z-depth-1  darken-1">
                         <a href="#">
-                            <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
+                            <?php foreach ($banners as $key => $value) {
+                            if($value['advertise_position']=='Left')
+                                 echo "<img src='../uploads/".$value['advertise_attachment']."'>";
+                                    }?>
+                            <!-- <img src="<?php //echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>"> -->
 
                         </a>
                     </div>
                     <div class="service_col z-depth-1  darken-1">
-                        <a href="#">
-                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
+                        <a href="#"> 
+                            <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>"> 
                         </a>
                     </div>
                 </div>
@@ -116,7 +120,7 @@
                                           $event_id = $row['post_id'];
                                             ?>
 
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day">10</span><br><span class="monthyear">may 2016</span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_date']; ?></span><br><span class="monthyear"><?php echo $row['post_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
                                        
                                         </li>
                                           <?php } ?>
@@ -148,8 +152,8 @@
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
                                      ?>
-                                     <li><a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?></a></li> <?php } ?>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2">READ MORE</a>
+                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?>(7)</a>     <a href="#"><p class="green-text">Ans this</p></a></li> <?php } ?>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/QuesAns'?>">More Question</a>
                                     </li>
                                    
 
@@ -173,7 +177,11 @@
                 <div class="col s12 m2 ">
                     <div class="service_col z-depth-1 darken-1">
                         <a href="#">
-                            <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg' ?>">
+                            <?php foreach ($banners as $key => $value) {
+                            if($value['advertise_position']=='Right')
+                                 echo "<img src='../uploads/".$value['advertise_attachment']."'>";
+                                    }?>
+                            <!-- <img src="<?php //echo base_url().'images/slider/Banner-Vertical.jpg' ?>"> -->
                         </a>
                     </div>
                     <div class="service_col z-depth-1 darken-1">

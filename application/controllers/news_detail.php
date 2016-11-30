@@ -31,9 +31,11 @@ class news_detail extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'News Details',
-            'title' => 'News Details'
+            'title' => 'News Details',
+            'banners' => $banners
         );
         $this->load->view('news_detail',$view_params);
     }

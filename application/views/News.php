@@ -20,7 +20,7 @@
                                 <h1 class="page-heading">News <span class="News-button"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportnews')?>">Report News</a></span></h1>
                             </div>
                         </div>
-						<form id="sortnews" method="post" action="<?php echo base_url() . 'index.php/news' ?>">
+						<form id="sortnews" method="post" action="<?php echo base_url() . 'index.php/News/search' ?>">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s2">
@@ -64,19 +64,20 @@
                                         $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
 
                                     }
-                                foreach ($query->result_array() as $row){ ?>
+                                    //echo $data;
+                                foreach ($news as $row){ ?>
                                     <li class="news_content">
-                                        <?php $news_id = $row['post_id'];
+                                        <?php $news_id = $row->post_id;
                                         ?>
-                                        <a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>" class="news_link"><span class="News_title"><?php echo $row['post_title']; ?> </span>
+                                        <a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>" class="news_link"><span class="News_title"><?php echo $row->post_title; ?> </span>
                                         </a>
-                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong> <?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_category'];?></a> | Comments [7]  
+                                        <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row->post_author; ?></a></strong> <?php echo $row->post_date; ?><span class="infoText1"> for <a href="#"><?php echo $row->post_category;?></a> | Comments [7]  
                                             </span></span>
                                     </li>
 
                                 <?php } ?>
                                 </ul>
-                                <ul class="pagination">
+                              <!--  <ul class="pagination">
                                     <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                     <li class="active"><a href="#!">1</a></li>
                                     <li class="waves-effect"><a href="#!">2</a></li>
@@ -84,7 +85,8 @@
                                     <li class="waves-effect"><a href="#!">4</a></li>
                                     <li class="waves-effect"><a href="#!">5</a></li>
                                     <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
+                                </ul>   -->
+                                <?php echo $pagination; ?>
                             </div>
                         </div>
 
