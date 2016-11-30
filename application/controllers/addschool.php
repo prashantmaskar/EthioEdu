@@ -34,7 +34,7 @@ class addschool extends CI_Controller {
         $view_params = array(
             'm_title' => 'Add School',
             'title' => 'Add School',
-            'banners' => $banners;
+            'banners' => $banners
         );
         $this->load->view('addschool',$view_params);
     if (!$this->session->userdata('logged_in'))
