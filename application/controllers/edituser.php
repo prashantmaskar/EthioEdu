@@ -44,7 +44,13 @@ class edituser extends CI_Controller {
 
 
  if(isset($_POST['uaction'])){
+   $epass =  $this->input->post('password');
+    if(isset($epass)){
         $this->addfrontuser();
+        echo"IN ";
+    }else{
+        $this->editfrontuser();
+    }
  
 } 
 
@@ -71,6 +77,26 @@ class edituser extends CI_Controller {
 
         $this->init_models->update_front_user($data);
 }
+
+
+public function editfrontuser(){
+            $sessid= $this->session->userdata('suserid');
+            $data = array( 
+                    'user_id' => $sessid,
+                    'username' => $this->input->post('username'),
+                   'first_name' => $this->input->post('first_name'),
+                    'last_name' => $this->input->post('last_name'),
+                    'user_email' => $this->input->post('email'),
+                    'user_role' => $this->input->post('role'),
+
+
+                );
+
+        $this->init_models->edit_front_user($data);
+}
+
+
+
 
 
 	public function update_user(){
