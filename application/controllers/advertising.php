@@ -74,9 +74,11 @@ class advertising extends CI_Controller {
                 else
                 {
                         $data1 = array('upload_data' => $this->upload->data());
+                       //save in currentdate and time format
+                        $fname= date("d-m-Y-h-i");
 
                         $filedata= array(
-                            'file_name' => $data1['upload_data']['file_name'],
+                            'file_name' => $fname.$data1['upload_data'],
                             );
 
 
