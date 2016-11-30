@@ -59,9 +59,9 @@
 
             <div class="footer-copyright red darken-1">
                 <div class="container center-align">
-                    Copyright © 2016 ethioedu.com | <a href="http://ethioedu.com/contact-us/">Contact Us</a>.
+                    Copyright © 2016 ethioedu.com | <a href="<?php echo base_url().'index.php/contact'?>">Contact Us</a>.
                     All Names, Acronyms and Trademarks displayed on this website are those of their respective owners.
-                    Read our <a href="http://ethioedu.com/school/docs/privacy-policy/">privacy policy</a> and <a href="http://ethioedu.com/school/docs/terms-of-use/">terms of use. </a>
+                    Read our <a href="<?php echo base_url().'index.php/PrivacyPolicy'?>">privacy policy</a> and <a href="http://ethioedu.com/school/docs/terms-of-use/">terms of use. </a>
 
                 </div>
             </div>
