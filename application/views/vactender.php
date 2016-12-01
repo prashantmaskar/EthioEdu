@@ -19,10 +19,10 @@
                     <div class="news_details">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">Vacancies/Tender <span class="News-button"><a href="http://localhost/ETHIO/index.php/post_vacancy" class="waves-effect waves-light btn">Post Vacancy</a></span></h1>
+                                <h1 class="page-heading">Vacancies/Tender <span class="News-button"><a href="<?php echo base_url().'index.php/post_vacancy' ?>" class="waves-effect waves-light btn">Post Vacancy</a></span></h1>
                             </div>
                         </div>
-						<form id="sorttender" method="post" action="<?php echo base_url() . 'index.php/vactender' ?>">
+						<form id="sorttender" method="post" action="<?php echo base_url() . 'index.php/vactender/search' ?>">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
                                 <div class="col s3">

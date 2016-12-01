@@ -178,12 +178,19 @@ class vactender extends CI_Controller {
 
 
     function search(){
+
+        $sdate = $this->input->post('vacd1');
+    $isstrtime = strtotime( $sdate);
+    $startdate = date('Y-m-d',$isstrtime);
+
+
+    $edate = $this->input->post('vacd2');
+    $isstrtime = strtotime( $edate);
+    $enddate = date('Y-m-d',$isstrtime);
      
        $query_array =   array(
-
-           
-           'start_date'=> $this->input->post('vacd1'),
-           'end_date'=> $this->input->post('vacd2'),
+           'start_date'=> $startdate,
+           'end_date'=> $enddate,
             );
 
          $query_id = $this->input->save_query($query_array);
