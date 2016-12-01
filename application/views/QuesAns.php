@@ -122,7 +122,7 @@
     <?php
     }
 ?>
-					<form id="sortquesitons" method="post" action="<?php echo base_url() . 'index.php/QuesAns' ?>">
+					<form id="sortquesitons" method="post" action="<?php echo base_url() . 'index.php/QuesAns/search' ?>">
                         <div class="col m12 s12">
                             <div class="QuesAns_sort_form col m12">
                                 <div class="col s2">
@@ -166,18 +166,18 @@
                                         $query = $this->db->query("select * from tbl_questions where question_approve = 1");
 
                                     }
-                                foreach ($query->result_array() as $row){ ?>
+                                foreach ($question as $row){ ?>
                                     <li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
-                                            <span class="QuesAns_title"><?php echo $row['question_desc']; ?></span><br>
+                                            <span class="QuesAns_title"><?php echo $row->question_desc; ?></span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row['question_date'];  ?>            <span>[<?php echo $row['question_time'];?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row['question_category'];?></a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row->question_date;  ?>            <span>[<?php echo $row->question_time;?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row->question_category;?></a> | Answers [0]  
                                             </span></span>
                                     </li>
                                      <?php } ?>
                               </ul>
 
-                                <ul class="pagination">
+                              <!--  <ul class="pagination">
                                     <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                     <li class="active"><a href="#!">1</a></li>
                                     <li class="waves-effect"><a href="#!">2</a></li>
@@ -185,7 +185,8 @@
                                     <li class="waves-effect"><a href="#!">4</a></li>
                                     <li class="waves-effect"><a href="#!">5</a></li>
                                     <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
+                                </ul>  -->
+                                <?php echo $pagination; ?>
                             </div>
                         </div>
 

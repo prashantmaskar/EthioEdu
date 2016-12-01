@@ -415,7 +415,6 @@ $q->where('school_type',$query_array['school_type2']);
 
    }
 
-
        //News Search Result Query
 
    function search_news($query_array, $limit,$offset, $sort_by,$sort_order){
@@ -427,7 +426,7 @@ $q->where('school_type',$query_array['school_type2']);
 
       $q = $this->db->select('*')
                      ->from('tbl_posts')
-                     ->where('post_approve = 1')
+                     ->where('post_type="news" and post_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
     
@@ -448,7 +447,7 @@ $q->where('post_date <=', $query_array['end_date']);
 
      $q = $this->db->select('count(*) as count', FALSE)
                    ->from('tbl_posts')
-                   -> where('post_approve = 1') ;
+                   -> where('post_type="news" and post_approve = 1') ;
                  
 
     if(strlen($query_array['start_date'])){
@@ -465,6 +464,184 @@ $q->where('post_date <=', $query_array['end_date']);
    }
 
 
+      //Event Search Result Query
+
+   function search_event($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'post_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_posts')
+                     ->where('post_type="event" and post_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+   
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_posts')
+                   -> where('post_type="event" and post_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
+
+     //Vacancy Search Result Query
+
+   function search_vacancy($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'vacancy_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_vacancy')
+                     ->where('vacancy_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('vacancy_date >=', $query_array['start_date']);
+$q->where('vacancy_date <=', $query_array['end_date']);
+    }
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_vacancy')
+                   -> where('vacancy_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('vacancy_date >=', $query_array['start_date']);
+$q->where('vacancy_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
+   //Event Search Result Query
+
+   function search_question($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'question_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_questions')
+                     ->where('question_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+   
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('question_date >=', $query_array['start_date']);
+$q->where('question_date <=', $query_array['end_date']);
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_questions')
+                   -> where('question_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('question_date >=', $query_array['start_date']);
+$q->where('question_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
+
+
+   
+    function get_userby_email($email)
+    {
+        $sql = "select * from tbl_users where user_email='".$email."'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    } 
+
+     function setverificationkeyby_email($email, $key)
+    {
+        $data=array();
+        $data['verificationcode']=$key;
+        $this->db->where('user_email', $email);
+        return $this->db->update('tbl_users', $data);
+    } 
+
+
+     function resetpassbykey($email, $password)
+    {
+        $data=array();
+        $data['password']=$password;
+        $data['verificationcode']='';
+        $this->db->where('user_email', $email);
+        return $this->db->update('tbl_users', $data);
+    } 
 
 
 

@@ -37,9 +37,13 @@ class News extends CI_Controller {
         'news_title'=>'news_title',
         'news_author'=>'news_author',
         'news_category'=>'news_category',
-        
+            );
 
-
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'News Search',
+                'title'   => 'News Search',
+                'banners' => $banners
             );
 
 
@@ -100,17 +104,22 @@ class News extends CI_Controller {
 	public function index($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 )
 	{
  
+
         $limit = 1;
-        $banners = $this->init_models->getadvertisebanners();
+        
         $data['fields']= array(
         'news_id'=>'news_id',
         'news_title'=>'news_title',
         'news_author'=>'news_author',
         'news_category'=>'news_category',
-        'banners' => $banners
         
+            );
 
-
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'News',
+                'title'   => 'News',
+                'banners' => $banners
             );
 
 
@@ -163,19 +172,33 @@ class News extends CI_Controller {
      $data['pagination'] = $this->pagination->create_links();
 //print_r($data);
        $this->load->view('news',$data);
+
+       // if(isset($_POST['action'])){
+
+       //  $this->search();
+       // }
 	}
 
-
     function search(){
+
+    $sdate = $this->input->post('newsd1');
+    $isstrtime = strtotime( $sdate);
+    $startdate = date('Y-m-d',$isstrtime);
+
+
+    $edate = $this->input->post('newsd2');
+    $isstrtime = strtotime( $edate);
+    $enddate = date('Y-m-d',$isstrtime);
      
        $query_array =   array(
-
            
-           'start_date'=> $this->input->post('newsd1'),
-           'end_date'=> $this->input->post('newsd2'),
+           'start_date'=> $startdate,
+           'end_date'=> $enddate,
             );
 
-         $query_id = $this->input->save_query($query_array);
+
+//print_r($query_array);
+        $query_id = $this->input->save_query($query_array);
 
          redirect("news/display/$query_id");
 

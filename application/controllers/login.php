@@ -90,5 +90,126 @@ class login extends CI_Controller {
       }
 	}
 
+  public function fergot_password()
+  {
+      $view_params = array(
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
+            );
+    $this->load->view('fergetpass',$view_params);
+  }
+
+  public function sendfergetemail(){
+
+
+     $usr_result = $this->init_models->get_userby_email($this->input->post('email'));
+     if(count($usr_result)>0){
+
+        $from_email = "santosh.bhosale123@gmail.com"; 
+        $to_email = $this->input->post('email');
+        $key=md5(time());
+
+        if($this->init_models->setverificationkeyby_email($to_email,$key)){
+               //Load email library 
+             $this->load->library('email'); 
+             $this->email->set_mailtype("html");
+             $this->email->from($from_email, 'Santosh Bhosale'); 
+             $this->email->to($to_email);
+             $this->email->subject('Ferget Password Link'); 
+             $this->email->message('Please <a href="'.base_url().'index.php/login/resetpassword?email='.$to_email.'&key='.$key.'" >Click here</a> to reset password '); 
+              //remove this var_dump when uploded to server
+              var_dump('Please <a href="'.base_url().'index.php/login/resetpassword?email='.$to_email.'&key='.$key.'" >Click here</a> to reset password ');
+             //Send mail 
+             if($this->email->send()) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-sucess text-center">Reset mail sent to your email address!</div>');
+             }else{
+                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Unable to send mail to your email address!</div>');
+             }
+        }else{
+          $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Someting went wrong!</div>');
+         
+        }
+        
+     }else{
+           $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
+         
+     }
+     $view_params = array(
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
+            );
+    $this->load->view('fergetpass',$view_params);
+         
+  }
+
+  public function resetpassword(){
+      $usr_result = $this->init_models->get_userby_email($this->input->get('email'));
+     if(count($usr_result)>0){
+        
+        if($usr_result[0]['verificationcode']==$this->input->get('key')){
+            $view_params = array(
+                'title'=> 'Reset Password',
+                'key' => $usr_result[0]['verificationcode'],
+                'email'   => $usr_result[0]['user_email'],
+            );
+            $this->load->view('resetpass',$view_params);
+        }else{
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
+            $view_params = array(
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
+                    );
+            $this->load->view('fergetpass',$view_params);
+        }
+     }else{
+        $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
+        $view_params = array(
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
+            );
+          $this->load->view('fergetpass',$view_params);
+     }
+  }
+
+
+  public function resetpassaction(){
+    $key=$this->input->post('key');
+    $email=$this->input->post('email');
+    $password=$this->input->post('password');
+     $usr_result = $this->init_models->get_userby_email($email);
+     if(count($usr_result)>0){
+        
+        if($usr_result[0]['verificationcode']==$key){
+
+          if($this->init_models->resetpassbykey($email,md5($password))){
+              echo 'password changed successfully..';
+          }else{
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Something went wrong!</div>');
+            $view_params = array(
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
+                    );
+            $this->load->view('fergetpass',$view_params);
+          }
+
+
+         }else{
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
+            $view_params = array(
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
+                    );
+            $this->load->view('fergetpass',$view_params);
+        }
+     }else{
+        $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
+        $view_params = array(
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
+            );
+          $this->load->view('fergetpass',$view_params);
+     }
+  }
+
 
 }

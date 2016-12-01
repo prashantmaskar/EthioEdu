@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2016 at 05:57 AM
+-- Generation Time: Dec 01, 2016 at 06:05 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tbl_advertise` (
   `isactive` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`advertise_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tbl_advertise`
@@ -51,7 +51,9 @@ CREATE TABLE IF NOT EXISTS `tbl_advertise` (
 INSERT INTO `tbl_advertise` (`advertise_id`, `advertise_name`, `advertise_email`, `advertise_number`, `advertise_category`, `advertise_position`, `advertise_subject`, `advertise_attachment`, `advertise_desc`, `advertise_date`, `advertise_time`, `user_id`, `isactive`) VALUES
 (1, 'santosh', 'santosh.bhosale123@gmail.com', '7709326583', 'Part Time', 'Right', 'santosh', 'vlcsnap-2016-09-14-16h58m40s451.png', 'santosh', '28 November, 2016', '08:49:53 PM', 1, 1),
 (2, 'sssss', 'ss@gmail.com', '77777777', 'Part Time', 'Left', 'tst', 'vlcsnap-2016-09-14-17h19m45s1531.png', 'zzzzz', '29 November, 2016', '08:28:39 AM', 55, 1),
-(3, 'yf', 'fghg@gmail.com', '1234567890', 'General', 'Top', 'gssdgfcv ', 'vlcsnap-2016-09-14-16h58m45s100.png', 'gfdfg', '29 November, 2016', '08:39:57 AM', 55, 1);
+(3, 'yf', 'fghg@gmail.com', '1234567890', 'General', 'Top', 'gssdgfcv ', 'vlcsnap-2016-09-14-16h58m45s100.png', 'gfdfg', '29 November, 2016', '08:39:57 AM', 55, 1),
+(4, 's', 'ssaa@gmail.com', '1234567890', 'Full Time', 'Top', 'aa', '30-11-2016-06-36vlcsnap-2016-09-14-17h19m45s1533.png', 'ssss', '30 November, 2016', '09:06:35 AM', 55, 0),
+(5, 'gsdvs', 'makarand.upadasdrwat1@spareshub.com', '2222222222', 'Entertainments', 'Left', 'asdsd', '30-11-2016-07-57Array', 'asxasd', '30 November, 2016', '10:27:13 AM', 55, 0);
 
 -- --------------------------------------------------------
 
@@ -333,6 +335,7 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `password` varchar(255) NOT NULL,
   `user_email` varchar(100) NOT NULL,
   `user_role` varchar(20) NOT NULL,
+  `verificationcode` text,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `user_email` (`user_email`)
@@ -342,11 +345,11 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`) VALUES
-(1, 'dnyanesh', '', '', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin'),
-(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
-(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser'),
-(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser');
+INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`, `verificationcode`) VALUES
+(1, 'dnyanesh', '', '', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin', NULL),
+(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser', ''),
+(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser', NULL),
+(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser', NULL);
 
 -- --------------------------------------------------------
 
