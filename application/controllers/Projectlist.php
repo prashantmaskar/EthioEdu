@@ -24,21 +24,174 @@ class Projectlist extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
+        $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
         $this->load->model('init_models');
     }
 
 
 
-	public function index()
-	{
-		$banners = $this->init_models->getadvertisebanners();
-                $view_params = array(
-                'm_title' => 'Projectlist',
-                'title'   => 'Projectlist',
+function display($query_id = 0, $sort_by = 'project_name',$sort_order = 'asc', $offset = 0 ){
+
+
+        $limit = 1;
+        $data['fields']= array(
+        'project_id'=>'project_id',
+        'project_title'=>'project_title',
+        'project_course'=>'project_course',
+        'project_format'=>'project_format',
+
+
+            );
+        //print_r( $data['fields']);
+
+        
+
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'Project List',
+                'title'   => 'Project List',
                 'banners' => $banners
             );
-                 $view_params['project_topics']=$this->init_models->selectproject();
-		$this->load->view('Projectlist', $view_params);
-	}
+
+
+       $this->input->load_query($query_id);
+
+        $query_array =   array(
+
+           'project_title'=> $this->input->post('project_name'),
+           'project_course'=> $this->input->post('course_name'),
+    );
+       //
+
+   $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
+  // echo $this->db->last_query();
+
+   $data['project']= $results['rows'];
+
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("Projectlist/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
+
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+//print_r($data);
+       $this->load->view('Projectlist',$data);
+
+    }
+
+
+
+    public function index($query_id = 0, $sort_by = 'project_name',$sort_order = 'asc', $offset = 0 ) {
+       
+   
+        $limit = 1;
+        $data['fields']= array(
+        'project_id'=>'project_id',
+        'project_title'=>'project_title',
+        'project_course'=>'project_course',
+        'project_format'=>'project_format',
+
+
+            );
+
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'Project List',
+                'title'   => 'Project List',
+                'banners' => $banners
+            );
+
+
+       $this->input->load_query($query_id);
+
+        $query_array =   array(
+
+           'project_title'=> $this->input->post('project_name'),
+           'project_course'=> $this->input->post('course_name'),
+    );
+       //
+
+   $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
+    $this->db->last_query();
+
+   $data['project']= $results['rows'];
+
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("Projectlist/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
+
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+//print_r($data);
+       $this->load->view('Projectlist',$data);
+    }
+
+
+
+    function search(){
+     
+       $query_array =   array(
+
+           'project_title'=> $this->input->post('project_name'),
+           'project_course'=> $this->input->post('course_name'),
+            );
+
+         $query_id = $this->input->save_query($query_array);
+
+         redirect("Projectlist/display/$query_id");
+
+
+    }
+
 }

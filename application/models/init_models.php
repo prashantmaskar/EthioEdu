@@ -415,6 +415,80 @@ $q->where('school_type',$query_array['school_type2']);
 
    }
 
+
+
+//Project Search
+
+      function get_project($limit, $start, $st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_projects where project_title like '%$st%' limit " . $start . ", " . $limit;
+        $query = $this->db->query($sql);
+         return $query->result_array();
+    }
+    function get_porject_count($st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select * from tbl_projects where project_title like '%$st%'";
+        $query = $this->db->query($sql);
+        return $query->num_rows();
+    }
+
+
+    function search_project($query_array, $limit,$offset, $sort_by,$sort_order){
+
+      $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('project_title','project_course');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'project_title';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_projects')
+                     ->where('project_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['project_title'])){
+$q->like('project_title',$query_array['project_title']);
+$q->where('project_approve = 1');
+    }
+       if (strlen($query_array['project_course'])){
+$q->where('project_course',$query_array['project_course'] );
+$q->where('project_approve = 1');
+    }
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+    $q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_projects')
+                  -> where('project_approve = 1') ;
+                 
+
+    if (strlen($query_array['project_title'])){
+$q->like('project_title',$query_array['project_title']);
+
+    }
+       if (strlen($query_array['project_course'])){
+$q->where('project_course',$query_array['project_course']);
+
+    }
+       
+  
+
+    $tem = $q->get()->result();
+    $ret['num_rows'] = $tem[0]->count;
+   return $ret;
+
+   }
+
+
+
        //News Search Result Query
 
    function search_news($query_array, $limit,$offset, $sort_by,$sort_order){

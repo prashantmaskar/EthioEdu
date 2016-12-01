@@ -116,7 +116,7 @@
      <?php }   ?>
 
 </datalist>
-<form id="sortproject" method="post" action="<?php echo base_url() . 'index.php/Projectlist' ?>">
+<form id="sortproject" method="post" action="<?php echo base_url() . 'index.php/Projectlist/search' ?>">
                          <div class="col m12 s12">
                             <div class="project_sort_form col m12">
                                 <div class="col s2">
@@ -196,19 +196,19 @@
                                 }
 
                                     ?>
-                                    <?php foreach($query->result_array() as $row){
+                                    <?php foreach($project as $row){
                                                        ?>
                                     <li class="project_content">
                                         <a href="#" class="vacancy_link">
-                                            <span class="project_title"><?php echo $row['project_title'];?></span><br>
+                                            <span class="project_title"><?php echo $row->project_title;?></span><br>
                                         </a>
-                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row['project_course'];?></a> Format: <a href="#"><?php echo $row['project_format'];?></a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
+                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Format: <a href="#"><?php echo $row->project_format;?></a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
                                     </li>
                                     <?php } ?>
                                    
 
                                 </ul>
-                                <ul class="pagination">
+                                <!--<ul class="pagination">
                                     <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                     <li class="active"><a href="#!">1</a></li>
                                     <li class="waves-effect"><a href="#!">2</a></li>
@@ -216,7 +216,8 @@
                                     <li class="waves-effect"><a href="#!">4</a></li>
                                     <li class="waves-effect"><a href="#!">5</a></li>
                                     <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
+                                </ul> -->
+                                <?php echo $pagination; ?>
                             </div>
                         </div>
 

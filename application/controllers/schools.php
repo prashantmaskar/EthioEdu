@@ -31,7 +31,7 @@ class schools extends CI_Controller {
     }
 
 
-    function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $offset = 0 ){
+function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $offset = 0 ){
 
 
         $limit = 1;
@@ -44,7 +44,16 @@ class schools extends CI_Controller {
 
 
             );
-        print_r( $data['fields']);
+        //print_r( $data['fields']);
+
+        
+
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'School',
+                'title'   => 'School',
+                'banners' => $banners
+            );
 
 
        $this->input->load_query($query_id);
@@ -114,6 +123,13 @@ class schools extends CI_Controller {
 
             );
 
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'School',
+                'title'   => 'School',
+                'banners' => $banners
+            );
+
 
        $this->input->load_query($query_id);
 
@@ -126,7 +142,7 @@ class schools extends CI_Controller {
        //
 
    $results = $this->init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
-   echo $this->db->last_query();
+   $this->db->last_query();
 
    $data['schools']= $results['rows'];
 
@@ -184,16 +200,5 @@ class schools extends CI_Controller {
     }
 
 
-
-    // public function index() {
-    //     $banners = $this->init_models->getadvertisebanners();
-    //     $view_params = array(
-    //         'm_title' => 'Schools',
-    //         'title' => 'Schools',
-    //         'banners' => $banners
-    //     );
-    //       $view_params['schools'] = $this->init_models->selectschool();
-    //     $this->load->view('schools',$view_params);
-    // }
 
 }

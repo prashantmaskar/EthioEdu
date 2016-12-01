@@ -75,11 +75,11 @@
                         <div class="row">
 <datalist id="schoolnames">
     <?php  foreach ($schools as $row){ ?>
-    <option value="<?php echo $row['school_name'];?>"><?php echo $row['school_name'];?></option>
+    <option value="<?php echo $row->school_name;?>"><?php echo $row->school_name;?></option>
      <?php }   ?>
 
 </datalist>
-                            <form class="col s12">
+                            <form class="col s12"  method="post" action="<?php echo base_url() . 'index.php/schools/search' ?>">
                                 <div class="row border-b">
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Schools Name:</h6>
@@ -102,7 +102,7 @@
                                     </div>
 
                                     <div class="input-field col s2">
-                                        <a id="serach_but_id"  class="waves-effect waves-light btn margin-t-15" >Search</a>
+                                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
                                     </div>
                                 </div>
 
@@ -122,7 +122,7 @@
                                             <div class="row">
                                                 <div class="col m6 offset-m2">
                                                     <div class="s_logo">
-                                                    <?php $img = $row['school_logo'];  ?>
+                                                    <?php $img = $row->school_logo;  ?>
                                                         <img src="<?php echo base_url().'uploads/'.$img ?>">
                                                         
                                                         
@@ -132,11 +132,11 @@
                 
                                                 <div class="col m12">
                                                     <div class="s_detail">
-                                                    <?php $sid = $row['school_id'];?>
-                                                        <h1><?php echo $row['school_name'];?></h1>
-                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row['user_email'];?></p>
-                                                        <p><i class=" red-text fa fa-phone"></i> <?php echo $row['school_number'];?></p>
-                                                        <p><?php echo $row['school_desc'];?></p>
+                                                    <?php $sid = $row->school_id;?>
+                                                        <h1><?php echo $row->school_name;?></h1>
+                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row->user_email;?></p>
+                                                        <p><i class=" red-text fa fa-phone"></i> <?php echo $row->school_number;?></p>
+                                                        <p><?php echo $row->school_desc;?></p>
                                                         <a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>">View More >></a>
                                                     </div>
                                                 </div>
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                     <div>
-                            <ul class="pagination">
+                          <!--  <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
                                 <li class="waves-effect"><a href="#!">2</a></li>
@@ -157,7 +157,8 @@
                                 <li class="waves-effect"><a href="#!">4</a></li>
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                            </ul>
+                            </ul> -->
+                            <?php echo $pagination; ?>
                   </div>
                     <div class="featured_schools col s12 m12">
 
