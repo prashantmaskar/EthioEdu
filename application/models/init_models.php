@@ -453,7 +453,6 @@ $q->where('post_date <=', $query_array['end_date']);
    }
 
 
-
      //Vacancy Search Result Query
 
    function search_vacancy($query_array, $limit,$offset, $sort_by,$sort_order){
@@ -502,10 +501,31 @@ $q->where('post_date <=', $query_array['end_date']);
 
    }
 
+   
+    function get_userby_email($email)
+    {
+        $sql = "select * from tbl_users where user_email='".$email."'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    } 
+
+     function setverificationkeyby_email($email, $key)
+    {
+        $data=array();
+        $data['verificationcode']=$key;
+        $this->db->where('user_email', $email);
+        return $this->db->update('tbl_users', $data);
+    } 
 
 
-
-
+     function resetpassbykey($email, $password)
+    {
+        $data=array();
+        $data['password']=$password;
+        $data['verificationcode']='';
+        $this->db->where('user_email', $email);
+        return $this->db->update('tbl_users', $data);
+    } 
 
 
 
