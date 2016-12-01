@@ -179,7 +179,14 @@
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
-<script>
+<script type="text/javascript">
+               
+               
+    var $toastContent = $('<span> Found <?php  echo $num_results ?> Schools</span>');
+  Materialize.toast($toastContent, 3000);
+
+</script>
+<!-- <script>
 $(document).ready(function()
 {
     $("#serach_but_id").click(function()
@@ -222,7 +229,7 @@ $(document).ready(function()
                           for (var i = 0; i < obj.length; i++)
                             {
 
-                         var rw = '<div class="col m3"><div class="row"><div class="col m6 offset-m2"><div class="s_logo"><img src=<?php echo base_url()?>/uploads/'  + obj[i].school_logo + '></div></div><div class="col m12"><div class="s_detail"><h1>' + obj[i].school_name + '</h1><p><i class="red-text fa fa-envelope"></i> '+ obj[i].school_type +'</p> <p><i class=" red-text fa fa-phone"></i>'+ obj[i].school_number +'</p> <p>'+ obj[i].school_desc +'</p><a href="<?php echo base_url().'index.php/schooldetails'?>">View More >></a></div></div></div></div>';
+                         var rw = '<div class="col m3"><div class="row"><div class="col m6 offset-m2"><div class="s_logo"><img src=<?php //echo base_url()?>/uploads/'  + obj[i].school_logo + '></div></div><div class="col m12"><div class="s_detail"><h1>' + obj[i].school_name + '</h1><p><i class="red-text fa fa-envelope"></i> '+ obj[i].school_type +'</p> <p><i class=" red-text fa fa-phone"></i>'+ obj[i].school_number +'</p> <p>'+ obj[i].school_desc +'</p><a href="<?php //echo base_url().'index.php/schooldetails'?>">View More >></a></div></div></div></div>';
                         $(".schools-row").append(rw);
                     }
                 },
@@ -236,4 +243,4 @@ $(document).ready(function()
     });
 
 });  
-</script>
+</script> -->

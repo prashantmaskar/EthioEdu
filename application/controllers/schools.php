@@ -25,20 +25,175 @@ class schools extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
+        $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
         $this->load->model('init_models');
     }
 
 
-    public function index() {
-        $banners = $this->init_models->getadvertisebanners();
-        $view_params = array(
-            'm_title' => 'Schools',
-            'title' => 'Schools',
-            'banners' => $banners
-        );
-          $view_params['schools'] = $this->init_models->selectschool();
-        $this->load->view('schools',$view_params);
+    function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $offset = 0 ){
+
+
+        $limit = 1;
+        $data['fields']= array(
+        'school_id'=>'school_id',
+        'school_name'=>'school_name',
+        'school_logo'=>'school_logo',
+        'school_number'=>'school_number',
+        'user_email'=>'user_email',
+
+
+            );
+        print_r( $data['fields']);
+
+
+       $this->input->load_query($query_id);
+
+        $query_array =   array(
+
+           'school_name'=> $this->input->get('school_name'),
+           'school_type1'=> $this->input->get('school_type1'),
+           'school_type2'=> $this->input->get('school_type2'),
+    );
+       //
+
+   $results = $this->init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
+  // echo $this->db->last_query();
+
+   $data['schools']= $results['rows'];
+
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("schools/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
+
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+//print_r($data);
+       $this->load->view('schools',$data);
+
     }
+
+
+
+    public function index($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $offset = 0 ) {
+       
+   
+        $limit = 1;
+        $data['fields']= array(
+        'school_id'=>'school_id',
+        'school_name'=>'school_name',
+        'school_logo'=>'school_logo',
+        'school_number'=>'school_number',
+        'user_email'=>'user_email',
+
+
+            );
+
+
+       $this->input->load_query($query_id);
+
+        $query_array =   array(
+
+           'school_name'=> $this->input->get('school_name'),
+           'school_type1'=> $this->input->get('school_type1'),
+           'school_type2'=> $this->input->get('school_type2'),
+    );
+       //
+
+   $results = $this->init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
+   echo $this->db->last_query();
+
+   $data['schools']= $results['rows'];
+
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("schools/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
+
+        //config for bootstrap pagination class integration
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+//print_r($data);
+       $this->load->view('schools',$data);
+    }
+
+
+
+    function search(){
+     
+       $query_array =   array(
+
+           'school_name'=> $this->input->post('school_name'),
+           'school_type1'=> $this->input->post('school_type1'),
+           'school_type2'=> $this->input->post('school_type2'),
+            );
+
+         $query_id = $this->input->save_query($query_array);
+
+         redirect("schools/display/$query_id");
+
+
+    }
+
+
+
+    // public function index() {
+    //     $banners = $this->init_models->getadvertisebanners();
+    //     $view_params = array(
+    //         'm_title' => 'Schools',
+    //         'title' => 'Schools',
+    //         'banners' => $banners
+    //     );
+    //       $view_params['schools'] = $this->init_models->selectschool();
+    //     $this->load->view('schools',$view_params);
+    // }
 
 }

@@ -52,11 +52,11 @@
                                         <label for="Caption">Username</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" name="password" class="validate">
+                                        <input id="Caption" type="password" name="password" class="validate">
                                         <label for="Caption">password</label>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                        <input id="Caption" name="cpassword" type="text" class="validate">
+                                        <input id="Caption" name="cpassword" type="password" class="validate">
                                         <label for="Caption"> verify password</label>
                                     </div>
                                       <div class=" col s2">
