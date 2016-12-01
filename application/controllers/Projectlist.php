@@ -31,7 +31,7 @@ class Projectlist extends CI_Controller {
 
 
 
-function display($query_id = 0, $sort_by = 'project_name',$sort_order = 'asc', $offset = 0 ){
+function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', $offset = 0 ){
 
 
         $limit = 1;
@@ -107,7 +107,7 @@ function display($query_id = 0, $sort_by = 'project_name',$sort_order = 'asc', $
 
 
 
-    public function index($query_id = 0, $sort_by = 'project_name',$sort_order = 'asc', $offset = 0 ) {
+    public function index($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', $offset = 0 ) {
        
    
         $limit = 1;
