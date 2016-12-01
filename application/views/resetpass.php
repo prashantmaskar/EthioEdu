@@ -15,7 +15,7 @@
         <div id="login-page" class="row">
             <div class="col s3 offset-s4 z-depth-2 card-panel">
             <?php echo $this->session->flashdata('msg'); ?>
-                <form class="login-form" action="<?php echo site_url('index.php/login/resetpassaction')?>" method="post">
+                <form id="resetpasswordform" class="login-form" action="<?php echo site_url('index.php/login/resetpassaction')?>" method="post">
                     <div class="row">
                         <div class="input-field col s12 center">
                             <h4>EthioEdu <?php echo $title;?></h4>
@@ -29,14 +29,14 @@
                         </div>
                     </div>
                     <div class="row no-margin">
-                        <div class="input-field col s12">,
-                            <input name="password" id="password" type="text">
+                        <div class="form-group  input-field col s12">,
+                            <input name="password" id="password" type="password">
                             <label for="password" class="center-align">New Password</label>
                         </div>
                     </div>
                     <div class="row no-margin">
-                        <div class="input-field col s12">,
-                            <input name="cpassword" id="cpassword" type="text" >
+                        <div class="form-group input-field col s12">,
+                            <input name="cpassword" id="cpassword" type="password" >
                             <label for="cpassword" class="center-align">Confirm Password</label>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
+                            <p class="margin medium-small"><a href="../sregister">Register Now!</a></p>
                         </div>
                         <div class="input-field col s6 m6 l6">
                             <p class="margin right-align medium-small"><a href="../login">Back to login</a></p>
@@ -57,13 +57,66 @@
                 </form>
             </div>
         </div>
+      
+
+
+
         <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/materialize.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/owl.carousel.min.js' ?>"></script>
         <script type="text/javascript" src="<?php echo base_url() . 'js/script.js' ?>"></script>
 
+        <!--<script type="text/javascript" src="<?php //echo base_url() . 'js/jquery-2.1.1.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php //echo base_url() . 'js/materialize.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php //echo base_url() . 'js/owl.carousel.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php //echo base_url() . 'js/jquery.validate.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php //echo base_url() . 'js/picker.js' ?>"></script>
+        <script type="text/javascript" src="<?php //echo base_url() . 'js/script.js' ?>"></script> -->
+        <script type="text/javascript" src="<?php echo base_url() . 'js/bootstrapValidator.js' ?>"></script>
+
+
+
     </body>
 </html>
 
 
+<script>
 
+$(document).ready(function() {
+
+    $('#resetpasswordform').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            
+      password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password cannot be empty'
+                    },
+                    identical: {
+                        field: 'cpassword',
+                        //message: 'The password and its confirm are not the same'
+                    }
+                }
+            },
+            cpassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The confirm password cannot be empty'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            }
+           
+           
+        }
+    });
+});
+</script>

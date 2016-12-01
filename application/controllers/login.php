@@ -93,8 +93,8 @@ class login extends CI_Controller {
   public function fergot_password()
   {
       $view_params = array(
-                'm_title' => 'Ferget Password',
-                'title'   => 'Ferget Password',
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
             );
     $this->load->view('fergetpass',$view_params);
   }
@@ -117,7 +117,7 @@ class login extends CI_Controller {
              $this->email->to($to_email);
              $this->email->subject('Ferget Password Link'); 
              $this->email->message('Please <a href="'.base_url().'index.php/login/resetpassword?email='.$to_email.'&key='.$key.'" >Click here</a> to reset password '); 
-              
+              //remove this var_dump when uploded to server
               var_dump('Please <a href="'.base_url().'index.php/login/resetpassword?email='.$to_email.'&key='.$key.'" >Click here</a> to reset password ');
              //Send mail 
              if($this->email->send()) {
@@ -135,8 +135,8 @@ class login extends CI_Controller {
          
      }
      $view_params = array(
-                'm_title' => 'Ferget Password',
-                'title'   => 'Ferget Password',
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
             );
     $this->load->view('fergetpass',$view_params);
          
@@ -156,16 +156,16 @@ class login extends CI_Controller {
         }else{
             $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
             $view_params = array(
-                        'm_title' => 'Ferget Password',
-                        'title'   => 'Ferget Password',
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
                     );
             $this->load->view('fergetpass',$view_params);
         }
      }else{
         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
         $view_params = array(
-                'm_title' => 'Ferget Password',
-                'title'   => 'Ferget Password',
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
             );
           $this->load->view('fergetpass',$view_params);
      }
@@ -186,8 +186,8 @@ class login extends CI_Controller {
           }else{
             $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Something went wrong!</div>');
             $view_params = array(
-                        'm_title' => 'Ferget Password',
-                        'title'   => 'Ferget Password',
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
                     );
             $this->load->view('fergetpass',$view_params);
           }
@@ -196,16 +196,16 @@ class login extends CI_Controller {
          }else{
             $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
             $view_params = array(
-                        'm_title' => 'Ferget Password',
-                        'title'   => 'Ferget Password',
+                        'm_title' => 'Forgot Password',
+                        'title'   => 'Forgot Password',
                     );
             $this->load->view('fergetpass',$view_params);
         }
      }else{
         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Record not found!</div>');
         $view_params = array(
-                'm_title' => 'Ferget Password',
-                'title'   => 'Ferget Password',
+                'm_title' => 'Forgot Password',
+                'title'   => 'Forgot Password',
             );
           $this->load->view('fergetpass',$view_params);
      }
