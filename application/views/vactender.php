@@ -65,17 +65,17 @@
                                         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
 
                                     }
-                                foreach ($query->result_array() as $row){ ?>
+                                foreach ($vacancy as $row){ ?>
 
                                     <li class="vacancy_content">
-                                     <?php $vac_id = $row['vacancy_id'];
+                                     <?php $vac_id = $row->vacancy_id;
                                         ?>
                                         <a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>" class="vacancy_link">
-                                            <span class="vacancy_title"><?php echo $row['vacancy_name']; ?></span>
+                                            <span class="vacancy_title"><?php echo $row->vacancy_name; ?></span>
                                         </a>
                                         <span class="tender_sinfo"><strong><span class="t_date">Last Date: <?php 
-                                        echo $row['vacancy_to_date']; ?></span>&nbsp;</strong><?php
-                                         $desc= $row['vacancy_desc'];
+                                        echo $row->vacancy_to_date; ?></span>&nbsp;</strong><?php
+                                         $desc= $row->vacancy_desc;
                                          $limitdesc = substr($desc,0,80);
                                         $etc = '...';
                                         echo $limitdesc."".$etc;
@@ -84,7 +84,7 @@
                                     <?php } ?>
                                    </ul>
 
-                                <ul class="pagination">
+                             <!--   <ul class="pagination">
                                     <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                     <li class="active"><a href="#!">1</a></li>
                                     <li class="waves-effect"><a href="#!">2</a></li>
@@ -92,7 +92,8 @@
                                     <li class="waves-effect"><a href="#!">4</a></li>
                                     <li class="waves-effect"><a href="#!">5</a></li>
                                     <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
+                                </ul> -->
+                                <?php echo $pagination; ?>
                             </div>
 							
                         </div>

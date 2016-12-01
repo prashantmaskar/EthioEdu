@@ -454,6 +454,59 @@ $q->where('post_date <=', $query_array['end_date']);
 
 
 
+     //Vacancy Search Result Query
+
+   function search_vacancy($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'vacancy_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_vacancy')
+                     ->where('vacancy_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_posts')
+                   -> where('post_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('post_date >=', $query_array['start_date']);
+$q->where('post_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
+
+
 
 
 

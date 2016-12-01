@@ -37,9 +37,13 @@ class News extends CI_Controller {
         'news_title'=>'news_title',
         'news_author'=>'news_author',
         'news_category'=>'news_category',
-        
+            );
 
-
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'News Search',
+                'title'   => 'News Search',
+                'banners' => $banners
             );
 
 
@@ -101,16 +105,20 @@ class News extends CI_Controller {
 	{
  
         $limit = 1;
-        $banners = $this->init_models->getadvertisebanners();
+        
         $data['fields']= array(
         'news_id'=>'news_id',
         'news_title'=>'news_title',
         'news_author'=>'news_author',
         'news_category'=>'news_category',
-        'banners' => $banners
         
+            );
 
-
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'News',
+                'title'   => 'News',
+                'banners' => $banners
             );
 
 
