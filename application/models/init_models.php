@@ -549,6 +549,62 @@ $q->where('vacancy_date <=', $query_array['end_date']);
 
    }
 
+
+
+
+   //Event Search Result Query
+
+   function search_question($query_array, $limit,$offset, $sort_by,$sort_order){
+
+   $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('start_date','end_date');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'question_date';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_questions')
+                     ->where('question_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+   
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('question_date >=', $query_array['start_date']);
+$q->where('question_date <=', $query_array['end_date']);
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+     $q = $this->db->select('count(*) as count', FALSE)
+                   ->from('tbl_questions')
+                   -> where('question_approve = 1') ;
+                 
+
+    if(strlen($query_array['start_date'])){
+
+$q->where('question_date >=', $query_array['start_date']);
+$q->where('question_date <=', $query_array['end_date']);
+    }
+  
+
+     $tem = $q->get()->result();
+      $ret['num_rows'] = $tem[0]->count;
+    return $ret;
+
+   }
+
+
+
+
+
+
    
     function get_userby_email($email)
     {
