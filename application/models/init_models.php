@@ -63,6 +63,7 @@
       {
         return $this->db->insert('tbl_questions', $data);
       }
+      
        public function insert_contact($data)
       {
         return $this->db->insert('tbl_contact', $data);
@@ -165,6 +166,7 @@
         $query = $this->db->query("select * from tbl_vacancy"); 
         return $query->result_array();
       }
+      
       public function selectalluser()
       {  
         $query = $this->db->query("select * from tbl_users"); 
@@ -324,7 +326,17 @@ public function edit_front_user($data){
       }
 
 
+public function insert_response($data)
+      {
+        return $this->db->insert('tbl_userresponse', $data);
+      }
 
+
+      public function selectresponse()
+      {  
+        $query = $this->db->query("select * from tbl_userresponse"); 
+        return $query->result_array();
+      }
 
       function get_school($limit, $start, $st = NULL)
     {

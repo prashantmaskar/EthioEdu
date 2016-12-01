@@ -26,6 +26,7 @@ class ansQues extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+         $sessname = $this->session->userdata('susername');
     }
 
 
@@ -37,6 +38,7 @@ class ansQues extends CI_Controller {
                 'title'   => 'ansQues',
                 'banners' => $banners
             );
+                 $view_params['response'] = $this->init_models->selectresponse();
 		$this->load->view('ansQues', $view_params);
 		
 		if(isset($_POST['action'])){
@@ -49,17 +51,20 @@ class ansQues extends CI_Controller {
 		$time = date('h:i:s A', time());
 		$sessid= $this->session->userdata('suserid');
 		$data=array(
-			'post_title' =>$this->input->post('caption'),
-			'post_desc' =>$this->input->post('Description'),
-			'post_date' => $date,
-			'post_time' => $time,
+			'response_title' =>$this->input->post('caption'),
+			'response_desc' =>$this->input->post('Description'),
+			'response_like' =>$this->input->post('response_like'),
+             'response_type' =>$this->input->post('response_type'),
+			'response_date' => $date,
+			'response_time' => $time,
+			'question_id' =>$this->input->post('question_id'),
 		    'user_id' => $sessid
 			);
-		if ($this->init_models->insert_question($data))
+		if ($this->init_models->insert_response($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Answer posted Successfully'); 
-            redirect("index.php/QuesAns");
+            redirect("index.php/home");
             }
 	}
 }
