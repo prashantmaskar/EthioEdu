@@ -59,7 +59,8 @@
 
                                     }
 
-
+                                    $resultcount = count($event);
+                                    if($resultcount >= 1){
                              foreach($event as $row)
                                 { ?>
                            <?php $event_id = $row->post_id;
@@ -87,7 +88,10 @@
                                            
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                    <?php }}else{
+
+                                        echo "Result Not Found";
+                                        } ?>
                                     <?php echo $pagination; ?>
                                 </div>
                             </div>

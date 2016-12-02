@@ -65,6 +65,8 @@
                                         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
 
                                     }
+                                    $resultcount = count($vacancy);
+                                    if($resultcount >= 1){
                                 foreach ($vacancy as $row){ ?>
 
                                     <li class="vacancy_content">
@@ -81,7 +83,10 @@
                                         echo $limitdesc."".$etc;
                                         ?></span>
                                     </li>
-                                    <?php } ?>
+                                    <?php }}else{
+
+                                        echo "Result Not Found";
+                                        } ?>
                                    </ul>
 
                              <!--   <ul class="pagination">

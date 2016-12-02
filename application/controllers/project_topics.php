@@ -47,15 +47,15 @@ class Project_topics extends CI_Controller {
 		}
 	}
 	function insertproject(){
-        date_default_timezone_set('Asia/Kolkata');
+        /*date_default_timezone_set('Asia/Kolkata');
             $docPrefix = date("d-m-Y-h-i"); 
-            $docname = $docPrefix.$value['name'];
+            $docname = $docPrefix.$value['name'];*/
 
 		 $config['upload_path']          = './uploads/Documents';
                 $config['allowed_types']        = 'pdf|docx|doc|rtf';
                 $config['max_size']             = 100000;
-                $config['file_name'] = $docname; // set the name here
-
+                /*$config['file_name'] = $docname; // set the name here
+*/
                 $this->load->library('upload', $config);
 
                 if ( ! $this->upload->do_upload('fileformat'))

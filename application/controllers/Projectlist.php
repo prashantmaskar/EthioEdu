@@ -59,16 +59,16 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
         $query_array =   array(
 
-           'project_title'=> $this->input->post('project_name'),
-           'project_course'=> $this->input->post('course_name'),
+           'project_title'=> $this->input->get('project_title'),
+           'project_course'=> $this->input->get('project_course'),
     );
        //
 
    $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
-  // echo $this->db->last_query();
+   echo $this->db->last_query();
 
    $data['project']= $results['rows'];
-
+   //print_r($data['project']);
    $data['num_results'] = $results['num_rows'];
     
     $config = array();
@@ -100,7 +100,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-//print_r($data);
+$data['project_topics']=$this->init_models->selectproject();
        $this->load->view('Projectlist',$data);
 
     }
@@ -132,8 +132,8 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
         $query_array =   array(
 
-           'project_title'=> $this->input->post('project_name'),
-           'project_course'=> $this->input->post('course_name'),
+           'project_title'=> $this->input->get('project_title'),
+           'project_course'=> $this->input->get('project_course'),
     );
        //
 
@@ -173,7 +173,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-//print_r($data);
+$data['project_topics']=$this->init_models->selectproject();
        $this->load->view('Projectlist',$data);
     }
 

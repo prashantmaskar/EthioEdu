@@ -90,13 +90,13 @@
                                     </div>
                                     <div class="input-field col s12 m2">
                                         <p>
-                                            <input type="checkbox" id="privates" value="private" name="school_type[]" />
+                                            <input type="radio" id="privates" value="private" name="school_type1" />
                                             <label for="privates">Private School</label>
                                         </p>
                                     </div>
                                     <div class="input-field col s12 m2">
                                         <p>
-                                            <input type="checkbox" value="public" id="publics" name="school_type[]"/>
+                                            <input type="radio" value="public" id="publics" name="school_type1"/>
                                             <label for="publics">Public School</label>
                                         </p>
                                     </div>
@@ -116,7 +116,8 @@
                                 <div class="school_short_info ">
                                     <div class="row schools-row">
                                 <?php
-               
+                                 $resultcount = count($schools);
+                                    if($resultcount >= 1){
                                 foreach ($schools as $row){ ?>
                                         <div class="col m3">
                                             <div class="row">
@@ -144,7 +145,10 @@
 
                                             </div>
                                         </div>
-                                        <?php }   ?>
+                                        <?php }}else{
+
+                                        echo "Result Not Found";
+                                        }    ?>
                            
                         </div>
                     </div>

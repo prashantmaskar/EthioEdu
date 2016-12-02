@@ -64,7 +64,8 @@
                                         $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
 
                                     }
-                                    //echo $data;
+                                   $resultcount = count($news);
+                                    if($resultcount >= 1){
                                 foreach ($news as $row){ ?>
                                     <li class="news_content">
                                         <?php $news_id = $row->post_id;
@@ -75,7 +76,10 @@
                                             </span></span>
                                     </li>
 
-                                <?php } ?>
+                                <?php }}else{
+
+                                        echo "Result Not Found";
+                                        } ?>
                                 </ul>
                                 <?php echo $pagination; ?>
                             </div>

@@ -309,9 +309,7 @@ $(document).ready(function() {
             },
              password: {
                 validators: {
-                    notEmpty: {
-                        message: 'The password is required and can\'t be empty'
-                    },
+                   
                     identical: {
                         field: 'cpassword',
                         message: 'The password and its confirm are not the same'
@@ -320,9 +318,7 @@ $(document).ready(function() {
             },
             cpassword: {
                 validators: {
-                    notEmpty: {
-                        message: 'The confirm password is required and can\'t be empty'
-                    },
+                   
                     identical: {
                         field: 'password',
                         message: 'The password and its confirm are not the same'

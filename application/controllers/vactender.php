@@ -25,7 +25,6 @@ class vactender extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
-        $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
     }
@@ -55,8 +54,8 @@ class vactender extends CI_Controller {
 
         $query_array =   array(
 
-           'start_date'=> $this->input->get('vacd1'),
-           'end_date'=> $this->input->get('vacd2'),
+           'start_date'=> $this->input->get('start_date'),
+           'end_date'=> $this->input->get('end_date'),
            
     );
         //print_r($query_array);
@@ -129,8 +128,8 @@ class vactender extends CI_Controller {
 
         $query_array =   array(
 
-           'start_date'=> $this->input->get('vacd1'),
-           'end_date'=> $this->input->get('vacd2'),
+           'start_date'=> $this->input->get('start_date'),
+           'end_date'=> $this->input->get('end_date'),
            
     );
        //

@@ -5,6 +5,7 @@
                     <div class="udetail_container  ">
                         <div class="row">
                          <?php $sessid= $this->session->userdata('suserid');
+                         $sessname = $this->session->userdata('susername');
 
                         $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
                         
@@ -29,21 +30,54 @@
                                 </div>
                                 </div>
                             </div>
+                            <?php
+                            $query = $this->db->query("(select user_id, post_date, post_time, post_title, post_type as type, post_id as id from tbl_posts where post_approve = 1)");
+
+                            ?>
                             <div class="col m8 s12 ">
                               <div class="row">
                                   <div class="col s12 m12 card-panel">
                                       <div class="container-header">
+                                      <?Php //print_r($query->result_array()); ?>
+                                          <?php foreach($query->result_array() as $row){ 
+                                            $id = $row['id'];
+                                            ?>
+                                            <?php if($row['type'] == 'event'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
                                                   <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p>prashant007 completed his 1st Free CBT exam</p>
-                                                  <p class="activity-date grey-text">25-sep-2016</p>
+                                                  <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/event_details?id='.$id?>"><?php echo $row['post_title']; ?></a> Event </p>
+                                                  <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
-                                          </div>
+                                          </div>    
+                                          <?php } ?>
+                                          <?php if($row['type'] == 'news'){?>
+                                          <div class="row no-margin">
+                                              <div class="col s1">
+                                                  <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
+                                              </div>
+                                              <div class="col s9">
+                                                  <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/news_detail?id='.$id?>"><?php echo $row['post_title']; ?></a> News </p>
+                                                  <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
+                                              </div>
+                                          </div>    
+                                          <?php } ?>
+                                          <?php if($row['type'] == 'gist'){?>
+                                          <div class="row no-margin">
+                                              <div class="col s1">
+                                                  <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
+                                              </div>
+                                              <div class="col s9">
+                                                  <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/gist'?>"><?php echo $row['post_title']; ?></a> Gist </p>
+                                                  <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
+                                              </div>
+                                          </div>    
+                                          <?php } ?>
+                                          <?php } ?>
                                       </div>
-                                      <div class="container-content">all data from database</div>
+                                      <div class="container-content"></div>
                                   </div>
                       
 

@@ -39,8 +39,8 @@ class course extends CI_Controller {
         // );
 $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
-                'm_title' => 'Search',
-                'title'   => 'Search',
+                'm_title' => 'Course',
+                'title'   => 'Course',
                 'banners' => $banners
 
             );
@@ -78,7 +78,7 @@ $banners = $this->init_models->getadvertisebanners();
 
         //call the model function to get the schools data
         $view_params['course'] = $this->init_models->selectcourse($config["per_page"], $data['page']);           
-
+        //print_r($view_params['course']);
         $view_params['pagination'] = $this->pagination->create_links();
 //          $view_params['schools'] = $this->init_models->selectschool();
          
@@ -91,8 +91,8 @@ $banners = $this->init_models->getadvertisebanners();
         
           $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
-                'm_title' => 'Search',
-                'title'   => 'Search',
+                'm_title' => 'Course Search',
+                'title'   => 'Course Search',
                 'banners' => $banners
 
             );

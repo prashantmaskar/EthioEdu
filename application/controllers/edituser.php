@@ -45,7 +45,7 @@ class edituser extends CI_Controller {
 
  if(isset($_POST['uaction'])){
    $epass =  $this->input->post('password');
-    if(isset($epass)){
+    if(!$epass == ""){
         $this->addfrontuser();
         echo"IN ";
     }else{
@@ -87,7 +87,7 @@ public function editfrontuser(){
                    'first_name' => $this->input->post('first_name'),
                     'last_name' => $this->input->post('last_name'),
                     'user_email' => $this->input->post('email'),
-                    'user_role' => $this->input->post('role'),
+                   // 'user_role' => $this->input->post('role'),
 
 
                 );

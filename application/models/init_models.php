@@ -292,9 +292,13 @@ public function edit_front_user($data){
         $fname = $data['first_name'];
         $lname = $data['last_name'];
         $email = $data['user_email'];
-        $role = $data['role'];
-         $query = $this->db->query("insert into tbl_users (username, first_name, last_name, user_email, role) values('".$uname."', '".$fname."', '".$lname."', '".$email."', '".$role."') where user_id ='".$id."'"); 
-        return $query->result_array();
+        $this->db->set('username', $uname);
+        $this->db->set('first_name', $fname);
+        $this->db->set('last_name', $lname);
+        $this->db->set('user_email', $email);
+        $this->db->where('user_id', $id);
+        return $this->db->update('tbl_users', $data);
+
       }
       
 
@@ -465,19 +469,18 @@ $q->where('project_approve = 1');
 
     //count result
 
-    $q = $this->db->select('count(*) as count', FALSE)
-                  ->from('tbl_projects')
-                  -> where('project_approve = 1') ;
+   $q = $this->db->select('count(*) as count', FALSE)
+                       ->from('tbl_projects')
+                   -> where('project_approve = 1') ;
                  
 
     if (strlen($query_array['project_title'])){
-$q->like('project_title',$query_array['project_title']);
+ $q->like('project_title',$query_array['project_title']);
 
-    }
-       if (strlen($query_array['project_course'])){
-$q->where('project_course',$query_array['project_course']);
-
-    }
+     }
+      if (strlen($query_array['project_course'])){
+ $q->where('project_course',$query_array['project_course']);
+     }
        
   
 

@@ -31,9 +31,11 @@ class userdashboard extends CI_Controller {
 
 
     public function index() {
+        $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'userdashboard',
-            'title' => 'Connect2Me'
+            'title' => 'Connect2Me',
+            'banners' => $banners
         );
         $this->load->view('userdashboard',$view_params);
     }

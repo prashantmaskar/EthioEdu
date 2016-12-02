@@ -196,7 +196,11 @@
                                 }
 
                                     ?>
-                                    <?php foreach($project as $row){
+                                    <?php 
+
+                                    $resultcount = count($project);
+                                    if($resultcount >= 1){
+                                    foreach($project as $row){
                                                        ?>
                                     <li class="project_content">
                                         <a href="#" class="vacancy_link">
@@ -204,7 +208,10 @@
                                         </a>
                                          <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Format: <a href="#"><?php echo $row->project_format;?></a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
                                     </li>
-                                    <?php } ?>
+                                    <?php }}else{
+
+                                        echo "Result Not Found";
+                                        } ?>
                                    
 
                                 </ul>
