@@ -87,4 +87,63 @@
                                 </section>
                             </div>
                         </div>
+                          <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.min.js' ?>"></script> 
                         <?php  $this->load->view('admin/footer'); ?>
+
+
+
+<script>
+$(document).ready(function() {
+    
+
+    $('#edittips').bootstrapValidator({
+
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            
+            
+            caption:{
+                 validators:{
+                    notEmpty:{
+                        message:'Please enter caption!!!'
+                    },
+                    /*regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The Name can consist of alphabetical characters and spaces only'
+                    }*/
+                }
+            },
+        
+         
+            Description: {
+                validators: {
+                    notEmpty: {
+                        message: ' description reqired!!!..'
+                           
+                    }
+                }
+            },
+            
+          avatar:{
+            validators:{
+                notEmpty:{
+                    message:'please select an image'
+                },
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           }
+     
+        }
+    });
+});
+
+</script>
