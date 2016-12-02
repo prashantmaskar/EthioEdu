@@ -33,7 +33,7 @@ class Projectlist extends CI_Controller {
 
 function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', $offset = 0 ){
 
-
+//echo"<script>alert($this->input->get('cat'));</script>";
         $limit = 1;
         $data['fields']= array(
         'project_id'=>'project_id',
@@ -61,11 +61,14 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
            'project_title'=> $this->input->get('project_title'),
            'project_course'=> $this->input->get('project_course'),
+           'project_category'=> $this->input->get('project_category'),
     );
+
+        //print_r($query_array);
        //
 
    $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
-   echo $this->db->last_query();
+   //echo $this->db->last_query();
 
    $data['project']= $results['rows'];
    //print_r($data['project']);
@@ -108,8 +111,8 @@ $data['project_topics']=$this->init_models->selectproject();
 
 
     public function index($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', $offset = 0 ) {
-       
-   
+    
+   //echo"sdfsdf". $this->input->post('cat');
         $limit = 1;
         $data['fields']= array(
         'project_id'=>'project_id',
@@ -134,6 +137,8 @@ $data['project_topics']=$this->init_models->selectproject();
 
            'project_title'=> $this->input->get('project_title'),
            'project_course'=> $this->input->get('project_course'),
+           'project_category'=> $this->input->get('project_category'),
+
     );
        //
 
@@ -185,7 +190,9 @@ $data['project_topics']=$this->init_models->selectproject();
 
            'project_title'=> $this->input->post('project_name'),
            'project_course'=> $this->input->post('course_name'),
+           'project_category'=> $this->input->get('category'),
             );
+
 
          $query_id = $this->input->save_query($query_array);
 

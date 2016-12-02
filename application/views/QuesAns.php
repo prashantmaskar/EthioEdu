@@ -24,85 +24,85 @@
 						<div>
 
 			                <div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Accounting (407)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Accounting (407)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Agricultural Science (140)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Agricultural Science (140)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Architecture (84)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Architecture (84)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Art (331)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Art (331)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Biological Science (184)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Biological Science (184)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Biology (972)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Biology (972)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Chemistry (1223)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Chemistry (1223)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Commerce (97)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Commerce (97)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Computer (249)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Computer (249)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span class="heading3">CRK/CRS (99)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span class="heading3">CRK/CRS (99)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Current Affairs (163)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Current Affairs (163)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Economics (458)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Economics (458)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span>Education (447)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span>Education (447)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Engineering (460)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Engineering (460)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >English Language (690)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >English Language (690)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Geography (109)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Geography (109)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Government (555)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Government (555)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >IRK/IRS (14)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >IRK/IRS (14)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Language (27)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Language (27)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Law (238)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Law (238)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Literature in English (328)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Literature in English (328)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Management (164)</span></a>
+							<a href="v<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Management (164)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Mathematics (1119)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Mathematics (1119)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Medical Science (540)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Medical Science (540)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Physical Science (58)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Physical Science (58)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Physics (1079)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Physics (1079)</span></a>
 							</div>
 							<div style="float:left; width:200px; margin-top:5px; margin-bottom:5px">
-							<a href="#"><span >Social Science (446)</span></a>
+							<a href="<?php echo base_url() . 'index.php/QuesAns/search?category=Accounting' ?>"><span >Social Science (446)</span></a>
 							</div>
 
 

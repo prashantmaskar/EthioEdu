@@ -442,7 +442,7 @@ $q->where('school_type',$query_array['school_type2']);
     function search_project($query_array, $limit,$offset, $sort_by,$sort_order){
 
       $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
-      $sort_columns =  array('project_title','project_course');
+      $sort_columns =  array('project_title','project_course','project_category');
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'project_title';
 
 
@@ -459,6 +459,12 @@ $q->where('project_approve = 1');
     }
        if (strlen($query_array['project_course'])){
 $q->where('project_course',$query_array['project_course'] );
+$q->where('project_approve = 1');
+    }
+
+
+    if (strlen($query_array['project_category'])){
+$q->where('project_category',$query_array['project_category'] );
 $q->where('project_approve = 1');
     }
  
@@ -480,6 +486,10 @@ $q->where('project_approve = 1');
      }
       if (strlen($query_array['project_course'])){
  $q->where('project_course',$query_array['project_course']);
+     }
+
+     if (strlen($query_array['project_category'])){
+ $q->where('project_category',$query_array['project_category']);
      }
        
   
@@ -646,7 +656,7 @@ $q->where('vacancy_date <=', $query_array['end_date']);
    function search_question($query_array, $limit,$offset, $sort_by,$sort_order){
 
    $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
-      $sort_columns =  array('start_date','end_date');
+      $sort_columns =  array('start_date','end_date','question_category');
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'question_date';
 
 
@@ -662,6 +672,12 @@ $q->where('vacancy_date <=', $query_array['end_date']);
 $q->where('question_date >=', $query_array['start_date']);
 $q->where('question_date <=', $query_array['end_date']);
     }
+
+     if (strlen($query_array['question_category'])){
+$q->where('question_category',$query_array['question_category'] );
+$q->where('question_approve = 1');
+    }
+
 
  
 
@@ -681,6 +697,10 @@ $q->where('question_date <=', $query_array['end_date']);
 $q->where('question_date >=', $query_array['start_date']);
 $q->where('question_date <=', $query_array['end_date']);
     }
+
+    if (strlen($query_array['question_category'])){
+ $q->where('question_category',$query_array['question_category']);
+     }
   
 
      $tem = $q->get()->result();

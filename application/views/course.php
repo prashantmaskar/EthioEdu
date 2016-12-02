@@ -119,23 +119,3 @@
             </div>
         </div>
 <?php $this->load->view('footer'); ?>
-<script>
- function cstatus(id){
-                var status_id = id;
-            if (confirm('Sure to Approve ?'))
-                    {
-                        $.ajax({
-                            context: this,
-                            type: 'POST',
-                            url: "approve_delete",
-                            data: {status_id},
-                            success: function(data) {
-                                console.log(data);
-                                location.reload();
-
-
-                            }
-                        });
-                    }
-                }
-                </script>

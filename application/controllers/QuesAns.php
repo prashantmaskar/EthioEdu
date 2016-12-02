@@ -55,6 +55,7 @@ class QuesAns extends CI_Controller {
 
            'start_date'=> $this->input->get('start_date'),
            'end_date'=> $this->input->get('end_date'),
+           'question_category'=> $this->input->get('question_category'),
            
     );
        //
@@ -131,6 +132,7 @@ class QuesAns extends CI_Controller {
 
            'start_date'=> $this->input->get('start_date'),
            'end_date'=> $this->input->get('end_date'),
+           'question_category'=> $this->input->get('question_category'),
            
     );
        //
@@ -196,6 +198,7 @@ class QuesAns extends CI_Controller {
            
            'start_date'=> $startdate,
            'end_date'=> $enddate,
+           'question_category'=> $this->input->get('category'),
             );
 
 

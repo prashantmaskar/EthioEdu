@@ -24,84 +24,18 @@
                         <div class="col s12 m12 ">
                             <div class="school_category_box">
                             <ul class="s_category_list">
-                                    <li class="catrgory_list_item"><a href="#">Administration Project Topics(2)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Agricultural Project Topics(3)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Art & Humanities Project Topics(23)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Education Project Topics(12)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Engineering,Environment $ Technology Project Topics(1)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Low Project Topics(4)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Medical,Pharmaceutical & Health Science Project Topics(4)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Sciences Project Topics(5)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Social & Management Sciences Project Topics(66)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Administration Project Topics(2)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Agricultural' ?>">Agricultural Project Topics(3)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Art & Humanities Project Topics(23)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Education' ?>">Education Project Topics(12)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Engineering,Environment $ Technology Project Topics(1)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Low Project Topics(4)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?cat=Administration' ?>">Medical,Pharmaceutical & Health Science Project Topics(4)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Sciences Project Topics(5)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?cat=Administration' ?>">Social & Management Sciences Project Topics(66)</a></li>
                                     
 
                                 </ul>
-                                <!-- <ul class="project_list">
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>" class="project_link">
-                                            <span class="Project_title">Administration Project Topics</span><span> [9]</span>
-                                        </a>
-                                       
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Agricultural Project Topics</span><span> [9]</span>
-                                        </a>
-                                        
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Art & Humanities Project Topics</span><span> [9]</span>
-                                        </a>
-                                       
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Education Project Topics</span><span> [9]</span>
-                                        </a>
-                                      
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Engineering,Environment $ Technology Project Topics</span><span> [9]</span>
-                                        </a>
-                                      
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Low Project Topics</span><span> [9]</span>
-                                        </a>
-                                       
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Medical,Pharmaceutical & Health Science Project Topics</span><span> [9]</span>
-                                        </a>
-                                      
-                                    </li>
-                                    <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Sciences Project Topics</span><span> [9]</span>
-                                        </a>
-                                      
-                                    </li>
-                                         <li class="project_content">
-                                        <a href="<?php //echo base_url().'index.php/project_details'?>"  class="project_link">
-                                            <span class="Project_title">Social & Management Sciences Project Topics</span><span> [9]</span>
-                                        </a>
-                                       
-                                    </li>
-                                </ul>
- -->
-                                <!-- <ul class="pagination">
-                                    <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-                                    <li class="active"><a href="#!">1</a></li>
-                                    <li class="waves-effect"><a href="#!">2</a></li>
-                                    <li class="waves-effect"><a href="#!">3</a></li>
-                                    <li class="waves-effect"><a href="#!">4</a></li>
-                                    <li class="waves-effect"><a href="#!">5</a></li>
-                                    <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                                </ul> -->
                             </div>
                         </div>
                         <datalist id="projectnames">
