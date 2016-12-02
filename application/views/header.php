@@ -59,7 +59,7 @@
 
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
- <li><a href="<?php echo base_url() . 'edituser' ?>">Edit Profile</a></li>
+ <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
     <li><a href="#!">Inbox( )</a></li>
       <li class="divider"></li>
     <li><a href="#!">Comments( )</a></li>
