@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/style.css' ?>" />
 
     </head>
+    
     <body class="red-gradient-bg">
         <div id="login-page" class="row">
             <div class="col s3 offset-s4 z-depth-2 card-panel">

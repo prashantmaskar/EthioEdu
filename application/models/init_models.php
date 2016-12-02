@@ -12,7 +12,7 @@
       //Select User tables data    
       public function get_user_credentials($username, $password)  
       {  
-          $query = $this->db->query("SELECT * FROM tbl_users where username='".$username."'  and password = '" . md5($password) . "'");
+          $query = $this->db->query("SELECT * FROM tbl_users where BINARY username='".$username."'  and password = '" . md5($password) . "'");
          return $query->result_array();
       }
 
