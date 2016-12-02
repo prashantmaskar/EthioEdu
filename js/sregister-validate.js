@@ -58,7 +58,8 @@ $(document).ready(function() {
                     identical: {
                         field: 'cpassword',
                         message: 'The password and its confirm are not the same'
-                    }
+                    },
+                    
                 }
             },
             cpassword: {
