@@ -666,12 +666,14 @@ $q->where('vacancy_date <=', $query_array['end_date']);
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
    
-
+$sdate = $query_array['start_date'];
+if(!$sdate == ""){
     if(strlen($query_array['start_date'])){
 
 $q->where('question_date >=', $query_array['start_date']);
 $q->where('question_date <=', $query_array['end_date']);
     }
+  }
 
      if (strlen($query_array['question_category'])){
 $q->where('question_category',$query_array['question_category'] );
