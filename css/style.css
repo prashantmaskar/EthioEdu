@@ -103,6 +103,17 @@ nav .brand-logo {
 
 }
 
+
+.user-avatar .profile-image {
+    max-width: 100%;
+    vertical-align: middle;
+    width: 28px;
+}
+
+.user-avatar{
+    display: inline-block;
+}
+
 .header-top .dropdown-content li{
     min-height: 0px;
 }
