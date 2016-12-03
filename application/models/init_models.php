@@ -361,7 +361,7 @@ public function insert_response($data)
     function search($query_array, $limit,$offset, $sort_by,$sort_order){
 
       $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
-      $sort_columns =  array('school_name','school_type1','school_type2');
+      $sort_columns =  array('school_name','school_type1','school_category');
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'school_name';
 
 
@@ -381,8 +381,8 @@ $q->where('school_approve = 1');
 $q->where('school_type',$query_array['school_type1'] );
 $q->where('school_approve = 1');
     }
-       if (strlen($query_array['school_type2'])){
-$q->where('school_type',$query_array['school_type2'] );
+       if (strlen($query_array['school_category'])){
+$q->where('school_category',$query_array['school_category'] );
 $q->where('school_approve = 1');
     }
 
@@ -407,8 +407,8 @@ $q->like('school_name',$query_array['school_name']);
 $q->where('school_type',$query_array['school_type1']);
 
     }
-       if (strlen($query_array['school_type2'])){
-$q->where('school_type',$query_array['school_type2']);
+       if (strlen($query_array['school_category'])){
+$q->where('school_category',$query_array['school_category']);
 
     }
   
