@@ -30,9 +30,9 @@
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Education' ?>">Education Project Topics(12)</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Engineering,Environment $ Technology Project Topics(1)</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Low Project Topics(4)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?cat=Administration' ?>">Medical,Pharmaceutical & Health Science Project Topics(4)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Medical,Pharmaceutical & Health Science Project Topics(4)</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Sciences Project Topics(5)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?cat=Administration' ?>">Social & Management Sciences Project Topics(66)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Social & Management Sciences Project Topics(66)</a></li>
                                     
 
                                 </ul>

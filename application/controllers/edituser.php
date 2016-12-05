@@ -100,6 +100,34 @@ public function editfrontuser(){
 
 
 	public function update_user(){
+
+
+         $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100000000;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('attach'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        var_dump($error);
+
+                       // $this->load->view('upload_form', $error);
+                }
+
+                else
+                {
+                        $data1 = array('upload_data' => $this->upload->data());
+                       //save in currentdate and time format
+                      
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
+
             $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
         $sessid= $this->session->userdata('suserid');
@@ -112,7 +140,7 @@ public function editfrontuser(){
                 'user_dept' => $this->input->post('department'),
                 'user_gender' => $this->input->post('gender'),
                 'mobile_no' => $this->input->post('phone_number'),
-                'user_avatar' => $this->input->post('attach'),
+                'user_avatar' => $filedata['file_name'],
                 'marital_status' => $this->input->post('status'),
                 'interested_in' => $this->input->post('interestedIn'),
                 'about_user' => $this->input->post('aboutme'),
@@ -122,6 +150,7 @@ public function editfrontuser(){
                 'user_time' => $time,
                 'user_id' => $sessid,
                 );
+        }
 
 
              if ($this->init_models->updateuserdetails($data))

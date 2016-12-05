@@ -17,7 +17,7 @@
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
 
-                                <form id="csregister" action="<?php echo site_url('index.php/csregister')?>" method="post" class="row">
+                                <form id="csregister" action="<?php echo site_url('index.php/csregister')?>" method="post" class="row" enctype="multipart/form-data">
                                     <h4 class="red-text">personal Information</h4>
                                     <div class="form-group input-field col s12">
                                         <input id="first_name" name="first_name" type="text" class="validate">

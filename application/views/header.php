@@ -41,7 +41,12 @@
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
                             <?php }
                             else{ ?>
-                            <li class="user-opt-list"><div class="user-avatar"><img src="../images/avatar.jpg" class="circle responsive-img valign profile-image"></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
+                            <?php
+    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'");
+        foreach ($query->result_array() as $row){  
+ $getavatar = $row['user_avatar'];
+          ?> 
+                            <li class="user-opt-list"><div class="user-avatar"><img src="../uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
 <?php
 // foreach($event->result_array() as $row){
 {

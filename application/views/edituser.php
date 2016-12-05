@@ -38,7 +38,7 @@
                                 foreach ($query->result_array() as $row){ 
                                       $school_type = $row['school_type']; 
                         ?>
-                        <form id="edituser" method="post" action="<?php echo site_url('index.php/edituser')?>">
+                        <form enctype="multipart/form-data" id="edituser" method="post" action="<?php echo site_url('index.php/edituser')?>">
                                <div class="form-group input-field col s12">
                                  <select class="form-control browser-default" name="schooltype">
                                     <option value="">select  school type</option>
