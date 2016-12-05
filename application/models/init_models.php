@@ -439,6 +439,60 @@ $q->where('school_category',$query_array['school_category']);
     }
 
 
+//Search Course
+
+function search_course($query_array, $limit,$offset, $sort_by,$sort_order){
+
+      $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('course_name','course_category');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'course_name';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_course')
+                     ->where('course_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['course_name'])){
+$q->like('course_name',$query_array['course_name']);
+$q->where('course_approve = 1');
+    }
+       if (strlen($query_array['course_category'])){
+$q->where('course_category',$query_array['course_category'] );
+$q->where('course_approve = 1');
+    }
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+   $q = $this->db->select('count(*) as count', FALSE)
+                       ->from('tbl_course')
+                   -> where('course_approve = 1') ;
+                 
+
+    if (strlen($query_array['course_name'])){
+ $q->like('course_name',$query_array['course_name']);
+
+     }
+      if (strlen($query_array['course_category'])){
+ $q->where('course_category',$query_array['course_category']);
+     }
+
+    
+    $tem = $q->get()->result();
+    $ret['num_rows'] = $tem[0]->count;
+   return $ret;
+
+   }
+
+
+
+
+
+
     function search_project($query_array, $limit,$offset, $sort_by,$sort_order){
 
       $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';

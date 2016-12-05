@@ -32,16 +32,16 @@
                         <div class="col m12">
                             <div class="school_category_box">
                                 <ul class="s_category_list">
-                                    <li class="catrgory_list_item"><a href="#">Degree (52)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Graduate Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Higher Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Advance Diploma (02)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Pre University (85   )</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Certificate (20)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Doctorate (20)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Masters(20)</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Bridging(20)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Degree (52)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Diploma (15)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Graduate Diploma (15)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Higher Diploma (15)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Advance Diploma (02)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Pre University (85   )</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Certificate (20)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Doctorate (20)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Masters(20)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Bridging(20)</a></li>
 
                                 </ul>
                             </div>
@@ -52,7 +52,7 @@
                         <div class="row">
                         <datalist id="coursenames">
     <?php  foreach ($course as $row){ ?>
-    <option value="<?php echo $row['course_name'];?>"><?php echo $row['course_name'];?></option>
+    <option value="<?php echo $row->course_name;?>"><?php echo $row->course_name;?></option>
      <?php }   ?>
 
 </datalist>
@@ -84,9 +84,9 @@
                                 <?php
                
                                 foreach ($course as $row){ ?>
-                                <?php $c_id = $row['course_id'];
+                                <?php $c_id = $row->course_id;
                                         ?>
-                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row['course_name']; ?></a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?></a>
                                       <?php } ?>
                              </div>
                             </div>

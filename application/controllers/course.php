@@ -24,33 +24,56 @@ class course extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email','pagination'));
+        $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
         $this->load->model('init_models');
         // $this->load->library('pagination');
     }
 
+function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $offset = 0 ){
 
-    public function index() {
-         //$banners = $this->init_models->getadvertisebanners();
-        // $view_params = array(
-        //     'm_title' => 'Course',
-        //     'title' => 'Course',
-        //    'banners' => $banners
-        // );
-$banners = $this->init_models->getadvertisebanners();
-             $view_params = array(
-                'm_title' => 'Course',
-                'title'   => 'Course',
-                'banners' => $banners
-
+//echo"<script>alert($this->input->get('cat'));</script>";
+        $limit = 1;
+        $data['fields']= array(
+        'course_id'=>'course_id',
+        'course_name'=>'course_name',
             );
- //pagination settings
-        $config['base_url'] = base_url('index.php/course/index');
-        $config['total_rows'] = $this->db->count_all('tbl_course');
-        $config['per_page'] = "1";
-        $config["uri_segment"] = 3;
-        $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = floor($choice);
+        //print_r( $data['fields']);
+
+        
+
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'Course List',
+                'title'   => 'Course List',
+                'banners' => $banners
+            );
+
+
+       $this->input->load_query($query_id);
+
+        $query_array =   array(
+
+           'course_name'=> $this->input->get('course_name'),
+           'course_category'=> $this->input->get('course_category'),
+    );
+
+        //print_r($query_array);
+       //
+
+   $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
+   //echo $this->db->last_query();
+
+   $data['course']= $results['rows'];
+   //print_r($data['project']);
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("index.php/course/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
 
         //config for bootstrap pagination class integration
         $config['full_tag_open'] = '<ul class="pagination">';
@@ -72,43 +95,59 @@ $banners = $this->init_models->getadvertisebanners();
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
 
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+    //$data['course_name']=$this->init_models->selectcourse();
+       $this->load->view('course',$data);
 
-        $this->pagination->initialize($config);
-        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
-        //call the model function to get the schools data
-        $view_params['course'] = $this->init_models->selectcourse($config["per_page"], $data['page']);           
-        //print_r($view_params['course']);
-        $view_params['pagination'] = $this->pagination->create_links();
-//          $view_params['schools'] = $this->init_models->selectschool();
-         
-
-           // $view_params['course'] = $this->init_models->selectcourse();
-        $this->load->view('course',$view_params);
     }
 
-     function search(){
-        
-          $banners = $this->init_models->getadvertisebanners();
-             $view_params = array(
-                'm_title' => 'Course Search',
-                'title'   => 'Course Search',
-                'banners' => $banners
+
+
+    public function index($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $offset = 0 ) {
+    
+   //echo"sdfsdf". $this->input->post('cat');
+        $limit = 1;
+        $data['fields']= array(
+        'course_id'=>'course_id',
+        'course_name'=>'course_name',
+
 
             );
-        $course_name = $this->input->post('course_name');
-        $course_name = ($this->uri->segment(3)) ? $this->uri->segment(3) : $course_name;
+
+        $banners = $this->init_models->getadvertisebanners();
+                $data = array(
+                'm_title' => 'Course List',
+                'title'   => 'Course List',
+                'banners' => $banners
+            );
 
 
-        $config = array();
-        $config['base_url'] = site_url("index.php/course/search/$course_name");
-        $config['total_rows'] = $this->init_models->get_course_count($course_name);
-        $config['per_page'] = "1";
-        $config["uri_segment"] = 4;
-        $choice = $config["total_rows"]/$config["per_page"];
-        $config["num_links"] = floor($choice);
+       $this->input->load_query($query_id);
 
-        // integrate bootstrap pagination
+        $query_array =   array(
+
+           'course_name'=> $this->input->get('course_name'),
+           'course_category'=> $this->input->get('course_category'),
+
+    );
+       //
+
+   $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
+    $this->db->last_query();
+
+   $data['course']= $results['rows'];
+
+   $data['num_results'] = $results['num_rows'];
+    
+    $config = array();
+
+     $config['base_url'] = base_url("index.php/course/display/$query_id/$sort_by/$sort_order");
+     $config['total_rows'] = $data['num_results'];
+     $config['per_page'] = $limit;
+     $config["uri_segment"] = 6;
+
+        //config for bootstrap pagination class integration
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;
@@ -127,17 +166,29 @@ $banners = $this->init_models->getadvertisebanners();
         $config['cur_tag_close'] = '</a></li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
-        $this->pagination->initialize($config);
 
-         $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-        // get school list
-        $view_params['course'] = $this->init_models->get_course($config['per_page'], $data['page'], $course_name);
+     $this->pagination->initialize($config);
+     $data['pagination'] = $this->pagination->create_links();
+$data['project_topics']=$this->init_models->selectproject();
+       $this->load->view('course',$data);
+    }
 
-        $view_params['pagination']= $this->pagination->create_links();
 
-        //load view
-        //print_r($view_params);
-        $this->load->view('course',$view_params);
+
+    function search(){
+     
+       $query_array =   array(
+
+           'course_name'=> $this->input->post('course_name'),
+           'course_category'=> $this->input->get('category'),
+            );
+
+
+         $query_id = $this->input->save_query($query_array);
+
+         redirect("index.php/course/display/$query_id");
+
+
     }
 
 }
