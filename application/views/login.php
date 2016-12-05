@@ -34,6 +34,13 @@
                             <label for="Password" class="center-align">password</label>
                         </div>
                     </div>
+                    <img src="<?php echo $captcha['image_src'];?>" alt="CAPTCHA security code" />
+                      <div class="row no-margin">
+                        <div class="input-field col s12">
+                            <input name="captcha"  type="text">
+                            
+                        </div>
+                    </div>
                     <div class="row">          
                         <div class="input-field col s12 m12 l12  login-text">
                             <input type="checkbox" id="remember-me">

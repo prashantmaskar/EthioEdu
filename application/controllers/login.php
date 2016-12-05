@@ -35,15 +35,25 @@ class login extends CI_Controller {
 
 	public function index()
 	{
-             $view_params = array(
-                'm_title' => 'Login Page',
-                'title'   => 'Login Page',
-            );
-		$this->load->view('login',$view_params);
+
+
+
 
 
  if(isset($_POST['action'])){
    // echo"<script>alert('1');</script>";
+
+
+$captcha_info = $this->session->userdata('captcha_info');
+
+if ($captcha_info['code'] != $this->input->post('captcha'))
+{
+    //don't process the form
+  echo "Invalid Captcha ...!";
+  exit();
+}else{
+
+
           $username = $this->input->post("username");
           $password = $this->input->post('password');
 
@@ -88,6 +98,20 @@ class login extends CI_Controller {
         
      	}  
       }
+    }
+
+    $this->load->library('captcha');
+
+             $view_params = array(
+                'm_title' => 'Login Page',
+                'title'   => 'Login Page',
+                'captcha' => $this->captcha->main()
+            );
+
+$this->session->set_userdata('captcha_info', $view_params['captcha']);
+
+
+    $this->load->view('login',$view_params);
 	}
 
   public function fergot_password()
