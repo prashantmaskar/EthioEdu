@@ -34,6 +34,7 @@ class post_vacancy extends CI_Controller {
        if ( !$this->session->userdata('logged_in'))
 
     { 
+        $this->session->set_userdata('referred_from', current_url());
         redirect('index.php/login');
     }
     }

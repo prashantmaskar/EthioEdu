@@ -90,7 +90,9 @@ if ($captcha_info['code'] != $this->input->post('captcha'))
                         redirect("index.php/admin/dashboard");
                       }
                       else{
-                        redirect("index.php/home");
+                        //redirect("index.php/home");
+                        $referred_from = $this->session->userdata('referred_from');
+                        redirect($referred_from, 'refresh');
                       }
                     }
                     
