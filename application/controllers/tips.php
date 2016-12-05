@@ -27,8 +27,7 @@ class tips extends CI_Controller {
         $this->load->database();
         $this->load->model('init_models');
     }
-
-
+    
 	public function index()
 	{
            $banners = $this->init_models->getadvertisebanners();
