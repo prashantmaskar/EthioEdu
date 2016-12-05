@@ -281,8 +281,10 @@
                                                       </div>
                                                       <?php } ?>
                                                       <div class="captch">
-                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
-                                                       </div>
+                                                        <img class="responsive-img"  src="<?php echo $captcha['image_src'];?>" alt="CAPTCHA security code" />
+                    
+                                                <!--      <img class="responsive-img" src="<?php //echo base_url() . 'images/Captcha.png' ?>">
+                                                 -->       </div>
                                                   <div class=" form-group input-field col s12">
                                                  <input id="captch" type="text" name="captcha" class="validate">
                                                   <label for="captch">Add Above Code</label>

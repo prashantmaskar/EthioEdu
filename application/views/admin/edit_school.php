@@ -75,12 +75,13 @@
                                                         <input id="School_name" name="schoolname" type="text" value="<?php  echo $row['school_name'];?>"  class="validate">
                                                         <label for="School_name">School Name</label>
                                                     </div>
-
+                                                         <img src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
+                                        
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach logo</span>
                                             <input name="fileformat" type="file" multiple >
-                                        </div>
+                                       </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="attach image only" value="<?php //echo $row['school_logo']?>">
                                         </div>

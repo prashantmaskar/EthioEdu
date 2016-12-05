@@ -30,26 +30,47 @@ class addschool extends CI_Controller {
 
 
     public function index() {
-       $banners = $this->init_models->getadvertisebanners();
+
+        if (!$this->session->userdata('logged_in'))
+        { 
+            if(isset($_POST['action'])){
+                $this->insertuserdata();
+            } 
+        }
+        if(isset($_POST['action'])){
+            $this->get_user_id();
+        }  
+
+        if(isset($_POST['action'])){
+            $captcha_info = $this->session->userdata('captcha_info');
+
+            if ($captcha_info['code'] != $this->input->post('captcha'))
+            {
+                //don't process the form
+              echo "Invalid Captcha ...!";
+              exit();
+
+            }else{
+                
+                $this->insertschooldata();
+            }
+        } 
+
+
+        $this->load->library('captcha');
+
+        $banners = $this->init_models->getadvertisebanners();
+
         $view_params = array(
             'm_title' => 'Add School',
             'title' => 'Add School',
-            'banners' => $banners
+            'banners' => $banners,
+            'captcha' => $this->captcha->main()
         );
-        $this->load->view('addschool',$view_params);
-    if (!$this->session->userdata('logged_in'))
-    { 
-    if(isset($_POST['action'])){
-        $this->insertuserdata();
-     } 
-}
-     if(isset($_POST['action'])){
-        $this->get_user_id();
-        }  
 
-  if(isset($_POST['action'])){
-        $this->insertschooldata();
-        } 
+        $this->session->set_userdata('captcha_info', $view_params['captcha']);
+
+        $this->load->view('addschool',$view_params);
     } 
 
 
