@@ -135,6 +135,25 @@ $tips_id = $_POST['deletetips_id'];
 $query = $this->db->query("delete from tbl_posts where post_id = '" .$tips_id . "'");
 }
 
+//delete image of when u click edit of listnews and data retrieved u can delete and update image
+$delete_id = $_POST['deleteimg_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_posts set post_attachment = null where post_id = '" .$delete_id. "'");
+}
+//delete image of when u click edit of listschool and data retrieved u can delete and update image
+$delete_id = $_POST['deletelogo_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_school_meta set school_logo = null where school_id = '" .$delete_id. "'");
+}
+
+//delete image of when u click edit of listgist and data retrieved u can delete and update image
+$delete_id = $_POST['deletegistimg_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_posts set post_attachment = null where post_id = '" .$delete_id. "'");
+}
 
 ?>
 

@@ -31,6 +31,7 @@
 ");
                         
                                 foreach ($query->result_array() as $row){ 
+                                     $logoattachment =  $row['school_logo'];
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -76,6 +77,10 @@
                                                         <label for="School_name">School Name</label>
                                                     </div>
                                                          <img src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
+                                                         <div class="form-group file-field input-field col s12">
+                                                        <div class="btn">
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $sch_id;?>,<?php echo "'$logoattachment'"; ?>);" >Delete</a>
+                                                        </div></div>
                                                        <!--  <?php //echo $row['school_logo']; ?>" -->
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
@@ -302,3 +307,31 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+
+
+
+
+
+                        <script>
+
+            function deleted(id,logo)
+            {
+                var deletelogo_id = id;
+                var image = logo;
+                //alert(image);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletelogo_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                //location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>

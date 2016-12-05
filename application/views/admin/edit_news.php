@@ -30,6 +30,7 @@
                         $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                    $newsattachment =  $row['post_attachment'];
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -68,6 +69,10 @@
                                                         </select>
                                                     </div>
                                                       <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>" >
+                                                       <div class="form-group file-field input-field col s12">
+                                                        <div class="btn">
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $news_id;?>,<?php echo "'$newsattachment'"; ?>);" >Delete</a>
+                                                        </div></div>
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
@@ -128,3 +133,28 @@
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
                         <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addnews.js' ?>"></script>
+
+
+                         <script>
+
+            function deleted(id,img)
+            {
+                var deleteimg_id = id;
+                var image = img;
+                //alert(image);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deleteimg_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                //location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>
