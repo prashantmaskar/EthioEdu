@@ -265,6 +265,10 @@ nav .brand-logo {
 }
 img{
     width: 100%;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
 }
 .blog_heading h3{
     font-size: 24px;

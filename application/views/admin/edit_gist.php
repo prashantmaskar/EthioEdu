@@ -29,6 +29,7 @@
                         $query = $this->db->query("select * from tbl_posts where post_type='gist'  and post_id = '" .$gist_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                    $gistattachment= $row['post_attachment'];
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -67,13 +68,18 @@
                                              <option value="Other"<?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                         </select>
                                     </div>
+                                     <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
+                                     <div class="form-group file-field input-field col s12">
+                                                        <div class="btn">
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $gist_id;?>,<?php echo "'$gistattachment'"; ?>);" >Delete</a>
+                                                        </div>
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -120,3 +126,29 @@
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
                         <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addgist.js' ?>"></script>
+
+
+
+                        <script>
+
+            function deleted(id,gistimg)
+            {
+                var deletegistimg_id = id;
+                var image = gistimg;
+                //alert(image);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletegistimg_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                //location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>
