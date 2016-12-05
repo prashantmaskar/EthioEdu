@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 05:43 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Dec 05, 2016 at 06:20 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -354,19 +354,20 @@ CREATE TABLE `tbl_users` (
   `last_name` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `user_email` varchar(100) NOT NULL,
-  `user_role` varchar(20) NOT NULL
+  `user_role` varchar(20) NOT NULL,
+  `verificationcode` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`) VALUES
-(1, 'dnyanesh', 'Dnyanesh', 'Mali', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin'),
-(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
-(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser'),
-(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser'),
-(58, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser');
+INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`, `verificationcode`) VALUES
+(1, 'dnyanesh', 'Dnyanesh', 'Mali', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin', ''),
+(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser', '050d545c7be6dd841be52f8b7e9e7ef5'),
+(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser', ''),
+(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser', ''),
+(58, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser', '');
 
 -- --------------------------------------------------------
 
