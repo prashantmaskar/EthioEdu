@@ -30,40 +30,40 @@
                         <div class="col m12">
                             <div class="school_category_box">
                                 <ul class="s_category_list">
-                                    <li class="catrgory_list_item"><a href="#">Kindergartens and Nursery</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Private Primary</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Public Primary Schools</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Private Secondary</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Public Secondary</a></li>
-                                    <li class="catrgory_list_item"><a href="#">International</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Preparatory</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Senior</a></li>
-                                    <li class="catrgory_list_item"><a href="#">University</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Institutes</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Kindergartens and Nursery</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Private Primary</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Public Primary Schools</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Private Secondary</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Public Secondary</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">International</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Preparatory</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Senior</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">University</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Institutes</a></li>
 
                                     <li class="catrgory_list_item"><b>Collages:</b></li>
-                                    <li class="catrgory_list_item"><a href="#">Commerce & Business</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Computer Training & IT</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Distance Education</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Engineering</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Medical Schools</a></li>
-                                    <li class="catrgory_list_item"><a href="#">University Collages</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Theology & Bible</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Theology & Bible</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Agriculture</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Vocational/Technical</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Commerce & Business</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Computer Training & IT</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Distance Education</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Engineering</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Medical Schools</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">University Collages</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Theology & Bible</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Theology & Bible</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Agriculture</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Vocational/Technical</a></li>
 
                                     <li class="catrgory_list_item"><b>Others:</b></li>
-                                    <li class="catrgory_list_item"><a href="#">Aviation</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Art & Design</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Health & Beauty</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Counselling & Enterpreunership</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Driving Schools</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Language, computer & IT  Training Courses</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Tutorial Center</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Hotel tourism</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Mass Media</a></li>
-                                    <li class="catrgory_list_item"><a href="#">Accounts</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Aviation</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Art & Design</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Health & Beauty</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Counselling & Enterpreunership</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Driving Schools</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Language, computer & IT  Training Courses</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Tutorial Center</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Hotel tourism</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Mass Media</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Accounts</a></li>
 
                                 </ul>
                                 <p><span class="News-button"><a class="waves-effect waves-light btn" href="<?php echo base_url() . 'index.php/addschool' ?>">Add School</a></span></p>
