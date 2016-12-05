@@ -70,7 +70,7 @@ class QuesAns extends CI_Controller {
     
     $config = array();
 
-     $config['base_url'] = base_url("QuesAns/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/QuesAns/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -147,7 +147,7 @@ class QuesAns extends CI_Controller {
     
     $config = array();
 
-     $config['base_url'] = base_url("QuesAns/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/QuesAns/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -186,13 +186,16 @@ class QuesAns extends CI_Controller {
     function search(){
 
     $sdate = $this->input->post('sdate');
+    if(!$sdate == ""){
     $isstrtime = strtotime( $sdate);
     $startdate = date('Y-m-d',$isstrtime);
-
-
+}
+    
     $edate = $this->input->post('edate');
+    if(!$edate == ""){
     $isstrtime = strtotime( $edate);
     $enddate = date('Y-m-d',$isstrtime);
+}
      
        $query_array =   array(
            
@@ -205,7 +208,7 @@ class QuesAns extends CI_Controller {
 //print_r($query_array);
         $query_id = $this->input->save_query($query_array);
 
-         redirect("QuesAns/display/$query_id");
+         redirect("index.php/QuesAns/display/$query_id");
 
 
     }

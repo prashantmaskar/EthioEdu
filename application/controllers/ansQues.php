@@ -51,7 +51,7 @@ class ansQues extends CI_Controller {
 		$time = date('h:i:s A', time());
 		$sessid= $this->session->userdata('suserid');
 		$data=array(
-			'response_title' =>$this->input->post('caption'),
+			/*'response_title' =>$this->input->post('caption'),*/
 			'response_desc' =>$this->input->post('Description'),
 			'response_like' =>$this->input->post('response_like'),
              'response_type' =>$this->input->post('response_type'),

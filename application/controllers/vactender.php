@@ -69,7 +69,7 @@ class vactender extends CI_Controller {
     
     $config = array();
 
-     $config['base_url'] = base_url("vactender/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/vactender/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -144,7 +144,7 @@ class vactender extends CI_Controller {
     
     $config = array();
 
-     $config['base_url'] = base_url("vactender/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/vactender/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -194,7 +194,7 @@ class vactender extends CI_Controller {
 
          $query_id = $this->input->save_query($query_array);
 
-         redirect("vactender/display/$query_id");
+         redirect("index.php/vactender/display/$query_id");
 
 
     }

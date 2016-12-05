@@ -68,7 +68,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
     
     $config = array();
 
-     $config['base_url'] = base_url("event/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/event/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -143,7 +143,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
     
     $config = array();
 
-     $config['base_url'] = base_url("event/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/event/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -200,7 +200,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
 //print_r($query_array);
         $query_id = $this->input->save_query($query_array);
 
-         redirect("event/display/$query_id");
+         redirect("index.php/event/display/$query_id");
 
 
     }

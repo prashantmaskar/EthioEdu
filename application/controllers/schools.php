@@ -62,7 +62,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
            'school_name'=> $this->input->get('school_name'),
            'school_type1'=> $this->input->get('school_type1'),
-           'school_type2'=> $this->input->get('school_type2'),
+           'school_category'=> $this->input->get('school_category'),
     );
        //
 
@@ -75,7 +75,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
     
     $config = array();
 
-     $config['base_url'] = base_url("schools/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/schools/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -137,7 +137,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
            'school_name'=> $this->input->get('school_name'),
            'school_type1'=> $this->input->get('school_type1'),
-           'school_type2'=> $this->input->get('school_type2'),
+           'school_category'=> $this->input->get('school_category'),
     );
        //
 
@@ -150,7 +150,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
     
     $config = array();
 
-     $config['base_url'] = base_url("schools/display/$query_id/$sort_by/$sort_order");
+     $config['base_url'] = base_url("index.php/schools/display/$query_id/$sort_by/$sort_order");
      $config['total_rows'] = $data['num_results'];
      $config['per_page'] = $limit;
      $config["uri_segment"] = 6;
@@ -189,12 +189,12 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
            'school_name'=> $this->input->post('school_name'),
            'school_type1'=> $this->input->post('school_type1'),
-           'school_type2'=> $this->input->post('school_type2'),
+           'school_category'=> $this->input->get('category'),
             );
 
          $query_id = $this->input->save_query($query_array);
 
-         redirect("schools/display/$query_id");
+         redirect("index.php/schools/display/$query_id");
 
 
     }

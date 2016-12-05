@@ -95,15 +95,17 @@ $ques_id = $row['question_id'];
                                  <a href="javascript:void(0);" onclick="like(<?php echo $ques_id;?>, <?php echo $u_id;?>, <?php echo $res_id;?>);" >Unlike</a>
                         <?php }else{?>
                                      <a href="javascript:void(0);" onclick="unlike(<?php echo $ques_id;?>, <?php echo $u_id;?>, <?php echo $res_id;?>);">Like</a>
-                 <?php } ?> </span> 
+                 <?php } ?> <!-- </span>  -->
                           <?php 
                                 $query = $this->db->query("SELECT COUNT(response_like) as row_count FROM tbl_userresponse WHERE user_id = '".$u_id."' AND response_like= 1 AND question_id = '" .$ques_id. "';");
                                 $count= $query->result()[0]->row_count; {?>
-                 <span> <a>user id <?php echo $u_id?>Likes(<?php echo $count?>)</a></span> <?php }?>
-               <span>  <div><a onclick="showDiv()" >Reply</a> 
+                 <span> <a>Likes(<?php echo $count?>)</a></span> <?php }?>
+               <span> 
+                <div><a onclick="showDiv()" >Reply</a> 
                 <div id="welcomeDiv"  style="display:none;"  >
                 <form id="reply" action="<?php echo site_url('index.php/ansQues')?>" method="post" class="row"> 
                  <div >
+                 <label for="Description"></label>
                 <textarea id="Description" name="Description" class="materialize-textarea" ></textarea>
                 <label for="Description"></label>
                     </div>
@@ -137,7 +139,7 @@ $ques_id = $row['question_id'];
                 </div>
             </div>
 			 </div>
-			  </div>
+			  <<!-- /div> -->
 			<?php $this->load->view('footer'); ?>
       <script>
         
@@ -162,12 +164,13 @@ function showDiv() {
                             data: {id1, id2, id3},
                             success: function(data) {
                                 console.log(data);
-                                /*location.reload();*/
+                                location.reload();
 
                             }
                         });
                     }
                 }
+
 
           /*     function unlike(id1 , id2, id3){
                 var unlike_id = id;

@@ -41,7 +41,7 @@
                         <li><a class="<?php if($this->uri->segment(1)=="login"){echo "active";}?>" href="<?php echo base_url() . 'index.php/login' ?>">LOGIN</a></li>
                             <?php }
                             else{ ?>
-                            <li class="user-opt-list"><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo "Welcome ".$sessname; ?></a>
+                            <li class="user-opt-list"><div class="user-avatar"><img src="../images/avatar.jpg" class="circle responsive-img valign profile-image"></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
 <?php
 // foreach($event->result_array() as $row){
 {
@@ -59,7 +59,7 @@
 
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
- <li><a href="<?php echo base_url() . 'edituser' ?>">Edit Profile</a></li>
+ <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
     <li><a href="#!">Inbox( )</a></li>
       <li class="divider"></li>
     <li><a href="#!">Comments( )</a></li>

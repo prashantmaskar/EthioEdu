@@ -59,6 +59,15 @@ Main style
     z-index: 999;
     height: auto;
 }
+
+#leftside-nav span.count-indicator{
+    background-color: #ff4081;
+    padding: 7px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+
 ul.side-nav.leftside-navigation {
     top: 64px;
     overflow: hidden;
