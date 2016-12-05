@@ -50,14 +50,14 @@
                                                         <input id="event_venue" name="event_venue" type="text" value="<?php  echo $row['post_venue'];?>" class="validate">
                                                         <label for="Caption">Event Happening in</label>
                                                     </div>
-
+                                                        <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
                                                      <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s6">

@@ -67,13 +67,14 @@
                                              <option value="Other"<?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                         </select>
                                     </div>
+                                     <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
