@@ -68,7 +68,7 @@
                                                             <option value="Scholarship" <?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                                         </select>
                                                     </div>
-                                                      <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>" >
+                                                      <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>" >
                                                        <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <a  href="javascript:void(0);" onclick="deleted(<?php echo $news_id;?>,<?php echo "'$newsattachment'"; ?>);" >Delete</a>
