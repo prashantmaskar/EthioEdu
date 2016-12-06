@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 06:20 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Dec 06, 2016 at 02:26 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -54,7 +54,26 @@ INSERT INTO `ci_query` (`id`, `query_string`) VALUES
 (138, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
 (139, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
 (140, 'school_name=&school_type1=public'),
-(141, 'school_name=&school_type1=private');
+(141, 'school_name=&school_type1=private'),
+(142, 'school_name=&school_type1=public'),
+(143, 'school_name=&school_type1=private'),
+(144, 'course_name=ICT+Course'),
+(145, 'course_name=php'),
+(146, 'course_name=Android+Course'),
+(147, 'course_category=Degree'),
+(148, 'course_category=Degree'),
+(149, 'project_category=Administration'),
+(150, 'project_category=Agricultural'),
+(151, 'project_category=Administration'),
+(152, ''),
+(153, 'school_name=&school_type1=public'),
+(154, 'course_category=Degree'),
+(155, 'username=fgfdg'),
+(156, 'username=dfgdgd'),
+(157, 'user_gender=Male'),
+(158, 'user_gender=Male'),
+(159, 'user_gender=Male'),
+(160, 'user_gender=Female');
 
 -- --------------------------------------------------------
 
@@ -130,8 +149,8 @@ CREATE TABLE `tbl_course` (
 
 INSERT INTO `tbl_course` (`course_id`, `course_name`, `course_subject`, `course_category`, `course_duration`, `course_school`, `course_university`, `course_desc`, `course_date`, `course_time`, `course_approve`, `user_id`) VALUES
 (4, 'test course', 'sdfsdf', 'bridging', 1095, 'Africa', 'Ethiopia', 'dsffd', '', '', '1', 1),
-(5, 'Android Course', 'Andorid Java', 'certificate', 2, 'Ethiopia', '1', 'Android Session For 2 Days', '17 Novembe', '03:44:12 P', '1', 1),
-(6, 'PHP', 'PHP', 'certificate', 120, 'Kenya', 'Kenya', 'test course', '2016-11-30', '05:32:17 PM', '0', 1);
+(5, 'Android Course', 'Andorid Java', 'Degree', 2, 'Ethiopia', '1', 'Android Session For 2 Days', '17 Novembe', '03:44:12 P', '1', 1),
+(6, 'PHP', 'PHP', 'certificate', 120, 'Kenya', 'Kenya', 'test course', '2016-11-30', '05:32:17 PM', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -169,6 +188,33 @@ CREATE TABLE `tbl_enquiry` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_message`
+--
+
+CREATE TABLE `tbl_message` (
+  `pm_id` int(11) NOT NULL,
+  `pm_subject` varchar(500) NOT NULL,
+  `pm_message` varchar(5000) NOT NULL,
+  `pm_date` varchar(200) NOT NULL,
+  `pm_time` varchar(200) NOT NULL,
+  `pm_send_to` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_message`
+--
+
+INSERT INTO `tbl_message` (`pm_id`, `pm_subject`, `pm_message`, `pm_date`, `pm_time`, `pm_send_to`, `user_id`) VALUES
+(1, 'test subject', 'test message', '0000-00-00', '06:11:53 PM', '55', 1),
+(2, 'sdfsdf', 'sdfsdf', '0000-00-00', '06:16:42 PM', '55', 1),
+(3, 'sdfsdf', 'sdfsdf', '06 December, 2016', '06:21:37 PM', '55', 1),
+(4, 'sdfsd', 'test date', '2016-12-06', '06:38:08 PM', '55', 1),
+(5, 'test testtest', 'testtesttesttesttest', '2016-12-06', '06:39:32 PM', '55', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_posts`
 --
 
@@ -193,7 +239,7 @@ CREATE TABLE `tbl_posts` (
 --
 
 INSERT INTO `tbl_posts` (`post_id`, `post_title`, `post_desc`, `post_category`, `post_attachment`, `post_author`, `post_source`, `post_date`, `post_time`, `post_venue`, `post_type`, `post_approve`, `user_id`) VALUES
-(1, 'FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunde', 'The Minister of Education, Mr. Adamu Adamu, on Monday', 'Part Time', 'Lighthouse.jpg', 'Dnyanesh', 'http://stackoverflow.com/', '2016-11-02', '', '', 'news', '1', 1),
+(1, 'FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunde', ' The Minister of Education, Mr. Adamu Adamu, on Monday', 'Part Time', '06-12-2016-10-44-58.jpg', 'Dnyanesh', 'http://stackoverflow.com/', '2016-11-02', '', '', 'news', '1', 1),
 (2, 'FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded', 'The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\n', 'Admission', 'Lighthouse.jpg', 'Dnyanesh', 'http://stackoverflow.com/', '2016-11-22', '', '', 'news', '1', 1),
 (3, 'FG Conservative', 'The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.', 'Admission', 'Lighthouse.jpg', 'Dnyanesh', 'http://stackoverflow.com/', '2016-11-02', '', '', 'news', '1', 1),
 (4, 'FG Insists No More Post-UTME, Directs That Money Paid By Candidates Be Refunded', 'The Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.\r\nThe Minister of Education, Mr. Adamu Adamu, on Monday, emphasized again that tertiary institutions should stop the conduct of Post-UTME. He directed those who have already advertised the exercise under any guise to retrace their steps immediately or face appropriate sanction.', 'Admission', 'Lighthouse.jpg', 'Dnyanesh', 'http://stackoverflow.com/', '12-Aug-2016', '', '', 'news', '', 1),
@@ -338,7 +384,7 @@ CREATE TABLE `tbl_school_meta` (
 --
 
 INSERT INTO `tbl_school_meta` (`school_id`, `registration_type`, `school_name`, `school_logo`, `school_category`, `school_university`, `school_institute`, `other_category`, `school_number`, `school_country`, `school_city`, `school_region`, `school_type`, `school_population`, `teaching_staff`, `non_teaching_staff`, `school_awards`, `school_acadamic_year`, `school_acadamic_fee`, `admission_procedure`, `acadamic_requirment`, `school_scholarship`, `school_address`, `school_url`, `school_desc`, `school_date`, `school_time`, `school_approve`, `user_id`) VALUES
-(7, 'Normal Registration', 'Adarsh Vidhyalaya', 'Tulips.jpg', 'Account', 'Agriculture', 'Account', 'Account', '2222222222', 'Ethiopia', 'Kenya', 'Kenya', 'private', 55, 2, 33, '2', '2016', '80000', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '50%', 'Osmanabad', 'http://www.ddd.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '22 November, 2016', '12:19:42 PM', '1', 1),
+(7, 'Normal Registration', 'Adarsh Vidhyalaya', '06-12-2016-10-21-15.jpg', 'Account', 'Agriculture', 'Account', 'Account', '2222222222', 'Ethiopia', 'Kenya', 'Kenya', 'private', 55, 2, 33, '2', '2016', '80000', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '50%', '', 'http://www.ddd.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '22 November, 2016', '12:19:42 PM', '1', 1),
 (8, 'Normal Registration', 'SDVL', 'Chrysanthemum.jpg', 'Agriculture', 'Account', 'Agriculture', 'Account', '1111111111', 'Kenya', 'Ethiopia', 'Ethiopia', 'public', 30, 34, 4, '3', '2016', '124444', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '50%', 'Osmanabad', 'http://www.ddd.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '22 November, 2016', '12:28:58 PM', '1', 1);
 
 -- --------------------------------------------------------
@@ -354,20 +400,20 @@ CREATE TABLE `tbl_users` (
   `last_name` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `user_email` varchar(100) NOT NULL,
-  `user_role` varchar(20) NOT NULL,
-  `verificationcode` varchar(100) NOT NULL
+  `user_role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`, `verificationcode`) VALUES
-(1, 'dnyanesh', 'Dnyanesh', 'Mali', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin', ''),
-(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser', '050d545c7be6dd841be52f8b7e9e7ef5'),
-(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser', ''),
-(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser', ''),
-(58, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser', '');
+INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`) VALUES
+(1, 'dnyanesh', 'Dnyanesh', 'Mali', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin'),
+(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
+(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser'),
+(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser'),
+(58, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser'),
+(62, 'testuser', 'Test', 'User', '098f6bcd4621d373cade4e832627b4f6', 'test@gmail.com', 'schooluser');
 
 -- --------------------------------------------------------
 
@@ -382,7 +428,7 @@ CREATE TABLE `tbl_user_meta` (
   `user_dept` varchar(50) NOT NULL,
   `user_gender` varchar(50) NOT NULL,
   `mobile_no` varchar(50) NOT NULL,
-  `user_avatar` blob NOT NULL,
+  `user_avatar` varchar(500) NOT NULL,
   `marital_status` varchar(50) NOT NULL,
   `interested_in` varchar(50) NOT NULL,
   `about_user` varchar(200) NOT NULL,
@@ -402,8 +448,10 @@ INSERT INTO `tbl_user_meta` (`school_type`, `user_school`, `user_level`, `user_d
 ('', '', '', '', '', '', '', '', '', '', '', '', '', '', 50),
 ('friendship', 'friendship', 'friendship', '', 'Male', '343', '', '', '', '', '', '', '', '', 52),
 ('anything', 'anything', 'anything', 'd', 'female', '8888', '', 'Male', 'Male', 'dsd', 'ds', 'sdf', '', '', 53),
-('friendship', 'anything', 'anything', 'IT', 'Male', '9689483519', 0x4c69676874686f7573652e6a7067, 'Male', 'female', 'Student', 'Playing', 'Cricket', '02 December, 2016', '12:54:53 PM', 1),
-('friendship', 'anything', 'friendship', 'IT', 'female', '9999999999', 0x4368727973616e7468656d756d2e6a7067, 'Male', 'Male', 'sdfsdf', 'sdfs', 'sdf', '01 December, 2016', '10:50:13 AM', 58);
+('friendship', 'anything', 'anything', 'IT', 'Male', '9689483519', 'latest-cutest-baby.png', 'Male', 'female', 'Student', 'Playing', 'Cricket', '06 December, 2016', '04:15:38 PM', 1),
+('friendship', 'anything', 'friendship', 'IT', 'female', '9999999999', 'Chrysanthemum.jpg', 'Male', 'Male', 'sdfsdf', 'sdfs', 'sdf', '01 December, 2016', '10:50:13 AM', 58),
+('anything', 'anything', 'friendship', 'Finance', 'female', '9999999999', 'Penguins.jpg', 'female', 'female', 'Test About Me', 'Test Intersts', 'Test Hobby', '05 December, 2016', '11:43:07 AM', 61),
+('anything', 'anything', 'friendship', 'Finance', 'Male', '7777777777', 'Penguins1.jpg', 'female', 'female', 'Test About Me', 'Test Intersts', 'My Hobby', '05 December, 2016', '11:45:05 AM', 62);
 
 -- --------------------------------------------------------
 
@@ -477,6 +525,13 @@ ALTER TABLE `tbl_enquiry`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `tbl_message`
+--
+ALTER TABLE `tbl_message`
+  ADD PRIMARY KEY (`pm_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `tbl_posts`
 --
 ALTER TABLE `tbl_posts`
@@ -547,7 +602,7 @@ ALTER TABLE `tbl_vacancy`
 -- AUTO_INCREMENT for table `ci_query`
 --
 ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 --
 -- AUTO_INCREMENT for table `tbl_advertise`
 --
@@ -563,6 +618,11 @@ ALTER TABLE `tbl_contact`
 --
 ALTER TABLE `tbl_course`
   MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `tbl_message`
+--
+ALTER TABLE `tbl_message`
+  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_posts`
 --
@@ -597,7 +657,7 @@ ALTER TABLE `tbl_school_meta`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `tbl_vacancy`
 --
