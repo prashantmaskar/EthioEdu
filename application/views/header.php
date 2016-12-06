@@ -42,11 +42,12 @@
                             <?php }
                             else{ ?>
                             <?php
-    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'");
-        foreach ($query->result_array() as $row){  
+    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'"); ?>
+    <li class="user-opt-list"><div class="user-avatar">
+   <?php     foreach ($query->result_array() as $row){  
  $getavatar = $row['user_avatar'];
           ?> 
-                            <li class="user-opt-list"><div class="user-avatar"><img src="../uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
+                            <img src="../uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
 <?php
 // foreach($event->result_array() as $row){
 {
