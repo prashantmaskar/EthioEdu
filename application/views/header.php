@@ -47,7 +47,7 @@
    <?php     foreach ($query->result_array() as $row){  
  $getavatar = $row['user_avatar'];
           ?> 
-                            <img src="../uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
+                            <img src="<?php echo base_url()?>/uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
 <?php
 // foreach($event->result_array() as $row){
 {

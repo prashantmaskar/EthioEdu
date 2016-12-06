@@ -86,7 +86,17 @@
          return  $insert_id;
       }
 
+function get_user_id_by_uname($uname){
+        $query = $this->db->query("SELECT * FROM tbl_users where BINARY username='".$uname."'");
+         return $query->result_array();
+}
 
+
+ public function sendpmessage($data)  
+      {  
+            return $this->db->insert('tbl_message', $data);
+      }
+       
 
        // Privacy Table Actions
 
@@ -418,6 +428,88 @@ $q->where('school_category',$query_array['school_category']);
    return $ret;
 
    }
+
+
+
+
+//Connect Me Result
+
+function search_result($query_array, $limit,$offset, $sort_by,$sort_order){
+
+      $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('username','user_gender','user_school','user_level','user_interest');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'username';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_user_meta')
+                     ->join('tbl_users','tbl_users.user_id = tbl_user_meta.user_id')
+                     //->where('school_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['username'])){
+$q->like('username',$query_array['username']);
+    }
+       if (strlen($query_array['user_gender'])){
+$q->where('user_gender',$query_array['user_gender'] );
+    }
+       if (strlen($query_array['user_school'])){
+$q->where('user_school',$query_array['user_school'] );
+    }
+
+     if (strlen($query_array['user_level'])){
+$q->where('user_level',$query_array['user_level'] );
+    }
+
+     if (strlen($query_array['user_interest'])){
+$q->where('user_interest',$query_array['user_interest'] );
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+
+    $q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_user_meta');
+                 
+
+    if (strlen($query_array['username'])){
+$q->like('username',$query_array['username']);
+
+    }
+       if (strlen($query_array['user_gender'])){
+$q->where('user_gender',$query_array['user_gender']);
+
+    }
+       if (strlen($query_array['user_school'])){
+$q->where('user_school',$query_array['user_school']);
+
+    }
+
+    if (strlen($query_array['user_level'])){
+$q->where('user_level',$query_array['user_level']);
+
+    }
+
+    if (strlen($query_array['user_interest'])){
+$q->where('user_interest',$query_array['user_interest']);
+
+    }
+  
+
+    $tem = $q->get()->result();
+    $ret['num_rows'] = $tem[0]->count;
+   return $ret;
+
+   }
+
+
 
 
 

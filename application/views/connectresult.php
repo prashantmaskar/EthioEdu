@@ -4,7 +4,7 @@
                 <div class="col s12 m9">
                     <div class="result_list_wrap z-depth-1">
                         <h5 class="red-text">250 profile Connect2u</h5>
-                        <ul class="pagination margin-b-10">
+                      <!--  <ul class="pagination margin-b-10">
                             <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                             <li class="active"><a href="#!">1</a></li>
                             <li class="waves-effect"><a href="#!">2</a></li>
@@ -12,100 +12,28 @@
                             <li class="waves-effect"><a href="#!">4</a></li>
                             <li class="waves-effect"><a href="#!">5</a></li>
                             <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                        </ul>
+                        </ul>  -->
+                        <?php //echo $pagination; ?>
                         <ul class="cresult_list">
+                        <?php foreach ($conresult as $row){ ?>
+                        <?php $avatar = $row->user_avatar;  ?>
                             <li>
                                 <div class="row">
                                     <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
+                                        <img src="<?php echo base_url() ?>uploads/<?php echo $avatar?>">  
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
+                                        <p class="std_name"><a href="#"><?php echo $row->first_name; ?> <span><?php echo $row->last_name; ?></span></a></p>
+                                        <p class="std_age">Age Range: <span><strong>16-19| <?php echo $row->user_gender; ?></strong></span></p>
+                                        <p class="std_school">Level: <span><strong>Student <?php echo $row->user_level; ?></strong></span></p>
+                                        <p class="std_interaest">he is Interested In <?php echo $row->user_interest; ?> <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li> 
-                            <li>
-                                <div class="row">
-                                    <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m2 s12 std_thumb">
-                                        <img src="<?php echo base_url().'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Fedrico <span>-Baddo</span></a></p>
-                                        <p class="std_age">Age Range: <span><strong>16-19| Male</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">School: <span><strong>federal University</strong></span></p>
-                                        <p class="std_school">Level: <span><strong>Student 100_Level</strong></span></p>
-                                        <p class="std_interaest">he is Interested In dating <span><a href="#">View Full profile</a></span></p>
-                                    </div>
-                                </div> 
-                            </li>
+                            <?php } ?>
+                            
                         </ul>
-                        <ul class="pagination margin-b-10">
+                      <!--  <ul class="pagination margin-b-10">
                             <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                             <li class="active"><a href="#!">1</a></li>
                             <li class="waves-effect"><a href="#!">2</a></li>
@@ -113,7 +41,8 @@
                             <li class="waves-effect"><a href="#!">4</a></li>
                             <li class="waves-effect"><a href="#!">5</a></li>
                             <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                        </ul>
+                        </ul> -->
+                        <?php echo $pagination; ?>
                     </div>
                     <div class="row">
                         <div class="col s12 m12">
@@ -121,20 +50,20 @@
                                 <div class="row">
                                     <div class="col m12 s12"><h2 class="form_heading">Find Friends/Student</h2></div>
                                     <div class="col m6 s12">
-                                        <form class="row">
+                                        <form class="row" action="<?php echo base_url() . 'index.php/connectresult/search' ?>" method="post">
                                             <div class=" col s4">
                                                 <label for="Caption">I am Looking For:</label>
                                             </div>
                                             <div class=" col s4">
-                                                <input type="checkbox" id="Guy" />
+                                                <input type="radio" value="Male" id="Guy" name="gender"/>
                                                 <label for="Guy">Guy</label>
                                             </div>
                                             <div class=" col s4">
-                                                <input type="checkbox" id="Chic" />
+                                                <input type="radio" value="Female" id="Chic" name="gender"/>
                                                 <label for="Chic">Chic</label>
                                             </div>
                                             <div class="col s12">
-                                                <select >
+                                                <select name="choiceage">
                                                     <option value="" disabled selected>Any Age</option>
                                                     <option value="1">16-19</option>
                                                     <option value="2">20-25</option>
@@ -145,7 +74,7 @@
                                                 <label>Between The Age</label>
                                             </div>
                                             <div class="col s12">
-                                                <select >
+                                                <select name="institutions">
                                                     <option value="" disabled selected>Institutions</option>
                                                     <option value="1">Ethiopian</option>
                                                     <option value="2">Ethiopian</option>
@@ -155,7 +84,7 @@
                                                 <label>Institutions</label>
                                             </div>
                                             <div class="col s12">
-                                                <select >
+                                                <select class="level">
                                                     <option value="" disabled selected>At Level Of</option>
                                                     <option value="1">Anything</option>
                                                     <option value="2">Student</option>
@@ -164,7 +93,7 @@
                                                 <label>At Level Of</label>
                                             </div>
                                             <div class="col s12">
-                                                <select >
+                                                <select class="interest">
                                                     <option value="" disabled selected>Special Interest In</option>
                                                     <option value="1">Anything</option>
                                                     <option value="2">Friendship</option>

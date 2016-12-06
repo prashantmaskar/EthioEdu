@@ -25,15 +25,15 @@
                             <li>
                                 <img src="<?php echo base_url() . 'images/slider/bg-6.jpg' ?>"> <!-- random image -->
                                 <div class="caption center-align">
-                                    <h3>WEL-Come To ETHIEDUO</h3>
-                                    <h5 class="light grey-text text-lighten-3">We provide the best Eduction Option.</h5>
+                                    <h3>WEL-Come To ETHIOEDU</h3>
+                                    <h5 class="light grey-text text-lighten-3">We provide the best Education Option.</h5>
                                 </div>
                             </li>
                             <li>
                                 <img src="<?php echo base_url() . 'images/slider/eduban2.jpg' ?>"> <!-- random image -->
                                 <div class="caption left-align">
-                                    <h3>Largest INFO OF COLLAGE</h3>
-                                    <h5 class="light grey-text text-lighten-3">Get info of all collage in Ethiopia.</h5>
+                                    <h3>Largest INFO OF COLLEGE</h3>
+                                    <h5 class="light grey-text text-lighten-3">Get info of all college in Ethiopia.</h5>
                                 </div>
                             </li>
                             <li>

@@ -8,6 +8,16 @@
                         <div class="col s12 m12 card-panel">
                             <h2 class="inbox-title">Private Messages (PM)</h2>
                         </div>
+
+<?php                $sessid= $this->session->userdata('suserid');
+                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+                        
+                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                                $sentitem = $query1->result()[0]->row_count;
+
+                                $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+                                $inboxitem = $query2->result()[0]->row_count;
+                        ?>
                         <div id="inbox-action" class="col m3 s5">
                             <div class="card-panel">
                                 <ul class="collection">
@@ -15,12 +25,12 @@
                                         <a href="<?php echo base_url() . 'index.php/composemail' ?>" class="btn red text-white">Compose</a>
                                     </li>
                                     <li class="collection-item">
-                                        <a href="#">Inbox</a>
-                                        <span class="new badge blue">4</span>
+                                        <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
+                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
                                     </li>
                                     <li class="collection-item">
                                         <a href="#">Sent</a>
-                                        <span class="white-text badge green">4</span>
+                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
                                     </li>
                                     <li class="collection-item">
                                         <a href="#">Delete</a>
@@ -30,58 +40,22 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <?php foreach ($query->result_array() as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
+                                    <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
+                                    <p class="truncate grey-text ultra-small"><?php echo $row['pm_message'];?></p>
+                                    <p><span class=" blue-text ultra-small"><?php echo $row['pm_date'];?></span><span class=" blue-text ultra-small"><?php echo" at ". $row['pm_time'];?></span></p>
                                     <a href="#!" class="secondary-content">
                                         
                                         <p>
-                                            <input type="checkbox" id="test5" />
+                                           <input type="checkbox" id="test5" />
                                             <label for="test5" class="red-text">Delete</label>
                                         </p>
                                     </a>
                                 </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
-                                    <li class="collection-item avatar ">
-                                    <i class="material-icons circle">person_pin</i>
-                                    <span class="email-title"><a href="">Welcome to EthioEdu</a></span>
-                                    <p class="truncate grey-text ultra-small">You have Google+ request from john doe.</p>
-                                    <p><span class=" blue-text ultra-small">4 Nov 2016</span></p>
-                                    <a href="#!" class="secondary-content">
-                                        
-                                        <p>
-                                            <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
-                                        </p>
-                                    </a>
-                                </li>
+                                <?php } ?>
+                                    
                             </ul>
                         </div>
 
