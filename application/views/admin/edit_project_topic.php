@@ -101,10 +101,10 @@
                                                      <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach file</span>
-                                            <input name="fileformat" type="file" multiple>
+                                            <input name="fileformat" type="file" multiple >
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format" value="<?php //echo $row['project_upload'];?>">
+                                            <input class="file-path validate" type="text" placeholder="attach file in pdf or word or rtf file format" value="<?php echo $row['project_upload'];?>">
                                         </div>
                                     </div>
                                     <input value="<?php echo $row['project_id']; ?>" name="project_id" type="hidden">

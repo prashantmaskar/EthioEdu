@@ -80,7 +80,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Photo">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -92,7 +92,7 @@
                                                         <label for="date"></label>
                                                     </div>-->
                                                     <div class="form-group input-field col s12">
-                                                        <input id="source_link" name="source_link" type="text" class="validate">
+                                                        <input id="source_link" name="source_link" type="url" class="validate">
                                                         <label for="source_link">Source</label>
                                                     </div>
                                                       <input type="hidden" name="post_type" value="gist">

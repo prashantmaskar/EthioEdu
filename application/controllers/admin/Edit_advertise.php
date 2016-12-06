@@ -40,8 +40,8 @@ class Edit_advertise extends CI_Controller {
   public function index()
   {
              $view_params = array(
-                'm_title' => 'Edit News',
-                'title'   => 'Edit News'
+                'm_title' => 'Edit Advertising',
+                'title'   => 'Edit Advertising'
             );
     $this->load->view('admin/edit_advertise',$view_params);
 if(isset($_POST['action'])){

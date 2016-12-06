@@ -103,11 +103,11 @@
 
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
-                                                            <span>Attach Add</span>
+                                                            <span>Attach Ad</span>
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Advertise baner">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">

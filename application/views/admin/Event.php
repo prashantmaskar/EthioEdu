@@ -63,7 +63,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Photo">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">

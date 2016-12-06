@@ -81,7 +81,7 @@
                                             <thead>
                                                 <tr>
                                                     <th data-field="id">Post Title</th>
-                                                    <th data-field="name">Post Category</th>
+                                                    <!--<th data-field="name">Post Category</th> -->
                                                     <th data-field="name">Author</th>
                                                     <th data-field="price">Posting Date</th>
                                                     <th data-field="price">Action</th>
@@ -100,7 +100,7 @@
 
                                                 <tr>
                                                     <td><?php echo $row['post_title']; ?></td>
-                                                    <td><?php echo $row['post_category']; ?></td>
+                                                   <!-- <td><?php //echo $row['post_category']; ?></td> -->
                                                     <td><?php echo $row['post_author']; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>
                                                     <td><?php if($_GET['post_type'] == 'news'){  ?>

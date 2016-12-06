@@ -68,11 +68,21 @@
                                                             <option value="Scholarship" <?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                                         </select>
                                                     </div>
+                                                    <?php if($row['post_attachment']!=""){?>
+                                                    <div class="form-group file-field input-field col s12">
+                                                         <div style="position: relative;display: inline-block;">
                                                       <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>" >
-                                                       <div class="form-group file-field input-field col s12">
-                                                        <div class="btn">
-                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $news_id;?>,<?php echo "'$newsattachment'"; ?>);" >Delete</a>
-                                                        </div></div>
+                                                       
+                                                        
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $news_id;?>,<?php echo "'$newsattachment'"; ?>);"style="background: red;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div>
+                                                    <?php }?>
+   
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
@@ -151,7 +161,7 @@
                             data: {deleteimg_id, image},
                             success: function(data) {
                                 console.log(data);
-                                //location.reload();
+                              location.reload();
 
 
                             }
