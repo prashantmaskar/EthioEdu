@@ -28,6 +28,8 @@
                         $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                $bannerattachment= $row['advertise_attachment'];
+
                         ?>
 
                     <div class="container">
@@ -105,15 +107,26 @@
                                                         <input id="subject" type="text" class="validate" name="subject" value="<?php  echo $row['advertise_subject'];?>">
                                                         <label for="subject">Subject</label>
                                                     </div>
-													
-
+													<?php if($row['advertise_attachment']!=""){?>
+                                                    <div class="form-group file-field input-field col s12">
+                                                        <div style="position: relative;display: inline-block;">
+                                                     <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['advertise_attachment'];?>">
+                                                          <a  href="javascript:void(0);" onclick="deleted(<?php echo $add_id;?>,<?php echo "'$bannerattachment'"; ?>);" style="background: red;
+                                                                              padding: 5px;
+                                                                               border-radius: 10px;
+                                                                                color: #fff;
+                                                                              position: absolute;
+                                                                               top: 0px;
+                                                                    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                  </div>
+                                                                       <?php }?>
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Add</span>
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php //echo $row['advertise_attachment'];?>">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">
@@ -121,13 +134,7 @@
                                                         <label for="message">Message</label>
                                                     </div> 
                                                        <input value="<?php echo $row['advertise_id']; ?>" name="advertise_id" type="hidden">
-													<!-- <div class="captch">
-                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
-                                                       </div>
-													<div class=" form-group input-field col s12">
-                                                 <input id="captch" type="text" name="captcha" class="validate">
-                                                  <label for="captch">Add Above Code</label>
-                                                    </div>-->
+													
                                        
                                     <div class="col s5 offset-s5 margin-b-10">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">update
@@ -148,3 +155,30 @@
         </div>
        <?php  $this->load->view('admin/footer'); ?>
        <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-advertise.js' ?>"></script>
+
+
+
+            <script>
+
+            function deleted(id,attachbanner)
+            {
+                var deletebanner_id = id;
+                var image = attachbanner;
+                //alert(image);
+               // alert(deletebanner_id);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletebanner_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>

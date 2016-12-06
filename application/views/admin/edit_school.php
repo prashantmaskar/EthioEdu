@@ -79,7 +79,7 @@
                                                     <?php if($row['school_logo']!=""){?>
                                                          <div class="form-group file-field input-field col s12">
                                                         <div style="position: relative;display: inline-block;">
-                                                            <img src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
+                                                            <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
                                                             <a  href="javascript:void(0);" onclick="deleted(<?php echo $sch_id;?>,<?php echo "'$logoattachment'"; ?>);" style="background: red;
     padding: 5px;
     border-radius: 10px;

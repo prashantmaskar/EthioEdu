@@ -29,6 +29,7 @@
                         $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                    $eventattachment= $row['post_attachment']
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -50,12 +51,26 @@
                                                         <input id="event_venue" name="event_venue" type="text" value="<?php  echo $row['post_venue'];?>" class="validate">
                                                         <label for="Caption">Event Happening in</label>
                                                     </div>
-                                                        <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
+                                                        
+                                                        <?php if($row['post_attachment']!=""){?>
                                                      <div class="form-group file-field input-field col s12">
+                                                        <div style="position: relative;display: inline-block;">
+                                                            <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $event_id;?>,<?php echo "'$eventattachment'"; ?>);" style="background: red;
+                                                                              padding: 5px;
+                                                                               border-radius: 10px;
+                                                                                color: #fff;
+                                                                              position: absolute;
+                                                                               top: 0px;
+                                                                    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                  </div>
+                                                                       <?php }?>
+                                                         <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
+                                                       
                                                         <div class="file-path-wrapper">
                                                             <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
@@ -104,3 +119,29 @@
                         </div>
                        <?php  $this->load->view('admin/footer'); ?>
                        <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-event.js' ?>"></script>
+
+
+
+                        <script>
+
+            function deleted(id,eventattachment)
+            {
+                var deleteeventattachment_id = id;
+                var image = eventattachment;
+                //alert(image);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deleteeventattachment_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>

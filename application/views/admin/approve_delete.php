@@ -154,6 +154,32 @@ $delete_id = $_POST['deletegistimg_id'];
  if(isset($delete_id)){
 $query = $this->db->query("update tbl_posts set post_attachment = null where post_id = '" .$delete_id. "'");
 }
+  
 
+
+  //delete image of when u click edit of eventlist and data retrieved u can delete and update image
+$delete_id = $_POST['deleteeventattachment_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_posts set post_attachment = null where post_id = '" .$delete_id. "'");
+}
+
+
+$delete_id = $_POST['deletebanner_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_advertise set advertise_attachment = null where advertise_id = '" .$delete_id. "'");
+}
+
+
+ //delete image of when u click edit of edittips and data retrieved u can delete and update image
+
+
+$delete_id = $_POST['deletetipsimg_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_posts set post_attachment = null where post_id = '" .$delete_id. "'");
+}
+ 
 ?>
 

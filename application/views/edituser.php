@@ -1,4 +1,6 @@
 
+
+
  <?php $this->load->view('header'); ?>
 <div class="sdetails-wrap">
     <div class="row">
