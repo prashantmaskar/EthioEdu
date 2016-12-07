@@ -53,13 +53,7 @@
         <textarea id="description" name="description" class="materialize-textarea"></textarea>
          <label for="description">Description</label>
         </div>
-		 <div class="captch">
-              <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
-         </div>
-       <div class=" form-group input-field col s12">
-            <input id="captch" type="text" name="captcha" class="validate">
-            <label for="captch">Add Above Code</label>
-        </div>
+		 
 		
 		 <div class="col s5 offset-s5">
                <button class="btn waves-effect waves-light" type="submit" name="action">Submit

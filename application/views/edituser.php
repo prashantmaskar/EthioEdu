@@ -38,7 +38,8 @@
                         //$query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
                         
                                 foreach ($query->result_array() as $row){ 
-                                      $school_type = $row['school_type']; 
+                                      $school_type = $row['school_type'];
+                                        $userattachment= $row['user_avatar']; 
                         ?>
                         <form enctype="multipart/form-data" id="edituser" method="post" action="<?php echo site_url('index.php/edituser')?>">
                                <div class="form-group input-field col s12">
@@ -113,16 +114,30 @@
                                         <input id="email" value="<?php echo $row['user_email']; ?>" name="email" type="text" class="validate">
                                         <label for="Caption">Email Id</label>
                                     </div>
-                                    <div class="col s2 user-icon form-group input-field">
-                                         <img src="<?php echo base_url() . 'images/user.jpg' ?>" class="responsive-img circle">  
-                                    </div>
+                                    <!-- <div class="col s2 user-icon form-group input-field">
+                                         <img src="<?php //echo base_url() . 'images/user.jpg' ?>" class="responsive-img circle">  
+                                    </div> -->
+                                    <?php if($row['user_avatar']!=""){?>
+                                    <div class="form-group file-field input-field col s12">
+                                                        <div style="position: relative;display: inline-block;">
+
+                                     <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['user_avatar'];?>">
+                                     <a  href="javascript:void(0);" onclick="deleted(<?php echo $sessid;?>,<?php echo "'$userattachment'"; ?>);" style="background: red;
+                                                                              padding: 5px;
+                                                                               border-radius: 10px;
+                                                                                color: #fff;
+                                                                              position: absolute;
+                                                                               top: 0px;
+                                                                    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                  </div>
+                                                                       <?php }?>
                                    <div class="form-group file-field input-field col s10">
                                         <div class="btn">
                                             <span>Attach Photo</span>
                                             <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo">
+                                            <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
                                         </div>
                                     </div>
                                        <h5 class="red-text">Connect2Me Information</h5>
@@ -444,3 +459,28 @@ $(document).ready(function() {
     });
 });
 </script>
+                     
+                        <script>
+
+            function deleted(id,userimg)
+            {
+                var deleteuserimg_id = id;
+                var image = userimg;
+                //alert(image);
+                //alert(deleteuserimg_id);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "admin/approve_delete",
+                            data: {deleteuserimg_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>

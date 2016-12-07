@@ -26,6 +26,14 @@ class coursedetails extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+
+
+         /*if ( !$this->session->userdata('logged_in'))
+    { 
+        $this->session->set_userdata('referred_from', current_url());
+        redirect('index.php/login');
+    }*/
+
     }
 
 
@@ -37,6 +45,31 @@ class coursedetails extends CI_Controller {
             'banners' => $banners
         );
         $this->load->view('coursedetails',$view_params);
+        if(isset($_POST['action']))
+        {
+        $this->insertreview();
+        }
+    }
+       
+
+    function insertreview()
+    {
+        $sessid= $this->session->userdata('suserid');
+        $data=array(
+
+            /* 'course_rating' =>$this->input->post('rating'),*/
+            'course_rating' => "5",
+            'course_review' =>$this->input->post('Review_Contents'),
+            'review_title' =>$this->input->post('Review_title'),
+            'course_id' =>$this->input->post('course_id'),
+            'user_id' => $sessid
+             
+            );
+            
+ $this->init_models->insertreview($data);
+             
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+             
     }
 
 }

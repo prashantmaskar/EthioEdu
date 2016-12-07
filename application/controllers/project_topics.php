@@ -54,7 +54,7 @@ class Project_topics extends CI_Controller {
 
 		 $config['upload_path']          = './uploads/Documents';
                 $config['allowed_types']        = 'pdf|docx|doc|rtf';
-                $config['max_size']             = 100000;
+                $config['max_size']             = 9995555;
                 /*$config['file_name'] = $docname; // set the name here
 */
                 $this->load->library('upload', $config);

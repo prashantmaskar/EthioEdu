@@ -151,7 +151,7 @@
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "approve_delete",
+                            url: "admin/approve_delete",
                             data: {deletegistimg_id, image},
                             success: function(data) {
                                 console.log(data);
