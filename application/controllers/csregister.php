@@ -122,8 +122,17 @@ if(isset($_POST['laction'])){
                             'file_name' => $data1['upload_data']['file_name'],
                             );
 
-                    
-            $date = date('d F, Y');
+                $formdata =  date('d F, Y');
+                $adate = strtotime($formdata);
+                $date = date('Y-m-d', $adate);
+
+                $formdata =  $this->input->post('birth_date');
+                $aadate = strtotime($formdata);
+                $birth_date = date('Y-m-d', $aadate);
+
+                $birth_diff = (date('Y') - date('Y',strtotime($birth_date)));
+
+
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
 $getid = $this->get_frontuser_id();
@@ -134,6 +143,8 @@ $getid = $this->get_frontuser_id();
                 'user_level' => $this->input->post('level'),
                 'user_dept' => $this->input->post('department'),
                 'user_gender' => $this->input->post('gender'),
+                'user_birth' => $birth_date,
+                'user_age' => $birth_diff,
                 'mobile_no' => $this->input->post('phone_number'),
                 'user_avatar' => $filedata['file_name'],
                 'marital_status' => $this->input->post('status'),
@@ -150,7 +161,9 @@ $getid = $this->get_frontuser_id();
 
              if ($this->init_models->adduserdetails($data))
             {
-    echo"<script>alert('Registration Success');</script>";
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'RegistrationSuccessful'); 
+            redirect("index.php/sregister");
             }
 
 
