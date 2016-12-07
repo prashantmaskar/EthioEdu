@@ -31,22 +31,39 @@ class advertising extends CI_Controller {
 	public function index()
 	{
 
-        $banners = $this->init_models->getadvertisebanners();
-
-        
-
-    
-             $view_params = array(
-                'm_title' => ' Advertising',
-                'title'   => ' Advertising',
-                'banners' => $banners
-            );
-		$this->load->view('Advertising',$view_params);
-
 
 		if(isset($_POST['action'])){
+
+
+
+      $captcha_info = $this->session->userdata('captcha_info');
+
+      if ($captcha_info['code'] != $this->input->post('captcha'))
+      {
+        //don't process the form
+        echo "Invalid Captcha ...!";
+        exit();
+      }else{
+
         $this->addvertise();
-        }
+      }
+
+    }
+
+
+
+      $banners = $this->init_models->getadvertisebanners();
+      $this->load->library('captcha');
+       $view_params = array(
+          'm_title' => ' Advertising',
+          'title'   => ' Advertising',
+          'banners' => $banners,
+          'captcha' => $this->captcha->main()
+      );
+      $this->session->set_userdata('captcha_info', $view_params['captcha']);
+      $this->load->view('Advertising',$view_params);
+
+
 	}
     
 
