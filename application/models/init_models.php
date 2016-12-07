@@ -536,6 +536,32 @@ $q->where('user_interest',$query_array['user_interest']);
 
 
 
+//Related Users
+
+
+   function related_users(){
+      
+       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id limit 5');
+          
+         return $query->result_array();
+
+
+
+   }
+
+
+// Enquiry Users
+   function enquiry_users($data){
+              $id =$data['user_id'];
+      
+       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id and tbl_users.user_id = "'.$id.'"');
+          
+         return $query->result_array();
+
+
+
+   }
+
 
 //Project Search
 
@@ -911,10 +937,7 @@ $q->where('question_date <=', $query_array['end_date']);
         $this->db->where('user_email', $email);
         return $this->db->update('tbl_users', $data);
     } 
-public function insert_review($data)
-      {
-        return $this->db->insert('tbl_course_meta', $data);
-      }
+
 
 
 

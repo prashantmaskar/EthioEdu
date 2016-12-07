@@ -99,54 +99,22 @@
                 <div class="col s12 m3 margin-t-15">
                     <div class="online_std z-depth-1">
                         <ul class="online_std_list">
+                       <?php 
+//print_r($related_users);
+                       foreach ($related_res as $row){ ?>
                             <li>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
                                         <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
+                                        <p class="std_name"><a href="#"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_university"><?php echo $row['user_gender']; ?></p>
+                                        <p class="std_name"><?php echo $row['user_school']; ?></p>
                                     </div>
                                 </div> 
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>

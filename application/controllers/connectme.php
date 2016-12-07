@@ -29,11 +29,14 @@ class connectme extends CI_Controller {
     }
 
     public function index() {
+        $related_res = $this->init_models->related_users();
+        //print_r($related_res);
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Connect2Me',
             'title' => 'Connect2Me',
-            'banners' => $banners
+            'banners' => $banners,
+            'related_res' => $related_res,
         );
         $this->load->view('connectme',$view_params);
     }
