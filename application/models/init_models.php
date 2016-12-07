@@ -887,7 +887,10 @@ $q->where('question_date <=', $query_array['end_date']);
         $this->db->where('user_email', $email);
         return $this->db->update('tbl_users', $data);
     } 
-
+public function insert_review($data)
+      {
+        return $this->db->insert('tbl_course_meta', $data);
+      }
 
 
 
