@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="form-group col s12">
                                         <select class="form-control " name="choiceage">
-                                            <option value="">Any Age</option>
+                                            <option value="" disabled selected>Any Age</option>
                                             <option value="16-19">16-19</option>
                                             <option value="20-25">20-25</option>
                                             <option value="26-29">26-29</option>
@@ -32,28 +32,28 @@
                                     <div class="col s12">
                                         <select class="form-control" name="institutions">
                                             <option value="" disabled selected>Institutions</option>
-                                            <option value="1">Ethiopian</option>
-                                            <option value="2">Ethiopian</option>
-                                            <option value="3">Ethiopian</option>
-                                            <option value="4">Ethiopian</option>
+                                            <option value="Ethiopian">Ethiopian</option>
+                                            <option value="Ethiopian">Ethiopian</option>
+                                            <option value="Ethiopian">Ethiopian</option>
+                                            <option value="Ethiopian">Ethiopian</option>
                                         </select>
                                         <label>Institutions</label>
                                     </div>
                                     <div class="col s12">
-                                        <select ="form-control" name="level">
+                                        <select class="form-control" name="level">
                                             <option value="" disabled selected>At Level Of</option>
-                                            <option value="1">Anything</option>
-                                            <option value="2">Student</option>
-                                            <option value="3">Graduate</option>
+                                            <option value="Anything">Anything</option>
+                                            <option value="Student">Student</option>
+                                            <option value="Graduate">Graduate</option>
                                         </select>
                                         <label>At Level Of</label>
                                     </div>
                                     <div class="col s12">
                                         <select class="form-control" name="interest">
                                             <option value="" disabled selected>Special Interest In</option>
-                                            <option value="1">Anything</option>
-                                            <option value="2">Friendship</option>
-                                            <option value="3">Dating</option>
+                                            <option value="Anything">Anything</option>
+                                            <option value="Friendship">Friendship</option>
+                                            <option value="Dating">Dating</option>
                                         </select>
                                         <label>Special Interest In</label>
                                     </div>
@@ -84,12 +84,14 @@
                                     </form>
                                 </div>
                                 <div class="col m12">
+                                 <?php if (!$this->session->userdata('logged_in')){?>
                                     <div class="lr_link-wrap">
                                         <p><a href="<?php echo base_url() . 'index.php/sregister' ?>">Register To ETHIOEDU</a></p>
-                                        <p><a href="#">Forgot password ?</a></p>
-                                        <p class="text-black">All Ready User ?  <a href="#"> Login</a></p>
+                                        <p><a href="<?php echo base_url().'/login/fergot_password'?>">Forgot password ?</a></p>
+                                        <p class="text-black">All Ready User ?  <a href="<?php echo base_url() . 'index.php/login' ?>"> Login</a></p>
                                     </div>
-                                </div>
+                                    <?php } ?>
+                                </div> 
                             </div>
                         </div>
                     </div>

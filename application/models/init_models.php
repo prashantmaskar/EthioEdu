@@ -437,8 +437,8 @@ $q->where('school_category',$query_array['school_category']);
 function search_result($query_array, $limit,$offset, $sort_by,$sort_order){
 
       $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
-      $sort_columns =  array('username','user_gender','user_school','user_level','user_interest');
-      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'username';
+      $sort_columns =  array('username','user_gender','user_age','user_school','user_level','user_interest');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'first_name';
 
 
       $q = $this->db->select('*')
@@ -450,11 +450,19 @@ function search_result($query_array, $limit,$offset, $sort_by,$sort_order){
     
 
     if(strlen($query_array['username'])){
+
+      //echo"In top username";
 $q->like('username',$query_array['username']);
     }
        if (strlen($query_array['user_gender'])){
 $q->where('user_gender',$query_array['user_gender'] );
     }
+
+    if (strlen($query_array['user_age'])){
+$q->where('user_age',$query_array['user_age'] );
+    }
+
+
        if (strlen($query_array['user_school'])){
 $q->where('user_school',$query_array['user_school'] );
     }
@@ -474,19 +482,34 @@ $q->where('user_interest',$query_array['user_interest'] );
     $ret['rows']= $q->get()->result();
 
     //count result
+    if (strlen($query_array['username'])){
 
+     // echo"In username count";
+$q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_users');
+$q->like('username',$query_array['username']);
+
+  
+
+}else{
+
+      //echo"in else count";
     $q = $this->db->select('count(*) as count', FALSE)
                   ->from('tbl_user_meta');
                  
 
-    if (strlen($query_array['username'])){
-$q->like('username',$query_array['username']);
-
-    }
+   
        if (strlen($query_array['user_gender'])){
 $q->where('user_gender',$query_array['user_gender']);
 
     }
+
+     if (strlen($query_array['user_age'])){
+$q->where('user_age',$query_array['user_age']);
+
+    }
+
+
        if (strlen($query_array['user_school'])){
 $q->where('user_school',$query_array['user_school']);
 
@@ -501,11 +524,12 @@ $q->where('user_level',$query_array['user_level']);
 $q->where('user_interest',$query_array['user_interest']);
 
     }
-  
+  }
 
     $tem = $q->get()->result();
     $ret['num_rows'] = $tem[0]->count;
    return $ret;
+ 
 
    }
 

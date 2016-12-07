@@ -43,6 +43,7 @@ class connectresult extends CI_Controller {
         'user_email'=>'user_email',
         'user_dept'=>'user_dept',
         'user_gender'=>'user_gender',
+        'user_age'=>'user_age',
         'mobile_no'=>'mobile_no',
         'user_avatar'=>'user_avatar',
         'marital_status'=>'marital_status',
@@ -72,7 +73,7 @@ class connectresult extends CI_Controller {
            'username'=> $this->input->get('username'),
            'user_gender'=> $this->input->get('user_gender'),
            'user_gender'=> $this->input->get('user_gender'),
-           //'school_type1'=> $this->input->get('choiceage'),
+           'user_age'=> $this->input->get('user_age'),
            'user_school'=> $this->input->get('user_school'),
            'user_level'=> $this->input->get('user_level'),
            'user_interest'=> $this->input->get('user_interest'),
@@ -80,7 +81,7 @@ class connectresult extends CI_Controller {
        //
 
    $results = $this->init_models->search_result($query_array, $limit, $offset, $sort_by, $sort_order);
-  // echo $this->db->last_query();
+   //echo $this->db->last_query();
 
    $data['conresult']= $results['rows'];
 
@@ -135,6 +136,7 @@ class connectresult extends CI_Controller {
         'user_email'=>'user_email',
         'user_dept'=>'user_dept',
         'user_gender'=>'user_gender',
+        'user_age'=>'user_age',
         'mobile_no'=>'mobile_no',
         'user_avatar'=>'user_avatar',
         'marital_status'=>'marital_status',
@@ -160,7 +162,7 @@ class connectresult extends CI_Controller {
            'username'=> $this->input->get('username'),
            'user_gender'=> $this->input->get('user_gender'),
            'user_gender'=> $this->input->get('user_gender'),
-           //'school_type1'=> $this->input->get('choiceage'),
+           'user_age'=> $this->input->get('user_age'),
            'user_school'=> $this->input->get('user_school'),
            'user_level'=> $this->input->get('user_level'),
            'user_interest'=> $this->input->get('user_interest'),
@@ -215,7 +217,7 @@ class connectresult extends CI_Controller {
 
            'username'=> $this->input->post('username'),
            'user_gender'=> $this->input->post('gender'),
-           //'school_type1'=> $this->input->post('choiceage'),
+           'user_age'=> $this->input->post('choiceage'),
            'user_school'=> $this->input->post('institutions'),
            'user_level'=> $this->input->post('level'),
            'user_interest'=> $this->input->post('interest'),
