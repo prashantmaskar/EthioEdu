@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2016 at 02:26 PM
+-- Generation Time: Dec 07, 2016 at 02:55 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -36,44 +36,27 @@ CREATE TABLE `ci_query` (
 --
 
 INSERT INTO `ci_query` (`id`, `query_string`) VALUES
-(123, ''),
-(124, 'project_category=Administration'),
-(125, 'project_category=Administration'),
-(126, ''),
-(127, 'project_category=Administration'),
-(128, 'project_category=Administration'),
-(129, 'project_category=Administration'),
-(130, 'project_category=Administration'),
-(131, 'project_category=Administration'),
-(132, 'project_category=Administration'),
-(133, 'project_category=Administration'),
-(134, 'project_category=Administration'),
-(135, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
-(136, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
-(137, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
-(138, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
-(139, 'start_date=1970-01-01&end_date=1970-01-01&question_category=Accounting'),
-(140, 'school_name=&school_type1=public'),
-(141, 'school_name=&school_type1=private'),
-(142, 'school_name=&school_type1=public'),
-(143, 'school_name=&school_type1=private'),
-(144, 'course_name=ICT+Course'),
-(145, 'course_name=php'),
-(146, 'course_name=Android+Course'),
-(147, 'course_category=Degree'),
-(148, 'course_category=Degree'),
-(149, 'project_category=Administration'),
-(150, 'project_category=Agricultural'),
-(151, 'project_category=Administration'),
-(152, ''),
-(153, 'school_name=&school_type1=public'),
-(154, 'course_category=Degree'),
-(155, 'username=fgfdg'),
-(156, 'username=dfgdgd'),
-(157, 'user_gender=Male'),
-(158, 'user_gender=Male'),
-(159, 'user_gender=Male'),
-(160, 'user_gender=Female');
+(233, 'user_level=Student'),
+(234, ''),
+(235, 'user_level=Student'),
+(236, 'user_interest=Friendship'),
+(237, ''),
+(238, 'user_school=Ethiopian'),
+(239, ''),
+(240, 'user_gender=Female&user_level=Anything'),
+(241, 'user_gender=Female'),
+(242, 'user_level=Student'),
+(243, 'user_interest=Friendship'),
+(244, 'user_interest=Dating'),
+(245, 'user_gender=Male'),
+(246, 'user_gender=Female'),
+(247, ''),
+(248, 'user_gender=Female'),
+(249, 'user_gender=Female'),
+(250, 'user_gender=Male'),
+(251, 'user_gender=Female'),
+(252, 'user_age=26-29'),
+(253, 'user_gender=Male');
 
 -- --------------------------------------------------------
 
@@ -184,6 +167,14 @@ CREATE TABLE `tbl_enquiry` (
   `enquiry_time` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_enquiry`
+--
+
+INSERT INTO `tbl_enquiry` (`enquiry_id`, `enquiry_school_name`, `enquiry_person_name`, `enquiry_person_email`, `enquiry_person_location`, `enquiry_person_number`, `enquiry_subject`, `enquiry_message`, `enquiry_date`, `enquiry_time`, `user_id`) VALUES
+(0, 'Adarsh Vidhyalaya', 'Dnyanesh Mali', 'dnyanesh.mali@softinfology.com', 'osmanabad', '9689483519', 'test', 'test', '07 December, 2016', '06:54:57 PM', 1),
+(0, 'Adarsh Vidhyalaya', 'Dnyanesh Mali', 'dnyanesh.mali@softinfology.com', 'osmanambad', '9689483519', 'test222', 'testtesttesttesttest', '07 December, 2016', '07:08:36 PM', 1);
 
 -- --------------------------------------------------------
 
@@ -409,11 +400,8 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `password`, `user_email`, `user_role`) VALUES
 (1, 'dnyanesh', 'Dnyanesh', 'Mali', 'e6e061838856bf47e1de730719fb2609', 'dnyanesh.mali@softinfology.com', 'admin'),
-(55, 'santosh', '', '', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
-(56, 'Akshay', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 'dsfasd@dff.com', 'schooluser'),
-(57, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '', 'schooluser'),
-(58, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser'),
-(62, 'testuser', 'Test', 'User', '098f6bcd4621d373cade4e832627b4f6', 'test@gmail.com', 'schooluser');
+(70, 'santosh', 'Santosh', 'B', 'e6e061838856bf47e1de730719fb2609', 'santoshbhosale123@gmail.com', 'schooluser'),
+(71, 'pallavi', 'Pallavi', 'G', 'e3480a8108a815dcfacfecda86a31889', 'pallavi@gmail.com', 'schooluser');
 
 -- --------------------------------------------------------
 
@@ -427,6 +415,8 @@ CREATE TABLE `tbl_user_meta` (
   `user_level` varchar(50) NOT NULL,
   `user_dept` varchar(50) NOT NULL,
   `user_gender` varchar(50) NOT NULL,
+  `user_birth` varchar(400) NOT NULL,
+  `user_age` varchar(50) NOT NULL,
   `mobile_no` varchar(50) NOT NULL,
   `user_avatar` varchar(500) NOT NULL,
   `marital_status` varchar(50) NOT NULL,
@@ -443,15 +433,10 @@ CREATE TABLE `tbl_user_meta` (
 -- Dumping data for table `tbl_user_meta`
 --
 
-INSERT INTO `tbl_user_meta` (`school_type`, `user_school`, `user_level`, `user_dept`, `user_gender`, `mobile_no`, `user_avatar`, `marital_status`, `interested_in`, `about_user`, `user_interest`, `user_hobby`, `user_date`, `user_time`, `user_id`) VALUES
-('anything', 'anything', 'friendship', 'Comp', 'Male', '4444', '', 'Male', 'Male', 'v', 'v', 'v', '', '', 44),
-('', '', '', '', '', '', '', '', '', '', '', '', '', '', 50),
-('friendship', 'friendship', 'friendship', '', 'Male', '343', '', '', '', '', '', '', '', '', 52),
-('anything', 'anything', 'anything', 'd', 'female', '8888', '', 'Male', 'Male', 'dsd', 'ds', 'sdf', '', '', 53),
-('friendship', 'anything', 'anything', 'IT', 'Male', '9689483519', 'latest-cutest-baby.png', 'Male', 'female', 'Student', 'Playing', 'Cricket', '06 December, 2016', '04:15:38 PM', 1),
-('friendship', 'anything', 'friendship', 'IT', 'female', '9999999999', 'Chrysanthemum.jpg', 'Male', 'Male', 'sdfsdf', 'sdfs', 'sdf', '01 December, 2016', '10:50:13 AM', 58),
-('anything', 'anything', 'friendship', 'Finance', 'female', '9999999999', 'Penguins.jpg', 'female', 'female', 'Test About Me', 'Test Intersts', 'Test Hobby', '05 December, 2016', '11:43:07 AM', 61),
-('anything', 'anything', 'friendship', 'Finance', 'Male', '7777777777', 'Penguins1.jpg', 'female', 'female', 'Test About Me', 'Test Intersts', 'My Hobby', '05 December, 2016', '11:45:05 AM', 62);
+INSERT INTO `tbl_user_meta` (`school_type`, `user_school`, `user_level`, `user_dept`, `user_gender`, `user_birth`, `user_age`, `mobile_no`, `user_avatar`, `marital_status`, `interested_in`, `about_user`, `user_interest`, `user_hobby`, `user_date`, `user_time`, `user_id`) VALUES
+('Ethiopian', 'Ethiopian', 'Student', 'IT', 'Male', '', '0', '9689483519', 'latest-cutest-baby.png', 'Male', 'female', 'Student', 'Friendship', 'Cricket', '06 December, 2016', '04:15:38 PM', 1),
+('Ethiopian', 'Ethiopian', 'Student', 'IT', 'Male', '1991-02-04', '20-25', '7777777777', 'Lighthouse2.jpg', 'Male', 'female', 'About Me', 'Friendship', 'My Hobby', '2016-12-07', '12:30:14 PM', 70),
+('Ethiopian', 'Ethiopian', 'Student', 'IT', 'female', '1992-01-08', '24', '7777777777', 'Koala2.jpg', 'Male', 'female', 'Test about Me', 'Friendship', 'Test My Hobby', '2016-12-07', '12:32:06 PM', 71);
 
 -- --------------------------------------------------------
 
@@ -602,7 +587,7 @@ ALTER TABLE `tbl_vacancy`
 -- AUTO_INCREMENT for table `ci_query`
 --
 ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 --
 -- AUTO_INCREMENT for table `tbl_advertise`
 --
@@ -657,7 +642,7 @@ ALTER TABLE `tbl_school_meta`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT for table `tbl_vacancy`
 --
