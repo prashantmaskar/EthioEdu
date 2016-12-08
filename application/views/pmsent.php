@@ -40,6 +40,9 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <li class="collection-item" style="text-align:right;">
+                                        <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
+                                    </li>
                             <?php foreach ($query->result_array() as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
@@ -49,8 +52,8 @@
                                     <a href="#!" class="secondary-content">
                                         
                                         <p>
-                                           <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
+                                           <input type="checkbox"  name="deletemsg" id="<?php echo $row['pm_id']; ?>" value="<?php echo $row['pm_id']; ?>" />
+                                            <label for="<?php echo $row['pm_id']; ?>" class="red-text">Delete</label>
                                         </p>
                                     </a>
                                 </li>
@@ -120,3 +123,27 @@
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
+
+<script>
+
+         $(document).ready(function(){
+        $('.deletebtn').click(function(){
+            
+            var checkValues = $('input[name=deletemsg]:checked').map(function()
+            {
+                return $(this).val();
+            }).get();
+            //console.log(checkValues);
+            $.ajax({
+                url: 'admin/approve_delete',
+                type: 'POST',
+                data: { sids: checkValues },
+                success:function(data){
+                        console.log(data);
+                        location.reload();
+                }
+            }); 
+        });
+    });
+
+                </script>

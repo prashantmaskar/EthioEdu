@@ -41,7 +41,7 @@
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
                             <li class="collection-item" style="text-align:right;">
-                                        <a  href="<?php echo base_url() . 'index.php/composemail' ?>" class="btn red text-white">Delete</a>
+                                        <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
                             <?php foreach ($query->result_array() as $row){  ?>
                                 <li class="collection-item avatar ">
@@ -52,7 +52,7 @@
                                     <a href="#!" class="secondary-content">
                                         
                                         <p>
-                                           <input type="checkbox" id="<?php echo $row['pm_id']; ?>" />
+                                           <input type="checkbox"  name="deletemsg" id="<?php echo $row['pm_id']; ?>" value="<?php echo $row['pm_id']; ?>" />
                                             <label for="<?php echo $row['pm_id']; ?>" class="red-text">Delete</label>
                                         </p>
                                     </a>
@@ -123,3 +123,27 @@
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
+
+<script>
+
+         $(document).ready(function(){
+        $('.deletebtn').click(function(){
+            
+            var checkValues = $('input[name=deletemsg]:checked').map(function()
+            {
+                return $(this).val();
+            }).get();
+            //console.log(checkValues);
+            $.ajax({
+                url: 'admin/approve_delete',
+                type: 'POST',
+                data: { ids: checkValues },
+                success:function(data){
+                        console.log(data);
+                        location.reload();
+                }
+            }); 
+        });
+    });
+
+                </script>
