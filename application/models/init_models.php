@@ -459,7 +459,23 @@ $q->where('user_gender',$query_array['user_gender'] );
     }
 
     if (strlen($query_array['user_age'])){
-$q->where('user_age',$query_array['user_age'] );
+
+      if($query_array['user_age'] == '16-19'){
+        $q->where('user_age>=','16');
+        $q->where('user_age<=', '19');
+      }
+      if($query_array['user_age'] == '20-25'){
+        $q->where('user_age>=','20' );
+        $q->where('user_age<=','25' );
+      }
+      if($query_array['user_age'] == '26-29'){
+        $q->where('user_age>=','26' );
+        $q->where('user_age<=','29' );
+      }
+      if($query_array['user_age'] == '30+'){
+        $q->where('user_age>=', '30' );
+      }
+
     }
 
 
@@ -505,7 +521,21 @@ $q->where('user_gender',$query_array['user_gender']);
     }
 
      if (strlen($query_array['user_age'])){
-$q->where('user_age',$query_array['user_age']);
+if($query_array['user_age'] == '16-19'){
+        $q->where('user_age>=','16');
+        $q->where('user_age<=', '19');
+      }
+      if($query_array['user_age'] == '20-25'){
+        $q->where('user_age>=','20' );
+        $q->where('user_age<=','25' );
+      }
+      if($query_array['user_age'] == '26-29'){
+        $q->where('user_age>=','26' );
+        $q->where('user_age<=','29' );
+      }
+      if($query_array['user_age'] == '30+'){
+        $q->where('user_age>=', '30' );
+      }
 
     }
 
