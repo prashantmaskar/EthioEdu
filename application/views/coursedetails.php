@@ -21,7 +21,25 @@
                                 Colleges and Universities Offering Diploma in Maritime Transport and Logistics Management(Maritime Transport) in Ethiopia</h1>-->
                         </div>
                         <div class="col m12">
-                         <?php $c_id = $_GET['id'];
+                         <?php 
+
+
+
+
+
+                         $c_id = $cource_id;
+
+
+
+                         $sessid= $this->session->userdata('suserid');
+
+                         $query143 = $this->db->query("select * from tbl_course_meta where course_id = '" .$c_id. "' and user_id='".$sessid."'");
+
+                         if($query143->num_rows() > 0)
+                        {
+                            $restultrating = $query143->first_row();                        
+                        }
+
                         $query = $this->db->query("select * from tbl_course where course_id = '" .$c_id. "'");
 
                         
@@ -59,13 +77,12 @@
 
 
 
-                        <?php $sessid= $this->session->userdata('suserid');
-
+                        <?php 
                         $query = $this->db->query("select * from tbl_users where user_id = '" .$sessid. "'");
 
 
                         //$query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
-                                 $c_id = $_GET['id'];
+                                 $c_id = $cource_id;
                             /* var_dump($c_id);
                              exit();*/
                                 foreach ($query->result_array() as $row){ 
@@ -79,7 +96,8 @@
 
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
-                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails/insertreview')?>" method="post" class="col m12">
+                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails')?>" method="post" class="col m12">
+
                                                     <div class="form-group input-field col s12">
                                                         <input id="Reviewer_name" name="Reviewer_name" type="text" class="validate" value="<?php echo $row['username']; ?>">
                                                         <label for="Reviewer_name">Reviewer's Name</label>
@@ -89,7 +107,7 @@
                                                         <label for="email">Reviewer's Email</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <input id="Review_title" name="Review_title" type="text" class="validate">
+                                                        <input id="Review_title" name="Review_title" type="text" class="validate" value="<?php if(isset($restultrating)) { echo $restultrating->Review_title; }?>">
                                                         <label for="Review_title">Review Title</label>
                                                     </div>
 													          
@@ -102,15 +120,15 @@
                                                     <div class="form-group input-field col s8">
                                                         <div class=" form-control browser-default stars" name="rating">
 												 <!-- <form action="">-->
-													<input class="star star-5" id="star-5" type="radio" name="star" />
+													<input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if(isset($restultrating)) { echo $restultrating->course_rating=='5'? 'checked' :''; }?>/>
 													<label class="star star-5" for="star-5"></label>
-													<input class="star star-4" id="star-4" type="radio" name="star"/>
+													<input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php if(isset($restultrating)) { echo $restultrating->course_rating=='4'? 'checked' :''; } ?>/>
 													<label class="star star-4" for="star-4"></label>
-													<input class="star star-3" id="star-3" type="radio" name="star"/>
+													<input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php if(isset($restultrating)) { echo $restultrating->course_rating=='3'? 'checked' :''; }?>/>
 													<label class="star star-3" for="star-3"></label>
-													<input class="star star-2" id="star-2" type="radio" name="star"/>
+													<input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php if(isset($restultrating)) { echo $restultrating->course_rating=='2'? 'checked' :''; }?>/>
 													<label class="star star-2" for="star-2"></label>
-													<input class="star star-1" id="star-1" type="radio" name="star"/>
+													<input class="star star-1" id="star-1" type="radio" name="star" value="1" <?php if(isset($restultrating)) { echo $restultrating->course_rating=='1'? 'checked' :''; }?>/>
 													<label class="star star-1" for="star-1"></label>
 												  <!--</form>-->
                                                          </div>              
@@ -121,12 +139,12 @@
                                                    
 
                                                     <div class=" form-group input-field col s12">
-                                                        <textarea id="Review_Contents" class="materialize-textarea" name="Review_Contents"></textarea>
+                                                        <textarea id="Review_Contents" class="materialize-textarea" name="Review_Contents"><?php if(isset($restultrating)) { echo $restultrating->course_review;}?></textarea>
                                                         <label for="Review_Contents">Review Contents</label>
                                                     </div>
-                                                    <input type="hidden" name="course_id" value="<?php echo $row['c_id']; ?>">
+                                                    <input type="hidden" name="course_id" value="<?php echo $c_id; ?>">
                                                     <div class="col s12">
-                                                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                                        <button class="btn waves-effect waves-light" type="submit" name="action" value="rating">Submit
                                                             <i class="mdi-content-send right"></i>
                                                         </button>
 
@@ -141,7 +159,7 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">More Courses</h2>
-                            <?php if(isset($_GET['id'])){$crs_id = $_GET['id'];}
+                            <?php $crs_id = $cource_id;
                                 $query = $this->db->query("select * from  tbl_course where   
                                  course_id != '" .$crs_id. "'");
                                 foreach ($query->result_array() as $row)

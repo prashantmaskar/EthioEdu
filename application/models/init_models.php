@@ -938,7 +938,20 @@ $q->where('question_date <=', $query_array['end_date']);
         return $this->db->update('tbl_users', $data);
     } 
 
-
+ public function insertreview($data)
+      {
+        $sql = "select * from tbl_course_meta where course_id='".$data['course_id']."' and user_id='".$data['user_id']."'";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+          $uparr = array('course_id' => $data['course_id'], 'user_id' =>$data['user_id']);
+          $this->db->where($uparr);
+          return $this->db->update('tbl_course_meta', $data);
+        }else{
+          return $this->db->insert('tbl_course_meta', $data);
+        }
+        
+      }
 
 
    }  

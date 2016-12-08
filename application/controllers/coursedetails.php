@@ -38,17 +38,28 @@ class coursedetails extends CI_Controller {
 
 
     public function index() {
-        $banners = $this->init_models->getadvertisebanners();
-        $view_params = array(
-            'm_title' => 'Course Details',
-            'title' => 'Course Details',
-            'banners' => $banners
-        );
-        $this->load->view('coursedetails',$view_params);
+
+        if(isset($_GET['id'])){
+            $this->session->set_userdata('course_id', $_GET['id']);
+        }
+
+        $cource_id = $this->session->userdata('course_id');
+
         if(isset($_POST['action']))
         {
         $this->insertreview();
         }
+
+        $banners = $this->init_models->getadvertisebanners();
+        $view_params = array(
+            'm_title' => 'Course Details',
+            'title' => 'Course Details',
+            'banners' => $banners,
+            'cource_id' => $cource_id
+        );
+        
+        
+        $this->load->view('coursedetails',$view_params);
     }
        
 
@@ -57,8 +68,7 @@ class coursedetails extends CI_Controller {
         $sessid= $this->session->userdata('suserid');
         $data=array(
 
-            /* 'course_rating' =>$this->input->post('rating'),*/
-            'course_rating' => "5",
+            'course_rating' =>$this->input->post('star'),       
             'course_review' =>$this->input->post('Review_Contents'),
             'review_title' =>$this->input->post('Review_title'),
             'course_id' =>$this->input->post('course_id'),
@@ -68,7 +78,7 @@ class coursedetails extends CI_Controller {
             
  $this->init_models->insertreview($data);
              
-    //echo"<script>alert('Data Inserted Successfully');</script>";
+    echo"<script>alert('Data Inserted Successfully');</script>";
              
     }
 
