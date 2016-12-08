@@ -10,7 +10,7 @@
                         </div>
 
 <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+                    $query = $this->db->query("select * from tbl_message where pm_send_to = '" .$sessid. "'");
                         
                      $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
                                 $sentitem = $query1->result()[0]->row_count;
@@ -29,7 +29,7 @@
                                         <span class="new badge blue"><?php echo $inboxitem; ?></span>
                                     </li>
                                     <li class="collection-item">
-                                        <a href="#">Sent</a>
+                                        <a href="<?php echo base_url().'pmsent'?>">Sent</a>
                                         <span class="white-text badge green"><?php echo $sentitem; ?></span>
                                     </li>
                                     <li class="collection-item">
@@ -40,6 +40,9 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <li class="collection-item" style="text-align:right;">
+                                        <a  href="<?php echo base_url() . 'index.php/composemail' ?>" class="btn red text-white">Delete</a>
+                                    </li>
                             <?php foreach ($query->result_array() as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
@@ -49,8 +52,8 @@
                                     <a href="#!" class="secondary-content">
                                         
                                         <p>
-                                           <input type="checkbox" id="test5" />
-                                            <label for="test5" class="red-text">Delete</label>
+                                           <input type="checkbox" id="<?php echo $row['pm_id']; ?>" />
+                                            <label for="<?php echo $row['pm_id']; ?>" class="red-text">Delete</label>
                                         </p>
                                     </a>
                                 </li>

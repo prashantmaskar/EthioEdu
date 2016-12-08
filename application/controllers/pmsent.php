@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pminbox extends CI_Controller {
+class pmsent extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -40,11 +40,11 @@ class pminbox extends CI_Controller {
     public function index() {
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
-            'm_title' => 'Private Message Inbox',
-            'title' => 'Connect2Me',
+            'm_title' => 'Sent Items',
+            'title' => 'Sent Items',
             'banners' => $banners
         );
-        $this->load->view('pminbox',$view_params);
+        $this->load->view('pmsent',$view_params);
     }
 
 }

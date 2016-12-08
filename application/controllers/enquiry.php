@@ -72,6 +72,7 @@ class enquiry extends CI_Controller {
                 'enquiry_message' => $this->input->post('enquirybox'),
                 'enquiry_date' => $date,
                 'enquiry_time' => $time,
+                'school_id' => $this->input->post('sid'),
                 'user_id' => $sessid
 
             );
@@ -80,7 +81,9 @@ class enquiry extends CI_Controller {
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/enquiry");
+                    $sid = $this->input->post('sid');
+                       $name = $this->input->post('school');
+            redirect("index.php/enquiry?id=$sid&name=$name");
             }
 
 }

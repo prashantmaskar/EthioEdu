@@ -5,18 +5,11 @@
             <div class="sdetail_container  ">
                 <div class="row">
                     <div class="col m12 s12 ">
-                  <?php   if ($this->session->flashdata('message')) {
-    ?>
-    <div class="message flash">
-      <div class="message-data">
-        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
-        <button class="btn success-close">Close</button>
-        </div>   
-        </div>
-    <?php
-    }
+                        <div class="col s12 m12 card-panel">
+                            <h2 class="inbox-title">Private Messages (PM)</h2>
+                        </div>
 
-?>  <?php                $sessid= $this->session->userdata('suserid');
+<?php                $sessid= $this->session->userdata('suserid');
                     $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
                         
                      $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
@@ -25,9 +18,6 @@
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
                                 $inboxitem = $query2->result()[0]->row_count;
                         ?>
-                        <div class="col s12 m12 card-panel">
-                            <h2 class="inbox-title">Private Messages (PM)</h2>
-                        </div>
                         <div id="inbox-action" class="col m3 s5">
                             <div class="card-panel">
                                 <ul class="collection">
@@ -39,7 +29,7 @@
                                         <span class="new badge blue"><?php echo $inboxitem; ?></span>
                                     </li>
                                     <li class="collection-item">
-                                        <a href="<?php echo base_url().'pmsent'?>">Sent</a>
+                                        <a href="#">Sent</a>
                                         <span class="white-text badge green"><?php echo $sentitem; ?></span>
                                     </li>
                                     <li class="collection-item">
@@ -48,24 +38,25 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="compose-mail" class="col m9 s10 card-panel">
-                            <form action="<?php echo site_url('index.php/composemail')?>" method="post" enctype="multipart/form-data">
-                                <div class="form-group input-field col s6">
-                                    <input id="username" type="text" class="validate" name="username">
-                                    <label for="username">EthioEdu UserName</label>
-                                </div>
-                                <div class="form-group input-field col s12">
-                                    <input id="subject" type="text" class="validate" name="subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                                <div class="form-group input-field col s12">
-                                    <textarea id="message" class="materialize-textarea" name="Message"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                                <div class="col s6 offset-s4 margin-b-10">
-                                    <button type="submit" name="action" class="btn blue waves-light">Send Message</button>
-                                </div>
-                            </form>
+                        <div id="inbox-list" class="col m9 s10 card-panel">
+                            <ul class="collection">
+                            <?php foreach ($query->result_array() as $row){  ?>
+                                <li class="collection-item avatar ">
+                                    <i class="material-icons circle">person_pin</i>
+                                    <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
+                                    <p class="truncate grey-text ultra-small"><?php echo $row['pm_message'];?></p>
+                                    <p><span class=" blue-text ultra-small"><?php echo $row['pm_date'];?></span><span class=" blue-text ultra-small"><?php echo" at ". $row['pm_time'];?></span></p>
+                                    <a href="#!" class="secondary-content">
+                                        
+                                        <p>
+                                           <input type="checkbox" id="test5" />
+                                            <label for="test5" class="red-text">Delete</label>
+                                        </p>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                                    
+                            </ul>
                         </div>
 
                     </div>

@@ -63,10 +63,12 @@
       $sessid=$this->session->userdata('suserid');
       $query2=$this->db->query("select count(*) as row_count from tbl_questions where user_id= '" .$sessid."'");
 
+     $query3= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
-    <li><a href="#!">Inbox( )</a></li>
+    <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
     <li><a href="#!">Comments( )</a></li>
       <li class="divider"></li>

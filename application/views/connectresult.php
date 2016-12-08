@@ -122,7 +122,7 @@
                                         <div class="col m12 s12">
                                             <form method="post" action="<?php echo base_url() . 'index.php/connectresult/search' ?>">
                                                 <div class="input-field col s12">
-                                                    <input id="Username" type="text" class="validate">
+                                                    <input id="Username" name="username" type="text" class="validate">
                                                     <label for="Username">Enter Ethioedu user name</label>
                                                 </div>
                                                 <div class="col m12">
