@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2016 at 02:55 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Dec 08, 2016 at 05:43 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `ethio_db`
@@ -26,10 +26,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_query`
 --
 
-CREATE TABLE `ci_query` (
-  `id` int(10) NOT NULL,
-  `query_string` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `ci_query` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `query_string` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=254 ;
 
 --
 -- Dumping data for table `ci_query`
@@ -64,8 +65,8 @@ INSERT INTO `ci_query` (`id`, `query_string`) VALUES
 -- Table structure for table `tbl_advertise`
 --
 
-CREATE TABLE `tbl_advertise` (
-  `advertise_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_advertise` (
+  `advertise_id` int(11) NOT NULL AUTO_INCREMENT,
   `advertise_name` varchar(100) NOT NULL,
   `advertise_email` varchar(50) NOT NULL,
   `advertise_number` varchar(15) NOT NULL,
@@ -77,8 +78,10 @@ CREATE TABLE `tbl_advertise` (
   `advertise_date` varchar(50) NOT NULL,
   `advertise_time` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `isactive` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `isactive` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`advertise_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `tbl_advertise`
@@ -95,15 +98,16 @@ INSERT INTO `tbl_advertise` (`advertise_id`, `advertise_name`, `advertise_email`
 -- Table structure for table `tbl_contact`
 --
 
-CREATE TABLE `tbl_contact` (
-  `contact_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_contact` (
+  `contact_id` int(11) NOT NULL AUTO_INCREMENT,
   `contact_person_name` varchar(100) NOT NULL,
   `contact_person_email` varchar(50) NOT NULL,
   `contact_number` varchar(50) NOT NULL,
   `contact_desc` varchar(200) NOT NULL,
   `contact_date` varchar(50) NOT NULL,
-  `contact_time` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `contact_time` varchar(50) NOT NULL,
+  PRIMARY KEY (`contact_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -111,8 +115,8 @@ CREATE TABLE `tbl_contact` (
 -- Table structure for table `tbl_course`
 --
 
-CREATE TABLE `tbl_course` (
-  `course_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_course` (
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` varchar(100) NOT NULL,
   `course_subject` varchar(50) NOT NULL,
   `course_category` varchar(50) NOT NULL,
@@ -123,8 +127,10 @@ CREATE TABLE `tbl_course` (
   `course_date` varchar(50) NOT NULL,
   `course_time` varchar(50) NOT NULL,
   `course_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`course_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `tbl_course`
@@ -141,12 +147,22 @@ INSERT INTO `tbl_course` (`course_id`, `course_name`, `course_subject`, `course_
 -- Table structure for table `tbl_course_meta`
 --
 
-CREATE TABLE `tbl_course_meta` (
+CREATE TABLE IF NOT EXISTS `tbl_course_meta` (
   `course_rating` varchar(50) NOT NULL,
   `course_review` varchar(50) NOT NULL,
+  `Review_title` varchar(50) NOT NULL,
   `course_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  KEY `course_id` (`course_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course_meta`
+--
+
+INSERT INTO `tbl_course_meta` (`course_rating`, `course_review`, `Review_title`, `course_id`, `user_id`) VALUES
+('3', 'test', 'test', 5, 70),
+('3', 'sss', 'assa', 6, 70);
 
 -- --------------------------------------------------------
 
@@ -154,7 +170,7 @@ CREATE TABLE `tbl_course_meta` (
 -- Table structure for table `tbl_enquiry`
 --
 
-CREATE TABLE `tbl_enquiry` (
+CREATE TABLE IF NOT EXISTS `tbl_enquiry` (
   `enquiry_id` int(11) NOT NULL,
   `enquiry_school_name` varchar(50) NOT NULL,
   `enquiry_person_name` varchar(50) NOT NULL,
@@ -165,7 +181,8 @@ CREATE TABLE `tbl_enquiry` (
   `enquiry_message` varchar(300) NOT NULL,
   `enquiry_date` varchar(50) NOT NULL,
   `enquiry_time` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -182,15 +199,17 @@ INSERT INTO `tbl_enquiry` (`enquiry_id`, `enquiry_school_name`, `enquiry_person_
 -- Table structure for table `tbl_message`
 --
 
-CREATE TABLE `tbl_message` (
-  `pm_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_message` (
+  `pm_id` int(11) NOT NULL AUTO_INCREMENT,
   `pm_subject` varchar(500) NOT NULL,
   `pm_message` varchar(5000) NOT NULL,
   `pm_date` varchar(200) NOT NULL,
   `pm_time` varchar(200) NOT NULL,
   `pm_send_to` varchar(200) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`pm_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tbl_message`
@@ -209,8 +228,8 @@ INSERT INTO `tbl_message` (`pm_id`, `pm_subject`, `pm_message`, `pm_date`, `pm_t
 -- Table structure for table `tbl_posts`
 --
 
-CREATE TABLE `tbl_posts` (
-  `post_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_posts` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `post_title` varchar(100) NOT NULL,
   `post_desc` varchar(5000) NOT NULL,
   `post_category` varchar(50) NOT NULL,
@@ -222,8 +241,10 @@ CREATE TABLE `tbl_posts` (
   `post_venue` varchar(50) NOT NULL,
   `post_type` varchar(50) NOT NULL,
   `post_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `tbl_posts`
@@ -252,14 +273,16 @@ INSERT INTO `tbl_posts` (`post_id`, `post_title`, `post_desc`, `post_category`, 
 -- Table structure for table `tbl_posts_comments`
 --
 
-CREATE TABLE `tbl_posts_comments` (
-  `post_c_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_posts_comments` (
+  `post_c_id` int(11) NOT NULL AUTO_INCREMENT,
   `post_c_desc` varchar(200) NOT NULL,
   `post_c_date` varchar(50) NOT NULL,
   `post_c_time` varchar(50) NOT NULL,
   `post_c_type` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`post_c_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -267,8 +290,8 @@ CREATE TABLE `tbl_posts_comments` (
 -- Table structure for table `tbl_projects`
 --
 
-CREATE TABLE `tbl_projects` (
-  `project_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_projects` (
+  `project_id` int(11) NOT NULL AUTO_INCREMENT,
   `project_title` varchar(100) NOT NULL,
   `project_course` varchar(50) NOT NULL,
   `project_category` varchar(200) NOT NULL,
@@ -278,8 +301,10 @@ CREATE TABLE `tbl_projects` (
   `project_date` varchar(50) NOT NULL,
   `project_time` varchar(50) NOT NULL,
   `project_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`project_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `tbl_projects`
@@ -288,7 +313,10 @@ CREATE TABLE `tbl_projects` (
 INSERT INTO `tbl_projects` (`project_id`, `project_title`, `project_course`, `project_category`, `project_year`, `project_format`, `project_upload`, `project_date`, `project_time`, `project_approve`, `user_id`) VALUES
 (3, 'College Management Sytem', 'ICT Course', 'Agriculture', '2016', 'word', 'test.docx', '02 December, 2016', '11:05:28 AM', '1', 1),
 (4, 'Hospital Management System', 'Android Course', 'Agriculture', '2016', 'word', 'test1.docx', '02 December, 2016', '11:06:05 AM', '1', 1),
-(5, 'Gift Management System', 'PHP', 'Administration', '2016', 'word', 'test2.docx', '02 December, 2016', '11:06:44 AM', '1', 1);
+(5, 'Gift Management System', 'PHP', 'Administration', '2016', 'word', 'test2.docx', '02 December, 2016', '11:06:44 AM', '1', 1),
+(6, 'santosh', 'angular js', 'EET', '2016', 'word', 'Tejas_Resume.docx', '08 December, 2016', '08:11:28 AM', '0', 70),
+(7, 'sagar', 'interior', 'Arts_Humanity ', '2016', 'word', 'CodeIgniter_2_1_2_User_Guide.pdf', '08 December, 2016', '08:15:47 AM', '0', 70),
+(8, 'sssssaaa', 'javascript', 'Arts_Humanity ', '2016', '2017', '08-12-2016-08-18-28.pdf', '2016-12-08', '08:18:28 AM', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -296,16 +324,18 @@ INSERT INTO `tbl_projects` (`project_id`, `project_title`, `project_course`, `pr
 -- Table structure for table `tbl_questions`
 --
 
-CREATE TABLE `tbl_questions` (
-  `question_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_questions` (
+  `question_id` int(11) NOT NULL AUTO_INCREMENT,
   `question_type` varchar(50) NOT NULL,
   `question_category` varchar(50) NOT NULL,
   `question_desc` varchar(200) NOT NULL,
   `question_date` varchar(50) NOT NULL,
   `question_time` varchar(50) NOT NULL,
   `question_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`question_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `tbl_questions`
@@ -323,14 +353,16 @@ INSERT INTO `tbl_questions` (`question_id`, `question_type`, `question_category`
 -- Table structure for table `tbl_school_comments`
 --
 
-CREATE TABLE `tbl_school_comments` (
-  `school_c_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_school_comments` (
+  `school_c_id` int(11) NOT NULL AUTO_INCREMENT,
   `school_c_desc` varchar(200) NOT NULL,
   `school_c_date` varchar(50) NOT NULL,
   `school_c_time` varchar(50) NOT NULL,
   `school_c_likes` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`school_c_id`),
+  KEY `school_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -338,8 +370,8 @@ CREATE TABLE `tbl_school_comments` (
 -- Table structure for table `tbl_school_meta`
 --
 
-CREATE TABLE `tbl_school_meta` (
-  `school_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_school_meta` (
+  `school_id` int(11) NOT NULL AUTO_INCREMENT,
   `registration_type` varchar(50) NOT NULL,
   `school_name` varchar(50) NOT NULL,
   `school_logo` varchar(100) NOT NULL,
@@ -367,8 +399,10 @@ CREATE TABLE `tbl_school_meta` (
   `school_date` varchar(50) NOT NULL,
   `school_time` varchar(50) NOT NULL,
   `school_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`school_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `tbl_school_meta`
@@ -384,15 +418,18 @@ INSERT INTO `tbl_school_meta` (`school_id`, `registration_type`, `school_name`, 
 -- Table structure for table `tbl_users`
 --
 
-CREATE TABLE `tbl_users` (
-  `user_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `user_email` varchar(100) NOT NULL,
-  `user_role` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_role` varchar(20) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `user_email` (`user_email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;
 
 --
 -- Dumping data for table `tbl_users`
@@ -409,7 +446,7 @@ INSERT INTO `tbl_users` (`user_id`, `username`, `first_name`, `last_name`, `pass
 -- Table structure for table `tbl_user_meta`
 --
 
-CREATE TABLE `tbl_user_meta` (
+CREATE TABLE IF NOT EXISTS `tbl_user_meta` (
   `school_type` varchar(50) NOT NULL,
   `user_school` varchar(50) NOT NULL,
   `user_level` varchar(50) NOT NULL,
@@ -426,7 +463,8 @@ CREATE TABLE `tbl_user_meta` (
   `user_hobby` varchar(200) NOT NULL,
   `user_date` varchar(50) NOT NULL,
   `user_time` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -444,8 +482,8 @@ INSERT INTO `tbl_user_meta` (`school_type`, `user_school`, `user_level`, `user_d
 -- Table structure for table `tbl_vacancy`
 --
 
-CREATE TABLE `tbl_vacancy` (
-  `vacancy_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_vacancy` (
+  `vacancy_id` int(11) NOT NULL AUTO_INCREMENT,
   `vacancy_name` varchar(100) NOT NULL,
   `vacancy_school_name` varchar(100) NOT NULL,
   `vacancy_count` int(10) NOT NULL,
@@ -455,8 +493,10 @@ CREATE TABLE `tbl_vacancy` (
   `vacancy_date` varchar(50) NOT NULL,
   `vacancy_desc` varchar(5000) NOT NULL,
   `vacancy_approve` varchar(10) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`vacancy_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `tbl_vacancy`
@@ -467,187 +507,6 @@ INSERT INTO `tbl_vacancy` (`vacancy_id`, `vacancy_name`, `vacancy_school_name`, 
 (29, 'Android Developer', 'SIL', 2, '2016-12-01', '2016-12-16', '10:24:18 AM', '2016-11-25', 'Application Development', '1', 1),
 (30, 'Tester', 'SIL', 2, '2016-12-01', '2016-12-20', '10:25:00 AM', '2016-12-02', 'Testing of Site', '1', 1);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `ci_query`
---
-ALTER TABLE `ci_query`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_advertise`
---
-ALTER TABLE `tbl_advertise`
-  ADD PRIMARY KEY (`advertise_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_contact`
---
-ALTER TABLE `tbl_contact`
-  ADD PRIMARY KEY (`contact_id`);
-
---
--- Indexes for table `tbl_course`
---
-ALTER TABLE `tbl_course`
-  ADD PRIMARY KEY (`course_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_course_meta`
---
-ALTER TABLE `tbl_course_meta`
-  ADD KEY `course_id` (`course_id`,`user_id`);
-
---
--- Indexes for table `tbl_enquiry`
---
-ALTER TABLE `tbl_enquiry`
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_message`
---
-ALTER TABLE `tbl_message`
-  ADD PRIMARY KEY (`pm_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_posts`
---
-ALTER TABLE `tbl_posts`
-  ADD PRIMARY KEY (`post_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_posts_comments`
---
-ALTER TABLE `tbl_posts_comments`
-  ADD PRIMARY KEY (`post_c_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_projects`
---
-ALTER TABLE `tbl_projects`
-  ADD PRIMARY KEY (`project_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_questions`
---
-ALTER TABLE `tbl_questions`
-  ADD PRIMARY KEY (`question_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_school_comments`
---
-ALTER TABLE `tbl_school_comments`
-  ADD PRIMARY KEY (`school_c_id`),
-  ADD KEY `school_id` (`user_id`);
-
---
--- Indexes for table `tbl_school_meta`
---
-ALTER TABLE `tbl_school_meta`
-  ADD PRIMARY KEY (`school_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `user_email` (`user_email`);
-
---
--- Indexes for table `tbl_user_meta`
---
-ALTER TABLE `tbl_user_meta`
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `tbl_vacancy`
---
-ALTER TABLE `tbl_vacancy`
-  ADD PRIMARY KEY (`vacancy_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `ci_query`
---
-ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
---
--- AUTO_INCREMENT for table `tbl_advertise`
---
-ALTER TABLE `tbl_advertise`
-  MODIFY `advertise_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `tbl_contact`
---
-ALTER TABLE `tbl_contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tbl_course`
---
-ALTER TABLE `tbl_course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `tbl_message`
---
-ALTER TABLE `tbl_message`
-  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `tbl_posts`
---
-ALTER TABLE `tbl_posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
---
--- AUTO_INCREMENT for table `tbl_posts_comments`
---
-ALTER TABLE `tbl_posts_comments`
-  MODIFY `post_c_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tbl_projects`
---
-ALTER TABLE `tbl_projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `tbl_questions`
---
-ALTER TABLE `tbl_questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `tbl_school_comments`
---
-ALTER TABLE `tbl_school_comments`
-  MODIFY `school_c_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tbl_school_meta`
---
-ALTER TABLE `tbl_school_meta`
-  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
---
--- AUTO_INCREMENT for table `tbl_vacancy`
---
-ALTER TABLE `tbl_vacancy`
-  MODIFY `vacancy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
