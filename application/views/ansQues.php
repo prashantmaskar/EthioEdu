@@ -59,7 +59,7 @@ $query = $this->db->query("select * from tbl_questions where  question_id = '" .
                                  <label for="Description">Answer</label>
                                </div>
                                <input value="answer" name="response_type" type="hidden">
-                               <input value="<?php echo $row['question_id']; ?>" name="question_id" type="hidden">
+                               <input value="" name="question_id" type="hidden">
                                                       
                                   <input type="hidden" name="response_like" value="0">
 

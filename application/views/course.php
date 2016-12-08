@@ -86,7 +86,18 @@
                                 foreach ($course as $row){ ?>
                                 <?php $c_id = $row->course_id;
                                         ?>
-                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?></a>
+                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?><?php echo $row->avg_r ?>
+                                                        <input class="star star-5" id="star-5" type="radio" name="star" value="5"
+                                                       <?php if(isset($restultrating)) { echo $restultrating->course_rating=='5'? 'checked' :''; }?>/>
+                                                    <label class="star star-5" for="star-5"></label>
+                                                     
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+                                                    <label class="star star-4" for="star-4"></label>
+                                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+                                                    <label class="star star-3" for="star-3"></label>
+                                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+                                                    <label class="star star-2" for="star-2"></label>
+                                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1" /></a>
                                       <?php } ?>
                              </div>
                             </div>

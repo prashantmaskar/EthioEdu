@@ -620,11 +620,22 @@ function search_course($query_array, $limit,$offset, $sort_by,$sort_order){
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'course_name';
 
 
-      $q = $this->db->select('*')
+ /*    $q = $this->db->select('*')
                      ->from('tbl_course')
                      ->where('course_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
+*/
+
+                   $q = $this->db->select('*, AVG(`course_rating`) As avg_r',FALSE)
+                     ->from('tbl_course_meta')
+                     ->join('tbl_course','tbl_course_meta.course_id = tbl_course.course_id')
+                     ->where('course_approve = 1')
+                     ->group_by('tbl_course_meta.course_id')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order); 
+
+
     
 
     if(strlen($query_array['course_name'])){

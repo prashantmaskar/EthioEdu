@@ -99,12 +99,12 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' please enter message  !!!'
                     },
-                    /*stringLength:{
-                        message:'post tell us must be less than 120 characters',
+                    stringLength:{
+                        message:'post tell us must be less than 200 characters',
                         max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
+                            return 200 - (value.match(/\r/g) || []).length;
                         }
-                    }*/
+                    }
                 }
              },
           

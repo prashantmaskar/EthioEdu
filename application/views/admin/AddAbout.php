@@ -39,6 +39,7 @@
 ?>
                     
                     <div class="container">
+
                         <div class="section">
                             <p class="caption black-text">Fill all required fields. </p>
                             <div class="divider"></div>
@@ -56,6 +57,7 @@
                                  $query = $this->db->query("select * from tbl_posts where  post_type='aboutus' ");
                         
                             foreach ($query->result_array() as $row){ 
+                              
                              ?>
                              <input id="post_id" name="post_id" type="hidden" class="validate " value="<?php  echo $row['post_id'];?>">
                                  <div class="form-group input-field col s12">
@@ -65,7 +67,7 @@
                                 <div class="form-group input-field col s12">
                                     <textarea id="Description" name="Description" class="materialize-textarea" ><?php echo $row['post_desc'];?></textarea>
                                     <label for="Description">Description</label>
-                                </div> <?php } } else {?>
+                                </div> <?php } } else {?> 
                                 <div class="form-group input-field col s12">
                                     <input id="Caption" name="caption" type="text" class="validate " >
                                      <label for="Caption">Title</label>
@@ -74,6 +76,11 @@
                                  <textarea id="Description" name="Description" class="materialize-textarea" ></textarea>
                                  <label for="Description">Description</label>
                                </div><?php }?>
+                                    
+
+                                    
+
+
                                                   
                                 <div class="form-group file-field input-field col s12">
                                 <div class="btn">
@@ -81,7 +88,7 @@
                                        <input type="file"  name="avatar" multiple>
                                  </div>
                                  <div class="file-path-wrapper">
-                                     <input class="file-path validate" type="text" placeholder="Upload Photo">
+                                     <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>">
                                 </div>
                                </div>
                                                   

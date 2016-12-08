@@ -301,7 +301,7 @@
                                                             <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Submit</button>
                                                               &nbsp;&nbsp;
                                                 <?php if (!$this->session->userdata('logged_in')){ ?>
-                                                        <span>Already A User? <a href="#">Login</a> </span> <?php }?>
+                                                        <span>Already A User? <a href="<?php echo base_url() . 'index.php/login' ?>">Login</a> </span> <?php }?>
                                    <!--  <p class="t20margin"><a href="#">Forgot Password?</a> </p> -->
                                 </div>
                                                         </div>
