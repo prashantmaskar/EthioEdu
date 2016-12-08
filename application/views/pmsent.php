@@ -128,7 +128,8 @@
 
          $(document).ready(function(){
         $('.deletebtn').click(function(){
-            
+            //alert('test');
+
             var checkValues = $('input[name=deletemsg]:checked').map(function()
             {
                 return $(this).val();
@@ -137,7 +138,7 @@
             $.ajax({
                 url: 'admin/approve_delete',
                 type: 'POST',
-                data: { sids: checkValues },
+                data: { sids: checkValues},
                 success:function(data){
                         console.log(data);
                         location.reload();

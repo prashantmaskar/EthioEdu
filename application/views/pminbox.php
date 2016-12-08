@@ -32,9 +32,9 @@
                                         <a href="<?php echo base_url().'pmsent'?>">Sent</a>
                                         <span class="white-text badge green"><?php echo $sentitem; ?></span>
                                     </li>
-                                    <li class="collection-item">
+                                   <!-- <li class="collection-item">
                                         <a href="#">Delete</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -127,17 +127,17 @@
 <script>
 
          $(document).ready(function(){
+             //alert('sdfsdff'); 
         $('.deletebtn').click(function(){
-            
             var checkValues = $('input[name=deletemsg]:checked').map(function()
             {
                 return $(this).val();
             }).get();
-            //console.log(checkValues);
+            console.log(checkValues);
             $.ajax({
                 url: 'admin/approve_delete',
                 type: 'POST',
-                data: { ids: checkValues },
+                data: { ids: checkValues},
                 success:function(data){
                         console.log(data);
                         location.reload();

@@ -57,12 +57,13 @@ class connectresult extends CI_Controller {
         //print_r( $data['fields']);
 
         
-
+        $related_res = $this->init_models->related_users();
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',
                 'title'   => 'Connect Result',
-                'banners' => $banners
+                'banners' => $banners,
+                'related_res' => $related_res,
             );
 
 
@@ -146,12 +147,13 @@ class connectresult extends CI_Controller {
         'user_hobby'=>'user_hobby',
 
             );
-
+        $related_res = $this->init_models->related_users();
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',
                 'title'   => 'Connect Result',
-                'banners' => $banners
+                'banners' => $banners,
+                'related_res' => $related_res,
             );
 
 
