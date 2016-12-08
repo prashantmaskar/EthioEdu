@@ -229,9 +229,9 @@ $(document).ready(function() {
                         message:  ' please enter academic requierement descreption !!!'
                     },
                     stringLength:{
-                        message:'descreption must be less than 120 characters',
+                        message:'descreption must be less than 300 characters',
                         max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
+                            return 300 - (value.match(/\r/g) || []).length;
                         }
                     }
                 }
@@ -272,9 +272,9 @@ $(document).ready(function() {
                         message:  ' please tell us about yourself  !!!'
                     },
                     stringLength:{
-                        message:'information must be less than 120 characters',
+                        message:'information must be less than 200 characters',
                         max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
+                            return 200 - (value.match(/\r/g) || []).length;
                         }
                     }
                 }

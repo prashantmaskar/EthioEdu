@@ -67,7 +67,7 @@
                                                         
                                                     </div> -->
                                                     <div class="form-group input-field col s12">
-                                                        <input id="web" type="text" name="website" class="validate">
+                                                        <input id="web" type="url" name="website" class="validate">
                                                         <label for="password">Web Url</label>
                                                     </div>
                                                    <div class= "form-group input-field col s12">

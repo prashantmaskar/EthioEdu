@@ -68,6 +68,7 @@
                                     <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
                                     <?php $susername = $this->session->userdata('susername');
                                         echo $susername;  ?>
+                                       
                                         <i class="mdi-navigation-arrow-drop-down right"></i>
                                     </a>
                                     <ul id="profile-dropdown" class="dropdown-content">
