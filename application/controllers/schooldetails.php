@@ -37,6 +37,7 @@ class schooldetails extends CI_Controller {
             'title' => 'School Details',
             'banners' => $banners
         );
+        $view_params['news'] = $this->init_models->selectnews();
         $this->load->view('schooldetails',$view_params);
     }
 

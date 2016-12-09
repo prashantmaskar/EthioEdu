@@ -161,7 +161,7 @@
                                 <h2 class="sch_det_title">More Courses</h2>
                             <?php $crs_id = $cource_id;
                                 $query = $this->db->query("select * from  tbl_course where   
-                                 course_id != '" .$crs_id. "'");
+                                 course_id != '" .$crs_id. "'limit 4");
                                 foreach ($query->result_array() as $row)
                                 { 
                                     $c_id = $row['course_id'];
@@ -175,6 +175,10 @@
                      </div>
 
 
+
+                     <div>
+                          <!--  <ul class="pagination">
+
                      <div>
                             <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
@@ -184,8 +188,12 @@
                                 <li class="waves-effect"><a href="#!">4</a></li>
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                            </ul>
+
+                            </ul> -->
                   </div>
+
+                            </ul>
+                  </div> 
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>

@@ -75,14 +75,15 @@ nav .brand-logo {
     box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
 
 }
+
 .day{
     text-align: center;
     padding: 15px;
-    font-size: 25px;
+    font-size: 10px;
 }
 .monthyear{
 
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     text-transform: capitalize;
 }
 
@@ -214,6 +215,11 @@ nav .brand-logo {
 
 
 }
+
+.service_col img {
+    width: 100%;
+}
+
 .more_link{
     padding-bottom: 20px;
     margin-bottom: 5px;
@@ -294,6 +300,18 @@ img.edit-attach {
     line-height: 1;
 
     padding-right: 14px;
+}
+
+
+
+
+
+.review_info [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.review_info [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
 }
 /*=================================================
  Owl Carousel
@@ -1006,6 +1024,12 @@ connect2Me List and Form Csss
 }
 .online_std_list P{
     color: #000;
+
+}
+
+
+.online_std_list{
+    padding:20px;
 }
 .vr-line img{
     width: 50%;
@@ -1026,7 +1050,7 @@ connect2Me List and Form Csss
     color: #000;
 }
 .result_list_wrap h5{
-    padding: 0px 25px;
+    padding: 20px 25px;
 }
 .result_list_wrap img{
     width: 150px;

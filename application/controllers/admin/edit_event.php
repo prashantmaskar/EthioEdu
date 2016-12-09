@@ -65,9 +65,25 @@ if(isset($_POST['action'])){
 
                 if ( ! $this->upload->do_upload('avatar'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
 
-                        var_dump($error);
+                  $date = date('Y-m-d',$adate);
+
+                   $data=array(
+                  'post_id' => $this->input->post('post_id'),
+                  'post_title' => $this->input->post('event_tital'),
+                  'post_desc'  => $this->input->post('Description'),
+                  'post_attachment' => $filedata['file_name'],
+                  'post_author'=>  $this->input->post('eventby'),
+                  'post_venue'=>  $this->input->post('event_venue'),
+                  //'post_date' => $date,
+                  //'post_time' => $this->input->post('time'),
+                  'post_type'=>  $this->input->post('post_type'),
+                   'post_approve' => $this->input->post('approve_status')
+        );
+                  $isinserted = $this->init_models->edit_event($data);
+                      /*  $error = array('error' => $this->upload->display_errors());
+
+                        var_dump($error);*/
 
                        // $this->load->view('upload_form', $error);
                 }
@@ -89,8 +105,8 @@ if(isset($_POST['action'])){
                   'post_attachment' => $filedata['file_name'],
                   'post_author'=>  $this->input->post('eventby'),
                   'post_venue'=>  $this->input->post('event_venue'),
-                  'post_date' => $date,
-                  'post_time' => $this->input->post('time'),
+                  //'post_date' => $date,
+                  //'post_time' => $this->input->post('time'),
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status')
         );

@@ -26,7 +26,7 @@ and open the template in the editor.
                             <li>
 
                                 <h1 class="logo-wrapper">
-                                    <a href="#" class="brand-logo darken-1" >
+                                    <a href="<?php echo base_url(). 'index.php/home'?>" class="brand-logo darken-1" >
                                         EthioEdu
                                     </a>    
                                 </h1>
