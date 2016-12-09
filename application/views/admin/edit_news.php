@@ -97,11 +97,11 @@
                                                         <label for="author">News written By</label>
                                                     </div>
                                                     <div class="form-group input-field col s6">
-                                                        <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker">
+                                                        <input id="date" name="date" type="date" value="<?php echo $row['post_date'];?>" class="datepicker" disabled>
                                                         <label for="date">Date of Posting</label>
                                                     </div>
                                                      <div class="form-group input-field col s6">
-                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" disabled>
                                                         <label for="date">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -142,8 +142,7 @@
                             </div>
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
-                        <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addnews.js' ?>"></script>
-
+                        
 
                          <script>
 
@@ -168,3 +167,99 @@
                         });
                     }
                 }</script>
+
+
+
+            <script>
+            $(document).ready(function() {
+
+    $('#addnews').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter news title!!!..'
+                    }
+                }
+            },
+
+
+
+         Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    }
+                    
+                    }
+                
+             },
+
+         catagory:{
+                validators:{
+                    notEmpty:{
+                        message:  'select category required!!!'
+                    }
+                    
+                    }
+                
+             },
+
+
+           avatar:{
+            validators:{ 
+                 file: {
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
+
+            author: {
+                validators: {
+                    notEmpty: {
+                        message: ' Please enter auther name!!!..'
+                    }
+                }
+            },
+             
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: ' Date can not be Empty!!!..'
+                    }
+                }
+            },
+                source_link: {
+                validators: {
+                    notEmpty: {
+                        message: ' Enter source link!!!..'
+                    }
+                }
+            },
+                p_caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' Enter photo caption!!!..'
+                    }
+                }
+            },
+
+
+               
+             
+
+
+
+
+             }
+    });
+});
+</script>
