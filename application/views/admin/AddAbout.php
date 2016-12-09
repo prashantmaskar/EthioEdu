@@ -78,8 +78,7 @@
                                </div><?php }?>
                                     
 
-                                    
-
+                                   
 
                                                   
                                 <div class="form-group file-field input-field col s12">
@@ -91,7 +90,9 @@
                                      <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>">
                                 </div>
                                </div>
-                                                  
+                  <iframe width="420" height="315"
+                  src="https://www.youtube.com/embed/1FJwzZMAGMM">
+                        </iframe>                                         
                                <input value="aboutus" name="post_type" type="hidden">
                                                    
                              <?php 

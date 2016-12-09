@@ -101,7 +101,7 @@
                                                         <label for="date">Date of Posting</label>
                                                     </div>
                                                      <div class="form-group input-field col s6">
-                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" disabled>
+                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" >
                                                         <label for="date">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
