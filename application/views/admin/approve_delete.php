@@ -183,7 +183,5 @@ $query = $this->db->query("update tbl_posts set post_attachment = null where pos
  
 
 
-
-
 ?>
 

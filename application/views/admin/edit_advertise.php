@@ -191,9 +191,9 @@
         fields: {
             name:{
                  validators:{
-                    notEmpty:{
+                   /* notEmpty:{
                         message:'Name required'
-                    },
+                    },*/
                     regexp:{
                               regexp: /^[a-z\s]+$/i,
                                 message: 'The Name can consist of alphabetical characters and spaces only'

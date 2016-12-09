@@ -33,4 +33,13 @@ $query = $this->db->query("delete from tbl_message where pm_id = '" .$sent_id. "
 
 }
 
+
+
+$delete_id = $_POST['deleteuserimg_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_id)){
+$query = $this->db->query("update tbl_user_meta set user_avatar = null where sessid = '" .$delete_id. "'");
+}
+
+
 ?>

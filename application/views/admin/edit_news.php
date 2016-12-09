@@ -213,9 +213,9 @@
 
            avatar:{
             validators:{ 
-                notEmpty:{
+                /*notEmpty:{
                     message:'please attach image'
-                },
+                },*/
                  file: {
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',

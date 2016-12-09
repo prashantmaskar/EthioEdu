@@ -1,4 +1,6 @@
- <?php $this->load->view('header'); ?>
+
+
+ <?php $this->load->view('header');?>
 <div class="sdetails-wrap">
     <div class="row">
         <div class="col s12 m9 margin-t-15">

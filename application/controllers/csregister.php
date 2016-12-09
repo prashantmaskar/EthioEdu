@@ -163,7 +163,7 @@ $getid = $this->get_frontuser_id();
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'RegistrationSuccessful'); 
-            redirect("index.php/sregister");
+            redirect("index.php/login");
             }
 
 

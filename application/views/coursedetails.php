@@ -175,8 +175,12 @@
                      </div>
 
 
+
                      <div>
                           <!--  <ul class="pagination">
+
+                     <div>
+                            <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
                                 <li class="waves-effect"><a href="#!">2</a></li>
@@ -184,8 +188,12 @@
                                 <li class="waves-effect"><a href="#!">4</a></li>
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
+
                             </ul> -->
                   </div>
+
+                            </ul>
+                  </div> 
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>
