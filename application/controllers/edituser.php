@@ -49,7 +49,7 @@ class edituser extends CI_Controller {
    $epass =  $this->input->post('password');
     if(!$epass == ""){
         $this->addfrontuser();
-        echo"IN ";
+        //echo"IN ";
     }else{
         $this->editfrontuser();
     }

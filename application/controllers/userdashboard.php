@@ -27,15 +27,21 @@ class userdashboard extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+        if ( !$this->session->userdata('logged_in'))
+    { 
+        redirect('index.php/login');
+    }
     }
 
 
     public function index() {
+        $related_res = $this->init_models->related_users();
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'userdashboard',
             'title' => 'Connect2Me',
-            'banners' => $banners
+            'banners' => $banners,
+            'related_res' => $related_res,
         );
         $this->load->view('userdashboard',$view_params);
     }

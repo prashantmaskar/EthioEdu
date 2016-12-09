@@ -39,13 +39,6 @@
                             
                         </ul>
                       <!--  <ul class="pagination margin-b-10">
-                            <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-                            <li class="active"><a href="#!">1</a></li>
-                            <li class="waves-effect"><a href="#!">2</a></li>
-                            <li class="waves-effect"><a href="#!">3</a></li>
-                            <li class="waves-effect"><a href="#!">4</a></li>
-                            <li class="waves-effect"><a href="#!">5</a></li>
-                            <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                         </ul> -->
                         <?php echo $pagination; ?>
                     </div>
@@ -153,9 +146,10 @@
 //print_r($related_users);
                        foreach ($related_res as $row){ ?>
                             <li>
+                            <?php $pimg = $row['user_avatar']; ?>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>">
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>

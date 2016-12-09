@@ -103,9 +103,10 @@
 //print_r($related_users);
                        foreach ($related_res as $row){ ?>
                             <li>
+                            <?php $pimg = $row['user_avatar']; ?>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>"> 
                                     </div>
                                     <div class="col m9 std_details">
                                         <p class="std_name"><a href="#"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
