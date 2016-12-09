@@ -48,15 +48,15 @@
                         <div class="comment_box row">
                             <div class="col m12">
                                 <h3>Leave a Reply</h3>
-                                <form>
-                                <div class="input-field col m5">
+                                <form id="comment" action="#" method="post" >
+                                <div class=" form-group input-field col m5">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" type="text" class="validate">
+                                    <input id="icon_prefix" type="text" name="name" class="validate">
                                     <label for="icon_prefix">Name</label>
                                 </div>
-                                <div class="input-field col m12">
+                                <div class=" form-group input-field col m12">
                                     <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                    <textarea id="icon_prefix2" name="reply" class="materialize-textarea"></textarea>
                                     <label for="icon_prefix2">Comment</label>
                                 </div>
                                 <button class="btn waves-effect waves-light col m2 offset-m1 margin-b-10" type="submit" name="action">Submit
@@ -83,4 +83,52 @@
                 </div>
             </div>
         </div>
+       
         <?php $this->load->view('footer'); ?>
+        <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script>
+        $(document).ready(function(){
+    //alert('in');
+    $.validator.setDefaults({
+        ignore: []
+    });
+
+ $("#comment").validate({
+        rules: {
+            
+            name:{
+            
+                required: true
+                
+               
+            },
+
+            reply:{
+                required:true,
+                  minlength: 15
+                   }
+           
+        },
+        
+        messages:{
+            name:{
+                required:"enter username",
+            },
+            reply:{
+                required:"please give some comment"
+
+            }
+        },
+
+
+
+       errorClass:"invalid form-error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          error.appendTo( element.parent() );
+          }
+        
+     });
+});
+
+        </script>

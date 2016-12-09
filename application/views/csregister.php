@@ -56,8 +56,8 @@
 
                                     <h4 class="red-text">Connect2Me Information</h4>
 
-                                    <div class="form-group input-field col s12">
-                                        <input id="date" type="date" name="birth_date" >
+                                    <div class="form-group ">
+                                        <input type="date" name="birth_date" placeholder="birthdate">
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
@@ -165,3 +165,4 @@
         
        <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url() .'js/csregister.js' ?>"></script>
+ 

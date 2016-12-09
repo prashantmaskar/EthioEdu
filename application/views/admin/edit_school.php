@@ -48,7 +48,7 @@
                                                         <?php  $options = $row['registration_type']; ?>
                                                              <option value="">Registration type</option>
                                                             <option value="Normal Registration" <?php if($options=="Normal Registration") echo 'selected="selected"'; ?>>Normal Registration</option>
-                                                            <option value="Premium Registration (1,000 Birr per year)" <?php if($options=="Premium Registration") echo 'selected="selected"'; ?>>Premium Registration (1,000 Birr per year)</option>
+                                                            <option value="Premium Registration" <?php if($options=="Premium Registration") echo 'selected="selected"'; ?>>Premium Registration (1,000 Birr per year)</option>
 
                                                         </select>
 
@@ -94,7 +94,7 @@
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
                                             <span>Attach logo</span>
-                                            <input name="fileformat" type="file" multiple >
+                                            <input name="fileformat" type="file"  multiple >
                                        </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="attach image only" value="<?php echo $row['school_logo']; ?>">
@@ -277,7 +277,6 @@
                             </div>
                         </div>
                          <?php  $this->load->view('admin/footer'); ?>
-                         <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-addschool-validate.js' ?>"></script>
 
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script>
@@ -344,3 +343,264 @@
                         });
                     }
                 }</script>
+                <script>
+                $(document).ready(function() {
+
+    $('#addschoolform').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            choice: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select registration type!!!..'
+                    }
+                }
+            },
+            user_name: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter user_name!!!..'
+                    }
+                }
+            },
+            fileformat:{
+            validators:{
+                
+                 file: {
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
+             fullname: {
+                validators:{
+                    notEmpty:{
+                        message:'full name required'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
+                    }
+                }
+            },
+            email:{
+                validators:{
+                    notEmpty:{
+                         message:'Email address is required!!!'
+                    },
+                    emailAddress:{
+                        message:'The input is not a valid email adddress!!'
+                    }
+                }
+            },
+            schoolname:{
+                    validators:{
+                        notEmpty:{
+                            message:'please enter school name!!'
+                        }
+                    }
+            },
+            choice1: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select  school catagory!!!..'
+                           
+                    }
+                }
+            },
+             choice2: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select  school university!!!..'
+                           
+                    }
+                }
+            },
+             choice3: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select  institute!!!..'
+                           
+                    }
+                }
+            },
+             choice4: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select  other catagory!!!..'
+                           
+                    }
+                }
+            },
+             phone_number: {
+                validators: {
+                    notEmpty: {
+                        message: 'contact required!!!..'
+                    },digits:{
+                         message:'contact number is invalid'
+
+                    },
+                    stringLength: {
+                        min:10,
+                        max: 10,
+                        message: 'contact number must contains 10 digits'
+                    }
+                }
+            },
+             choice5: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select  school catagory!!!..'
+                           
+                    }
+                }
+            },
+             choice6:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please enter city!!!'
+                    }
+                }
+             },
+              choice7:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please choose region!!!'
+                    }
+                }
+             },
+               choice8:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please choose school type!!!'
+                    }
+                }
+             },
+             student_population:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter student_population!!!'
+                    }
+                }
+             },
+             t_staff:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter amount of teaching staff!!!'
+                    },
+                     digits:{
+                         message:'price invalid'
+
+                            }
+                }
+             },
+             non_teach:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter amount of non_teaching staff!!!'
+                    },
+                     digits:{
+                         message:'price invalid'
+
+                            }
+                }
+             },
+             past_award:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter name of past award !!!'
+                    }
+                }
+             },
+             year:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter name of year !!!'
+                    },
+                    digits:{
+                      message:'should be in year format'
+                    }
+                }
+             },
+             fee:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter fee !!!'
+                    },
+                     digits:{
+                         message:'price invalid'
+
+                            }
+                }
+             },
+                Admissios_pro:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter Admission Procedures !!!'
+                    }
+                  
+                    
+                }
+             },
+             Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter academic requierement descreeption !!!'
+                    }
+                   
+                    
+                }
+             },
+             scolership:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please Enter scolership!!!'
+                    }
+                }
+             },
+           address:{
+                validators:{
+                    notEmpty:{
+                        message:  ' address required!!!'
+                    },
+                  
+                    
+                }
+             },
+                   website:{
+                validators:{
+                    uri:{
+                        message:  ' website address is not valid!!!'
+                    },
+                    notEmpty:{
+                         message:'enter web url'
+                    }
+                }
+             },
+              tell_us:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please tell us about yourslef  !!!'
+                    }
+                   /* stringLength:{
+                        message:'post tell us must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }*/
+                }
+             },
+
+
+
+
+            
+        }
+    });
+});</script>

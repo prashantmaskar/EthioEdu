@@ -52,7 +52,7 @@ if(isset($_POST['action'])){
 
     date_default_timezone_set('Asia/Kolkata');
             $imagePrefix = date("d-m-Y-h-i-s"); 
-            $imagename = $imagePrefix.$value['name'];
+            $imagename = $imagePrefix;
 
 
                 $config['upload_path']          = './uploads/';
