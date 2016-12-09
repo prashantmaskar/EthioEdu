@@ -87,17 +87,17 @@
                                        <input type="file"  name="avatar" multiple>
                                  </div>
                                  <div class="file-path-wrapper">
-                                     <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>">
+                                     <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php //echo $row['post_attachment'];?>">
                                 </div>
                                </div>
-                  <iframe width="420" height="315"
+                <!--  <iframe width="420" height="315"
                   src="https://www.youtube.com/embed/1FJwzZMAGMM">
-                        </iframe>                                         
+                        </iframe>         -->                               
                                <input value="aboutus" name="post_type" type="hidden">
                                                    
                              <?php 
-                                $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='aboutus'");
-                                $count= $query->result()[0]->row_count;
+                              //  $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='aboutus'");
+                               // $count= $query->result()[0]->row_count;
                 /*echo $count;*/if($count>='1') {?>
                                 <div class="col s5 offset-s5">
                                 <button class="btn waves-effect waves-light" type="submit" name="editaction" >Edit

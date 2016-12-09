@@ -992,6 +992,12 @@ connect2Me List and Form Csss
 }
 .online_std_list P{
     color: #000;
+
+}
+
+
+.online_std_list{
+    padding:20px;
 }
 .vr-line img{
     width: 50%;
@@ -1012,7 +1018,7 @@ connect2Me List and Form Csss
     color: #000;
 }
 .result_list_wrap h5{
-    padding: 0px 25px;
+    padding: 20px 25px;
 }
 .result_list_wrap img{
     width: 150px;

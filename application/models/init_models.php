@@ -571,7 +571,7 @@ $q->where('user_interest',$query_array['user_interest']);
 
    function related_users(){
       
-       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id limit 5');
+       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id ORDER BY RAND() limit 5');
           
          return $query->result_array();
 

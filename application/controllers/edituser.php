@@ -34,11 +34,13 @@ class edituser extends CI_Controller {
 
 	public function index()
 	{
+        $related_res = $this->init_models->related_users();
         $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Edit UserProfile',
                 'title'   => 'Edit UserProfile',
-                'banners' => $banners
+                'banners' => $banners,
+                'related_res' => $related_res,
             );
 		$this->load->view('edituser',$view_params);
 
@@ -47,7 +49,7 @@ class edituser extends CI_Controller {
    $epass =  $this->input->post('password');
     if(!$epass == ""){
         $this->addfrontuser();
-        echo"IN ";
+        //echo"IN ";
     }else{
         $this->editfrontuser();
     }

@@ -90,7 +90,7 @@
 
             <div class="row">
                 <div class="col s3 ">
-                    <img class="logo_bar" src="<?php echo base_url() . 'images/logo.png' ?>">
+                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar" src="<?php echo base_url() . 'images/logo.png' ?>"></a>
                 </div>
                 <div class="col s9 ">
                     <div class="upper_slider">
