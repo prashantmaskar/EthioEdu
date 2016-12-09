@@ -155,9 +155,6 @@ $html .= " <li class='collection-item'>
 <div class='timestamp'>".$re['response_date']."</div> 
 <a href='#comment_form' class='reply' id='" . $re['response_id'] . "'>Reply </a>
 
-if(".$re['response_like']." == '1') {<a href='javascript:void(0);' onclick='like('".$re['question_id'].",".$re['user_id'].",".$re['response_id']."')'>Unlike</a>
-}else
-if(".$re['response_like']." == '0') {<a href='javascript:void(0);' onclick='unlike('".$re['question_id'].",".$re['user_id'].",".$re['response_id']."')'>Like</a>
 
 </div></div>"; 
 $html .=$this->in_parent($re['response_id'],$question_id, $store_all_id); 
