@@ -10,7 +10,7 @@
                         </div>
 
 <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("select * from tbl_message where pm_send_to = '" .$sessid. "'");
+                    $query = $this->db->query("SELECT * FROM tbl_users LEFT JOIN tbl_message ON tbl_users.user_id=tbl_message.user_id where tbl_message.pm_send_to = '" .$sessid. "'");
                         
                      $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
                                 $sentitem = $query1->result()[0]->row_count;
@@ -47,7 +47,8 @@
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
                                     <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
-                                    <p class="truncate grey-text ultra-small"><?php echo $row['pm_message'];?></p>
+                                    <p class="truncate grey-text ultra-small">From : <?php echo $row['username'];?></p>
+                                    <p class="truncate grey-text ultra-small">Message :<?php echo $row['pm_message'];?></p>
                                     <p><span class=" blue-text ultra-small"><?php echo $row['pm_date'];?></span><span class=" blue-text ultra-small"><?php echo" at ". $row['pm_time'];?></span></p>
                                     <a href="#!" class="secondary-content">
                                         
@@ -69,54 +70,22 @@
         <div class="col s12 m3 margin-t-15">
             <div class="online_std z-depth-1">
                 <ul class="online_std_list">
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
+                    <?php 
+//print_r($related_users);
+                       foreach ($related_res as $row){ ?>
+                            <li>
+                                <div class="row">
+                                    <div class="col m3 s12 std_thumb">
+                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
+                                    </div>
+                                    <div class="col m9 std_details">
+                                        <p class="std_name"><a href="#"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_university"><?php echo $row['user_gender']; ?></p>
+                                        <p class="std_name"><?php echo $row['user_school']; ?></p>
+                                    </div>
+                                </div> 
+                            </li>
+                            <?php } ?>
                 </ul>
             </div>
         </div>
@@ -133,9 +102,9 @@
             {
                 return $(this).val();
             }).get();
-            console.log(checkValues);
+            //console.log(checkValues);
             $.ajax({
-                url: 'admin/approve_delete',
+                url: 'message_delete',
                 type: 'POST',
                 data: { ids: checkValues},
                 success:function(data){
