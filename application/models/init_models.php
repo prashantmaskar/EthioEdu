@@ -107,7 +107,7 @@ function get_user_id_by_uname($uname){
       
       public function selectnews()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'news' && post_approve = 1"); 
+        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_posts.post_id, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_users join tbl_posts on tbl_users.user_id = tbl_posts.user_id where tbl_posts.post_type = 'news' && tbl_posts.post_approve = 1 limit 10"); 
         return $query->result_array();
       }
        public function selectallnews()  

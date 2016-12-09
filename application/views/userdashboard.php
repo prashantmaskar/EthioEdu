@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <?php
-                            $query = $this->db->query("select tbl_users.username, tbl_posts.user_id, tbl_posts.post_date, post_time, tbl_posts.post_title, tbl_posts.post_type as type, tbl_posts.post_id as id from tbl_users INNER JOIN tbl_posts On tbl_users.user_id = tbl_posts.user_id where tbl_posts.post_approve = 1 and tbl_posts.user_id = '".$uid."'");
+                            $query = $this->db->query("select tbl_users.username, tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.user_id, tbl_posts.post_date, post_time, tbl_posts.post_title, tbl_posts.post_type as type, tbl_posts.post_id as id from tbl_users JOIN tbl_posts On tbl_users.user_id = tbl_posts.user_id join tbl_user_meta on tbl_posts.user_id = tbl_user_meta.user_id where tbl_posts.post_approve = 1 and tbl_posts.user_id = '".$uid."'");
 
                             ?>
                             <div class="col m8 s12 ">
@@ -48,7 +48,7 @@
                                             <?php if($row['type'] == 'event'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/event_details?id='.$id?>"><?php echo $row['post_title']; ?></a> Event </p>
@@ -59,7 +59,7 @@
                                           <?php if($row['type'] == 'news'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/news_detail?id='.$id?>"><?php echo $row['post_title']; ?></a> News </p>
@@ -70,7 +70,7 @@
                                           <?php if($row['type'] == 'gist'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url().'images/user.jpg'?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/gist'?>"><?php echo $row['post_title']; ?></a> Gist </p>

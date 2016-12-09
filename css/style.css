@@ -206,6 +206,11 @@ nav .brand-logo {
 
 
 }
+
+.service_col img {
+    width: 100%;
+}
+
 .more_link{
     padding-bottom: 20px;
     margin-bottom: 5px;
@@ -286,6 +291,18 @@ img.edit-attach {
     line-height: 1;
 
     padding-right: 14px;
+}
+
+
+
+
+
+.review_info [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.review_info [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
 }
 /*=================================================
  Owl Carousel
