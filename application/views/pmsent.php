@@ -29,7 +29,7 @@
                                         <span class="new badge blue"><?php echo $inboxitem; ?></span>
                                     </li>
                                     <li class="collection-item">
-                                        <a href="#">Sent</a>
+                                        <a href="<?php echo base_url().'index.php/pmsent'?>">Sent</a>
                                         <span class="white-text badge green"><?php echo $sentitem; ?></span>
                                     </li>
                                    <!-- <li class="collection-item">
