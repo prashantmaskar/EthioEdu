@@ -86,18 +86,23 @@
                                 foreach ($course as $row){ ?>
                                 <?php $c_id = $row->course_id;
                                         ?>
-                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?><?php echo $row->avg_r ?>
-                                                        <input class="star star-5" id="star-5" type="radio" name="star" value="5"
-                                                       <?php if(isset($restultrating)) { echo $restultrating->course_rating=='5'? 'checked' :''; }?>/>
+                                    <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?>
+                                                    <div style="display: inline-block;float: right;">
+                                                        <div class=" form-control browser-default stars" name="rating">
+                                                 <!-- <form action="">-->
+                                                    <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if(isset($row)) { echo  $row->avg_r=='5'? 'checked' :''; }?> disabled/>
                                                     <label class="star star-5" for="star-5"></label>
-                                                     
-                                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php if(isset($row)) { echo $row->avg_r=='4'? 'checked' :''; } ?> disabled/>
                                                     <label class="star star-4" for="star-4"></label>
-                                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+                                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php if(isset($row)) { echo $row->avg_r=='3'? 'checked' :''; }?> disabled/>
                                                     <label class="star star-3" for="star-3"></label>
-                                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+                                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php if(isset($row)) { echo $row->avg_r=='2'? 'checked' :''; }?> disabled/>
                                                     <label class="star star-2" for="star-2"></label>
-                                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1" /></a>
+                                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1" <?php if(isset($row)) { echo $row->avg_r=='1'? 'checked' :''; }?> disabled/>
+                                                    <label class="star star-1" for="star-1"></label>
+                                                  <!--</form>-->
+                                                         </div>              
+                                                    </div>
                                       <?php } ?>
                              </div>
                             </div>
