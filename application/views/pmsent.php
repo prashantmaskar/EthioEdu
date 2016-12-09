@@ -10,7 +10,7 @@
                         </div>
 
 <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+                    $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'");
                         
                      $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
                                 $sentitem = $query1->result()[0]->row_count;
@@ -47,6 +47,7 @@
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
                                     <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
+                                    <p class="truncate grey-text ultra-small">Sent To : <?php echo $row['username'];?></p>
                                     <p class="truncate grey-text ultra-small"><?php echo $row['pm_message'];?></p>
                                     <p><span class=" blue-text ultra-small"><?php echo $row['pm_date'];?></span><span class=" blue-text ultra-small"><?php echo" at ". $row['pm_time'];?></span></p>
                                     <a href="#!" class="secondary-content">
