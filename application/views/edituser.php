@@ -140,8 +140,9 @@
                                             <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
                                         </div>
                                     </div>
+                                    <div class="file-field input-field col s10">
                                        <h5 class="red-text">Connect2Me Information</h5>
-
+                                    </div>
                                     <div class="form-group input-field col s12">
                                         <input id="date" type="date" name="date" >
                                         <label for="date">Date of birth</label>

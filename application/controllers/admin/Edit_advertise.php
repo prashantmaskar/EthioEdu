@@ -66,10 +66,31 @@ if(isset($_POST['action'])){
 
                 if ( ! $this->upload->do_upload('fileformat'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
+                      $date = date('Y-m-d',$temp);
+                   $data=array(
+                  'advertise_id' => $this->input->post('advertise_id'),
+                  ' advertise_name' => $this->input->post('name'),
+                  ' advertise_email'  => $this->input->post('email'),
+                  'advertise_number'=>$this->input->post('contact'),
+                  'advertise_category'=>  $this->input->post('catagory'),
+                  'advertise_position' => $this->input ->post('addposition'),
+                  'advertise_subject' => $this->input->post('subject'),
+                  'advertise_attachment' => $filedata['file_name'],
+                  'advertise_desc' => $this->input->post('message'),
+                   //'advertise_date' => $date,
+                //'advertise_time' => $this->input->post('time')
+                  
+                  
+                  
+                
+                  
+                 
+        );
+                  $isinserted = $this->init_models->edit_advertise($data);
+                       /* $error = array('error' => $this->upload->display_errors());
 
                         var_dump($error);
-
+*/
                        // $this->load->view('upload_form', $error);
                 }
                 else
@@ -93,8 +114,8 @@ if(isset($_POST['action'])){
                   'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
                   'advertise_desc' => $this->input->post('message'),
-                   'advertise_date' => $date,
-                'advertise_time' => $this->input->post('time')
+                  // 'advertise_date' => $date,
+                //'advertise_time' => $this->input->post('time')
                   
                   
                   

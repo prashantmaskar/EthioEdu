@@ -39,16 +39,16 @@
                 validators: {
                     notEmpty: {
                         message: 'contact required!!!..'
-                    },
+                              },
                     digits:{
                          message:'contact number is invalid'
 
-                    },
+                           },
                     stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
-                    }
+                              min:10,
+                                max: 10,
+                              message: 'contact number must contains 10 digits'
+                                  }
 
                 }
             },
@@ -144,10 +144,10 @@
                         message:'post descreeption   must be less than 100 characters',
                         max:function(value,validator,$field){
                             return 100 - (value.match(/\r/g) || []).length;
-                        }
+                        
                     }
                 }
-             },
+            },
 
 
         }
