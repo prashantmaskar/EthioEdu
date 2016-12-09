@@ -118,7 +118,8 @@ function add_comment($ne_id)
 	// create array to store all comments ids 
 	$store_all_id = array(); 
 	// get all parent comments ids by using news id 
-	$id_result = $this->init_models->tree_all($question_id = 1); 
+	$id_result = $this->init_models->tree_all($question_id = 1 ); 
+
 	// loop through all comments to save parent ids init_models$store_all_id array 
 	foreach ($id_result as $response_id) 
 	{ 
@@ -141,14 +142,24 @@ function in_parent($in_parent,$question_id,$store_all_id)
 	if (in_array($in_parent,$store_all_id)) 
 	{ 
            $result = $this->init_models->tree_by_parent($question_id,$in_parent); 
-           $html .= $in_parent == 0 ? "<ul class='tree'>" : "<ul>"; 
+           $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
    foreach ($result as $re) 
 { 
-$html .= " <li class='comment_box'> 
-<div class='comment-body user-avatar aut '> <img class='circle responsive-img valign profile-image' src = ".'http://localhost/ETHIO/uploads/'.$re['user_avatar'].">".$re['response_title']."</div> 
+$html .= " <li class='collection-item'>
+<div class='row'>
+         <div class='col s12 m2 grid-example'>
+<div class='comment-body comment-avatar '> <img class='circle responsive-img valign profile-image' src = ".'http://localhost/ETHIO/uploads/'.$re['user_avatar']."></div> </div>
+<div class='col s12 m8 grid-example'>
+<div class='aut'>".$re['response_title']." </div> 
 <div class='comment-body'>".$re['response_desc']." </div> 
 <div class='timestamp'>".$re['response_date']."</div> 
-<a href='#comment_form' class='reply' id='" . $re['response_id'] . "'>Reply </a>"; 
+<a href='#comment_form' class='reply' id='" . $re['response_id'] . "'>Reply </a>
+
+if(".$re['response_like']." == '1') {<a href='javascript:void(0);' onclick='like('".$re['question_id'].",".$re['user_id'].",".$re['response_id']."')'>Unlike</a>
+}else
+if(".$re['response_like']." == '0') {<a href='javascript:void(0);' onclick='unlike('".$re['question_id'].",".$re['user_id'].",".$re['response_id']."')'>Like</a>
+
+</div></div>"; 
 $html .=$this->in_parent($re['response_id'],$question_id, $store_all_id); 
 $html .= "</li>"; } $html .= "</ul>"; 
 } 

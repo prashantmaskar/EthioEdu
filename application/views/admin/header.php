@@ -21,14 +21,22 @@ and open the template in the editor.
             <div class="navbar-fixed">
                 <nav class="navbar-color">
                     <div class="nav-wrapper">
+
                         <ul class="left">
                             <li>
+
                                 <h1 class="logo-wrapper">
                                     <a href="#" class="brand-logo darken-1" >
                                         EthioEdu
                                     </a>    
                                 </h1>
                                 <span class="logo-text">Ethioedu</span>
+                            </li>
+                            
+                        </ul>
+                        <ul class="right">
+                            <li>
+                             <a href="<?php echo base_url() . 'index.php/logout' ?>">LOGOUT</a>
                             </li>
                         </ul>
                        <!-- <ul class="right hid-mid-screen">

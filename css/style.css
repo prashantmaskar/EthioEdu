@@ -109,8 +109,16 @@ nav .brand-logo {
     vertical-align: middle;
     width: 28px;
 }
+.comment-avatar  {
+    max-width: 100%;
+    vertical-align: middle;
+    width: 50px;
+}
 
 .user-avatar{
+    display: inline-block;
+}
+.comment-avatar{
     display: inline-block;
 }
 
@@ -263,7 +271,7 @@ nav .brand-logo {
 .s_duration{
     line-height: 78px;
 }
-img{
+img.edit-attach {
     width: 100%;
     margin: 5px;
     border: 1px solid #ccc;
@@ -639,6 +647,12 @@ a.post-share.stumble span {
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.comment_info .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
     margin: 10px 0px;
 }
 .ans .page-heading{

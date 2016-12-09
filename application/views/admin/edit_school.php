@@ -76,11 +76,20 @@
                                                         <input id="School_name" name="schoolname" type="text" value="<?php  echo $row['school_name'];?>"  class="validate">
                                                         <label for="School_name">School Name</label>
                                                     </div>
-                                                         <img src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
+                                                    <?php if($row['school_logo']!=""){?>
                                                          <div class="form-group file-field input-field col s12">
-                                                        <div class="btn">
-                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $sch_id;?>,<?php echo "'$logoattachment'"; ?>);" >Delete</a>
+                                                        <div style="position: relative;display: inline-block;">
+                                                            <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
+                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $sch_id;?>,<?php echo "'$logoattachment'"; ?>);" style="background: red;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                         </div></div>
+                                                    <?php }?>
+                                                         
                                                        <!--  <?php //echo $row['school_logo']; ?>" -->
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
@@ -328,7 +337,7 @@
                             data: {deletelogo_id, image},
                             success: function(data) {
                                 console.log(data);
-                                //location.reload();
+                                location.reload();
 
 
                             }

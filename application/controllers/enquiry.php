@@ -25,16 +25,29 @@ class enquiry extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+
+        if ( !$this->session->userdata('logged_in'))
+    { 
+        $this->session->set_userdata('referred_from', current_url());
+        redirect('index.php/login');
+    }
     }
 
 
 	public function index()
 	{
+        $sessid= $this->session->userdata('suserid');
+        $data = array(
+
+            'user_id'=> $sessid,
+            );
+        $related_res = $this->init_models->enquiry_users($data);
         $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'enquiry',
                 'title'   => 'enquiry',
-                'banners' =>$banners
+                'banners' =>$banners,
+                'related_res' => $related_res
             );
 		$this->load->view('enquiry',$view_params);
 		
@@ -59,13 +72,18 @@ class enquiry extends CI_Controller {
                 'enquiry_message' => $this->input->post('enquirybox'),
                 'enquiry_date' => $date,
                 'enquiry_time' => $time,
+                'school_id' => $this->input->post('sid'),
                 'user_id' => $sessid
 
             );
 
         if ($this->init_models->insert_enquiry($data))
             {
-    echo"<script>alert('Data Inserted Successfully');</script>";
+    //echo"<script>alert('Data Inserted Successfully');</script>";
+            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                    $sid = $this->input->post('sid');
+                       $name = $this->input->post('school');
+            redirect("index.php/enquiry?id=$sid&name=$name");
             }
 
 }

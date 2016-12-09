@@ -13,6 +13,18 @@
                         </a>
                     </div>
                 </div>
+                <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
                 <div class="col s12 m8 z-depth-1 white ">
 
                     <div class="content_sec enquiry">
@@ -25,20 +37,24 @@
                                 <div class="row">
                                     <div class="col s12 m12 l12">
                                         <div class="card-panel">
-                                            
+                                            <?php
+                        
+                                foreach ($related_res as $row){ 
+
+                                            ?>
                                             <div class="row">
                                                  <form id="enquiryform" action="#" method="post">
                                                     
                                                     <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="school" name="school" class="form-control">
+                                                        <input type="text"  id="school" name="school" value="<?php echo $_GET['name']; ?>" class="form-control" readonly>
                                                         <label for="school">School</label>
                                                     </div>
                                                     <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="fullname" name="fullname" class="form-control">
+                                                        <input type="text"  id="fullname" name="fullname" value="<?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?>" class="form-control" readonly>
                                                         <label for="fullname">Full Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" class="form-control">
+                                                        <input id="email" type="text" value="<?php echo $row['user_email']; ?>" name="email" class="form-control" readonly>
                                                         <label for="email">Email Id</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -51,11 +67,11 @@
                                                         
                                                     </div> -->
                                                     <div class="form-group input-field col s12">
-                                                        <input id="web" type="text" name="website" class="validate">
+                                                        <input id="web" type="url" name="website" class="validate">
                                                         <label for="password">Web Url</label>
                                                     </div>
                                                    <div class= "form-group input-field col s12">
-                                                        <input type="text"  id="phone_number" name="phone_number" class="form-control">
+                                                        <input type="text"  id="phone_number" value="<?php echo $row['mobile_no']; ?>" name="phone_number" class="form-control" readonly>
                                                         <label for="phone_number">phone_number</label>
                                                     </div>
 													 <div class= "form-group input-field col s12">
@@ -67,11 +83,7 @@
                                                         <textarea id="enquirybox" class="materialize-textarea" name="enquirybox"></textarea>
                                                         <label for="enquirybox">Enquiry</label>
                                                     </div>
-                                                   
-
-                                                     
-                                                  
-                                                   
+                                                   <input type="hidden" name="sid" value="<?php echo $_GET['id']; ?>">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
                                                             <button class="btn cyan waves-effect waves-light" type="submit" name="action"> Submit</button>
@@ -80,6 +92,7 @@
                                 </div>
                                                         </div>
                                                     </div>
+                                                    <?php } ?>
                                                 </form>
                                             </div> 
                                         </div>

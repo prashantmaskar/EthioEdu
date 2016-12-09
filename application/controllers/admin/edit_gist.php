@@ -66,11 +66,30 @@ if(isset($_POST['action'])){
 
                 if ( ! $this->upload->do_upload('avatar'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
+                       /* $error = array('error' => $this->upload->display_errors());
 
-                        var_dump($error);
+                        var_dump($error);*/
 
                        // $this->load->view('upload_form', $error);
+
+
+                        $date = date('Y-m-d', $adate);
+
+                         $data=array(
+                  'post_id' => $this->input->post('post_id'),
+                  'post_title' => $this->input->post('caption'),
+                  'post_desc'  => $this->input->post('Description'),
+                  'post_category'=>$this->input->post('catagory'),
+                  'post_attachment' => $filedata['file_name'],
+                  'post_author'=>  $this->input->post('author'),
+                  //'post_date' => $this->input ->post('date'),
+                  'post_source' => $this->input->post('source_link'),
+                  'post_type'=>  $this->input->post('post_type'),
+                   'post_approve' => $this->input->post('approve_status'),
+                   );
+                            $isinserted = $this->init_models->edit_gist($data);
+                    // 'post_date' => $date,
+                //'post_time' => $this->input->post('time')
                 }
                 else
                 {
@@ -90,12 +109,12 @@ if(isset($_POST['action'])){
                   'post_category'=>$this->input->post('catagory'),
                   'post_attachment' => $filedata['file_name'],
                   'post_author'=>  $this->input->post('author'),
-                  'post_date' => $this->input ->post('date'),
+                  //'post_date' => $this->input ->post('date'),
                   'post_source' => $this->input->post('source_link'),
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status'),
-                     'post_date' => $date,
-                'post_time' => $this->input->post('time')
+                  //   'post_date' => $date,
+                //'post_time' => $this->input->post('time')
         );
                   $isinserted = $this->init_models->edit_gist($data);
                         

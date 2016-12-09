@@ -28,10 +28,11 @@ class new_events extends CI_Controller {
         $this->load->model('init_models');
 
         
-   /*    if (!$this->session->userdata('logged_in'))
-    { 
+      if (!$this->session->userdata('logged_in'))
+    {  
+         $this->session->set_userdata('referred_from', current_url());
         redirect('index.php/login');
-    } */
+    } 
     }
 
 

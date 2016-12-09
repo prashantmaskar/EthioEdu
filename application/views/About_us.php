@@ -12,7 +12,15 @@
                         <div class="offset col s12 m12 "> <?php $tips_attachment = $row['post_attachment']; ?><div class="about-image z-depth-1"><img class="responsive-img" src="<?php echo base_url() . 'uploads/'.$tips_attachment ?>" style="width:600px;height:300px;"></div></div>
                         <div class="col s12 m12 t20margin">
                             <div class="about_content z-depth-1">
-                            <p class="black-text"><?php echo $row['post_desc'];?></p>
+                             <p class="black-text"><?php echo $row['post_desc'];?></p>
+                           
+                           <div>
+
+                           <iframe width="420" height="315"
+                  src="https://www.youtube.com/embed/1FJwzZMAGMM">
+                        </iframe>                                         
+
+
                            <!--  <p class="black-text" >ETHIOEDU.com is a community website dedicated to providing free information on educational institutions in ETHIOPIA. Our free online directory contains very useful information on all schools, colleges and universities in ETHIOPIA. ETHIOEDU.com also contains very useful resources such as past examinations question papers for schools, colleges and universities. We also have a very interactive and mederated discussion forum. ETHIOEDU.com was started with the aim of easing the process of searching for educational information in ETHIOPIA. We hope that you will find information on this website useful. Please feel free to Contact Us in case of any queries, comments or suggestions.</p> -->
                             
                             </div>

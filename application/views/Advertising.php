@@ -116,7 +116,7 @@
                                                         <label for="message">Message</label>
                                                     </div> 
 													 <div class="captch">
-                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
+                                                    <img src="<?php echo $captcha['image_src'];?>" alt="CAPTCHA security code" />
                                                        </div>
 													<div class=" form-group input-field col s12">
                                                  <input id="captch" type="text" name="captcha" class="validate">

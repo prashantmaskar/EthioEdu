@@ -61,16 +61,8 @@ phone_number:{
                         }
                     }*/
                 }
-             },
-			 captcha:{
-				 validators:
-				 {
-					 notEmpty:
-					 {
-						 message:'please add above code!!!'
-					 }
-				 }
-			 },
+             }
+			
  
               
                  

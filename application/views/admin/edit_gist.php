@@ -68,11 +68,21 @@
                                              <option value="Other"<?php if($options=="Other") echo 'selected="selected"'; ?>>Other</option>
                                         </select>
                                     </div>
-                                     <img src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
-                                     <div class="form-group file-field input-field col s12">
-                                                        <div class="btn">
-                                                            <a  href="javascript:void(0);" onclick="deleted(<?php echo $gist_id;?>,<?php echo "'$gistattachment'"; ?>);" >Delete</a>
-                                                        </div>
+                                  <?php if($row['post_attachment']!=""){?>
+                                    <div class="form-group file-field input-field col s12">
+                                                        <div style="position: relative;display: inline-block;">
+
+                                     <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['post_attachment'];?>">
+                                     <a  href="javascript:void(0);" onclick="deleted(<?php echo $gist_id;?>,<?php echo "'$gistattachment'"; ?>);" style="background: red;
+                                                                              padding: 5px;
+                                                                               border-radius: 10px;
+                                                                                color: #fff;
+                                                                              position: absolute;
+                                                                               top: 0px;
+                                                                    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                  </div>
+                                                                       <?php }?>
+                                     
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Photo</span>
@@ -125,7 +135,7 @@
                             </div>
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
-                        <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addgist.js' ?>"></script>
+                       <!-- <script type="text/javascript" src="<?php //echo base_url().'/js/admin/admin-Addgist.js' ?>"></script>-->
 
 
 
@@ -145,10 +155,108 @@
                             data: {deletegistimg_id, image},
                             success: function(data) {
                                 console.log(data);
-                                //location.reload();
+                                location.reload();
 
 
                             }
                         });
                     }
                 }</script>
+
+                <script>
+                $(document).ready(function() {
+
+    $('#addgist').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' Please enter Gist name!!!..'
+                    }
+                }
+            },
+
+
+
+         Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    }
+                    /*stringLength:{
+                        message:'post Description must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }*/
+                }
+             },
+             catagory:{
+                validators:{
+                    notEmpty:{
+                        message:  ' select category !!!'
+                    }
+                    
+                }
+             },
+
+
+           avatar:{
+            validators:{
+               notEmpty:{
+                    message:'please select an image'
+                },
+                 file: {
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
+
+            author: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter auther name!!!..'
+                    }
+                }
+            },
+             
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: ' date can not be Empty!!!..'
+                    }
+                }
+            },
+                source_link: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter source link!!!..'
+                    }
+                }
+            },
+                p_caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter photo caption!!!..'
+                    }
+                }
+            },
+
+
+               
+             
+
+
+
+
+             }
+    });
+});</script>

@@ -1,4 +1,4 @@
- $(document).ready(function() {
+$(document).ready(function() {
 
     $('#csregister').bootstrapValidator({
         /*feedbackIcons: {
@@ -61,21 +61,16 @@
                 }
             },
               
-                  attach:{
-            validators:{
-                notEmpty:{
-                    message:'please select an image'
-                },
-                 file:{
-                        extension: 'jpeg,jpg,png',
-                        type: 'image/jpeg,image/png',
-                        maxSize: 2097152,   // 2048 * 1024
-                        message: 'The selected file is not valid'
+                  attachphoto: {
+                validators: {
+                    notEmpty: {
+                        message: ' please attach imagee!!!..'
                     }
-                 }
-           },
+                }
+            },
+ 
                
-                  date: {
+                  Bdate: {
                 validators: {
                     notEmpty:{ 
                         message:'please enter birthdate!!'
@@ -110,26 +105,26 @@
                 validators:{
                     notEmpty:{
                         message:  ' please Enter information about you !!!'
-                    }
-                    /*stringLength:{
+                    },
+                    stringLength:{
                         message:'post descreeption must be less than 100 characters',
                         max:function(value,validator,$field){
                             return 100 - (value.match(/\r/g) || []).length;
                         }
-                    }*/
+                    }
                 }
              },
               myinterest:{
                 validators:{
                     notEmpty:{
                         message:  ' please write your interest !!!'
-                    }
-                   /* stringLength:{
+                    },
+                    stringLength:{
                         message:'post descreeption   must be less than 100 characters',
                         max:function(value,validator,$field){
                             return 100 - (value.match(/\r/g) || []).length;
                         }
-                    }*/
+                    }
                 }
              },
 

@@ -86,7 +86,17 @@
          return  $insert_id;
       }
 
+function get_user_id_by_uname($uname){
+        $query = $this->db->query("SELECT * FROM tbl_users where BINARY username='".$uname."'");
+         return $query->result_array();
+}
 
+
+ public function sendpmessage($data)  
+      {  
+            return $this->db->insert('tbl_message', $data);
+      }
+       
 
        // Privacy Table Actions
 
@@ -421,6 +431,168 @@ $q->where('school_category',$query_array['school_category']);
 
 
 
+
+//Connect Me Result
+
+function search_result($query_array, $limit,$offset, $sort_by,$sort_order){
+
+      $sort_order = ($sort_order == 'desc') ? 'desc': 'asc';
+      $sort_columns =  array('username','user_gender','user_age','user_school','user_level','user_interest');
+      $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'first_name';
+
+
+      $q = $this->db->select('*')
+                     ->from('tbl_user_meta')
+                     ->join('tbl_users','tbl_users.user_id = tbl_user_meta.user_id')
+                     //->where('school_approve = 1')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order);
+    
+
+    if(strlen($query_array['username'])){
+
+      //echo"In top username";
+$q->like('username',$query_array['username']);
+    }
+       if (strlen($query_array['user_gender'])){
+$q->where('user_gender',$query_array['user_gender'] );
+    }
+
+    if (strlen($query_array['user_age'])){
+
+      if($query_array['user_age'] == '16-19'){
+        $q->where('user_age>=','16');
+        $q->where('user_age<=', '19');
+      }
+      if($query_array['user_age'] == '20-25'){
+        $q->where('user_age>=','20' );
+        $q->where('user_age<=','25' );
+      }
+      if($query_array['user_age'] == '26-29'){
+        $q->where('user_age>=','26' );
+        $q->where('user_age<=','29' );
+      }
+      if($query_array['user_age'] == '30+'){
+        $q->where('user_age>=', '30' );
+      }
+
+    }
+
+
+       if (strlen($query_array['user_school'])){
+$q->where('user_school',$query_array['user_school'] );
+    }
+
+     if (strlen($query_array['user_level'])){
+$q->where('user_level',$query_array['user_level'] );
+    }
+
+     if (strlen($query_array['user_interest'])){
+$q->where('user_interest',$query_array['user_interest'] );
+    }
+
+ 
+
+
+
+    $ret['rows']= $q->get()->result();
+
+    //count result
+    if (strlen($query_array['username'])){
+
+     // echo"In username count";
+$q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_users');
+$q->like('username',$query_array['username']);
+
+  
+
+}else{
+
+      //echo"in else count";
+    $q = $this->db->select('count(*) as count', FALSE)
+                  ->from('tbl_user_meta');
+                 
+
+   
+       if (strlen($query_array['user_gender'])){
+$q->where('user_gender',$query_array['user_gender']);
+
+    }
+
+     if (strlen($query_array['user_age'])){
+if($query_array['user_age'] == '16-19'){
+        $q->where('user_age>=','16');
+        $q->where('user_age<=', '19');
+      }
+      if($query_array['user_age'] == '20-25'){
+        $q->where('user_age>=','20' );
+        $q->where('user_age<=','25' );
+      }
+      if($query_array['user_age'] == '26-29'){
+        $q->where('user_age>=','26' );
+        $q->where('user_age<=','29' );
+      }
+      if($query_array['user_age'] == '30+'){
+        $q->where('user_age>=', '30' );
+      }
+
+    }
+
+
+       if (strlen($query_array['user_school'])){
+$q->where('user_school',$query_array['user_school']);
+
+    }
+
+    if (strlen($query_array['user_level'])){
+$q->where('user_level',$query_array['user_level']);
+
+    }
+
+    if (strlen($query_array['user_interest'])){
+$q->where('user_interest',$query_array['user_interest']);
+
+    }
+  }
+
+    $tem = $q->get()->result();
+    $ret['num_rows'] = $tem[0]->count;
+   return $ret;
+ 
+
+   }
+
+
+
+
+//Related Users
+
+
+   function related_users(){
+      
+       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id ORDER BY RAND() limit 5');
+          
+         return $query->result_array();
+
+
+
+   }
+
+
+// Enquiry Users
+   function enquiry_users($data){
+              $id =$data['user_id'];
+      
+       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id and tbl_users.user_id = "'.$id.'"');
+          
+         return $query->result_array();
+
+
+
+   }
+
+
 //Project Search
 
       function get_project($limit, $start, $st = NULL)
@@ -448,11 +620,22 @@ function search_course($query_array, $limit,$offset, $sort_by,$sort_order){
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'course_name';
 
 
-      $q = $this->db->select('*')
+ /*    $q = $this->db->select('*')
                      ->from('tbl_course')
                      ->where('course_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
+*/
+
+                   $q = $this->db->select('*, AVG(`course_rating`) As avg_r',FALSE)
+                     ->from('tbl_course_meta')
+                     ->join('tbl_course','tbl_course_meta.course_id = tbl_course.course_id')
+                     ->where('course_approve = 1')
+                     ->group_by('tbl_course_meta.course_id')
+                     ->limit($limit , $offset)
+                    ->order_by($sort_by , $sort_order); 
+
+
     
 
     if(strlen($query_array['course_name'])){
@@ -799,6 +982,83 @@ $q->where('question_date <=', $query_array['end_date']);
 
     
 
+
+
+ public function insertreview($data)
+      {
+        $sql = "select * from tbl_course_meta where course_id='".$data['course_id']."' and user_id='".$data['user_id']."'";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+          $uparr = array('course_id' => $data['course_id'], 'user_id' =>$data['user_id']);
+          $this->db->where($uparr);
+          return $this->db->update('tbl_course_meta', $data);
+        }else{
+          return $this->db->insert('tbl_course_meta', $data);
+        }
+        
+      }
+
+//FOR COMMENT
+    // get all news 
+    function get_all() 
+    { 
+    $query = $this->db->get('tbl_questions'); 
+   // print_r($query);
+    print_r($query->result_array());
+    return $query->result_array();
+     } 
+     // get one news article by its id 
+     function get_one($question_id) 
+     { 
+     $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
+     $query = $this->db->get('tbl_questions'); 
+     //print_r($query);
+     return $query->row(); 
+   } 
+  // get full tree comments based on news id 
+  function tree_all($question_id=1)
+  { 
+  $result = $this->db->query("SELECT * FROM tbl_userresponse where question_id = $question_id")->result_array(); 
+  foreach ($result as $row) 
+  { 
+  $data[] = $row; 
+  } 
+  return $data;
+
+  } 
+  // to get child comments by entry id and parent id and news id 
+  function tree_by_parent($question_id,$in_parent) 
+  { 
+  $result = $this->db->query("SELECT * FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+
+  /*SELECT * FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id=tbl_userresponse.user_id WHERE tbl_userresponse.parent_id = 40 AND tbl_userresponse.question_id = 1;*/
+  foreach ($result as $row) {
+    $data[] = $row; 
+    } 
+    return $data; 
+  }
+
+
+  function add_new_comment()
+    {
+      $date = date('Y-m-d');
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date('h:i:s A', time());
+    $uid= $this->session->userdata('suserid');
+        
+        $this->db->set("question_id", $this->input->post('question_id'));
+        $this->db->set("parent_id", $this->input->post('parent_id'));
+        $this->db->set("response_title", $this->input->post('comment_name'));
+        $this->db->set("response_desc", $this->input->post('comment_body'));
+        $this->db->set("response_type", $this->input->post('response_type'));
+        $this->db->set("response_like", $this->input->post('response_like'));
+        $this->db->set("response_date",$date);
+        $this->db->set("response_time",$time);
+        $this->db->set("user_id", $uid);
+        $this->db->insert('tbl_userresponse');
+        return $this->input->post('parent_id');
+    }
 
 
 

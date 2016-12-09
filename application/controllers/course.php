@@ -62,10 +62,11 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
        //
 
    $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
-   //echo $this->db->last_query();
+
+
 
    $data['course']= $results['rows'];
-   //print_r($data['project']);
+   //print_r($data['course']);
    $data['num_results'] = $results['num_rows'];
     
     $config = array();
@@ -131,7 +132,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
            'course_category'=> $this->input->get('course_category'),
 
     );
-       //
+       
 
    $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
     $this->db->last_query();

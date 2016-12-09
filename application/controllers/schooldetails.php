@@ -29,7 +29,6 @@ class schooldetails extends CI_Controller {
         $this->load->model('init_models');
     }
 
-
     public function index() {
         
         $banners = $this->init_models->getadvertisebanners();

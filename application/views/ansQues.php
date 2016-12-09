@@ -11,15 +11,43 @@
   width: 480px; margin: 0 auto 0 4px; padding: 15px 0px; 
   } 
   .comment_box 
-  { padding: 5px;  margin-top: 15px; list-style: none; 
+  { padding: 5px;  margin-top: 15px; list-style: none; background: white;
   } 
   .aut { font-weight: bold; 
   } 
   .timestamp { font-size: 85%; 
     /*float: right; */
   } 
+ .reply{float: left;}
   #comment_body { display: block; width: 100%; height: 150px;
   } 
+
+
+/**
+ * Oscuro: #283035
+ * Azul: #03658c
+ * Detalle: #c7cacb
+ * Fondo: #dee1e3
+ ----------------------------------*/
+ 
+ a {
+  color: #03658c;
+  text-decoration: none;
+ }
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+  background: #dee1e3;
+}
+
+  
+  
+}
+
   </style> 
 
 
@@ -44,21 +72,20 @@
         <div class="starter-template"> 
        <!-- <h1><?php $news//->question_desc ?></h1>  --> 
       <!--  <?php //foreach($news as $row){?> -->
-        <p class="lead black-text"><?php echo $ques->question_desc ?></p> 
+      <div class="course_info">
+        <p class="lead black-text"><h1 class = "page-heading">Question:<?php echo $ques->question_desc ?></h1></p> </div>
         <!-- <p><img src="<?php //echo base_url(); ?>global/uploads/<?= $news//->ne_img ?>"/>
         </p>  -->
         <p> 
-        </p> <?php //}?>
+        </p> <?php  $sname= $this->session->userdata('susername');?>
         </div> 
-        <div class="contact-form"> <?php echo $comments ?> 
-        <h3 class="comment-reply-title"> Leave a Reply </h3>
+        <div class="col m12 s12 card-panel"> <?php echo $comments ?> 
+        <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div>  
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
          <form id="comment_form" action="<?= base_url() ?>ansQues/add_comment/<?= $ques->question_id ?>" method="post" >
-                        
-
           <div class="form-group"> 
           <label for="comment_name">Name:</label> 
-          <input class="form-control" type="text"  name="comment_name" id='name' value="<?php set_value("comment_name");?>" />
+          <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
           </div>
            <div class="form-group"> 
            <label for="comment"><i class='material-icons prefix'>mode_edit</i>Comment :</label> 
@@ -70,7 +97,7 @@
             <input type='hidden' name='response_like' value="0" id='response_like' />
              <input type='hidden' name='question_id' id='parent_id' value="<?= $ques->question_id ?>"/> 
 
-             <div id='submit_button'> 
+             <div id='submit_button' class="margin-b-10"> 
              <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
              </div> 
              </form> 

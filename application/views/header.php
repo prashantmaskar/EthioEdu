@@ -42,11 +42,12 @@
                             <?php }
                             else{ ?>
                             <?php
-    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'");
-        foreach ($query->result_array() as $row){  
+    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'"); ?>
+    <li class="user-opt-list"><div class="user-avatar">
+   <?php     foreach ($query->result_array() as $row){  
  $getavatar = $row['user_avatar'];
           ?> 
-                            <li class="user-opt-list"><div class="user-avatar"><img src="../uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
+                            <img src="<?php echo base_url()?>/uploads/<?php echo $getavatar; ?>" class="circle responsive-img valign profile-image"> <?php } ?></div><a class='dropdown-button' href='#' data-activates='dropdownl'><?php echo $sessname; ?></a>
 <?php
 // foreach($event->result_array() as $row){
 {
@@ -62,10 +63,12 @@
       $sessid=$this->session->userdata('suserid');
       $query2=$this->db->query("select count(*) as row_count from tbl_questions where user_id= '" .$sessid."'");
 
+     $query3= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
-    <li><a href="#!">Inbox( )</a></li>
+    <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
     <li><a href="#!">Comments( )</a></li>
       <li class="divider"></li>

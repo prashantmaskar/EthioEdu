@@ -11,6 +11,12 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: ' please enter course name!!!..'
+                    },
+                    stringLength:{
+                        message:'course name must be less than 40 characters',
+                        max:function(value,validator,$field){
+                            return 40- (value.match(/\r/g) || []).length;
+                        }
                     }
                 }
             },
@@ -18,6 +24,12 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: ' please enter Major subject!!!..'
+                    },
+                    stringLength:{
+                        message:'course name must be less than 40 characters',
+                        max:function(value,validator,$field){
+                            return 40- (value.match(/\r/g) || []).length;
+                        }
                     }
                 }
             },
@@ -77,7 +89,7 @@ $(document).ready(function() {
                         }
                     }*/
                 }
-             },
+             }
            
         }
     });

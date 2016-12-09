@@ -29,6 +29,7 @@
                         $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
                         
                                 foreach ($query->result_array() as $row){ 
+                                    $tipsattachment = $row['post_attachment'];
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -48,7 +49,22 @@
                                                         <textarea id="Description" name="Description"class="materialize-textarea"> <?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
-                                                    
+                                                     <?php if($row['post_attachment']!=""){?>
+                                    <div class="form-group file-field input-field col s12">
+                                                        <div style="position: relative;display: inline-block;">
+
+                                     <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php echo $row['post_attachment'];?>"> -->
+                                    
+
+                                     <a  href="javascript:void(0);" onclick="deleted(<?php echo $tips_id;?>,<?php echo "'$tipsattachment'"; ?>);" style="background: red;
+                                                                              padding: 5px;
+                                                                               border-radius: 10px;
+                                                                                color: #fff;
+                                                                              position: absolute;
+                                                                               top: 0px;
+                                                                    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                  </div>
+                                                                       <?php }?>
                                                     <div class="form-group file-field input-field col s12">
                                                         <div class="btn">
                                                             <span>Attach Images</span>
@@ -147,3 +163,27 @@ $(document).ready(function() {
 });
 
 </script>
+
+      <script>
+
+            function deleted(id,tipstimg)
+            {
+                var deletetipsimg_id = id;
+                var image = tipstimg;
+                //alert(image);
+            if (confirm('Sure to Delete ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {deletetipsimg_id, image},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }</script>

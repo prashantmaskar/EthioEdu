@@ -62,12 +62,21 @@
                         <li class="user-details cyan darken-2">
                             <div class="row">
                                 <div class="col col s4 m4 l4">
-                                    <img src="../../images/avatar.jpg" class="circle responsive-img valign profile-image">
+                                    <?php 
+                                    $sessid= $this->session->userdata('suserid');
+                                    $query = $this->db->query("select user_avatar from tbl_user_meta where user_id= '" .$sessid. "'"); 
+
+                                    foreach ($query->result_array() as $row){  
+                                        $getavatar = $row['user_avatar'];
+                                    }
+                                    ?> 
+                                    <img src="<?php echo base_url()?>/uploads/<?php echo $getavatar;?>" class="circle responsive-img valign profile-image" >
                                 </div>
                                 <div class="col col s8 m8 l8">
                                     <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
                                     <?php $susername = $this->session->userdata('susername');
                                         echo $susername;  ?>
+                                       
                                         <i class="mdi-navigation-arrow-drop-down right"></i>
                                     </a>
                                     <ul id="profile-dropdown" class="dropdown-content">
