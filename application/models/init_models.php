@@ -359,6 +359,60 @@ public function edit_front_user($data){
          return $query->result_array();
       }
 
+      function getcoursedetails($course_id){
+
+        $query = $this->db->query("select * from tbl_course where course_id = '" .$course_id. "'");
+         return $query->result_array();
+      }
+
+      function getuserdetails($sessid){
+
+        $query = $this->db->query("select * from tbl_users where user_id = '" .$sessid. "'");
+         return $query->result_array();
+      }
+
+
+      function getmessage($sessid){
+
+        $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+         return $query->result_array();
+      }
+
+      function getsentmessage($sessid){
+
+        $query = $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+         return $query->result()[0]->row_count;
+      }
+
+      function getinboxmessage($sessid){
+
+        $query = $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+         return $query->result()[0]->row_count;
+      }
+
+
+      function getmorecourse($course_id){
+
+        $query = $this->db->query("select * from  tbl_course where course_id != '" .$course_id. "'limit 4");
+         return $query->result_array();
+      }
+
+
+      function getnewsdetails($news_id){
+
+        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+         return $query->result_array();
+      }
+
+
+      function getsch_details($sch_id){
+
+        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+         return $query->result_array();
+      }
+
+
+
 
 public function insert_response($data)
       {

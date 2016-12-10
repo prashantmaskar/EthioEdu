@@ -30,6 +30,7 @@ class composemail extends CI_Controller {
 
 	public function index()
 	{
+		$sessid= $this->session->userdata('suserid');
 		$related_res = $this->init_models->related_users();
 		$banners = $this->init_models->getadvertisebanners();
             $view_params = array(
@@ -38,6 +39,9 @@ class composemail extends CI_Controller {
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
+            $view_params['getmessage'] = $this->init_models->getmessage($sessid);
+            $view_params['sent_messages'] = $this->init_models->getsentmessage($sessid);
+            $view_params['inbox_details'] = $this->init_models->getinboxmessage($sessid);
 		$this->load->view('composemail', $view_params);
 
 		if(isset($_POST['action'])){

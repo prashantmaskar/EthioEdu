@@ -30,7 +30,7 @@ class schooldetails extends CI_Controller {
     }
 
     public function index() {
-        
+        $sch_id = $_GET['id'];
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'School Details',
@@ -38,6 +38,7 @@ class schooldetails extends CI_Controller {
             'banners' => $banners
         );
         $view_params['news'] = $this->init_models->selectnews();
+        $view_params['sch_details'] = $this->init_models->getsch_details($sch_id);
         $this->load->view('schooldetails',$view_params);
     }
 

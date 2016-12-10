@@ -3,10 +3,10 @@
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
-                    <?php $sch_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                    <?php  $sch_id = $_GET['id'];
+                       // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($sch_details as $row){ 
                                     
                         ?>
                         <div class="school_banner col m12">

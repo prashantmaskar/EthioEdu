@@ -59,10 +59,10 @@
                                                        </div>
                                                        <?php if ($this->session->userdata('logged_in'))
                                                         {
-                                                             $sessid= $this->session->userdata('suserid');
-                                                             $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
+                                                            // $sessid= $this->session->userdata('suserid');
+                                                            // $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($user_details as $row){ 
                                                             ?>
       
                                                     <div class= "form-group input-field col s12">

@@ -46,7 +46,7 @@
                             <div class="news_list_wrap">
                                 <ul class="news_list">
                                 <?php
-                                if(isset($_POST['action'])){
+                               /* if(isset($_POST['action'])){
 
                                     $date1 = $_POST['newsd1'];
                                     $xyz = strtotime($date1);
@@ -63,7 +63,7 @@
 
                                         $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
 
-                                    }
+                                    } */
                                    $resultcount = count($news);
                                     if($resultcount >= 1){
                                 foreach ($news as $row){ ?>

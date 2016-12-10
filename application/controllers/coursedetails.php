@@ -49,7 +49,8 @@ class coursedetails extends CI_Controller {
         {
         $this->insertreview();
         }
-
+        $course_id = $_GET['id'];
+        $sessid= $this->session->userdata('suserid');
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Course Details',
@@ -58,7 +59,9 @@ class coursedetails extends CI_Controller {
             'cource_id' => $cource_id
         );
         
-        
+        $view_params['course_details'] = $this->init_models->getcoursedetails($course_id);
+        $view_params['user_details'] = $this->init_models->getuserdetails($sessid);
+        $view_params['more_course'] = $this->init_models->getmorecourse($course_id);
         $this->load->view('coursedetails',$view_params);
     }
        

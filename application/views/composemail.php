@@ -17,13 +17,13 @@
     }
 
 ?>  <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+                   // $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
                         
-                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
-                                $sentitem = $query1->result()[0]->row_count;
+                    // $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                                $sentitem = $sent_messages;
 
-                                $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $query2->result()[0]->row_count;
+                            //    $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+                                $inboxitem = $inbox_details;
                         ?>
                         <div class="col s12 m12 card-panel">
                             <h2 class="inbox-title">Private Messages (PM)</h2>
