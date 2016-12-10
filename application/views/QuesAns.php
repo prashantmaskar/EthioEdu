@@ -148,7 +148,7 @@
                             <div class="QuesAns_list_wrap">
                              <ul class="QuesAns_list">
                              <?php
-                             if(isset($_POST['action'])){
+                           /*  if(isset($_POST['action'])){
 
                                     $date1 = $_POST['sdate'];
                                     $xyz=strtotime($date1);
@@ -165,7 +165,7 @@
 
                                         $query = $this->db->query("select * from tbl_questions where question_approve = 1");
 
-                                    }
+                                    } */
                                     $resultcount = count($question);
                                     if($resultcount >= 1){
                                 foreach ($question as $row){ ?>

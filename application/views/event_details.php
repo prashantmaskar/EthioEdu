@@ -16,10 +16,10 @@
                 <div class="col s12 m8 grid-example">
                     <div class="event_details z-depth-1">
                         <div class="col m12 s12 ">
-                        <?php $event_id = $_GET['id'];
+                        <?php /* $event_id = $_GET['id'];
                         $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        */
+                                foreach ($eventid as $row){ 
                                     
                         ?>
                             <div class="event_heading ">

@@ -104,6 +104,12 @@ function get_user_id_by_uname($uname){
       {  
             return $this->db->insert('tbl_vacancy', $data);
       }
+
+      function getvacanydetails($vac_id){
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_id = '" .$vac_id. "'");
+         return $query->result_array();
+
+      }
       
       public function selectnews()  
       {  
@@ -336,6 +342,20 @@ public function edit_front_user($data){
     public function getadvertisebanners()  
       {  
           $query = $this->db->query("SELECT * FROM tbl_advertise where isactive=true");
+         return $query->result_array();
+      }
+
+      function get_currentuser_details($sessid){
+
+        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.user_birth, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
+         return $query->result_array();
+
+      }
+
+
+      function geteventdetails($event_id){
+
+        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
          return $query->result_array();
       }
 

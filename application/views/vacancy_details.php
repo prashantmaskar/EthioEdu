@@ -16,10 +16,10 @@
                 <div class="col s12 m7 grid-example">
                     <div class="vacancy_details col m12 z-depth-1">
                         <div class="col m12 s12">
-                        <?php $vac_id = $_GET['id'];
+                        <?php /* $vac_id = $_GET['id'];
                         $query = $this->db->query("select * from tbl_vacancy where vacancy_id = '" .$vac_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        */
+                                foreach ($vacanyid as $row){ 
                                     
                         ?>
                             <div class="page-heading-wrap">

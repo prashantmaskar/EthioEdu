@@ -32,12 +32,15 @@ class vacancy_details extends CI_Controller {
 
 
     public function index() {
+        $vac_id = $_GET['id'];
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy Details',
             'title' => 'Vacancy Details',
-            'banners' => $banners
+            'banners' => $banners,
         );
+
+        $view_params['vacanyid'] = $this->init_models->getvacanydetails($vac_id);
         $this->load->view('vacancy_details',$view_params);
     }
 
