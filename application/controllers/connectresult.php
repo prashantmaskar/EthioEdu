@@ -56,8 +56,8 @@ class connectresult extends CI_Controller {
             );
         //print_r( $data['fields']);
 
-        
-        $related_res = $this->init_models->related_users();
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',
@@ -147,7 +147,8 @@ class connectresult extends CI_Controller {
         'user_hobby'=>'user_hobby',
 
             );
-        $related_res = $this->init_models->related_users();
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',

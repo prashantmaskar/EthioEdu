@@ -17,7 +17,10 @@
                                 <div class="uprofile_container z-depth-1 card-panel">
                                 <div class="user-pic-name">
                                 <img src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>" class="user-img circle"> 
-                                <h2 class="user-name-title red-text"><?php echo $row['username']; ?></h2> 
+                                <h2 class="user-name-title red-text"><?php echo $row['username']; ?></h2>
+                              <?php  if ($this->session->userdata('logged_in')){  ?>
+                                <a href="<?php echo base_url(); ?>index.php/composemail?uname=<?php echo $row['username']; ?>" class="btn red text-white margin-b-10">SEND MESSAGE</a> 
+                              <?php  }  ?>
                                 </div>
                                 <div class="user-info-content">
                                 <p class="user-university">Graduate of Science in<a href="#"> <?php echo $row['user_school']; ?></a></p>

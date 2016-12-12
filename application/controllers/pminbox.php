@@ -39,7 +39,7 @@ class pminbox extends CI_Controller {
 
     public function index() {
         $sessid= $this->session->userdata('suserid');
-        $related_res = $this->init_models->related_users();
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Private Message Inbox',

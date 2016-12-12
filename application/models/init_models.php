@@ -867,11 +867,20 @@ $q->where('user_interest',$query_array['user_interest']);
 //Related Users
 
 
-   function related_users(){
+   function related_users($sessid){
+
+    if(isset($sessid)){
+        $query = $this->db->query("select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id and tbl_user_meta.user_id not in('".$sessid."') ORDER BY RAND() limit 5");
+
+    }else{
       
-       $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id ORDER BY RAND() limit 5');
+     $query = $this->db->query('select * from tbl_user_meta join tbl_users where tbl_users.user_id = tbl_user_meta.user_id ORDER BY RAND() limit 5');
           
-         return $query->result_array();
+         
+    }
+
+    return $query->result_array();
+    
 
 
 
