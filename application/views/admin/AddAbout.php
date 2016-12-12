@@ -51,12 +51,12 @@
                                             <div class="row">
                     <form id="addabout" class=" form-control col m12" action="<?php echo site_url('index.php/admin/AddAbout')?>" method="post" enctype="multipart/form-data">
                             <?php 
-                             $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='aboutus'");
-                             $count= $query->result()[0]->row_count;
+                          //   $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='aboutus'");
+                             $count= $about_count;
                             if($count>='1') { 
-                                 $query = $this->db->query("select * from tbl_posts where  post_type='aboutus' ");
+                              //   $query = $this->db->query("select * from tbl_posts where  post_type='aboutus' ");
                         
-                            foreach ($query->result_array() as $row){ 
+                            foreach ($add_about as $row){ 
                               
                              ?>
                              <input id="post_id" name="post_id" type="hidden" class="validate " value="<?php  echo $row['post_id'];?>">

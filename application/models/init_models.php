@@ -372,7 +372,7 @@ public function edit_front_user($data){
       }
 
 
-      function getmessage($sessid){
+    /*  function getmessage($sessid){
 
         $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
          return $query->result_array();
@@ -383,13 +383,73 @@ public function edit_front_user($data){
         $query = $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
          return $query->result()[0]->row_count;
       }
-
+*/
       function getinboxmessage($sessid){
 
         $query = $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
          return $query->result()[0]->row_count;
       }
 
+      function gethomenews(){
+        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
+         return $query->result_array();
+
+      }
+
+       function gethomeschool(){
+        $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1");
+         return $query->result_array();
+
+      }
+
+      function gethomeprojects(){
+        $query = $this->db->query("select * from tbl_projects where project_approve = 1");
+         return $query->result_array();
+
+      }
+
+  function gethomeevents(){
+        $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
+         return $query->result_array();
+
+      }
+
+      function gethomevacancy(){
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
+         return $query->result_array();
+
+      }
+
+      function gethomequestion(){
+        $query = $this->db->query("select * from tbl_questions where question_approve=1");
+         return $query->result_array();
+
+      }
+
+
+       function getinboxmsg($sessid){
+        $query = $this->db->query("SELECT * FROM tbl_users LEFT JOIN tbl_message ON tbl_users.user_id=tbl_message.user_id where tbl_message.pm_send_to = '" .$sessid. "'");
+         return $query->result_array();
+
+      }
+
+      function getsentitemcount($sessid){
+        $query = $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+         return $query->result()[0]->row_count;
+
+      }
+
+       function getinboxitemcount($sessid){
+        $query = $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+         return $query->result()[0]->row_count;
+
+      }
+
+      function getsentmsg($sessid){
+        $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'");
+         return $query->result_array();
+
+      }
 
       function getmorecourse($course_id){
 
@@ -403,6 +463,170 @@ public function edit_front_user($data){
         $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
          return $query->result_array();
       }
+
+      function getuserinfo($uid){
+
+        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.user_age, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$uid. "'");
+         return $query->result_array();
+      }
+
+
+      function getuseractivity($uid){
+
+        $query = $this->db->query("select tbl_users.username, tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.user_id, tbl_posts.post_date, post_time, tbl_posts.post_title, tbl_posts.post_type as type, tbl_posts.post_id as id from tbl_users JOIN tbl_posts On tbl_users.user_id = tbl_posts.user_id join tbl_user_meta on tbl_posts.user_id = tbl_user_meta.user_id where tbl_posts.post_approve = 1 and tbl_posts.user_id = '".$uid."'");
+         return $query->result_array();
+      }
+
+
+
+      function getaddabout(){
+
+        $query = $this->db->query("select * from tbl_posts where  post_type='aboutus'");
+         return $query->result_array();
+      }
+
+
+function getaboutcount(){
+        $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='aboutus'");
+         return $query->result()[0]->row_count;
+
+      }
+
+function get_all_event_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type='event'");
+         return $query->result()[0]->row_count;
+
+      }
+
+
+      function get_approved_event_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type='event' and post_approve = 1");
+         return $query->result()[0]->row_count;
+
+      }
+
+function get_all_users_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_users");
+         return $query->result()[0]->row_count;
+
+      }
+
+      function get_all_school_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_school_meta");
+         return $query->result()[0]->row_count;
+
+      }
+
+      function get_approved_school_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_school_meta where school_approve = 1");
+         return $query->result()[0]->row_count;
+
+      }
+
+      function get_all_advertise_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_advertise");
+         return $query->result()[0]->row_count;
+
+      }
+
+      function get_approved_advertise_count(){
+        $query = $this->db->query("select count(*) as row_count from tbl_advertise where isactive = 1");
+         return $query->result()[0]->row_count;
+
+      }
+
+
+       function get_adevertise_details($add_id){
+        $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
+         return $query->result_array();
+
+      }
+
+
+      function get_course_details($course_id){
+        $query = $this->db->query("select * from tbl_course where course_id = '" .$course_id. "'");
+         return $query->result_array();
+
+      }
+
+       function get_event_details($event_id){
+        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+         return $query->result_array();
+
+      }
+
+
+      function get_gist_details($gist_id){
+        $query = $this->db->query("select * from tbl_posts where post_type='gist'  and post_id = '" .$gist_id. "'");
+         return $query->result_array();
+
+      }
+
+      function get_news_details($news_id){
+        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+         return $query->result_array();
+
+      }
+
+      function get_project_details($topic_id){
+        $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
+         return $query->result_array();
+
+      }
+
+
+      function get_question_details($ques_id){
+        $query = $this->db->query("select * from tbl_questions where question_id = '" .$ques_id. "'");
+         return $query->result_array();
+
+      }
+
+
+      function get_school_details($sch_id){
+        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_id = '" .$sch_id. "'");
+         return $query->result_array();
+
+      }
+
+      function get_tender_details($vac_id){
+
+        $query = $this->db->query("select * from tbl_vacancy where  vacancy_id = '" .$vac_id. "'");
+         return $query->result_array();
+      }
+
+
+function get_tips_details($tips_id){
+
+        $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
+         return $query->result_array();
+      }
+
+      function get_posts_details($post_type){
+
+        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
+         return $query->result_array();
+      }
+
+
+      function get_policy_details(){
+
+        $query = $this->db->query("select * from tbl_posts where  post_type='privacy'");
+         return $query->result_array();
+      }
+
+
+       function get_policy_count(){
+
+        $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='privacy'");
+         return $query->result()[0]->row_count;
+      }
+
+
+      //Sidebar
+
+
+
+
 
 
       function getsch_details($sch_id){

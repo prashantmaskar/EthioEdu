@@ -20,10 +20,10 @@
                    // $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
                         
                     // $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
-                                $sentitem = $sent_messages;
+                             //   $sentitem = $sent_messages;
 
                             //    $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $inbox_details;
+                             //   $inboxitem = $inbox_details;
                         ?>
                         <div class="col s12 m12 card-panel">
                             <h2 class="inbox-title">Private Messages (PM)</h2>
@@ -36,11 +36,11 @@
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
-                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
+                                        <span class="new badge blue"><?php echo $inbox_count; ?></span>
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'pmsent'?>">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
+                                        <span class="white-text badge green"><?php echo $sent_count; ?></span>
                                     </li>
                                   <!--  <li class="collection-item">
                                         <a href="#">Delete</a>

@@ -26,10 +26,10 @@
                     </div>
                     <div class="container">
 
-                        <?php if(isset($_GET['id'])){$news_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        <?php  if(isset($_GET['id'])){$news_id = $_GET['id'];}
+                       /* $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($news_details as $row){ 
                                     $newsattachment =  $row['post_attachment'];
                         ?>
                         <div class="section">

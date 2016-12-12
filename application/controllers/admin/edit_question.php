@@ -39,10 +39,12 @@ class edit_question extends CI_Controller {
 
   public function index()
   {
+             $ques_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Question',
                 'title'   => 'Edit Question'
             );
+      $view_params['question_details'] = $this->init_models->get_question_details($ques_id);
     $this->load->view('admin/edit_question',$view_params);
 if(isset($_POST['action'])){
         $this->edit_question();

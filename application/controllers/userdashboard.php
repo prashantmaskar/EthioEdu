@@ -35,6 +35,7 @@ class userdashboard extends CI_Controller {
 
 
     public function index() {
+        $uid = $_GET['uid'];
         $related_res = $this->init_models->related_users();
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
@@ -43,6 +44,8 @@ class userdashboard extends CI_Controller {
             'banners' => $banners,
             'related_res' => $related_res,
         );
+        $view_params['user_info'] = $this->init_models->getuserinfo($uid);
+        $view_params['user_activity'] = $this->init_models->getuseractivity($uid);
         $this->load->view('userdashboard',$view_params);
     }
 

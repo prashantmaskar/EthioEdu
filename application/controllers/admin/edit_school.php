@@ -39,10 +39,12 @@ class edit_school extends CI_Controller {
 
   public function index()
   {
+            $sch_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit School',
                 'title'   => 'Edit School'
             );
+    $view_params['school_details'] = $this->init_models->get_school_details($sch_id);
     $this->load->view('admin/edit_school',$view_params);
 if(isset($_POST['action'])){
         $this->edit_school();

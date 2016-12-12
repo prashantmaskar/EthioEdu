@@ -37,10 +37,12 @@ class Edit_tender extends CI_Controller {
     
   public function index()
   {
+              $vac_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Admin Edit Tender',
                 'title'   => 'Admin Edit Tender'
             );
+    $view_params['tender_details'] = $this->init_models->get_tender_details($vac_id);
     $this->load->view('admin/edit_tender',$view_params);
 
         if(isset($_POST['action'])){

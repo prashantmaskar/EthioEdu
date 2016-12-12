@@ -39,8 +39,8 @@ class composemail extends CI_Controller {
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
-            $view_params['getmessage'] = $this->init_models->getmessage($sessid);
-            $view_params['sent_messages'] = $this->init_models->getsentmessage($sessid);
+            $view_params['sent_count'] = $this->init_models->getsentitemcount($sessid);
+        	$view_params['inbox_count'] = $this->init_models->getinboxitemcount($sessid);
             $view_params['inbox_details'] = $this->init_models->getinboxmessage($sessid);
 		$this->load->view('composemail', $view_params);
 

@@ -39,10 +39,12 @@ class edit_gist extends CI_Controller {
 
   public function index()
   {
+            $gist_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Gist',
                 'title'   => 'Edit Gist'
             );
+    $view_params['gist_details'] = $this->init_models->get_gist_details($gist_id);
     $this->load->view('admin/edit_gist',$view_params);
 if(isset($_POST['action'])){
         $this->edit_gist();

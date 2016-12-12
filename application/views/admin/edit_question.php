@@ -26,9 +26,9 @@
                     </div>
                     <div class="container">
                     <?php if(isset($_GET['id'])){$ques_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_questions where question_id = '" .$ques_id. "'");
+                       // $query = $this->db->query("select * from tbl_questions where question_id = '" .$ques_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($question_details as $row){ 
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>

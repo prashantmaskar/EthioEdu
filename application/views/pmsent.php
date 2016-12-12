@@ -9,18 +9,18 @@
                             <h2 class="inbox-title">Private Messages (PM)</h2>
                         </div>
 
-<?php                $sessid= $this->session->userdata('suserid');
+<?php              /*  $sessid= $this->session->userdata('suserid');
 
                     $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
 
-                    $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'");
+                    $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'"); */
 
                         
-                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                     /* $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
                                 $sentitem = $query1->result()[0]->row_count;
 
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $query2->result()[0]->row_count;
+                                $inboxitem = $query2->result()[0]->row_count; */
                         ?>
                         <div id="inbox-action" class="col m3 s5">
                             <div class="card-panel">
@@ -30,20 +30,20 @@
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
-                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
+                                        <span class="new badge blue"><?php echo $inbox_count; ?></span>
                                     </li>
                                     <li class="collection-item">
-
-                                        <a href="#">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
-                                    </li>
-                                    <li class="collection-item">
-                                        <a href="#">Delete</a>
-                                    </li>
 
                                         <a href="<?php echo base_url().'index.php/pmsent'?>">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
+                                        <span class="white-text badge green"><?php echo $sent_count; ?></span>
                                     </li>
+                                 <!--   <li class="collection-item">
+                                        <a href="#">Delete</a>
+                                    </li> -->
+
+                                     <!--   <a href="<?php //echo base_url().'index.php/pmsent'?>">Sent</a>
+                                        <span class="white-text badge green"><?php //echo $sentitem; ?></span>
+                                    </li> -->
                                    <!-- <li class="collection-item">
                                         <a href="#">Delete</a>
                                     </li>  -->
@@ -56,7 +56,7 @@
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
-                            <?php foreach ($query->result_array() as $row){  ?>
+                            <?php foreach ($getsentmsg as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
                                     <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
@@ -86,56 +86,6 @@
         <div class="col s12 m3 margin-t-15">
             <div class="online_std z-depth-1">
                 <ul class="online_std_list">
-
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-
                     <?php 
 //print_r($related_users);
                        foreach ($related_res as $row){ ?>
@@ -173,11 +123,7 @@
             }).get();
             //console.log(checkValues);
             $.ajax({
-
-                url: 'admin/approve_delete',
-
                 url: 'message_delete',
-
                 type: 'POST',
                 data: { sids: checkValues},
                 success:function(data){

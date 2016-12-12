@@ -40,6 +40,8 @@ class privacy_policy extends CI_Controller {
                 'm_title' => 'Admin privacy_policy',
                 'title'   => 'Admin privacy_policy'
             );
+    $view_params['policy_details'] = $this->init_models->get_policy_details();
+    $view_params['policy_count'] = $this->init_models->get_policy_count();
 		$this->load->view('admin/privacy_policy',$view_params);
 
     if(isset($_POST['addaction'])){

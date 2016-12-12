@@ -24,9 +24,9 @@
                         </div>
                     </div>
                         <?php if(isset($_GET['id'])){$vac_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_vacancy where  vacancy_id = '" .$vac_id. "'");
+                       // $query = $this->db->query("select * from tbl_vacancy where  vacancy_id = '" .$vac_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($tender_details as $row){ 
                         ?>
 
 

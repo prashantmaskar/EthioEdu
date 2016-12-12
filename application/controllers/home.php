@@ -39,6 +39,12 @@ class home extends CI_Controller {
             'title' => 'WelCome To EthioEdu',
                'banners' => $banners    
         );
+        $view_params['homenews'] = $this->init_models->gethomenews();
+        $view_params['homeschool'] = $this->init_models->gethomeschool();
+        $view_params['homeprojects'] = $this->init_models->gethomeprojects();
+        $view_params['homeevents'] = $this->init_models->gethomeevents();
+        $view_params['homevacancy'] = $this->init_models->gethomevacancy();
+        $view_params['homequestions'] = $this->init_models->gethomequestion();
         $this->load->view('home',$view_params);
     }
 

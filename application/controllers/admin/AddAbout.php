@@ -40,6 +40,8 @@ class AddAbout extends CI_Controller {
                 'm_title' => 'Admin AddAbout',
                 'title'   => 'Admin AddAbout'
             );
+    $view_params['add_about'] = $this->init_models->getaddabout();
+    $view_params['about_count'] = $this->init_models->getaboutcount();
 		$this->load->view('admin/AddAbout',$view_params);
 
     if(isset($_POST['addaction'])){

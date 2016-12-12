@@ -24,10 +24,10 @@
                             </div>
                         </div>
                     </div>
-                                            <?php if(isset($_GET['id'])){$add_id = $_GET['id'];}
+                                            <?php /* if(isset($_GET['id'])){$add_id = $_GET['id'];}
                         $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        */
+                                foreach ($advertise_details as $row){ 
                                 $bannerattachment= $row['advertise_attachment'];
 
                         ?>

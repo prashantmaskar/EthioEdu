@@ -39,10 +39,12 @@ class edit_event extends CI_Controller {
 
   public function index()
   {
+            $event_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Event',
                 'title'   => 'Edit Event'
             );
+      $view_params['event_details'] = $this->init_models->get_event_details($event_id);
     $this->load->view('admin/edit_event',$view_params);
 if(isset($_POST['action'])){
         $this->edit_event();

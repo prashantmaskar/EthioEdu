@@ -39,10 +39,12 @@ class edit_news extends CI_Controller {
 
   public function index()
   {
+            $news_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit News',
                 'title'   => 'Edit News'
             );
+    $view_params['news_details'] = $this->init_models->get_news_details($news_id);
     $this->load->view('admin/edit_news',$view_params);
 if(isset($_POST['action'])){
         $this->edit_news();

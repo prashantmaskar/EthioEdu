@@ -38,7 +38,7 @@ class pmsent extends CI_Controller {
 
 
     public function index() {
-
+        $sessid= $this->session->userdata('suserid');
 
         $related_res = $this->init_models->related_users();
 
@@ -46,13 +46,13 @@ class pmsent extends CI_Controller {
         $view_params = array(
             'm_title' => 'Sent Items',
             'title' => 'Sent Items',
-
-            'banners' => $banners
-
             'banners' => $banners,
             'related_res' => $related_res,
 
         );
+        $view_params['getsentmsg'] = $this->init_models->getsentmsg($sessid);
+        $view_params['sent_count'] = $this->init_models->getsentitemcount($sessid);
+        $view_params['inbox_count'] = $this->init_models->getinboxitemcount($sessid);
         $this->load->view('pmsent',$view_params);
     }
 
