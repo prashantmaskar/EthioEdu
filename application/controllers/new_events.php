@@ -64,19 +64,17 @@ class new_events extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('avatar') == ""){
-                   $data1 = array('upload_data' => $this->upload->data());
+              if (!$this->upload->do_upload('avatar') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-                    }else{
-
+                      }else{
                         $filedata= array(
-                            'file_name' => 'default-image.jpg',
+                            'file_name' => 'default-event.jpg',
                             );
-
-                    }
+                      }
                       $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
