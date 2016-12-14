@@ -37,33 +37,15 @@
                                         <input id="no_vacancy" name="vcount" type="text" class="validate">
                                         <label for="no_vacancy">No.of Vacancy</label>
                                     </div>
-                                  <!--  <div class="form-group input-field col s12">
-                                        <input id="startdate" type="date" name="sdate" class="datepicker">
-                                        <label for="date">Date of Bidding</label>
-                                    </div>-->
 
                                     <div class="form-group input-field col s12">
                                            <input id="startdate" type="date" class=" datepicker validate" name="sdate" >
                                         <label for="Caption">Date of Bidding</label>
                                     </div>
-                                   <!-- <div class="form-group input-field col s12">
-                                        <input id="enddate" name="edate" type="date" class="datepicker">
-                                        <label for="date">Last Date of Bidding</label>
-                                    </div>-->
                                     <div class="form-group input-field col s12">
                                         <input id="enddate" type="date" class=" datepicker validate" name="edate">
                                         <label for="Caption">Last Date of Bidding</label>
                                     </div>
-
-                                  <!--  <div class="form-group input-field col s12">
-                                        <select class="form-control browser-default" name="vstatus">
-                                            <option value="">Status</option>
-                                            <option value="Close">Close</option>
-                                            <option value="Open">Open</option>
-
-                                        </select>
-                                        
-                                    </div>-->
                                     <div class="form-group input-field col s12">
                                         <textarea name="vdesc" id="Description" class="materialize-textarea"></textarea>
                                         <label for="Description">Description</label>
@@ -100,19 +82,5 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
-<script type="text/javascript" src="../js/dateValidation.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>-->
-
-
-
 <script type="text/javascript" src="<?php echo base_url() .'js/post_vacuncy-validate.js' ?>"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script><!--
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
-<script type="text/javascript" src="../js/vacancyDateVal.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>-->
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
