@@ -398,7 +398,7 @@ public function edit_front_user($data){
       }
 
        function gethomeschool(){
-        $query = $this->db->query("select school_name,school_id, school_logo, from tbl_school_meta where school_approve = 1");
+        $query = $this->db->query("select school_name,school_id, school_logo from tbl_school_meta where school_approve = 1");
          return $query->result_array();
 
       }

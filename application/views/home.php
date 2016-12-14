@@ -174,12 +174,12 @@
                         <div class="featured_slider">
                        <?php  foreach ($homeschool as $row){ 
                                           $sid = $row['school_id']; ?>
-                            <div class="item"><img src="<?php echo base_url();?>uploads<?php echo $row['school_logo']; ?>"></div>
+                            <div class="item"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></div>
                             <?php } ?>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
-
+                          <!--  <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
+                            <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            -->
                         </div>
                     </div>
                 </div>
