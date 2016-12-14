@@ -31,7 +31,8 @@
 
                         <div class="news_img">
 
-                       <?php $news_attachment = $row['post_attachment']; ?>
+                       <?php 
+                       $news_attachment = $row['post_attachment']; ?>
                             <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
                         </div>
                         <div class="col s12">

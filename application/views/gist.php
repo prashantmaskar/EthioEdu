@@ -32,13 +32,19 @@
                                 <div class="gits_content row">
                                     <div class="gist_ainfo">
                                         <div class="col s1">
-                                            <img src="<?php echo base_url() . 'images/user.jpg' ?>">
+                                        <?php $gistattachment = $row['user_avatar']; ?>
+                                            <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
 
                                         </div>
                                         <div class="col s11">
                                             <div class="gist_dinfo">
-                                                <span class="green-text"><?php echo $row['post_date'];?></span>
-                                                <a href="#"><?php echo $row['post_author'];?></a>
+                                            <?php if(! $row['post_date'] == ""){?>
+                                                <span class="green-text">On <?php echo $row['post_date'];?></span>
+                                                <?php } ?>
+                                                <?php if(! $row['post_time'] == ""){?>
+                                                <span class="green-text">At <?php echo $row['post_time'];?></span>
+                                                <?php } ?>
+                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>"><?php echo $row['post_author'];?></a>
                                                 <span>Writes for School</span>
                                             </div>
                                             <div class="gist_title">
@@ -47,8 +53,10 @@
                                         </div>
                                     </div>
                                     <div class="git_img col m12">
-                                          <?php $gist_attachment = $row['post_attachment']; ?>
-                                        <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
+                                          <?php 
+                                          $gist_attachment = $row['post_attachment'];  ?>
+                                          <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
+                                        
                                         <span class="see_more"><a href="#">See More Photos</a></span>
                                     </div>
                                     <div class="col m12 git_desc">
@@ -74,19 +82,25 @@
                             <h3 class="featured_gist_title">Student just gisted about..</h3>
                         </div>
                         <div class="fgist_list_wrap col m12">
-                            <ul class="fgist_list">
+                            <ul class="latest_news_list">
                               <?php  
                                foreach ($gist as $row){ ?>
-                                <li>
+                                <li class="Latest_news_content">
                                     <div class="row">
                                         <div class="fgist col s12">
                                             <div class="fgist_info col s12">
-                                                <span class="green-text"><?php echo $row['post_date'];?></span>
-                                                <a href="#"><?php echo $row['post_author'];?></a>
+                                            <?php if(! $row['post_date'] == ""){?>
+                                                <span class="green-text">On <?php echo $row['post_date'];?></span>
+                                                <?php } ?>
+                                                <?php if(! $row['post_time'] == ""){?>
+                                                <span class="green-text">At <?php echo $row['post_time'];?></span>
+                                                <?php } ?>
+                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>""><?php echo $row['post_author'];?></a>
                                                 <span><?php echo $row['post_category'];?></span>
                                             </div>
                                             <div class="fgist_thumb col s3">
-                                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">
+                                                <?php $gistattachment = $row['user_avatar']; ?>
+                                            <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
                                             </div>
                                             <div class="fgist_title col s9">
                                                 <h1><a href="#"><?php echo $row['post_title'];?></a></h1>

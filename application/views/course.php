@@ -84,7 +84,7 @@
                                 <?php
                
                                 foreach ($course as $row){ ?>
-                                <?php $c_id = $row->course_id;
+                                <?php $c_id = md5($row->course_id);
                                         ?>
                                     <a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>" class="collection-item s"><?php echo $row->course_name; ?>
                                                     <div style="display: inline-block;float: right;">

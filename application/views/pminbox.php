@@ -40,9 +40,13 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <?php if($getinboxmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
+                                    <?php }
+                                     if(!$getinboxmsg == ""){
+                                    ?>
                             <?php foreach ($getinboxmsg as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
@@ -58,7 +62,10 @@
                                         </p>
                                     </a>
                                 </li>
-                                <?php } ?>
+                                <?php }}else{ 
+
+                                    echo "inbox is empty";
+                                   } ?>
                                     
                             </ul>
                         </div>

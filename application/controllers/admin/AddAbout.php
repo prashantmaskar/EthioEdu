@@ -68,23 +68,18 @@ class AddAbout extends CI_Controller {
                 $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-              
-
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
+                if ( ! $this->upload->do_upload('avatar') == ""){
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
                          $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -107,43 +102,37 @@ class AddAbout extends CI_Controller {
             redirect("index.php/admin/AddAbout");
             }
 
-               
-
-    }
 }
  public function edit()
       {
+                        
              date_default_timezone_set('Asia/Kolkata');
              $imagePrefix = date("d-m-Y-h-i"); 
-             $imagename = $imagePrefix.$value['name'];
+             $imagename = $imagePrefix;
 
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100000;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
-                 $config['file_name'] = $imagename; // set the name here
-
+                 $config['file_name'] = $imagename; 
                 $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
+                    if ( ! $this->upload->do_upload('avatar') == ""){
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
                           $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
+
 
         $data=array(
                   'post_id' => $this->input->post('post_id'),
@@ -154,14 +143,9 @@ class AddAbout extends CI_Controller {
                   'post_date' => $date,
                   'post_time' => $time
              );
-       /* var_dump($data);
-        exit();*/
+       
                   $isinserted = $this->init_models->edit_about($data);
-                        
- /*var_dump($data);
-        exit();*/
-                        
-                }
+
 
                if(isset($isinserted)){
             echo"<script>alert('Data Edited Successfully');</script>";

@@ -133,7 +133,8 @@ function get_user_id_by_uname($uname){
       }
        public function selectgist()  
       {  
-        $query = $this->db->query("select * from tbl_posts where post_type = 'gist'  && post_approve = 1"); 
+        $query = $this->db->query("select tbl_user_meta.user_id ,tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.post_attachment, tbl_posts.post_desc, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_user_meta join tbl_posts on tbl_user_meta.user_id = tbl_posts.user_id where tbl_posts.post_type = 'gist' && tbl_posts.post_approve = 1 limit 10");
+         
         return $query->result_array();
       }
        public function selecttips()  
@@ -361,7 +362,7 @@ public function edit_front_user($data){
 
       function getcoursedetails($course_id){
 
-        $query = $this->db->query("select * from tbl_course where course_id = '" .$course_id. "'");
+        $query = $this->db->query("select * from tbl_course where md5(course_id) = '" .$course_id. "'");
          return $query->result_array();
       }
 
@@ -397,7 +398,7 @@ public function edit_front_user($data){
       }
 
        function gethomeschool(){
-        $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1");
+        $query = $this->db->query("select school_name,school_id, school_logo, from tbl_school_meta where school_approve = 1");
          return $query->result_array();
 
       }
@@ -453,7 +454,7 @@ public function edit_front_user($data){
 
       function getmorecourse($course_id){
 
-        $query = $this->db->query("select * from  tbl_course where course_id != '" .$course_id. "'limit 4");
+        $query = $this->db->query("select * from  tbl_course where md5(course_id) != '" .$course_id. "'limit 4");
          return $query->result_array();
       }
 
@@ -622,11 +623,19 @@ function get_tips_details($tips_id){
       }
 
 
-      //Sidebar
+     function get_previous_vacancy(){
+
+        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_vacancy.vacancy_id, tbl_vacancy.vacancy_name, tbl_vacancy.vacancy_time, tbl_vacancy.vacancy_date from tbl_users join tbl_vacancy on tbl_users.user_id = tbl_vacancy.user_id where tbl_vacancy.vacancy_approve  = 1 order by rand() limit 10");
+         return $query->result_array();
+      }
 
 
 
+      function get_all_course_count($course_id, $sessid){
+        $query = $this->db->query("select count(*) as row_count from tbl_course_meta where course_id = '" .$course_id. "' and user_id='".$sessid."'");
+         return $query->result()[0]->row_count;
 
+      }
 
 
       function getsch_details($sch_id){

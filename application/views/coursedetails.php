@@ -14,6 +14,18 @@
                         </a>
                     </div>
                 </div>
+                <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
                 <div class="col s12 m8 grid-example ">
                     <div class="course_details row z-depth-1">
                         <div class="col m12">
@@ -33,12 +45,12 @@
 
                          $sessid= $this->session->userdata('suserid');
 
-                         $query143 = $this->db->query("select * from tbl_course_meta where course_id = '" .$c_id. "' and user_id='".$sessid."'");
+                       /*  $query143 = $this->db->query("select * from tbl_course_meta where course_id = '" .$c_id. "' and user_id='".$sessid."'");
 
-                         if($query143->num_rows() > 0)
+                         if($course_count > 0)
                         {
                             $restultrating = $query143->first_row();                        
-                        }
+                        }  */
 
                        /* $query = $this->db->query("select * from tbl_course where course_id = '" .$c_id. "'");
                             */
@@ -96,7 +108,7 @@
 
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
-                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails')?>" method="post" class="col m12">
+                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails'); ?>?id=<?php echo $c_id; ?>" method="post" class="col m12">
 
                                                     <div class="form-group input-field col s12">
                                                         <input id="Reviewer_name" name="Reviewer_name" type="text" class="validate" value="<?php echo $row['username']; ?>">
@@ -164,7 +176,7 @@
                                  course_id != '" .$crs_id. "'limit 4");  */
                                 foreach ($more_course as $row)
                                 { 
-                                    $c_id = $row['course_id'];
+                                    $c_id = md5($row['course_id']);
                              ?>
                                 <ul>
                                     <li><a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>"><?php echo $row['course_name'];?></a></li>

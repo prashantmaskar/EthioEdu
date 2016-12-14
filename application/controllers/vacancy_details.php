@@ -39,7 +39,7 @@ class vacancy_details extends CI_Controller {
             'title' => 'Vacancy Details',
             'banners' => $banners,
         );
-
+        $view_params['news'] = $this->init_models->selectnews();
         $view_params['vacanyid'] = $this->init_models->getvacanydetails($vac_id);
         $this->load->view('vacancy_details',$view_params);
     }

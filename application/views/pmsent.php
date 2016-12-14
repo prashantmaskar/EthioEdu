@@ -53,9 +53,12 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <?php if($getsentmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
+                                    <?php } ?>
+                                    <?php if(!$getsentmsg == ""){ ?>
                             <?php foreach ($getsentmsg as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
@@ -74,7 +77,10 @@
                                         </p>
                                     </a>
                                 </li>
-                                <?php } ?>
+                                <?php }}else{
+
+                                    echo"Empty Sent Items";
+                                    } ?>
                                     
                             </ul>
                         </div>

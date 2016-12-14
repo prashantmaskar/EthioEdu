@@ -29,8 +29,9 @@
                         </div>
 
                         <div class="event_img">
-                        <?php $news_attachment = $row['post_attachment']; ?>
-                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
+                        <?php 
+                        $news_attachment = $row['post_attachment'];  ?>
+                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>"> 
                         </div>
                         <div class="col s12">
                             <a class="post-share facebook" href="http://www.facebook.com/plugins/like.php?href=http://medialoot.com/blog/&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');

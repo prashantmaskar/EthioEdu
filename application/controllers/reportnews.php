@@ -8,10 +8,10 @@ class reportnews extends CI_Controller {
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -46,7 +46,8 @@ class reportnews extends CI_Controller {
     }
        public function add()
        {
-            
+                    $imgfile = $this->input->post('fileformat');
+           // if(! $imgfile == ""){
             date_default_timezone_set('Asia/Kolkata');
             $imagePrefix = date("d-m-Y-h-i-s"); 
             $imagename = $imagePrefix.$value['name'];
@@ -59,21 +60,21 @@ class reportnews extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-                         
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
+                if ( ! $this->upload->do_upload('fileformat') == ""){
+               
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                    }else{
+
+                         $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                    }
+
+                   
                         $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -93,23 +94,9 @@ class reportnews extends CI_Controller {
                 'post_approve' => $this->input->post('approve_status'),
                 'user_id'=>  $sessid
         );
-                      /*  $isinserted = $this->init_models->add_anews($data);*/
-                        
-
-                        //
-                }
-
-             /*  if(isset($isinserted)){
-                    $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
-               }else{
-                    $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
-               }
-               var_dump($res);
-*/            if ($this->init_models->add_anews($data))
+                   
+           if ($this->init_models->add_anews($data))
             {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/reportnews");
             }
