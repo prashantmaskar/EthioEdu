@@ -116,8 +116,9 @@
                                     <!-- <div class="col s2 user-icon form-group input-field">
                                          <img src="<?php //echo base_url() . 'images/user.jpg' ?>" class="responsive-img circle">  
                                     </div> -->
-                                    <?php if($row['user_avatar']!=""){?>
+                                    
                                     <div class="form-group file-field input-field col s12">
+                                    <?php if($row['user_avatar']!=""){?>
                                                         <div style="position: relative;display: inline-block;">
 
                                      <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['user_avatar'];?>">
@@ -130,6 +131,7 @@
                                                                     right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                                   </div>
                                                                        <?php }?>
+
                                    <div class="form-group file-field input-field col s10">
                                         <div class="btn">
                                             <span>Attach Photo</span>
@@ -139,6 +141,7 @@
                                             <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
                                         </div>
                                     </div>
+
                                     <div class="file-field input-field col s10">
                                        <h5 class="red-text">Connect2Me Information</h5>
                                     </div>
@@ -226,14 +229,12 @@
             {
                 var deleteuserimg_id = id;
                 var image = userimg;
-                //alert(image);
-                //alert(deleteuserimg_id);
             if (confirm('Sure to Delete ?'))
                     {
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "admin/approve_delete",
+                            url: "message_delete",
                             data: {deleteuserimg_id, image},
                             success: function(data) {
                                 console.log(data);
