@@ -52,18 +52,15 @@
                                         $days=(int)($days%30);
                                           }elseif($duration<365 && $duration>30){
                                            $month=(int)($duration/30);
-                                      /*echo $month;*/
                                            $days=(int)($duration%30);
-                                      /* echo $days;*/
                                           }else{
                                             $days = $duration;
-                                            /* echo $days;*/
-                                          }
+                                          } 
                                     ?>
                                                 <tr>
                                                     <td><?php echo $row['course_name']; ?></td>
                                                     <td><?php echo $row['course_category']; ?></td>
-                                                    <td><?php if(isset($year)){
+                                                    <td><?php if(!$year == ""){
 
                                        echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";} 
                                     if(isset($days) && $days!==0){echo $days." Day ";}
