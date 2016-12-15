@@ -52,7 +52,7 @@ function show_one($ne_id) {
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree($ne_id);
    //print_r($data);
-   $this->load->view('ansques', $data); 
+   $this->load->view('ansQues', $data); 
 } 
 
 	function ansQues($question_id )
@@ -118,7 +118,7 @@ function add_comment($ne_id)
 	// create array to store all comments ids 
 	$store_all_id = array(); 
 	// get all parent comments ids by using news id 
-	$id_result = $this->init_models->tree_all($question_id = 1 ); 
+	$id_result = $this->init_models->tree_all($question_id ); 
 
 	// loop through all comments to save parent ids init_models$store_all_id array 
 	foreach ($id_result as $response_id) 
@@ -145,6 +145,24 @@ function in_parent($in_parent,$question_id,$store_all_id)
            $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
    foreach ($result as $re) 
 { 
+	              $u_id = $re['user_id'];
+	              //echo "u_id".$u_id;
+                  $res_id =$re['response_id'];
+                  // echo "res_id".$u_id;
+                  $ques_id = $re['question_id'];
+                  echo "ques_id".$ques_id;
+                  $sessid= $this->session->userdata('suserid');
+                  $formdate = $re['response_date'];
+                  $adate = strtotime(date($formdate));
+                  $startdate = date('d-m-Y',$adate);
+
+                
+//QUERY FOR COUNT
+                  /*$query = $this->db->query("SELECT * FROM tbl_likes
+WHERE response_id = '15' AND likes_count = '1' AND questions_id = '1'");
+$count = $query->num_rows(); */
+
+                 
 $html .= " <li class='collection-item'>
 <div class='row'>
          <div class='col s12 m2 grid-example'>
@@ -152,15 +170,37 @@ $html .= " <li class='collection-item'>
 <div class='col s12 m8 grid-example'>
 <div class='aut'>".$re['response_title']." </div> 
 <div class='comment-body'>".$re['response_desc']." </div> 
-<div class='timestamp'>".$re['response_date']."</div> 
-<a href='#comment_form' class='reply' id='" . $re['response_id'] . "'>Reply </a>
+<div class='timestamp blue-text'>".$startdate."</div>
+<div><a href='#comment_form' class='reply' id='" . $re['response_id'] . "'> Reply &nbsp;&nbsp;&nbsp;  </a></div>
+<div> <a>       Likes &nbsp;&nbsp;</a> 
+"; 
+if($re['response_like']== '1' /*&& $re['user_id']== $sessid*/) {
+$html .="<a href='javascript:void(0);' onclick = like(";
 
+$html .=  $ques_id.",".$sessid.",".$res_id;
 
-</div></div>"; 
+/*echo '1'; $html .=","; echo $u_id; $html .=","; echo $res_id;*/
+$html .= ");>Unlike</a></div>";
+          }
+          else
+          {
+  $html .= "<a href='javascript:void(0);' onclick = like(";
+$html .=  $ques_id.",".$sessid.",".$res_id;
+   $html .=");>Like</a></div></div></div>";
+           }
+
 $html .=$this->in_parent($re['response_id'],$question_id, $store_all_id); 
 $html .= "</li>"; } $html .= "</ul>"; 
+
+
 } 
 return $html;
 	} 	
 	
 }
+
+/*$html = "<script> 
+         
+         
+
+</script>";*/

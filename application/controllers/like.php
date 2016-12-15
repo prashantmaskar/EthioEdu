@@ -30,9 +30,6 @@ class like extends CI_Controller {
     { 
         redirect('index.php/login');
     }
-    if (!($this->session->userdata('role') == 'admin')){
-    	redirect('index.php/home');
-    }
     }
 
 	public function index()
@@ -41,6 +38,9 @@ class like extends CI_Controller {
                 'm_title' => 'like',
                 'title'   => 'like'
             );
-		$this->load->view('like',$view_params);
+		$this->load->view('like');
+	}
+	function test(){
+		echo "work";
 	}
 }

@@ -1013,11 +1013,11 @@ $q->where('question_date <=', $query_array['end_date']);
      { 
      $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
      $query = $this->db->get('tbl_questions'); 
-     //print_r($query);
+     print_r($query);
      return $query->row(); 
    } 
   // get full tree comments based on news id 
-  function tree_all($question_id=1)
+  function tree_all($question_id)
   { 
   $result = $this->db->query("SELECT * FROM tbl_userresponse where question_id = $question_id")->result_array(); 
   foreach ($result as $row) 
@@ -1030,10 +1030,11 @@ $q->where('question_date <=', $query_array['end_date']);
   // to get child comments by entry id and parent id and news id 
   function tree_by_parent($question_id,$in_parent) 
   { 
-  $result = $this->db->query("SELECT * FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  
 
-  /*SELECT * FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id=tbl_userresponse.user_id WHERE tbl_userresponse.parent_id = 40 AND tbl_userresponse.question_id = 1;*/
-  foreach ($result as $row) {
+
+   foreach ($result as $row) {
     $data[] = $row; 
     } 
     return $data; 
