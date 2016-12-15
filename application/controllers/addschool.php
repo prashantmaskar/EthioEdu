@@ -170,6 +170,7 @@ function insertschooldata(){
                 'school_region' => $this->input->post('choice7'),
                 'school_type' => $this->input->post('choice8'),
                 'school_population' => $this->input->post('student_population'),
+                'school_facility' => $this->input->post('tokenfield'),
                 'teaching_staff' => $this->input->post('t_staff'),
                 'non_teaching_staff' => $this->input->post('non_teach'),
                 'school_awards' => $this->input->post('past_award'),

@@ -15,7 +15,7 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Events</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="http://localhost/ETHIO/index.php/admin/dashboard">Dashboard</a>
                                         </li>
                                         <li><a href="#">Edit Events</a>
                                         </li>

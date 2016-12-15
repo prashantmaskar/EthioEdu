@@ -140,6 +140,7 @@ else{
                 'school_acadamic_fee' => $this->input->post('fee'),
                 'admission_procedure' => $this->input->post('Admissios_pro'),
                 'acadamic_requirment' => $this->input->post('Description'),
+                 'facility' => $this->input->post('tokenfield'),
                 'school_date' => $date,
                 'school_time' => $time,
                 'school_scholarship' => $this->input->post('scolership'),
