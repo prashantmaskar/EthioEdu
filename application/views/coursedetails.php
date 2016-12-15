@@ -149,7 +149,7 @@
                             <?php
                                 foreach ($more_course as $row)
                                 { 
-                                    $c_id = subtr(md5($row['course_id']),0,6);
+                                    $c_id = substr(md5($row['course_id']),0,6);
                              ?>
                                 <ul>
                                     <li><a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>"><?php echo $row['course_name'];?></a></li>

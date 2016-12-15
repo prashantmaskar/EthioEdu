@@ -362,7 +362,7 @@ public function edit_front_user($data){
 
       function getcoursedetails($course_id){
 
-        $query = $this->db->query("select * from tbl_course where md5(course_id) = '" .$course_id. "'");
+        $query = $this->db->query("select * from tbl_course where substring(md5(course_id),1,6) = '" .$course_id. "'");
          return $query->result_array();
       }
 
@@ -454,7 +454,7 @@ public function edit_front_user($data){
 
       function getmorecourse($course_id){
 
-        $query = $this->db->query("select * from  tbl_course where md5(course_id) != '" .$course_id. "'limit 4");
+        $query = $this->db->query("select * from  tbl_course where substring(md5(course_id),1,6) != '" .$course_id. "'limit 4");
          return $query->result_array();
       }
 
