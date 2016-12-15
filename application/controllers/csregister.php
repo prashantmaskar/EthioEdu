@@ -32,12 +32,14 @@ class csregister extends CI_Controller {
           
     }
     public function index() {
+        $sessid= $this->session->userdata('suserid');
         $banners = $this->init_models->getadvertisebanners();
-
+        $related_res = $this->init_models->related_users($sessid);
         $view_params = array(
             'm_title' => 'Registration',
             'title' => 'Registration',
-             'banners' => $banners
+             'banners' => $banners,
+             'related_res' => $related_res,
         );
         $this->load->view('csregister',$view_params);
 

@@ -195,12 +195,15 @@
                                 <p><i class="fa fa-phone"></i> Ph.No. <?php echo $row['school_number']?></p>
                             </div>
                         </div>
+                    <?php    if ($this->session->userdata('logged_in'))
+                        {  ?>
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Enquiry</h2>
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
+                        <?php } ?>
                         <div class="coment_box row">
                             <div class="col m12">
                                 <h2>Add New Comment</h2>

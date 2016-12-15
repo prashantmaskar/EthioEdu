@@ -97,7 +97,7 @@
                                             <input name="fileformat" type="file"  multiple >
                                        </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach image only" value="<?php echo $row['school_logo']; ?>">
+                                            <input class="file-path validate" name="imagename" type="text" placeholder="attach image only" value="<?php echo $row['school_logo']; ?>">
                                         </div>
                                     </div>
 

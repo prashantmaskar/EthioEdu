@@ -126,7 +126,7 @@
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">

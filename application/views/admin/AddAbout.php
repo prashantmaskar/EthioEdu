@@ -89,7 +89,7 @@
                                        <input type="file"  name="avatar" multiple>
                                  </div>
                                  <div class="file-path-wrapper">
-                                     <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>"">
+                                     <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>"">
                                 </div>
                                </div>
                                                                        <?php }else{ ?>
@@ -100,7 +100,7 @@
                                        <input type="file"  name="avatar" multiple>
                                  </div>
                                  <div class="file-path-wrapper">
-                                     <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php //echo $row['post_attachment'];?>">
+                                     <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>">
                                 </div>
                                </div>
 

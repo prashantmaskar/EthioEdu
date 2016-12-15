@@ -64,17 +64,32 @@ if(isset($_POST['action'])){
                 $config['max_height']           = 768;
                 $config['file_name'] = $imagename; // set the name here
 
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('fileformat') == ""){
+                 $this->load->library('upload', $config);
+
+                
+                        if ($this->upload->do_upload('fileformat')){
+                        //echo "<script>alert('in do_upload');</script>";
                 $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
                       }else{
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('fileformat') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('fileformat') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
                         $filedata= array(
                             'file_name' => 'default-image.jpg',
                             );
+                      }
                       }
 
               

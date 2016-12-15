@@ -68,17 +68,29 @@ class AddAbout extends CI_Controller {
                 $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-                if ( ! $this->upload->do_upload('avatar') == ""){
-                        $data1 = array('upload_data' => $this->upload->data());
+                if ($this->upload->do_upload('avatar')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
                       }else{
-
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('avatar') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('avatar') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
                         $filedata= array(
                             'file_name' => 'default-image.jpg',
                             );
+                      }
                       }
                          $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
@@ -117,17 +129,29 @@ class AddAbout extends CI_Controller {
                 $config['max_height']           = 768;
                  $config['file_name'] = $imagename; 
                 $this->load->library('upload', $config);
-                    if ( ! $this->upload->do_upload('avatar') == ""){
-                        $data1 = array('upload_data' => $this->upload->data());
+                    if ($this->upload->do_upload('avatar')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
                       }else{
-
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('avatar') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('avatar') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
                         $filedata= array(
                             'file_name' => 'default-image.jpg',
                             );
+                      }
                       }
                           $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
