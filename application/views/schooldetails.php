@@ -1,49 +1,14 @@
 <?php  $this->load->view('header'); ?>
-  <style type='text/css'> 
-  a, a:visited { 
-  outline: none; color: #7d5f1e; 
-  } 
-  .clear { 
-  clear: both;
-  } 
-  #wrapper { 
-  width: 480px; margin: 0 auto 0 4px; padding: 15px 0px; 
-  } 
-  .comment_box 
-  { padding: 5px;  margin-top: 15px; list-style: none; background: white;
-  } 
-  .aut { font-weight: bold; 
-  } 
-  .timestamp { font-size: 85%; 
-    /*float: right; */
-  } 
- .reply{float: left;}
-  #comment_body { display: block; width: 100%; height: 150px;
-  } 
-
- a {
-  color: #03658c;
-  text-decoration: none;
- }
-
-ul {
-  list-style-type: none;
-}
-
-body {
-  font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
-  background: #dee1e3;
-}
-}
-</style> 
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
-                    <?php $sch_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                    <?php  $sch_id = $_GET['id'];
+                       // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($sch_details as $row){ 
+                                      
+
                                     
                         ?>
                         <div class="school_banner col m12">
@@ -109,12 +74,12 @@ body {
                                 </ul>-->
                             </div>
                         </div>
-                        <div class="col m12">
+                        <!-- <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Owner-Ship</h2>
                                 <p class="sch_country">Public</p>
                             </div>
-                        </div>
+                        </div> -->
 <!--                        <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">History</h2>
@@ -127,7 +92,7 @@ body {
                                 <p>The school looks into the future with hope and will continue to make the sky the limit.</p>
                             </div>
                         </div>-->
-                        <div class="col m12">
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Programs Offered</h2>
                                 <p class="sch_country">Secondary Education</p>
@@ -142,8 +107,8 @@ body {
                                     <li><i class="fa fa-graduation-cap "></i> Architecture</li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col m12">
+                        </div> -->
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Schools Facility</h2>
                                 <ul>
@@ -158,7 +123,19 @@ body {
                                     <li><i class="fa fa-chevron-circle-right "></i> Other </li>
                                 </ul>
                             </div>
+                        </div> -->
+                    <?php              
+                       $str=$row['school_facility'];
+                                       $str=str_replace("," , "<br>",$str);
+                    ?>
+                       
+                         <div class="col m12">
+                            <div class="school_country">
+                                <h2 class="sch_det_title">School facility</h2>  
+                                <p><?php echo $str ?></p><br/>
+                            </div>
                         </div>
+
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Student Population</h2>
@@ -232,13 +209,20 @@ body {
                                 <p><i class="fa fa-phone"></i> Ph.No. <?php echo $row['school_number']?></p>
                             </div>
                         </div>
+                    <?php    if ($this->session->userdata('logged_in'))
+                        {  ?>
                         <div class="col m12">
                             <div class="school_country">
-                                <h2 class="sch_det_title">Inquiry</h2>
+                                <h2 class="sch_det_title">Enquiry</h2>
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
+
                        <!--  <div class="coment_box row">
+
+                        <?php } ?>
+                        <div class="coment_box row">
+
                             <div class="col m12">
                                 <h2>Add New Comment</h2>
                             </div>

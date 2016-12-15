@@ -8,7 +8,7 @@
          ?>
         <meta charset="utf-8">
         <title><?php echo $m_title ?></title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
@@ -70,11 +70,11 @@
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
     <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
-    <li><a href="#!">Comments( )</a></li>
+    <li><a href="#">Comments( )</a></li>
       <li class="divider"></li>
-     <li><a href="#!">Askaquestion(<?php echo $query2->result()[0]->row_count; ?>)</a></li>
+     <li><a href="<?php echo base_url(). 'index.php/QuesAns'?>">Askaquestion(<?php echo $query2->result()[0]->row_count; ?>)</a></li>
        <li class="divider"></li>
-      <li><a href="#!">Events(<?php echo $query1->result()[0]->row_count; ?>  )</a></li>
+      <li><a href="<?php echo base_url(). 'index.php/event'?> ">Events(<?php echo $query1->result()[0]->row_count; ?>  )</a></li>
     <li class="divider"></li>
    <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
   

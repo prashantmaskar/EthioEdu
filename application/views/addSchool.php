@@ -59,10 +59,10 @@
                                                        </div>
                                                        <?php if ($this->session->userdata('logged_in'))
                                                         {
-                                                             $sessid= $this->session->userdata('suserid');
-                                                             $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
+                                                            // $sessid= $this->session->userdata('suserid');
+                                                            // $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($user_details as $row){ 
                                                             ?>
       
                                                     <div class= "form-group input-field col s12">
@@ -153,6 +153,7 @@
                                                         </select>
                                                        </div>                                                 
                                                                
+
                                                             <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice4">
 
@@ -211,9 +212,22 @@
                                                             <option value="Kenya">private</option>
                                                          
                                                         </select>
+                                                         
                                                     </div>
+                                                    <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class=" autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="Add facilities">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
+          
 
-
+    
                                                   
                                                     <div class=" form-group input-field col s12">
                                                         <input id="student_population" name="student_population" type="text" class="validate">
@@ -333,7 +347,12 @@
 		</div>
 		</div>
         <?php $this->load->view('footer'); ?>
+
 <script type="text/javascript" src="<?php echo base_url() .'js/addschool.js' ?>"></script>
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/tokenfield-typeahead.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
 
 <script>
       function initMap() {

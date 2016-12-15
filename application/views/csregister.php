@@ -8,6 +8,9 @@
                $password = $this->input->post('password');
 
 ?>
+ 
+
+
 
         <div class="regist-wrap ">
             <div class="row">
@@ -16,6 +19,22 @@
                         <div class="row">
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
+
+
+
+                                <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
 
                                 <form id="csregister" action="<?php echo site_url('index.php/csregister')?>" method="post" class="row" enctype="multipart/form-data">
                                     <h4 class="red-text">personal Information</h4>
@@ -108,55 +127,24 @@
                 </div>
                 <div class="col s12 m3 margin-t-15">
                     <div class="online_std z-depth-1">
-                        <ul class="online_std_list">
+                       <ul class="online_std_list">
+                       <?php 
+//print_r($related_users);
+                       foreach ($related_res as $row){ ?>
                             <li>
+                            <?php $pimg = $row['user_avatar']; ?>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url(). 'images/user.jpg'?>">  
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>"> 
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
+                                        <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_university"><?php echo $row['user_gender']; ?></p>
+                                        <p class="std_name"><?php echo $row['user_school']; ?></p>
                                     </div>
                                 </div> 
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                       <img src="<?php echo base_url(). 'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                       <img src="<?php echo base_url(). 'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                         <img src="<?php echo base_url(). 'images/user.jpg'?>">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>

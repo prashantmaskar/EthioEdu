@@ -63,9 +63,13 @@ $(document).ready(function() {
               
                   attachphoto: {
                 validators: {
-                    notEmpty: {
-                        message: ' please attach imagee!!!..'
+                    file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 4194304,   // 2048 * 1024
+                        message: 'The selected file is not valid'
                     }
+                 
                 }
             },
  

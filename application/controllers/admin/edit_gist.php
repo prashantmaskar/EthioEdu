@@ -39,10 +39,12 @@ class edit_gist extends CI_Controller {
 
   public function index()
   {
+            $gist_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Gist',
                 'title'   => 'Edit Gist'
             );
+    $view_params['gist_details'] = $this->init_models->get_gist_details($gist_id);
     $this->load->view('admin/edit_gist',$view_params);
 if(isset($_POST['action'])){
         $this->edit_gist();
@@ -64,40 +66,33 @@ if(isset($_POST['action'])){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                       /* $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);*/
-
-                       // $this->load->view('upload_form', $error);
-
-
-                        $date = date('Y-m-d', $adate);
-
-                         $data=array(
-                  'post_id' => $this->input->post('post_id'),
-                  'post_title' => $this->input->post('caption'),
-                  'post_desc'  => $this->input->post('Description'),
-                  'post_category'=>$this->input->post('catagory'),
-                  'post_attachment' => $filedata['file_name'],
-                  'post_author'=>  $this->input->post('author'),
-                  //'post_date' => $this->input ->post('date'),
-                  'post_source' => $this->input->post('source_link'),
-                  'post_type'=>  $this->input->post('post_type'),
-                   'post_approve' => $this->input->post('approve_status'),
-                   );
-                            $isinserted = $this->init_models->edit_gist($data);
-                    // 'post_date' => $date,
-                //'post_time' => $this->input->post('time')
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                
+                        if ($this->upload->do_upload('avatar')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('avatar') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('avatar') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
+                      }
+
+
                          $formdate = $this->input ->post('date');
                 $adate = strtotime($formdate);
                 $date = date('Y-m-d',$adate);
@@ -120,8 +115,7 @@ if(isset($_POST['action'])){
                         
 
                         
-                }
-
+              
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";
                 redirect("index.php/admin/posts?post_type=gist");

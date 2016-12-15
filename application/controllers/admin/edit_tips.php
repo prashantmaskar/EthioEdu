@@ -39,10 +39,12 @@ class edit_tips extends CI_Controller {
 
   public function index()
   {
+              $tips_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Tips',
                 'title'   => 'Edit Tips'
             );
+    $view_params['tips_details'] = $this->init_models->get_tips_details($tips_id);
     $this->load->view('admin/edit_tips',$view_params);
 if(isset($_POST['action'])){
         $this->edit_tips();
@@ -63,22 +65,30 @@ if(isset($_POST['action'])){
                 $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                if ($this->upload->do_upload('avatar')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('avatar') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('avatar') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
+                      }
 
         $data=array(
                   'post_id' => $this->input->post('post_id'),
@@ -93,7 +103,7 @@ if(isset($_POST['action'])){
                         
 
                         
-                }
+                
 
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";

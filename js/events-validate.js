@@ -45,11 +45,11 @@ $(document).ready(function() {
                 }
              },
 
-           avatar:{
-            validators:{
-                notEmpty:{
+          avatar:{
+             validators:{
+                /*notEmpty:{
                     message:'please select an image'
-                },
+                },*/
                  file:{
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
@@ -57,7 +57,7 @@ $(document).ready(function() {
                         message: 'The selected file is not valid'
                     }
                  }
-           },
+           }, 
 
 
 

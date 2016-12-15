@@ -27,15 +27,17 @@ class userdashboard extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
-        if ( !$this->session->userdata('logged_in'))
+      /*  if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
-    }
+    } */
     }
 
 
     public function index() {
-        $related_res = $this->init_models->related_users();
+        $uid = $_GET['uid'];
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'userdashboard',
@@ -43,6 +45,8 @@ class userdashboard extends CI_Controller {
             'banners' => $banners,
             'related_res' => $related_res,
         );
+        $view_params['user_info'] = $this->init_models->getuserinfo($uid);
+        $view_params['user_activity'] = $this->init_models->getuseractivity($uid);
         $this->load->view('userdashboard',$view_params);
     }
 

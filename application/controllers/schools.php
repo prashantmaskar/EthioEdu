@@ -47,7 +47,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
         //print_r( $data['fields']);
 
         
-
+       
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'School',
@@ -102,7 +102,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-//print_r($data);
+ $data['homeschool'] = $this->init_models->gethomeschool();
        $this->load->view('schools',$data);
 
     }
@@ -177,7 +177,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-//print_r($data);
+ $data['homeschool'] = $this->init_models->gethomeschool();
        $this->load->view('schools',$data);
     }
 

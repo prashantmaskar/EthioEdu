@@ -79,14 +79,14 @@
                                        
                                         <i class="mdi-navigation-arrow-drop-down right"></i>
                                     </a>
-                                    <ul id="profile-dropdown" class="dropdown-content">
+                                    <!-- <ul id="profile-dropdown" class="dropdown-content">
                                         <li>
                                             <a href="#">
                                                 <i class="mdi-action-face-unlock"></i>
                                                 Profile
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                     <p class="user-roal">Administrator</p>
                                 </div>
                             </div>

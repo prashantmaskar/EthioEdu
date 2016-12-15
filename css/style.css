@@ -78,8 +78,8 @@ nav .brand-logo {
 
 .day{
     text-align: center;
-    padding: 15px;
-    font-size: 10px;
+    padding: 4px;
+    font-size: 11px;
 }
 .monthyear{
 
@@ -110,6 +110,16 @@ nav .brand-logo {
     vertical-align: middle;
     width: 28px;
 }
+
+.std_thumb img.circle.responsive-img.valign.profile-image {
+    height: 50px;
+}
+
+.cresult-wrap .result_list_wrap {
+    padding: 10px;
+}
+
+
 .comment-avatar  {
     max-width: 100%;
     vertical-align: middle;
@@ -312,6 +322,19 @@ img.edit-attach {
 .review_info [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
     border: 0px !important;
     background: transparent;
+}
+
+
+.course_search_result [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.course_search_result [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
+}
+
+.course_search_result [type="radio"]:disabled:not(:checked)+label:before, [type="radio"]:disabled:checked+label:before{
+border-color: transparent;
 }
 /*=================================================
  Owl Carousel
@@ -708,6 +731,16 @@ a.post-share.stumble span {
     color: #0A88FF;
 
 }
+
+.ui-autocomplete {
+         background-color: #fff;
+    width: 100px !important;
+    border-bottom: solid 1px #039be5;
+    border-left: solid 1px #039be5;
+    border-right: solid 1px #039be5;
+    padding: 10px;
+}
+
 .school_name{
     margin: 0px 0px 0px 5px;
     padding: 10px;

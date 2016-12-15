@@ -91,9 +91,9 @@
                                             <?php    if(isset($_GET['post_type'])){
                                              $post_type = $_GET['post_type'];
                                             }
-                        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
+                       // $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($posts_details as $row){ 
                                     $post_id = $row['post_id'];
                                     
                         ?>

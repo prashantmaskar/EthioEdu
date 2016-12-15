@@ -17,13 +17,13 @@
     }
 
 ?>  <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+                   // $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
                         
-                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
-                                $sentitem = $query1->result()[0]->row_count;
+                    // $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                             //   $sentitem = $sent_messages;
 
-                                $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $query2->result()[0]->row_count;
+                            //    $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+                             //   $inboxitem = $inbox_details;
                         ?>
                         <div class="col s12 m12 card-panel">
                             <h2 class="inbox-title">Private Messages (PM)</h2>
@@ -36,11 +36,11 @@
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
-                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
+                                        <span class="new badge blue"><?php echo $inbox_count; ?></span>
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'pmsent'?>">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
+                                        <span class="white-text badge green"><?php echo $sent_count; ?></span>
                                     </li>
                                   <!--  <li class="collection-item">
                                         <a href="#">Delete</a>
@@ -51,7 +51,7 @@
                         <div id="compose-mail" class="col m9 s10 card-panel">
                             <form action="<?php echo site_url('index.php/composemail')?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group input-field col s6">
-                                    <input id="username" type="text" class="validate" name="username">
+                                    <input id="username" type="text" class="validate" value="<?php if(isset($_GET['uname'])){echo $_GET['uname'];} ?>" name="username">
                                     <label for="username">EthioEdu UserName</label>
                                 </div>
                                 <div class="form-group input-field col s12">

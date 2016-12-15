@@ -34,7 +34,8 @@ class edituser extends CI_Controller {
 
 	public function index()
 	{
-        $related_res = $this->init_models->related_users();
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Edit UserProfile',
@@ -42,6 +43,7 @@ class edituser extends CI_Controller {
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
+        $view_params['user_details'] = $this->init_models->get_currentuser_details($sessid);
 		$this->load->view('edituser',$view_params);
 
 
@@ -49,7 +51,6 @@ class edituser extends CI_Controller {
    $epass =  $this->input->post('password');
     if(!$epass == ""){
         $this->addfrontuser();
-        //echo"IN ";
     }else{
         $this->editfrontuser();
     }
@@ -89,7 +90,6 @@ public function editfrontuser(){
                    'first_name' => $this->input->post('first_name'),
                     'last_name' => $this->input->post('last_name'),
                     'user_email' => $this->input->post('email'),
-                   // 'user_role' => $this->input->post('role'),
 
 
                 );
@@ -112,24 +112,30 @@ public function editfrontuser(){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('attach'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
+              if ($this->upload->do_upload('attach')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
-                       //save in currentdate and time format
-                      
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
+                      }else{
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('avatar') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('avatar') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
+                        $filedata= array(
+                            'file_name' => 'default-avatar.png',
+                            );
+                      }
+                      }
             $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
         $sessid= $this->session->userdata('suserid');
@@ -152,7 +158,7 @@ public function editfrontuser(){
                 'user_time' => $time,
                 'user_id' => $sessid,
                 );
-        }
+        
 
 
              if ($this->init_models->updateuserdetails($data))

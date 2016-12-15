@@ -38,7 +38,7 @@ $(document).ready(function() {
              },
 
 
-           avatar:{
+        /*   avatar:{
             validators:{
                 notEmpty:{
                     message:'Please select an image'
@@ -50,7 +50,7 @@ $(document).ready(function() {
                         message: 'The selected file is not valid'
                     }
                  }
-           },
+           }, */
 
             author: {
                 validators: {

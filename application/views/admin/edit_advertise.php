@@ -24,10 +24,10 @@
                             </div>
                         </div>
                     </div>
-                                            <?php if(isset($_GET['id'])){$add_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
+                                            <?php  if(isset($_GET['id'])){$add_id = $_GET['id'];}
+                       // $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($advertise_details as $row){ 
                                 $bannerattachment= $row['advertise_attachment'];
 
                         ?>
@@ -126,7 +126,7 @@
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">
@@ -186,6 +186,8 @@
 
             <script>
             $(document).ready(function() {
+                  $("#contact").val("+251 ");
+
 
     $('#advertise').bootstrapValidator({
         fields: {
@@ -216,15 +218,14 @@
                     notEmpty:{
                         message:'contact number required'
                     },
-                    digits:{
+                    /*digits:{
                          message:'contact number is invalid'
 
-                    },
-                    stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
-                    }
+                    },*/
+                    regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                      ,   }
                 }
             },
             

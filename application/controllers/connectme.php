@@ -29,8 +29,8 @@ class connectme extends CI_Controller {
     }
 
     public function index() {
-        $related_res = $this->init_models->related_users();
-        //print_r($related_res);
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Connect2Me',

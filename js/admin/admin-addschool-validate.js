@@ -98,7 +98,7 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'contact required!!!..'
-                    },digits:{
+                    },/*digits:{
                          message:'contact number is invalid'
 
                     },
@@ -106,7 +106,11 @@ $(document).ready(function() {
                         min:10,
                         max: 10,
                         message: 'contact number must contains 10 digits'
-                    }
+                    }*/
+                     regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                      ,   }
                 }
             },
              choice5: {
@@ -260,3 +264,16 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
+$(document).ready(function() {
+
+ $('#tokenfield').tokenfield({
+  autocomplete:{
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 

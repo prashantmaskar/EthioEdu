@@ -16,10 +16,10 @@
                 <div class="col s12 m8 grid-example">
                     <div class="event_details z-depth-1">
                         <div class="col m12 s12 ">
-                        <?php $event_id = $_GET['id'];
+                        <?php /* $event_id = $_GET['id'];
                         $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        */
+                                foreach ($eventid as $row){ 
                                     
                         ?>
                             <div class="event_heading ">
@@ -29,8 +29,9 @@
                         </div>
 
                         <div class="event_img">
-                        <?php $news_attachment = $row['post_attachment']; ?>
-                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
+                        <?php 
+                        $news_attachment = $row['post_attachment'];  ?>
+                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>"> 
                         </div>
                         <div class="col s12">
                             <a class="post-share facebook" href="http://www.facebook.com/plugins/like.php?href=http://medialoot.com/blog/&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');

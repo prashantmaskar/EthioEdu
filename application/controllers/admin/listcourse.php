@@ -43,7 +43,26 @@ class listcourse extends CI_Controller {
                 'm_title' => 'Admin listcourse',
                 'title'   => 'Admin listcourse'
             );
-         $view_params['course'] = $this->init_models->selectallcourse();
-		$this->load->view('admin/listcourse',$view_params);
+
+       $view_params['course'] = $this->init_models->selectallcourse();
+    	$this->load->view('admin/listcourse',$view_params);
+    	 $this->edit_course();
+    }
+    	function edit_course(){
+        $duration = $this->input->post('duration');
+        $cduration = $this->input->post('c_duration');
+        if($duration == 'year'){
+           $fduration = $cduration*365;
+        }
+        elseif($duration == 'Month'){
+         $fduration = $cduration*30;
+        }
+        else
+        {
+         $fduration = $cduration;
+        }
 	}
+
+
+
 }

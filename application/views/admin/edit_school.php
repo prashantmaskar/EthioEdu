@@ -26,12 +26,13 @@
                     </div>
                     <div class="container">
                      <?php if(isset($_GET['id'])){$sch_id = $_GET['id'];}
-                        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_id = '" .$sch_id. "'
+                      /*  $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_school_meta.school_id,tbl_school_meta.registration_type,tbl_school_meta.school_name,tbl_school_meta.school_logo,tbl_school_meta.school_category,tbl_school_meta.school_university,tbl_school_meta.school_institute,tbl_school_meta.other_category,tbl_school_meta.school_number,tbl_school_meta.school_country,tbl_school_meta.school_city,tbl_school_meta.school_region,tbl_school_meta.school_type,tbl_school_meta.school_population,tbl_school_meta.teaching_staff,tbl_school_meta.non_teaching_staff,tbl_school_meta.school_awards,tbl_school_meta.school_acadamic_year,tbl_school_meta.school_acadamic_fee,tbl_school_meta.admission_procedure,tbl_school_meta.acadamic_requirment,tbl_school_meta.school_scholarship,tbl_school_meta.school_address,tbl_school_meta.school_url,tbl_school_meta.school_desc,tbl_school_meta.school_date,tbl_school_meta.school_time,tbl_school_meta.school_approve from tbl_users INNER JOIN tbl_school_meta On tbl_users.user_id = tbl_school_meta.user_id where school_id = '" .$sch_id. "'
 
-");
+"); */                /*      print_r($school_details);*/
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($school_details as $row){ 
                                      $logoattachment =  $row['school_logo'];
+                                    /* echo $row['school_facility'];*/
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
@@ -97,7 +98,7 @@
                                             <input name="fileformat" type="file"  multiple >
                                        </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="attach image only" value="<?php echo $row['school_logo']; ?>">
+                                            <input class="file-path validate" name="imagename" type="text" placeholder="attach image only" value="<?php echo $row['school_logo']; ?>">
                                         </div>
                                     </div>
 
@@ -137,6 +138,7 @@
                                                         </select>
 
                                                     </div>
+
                                                               
                                                                <div class="form-group input-field col s12">
                                                              <select class="form-control browser-default" name="choice4">
@@ -150,8 +152,19 @@
 
                                                           
                                                         </select>
+                                                <div class="row">
+                                                    <div class="col s12">
+                                                       <div class="tokenfield">
+                                                         <div class="form-group input-field col s12">
+                                                         
+                                                         <input type="text" class="autocomplete" name="tokenfield" id="tokenfield" value="<?php echo $row['school_facility'];?>" placeholder="facilities">
+                                                    
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                             </div>
 
-                                                    </div>
+                                                    
                                                    <div class= "form-group input-field col s12">
                                                         <input type="text"  id="phone_number" name="phone_number"  class="form-control" value="<?php echo $row['school_number'];?>">
                                                         <label for="phone_number">phone_number</label>
@@ -279,6 +292,10 @@
                          <?php  $this->load->view('admin/footer'); ?>
 
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/tokenfield-typeahead.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
 <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -442,7 +459,7 @@
                 validators: {
                     notEmpty: {
                         message: 'contact required!!!..'
-                    },digits:{
+                    },/*digits:{
                          message:'contact number is invalid'
 
                     },
@@ -450,7 +467,11 @@
                         min:10,
                         max: 10,
                         message: 'contact number must contains 10 digits'
-                    }
+                    }*/
+                     regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                      ,   }
                 }
             },
              choice5: {
@@ -604,3 +625,16 @@
         }
     });
 });</script>
+
+<script>
+$(document).ready(function() {
+
+ $('#tokenfield').tokenfield({
+  autocomplete:{
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
+</script>

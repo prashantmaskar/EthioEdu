@@ -26,10 +26,10 @@
                     </div>
                     <div class="container">
 
-                        <?php if(isset($_GET['id'])){$news_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        <?php  if(isset($_GET['id'])){$news_id = $_GET['id'];}
+                       /* $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($news_details as $row){ 
                                     $newsattachment =  $row['post_attachment'];
                         ?>
                         <div class="section">
@@ -89,7 +89,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name ="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -101,8 +101,9 @@
                                                         <label for="date">Date of Posting</label>
                                                     </div>
                                                      <div class="form-group input-field col s6">
-                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" >
-                                                        <label for="date">Time</label>
+                                                           <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+
+                                                        <label for="time">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">

@@ -46,7 +46,7 @@
                             <div class="event_list">
                             <?php
                               
-                                  if(isset($_POST['searchaction'])){
+                             /*     if(isset($_POST['searchaction'])){
 
                                     $sdate = $_POST['newsd1'];
                                     $edate = $_POST['newsd2'];
@@ -57,7 +57,7 @@
 
                                         $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
 
-                                    }
+                                    }  */
 
                                     $resultcount = count($event);
                                     if($resultcount >= 1){

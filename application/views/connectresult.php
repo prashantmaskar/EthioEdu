@@ -28,7 +28,7 @@
                                         <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row->user_id; ?>"><?php echo $row->first_name; ?> <span><?php echo $row->last_name; ?></span></a></p>
                                         <p class="std_age">Age : <span><strong><?php echo $row->user_age?>| <?php echo $row->user_gender; ?></strong></span></p>
                                         <p class="std_school">Level: <span><strong><?php echo $row->user_level; ?></strong></span></p>
-                                        <p class="std_interaest">he is Interested In <?php echo $row->user_interest; ?> <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In <?php echo $row->user_interest; ?> <span><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row->user_id; ?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li> 

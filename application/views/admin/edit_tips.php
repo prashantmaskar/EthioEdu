@@ -26,9 +26,9 @@
                     </div>
                     <div class="container">
                     <?php if(isset($_GET['id'])){$tips_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
+                       // $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($tips_details as $row){ 
                                     $tipsattachment = $row['post_attachment'];
                         ?>
                         <div class="section">
@@ -71,7 +71,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                    
@@ -144,7 +144,7 @@ $(document).ready(function() {
                 }
             },
             
-          avatar:{
+         /* avatar:{
             validators:{
                 notEmpty:{
                     message:'please select an image'
@@ -156,7 +156,7 @@ $(document).ready(function() {
                         message: 'The selected file is not valid'
                     }
                  }
-           }
+           }*/
      
         }
     });

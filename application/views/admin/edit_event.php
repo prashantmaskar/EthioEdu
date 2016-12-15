@@ -15,7 +15,7 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Events</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="http://localhost/ETHIO/index.php/admin/dashboard">Dashboard</a>
                                         </li>
                                         <li><a href="#">Edit Events</a>
                                         </li>
@@ -25,10 +25,10 @@
                         </div>
                     </div>
                     <div class="container">
-                    <?php if(isset($_GET['id'])){$event_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+                    <?php  if(isset($_GET['id'])){$event_id = $_GET['id'];}
+                       /* $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");  */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($event_details as $row){ 
                                     $eventattachment= $row['post_attachment']
                         ?>
                         <div class="section">
@@ -72,7 +72,7 @@
                                                         </div>
                                                        
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s6">

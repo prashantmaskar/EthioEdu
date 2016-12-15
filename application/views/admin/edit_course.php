@@ -25,10 +25,10 @@
                         </div>
                     </div>
                     <div class="container">
-                    <?php if(isset($_GET['id'])){$course1_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_course where course_id = '" .$course1_id. "'");
+                    <?php /* if(isset($_GET['id'])){$course1_id = $_GET['id'];}
+                        $query = $this->db->query("select * from tbl_course where course_id = '" .$course1_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($course_details as $row){ 
                         ?>
                         <div class="section">
                             <p class="caption" style="color:black"; >Fill all required fields.</p>
