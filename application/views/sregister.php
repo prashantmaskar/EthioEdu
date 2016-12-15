@@ -60,16 +60,17 @@
                                     </div>
                                     <h4 class="red-text">Login Information</h4>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" name="username" class="validate">
-                                        <label for="Caption">Username</label>
+                                        <input id="Caption1" type="text" name="username" class="validate">
+                                        <label for="Caption1">Username</label>
+                                        <span id="usernamemsg"></span>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="password" name="password" class="validate">
-                                        <label for="Caption">password</label>
+                                        <input id="Caption2" type="password" name="password" class="validate">
+                                        <label for="Caption2">password</label>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                        <input id="Caption" name="cpassword" type="password" class="validate">
-                                        <label for="Caption"> verify password</label>
+                                        <input id="Caption3" name="cpassword" type="password" class="validate">
+                                        <label for="Caption3"> verify password</label>
                                     </div>
                                       <div class=" col s2">
                                           <p class="right-align">Connect2Me</p>
@@ -114,3 +115,31 @@
         </div>
         <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url() .'js/sregister-validate.js' ?>"></script>
+
+<script>
+
+            $(document).ready(function(){
+              //  alert('dfd');
+                $("#Caption1").blur(function(){
+                    if($(this).val() ){
+                    var value = $("input[name=username]").val();
+                        $.ajax({
+                            context: this,
+                            
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {value},
+                            success: function(data) {
+                                console.log(data);
+                                    $('#usernamemsg').html(data);
+                            }
+                            });
+                        }else{
+                            $("#usernamemsg").html('');
+                            //$("#usernamemsg").empty();
+                        }
+                        });
+
+                    });
+
+                </script>

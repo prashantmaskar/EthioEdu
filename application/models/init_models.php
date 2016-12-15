@@ -945,7 +945,7 @@ function search_course($query_array, $limit,$offset, $sort_by,$sort_order){
 
                    $q = $this->db->select('*, AVG(`course_rating`) As avg_r',FALSE)
                      ->from('tbl_course_meta')
-                     ->join('tbl_course','tbl_course_meta.course_id = tbl_course.course_id')
+                     ->join('tbl_course','tbl_course_meta.course_id = tbl_course.course_id', 'right')
                      ->where('course_approve = 1')
                      ->group_by('tbl_course_meta.course_id')
                      ->limit($limit , $offset)
@@ -1011,7 +1011,7 @@ $q->like('project_title',$query_array['project_title']);
 $q->where('project_approve = 1');
     }
        if (strlen($query_array['project_course'])){
-$q->where('project_course',$query_array['project_course'] );
+$q->like('project_course',$query_array['project_course'] );
 $q->where('project_approve = 1');
     }
 

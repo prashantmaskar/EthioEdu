@@ -53,7 +53,7 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
-                            <?php if($getsentmsg == ""){ ?>
+                            <?php if(!$getsentmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
