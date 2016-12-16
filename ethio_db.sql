@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2016 at 03:08 PM
+-- Generation Time: Dec 16, 2016 at 05:59 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -138,7 +138,9 @@ INSERT INTO `ci_query` (`id`, `query_string`) VALUES
 (332, 'project_title=&project_course=ICT'),
 (333, 'project_title=&project_course=ICT'),
 (334, 'project_title=&project_course=ICT'),
-(335, 'project_title=&project_course=ICT');
+(335, 'project_title=&project_course=ICT'),
+(336, 'username=santosh'),
+(337, 'user_school=Ethiopian');
 
 -- --------------------------------------------------------
 
@@ -742,7 +744,7 @@ ALTER TABLE `tbl_vacancy`
 -- AUTO_INCREMENT for table `ci_query`
 --
 ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=336;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
 --
 -- AUTO_INCREMENT for table `tbl_advertise`
 --
@@ -772,7 +774,7 @@ ALTER TABLE `tbl_likes`
 -- AUTO_INCREMENT for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
-  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_posts`
 --

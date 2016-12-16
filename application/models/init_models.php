@@ -28,9 +28,9 @@
             return $this->db->insert('tbl_users', $data);
       }
       //Select User tables data    
-      public function getueserid()  
+      public function getueserid($schooluseremailid)  
       {  
-            $query = $this->db->query("SELECT user_id FROM tbl_users ORDER BY user_id DESC LIMIT 1");
+            $query = $this->db->query("SELECT user_id FROM tbl_users where user_email ='".$schooluseremailid."'");
             return $query->row_array();
       }
        //Insert School Information data
@@ -44,9 +44,9 @@
             return $this->db->insert('tbl_users', $data);
       }
        //Select User tables data    
-      public function getfrontueserid()  
+      public function getfrontueserid($emailid)  
       {  
-            $query = $this->db->query("SELECT user_id FROM tbl_users ORDER BY user_id DESC LIMIT 1");
+            $query = $this->db->query("SELECT user_id FROM tbl_users where user_email = '".$emailid."'");
             return $query->row_array();
       }
         //Insert School Information data
