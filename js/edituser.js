@@ -107,9 +107,9 @@ $(document).ready(function() {
               
                   attach:{
             validators:{
-                notEmpty:{
+                /*notEmpty:{
                     message:'please select an image'
-                },
+                },*/
                  file:{
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',

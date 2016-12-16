@@ -59,16 +59,17 @@ class reportnews extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
+                if (!$this->upload->do_upload('fileformat') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
-                        var_dump($error);
-                         
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default_news.jpg',
+                            );
+                      }
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
@@ -97,7 +98,7 @@ class reportnews extends CI_Controller {
                         
 
                         //
-                }
+                
 
              /*  if(isset($isinserted)){
                     $res=array('success'=>true,"msg"=>'data added successfully');

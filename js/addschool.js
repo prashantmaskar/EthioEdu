@@ -30,10 +30,21 @@ $(document).ready(function() {
                     }
                 }
             },
-            fullname:{
+            firstname:{
                  validators:{
                     notEmpty:{
-                        message:'please enter fullname!!!..'
+                        message:'please enter firstname!!!..'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
+                    }
+                }
+            },
+             lastname:{
+                 validators:{
+                    notEmpty:{
+                        message:'please enter lastname!!!..'
                     },
                     regexp:{
                               regexp: /^[a-z\s]+$/i,
@@ -43,17 +54,14 @@ $(document).ready(function() {
             },
 
             fileformat:{
-            validators:{
-                notEmpty:{
-                    message:'please select an image'
-                },
+           
                  file:{
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
                         maxSize: 2097152,   // 2048 * 1024
                         message: 'The selected file is not valid'
                     }
-                 }
+                 
            },
         
             email:{

@@ -8,6 +8,9 @@
                $password = $this->input->post('password');
 
 ?>
+ 
+
+
 
         <div class="regist-wrap ">
             <div class="row">
@@ -16,6 +19,22 @@
                         <div class="row">
                             <div class="col m12 s12"><h2 class="form_heading">Register as a Member: Final Step</h2></div>
                             <div class="col m12 s12">
+
+
+
+                                <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+
 
                                 <form id="csregister" action="<?php echo site_url('index.php/csregister')?>" method="post" class="row" enctype="multipart/form-data">
                                     <h4 class="red-text">personal Information</h4>

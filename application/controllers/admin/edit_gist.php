@@ -64,40 +64,20 @@ if(isset($_POST['action'])){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('avatar'))
-                {
-                       /* $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);*/
-
-                       // $this->load->view('upload_form', $error);
-
-
-                        $date = date('Y-m-d', $adate);
-
-                         $data=array(
-                  'post_id' => $this->input->post('post_id'),
-                  'post_title' => $this->input->post('caption'),
-                  'post_desc'  => $this->input->post('Description'),
-                  'post_category'=>$this->input->post('catagory'),
-                  'post_attachment' => $filedata['file_name'],
-                  'post_author'=>  $this->input->post('author'),
-                  //'post_date' => $this->input ->post('date'),
-                  'post_source' => $this->input->post('source_link'),
-                  'post_type'=>  $this->input->post('post_type'),
-                   'post_approve' => $this->input->post('approve_status'),
-                   );
-                            $isinserted = $this->init_models->edit_gist($data);
-                    // 'post_date' => $date,
-                //'post_time' => $this->input->post('time')
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                
+                         if (!$this->upload->do_upload('avatar') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
+
+
                          $formdate = $this->input ->post('date');
                 $adate = strtotime($formdate);
                 $date = date('Y-m-d',$adate);
@@ -120,8 +100,7 @@ if(isset($_POST['action'])){
                         
 
                         
-                }
-
+              
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";
                 redirect("index.php/admin/posts?post_type=gist");

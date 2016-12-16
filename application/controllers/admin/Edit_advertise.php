@@ -63,43 +63,17 @@ if(isset($_POST['action'])){
                  $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                      $date = date('Y-m-d',$temp);
-                   $data=array(
-                  'advertise_id' => $this->input->post('advertise_id'),
-                  ' advertise_name' => $this->input->post('name'),
-                  ' advertise_email'  => $this->input->post('email'),
-                  'advertise_number'=>$this->input->post('contact'),
-                  'advertise_category'=>  $this->input->post('catagory'),
-                  'advertise_position' => $this->input ->post('addposition'),
-                  'advertise_subject' => $this->input->post('subject'),
-                  'advertise_attachment' => $filedata['file_name'],
-                  'advertise_desc' => $this->input->post('message'),
-                   //'advertise_date' => $date,
-                //'advertise_time' => $this->input->post('time')
-                  
-                  
-                  
-                
-                  
-                 
-        );
-                  $isinserted = $this->init_models->edit_advertise($data);
-                       /* $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-*/
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                       if (!$this->upload->do_upload('fileformat') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
                          $formdate =  $this->input->post('date');
                           $temp = strtotime( $formdate);
                           $date = date('Y-m-d',$temp);
@@ -127,7 +101,7 @@ if(isset($_POST['action'])){
                         
 
                         
-                }
+                
 
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";

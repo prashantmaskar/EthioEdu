@@ -1,12 +1,12 @@
 <?php  $this->load->view('header'); ?>
         <div class="regist-wrap ">
             <div class="row">
-              <?php   if ($this->session->flashdata('message')) {
+<?php   if ($this->session->flashdata('message')) {
     ?>
     <div class="message flash">
       <div class="message-data">
         <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
-        <button class="btn success-close">Close</button>
+      <a href="<?php echo base_url().'/login'?>"  <button class="btn success-close">Login</button></a>
         </div>   
         </div>
     <?php

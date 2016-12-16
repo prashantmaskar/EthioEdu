@@ -63,8 +63,20 @@ if(isset($_POST['action'])){
                 $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('avatar') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
-                if ( ! $this->upload->do_upload('avatar'))
+                        $filedata= array(
+                            'file_name' => $data1['upload_data']['file_name'],
+                            );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
+
+
+                /*if ( ! $this->upload->do_upload('avatar'))
                 {
                         $error = array('error' => $this->upload->display_errors());
 
@@ -79,7 +91,7 @@ if(isset($_POST['action'])){
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
+*/
         $data=array(
                   'post_id' => $this->input->post('post_id'),
                   'post_title' => $this->input->post('caption'),
@@ -93,7 +105,7 @@ if(isset($_POST['action'])){
                         
 
                         
-                }
+                
 
                if(isset($isinserted)){
                // echo"<script>alert('Data Inserted Successfully');</script>";

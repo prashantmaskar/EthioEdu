@@ -112,23 +112,17 @@ public function editfrontuser(){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('attach'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
+              if (!$this->upload->do_upload('attach') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
-                       //save in currentdate and time format
-                      
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-avatar.png',
+                            );
+                      }
 
             $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
@@ -152,7 +146,7 @@ public function editfrontuser(){
                 'user_time' => $time,
                 'user_id' => $sessid,
                 );
-        }
+        
 
 
              if ($this->init_models->updateuserdetails($data))

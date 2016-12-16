@@ -129,23 +129,17 @@ function insertschooldata(){
                  $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-                         
-                       // $this->load->view('upload_form', $error);
-                }
-
-else{
-
-    $data1 = array('upload_data' => $this->upload->data());
+              if (!$this->upload->do_upload('fileformat') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
 /*
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
@@ -205,7 +199,7 @@ else{
                 redirect("index.php/addSchool");
 
             }
-        }
+        
 }
 
 

@@ -101,8 +101,9 @@
                                                         <label for="date">Date of Posting</label>
                                                     </div>
                                                      <div class="form-group input-field col s6">
-                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" >
-                                                        <label for="date">Time</label>
+                                                           <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+
+                                                        <label for="time">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">
