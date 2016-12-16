@@ -167,17 +167,24 @@
                   </div> 
                         <div class="col m12">
                             <div class="school_social">
-                                <ul>
-                                    <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                  <!--  <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
                                     <li><a href="#" class="waves-effect waves-light btn light-blue darken-2"><i class="fa fa-envelope"></i> Mail</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
 
-                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
+                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li>  -->
+                                     <ul>
+                                            <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
 
-                                </ul>
+                                            <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
+
+                                        </ul>
                             </div>
                         </div>
 
@@ -285,3 +292,27 @@ $(document).ready(function() {
 });
 
 </script>
+
+<?php foreach ($course_details as $row){
+    $post_desc = substr($row['course_desc'],0,100);
+                  $fdesc = $post_desc.'...';
+     ?>
+ ?>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<?php echo $row['course_name']; ?>',
+link: ' <?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['course_id']; ?>',
+picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
+caption: 'Ethio Edu Vacancy',
+description: '<?php echo $fdesc; ?>',
+message: ''
+});
+});
+});
+</script>
+<?php } ?>

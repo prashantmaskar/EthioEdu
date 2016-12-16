@@ -86,7 +86,7 @@
                                 <div class="col m12">
                                     <div class="school_social">
                                         <ul>
-                                            <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                            <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
 
                                             <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
@@ -118,7 +118,6 @@
                                     </span></span>
                             </li>
                             <?php } ?>
-                            
                         </ul>
                     </div>
 
@@ -175,3 +174,25 @@
             </div>
         </div>
       <?php $this->load->view('footer'); ?>
+     <?php foreach ($vacanyid as $row){
+        $vac_desc = substr($row['vacancy_desc'],0,100);
+                  $fdesc = $vac_desc.'...';
+      ?>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<?php echo $row['vacancy_name']; ?>',
+link: ' <?php echo base_url(); ?>index.php/vacancy_details?id=<?php echo $row['vacancy_id']; ?>',
+picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
+caption: 'Ethio Edu Vacancy',
+description: '<?php echo $fdesc; ?>',
+message: ''
+});
+});
+});
+</script>
+<?php } ?>
