@@ -197,7 +197,7 @@
                         </div>
                         <div class="col m12">
                             <div class="school_country">
-                                <h2 class="sch_det_title">Inquiry</h2>
+                                <h2 class="sch_det_title">Enquiry</h2>
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>

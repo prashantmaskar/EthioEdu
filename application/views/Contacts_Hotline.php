@@ -32,7 +32,7 @@
                         </div>
 						<div class="col s6 m6 t20margin">
 						 <div class="contacts_hotline_content_right z-depth-1">
-						 <p class="black-text"><span>Adress:</span><span>    <i class="fa fa-map-marker" ></i><br>        No 48 Season street,<br>Living stone,<br>Ethiopia,Africa</span></p>
+						 <p class="black-text"><span>Address:</span><span>    <i class="fa fa-map-marker" ></i><br>        No 48 Season street,<br>Living stone,<br>Ethiopia,Africa</span></p>
 						 </div>
 						</div>
 						

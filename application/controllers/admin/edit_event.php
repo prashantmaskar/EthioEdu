@@ -73,7 +73,7 @@ if(isset($_POST['action'])){
                             );
                       }else{
                         $filedata= array(
-                            'file_name' => 'default-image.jpg',
+                            'file_name' => 'default-event.jpg',
                             );
                       }
                 $formdate = $this->input ->post('date');
