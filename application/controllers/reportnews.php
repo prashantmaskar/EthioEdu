@@ -60,7 +60,7 @@ class reportnews extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-<<<<<<< HEAD
+
                 if (!$this->upload->do_upload('fileformat') == ""){
                 $data1 = array('upload_data' => $this->upload->data());
 
@@ -72,23 +72,7 @@ class reportnews extends CI_Controller {
                             'file_name' => 'default_news.jpg',
                             );
                       }
-=======
-                if ( ! $this->upload->do_upload('fileformat') == ""){
-               
->>>>>>> 080a530cd2205d1b5b803051c5205a5619fb8a70
-                        $data1 = array('upload_data' => $this->upload->data());
 
-                        $filedata= array(
-                            'file_name' => $data1['upload_data']['file_name'],
-                            );
-                    }else{
-
-                         $filedata= array(
-                            'file_name' => 'default-image.jpg',
-                            );
-                    }
-
-                   
                         $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -108,26 +92,10 @@ class reportnews extends CI_Controller {
                 'post_approve' => $this->input->post('approve_status'),
                 'user_id'=>  $sessid
         );
-<<<<<<< HEAD
-                      /*  $isinserted = $this->init_models->add_anews($data);*/
-                        
+           
 
-                        //
-                
-
-             /*  if(isset($isinserted)){
-                    $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
-               }else{
-                    $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
-               }
-               var_dump($res);
-*/            if ($this->init_models->add_anews($data))
-=======
-                   
            if ($this->init_models->add_anews($data))
->>>>>>> 080a530cd2205d1b5b803051c5205a5619fb8a70
+
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/reportnews");

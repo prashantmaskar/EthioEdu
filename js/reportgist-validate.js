@@ -36,7 +36,7 @@
                 }
             },
 
-           /*  fileformat:{
+             fileformat:{
             validators:{
                 /*notEmpty:{
                     message:'please select an image'
@@ -48,7 +48,7 @@
                         message: 'The selected file is not valid'
                     }
                  }
-           },  */
+           },  
 
 
         

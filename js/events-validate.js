@@ -45,8 +45,8 @@ $(document).ready(function() {
                 }
              },
 
-        /*   avatar:{
-            validators:{
+          avatar:{
+             validators:{
                 /*notEmpty:{
                     message:'please select an image'
                 },*/
@@ -57,7 +57,7 @@ $(document).ready(function() {
                         message: 'The selected file is not valid'
                     }
                  }
-           }, */
+           }, 
 
 
 
