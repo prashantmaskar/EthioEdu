@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/listcourse' ?>">List Course</a>
-                                        </li>
+                                     
                                     </ol>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All Course.</p>
+                         
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

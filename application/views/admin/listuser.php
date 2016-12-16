@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Listuser' ?>">List User</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All Registered Users.</p>
+                          <!--   <p class="caption black-text">List Of All Registered Users.</p> -->
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

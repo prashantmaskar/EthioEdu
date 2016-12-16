@@ -31,7 +31,7 @@
                                 foreach ($query->result_array() as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                        
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

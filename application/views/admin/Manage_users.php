@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Add User</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>

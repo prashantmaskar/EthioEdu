@@ -358,3 +358,17 @@ $(document).ready(function() {
   showAutocompleteOnFocus: true
 });
 }); 
+
+
+
+    $(document).ready(function() {
+
+ $('#Program_tokenfield').tokenfield({
+  autocomplete:{
+    source: ['primary','Nursary','Secondary'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
+    

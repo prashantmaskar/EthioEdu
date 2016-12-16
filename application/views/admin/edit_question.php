@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Question</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit Question</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -31,7 +30,7 @@
                                 foreach ($question_details as $row){ 
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                 
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

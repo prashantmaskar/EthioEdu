@@ -128,8 +128,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List Gist</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
   $(document).ready(function() {
-     $("#phone_number").val("+251 ");
+     $("#phone_number").val("+251  ");
 
 
     $('#contactform').bootstrapValidator({
@@ -40,7 +40,7 @@ phone_number:{
 		 stringLength: {
                         min:14,
                         max: 14,
-                        message: 'contact number must correct'
+                        message: '+251 must have before ,contact number must correct .No should have 9 digit after country code'
                     }
 	}
 },

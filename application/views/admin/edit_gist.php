@@ -15,10 +15,8 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Gist</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
-                                        </li>
-                                        <li><a href="#">Edit Gist</a>
-                                        </li>
+                                        <li><a href="<?php echo base_url()?>admin/dashboard">Dashboard</a>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -32,7 +30,7 @@
                                     $gistattachment= $row['post_attachment'];
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                            
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

@@ -16,8 +16,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addtender' ?>">Add Tender</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
