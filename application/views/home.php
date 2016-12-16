@@ -55,7 +55,7 @@
                                     </h5>
                                     <ul>
                                         <?php 
-                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
+                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1 limit 10");
 
                                         foreach ($query->result_array() as $row){
 
@@ -73,7 +73,7 @@
                                     Search For School
                                 </h5>
                                 <ul><?php
-                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1");
+                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1 limit 10");
                                        foreach ($query->result_array() as $row){ 
                                           $sid = $row['school_id'];
 
@@ -93,7 +93,7 @@
                                   Latest Project Topics
                                 </h5>
                                 <ul><?php 
-                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1");
+                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1 limit 10");
                                     foreach ($query->result_array() as $row){ 
                                           $pro_id = $row['project_id'];
                                  ?>
@@ -117,7 +117,7 @@
                                     </h5>
                                     <ul> 
                                         <?php 
-                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
+                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 limit 10");
 
                                         foreach ($query->result_array() as $row){ 
 
@@ -126,12 +126,13 @@
                                             <?php
                                               $formdate = $row['post_date'];
                 $adate = strtotime($formdate);
-                $date = date('l Y/m/d H:i',$adate); ?>
+                $date = date('l Y/m/d',$adate); ?>
                                         <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $date ?></span><br><span class="monthyear"><?php echo $row['post_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
                                        
                                         </li>
                                           <?php } ?>
-
+                                          <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/event'?>">READ MORE</a>
+                                    </li>
                                     </ul>
 
                                 </div>
@@ -140,7 +141,7 @@
                                     List Of Vacancy/Tender
                                 </h5>
                                 <ul> <?php 
-                                 $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
+                                 $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 limit 10");
                                     foreach ($query->result_array() as $row){ 
                                           $vac_id = $row['vacancy_id'];
 
@@ -158,7 +159,7 @@
                                    questions and answers
                                 </h5>
                                 <ul><?php 
-                                     $query = $this->db->query("select * from tbl_questions where question_approve=1");
+                                     $query = $this->db->query("select * from tbl_questions where question_approve=1 limit 10");
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
                                      ?>
