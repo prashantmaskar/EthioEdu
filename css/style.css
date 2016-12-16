@@ -111,7 +111,25 @@ nav .brand-logo {
     width: 28px;
 }
 
+.std_thumb img.circle.responsive-img.valign.profile-image {
+    height: 50px;
+}
+
+.cresult-wrap .result_list_wrap {
+    padding: 10px;
+}
+
+
+.comment-avatar  {
+    max-width: 100%;
+    vertical-align: middle;
+    width: 50px;
+}
+
 .user-avatar{
+    display: inline-block;
+}
+.comment-avatar{
     display: inline-block;
 }
 
@@ -207,6 +225,11 @@ nav .brand-logo {
 
 
 }
+
+.service_col img {
+    width: 100%;
+}
+
 .more_link{
     padding-bottom: 20px;
     margin-bottom: 5px;
@@ -287,6 +310,31 @@ img.edit-attach {
     line-height: 1;
 
     padding-right: 14px;
+}
+
+
+
+
+
+.review_info [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.review_info [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
+}
+
+
+.course_search_result [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.course_search_result [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
+}
+
+.course_search_result [type="radio"]:disabled:not(:checked)+label:before, [type="radio"]:disabled:checked+label:before{
+border-color: transparent;
 }
 /*=================================================
  Owl Carousel
@@ -640,6 +688,12 @@ a.post-share.stumble span {
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
+    margin: 10px 0px;
+}
+.comment_info .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
     margin: 10px 0px;
 }
 .ans .page-heading{

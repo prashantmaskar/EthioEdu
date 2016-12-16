@@ -39,11 +39,12 @@ class Posts extends CI_Controller {
 
 	public function index()
 	{
+			 $post_type = $_GET['post_type'];
              $view_params = array(
                 'm_title' => 'Post',
                 'title'   => 'Post'
             );
-       // $view_params['news'] = $this->init_models->selectnews();
+       $view_params['posts_details'] = $this->init_models->get_posts_details($post_type);
 		$this->load->view('admin/posts',$view_params);
 	}
 }

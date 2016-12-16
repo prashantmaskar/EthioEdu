@@ -39,10 +39,12 @@ class edit_course extends CI_Controller {
 
   public function index()
   {
+          $course_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Course',
                 'title'   => 'Edit Course'
             );
+    $view_params['course_details'] = $this->init_models->get_course_details($course_id);
     $this->load->view('admin/edit_course',$view_params);
 if(isset($_POST['action'])){
         $this->edit_course();

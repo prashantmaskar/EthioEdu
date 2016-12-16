@@ -10,13 +10,13 @@
                         </div>
 
 <?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("SELECT * FROM tbl_users LEFT JOIN tbl_message ON tbl_users.user_id=tbl_message.user_id where tbl_message.pm_send_to = '" .$sessid. "'");
+                   // $query = $this->db->query("SELECT * FROM tbl_users LEFT JOIN tbl_message ON tbl_users.user_id=tbl_message.user_id where tbl_message.pm_send_to = '" .$sessid. "'");
                         
-                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
-                                $sentitem = $query1->result()[0]->row_count;
+                    /* $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                                $sentitem = $query1->result()[0]->row_count; 
 
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $query2->result()[0]->row_count;
+                                $inboxitem = $query2->result()[0]->row_count; */
                         ?>
                         <div id="inbox-action" class="col m3 s5">
                             <div class="card-panel">
@@ -26,11 +26,11 @@
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
-                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
+                                        <span class="new badge blue"><?php echo $inbox_count; ?></span>
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'pmsent'?>">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
+                                        <span class="white-text badge green"><?php echo $sent_count; ?></span>
                                     </li>
                                    <!-- <li class="collection-item">
                                         <a href="#">Delete</a>
@@ -40,10 +40,14 @@
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <?php if($getinboxmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
-                            <?php foreach ($query->result_array() as $row){  ?>
+                                    <?php }
+                                     if(!$getinboxmsg == ""){
+                                    ?>
+                            <?php foreach ($getinboxmsg as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
                                     <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
@@ -58,7 +62,10 @@
                                         </p>
                                     </a>
                                 </li>
-                                <?php } ?>
+                                <?php }}else{ 
+
+                                    echo "inbox is empty";
+                                   } ?>
                                     
                             </ul>
                         </div>

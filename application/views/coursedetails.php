@@ -14,6 +14,18 @@
                         </a>
                     </div>
                 </div>
+                <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
                 <div class="col s12 m8 grid-example ">
                     <div class="course_details row z-depth-1">
                         <div class="col m12">
@@ -33,17 +45,17 @@
 
                          $sessid= $this->session->userdata('suserid');
 
-                         $query143 = $this->db->query("select * from tbl_course_meta where course_id = '" .$c_id. "' and user_id='".$sessid."'");
+                       /*  $query143 = $this->db->query("select * from tbl_course_meta where course_id = '" .$c_id. "' and user_id='".$sessid."'");
 
-                         if($query143->num_rows() > 0)
+                         if($course_count > 0)
                         {
                             $restultrating = $query143->first_row();                        
-                        }
+                        }  */
 
-                        $query = $this->db->query("select * from tbl_course where course_id = '" .$c_id. "'");
-
+                       /* $query = $this->db->query("select * from tbl_course where course_id = '" .$c_id. "'");
+                            */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($course_details as $row){ 
                                 $duration = $row['course_duration'];
                                     if($duration>=365){
                                         $year=(int)($duration/365);
@@ -78,14 +90,14 @@
 
 
                         <?php 
-                        $query = $this->db->query("select * from tbl_users where user_id = '" .$sessid. "'");
+                      /*  $query = $this->db->query("select * from tbl_users where user_id = '" .$sessid. "'");
 
 
-                        //$query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
-                                 $c_id = $cource_id;
+                        $query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
+                                 $c_id = $cource_id; */
                             /* var_dump($c_id);
                              exit();*/
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($user_details as $row){ 
 
                                     
                         ?>
@@ -96,7 +108,7 @@
 
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
-                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails')?>" method="post" class="col m12">
+                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails'); ?>?id=<?php echo $c_id; ?>" method="post" class="col m12">
 
                                                     <div class="form-group input-field col s12">
                                                         <input id="Reviewer_name" name="Reviewer_name" type="text" class="validate" value="<?php echo $row['username']; ?>">
@@ -159,12 +171,12 @@
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">More Courses</h2>
-                            <?php $crs_id = $cource_id;
+                            <?php /* $crs_id = $cource_id;
                                 $query = $this->db->query("select * from  tbl_course where   
-                                 course_id != '" .$crs_id. "'");
-                                foreach ($query->result_array() as $row)
+                                 course_id != '" .$crs_id. "'limit 4");  */
+                                foreach ($more_course as $row)
                                 { 
-                                    $c_id = $row['course_id'];
+                                    $c_id = md5($row['course_id']);
                              ?>
                                 <ul>
                                     <li><a href="<?php echo base_url().'index.php/coursedetails?id='.$c_id ?>"><?php echo $row['course_name'];?></a></li>
@@ -175,8 +187,12 @@
                      </div>
 
 
-                     <!-- <div>
-                            <ul class="pagination">
+
+                     <div>
+                          
+
+                     <div>
+                        <!--    <ul class="pagination">
                                 <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
                                 <li class="active"><a href="#!">1</a></li>
                                 <li class="waves-effect"><a href="#!">2</a></li>
@@ -184,8 +200,12 @@
                                 <li class="waves-effect"><a href="#!">4</a></li>
                                 <li class="waves-effect"><a href="#!">5</a></li>
                                 <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
+
+                            </ul> -->
+                  </div>
+
                             </ul>
-                  </div> -->
+                  </div> 
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>

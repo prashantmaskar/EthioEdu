@@ -67,21 +67,19 @@ class Events extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('avatar'))
+                if ( ! $this->upload->do_upload('avatar') == "")
                 {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                  $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                    }else{
+
+                        $filedata= array(
+                            'file_name' => 'default-image.png',
+                            );
+                    }
                         $date = date('d F, Y');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -101,25 +99,10 @@ class Events extends CI_Controller {
                       'post_approve' => $this->input->post('approve_status'),
                     'user_id'=> $sessid
         );
-                        
-                        /*$isinserted = $this->init_models->add_anews($data);
-                        
-
-                        //
-                }*/
-
-               /*if(isset($isinserted)){
-                    $res=array('success'=>true,"msg"=>'data added successfully');
-                    //$this->load->view('upload_success', $res);
-               }else{
-                    $res=array('success'=>false,"msg"=>'data add failed');
-                    //$this->load->view('upload_success', $res);
-               }
-               var_dump($res);
-*/if ($this->init_models->add_anews($data))
+                
+if ($this->init_models->add_anews($data))
             {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/admin/Events");
             }
-    }}}
+    }}

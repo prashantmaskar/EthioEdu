@@ -39,10 +39,12 @@ class edit_tips extends CI_Controller {
 
   public function index()
   {
+              $tips_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Tips',
                 'title'   => 'Edit Tips'
             );
+    $view_params['tips_details'] = $this->init_models->get_tips_details($tips_id);
     $this->load->view('admin/edit_tips',$view_params);
 if(isset($_POST['action'])){
         $this->edit_tips();

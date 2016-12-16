@@ -35,9 +35,9 @@
                                             <h4 class="header2">Edit Project Topic FORM</h4>
                                             <div class="row">
                                             <?php if(isset($_GET['id'])){$topic_id = $_GET['id'];}
-                        $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                       /* $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
+                        */
+                                foreach ($project_details as $row){ 
                                     
                         ?>
 

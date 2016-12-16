@@ -39,10 +39,12 @@ class Edit_advertise extends CI_Controller {
 
   public function index()
   {
+            $add_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Advertising',
                 'title'   => 'Edit Advertising'
             );
+    $view_params['advertise_details'] = $this->init_models->get_adevertise_details($add_id);
     $this->load->view('admin/edit_advertise',$view_params);
 if(isset($_POST['action'])){
         $this->edit_advertise();

@@ -9,14 +9,18 @@
                             <h2 class="inbox-title">Private Messages (PM)</h2>
                         </div>
 
-<?php                $sessid= $this->session->userdata('suserid');
-                    $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'");
+<?php              /*  $sessid= $this->session->userdata('suserid');
+
+                    $query = $this->db->query("select * from tbl_message where user_id = '" .$sessid. "'");
+
+                    $query = $this->db->query("SELECT * FROM tbl_users left JOIN tbl_message ON tbl_users.user_id=tbl_message.pm_send_to where tbl_message.user_id = '" .$sessid. "'"); */
+
                         
-                     $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
+                     /* $query1= $this->db->query("select count(*) as row_count from tbl_message where user_id = '" .$sessid. "'");
                                 $sentitem = $query1->result()[0]->row_count;
 
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
-                                $inboxitem = $query2->result()[0]->row_count;
+                                $inboxitem = $query2->result()[0]->row_count; */
                         ?>
                         <div id="inbox-action" class="col m3 s5">
                             <div class="card-panel">
@@ -26,28 +30,43 @@
                                     </li>
                                     <li class="collection-item">
                                         <a href="<?php echo base_url().'index.php/pminbox'?>">Inbox</a>
-                                        <span class="new badge blue"><?php echo $inboxitem; ?></span>
+                                        <span class="new badge blue"><?php echo $inbox_count; ?></span>
                                     </li>
                                     <li class="collection-item">
+
                                         <a href="<?php echo base_url().'index.php/pmsent'?>">Sent</a>
-                                        <span class="white-text badge green"><?php echo $sentitem; ?></span>
+                                        <span class="white-text badge green"><?php echo $sent_count; ?></span>
                                     </li>
+                                 <!--   <li class="collection-item">
+                                        <a href="#">Delete</a>
+                                    </li> -->
+
+                                     <!--   <a href="<?php //echo base_url().'index.php/pmsent'?>">Sent</a>
+                                        <span class="white-text badge green"><?php //echo $sentitem; ?></span>
+                                    </li> -->
                                    <!-- <li class="collection-item">
                                         <a href="#">Delete</a>
                                     </li>  -->
+
                                 </ul>
                             </div>
                         </div>
                         <div id="inbox-list" class="col m9 s10 card-panel">
                             <ul class="collection">
+                            <?php if($getsentmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">
                                         <a  href="javascript:void(0);" class="btn red text-white deletebtn">Delete</a>
                                     </li>
-                            <?php foreach ($query->result_array() as $row){  ?>
+                                    <?php } ?>
+                                    <?php if(!$getsentmsg == ""){ ?>
+                            <?php foreach ($getsentmsg as $row){  ?>
                                 <li class="collection-item avatar ">
                                     <i class="material-icons circle">person_pin</i>
                                     <span class="email-title"><a href=""><?php echo $row['pm_subject'];?></a></span>
+
+
                                     <p class="truncate grey-text ultra-small">Sent To : <?php echo $row['username'];?></p>
+
                                     <p class="truncate grey-text ultra-small"><?php echo $row['pm_message'];?></p>
                                     <p><span class=" blue-text ultra-small"><?php echo $row['pm_date'];?></span><span class=" blue-text ultra-small"><?php echo" at ". $row['pm_time'];?></span></p>
                                     <a href="#!" class="secondary-content">
@@ -58,7 +77,10 @@
                                         </p>
                                     </a>
                                 </li>
-                                <?php } ?>
+                                <?php }}else{
+
+                                    echo"Empty Sent Items";
+                                    } ?>
                                     
                             </ul>
                         </div>
@@ -87,6 +109,7 @@
                                 </div> 
                             </li>
                             <?php } ?>
+
                 </ul>
             </div>
         </div>

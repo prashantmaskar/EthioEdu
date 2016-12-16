@@ -94,14 +94,14 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="old_news_list">
                         <h2 class="news_post_title">Previously Posted News</h2>
-                        <ul class="news_list">
+                        <ul class="latest_news_list">
                         <?php
                                 foreach ($news as $row){ ?>
-                            <li class="news_content">
-                                <a href="<?php echo base_url() . 'index.php/news_detail' ?>" class="news_link">
+                            <li class="Latest_news_content">
+                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
                                     <span class="News_title"><?php echo $row['post_title']; ?></span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324"><?php echo $row['post_author']; ?></a></strong> <?php echo $row['post_date']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_time']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
                                     </span></span>
                             </li>
                             <?php } ?>

@@ -30,13 +30,14 @@ class event_details extends CI_Controller {
 
 
     public function index() {
+        $event_id = $_GET['id'];
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'event details',
             'title' => 'event details',
             'banners' =>$banners
         );
-
+        $view_params['eventid'] = $this->init_models->geteventdetails($event_id);
         $this->load->view('event_details',$view_params);
     }
 

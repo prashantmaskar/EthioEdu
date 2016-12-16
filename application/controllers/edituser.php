@@ -34,7 +34,8 @@ class edituser extends CI_Controller {
 
 	public function index()
 	{
-        $related_res = $this->init_models->related_users();
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Edit UserProfile',
@@ -42,6 +43,7 @@ class edituser extends CI_Controller {
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
+        $view_params['user_details'] = $this->init_models->get_currentuser_details($sessid);
 		$this->load->view('edituser',$view_params);
 
 

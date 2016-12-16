@@ -3,10 +3,10 @@
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
-                    <?php $sch_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                    <?php  $sch_id = $_GET['id'];
+                       // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($sch_details as $row){ 
                                     
                         ?>
                         <div class="school_banner col m12">
@@ -236,50 +236,16 @@
                   <div class="latest_news_wrap ">
                         <h1 class="red_label_title">Latest News</h1>
                         <ul class="latest_news_list">
+                            <?php
+                                foreach ($news as $row){ ?>
                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
+                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
+                                    <span class="News_title"><?php echo $row['post_title']; ?></span>
+                                </a>
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_date']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                    </span></span>
                             </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
+                            <?php } ?>
                             
                         </ul>
                     </div>

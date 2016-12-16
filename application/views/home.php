@@ -55,9 +55,9 @@
                                     </h5>
                                     <ul>
                                         <?php 
-                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
-
-                                        foreach ($query->result_array() as $row){
+                                      /*  $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1");
+                                            */
+                                        foreach ($homenews as $row){
 
                                         $news_id = $row['post_id'];
                                          ?>
@@ -71,8 +71,8 @@
                                     Search For School
                                 </h5>
                                 <ul><?php
-                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1");
-                                       foreach ($query->result_array() as $row){ 
+                                    /*  $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1"); */
+                                       foreach ($homeschool as $row){ 
                                           $sid = $row['school_id'];
 
 
@@ -89,8 +89,8 @@
                                   Latest Project Topics
                                 </h5>
                                 <ul><?php 
-                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1");
-                                    foreach ($query->result_array() as $row){ 
+                               /*  $query = $this->db->query("select * from tbl_projects where project_approve = 1"); */
+                                    foreach ($homeprojects as $row){ 
                                           $pro_id = $row['project_id'];
                                  ?>
 
@@ -113,9 +113,9 @@
                                     </h5>
                                     <ul> 
                                         <?php 
-                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");
+                                         /* $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1");  */
 
-                                        foreach ($query->result_array() as $row){ 
+                                        foreach ($homeevents as $row){ 
 
                                           $event_id = $row['post_id'];
                                             ?>
@@ -136,8 +136,8 @@
                                     List Of Vacancy/Tender
                                 </h5>
                                 <ul> <?php 
-                                 $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
-                                    foreach ($query->result_array() as $row){ 
+                                // $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
+                                    foreach ($homevacancy as $row){ 
                                           $vac_id = $row['vacancy_id'];
 
                                             ?>
@@ -151,11 +151,14 @@
                                    questions and answers
                                 </h5>
                                 <ul><?php 
-                                     $query = $this->db->query("select * from tbl_questions where question_approve=1");
-                                     foreach ($query->result_array() as $row){
+                                   //  $query = $this->db->query("select * from tbl_questions where question_approve=1");
+                                     foreach ($homequestions as $row){
                                         $que_id=$row['question_id'];
                                      ?>
-                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?>(7)</a>     <a href="<?php echo base_url().'/index.php/ansQues?id='.$que_id ?>"><p class="green-text">Ans this</p></a></li> <?php } ?>
+                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?>(7)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
+                                          
+                                  
+                                     <p class="green-text">Ans this</p></a></li> <?php } ?>
                                     <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/QuesAns'?>">More Question</a>
                                     </li>
                                    
@@ -169,11 +172,14 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc1.jpg' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
-
+                       <?php  foreach ($homeschool as $row){ 
+                                          $sid = $row['school_id']; ?>
+                            <div class="item"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></div>
+                            <?php } ?>
+                          <!--  <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
+                            <div class="item"><img src="<?php //echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            -->
                         </div>
                     </div>
                 </div>

@@ -16,22 +16,23 @@
                 <div class="col s12 m8 grid-example">
                     <div class="news_details z-depth-1">
                         <div class="col m12 s12 ">
-                        <?php $news_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        <?php /* $news_id = $_GET['id'];
+                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($news_details as $row){ 
                                     
                         ?>
 
                             <div class="news_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | 155 Comments </span>
+                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | 155 Comments </span>
                                 <h1 ><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
 
                         <div class="news_img">
 
-                       <?php $news_attachment = $row['post_attachment']; ?>
+                       <?php 
+                       $news_attachment = $row['post_attachment']; ?>
                             <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
                         </div>
                         <div class="col s12">
