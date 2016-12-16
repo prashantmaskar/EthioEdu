@@ -131,12 +131,22 @@
                             data: {value},
                             success: function(data) {
                                 console.log(data);
-                                    $('#usernamemsg').html(data);
+
+                                if($.trim(data) == '1'){
+                                        $('#usernamemsg').html("<span style='color:#D8000C'>Username is Already Exist</span>");
+                                       $("#sregister").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#usernamemsg').html("<span style='color:#4CAF50'>Username is Available</span>");
+                                        $("#sregister").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
                             }
                             });
                         }else{
                             $("#usernamemsg").html('');
-                            //$("#usernamemsg").empty();
                         }
                         });
 

@@ -8,8 +8,8 @@
                                 <h1 class="page-heading">About Us</h1>
                             </div>
                         </div>
-                        <?php foreach($about as $row){?>
-                        <div class="offset col s12 m12 z-depth-1"> <div class="about-image "><?php 
+                        <div class="offset col s12 m12 z-depth-1">
+                        <?php foreach($about as $row){?> <div class="about-image "><?php 
                         if(!$row['post_attachment'] == ""){
                         $tips_attachment = $row['post_attachment']; ?><img class="responsive-img" src="<?php echo base_url() . 'uploads/'.$tips_attachment ?>" style="width:600px;height:300px;"><?php }else{ ?>
                             <img class="responsive-img" src="<?php echo base_url() .'uploads/default-image.jpg' ?>" style="width:600px;height:300px;">

@@ -2,16 +2,19 @@
 if(isset($_POST['value'])){
 $uname = $_POST['value'];
 }
+
  if(isset($uname)){
 
 $query = $this->db->query("SELECT * FROM tbl_users where BINARY username ='".$uname."'"); 
 
 if($query->result_array()){
+	echo "1";
 	?>
-	<span style="color:#D8000C">Username is Already Exist</span>
+	
 
- <?php }else{ ?>
-		<span style="color:#4CAF50">Username is Available</span>
+ <?php }else{  
+ 	echo "0";
+ 	?>
  <?php }
 
 }
@@ -25,11 +28,13 @@ $emailid = $_POST['emailid'];
 $query = $this->db->query("SELECT * FROM tbl_users where user_email ='".$emailid."'"); 
 
 if($query->result_array()){
+	echo "1";
 	?>
-	<span style="color:#D8000C">Email ID Already Registered</span>
+	
 
- <?php }else{ ?>
-		<span style="color:#4CAF50">Email ID is Available</span>
+ <?php }else{  
+ 	echo "0";
+ 	?>
  <?php }
 
 }

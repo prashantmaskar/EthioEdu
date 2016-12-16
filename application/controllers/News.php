@@ -31,7 +31,7 @@ class News extends CI_Controller {
     function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
 
 
-        $limit = 1;
+        $limit = 10;
         $data['fields']= array(
         'news_id'=>'news_id',
         'news_title'=>'news_title',
@@ -105,7 +105,7 @@ class News extends CI_Controller {
 	{
  
 
-        $limit = 1;
+        $limit = 10;
         
         $data['fields']= array(
         'news_id'=>'news_id',

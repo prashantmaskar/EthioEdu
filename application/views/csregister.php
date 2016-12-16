@@ -77,7 +77,7 @@
                                     <h4 class="red-text">Connect2Me Information</h4>
 
                                     <div class="form-group ">
-                                        <input type="date" name="birth_date" placeholder="birthdate">
+                                        <input type="date" class=" datepicker validate" name="birth_date" placeholder="birthdate">
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
@@ -165,7 +165,17 @@ $("#useremailid").blur(function(){
                             data: {emailid},
                             success: function(data) {
                                 console.log(data);
-                                    $('#emailmsg').html(data);
+                                    if($.trim(data) == '1'){
+                                        $('#emailmsg').html("<span style='color:#D8000C'>Email ID Already Registered</span>");
+                                       $("#csregister").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#emailmsg').html("<span style='color:#4CAF50'>Email ID is Available</span>");
+                                        $("#csregister").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
                             }
                             });
                         }else{

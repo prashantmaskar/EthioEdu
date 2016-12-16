@@ -402,8 +402,17 @@
                             url: "validate_ajax",
                             data: {value},
                             success: function(data) {
-                                console.log(data);
-                                    $('#user_namemsg').html(data);
+                                if($.trim(data) == '1'){
+                                        $('#user_namemsg').html("<span style='color:#D8000C'>Username is Already Exist</span>");
+                                       $("#homeaddschoolform").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#user_namemsg').html("<span style='color:#4CAF50'>Username is Available</span>");
+                                        $("#homeaddschoolform").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
                             }
                             });
                         }else{
@@ -422,8 +431,17 @@
                             url: "validate_ajax",
                             data: {emailid},
                             success: function(data) {
-                                console.log(data);
-                                    $('#emailmsg').html(data);
+                                if($.trim(data) == '1'){
+                                        $('#emailmsg').html("<span style='color:#D8000C'>Email ID Already Registered</span>");
+                                       $("#homeaddschoolform").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#emailmsg').html("<span style='color:#4CAF50'>Email ID is Available</span>");
+                                        $("#homeaddschoolform").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
                             }
                             });
                         }else{

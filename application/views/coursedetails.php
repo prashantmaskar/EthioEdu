@@ -76,21 +76,17 @@
                               <?php } ?>
                         </div>
 
-
-
-                        <?php 
-                                foreach ($user_details as $row){ 
-
-                                    
-                        ?>
-
-
-
                         <div class="col m12">
 
                             <div class="school_country">
                                 <h2 class="sch_det_title">Course Rate & Review</h2>
-                                <div class="review_info"><form id="reviewform" action="<?php echo site_url('index.php/coursedetails'); ?>?id=<?php echo $c_id; ?>" method="post" class="col m12">
+                                <div class="review_info">
+                                <?php 
+                                foreach ($user_details as $row){ 
+
+                                    
+                        ?>
+                                <form id="reviewform" action="<?php echo site_url('index.php/coursedetails'); ?>?id=<?php echo $c_id; ?>" method="post" class="col m12">
 
                                                     <div class="form-group input-field col s12">
                                                         <input id="Reviewer_name" name="Reviewer_name" type="text" class="validate" value="<?php echo $row['username']; ?>">

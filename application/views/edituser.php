@@ -69,7 +69,7 @@
                                     </div>
                                         <h5 class="red-text">Login Information</h5>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" value="<?php echo $row['username']; ?>" name="username" class="validate">
+                                        <input id="Caption" type="text" value="<?php echo $row['username']; ?>" name="username" class="validate" readonly>
                                         <label for="Caption">Username</label>
                                     </div>
                                     <div class="form-group input-field col s12">
