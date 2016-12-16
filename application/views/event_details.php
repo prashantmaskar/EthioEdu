@@ -159,7 +159,7 @@ FB.ui(
 {
 method: 'feed',
 name: '<?php echo $row['post_title']; ?>',
-link: ' <?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>',
+link: ' <?php echo base_url(); ?>index.php/event_details?id=<?php echo $row['post_id']; ?>',
 picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
 caption: 'Ethio Edu Vacancy',
 description: '<?php echo $fdesc; ?>',

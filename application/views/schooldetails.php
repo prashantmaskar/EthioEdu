@@ -25,14 +25,21 @@
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>
-                                    <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                  <!--  <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
                                     <li><a href="#" class="waves-effect waves-light btn light-blue darken-2"><i class="fa fa-envelope"></i> Mail</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
 
-                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
+                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li>  -->
+                                    <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
 
                                 </ul>
                             </div>
@@ -74,56 +81,6 @@
                                 </ul>-->
                             </div>
                         </div>
-                        <!-- <div class="col m12">
-                            <div class="school_country">
-                                <h2 class="sch_det_title">Owner-Ship</h2>
-                                <p class="sch_country">Public</p>
-                            </div>
-                        </div> -->
-<!--                        <div class="col m12">
-                            <div class="school_country">
-                                <h2 class="sch_det_title">History</h2>
-                                <p>The School was opened on 3rd&nbsp;February, 1949 with the arrival of 50 students and its formal opening ceremony was attended by many dignitaries, including</p>
-                                <p>The Asantehene, Otumfuo Osei-Agyemang Prempeh II, Major C. O. Butler, Church Leaders, Chiefs and members of the Kumasi Traditional Council.</p>
-                                <p>The Asantehene maintained a keen interest in the school and was a frequent attendant at the School’s Speech and Prize-Giving Days.</p>
-                                <p>The College has been under the watch of 10 Headmasters since it was founded some 62 years ago.&nbsp; The first Headmaster, Rev. S. N. Pearson in his four year term set the trail blazing by making discipline and academic work his principal occupation.&nbsp; He also started to replace the old buildings of the former 52nd&nbsp;military Hospital. His successors continued to build on the solid foundation laid.</p>
-                                <p>Special mention is made of Dr. T. A. Osae, first African headmaster who brought the work of his predecessors to fruition and built on it.</p>
-                                <p>&nbsp;Today the success story of Prempeh College has made it a school of choice for boys across the country.&nbsp; The vision and dreams of the Monarch and the others have become a reality and today alumni of the school are serving in many positions of responsibility in and outside the country.&nbsp; They have distinguished themselves as academics, doctors, lawyers, teachers, engineers, architects, traditional rulers and as officers in the security services.&nbsp; In the political arena, the immediate past President of the Republic of Ghana, Mr. J. A. Kufour is an Amanfoכ.</p>
-                                <p>The school looks into the future with hope and will continue to make the sky the limit.</p>
-                            </div>
-                        </div>-->
-                       <!--  <div class="col m12">
-                            <div class="school_country">
-                                <h2 class="sch_det_title">Programs Offered</h2>
-                                <p class="sch_country">Secondary Education</p>
-                            </div>
-                        </div>
-                        <div class="col m12">
-                            <div class="school_country">
-                                <h2 class="sch_det_title">Branches</h2>
-                                <ul>
-                                    <li><i class="fa fa-graduation-cap "></i> Science</li>
-                                    <li><i class="fa fa-graduation-cap "></i> Art</li>
-                                    <li><i class="fa fa-graduation-cap "></i> Architecture</li>
-                                </ul>
-                            </div>
-                        </div> -->
-                       <!--  <div class="col m12">
-                            <div class="school_country">
-                                <h2 class="sch_det_title">Schools Facility</h2>
-                                <ul>
-                                    <li><i class="fa fa-chevron-circle-right"></i>  Basket Ball Court</li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Computer Study Lab</li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Football Pitch </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Science Labs </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Swimming Pool </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Design & Technology Lab </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Tennis Court </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Library </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Other </li>
-                                </ul>
-                            </div>
-                        </div> -->
                     <?php              
                        $str=$row['school_facility'];
                                        $str=str_replace("," , "<br>",$str);
@@ -361,3 +318,26 @@ $(function () {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+    <?php foreach ($sch_details as $row){
+    $post_desc = substr($row['school_desc'],0,100);
+                  $fdesc = $post_desc.'...';
+     ?>
+ ?>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<?php echo $row['school_name']; ?>',
+link: ' <?php echo base_url(); ?>index.php/schooldetails?id=<?php echo $row['school_id']; ?>',
+picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
+caption: 'Ethio Edu Vacancy',
+description: '<?php echo $fdesc; ?>',
+message: ''
+});
+});
+});
+</script>
+<?php } ?>

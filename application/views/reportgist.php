@@ -90,10 +90,10 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="old_gist_list">
                         <h2 class="gist_post_title">Previously Posted Gists</h2>
-                    <ul class="gist_list">
+                    <ul class="latest_news_list">
                     <?php
                      foreach ($gist as $row){ ?>
-                            <li class="gist_content">
+                            <li class="Latest_news_content">
                                 <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
                                     <span class="gist_title"><?php echo $row['post_title']; ?></span>
                                 </a>
