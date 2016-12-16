@@ -63,6 +63,8 @@
                                          ?>
                                         <li><a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>"><?php echo $row['post_title']; ?></a></li>
                                         <?php } ?>
+                                         <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/News'?>">READ MORE</a>
+                                    </li>
                                     </ul>
 
                                 </div>
@@ -83,6 +85,8 @@
                                     <li><a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>"><?php echo $row['school_name'];?></a></li>
                                   
                                    <?php } ?>
+                                   <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
+                                    </li>
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
@@ -145,6 +149,9 @@
                                     
                                     </li>
                                              <?php } ?>
+                                             <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/vactender'?>">READ MORE</a>
+                                    </li>
+
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
@@ -172,10 +179,10 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc1.jpg' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png' ?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg' ?>"></div>
+                            <?php  foreach ($homeschool as $row){ 
+                                          $sid = $row['school_id']; ?>
+                            <div class="item"><a href="<?php echo base_url(); ?>schooldetails?id=<?php echo $sid ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
+                            <?php } ?>
 
                         </div>
                     </div>
