@@ -48,7 +48,7 @@ $(document).ready(function() {
                 }
              },
             
-             phone_number: {
+             /*phone_number: {
                 validators: {
                     digits:{
                          message:'contact number is invalid'
@@ -60,7 +60,7 @@ $(document).ready(function() {
                         message: 'contact number must contains 10 digits'
                     }
                 }
-            },
+            },*/
              subject:{
                     validators:{
                         notEmpty:{

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+     $("#phone_number").val("+251 ");
+    
+
 
     $("input[type=checkbox][name=agree]").click(function()
     {
@@ -117,15 +120,20 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'contact required!!!..'
-                    },digits:{
+                    },
+                    /*digits:{
                          message:'contact number is invalid'
 
                     },
                     stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
-                    }
+                        min:14,
+                        max: 14,
+                        message: 'contact number must contain correct digits'
+                    }*/
+                     regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                      ,   }
                 }
             },
              choice5: {
@@ -327,3 +335,4 @@ $(document).ready(function() {
         }
     });
 });
+
