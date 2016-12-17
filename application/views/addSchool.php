@@ -212,11 +212,22 @@
                                                             <option value="Kenya">private</option>
                                                          
                                                         </select>
+                                                         
                                                     </div>
+                                                    <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
                                                        <div class="form-group input-field col s12">
-                                                        <input type="text" class="form-control autocomplete" id="tokenfield" value="Computer Study Lab,Football Pitch "/>
-                                                        <label for="facilities">Facilities</label>
+                                                         
+                                                        <input type="text" class=" autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="Add facilities">
+                                                        <!--label for="facilities">Facilities</label-->
                                                        </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
+          
+
+    
                                                   
                                                     <div class=" form-group input-field col s12">
                                                         <input id="student_population" name="student_population" type="text" class="validate">
@@ -338,8 +349,10 @@
         <?php $this->load->view('footer'); ?>
 
 <script type="text/javascript" src="<?php echo base_url() .'js/addschool.js' ?>"></script>
-
-
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/tokenfield-typeahead.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
 
 <script>
       function initMap() {
@@ -376,28 +389,3 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
-
-<script>
-//var jq = $.noConflict();
-$(document).ready(function() {
-
- $('#tokenfield').tokenfield({
-  autocomplete:{
-    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
-    delay: 100
-  },
-  showAutocompleteOnFocus: true
-});
-}); 
-</script>
-
- <li><i class="fa fa-chevron-circle-right"></i>  Basket Ball Court</li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Computer Study Lab</li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Football Pitch </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Science Labs </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Swimming Pool </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Design & Technology Lab </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Tennis Court </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Library </li>
-                                    <li><i class="fa fa-chevron-circle-right "></i> Other </li>
-                                </ul>

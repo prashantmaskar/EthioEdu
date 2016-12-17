@@ -7,6 +7,8 @@
                        // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
                                 foreach ($sch_details as $row){ 
+                                      
+
                                     
                         ?>
                         <div class="school_banner col m12">
@@ -72,12 +74,12 @@
                                 </ul>-->
                             </div>
                         </div>
-                        <div class="col m12">
+                        <!-- <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Owner-Ship</h2>
                                 <p class="sch_country">Public</p>
                             </div>
-                        </div>
+                        </div> -->
 <!--                        <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">History</h2>
@@ -90,7 +92,7 @@
                                 <p>The school looks into the future with hope and will continue to make the sky the limit.</p>
                             </div>
                         </div>-->
-                        <div class="col m12">
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Programs Offered</h2>
                                 <p class="sch_country">Secondary Education</p>
@@ -105,8 +107,8 @@
                                     <li><i class="fa fa-graduation-cap "></i> Architecture</li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col m12">
+                        </div> -->
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Schools Facility</h2>
                                 <ul>
@@ -121,7 +123,19 @@
                                     <li><i class="fa fa-chevron-circle-right "></i> Other </li>
                                 </ul>
                             </div>
+                        </div> -->
+                    <?php              
+                       $str=$row['school_facility'];
+                                       $str=str_replace("," , "<br>",$str);
+                    ?>
+                       
+                         <div class="col m12">
+                            <div class="school_country">
+                                <h2 class="sch_det_title">School facility</h2>  
+                                <p><?php echo $str ?></p><br/>
+                            </div>
                         </div>
+
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Student Population</h2>

@@ -264,3 +264,16 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
+$(document).ready(function() {
+
+ $('#tokenfield').tokenfield({
+  autocomplete:{
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
