@@ -210,8 +210,19 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' please enter acadamic year !!!'
                     },
-                    digits:{
-                        message:'select year format'
+                   digits:{
+                         message:'invalid year'
+
+                    },
+                    /*stringLength: {
+                        min:4,
+                        max:4,
+                        message: 'invalid year ,please enter correct year'
+                    },*/
+                    between:{
+                           min:2016,
+                        max: 2050,
+                        message: 'year must be in range ,please enter present year or next'
                     }
                 }
              },
