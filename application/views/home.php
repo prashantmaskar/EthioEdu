@@ -63,6 +63,8 @@
                                          ?>
                                         <li><a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>"><?php echo $row['post_title']; ?></a></li>
                                         <?php } ?>
+                                         <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/news'?>">READ MORE</a>
+                                    </li>
                                     </ul>
 
                                 </div>
@@ -83,6 +85,8 @@
                                     <li><a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>"><?php echo $row['school_name'];?></a></li>
                                   
                                    <?php } ?>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schooldetails'?>">READ MORE</a>
+                                    </li>
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
@@ -96,7 +100,7 @@
 
                                    <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php echo $row['project_title']; ?></a></li> 
                                      <?php } ?>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/Projectlist'?>">READ MORE</a>
                                     </li>
                                         
                                 </ul></div>
@@ -145,6 +149,9 @@
                                     
                                     </li>
                                              <?php } ?>
+                                              <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/vacancy-details'?>">READ MORE</a>
+                                    </li>
+
 
                                 </ul></div>
                             <div class="col sm12 m4  z-depth-1"><h5>
