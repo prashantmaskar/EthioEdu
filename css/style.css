@@ -731,6 +731,16 @@ a.post-share.stumble span {
     color: #0A88FF;
 
 }
+
+.ui-autocomplete {
+         background-color: #fff;
+    width: 100px !important;
+    border-bottom: solid 1px #039be5;
+    border-left: solid 1px #039be5;
+    border-right: solid 1px #039be5;
+    padding: 10px;
+}
+
 .school_name{
     margin: 0px 0px 0px 5px;
     padding: 10px;
