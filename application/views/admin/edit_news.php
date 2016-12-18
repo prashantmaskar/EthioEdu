@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit News</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit News</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -33,7 +32,7 @@
                                     $newsattachment =  $row['post_attachment'];
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                           
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -47,7 +46,7 @@
                                                         <label for="Caption">News Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" name="Description"class="materialize-textarea"> <?php echo $row['post_desc'];?></textarea>
+                                                        <textarea id="Description" name="Description"class="materialize-textarea"><?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="form-group input-field col s12 has-success">

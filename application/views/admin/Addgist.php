@@ -18,9 +18,8 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addgist' ?>">Add Gist</a>
-                                        </li>
-                                    </ol>
+                                     
+                </ol>
                                 </div>
                             </div>
                         </div>

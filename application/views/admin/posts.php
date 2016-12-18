@@ -24,8 +24,7 @@
                                             <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=news' ?>"><?php echo "List News"; ?></a>
-                                        </li>
+                                       
                                     </ol>
                                      <?php   }
 
@@ -35,8 +34,7 @@
                                                 <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=event' ?>"><?php echo "List Event"; ?></a>
-                                        </li>
+                                       
                                     </ol>
                                          <?php   }
                                             else
@@ -45,8 +43,7 @@
                                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/posts?post_type=gist' ?>"><?php echo "List Gist" ?></a>
-                                        </li>
+                                      
                                     </ol>
                                             <?php    }
 
@@ -62,14 +59,15 @@
                         <?php 
                             if($type=='news')
                                         { 
-                                            echo'List Of All News';
+                                           // echo'List Of All News';
                                         } 
                                         elseif($type=='event')
                                             { 
-                                                echo'List Of All Events';
+                                                //echo'List Of All Events';
                                             } 
                                         else
-                                            { echo'List Of All Gist';} 
+                                            { //echo'List Of All Gist';
+                                    } 
 
 
                                         ?> </p>

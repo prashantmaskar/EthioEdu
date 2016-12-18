@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addschool' ?>">Add School</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -93,6 +92,17 @@
                                                         </select>
 
                                                     </div>
+                                                     <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class="autocomplete" name="Programoffered" id="Program_tokenfield" value="primary,Nursary "/ placeholder="Program offered">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
 
 
                                                     <div class="row">
@@ -100,7 +110,7 @@
                                                     <div class="tokenfield">
                                                        <div class="form-group input-field col s12">
                                                          
-                                                        <input type="text" class=" autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="facilities">
+                                                        <input type="text" class="autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="facilities">
                                                         <!--label for="facilities">Facilities</label-->
                                                        </div>
                                                    </div>
@@ -304,3 +314,5 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+
+    

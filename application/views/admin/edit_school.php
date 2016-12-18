@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit School</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit School</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -35,7 +34,7 @@
                                     /* echo $row['school_facility'];*/
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+              
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -152,6 +151,19 @@
 
                                                           
                                                         </select>
+                                                     <div class="row">
+                                                    <div class="col s12">
+                                                       <div class="tokenfield">
+                                                         <div class="form-group input-field col s12">
+                                                         
+                                                         <input type="text" class="autocomplete" name="Programoffered" id="Program_tokenfield" value="<?php echo $row['Program_tokenfield'];?>" placeholder="Add or remove program offered">
+                                                    
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                             </div>
+
+
                                                 <div class="row">
                                                     <div class="col s12">
                                                        <div class="tokenfield">
@@ -630,6 +642,19 @@
 $(document).ready(function() {
 
  $('#tokenfield').tokenfield({
+  autocomplete:{
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
+</script>
+
+<script>
+$(document).ready(function() {
+
+ $('#Program_tokenfield').tokenfield({
   autocomplete:{
     source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
     delay: 100

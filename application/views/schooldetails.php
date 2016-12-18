@@ -124,6 +124,21 @@
                                 </ul>
                             </div>
                         </div> -->
+
+                      <?php              
+                       $str=$row['Program_tokenfield'];
+                                       $str=str_replace("," , "<br>",$str);
+                    ?>
+                       
+                         <div class="col m12">
+                            <div class="school_country">
+                                <h2 class="sch_det_title">Programs offered</h2>  
+                                <p><?php echo $str ?></p><br/>
+                            </div>
+                        </div>
+
+
+
                     <?php              
                        $str=$row['school_facility'];
                                        $str=str_replace("," , "<br>",$str);

@@ -117,6 +117,7 @@ if(isset($_POST['action'])){
                 'acadamic_requirment' => $this->input->post('Description'),
                 'school_scholarship' => $this->input->post('scolership'),
                 'school_address' => $this->input->post('address'),
+                    'Program_tokenfield' => $this->input->post('Programoffered'),
                  'school_facility' => $this->input->post('tokenfield'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
