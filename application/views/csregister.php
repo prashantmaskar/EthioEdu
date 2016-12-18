@@ -60,8 +60,9 @@
                                         <label for="Caption">Mobile Number</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="email" name="email" type="text" class="validate">
-                                        <label for="Caption">Email Id</label>
+                                        <input id="useremailid" name="email" type="text" class="validate">
+                                        <label for="useremailid">Email Id</label>
+                                        <span id="emailmsg"></span>
                                     </div>
                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
@@ -153,4 +154,22 @@
         
        <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url() .'js/csregister.js' ?>"></script>
- 
+ <script>
+$("#useremailid").blur(function(){
+                    if($(this).val() ){
+                    var emailid = $("input[name=email]").val();
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {emailid},
+                            success: function(data) {
+                                console.log(data);
+                                    $('#emailmsg').html(data);
+                            }
+                            });
+                        }else{
+                            $("#emailmsg").html('');
+                        }
+                        });
+</script>

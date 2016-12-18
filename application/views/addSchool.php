@@ -78,14 +78,15 @@
                                                         <label for="lastname">Last Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" value="<?php echo $row['user_email'];?>" class="form-control" readonly>
-                                                        <label for="email">Email Id</label>
+                                                        <input id="schoolemail" type="text" name="email" value="<?php echo $row['user_email'];?>" class="form-control" readonly>
+                                                        <label for="schoolemail">Email Id</label>
                                                     </div>
                                                    <?php    } } else{
                                                     ?>
                                                     <div class= "form-group input-field col s12">
                                                         <input type="text"  id="user_name" name="user_name"  class="form-control" >
                                                         <label for="user_name">user_name</label>
+                                                        <span id="user_namemsg"></span>
                                                     </div>
                                                    <div class= "form-group input-field col s12">
                                                         <input type="text"  id="firstname" name="firstname"  class="form-control" >
@@ -96,8 +97,9 @@
                                                         <label for="lastname">Last Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email"  class="form-control" >
-                                                        <label for="email">Email Id</label>
+                                                        <input id="schoolemail" type="text" name="email"  class="form-control" >
+                                                        <label for="schoolemail">Email Id</label>
+                                                        <span id="emailmsg"></span>
                                                     </div>
                                                     <?php }?>
                                                     <div class=" form-group input-field col s12">
@@ -389,3 +391,49 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+                $("#user_name").blur(function(){
+                    if($(this).val() ){
+                    var value = $("input[name=user_name]").val();
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {value},
+                            success: function(data) {
+                                console.log(data);
+                                    $('#user_namemsg').html(data);
+                            }
+                            });
+                        }else{
+                            $("#user_namemsg").html('');
+                        }
+                        });
+
+
+
+                $("#schoolemail").blur(function(){
+                    if($(this).val() ){
+                    var emailid = $("input[name=email]").val();
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {emailid},
+                            success: function(data) {
+                                console.log(data);
+                                    $('#emailmsg').html(data);
+                            }
+                            });
+                        }else{
+                            $("#emailmsg").html('');
+                        }
+                        });
+
+
+
+
+                    });
+
+</script>

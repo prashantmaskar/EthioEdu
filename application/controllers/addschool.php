@@ -103,7 +103,8 @@ class addschool extends CI_Controller {
           
 }
  function get_user_id(){
-    $ress = $this->init_models->getueserid();
+  $schooluseremailid = $this->input->post('email');
+    $ress = $this->init_models->getueserid($schooluseremailid);
         $data = array( 
 
            'uid'  => $ress['user_id'],
