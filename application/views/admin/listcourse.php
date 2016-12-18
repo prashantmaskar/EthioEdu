@@ -51,9 +51,13 @@
                                         $month=(int)($days/30);
                                         $days=(int)($days%30);
                                           }elseif($duration<365 && $duration>30){
+                                            $year=0;
+                                        
                                            $month=(int)($duration/30);
                                            $days=(int)($duration%30);
                                           }else{
+                                            $year=0;
+                                            $month=0;
                                             $days = $duration;
                                           } 
                                     ?>
