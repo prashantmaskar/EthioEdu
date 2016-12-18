@@ -68,6 +68,7 @@
   ?>  
  <ul id='dropdownl' class='dropdown-content'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
+ <li><a href="<?php echo base_url() . 'index.php/edit_school' ?>">Edit School()</a></li>
     <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
     <li><a href="#">Comments( )</a></li>
