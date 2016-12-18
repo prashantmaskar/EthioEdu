@@ -217,8 +217,12 @@
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
+
+                       <!--  <div class="coment_box row">
+
                         <?php } ?>
                         <div class="coment_box row">
+
                             <div class="col m12">
                                 <h2>Add New Comment</h2>
                             </div>
@@ -243,12 +247,50 @@
                             </div>
 
 
-                        </div>
+                        </div> -->
 
 <?php } ?>
 
                     </div>
+                    <div class="coment_box row">
+                            <div class="col m12">
+                                <h2>Add New Comment</h2>
+                            </div>
+                            <div>
+                            <div class="course_info">
+        <!-- <p class="lead black-text"><h1 class = "page-heading">Question:<?php //echo $ques->question_desc ?></h1></p> --> </div>
+        <?php  $sname= $this->session->userdata('susername');?></div>
+        <div class="col m12 s12 card-panel"> <?php echo $comments ?> </div>
+         <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div> 
+         <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/>  
+                            <div class="coment_form">
+                                <form id="comment_form" action="#" method="post">
+                                    <div class="input-field col s12">
+                                        <label for="comment_name">Name:</label> 
+          <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
+                                    </div>
+                                   
+                                    <div class="input-field col s12">
+                                        <label for="comment"><i class='material-icons prefix'>mode_edit</i>Comment :</label> 
+           <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
+                                    </div>
+                        <input type='hidden' name='parent_id' value="0" id='parent_id' />
+                    <input type='hidden' name='response_type' value="answer" id='response_type' />
+                    <input type='hidden' name='response_like' value="0" id='response_like' />
+    <input type='hidden' name='question_id' id='parent_id' />     
+
+                 <div id='submit_button' class="margin-b-10"> 
+             <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
+             </div> 
+                                </form>
+                            </div>
+
+
+                        </div>
                 </div>
+                
+
+
                 <div class="col s12 m3 ">
                   <div class="latest_news_wrap ">
                         <h1 class="red_label_title">Latest News</h1>
@@ -274,6 +316,15 @@
 <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type='text/javascript'> 
+$(function () {
+  $("a.reply").click(function () 
+  { var id = $(this).attr("id"); 
+  $("#parent_id").attr("value", id); 
+  $("#name").focus();
+  }); 
+  }); 
+  </script>
 <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {

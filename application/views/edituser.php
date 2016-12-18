@@ -132,7 +132,7 @@
                                             <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
+                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
                                         </div>
                                     </div>
 
