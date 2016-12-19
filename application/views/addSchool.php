@@ -163,8 +163,19 @@
                                                         <select class="form-control browser-default" name="choice4">
 
                                                             <option value="">Other catagogory</option>
-                                                             <option value="Account">Account </option>
-                                                            <option value="Agreeculture">Agreeculture</option>
+                                                             <option value="Aviation">Aviation</option>
+                                                            <option value="Arts and Design">Arts and Design</option>
+                                                             <option value="Health and Beauty">Health and Beauty</option>
+                                                             <option value="Counsellling and Enterprenuership">Counsellling and Enterprenuership</option>
+                                                             <option value="Driving Schools">Driving Schools</option>
+                                                             <option value="Language,computer and IT training school">Language,computer and IT training schools</option>
+                                                             <option value="Tutorial centers">Tutorial centers</option>
+                                                             <option value="Hotel,tourism and Hospitality">Hotel,tourism and Hospitality</option>
+                                                             <option value="Accounts and Accountancy">Accounts and Accountancy</option>
+                                                             <option value="Mass media">Mass media</option>
+                                                             <option value="Music schools">Music schools</option>
+                                                             <option value="Vocational/technical">Vocational/technical</option>
+                                                                <option value="others">others</option>
                                                         
                                                         </select>
                                                        </div>

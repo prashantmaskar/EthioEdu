@@ -93,7 +93,7 @@
                                             $vac_desc = substr($row['vacancy_desc'],0,100);
                                              $edesc = $vac_desc.'...';
                                             ?>
-                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>&title=<?php echo $row['vacancy_name']; ?>&summary=<?php echo $edesc; ?>" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+                                            <li><a target="_blank" href="javascript:myPopup('https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>&title=<?php echo $row['vacancy_name']; ?>&summary=<?php echo $edesc; ?>')" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
                                             <li><a href="https://twitter.com/intent/tweet?text=<?php echo $row['vacancy_name']?>?url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>" data-show-count="false" class="waves-effect waves-light btn twitter darken-3 "><i class="fa fa-twitter"></i> Twitter</a></li> 
                                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
@@ -203,3 +203,9 @@ message: ''
 });
 </script>
 <?php } ?>
+<script type="text/javascript">
+     function myPopup(url) {
+window.open( url, "myWindow", "status = 1, height = 500, width = 360, resizable = 0" );
+}
+    
+</script>
