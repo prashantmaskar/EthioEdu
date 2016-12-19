@@ -88,11 +88,18 @@
                                         <ul>
                                             <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
 
-                                            <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+                                            <?php 
 
-                                            <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
+                                            $vac_desc = substr($row['vacancy_desc'],0,100);
+                                             $edesc = $vac_desc.'...';
+                                            ?>
+                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>&title=<?php echo $row['vacancy_name']; ?>&summary=<?php echo $edesc; ?>" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
-                                            <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
+                                            <li><a href="https://twitter.com/intent/tweet?text=<?php echo $row['vacancy_name']?>?url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>" data-show-count="false" class="waves-effect waves-light btn twitter darken-3 "><i class="fa fa-twitter"></i> Twitter</a></li> 
+                                           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+                                            <li><a href="https://plus.google.com/share?url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>" class="waves-effect waves-light btn googleplus darken-3" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus"></i> Google</a></li> 
 
                                         </ul>
                                     </div>
