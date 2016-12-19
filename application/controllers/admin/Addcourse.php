@@ -53,7 +53,7 @@ class Addcourse extends CI_Controller {
            $fduration = $cduration*365;
         }
         elseif($duration == 'Month'){
-$fduration = $cduration*30;
+            $fduration = $cduration*30;
         }
         else
         {
