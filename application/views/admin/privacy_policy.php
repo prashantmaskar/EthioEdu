@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/privacy_policy' ?>">Add Privacy Policy </a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -40,7 +39,7 @@
                     
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">Fill all required fields. </p>
+                           
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -50,12 +49,12 @@
                                             <div class="row">
                     <form id="privacy_policy" class=" form-control col m12" action="<?php echo site_url('index.php/admin/privacy_policy')?>" method="post" enctype="multipart/form-data">
                             <?php 
-                             $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='privacy'");
-                             $count= $query->result()[0]->row_count;
+                           /*  $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='privacy'");  */
+                             $count= $policy_count;
                             if($count>='1') { 
-                                 $query = $this->db->query("select * from tbl_posts where  post_type='privacy' ");
+                               //  $query = $this->db->query("select * from tbl_posts where  post_type='privacy' ");
                         
-                            foreach ($query->result_array() as $row){ 
+                            foreach ($policy_details as $row){ 
                              ?>
                               <input id="post_id" name="post_id" type="hidden" class="validate " value="<?php  echo $row['post_id'];?>">
                                  <div class="form-group input-field col s12">
@@ -88,8 +87,8 @@
                                <input value="privacy" name="post_type" type="hidden">
                                                    
                              <?php 
-                                $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='privacy'");
-                                $count= $query->result()[0]->row_count;
+                               // $query = $this->db->query("select count(*) as row_count from tbl_posts where post_type ='privacy'");
+                                $count= $policy_count;
                 /*echo $count;*/if($count>='1') {?>
                                 <div class="col s5 offset-s5">
                                 <button class="btn waves-effect waves-light" type="submit" name="editaction" >Edit

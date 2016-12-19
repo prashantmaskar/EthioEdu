@@ -8,7 +8,7 @@
          ?>
         <meta charset="utf-8">
         <title><?php echo $m_title ?></title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/materialize.min.css' ?> " />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/font-awesome.min.css' ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/owl.carousel.css' ?>" />
@@ -24,6 +24,19 @@
 
     </head>
     <body>
+    <div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+FB.init({appId: '383265445346580', status: true, cookie: true,
+xfbml: true});
+};
+(function() {
+var e = document.createElement('script'); e.async = true;
+e.src = document.location.protocol +
+'//connect.facebook.net/en_US/all.js';
+document.getElementById('fb-root').appendChild(e);
+}());
+</script>
         <div class="header-top grey darken-3 ">
 
             <div class="row">
@@ -65,16 +78,20 @@
 
      $query3= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
 
-  ?>  
+  ?>   
  <ul id='dropdownl' class='dropdown-content'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
+
+ <li><a href="<?php echo base_url() . 'index.php/edituserschool?id=7' ?>">Edit School()</a></li>
+
+
     <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
-    <li><a href="#!">Comments( )</a></li>
+    <li><a href="#">Comments( )</a></li>
       <li class="divider"></li>
-     <li><a href="#!">Askaquestion(<?php echo $query2->result()[0]->row_count; ?>)</a></li>
+     <li><a href="<?php echo base_url(). 'index.php/QuesAns'?>">Askaquestion(<?php echo $query2->result()[0]->row_count; ?>)</a></li>
        <li class="divider"></li>
-      <li><a href="#!">Events(<?php echo $query1->result()[0]->row_count; ?>  )</a></li>
+      <li><a href="<?php echo base_url(). 'index.php/event'?> ">Events(<?php echo $query1->result()[0]->row_count; ?>  )</a></li>
     <li class="divider"></li>
    <li><a href="<?php echo base_url() . 'index.php/logout' ?>">Logout</a></li>
   
@@ -90,7 +107,7 @@
 
             <div class="row">
                 <div class="col s3 ">
-                    <img class="logo_bar" src="<?php echo base_url() . 'images/logo.png' ?>">
+                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar" src="<?php echo base_url() . 'images/logo.png' ?>"></a>
                 </div>
                 <div class="col s9 ">
                     <div class="upper_slider">

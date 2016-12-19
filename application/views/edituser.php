@@ -1,7 +1,6 @@
 
 
-
- <?php $this->load->view('header'); ?>
+ <?php $this->load->view('header');?>
 <div class="sdetails-wrap">
     <div class="row">
         <div class="col s12 m9 margin-t-15">
@@ -30,14 +29,8 @@
     }
 ?>
 
-                        <?php $sessid= $this->session->userdata('suserid');
-
-                        $query = $this->db->query("select tbl_users.username, tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_users.user_role, tbl_user_meta.school_type, tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
-
-
-                        //$query = $this->db->query("select tbl_user_meta.user_school, tbl_user_meta.user_level, tbl_user_meta.user_dept, tbl_user_meta.user_gender, tbl_user_meta.mobile_no, tbl_user_meta.user_avatar, tbl_user_meta.marital_status, tbl_user_meta.interested_in, tbl_user_meta.about_user, tbl_user_meta.user_interest, tbl_user_meta.user_hobby from tbl_user_meta where user_id = '" .$sessid. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        <?php $sessid= $this->session->userdata('suserid');                        
+                                foreach ($user_details as $row){ 
                                       $school_type = $row['school_type'];
                                         $userattachment= $row['user_avatar']; 
                         ?>
@@ -76,15 +69,15 @@
                                     </div>
                                         <h5 class="red-text">Login Information</h5>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" value="<?php echo $row['username']; ?>" name="username" class="validate">
+                                        <input id="Caption" type="text" value="<?php echo $row['username']; ?>" name="username" class="validate" readonly>
                                         <label for="Caption">Username</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" name="password" class="validate">
+                                        <input id="Caption" type="password" name="password" class="validate">
                                         <label for="Caption">New Password</label>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                        <input id="Caption" name="cpassword" type="text" class="validate">
+                                        <input id="Caption" name="cpassword" type="password" class="validate">
                                         <label for="Caption"> Confirm New Password</label>
                                     </div>
                                            <h5 class="red-text">personal Information</h5>
@@ -117,8 +110,9 @@
                                     <!-- <div class="col s2 user-icon form-group input-field">
                                          <img src="<?php //echo base_url() . 'images/user.jpg' ?>" class="responsive-img circle">  
                                     </div> -->
-                                    <?php if($row['user_avatar']!=""){?>
+                                    
                                     <div class="form-group file-field input-field col s12">
+                                    <?php if($row['user_avatar']!=""){?>
                                                         <div style="position: relative;display: inline-block;">
 
                                      <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['user_avatar'];?>">
@@ -131,19 +125,22 @@
                                                                     right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                                   </div>
                                                                        <?php }?>
+
                                    <div class="form-group file-field input-field col s10">
                                         <div class="btn">
                                             <span>Attach Photo</span>
                                             <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
+                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['user_avatar'];?>">
                                         </div>
                                     </div>
-                                       <h5 class="red-text">Connect2Me Information</h5>
 
+                                    <div class="file-field input-field col s10">
+                                       <h5 class="red-text">Connect2Me Information</h5>
+                                    </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="date" type="date" name="date" >
+                                        <input id="date" class=" datepicker validate" value="<?php echo $row['user_birth']; ?>" type="date" name="date" >
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
@@ -180,7 +177,7 @@
                                     </div>
                                     <input type="hidden" name="role" value="<?php echo $row['user_role']; ?>">
                                     <div class="col m12 margin-t-15 center-align">
-                                        <button class="btn waves-effect waves-light red" type="submit" name="uaction">Update
+                                        <button class="btn waves-effect waves-light red margin-b-10" type="submit" name="uaction">Update
                                         </button>
                                     </div>
                         </form>
@@ -189,291 +186,48 @@
                 </div>
             </div>
         </div>
+    </div>
+
         <div class="col s12 m3 margin-t-15">
             <div class="online_std z-depth-1">
                 <ul class="online_std_list">
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                                <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col m3 s12 std_thumb">
-                   <img src="<?php echo base_url() . 'images/user.jpg' ?>">   
-                            </div>
-                            <div class="col m9 std_details">
-                                <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                <p class="std_university">(Male)</p>
-                                <p class="std_name">Unilorin Student</p>
-                            </div>
-                        </div> 
-                    </li>
+                    <?php 
+//print_r($related_users);
+                       foreach ($related_res as $row){ ?>
+                            <li>
+                             <?php $pimg = $row['user_avatar']; ?>
+                                <div class="row">
+                                    <div class="col m3 s12 std_thumb">
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>"> 
+                                    </div>
+                                    <div class="col m9 std_details">
+                                        <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_university"><?php echo $row['user_gender']; ?></p>
+                                        <p class="std_name"><?php echo $row['user_school']; ?></p>
+                                    </div>
+                                </div> 
+                            </li>
+                            <?php } ?>
                 </ul>
             </div>
         </div>
     </div>
+
 </div>
-
-
-    
 <?php $this->load->view('footer'); ?>
-
-
-
-
- <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'js/materialize.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'js/owl.carousel.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'js/jquery.validate.min.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'js/picker.js' ?>"></script>        
-        <script type="text/javascript" src="<?php echo base_url() . 'js/script.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'js/bootstrapValidator.js' ?>"></script>
-
-<script>
-$(document).ready(function() {
-
-    $('#edituser').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
-            schooltype: {
-                validators:{
-                    notEmpty:{
-                        message:'school type required'
-                    }
-                   /* regexp:{
-                              regexp: /^[a-z\s]+$/i,
-                                message: 'The  name can consist of alphabetical characters and spaces only'
-                    }*/
-                }
-            },
-              school: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select school  name!!!..'
-                    }
-                }
-            },
-              level: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select level!!!..'
-                    }
-                }
-            },
- 
-                  department: {
-                validators: {
-                    notEmpty: {
-                        message: 'contact required!!!..'
-                    }
-                   /* digits:{
-                         message:'contact number is invalid'
-
-                    },*/
-                    /*stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
-                    }*/
-
-                }
-            },
-               username:{
-                validators:{
-                    notEmpty:{
-                         message:'Email address is required!!!'
-                    }
-                   /* emailAddress:{
-                        message:'The input is not a valid email adddress!!'
-                    }*/
-                }
-            },
-             password: {
-                validators: {
-                   
-                    identical: {
-                        field: 'cpassword',
-                        message: 'The password and its confirm are not the same'
-                    }
-                }
-            },
-            cpassword: {
-                validators: {
-                   
-                    identical: {
-                        field: 'password',
-                        message: 'The password and its confirm are not the same'
-                    }
-                }
-            },
-            first_name: {
-                validators:{
-                    notEmpty:{
-                        message:'first name required'
-                    },
-                    regexp:{
-                              regexp: /^[a-z\s]+$/i,
-                                message: 'The  name can consist of alphabetical characters and spaces only'
-                    }
-                }
-            },
-              last_name: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter last name!!!..'
-                    }
-                }
-            },
-             gender: {
-                validators: {
-                    notEmpty: {
-                        message: ' please select gender!!!..'
-                    }
-                }
-            },
-              
-                  attach:{
-            validators:{
-                notEmpty:{
-                    message:'please select an image'
-                },
-                 file:{
-                        extension: 'jpeg,jpg,png',
-                        type: 'image/jpeg,image/png',
-                        maxSize: 2097152,   // 2048 * 1024
-                        message: 'The selected file is not valid'
-                    }
-                 }
-           },
-               
-                  date: {
-                validators: {
-                    notEmpty:{ 
-                        message:'please enter birthdate!!'
-
-                    }
-                  
-                }
-            },
-                  
-                  status: {
-                validators: {
-                    notEmpty:{ 
-                        message:'please select choice!!'
-
-                    }
-                  
-                }
-            },
-               
-                
-                  
-                  interestedIn: {
-                validators: {
-                    notEmpty:{ 
-                        message:'please select choice!!'
-
-                    }
-                  
-                }
-            },
-                  aboutme:{
-                validators:{
-                    notEmpty:{
-                        message:  ' please Enter information about you !!!'
-                    }
-                    /*stringLength:{
-                        message:'post descreeption must be less than 100 characters',
-                        max:function(value,validator,$field){
-                            return 100 - (value.match(/\r/g) || []).length;
-                        }
-                    }*/
-                }
-             },
-              myinterest:{
-                validators:{
-                    notEmpty:{
-                        message:  ' please write your interest !!!'
-                    }
-                   /* stringLength:{
-                        message:'post descreeption   must be less than 100 characters',
-                        max:function(value,validator,$field){
-                            return 100 - (value.match(/\r/g) || []).length;
-                        }
-                    }*/
-                }
-             },
-
-               myhobby:{
-                validators:{
-                    notEmpty:{
-                        message:  ' please write your hobby !!!'
-                    },
-                    stringLength:{
-                        message:'post descreeption   must be less than 100 characters',
-                        max:function(value,validator,$field){
-                            return 100 - (value.match(/\r/g) || []).length;
-                        }
-                    }
-                }
-             },
-
-
-        }
-    });
-});
-</script>
-                     
+<script type="text/javascript" src="<?php echo base_url() . 'js/edituser.js' ?>"></script>
                         <script>
 
             function deleted(id,userimg)
             {
                 var deleteuserimg_id = id;
                 var image = userimg;
-                //alert(image);
-                //alert(deleteuserimg_id);
             if (confirm('Sure to Delete ?'))
                     {
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "admin/approve_delete",
+                            url: "message_delete",
                             data: {deleteuserimg_id, image},
                             success: function(data) {
                                 console.log(data);

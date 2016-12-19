@@ -38,12 +38,18 @@ class pminbox extends CI_Controller {
 
 
     public function index() {
+        $sessid= $this->session->userdata('suserid');
+        $related_res = $this->init_models->related_users($sessid);
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Private Message Inbox',
             'title' => 'Connect2Me',
-            'banners' => $banners
+            'banners' => $banners,
+            'related_res' => $related_res,
         );
+        $view_params['getinboxmsg'] = $this->init_models->getinboxmsg($sessid);
+        $view_params['sent_count'] = $this->init_models->getsentitemcount($sessid);
+        $view_params['inbox_count'] = $this->init_models->getinboxitemcount($sessid);
         $this->load->view('pminbox',$view_params);
     }
 

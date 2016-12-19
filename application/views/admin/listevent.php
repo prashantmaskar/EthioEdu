@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">List Event</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">List Event</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption">List Of All Events.</p>
+                       
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">

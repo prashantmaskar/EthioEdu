@@ -52,7 +52,7 @@ class reportgist extends CI_Controller {
 
  public function add()
        {
-            
+       // if(!($this->input->post('fileformat')) == "" ){
         date_default_timezone_set('Asia/Kolkata');
             $imagePrefix = date("d-m-Y-h-i-s"); 
             $imagename = $imagePrefix.$value['name'];
@@ -65,22 +65,23 @@ class reportgist extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       //$this->load->view('upload_form', $error);
-                }
-                else
-                {
+                if ( ! $this->upload->do_upload('fileformat') == ""){
+                
                         $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-                        $date = date('d F, Y');
+                      }else{
+                        
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+
+                      }
+                        
+
+                        $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
                         $sessid= $this->session->userdata('suserid');
@@ -99,19 +100,14 @@ class reportgist extends CI_Controller {
                         'post_approve' => $this->input->post('approve_status'),
                         'user_id'=>  $sessid
         );
-                }         
+                      
                       if($this->init_models->add_anews($data));
                       {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/reportgist");
             }
                         
-
-                        //
-               
-
-              
+ 
 
     }
 

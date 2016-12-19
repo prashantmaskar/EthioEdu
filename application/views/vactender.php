@@ -48,7 +48,7 @@
                             <div class="vacancy_list_wrap">
                                 <ul class="vacancy_list">
                                   <?php
-                                  if(isset($_POST['searchaction'])){
+                                /*  if(isset($_POST['searchaction'])){
 
                                     $date1 = $_POST['vacd1'];
                                  $totimedate = strtotime($date1);
@@ -64,7 +64,7 @@
 
                                         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1");
 
-                                    }
+                                    } */
                                     $resultcount = count($vacancy);
                                     if($resultcount >= 1){
                                 foreach ($vacancy as $row){ ?>

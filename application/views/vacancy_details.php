@@ -16,10 +16,10 @@
                 <div class="col s12 m7 grid-example">
                     <div class="vacancy_details col m12 z-depth-1">
                         <div class="col m12 s12">
-                        <?php $vac_id = $_GET['id'];
+                        <?php /* $vac_id = $_GET['id'];
                         $query = $this->db->query("select * from tbl_vacancy where vacancy_id = '" .$vac_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                        */
+                                foreach ($vacanyid as $row){ 
                                     
                         ?>
                             <div class="page-heading-wrap">
@@ -86,7 +86,7 @@
                                 <div class="col m12">
                                     <div class="school_social">
                                         <ul>
-                                            <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                            <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
 
                                             <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
@@ -108,51 +108,16 @@
                     <div class="latest_news_wrap ">
                         <h1 class="red_label_title">Latest News</h1>
                         <ul class="latest_news_list">
+                            <?php
+                                foreach ($news as $row){ ?>
                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
+                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
+                                    <span class="News_title"><?php echo $row['post_title']; ?></span>
+                                </a>
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_date']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                    </span></span>
                             </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-
+                            <?php } ?>
                         </ul>
                     </div>
 
@@ -209,3 +174,25 @@
             </div>
         </div>
       <?php $this->load->view('footer'); ?>
+     <?php foreach ($vacanyid as $row){
+        $vac_desc = substr($row['vacancy_desc'],0,100);
+                  $fdesc = $vac_desc.'...';
+      ?>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<?php echo $row['vacancy_name']; ?>',
+link: ' <?php echo base_url(); ?>index.php/vacancy_details?id=<?php echo $row['vacancy_id']; ?>',
+picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
+caption: 'Ethio Edu Vacancy',
+description: '<?php echo $fdesc; ?>',
+message: ''
+});
+});
+});
+</script>
+<?php } ?>

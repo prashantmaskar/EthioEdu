@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/listcourse' ?>">List Course</a>
-                                        </li>
+                                     
                                     </ol>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">List Of All Course.</p>
+                         
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">
@@ -44,29 +43,29 @@
                                             <?php
                                 foreach ($course as $row){ 
                                     $course_id = $row['course_id'];
-                               $duration = intval($row['course_duration']);
+                               $duration = $row['course_duration'];
                                     if($duration>=365){
                                         $year=(int)($duration/365);
-                                        $days=$duration%365;
+                                        $days=(int)($duration%365);
                                         $month=(int)($days/30);
                                         $days=(int)($days%30);
-                                    }elseif($duration<365 && $duration>30){
+                                          }elseif($duration<365 && $duration>30){
                                             $year=0;
+                                        
                                            $month=(int)($duration/30);
-                                      /*echo $month;*/
                                            $days=(int)($duration%30);
-                                      /* echo $days;*/
-                                    }else{
+                                          }else{
+                                            $year=0;
+                                            $month=0;
                                             $days = $duration;
-                                            /* echo $days;*/
-                                    }
-                                    
+                                          } 
                                     ?>
                                                 <tr>
                                                     <td><?php echo $row['course_name']; ?></td>
                                                     <td><?php echo $row['course_category']; ?></td>
-                                                    <td><?php if(isset($year)){
-                                       echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";}
+                                                    <td><?php if(!$year == ""){
+
+                                       echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";} 
                                     if(isset($days) && $days!==0){echo $days." Day ";}
                                        ?></td>
                                                     <td>

@@ -49,7 +49,8 @@ class coursedetails extends CI_Controller {
         {
         $this->insertreview();
         }
-
+        $course_id = $_GET['id'];
+        $sessid= $this->session->userdata('suserid');
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Course Details',
@@ -57,8 +58,10 @@ class coursedetails extends CI_Controller {
             'banners' => $banners,
             'cource_id' => $cource_id
         );
-        
-        
+        $view_params['course_count'] = $this->init_models->get_all_course_count($course_id, $sessid);
+        $view_params['course_details'] = $this->init_models->getcoursedetails($course_id);
+        $view_params['user_details'] = $this->init_models->getuserdetails($sessid);
+        $view_params['more_course'] = $this->init_models->getmorecourse($course_id);
         $this->load->view('coursedetails',$view_params);
     }
        
@@ -76,9 +79,13 @@ class coursedetails extends CI_Controller {
              
             );
             
- $this->init_models->insertreview($data);
-             
-    echo"<script>alert('Data Inserted Successfully');</script>";
+                $id = $_GET['id'];
+       if($isinserted = $this->init_models->insertreview($data))
+                        
+                        {
+                           $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                            redirect("index.php/coursedetails?id=$id");
+                      }
              
     }
 

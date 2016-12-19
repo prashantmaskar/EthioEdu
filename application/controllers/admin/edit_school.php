@@ -39,10 +39,12 @@ class edit_school extends CI_Controller {
 
   public function index()
   {
+            $sch_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit School',
                 'title'   => 'Edit School'
             );
+    $view_params['school_details'] = $this->init_models->get_school_details($sch_id);
     $this->load->view('admin/edit_school',$view_params);
 if(isset($_POST['action'])){
         $this->edit_school();
@@ -52,7 +54,7 @@ if(isset($_POST['action'])){
 
     date_default_timezone_set('Asia/Kolkata');
             $imagePrefix = date("d-m-Y-h-i-s"); 
-            $imagename = $imagePrefix.$value['name'];
+            $imagename = $imagePrefix;
 
 
                 $config['upload_path']          = './uploads/';
@@ -62,24 +64,36 @@ if(isset($_POST['action'])){
                 $config['max_height']           = 768;
                 $config['file_name'] = $imagename; // set the name here
 
-                $this->load->library('upload', $config);
+                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
+                
+                        if ($this->upload->do_upload('fileformat')){
+                        //echo "<script>alert('in do_upload');</script>";
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-    
+                      }else{
+                       // echo "<script>alert('in  main else');</script>";
+                       // echo "in else".$this->input->post('avatar');
+                      if($this->input->post('fileformat') == ""){
+                          //echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('imagename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('fileformat') == "" && $this->input->post('imagename') == ""){
+                      //echo "<script>alert('in else');</script>";
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
+                      }
+
+              
+                       
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
@@ -103,6 +117,8 @@ if(isset($_POST['action'])){
                 'acadamic_requirment' => $this->input->post('Description'),
                 'school_scholarship' => $this->input->post('scolership'),
                 'school_address' => $this->input->post('address'),
+                    'Program_tokenfield' => $this->input->post('Programoffered'),
+                 'school_facility' => $this->input->post('tokenfield'),
                 'school_url' => $this->input->post('website'),
                 'school_desc' => $this->input->post('tell_us'),
                 'school_id' => $this->input->post('school_id'),
@@ -122,7 +138,7 @@ if(isset($_POST['action'])){
                 redirect("index.php/admin/listschool");
 
             }
-          }
+        // }
 }
   
 }

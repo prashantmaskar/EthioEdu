@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit tips</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit tips</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -26,13 +25,13 @@
                     </div>
                     <div class="container">
                     <?php if(isset($_GET['id'])){$tips_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
+                       // $query = $this->db->query("select * from tbl_posts where  post_type='tips' and post_id = '" .$tips_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($tips_details as $row){ 
                                     $tipsattachment = $row['post_attachment'];
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -71,7 +70,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php //echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                    
@@ -144,7 +143,7 @@ $(document).ready(function() {
                 }
             },
             
-          avatar:{
+         /* avatar:{
             validators:{
                 notEmpty:{
                     message:'please select an image'
@@ -156,7 +155,7 @@ $(document).ready(function() {
                         message: 'The selected file is not valid'
                     }
                  }
-           }
+           }*/
      
         }
     });

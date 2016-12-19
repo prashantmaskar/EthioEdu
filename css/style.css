@@ -75,14 +75,15 @@ nav .brand-logo {
     box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
 
 }
+
 .day{
     text-align: center;
-    padding: 15px;
-    font-size: 25px;
+    padding: 4px;
+    font-size: 11px;
 }
 .monthyear{
 
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     text-transform: capitalize;
 }
 
@@ -110,7 +111,25 @@ nav .brand-logo {
     width: 28px;
 }
 
+.std_thumb img.circle.responsive-img.valign.profile-image {
+    height: 50px;
+}
+
+.cresult-wrap .result_list_wrap {
+    padding: 10px;
+}
+
+
+.comment-avatar  {
+    max-width: 100%;
+    vertical-align: middle;
+    width: 50px;
+}
+
 .user-avatar{
+    display: inline-block;
+}
+.comment-avatar{
     display: inline-block;
 }
 
@@ -206,6 +225,11 @@ nav .brand-logo {
 
 
 }
+
+.service_col img {
+    width: 100%;
+}
+
 .more_link{
     padding-bottom: 20px;
     margin-bottom: 5px;
@@ -286,6 +310,31 @@ img.edit-attach {
     line-height: 1;
 
     padding-right: 14px;
+}
+
+
+
+
+
+.review_info [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.review_info [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
+}
+
+
+.course_search_result [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+    border: 0px !important;
+}
+.course_search_result [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border: 0px !important;
+    background: transparent;
+}
+
+.course_search_result [type="radio"]:disabled:not(:checked)+label:before, [type="radio"]:disabled:checked+label:before{
+border-color: transparent;
 }
 /*=================================================
  Owl Carousel
@@ -641,6 +690,12 @@ a.post-share.stumble span {
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
+.comment_info .page-heading{
+    font-size: 24px;
+    font-weight: bold;
+    color: #57ade6;
+    margin: 10px 0px;
+}
 .ans .page-heading{
     font-size: 24px;
     font-weight: bold;
@@ -676,6 +731,16 @@ a.post-share.stumble span {
     color: #0A88FF;
 
 }
+
+.ui-autocomplete {
+         background-color: #fff;
+    width: 100px !important;
+    border-bottom: solid 1px #039be5;
+    border-left: solid 1px #039be5;
+    border-right: solid 1px #039be5;
+    padding: 10px;
+}
+
 .school_name{
     margin: 0px 0px 0px 5px;
     padding: 10px;
@@ -992,6 +1057,12 @@ connect2Me List and Form Csss
 }
 .online_std_list P{
     color: #000;
+
+}
+
+
+.online_std_list{
+    padding:20px;
 }
 .vr-line img{
     width: 50%;
@@ -1012,7 +1083,7 @@ connect2Me List and Form Csss
     color: #000;
 }
 .result_list_wrap h5{
-    padding: 0px 25px;
+    padding: 20px 25px;
 }
 .result_list_wrap img{
     width: 150px;

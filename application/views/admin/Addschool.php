@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addschool' ?>">Add School</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
@@ -38,7 +37,7 @@
 ?>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">Fill all required fields.</p>
+                            
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -51,7 +50,7 @@
                                                        <select class="form-control browser-default" name="choice">
                                                              <option value="Registration type">Registration type</option>
                                                             <option value="Normal Registration">Normal Registration</option>
-                                                            <option value="Premium Registration (1,000 Birr per year)">Premium Registration (1,000 Birr per year)</option>
+                                                            <option value="Premium Registration">Premium Registration</option>
 
                                                         </select>
 
@@ -93,6 +92,30 @@
                                                         </select>
 
                                                     </div>
+                                                     <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class="autocomplete" name="Programoffered" id="Program_tokenfield" value="primary,Nursary "/ placeholder="Program offered">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
+
+
+                                                    <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class="autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="facilities">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
 
                                                            <div class=" form-group input-field col s12">
                                                       <select class="form-control browser-default" name="choice2">
@@ -250,6 +273,10 @@
                         </div>
                          <?php  $this->load->view('admin/footer'); ?>
                          <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-addschool-validate.js' ?>"></script>
+                         <link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/tokenfield-typeahead.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
 
 
 <script>
@@ -287,3 +314,5 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+
+    

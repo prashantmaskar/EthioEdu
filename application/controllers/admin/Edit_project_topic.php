@@ -39,10 +39,12 @@ class Edit_project_topic extends CI_Controller {
 
   public function index()
   {
+            $topic_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit _project_topic',
                 'title'   => 'Edit_project_topic'
             );
+    $view_params['project_details'] = $this->init_models->get_project_details($topic_id);
     $this->load->view('admin/edit_project_topic',$view_params);
 if(isset($_POST['action'])){
         $this->edit_project_topic();

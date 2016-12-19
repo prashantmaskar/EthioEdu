@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit News</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit News</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -26,14 +25,14 @@
                     </div>
                     <div class="container">
 
-                        <?php if(isset($_GET['id'])){$news_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+                        <?php  if(isset($_GET['id'])){$news_id = $_GET['id'];}
+                       /* $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($news_details as $row){ 
                                     $newsattachment =  $row['post_attachment'];
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                           
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -47,7 +46,7 @@
                                                         <label for="Caption">News Title</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
-                                                        <textarea id="Description" name="Description"class="materialize-textarea"> <?php echo $row['post_desc'];?></textarea>
+                                                        <textarea id="Description" name="Description"class="materialize-textarea"><?php echo $row['post_desc'];?></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
                                                     <div class="form-group input-field col s12 has-success">
@@ -89,7 +88,7 @@
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name ="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -101,8 +100,9 @@
                                                         <label for="date">Date of Posting</label>
                                                     </div>
                                                      <div class="form-group input-field col s6">
-                                                        <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>" disabled>
-                                                        <label for="date">Time</label>
+                                                           <input id="time" name="time" type="text" value="<?php echo $row['post_time'];?>">
+
+                                                        <label for="time">Time</label>
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="source_link" name="source_link" value="<?php echo $row['post_source'];?>" type="url" class="validate">
@@ -213,13 +213,17 @@
 
            avatar:{
             validators:{ 
+                /*notEmpty:{
+                    message:'please attach image'
+                },*/
                  file: {
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
                         maxSize: 2097152,   // 2048 * 1024
                         message: 'The selected file is not valid'
                     }
-                 }
+                   }
+                 
            },
 
             author: {
@@ -250,7 +254,7 @@
                         message: ' Enter photo caption!!!..'
                     }
                 }
-            },
+            }
 
 
                

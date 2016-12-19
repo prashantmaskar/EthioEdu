@@ -168,11 +168,10 @@
 
                         <h5>Featured Schools</h5>
                         <div class="featured_slider">
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc1.jpg'?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png'?>"></div>
-                            <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
-
+                             <?php  foreach ($homeschool as $row){ 
+                                          $sid = $row['school_id']; ?>
+                            <div class="item"><a href="<?php echo base_url(); ?>schooldetails?id=<?php echo $sid ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

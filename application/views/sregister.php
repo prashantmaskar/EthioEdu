@@ -1,12 +1,12 @@
 <?php  $this->load->view('header'); ?>
         <div class="regist-wrap ">
             <div class="row">
-              <?php   if ($this->session->flashdata('message')) {
+<?php   if ($this->session->flashdata('message')) {
     ?>
     <div class="message flash">
       <div class="message-data">
         <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
-        <button class="btn success-close">Close</button>
+      <a href="<?php echo base_url().'/login'?>"  <button class="btn success-close">Login</button></a>
         </div>   
         </div>
     <?php
@@ -60,16 +60,17 @@
                                     </div>
                                     <h4 class="red-text">Login Information</h4>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="text" name="username" class="validate">
-                                        <label for="Caption">Username</label>
+                                        <input id="Caption1" type="text" name="username" class="validate">
+                                        <label for="Caption1">Username</label>
+                                        <span id="usernamemsg"></span>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <input id="Caption" type="password" name="password" class="validate">
-                                        <label for="Caption">password</label>
+                                        <input id="Caption2" type="password" name="password" class="validate">
+                                        <label for="Caption2">password</label>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                        <input id="Caption" name="cpassword" type="password" class="validate">
-                                        <label for="Caption"> verify password</label>
+                                        <input id="Caption3" name="cpassword" type="password" class="validate">
+                                        <label for="Caption3"> verify password</label>
                                     </div>
                                       <div class=" col s2">
                                           <p class="right-align">Connect2Me</p>
@@ -89,55 +90,24 @@
                 </div>
                 <div class="col s12 m3 margin-t-15">
                     <div class="online_std z-depth-1">
-                        <ul class="online_std_list">
+                          <ul class="online_std_list">
+                       <?php 
+//print_r($related_users);
+                       foreach ($related_res as $row){ ?>
                             <li>
+                            <?php $pimg = $row['user_avatar']; ?>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>"> 
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
+                                        <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_university"><?php echo $row['user_gender']; ?></p>
+                                        <p class="std_name"><?php echo $row['user_school']; ?></p>
                                     </div>
                                 </div> 
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col m3 s12 std_thumb">
-                                        <img src="http://localhost/ETHIO/images/user.jpg">  
-                                    </div>
-                                    <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#">Sudhir Lahave</a></p>
-                                        <p class="std_university">(Male)</p>
-                                        <p class="std_name">Unilorin Student</p>
-                                    </div>
-                                </div> 
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -145,3 +115,41 @@
         </div>
         <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url() .'js/sregister-validate.js' ?>"></script>
+
+<script>
+
+            $(document).ready(function(){
+              //  alert('dfd');
+                $("#Caption1").blur(function(){
+                    if($(this).val() ){
+                    var value = $("input[name=username]").val();
+                        $.ajax({
+                            context: this,
+                            
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {value},
+                            success: function(data) {
+                                console.log(data);
+
+                                if($.trim(data) == '1'){
+                                        $('#usernamemsg').html("<span style='color:#D8000C'>Username is Already Exist</span>");
+                                       $("#sregister").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#usernamemsg').html("<span style='color:#4CAF50'>Username is Available</span>");
+                                        $("#sregister").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
+                            }
+                            });
+                        }else{
+                            $("#usernamemsg").html('');
+                        }
+                        });
+
+                    });
+
+                </script>

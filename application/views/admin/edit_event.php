@@ -15,24 +15,23 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Events</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit Events</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="container">
-                    <?php if(isset($_GET['id'])){$event_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+                    <?php  if(isset($_GET['id'])){$event_id = $_GET['id'];}
+                       /* $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");  */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($event_details as $row){ 
                                     $eventattachment= $row['post_attachment']
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                   
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -72,7 +71,7 @@
                                                         </div>
                                                        
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s6">
@@ -117,13 +116,7 @@
                                 </section>
                             </div>
                         </div>
-                        <script type="text/javascript" src="<?php echo base_url() . 'js/jquery-2.1.1.min.js' ?>"></script>
-<script type="text/javascript" src="<?php echo base_url() . 'js/materialize.min.js' ?>"></script>
- <script type="text/javascript" src="<?php echo base_url() . '/js/owl.carousel.min.js' ?>"></script>
- <script type="text/javascript" src="<?php echo base_url() . '/js/jquery.validate.min.js' ?>"></script>
- <script type="text/javascript" src="<?php echo base_url() . 'js/picker.js' ?>"></script>
- <script type="text/javascript" src="<?php echo base_url() . '/js/script.js' ?>"></script>
- <script type="text/javascript" src="<?php echo base_url().'/js/bootstrapValidator.js' ?>"></script> 
+                        
                        <?php  $this->load->view('admin/footer'); ?>
 
 
@@ -201,9 +194,9 @@
  
                   avatar:{
                 validators:{
-                    notEmpty:{
+                    /*notEmpty:{
                         message:'please select an image'
-                    },
+                    },*/
                      file:{
                             extension: 'jpeg,jpg,png',
                             type: 'image/jpeg,image/png',

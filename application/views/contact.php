@@ -38,6 +38,7 @@
         <label for="full_name">Full Name</label>
       </div>
 	  <div class= "form-group input-field col s12">
+
          <input type="text"  id="phone_number" name="phone_number" class="form-control">
        <label for="phone_number">Phone Number</label>
        </div>

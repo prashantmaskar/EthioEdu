@@ -17,8 +17,7 @@
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="<?php echo base_url() . 'index.php/admin/Addcourse' ?>">Add Course</a>
-                                        </li>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -38,7 +37,7 @@
 ?>
                     <div class="container">
                         <div class="section">
-                            <p class="caption black-text">Fill all required fields.</p>
+                           
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">

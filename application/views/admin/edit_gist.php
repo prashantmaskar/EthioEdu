@@ -15,10 +15,8 @@ z<?php  $this->load->view('admin/header'); ?>
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Gist</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
-                                        </li>
-                                        <li><a href="#">Edit Gist</a>
-                                        </li>
+                                        <li><a href="<?php echo base_url()?>admin/dashboard">Dashboard</a>
+                                       
                                     </ol>
                                 </div>
                             </div>
@@ -26,13 +24,13 @@ z<?php  $this->load->view('admin/header'); ?>
                     </div>
                     <div class="container">
                      <?php if(isset($_GET['id'])){$gist_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_posts where post_type='gist'  and post_id = '" .$gist_id. "'");
+                    /*    $query = $this->db->query("select * from tbl_posts where post_type='gist'  and post_id = '" .$gist_id. "'"); */
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($gist_details as $row){ 
                                     $gistattachment= $row['post_attachment'];
                         ?>
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                            
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -89,7 +87,7 @@ z<?php  $this->load->view('admin/header'); ?>
                                                             <input type="file"  name="avatar" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload one or more Photo" value="<?php echo $row['post_attachment'];?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group input-field col s12">
@@ -135,7 +133,7 @@ z<?php  $this->load->view('admin/header'); ?>
                             </div>
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
-                        <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-Addgist.js' ?>"></script>
+                       <!-- <script type="text/javascript" src="<?php //echo base_url().'/js/admin/admin-Addgist.js' ?>"></script>-->
 
 
 
@@ -151,7 +149,7 @@ z<?php  $this->load->view('admin/header'); ?>
                         $.ajax({
                             context: this,
                             type: 'POST',
-                            url: "admin/approve_delete",
+                            url: "approve_delete",
                             data: {deletegistimg_id, image},
                             success: function(data) {
                                 console.log(data);
@@ -162,3 +160,101 @@ z<?php  $this->load->view('admin/header'); ?>
                         });
                     }
                 }</script>
+
+                <script>
+                $(document).ready(function() {
+
+    $('#addgist').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' Please enter Gist name!!!..'
+                    }
+                }
+            },
+
+
+
+         Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    }
+                    /*stringLength:{
+                        message:'post Description must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }*/
+                }
+             },
+             catagory:{
+                validators:{
+                    notEmpty:{
+                        message:  ' select category !!!'
+                    }
+                    
+                }
+             },
+
+
+           avatar:{
+            validators:{
+               /*notEmpty:{
+                    message:'please select an image'
+                },*/
+                 file: {
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
+
+            author: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter auther name!!!..'
+                    }
+                }
+            },
+             
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: ' date can not be Empty!!!..'
+                    }
+                }
+            },
+                source_link: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter source link!!!..'
+                    }
+                }
+            },
+                p_caption: {
+                validators: {
+                    notEmpty: {
+                        message: ' enter photo caption!!!..'
+                    }
+                }
+            },
+
+
+               
+             
+
+
+
+
+             }
+    });
+});</script>

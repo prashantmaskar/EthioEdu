@@ -15,26 +15,25 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Advertise</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit Advertise</a>
-                                        </li>
+                                        
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
-                                            <?php if(isset($_GET['id'])){$add_id = $_GET['id'];}
-                        $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
+                                            <?php  if(isset($_GET['id'])){$add_id = $_GET['id'];}
+                       // $query = $this->db->query("select * from tbl_advertise where advertise_id = '" .$add_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($advertise_details as $row){ 
                                 $bannerattachment= $row['advertise_attachment'];
 
                         ?>
 
                     <div class="container">
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                         
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -126,7 +125,7 @@
                                                             <input type="file" name="fileformat" multiple>
                                                         </div>
                                                         <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
+                                                            <input class="file-path validate" name="imagename" type="text" placeholder="Upload Add baner" value="<?php echo $row['advertise_attachment'];?>">
                                                         </div>
                                                     </div>
 													<div class="form-group input-field col s12">
@@ -154,7 +153,7 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
-       <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-advertise.js' ?>"></script>
+       <!--<script type="text/javascript" src="<?php //echo base_url().'/js/admin/admin-advertise.js' ?>"></script>-->
 
 
 
@@ -182,3 +181,117 @@
                         });
                     }
                 }</script>
+
+
+            <script>
+            $(document).ready(function() {
+                  $("#contact").val("+251 ");
+
+
+    $('#advertise').bootstrapValidator({
+        fields: {
+            name:{
+                 validators:{
+                   /* notEmpty:{
+                        message:'Name required'
+                    },*/
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The Name can consist of alphabetical characters and spaces only'
+                    }
+                }
+            },
+        
+            email:{
+                validators:{
+                    notEmpty:{
+                         message:'Email address is required!!!'
+                    },
+                    emailAddress:{
+                        message:'The input is not a valid email adddress!!'
+                    }
+                }
+            },
+            contact: {
+                validators: {
+                    notEmpty:{
+                        message:'contact number required'
+                    },
+                    /*digits:{
+                         message:'contact number is invalid'
+
+                    },*/
+                    regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                      ,   }
+                }
+            },
+            
+            catagory: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select catagory!!!..'
+                           
+                    }
+                }
+            },
+             addposition: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select position!!!..'
+                           
+                    }
+                }
+            },
+             paymentmethod: {
+                validators: {
+                    notEmpty: {
+                        message: ' please select payment method!!!..'
+                           
+                    }
+                }
+            },
+            subject: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter subject!!!..'
+                    }
+                }
+            },
+            fileformat:{
+            validators:{
+                /*notEmpty:{
+                    message:'please select an image'
+                },*/
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },
+             
+             
+             
+              message:{
+                validators:{
+                    notEmpty:{
+                        message:  ' please enter message  !!!'
+                    }
+                  /*  stringLength:{
+                        message:'post tell us must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }*/
+                }
+             },
+          
+     
+            
+          
+        }
+    });
+});</script>

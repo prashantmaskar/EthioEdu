@@ -32,7 +32,7 @@ class event extends CI_Controller {
 function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
 
 
-        $limit = 1;
+        $limit = 10;
         $data['fields']= array(
         'post_id'=>'post_id',
         'post_title'=>'post_title',
@@ -106,7 +106,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
     {
  
 
-        $limit = 1;
+        $limit = 10;
         $data['fields']= array(
        'post_id'=>'post_id',
         'post_title'=>'post_title',

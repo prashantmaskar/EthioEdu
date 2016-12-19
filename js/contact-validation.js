@@ -1,4 +1,6 @@
   $(document).ready(function() {
+     $("#phone_number").val("+251  ");
+
 
     $('#contactform').bootstrapValidator({
         /*feedbackIcons: {
@@ -34,13 +36,11 @@ phone_number:{
 		notEmpty:{
                         message:'phone number is required!!!'
                     },
-		digit:{
-			message:'invalid Phone number!!'
-		},
+		
 		 stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
+                        min:14,
+                        max: 14,
+                        message: '+251 must have before ,contact number must correct .Number should have 9 digit after country code'
                     }
 	}
 },

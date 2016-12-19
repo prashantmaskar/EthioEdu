@@ -32,12 +32,14 @@ class csregister extends CI_Controller {
           
     }
     public function index() {
+        $sessid= $this->session->userdata('suserid');
         $banners = $this->init_models->getadvertisebanners();
-
+        $related_res = $this->init_models->related_users($sessid);
         $view_params = array(
             'm_title' => 'Registration',
             'title' => 'Registration',
-             'banners' => $banners
+             'banners' => $banners,
+             'related_res' => $related_res,
         );
         $this->load->view('csregister',$view_params);
 
@@ -83,7 +85,9 @@ if(isset($_POST['laction'])){
 
 
        public function get_frontuser_id(){
-           $result_id = $this->init_models->getfrontueserid();
+            $emailid = $this->input->post('email');
+           $result_id = $this->init_models->getfrontueserid($emailid);
+          echo $this->db->last_query();
         $data = array( 
 
            'uid'  => $result_id['user_id'],
@@ -104,23 +108,18 @@ if(isset($_POST['laction'])){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('attach'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
+               if (!$this->upload->do_upload('attach') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
-                       //save in currentdate and time format
-                      
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-avatar.png',
+                            );
+                      }
+
 
                 $formdata =  date('d F, Y');
                 $adate = strtotime($formdata);
@@ -133,10 +132,10 @@ if(isset($_POST['laction'])){
                 $birth_diff = (date('Y') - date('Y',strtotime($birth_date)));
 
 
-        date_default_timezone_set('Asia/Kolkata');
-        $time = date('h:i:s A', time());
-$getid = $this->get_frontuser_id();
-            $data = array( 
+                date_default_timezone_set('Asia/Kolkata');
+                $time = date('h:i:s A', time());
+                 $getid = $this->get_frontuser_id();
+                    $data = array( 
 
                 'school_type' => $this->input->post('schooltype'),
                 'user_school' => $this->input->post('school'),
@@ -156,13 +155,12 @@ $getid = $this->get_frontuser_id();
                 'user_time' => $time,
                 'user_id' => $getid['uid']
                 );
-        }
+        
 
 
              if ($this->init_models->adduserdetails($data))
             {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'RegistrationSuccessful'); 
+            $this->session->set_flashdata('message', 'Registration Successful'); 
             redirect("index.php/sregister");
             }
 

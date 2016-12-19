@@ -59,10 +59,10 @@
                                                        </div>
                                                        <?php if ($this->session->userdata('logged_in'))
                                                         {
-                                                             $sessid= $this->session->userdata('suserid');
-                                                             $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
+                                                            // $sessid= $this->session->userdata('suserid');
+                                                            // $query = $this->db->query("select * from  tbl_users where    user_id = '" .$sessid. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($user_details as $row){ 
                                                             ?>
       
                                                     <div class= "form-group input-field col s12">
@@ -78,14 +78,15 @@
                                                         <label for="lastname">Last Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email" value="<?php echo $row['user_email'];?>" class="form-control" readonly>
-                                                        <label for="email">Email Id</label>
+                                                        <input id="schoolemail" type="text" name="email" value="<?php echo $row['user_email'];?>" class="form-control" readonly>
+                                                        <label for="schoolemail">Email Id</label>
                                                     </div>
                                                    <?php    } } else{
                                                     ?>
                                                     <div class= "form-group input-field col s12">
                                                         <input type="text"  id="user_name" name="user_name"  class="form-control" >
                                                         <label for="user_name">user_name</label>
+                                                        <span id="user_namemsg"></span>
                                                     </div>
                                                    <div class= "form-group input-field col s12">
                                                         <input type="text"  id="firstname" name="firstname"  class="form-control" >
@@ -96,8 +97,9 @@
                                                         <label for="lastname">Last Name</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="email" type="text" name="email"  class="form-control" >
-                                                        <label for="email">Email Id</label>
+                                                        <input id="schoolemail" type="text" name="email"  class="form-control" >
+                                                        <label for="schoolemail">Email Id</label>
+                                                        <span id="emailmsg"></span>
                                                     </div>
                                                     <?php }?>
                                                     <div class=" form-group input-field col s12">
@@ -123,8 +125,8 @@
                                                             <option value="">School category</option>
                                                              <option value="KINDERGARTENS and NURSERY ">KINDERGARTENS and NURSERY </option>
                                                             <option value="PRIMARY">PRIMARY</option>
-                                                         <option value="PRIMARY">SECONDARY</option>
-                                                          <option value="PRIMARY">PREPARATORY</option>
+                                                         <option value="SECONDARY">SECONDARY</option>
+                                                          <option value="PREPARATORY">PREPARATORY</option>
                                                         </select>
                                                        </div>
 
@@ -143,16 +145,17 @@
 
                                                             <option value="">Colleges</option>
                                                              <option value="KINDERGARTENS and NURSERY ">Commerce and business </option>
-                                                            <option value="PRIMARY">Computer training and IT</option>
-                                                         <option value="PRIMARY">Distance education</option>
-                                                          <option value="PRIMARY">Engineering</option>
-                                                            <option value="PRIMARY">Medical schools</option>
-                                                              <option value="PRIMARY">University-Colleges</option>
-                                                                <option value="PRIMARY">Theology and bible</option>
-                                                                 <option value="PRIMARY">Agriculture</option>
+                                                            <option value="Computer training and IT">Computer training and IT</option>
+                                                         <option value="Distance education">Distance education</option>
+                                                          <option value="Engineering">Engineering</option>
+                                                            <option value="Medical schools">Medical schools</option>
+                                                              <option value="University-Colleges">University-Colleges</option>
+                                                                <option value="Theology and bible">Theology and bible</option>
+                                                                 <option value="Agriculture">Agriculture</option>
                                                         </select>
                                                        </div>                                                 
                                                                
+
                                                             <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice4">
 
@@ -207,13 +210,38 @@
                                                           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice8">
                                                             <option value="" >School type</option>
-                                                            <option value="Ethiopia">public</option>
-                                                            <option value="Kenya">private</option>
+                                                            <option value="public">public</option>
+                                                            <option value="private">private</option>
                                                          
                                                         </select>
+                                                         
                                                     </div>
+                                                    <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class=" autocomplete" name="Program_tokenfield" id="Program_tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="Program offered">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
 
+                                                    <div class="row">
+                                                    <div class="col s12">
+                                                    <div class="tokenfield">
+                                                       <div class="form-group input-field col s12">
+                                                         
+                                                        <input type="text" class=" autocomplete" name="tokenfield" id="tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="Add facilities">
+                                                        <!--label for="facilities">Facilities</label-->
+                                                       </div>
+                                                   </div>
+                                                  </div>
+                                                     </div>
+          
 
+    
                                                   
                                                     <div class=" form-group input-field col s12">
                                                         <input id="student_population" name="student_population" type="text" class="validate">
@@ -333,7 +361,12 @@
 		</div>
 		</div>
         <?php $this->load->view('footer'); ?>
+
 <script type="text/javascript" src="<?php echo base_url() .'js/addschool.js' ?>"></script>
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.min.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/tokenfield-typeahead.css' ?>" type="text/css" rel="stylesheet" media="screen">
+<link href="<?php echo base_url().'/css/bootstrap-tokenfield.css' ?>" type="text/css" rel="stylesheet" media="screen">
 
 <script>
       function initMap() {
@@ -370,3 +403,67 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+                $("#user_name").blur(function(){
+                    if($(this).val() ){
+                    var value = $("input[name=user_name]").val();
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {value},
+                            success: function(data) {
+                                if($.trim(data) == '1'){
+                                        $('#user_namemsg').html("<span style='color:#D8000C'>Username is Already Exist</span>");
+                                       $("#homeaddschoolform").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#user_namemsg').html("<span style='color:#4CAF50'>Username is Available</span>");
+                                        $("#homeaddschoolform").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
+                            }
+                            });
+                        }else{
+                            $("#user_namemsg").html('');
+                        }
+                        });
+
+
+
+                $("#schoolemail").blur(function(){
+                    if($(this).val() ){
+                    var emailid = $("input[name=email]").val();
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "validate_ajax",
+                            data: {emailid},
+                            success: function(data) {
+                                if($.trim(data) == '1'){
+                                        $('#emailmsg').html("<span style='color:#D8000C'>Email ID Already Registered</span>");
+                                       $("#homeaddschoolform").submit(function(e){
+                                            e.preventDefault();
+                                        });
+                                }else{
+                                    $('#emailmsg').html("<span style='color:#4CAF50'>Email ID is Available</span>");
+                                        $("#homeaddschoolform").submit(function(e){
+                                            e.currentTarget.submit();
+                                        });
+                                }   
+                            }
+                            });
+                        }else{
+                            $("#emailmsg").html('');
+                        }
+                        });
+
+
+
+
+                    });
+
+</script>

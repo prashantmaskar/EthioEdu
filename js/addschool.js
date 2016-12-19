@@ -1,4 +1,7 @@
 $(document).ready(function() {
+     $("#phone_number").val("+251 ");
+    
+
 
     $("input[type=checkbox][name=agree]").click(function()
     {
@@ -30,10 +33,21 @@ $(document).ready(function() {
                     }
                 }
             },
-            fullname:{
+            firstname:{
                  validators:{
                     notEmpty:{
-                        message:'please enter fullname!!!..'
+                        message:'please enter firstname!!!..'
+                    },
+                    regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The full name can consist of alphabetical characters and spaces only'
+                    }
+                }
+            },
+             lastname:{
+                 validators:{
+                    notEmpty:{
+                        message:'please enter lastname!!!..'
                     },
                     regexp:{
                               regexp: /^[a-z\s]+$/i,
@@ -43,17 +57,14 @@ $(document).ready(function() {
             },
 
             fileformat:{
-            validators:{
-                notEmpty:{
-                    message:'please select an image'
-                },
+           
                  file:{
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',
                         maxSize: 2097152,   // 2048 * 1024
                         message: 'The selected file is not valid'
                     }
-                 }
+                 
            },
         
             email:{
@@ -109,15 +120,20 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'contact required!!!..'
-                    },digits:{
+                    },
+                    /*digits:{
                          message:'contact number is invalid'
 
                     },
                     stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
-                    }
+                        min:14,
+                        max: 14,
+                        message: 'contact number must contain correct digits'
+                    }*/
+                     regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! Number should have 9 digit after country code!!'
+                      ,   }
                 }
             },
              choice5: {
@@ -194,8 +210,19 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' please enter acadamic year !!!'
                     },
-                    digits:{
-                        message:'select year format'
+                   digits:{
+                         message:'invalid year'
+
+                    },
+                    /*stringLength: {
+                        min:4,
+                        max:4,
+                        message: 'invalid year ,please enter correct year'
+                    },*/
+                    between:{
+                           min:2016,
+                        max: 2050,
+                        message: 'year must be in range ,please enter present year or next'
                     }
                 }
              },
@@ -319,3 +346,29 @@ $(document).ready(function() {
         }
     });
 });
+
+//var jq = $.noConflict();
+$(document).ready(function() {
+
+ $('#tokenfield').tokenfield({
+  autocomplete:{
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
+
+
+
+    $(document).ready(function() {
+
+ $('#Program_tokenfield').tokenfield({
+  autocomplete:{
+    source: ['primary','Nursary','Secondary'],
+    delay: 100
+  },
+  showAutocompleteOnFocus: true
+});
+}); 
+    

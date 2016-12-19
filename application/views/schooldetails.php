@@ -3,10 +3,12 @@
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
-                    <?php $sch_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+                    <?php  $sch_id = $_GET['id'];
+                       // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
-                                foreach ($query->result_array() as $row){ 
+                                foreach ($sch_details as $row){ 
+                                      
+
                                     
                         ?>
                         <div class="school_banner col m12">
@@ -23,14 +25,21 @@
                         <div class="col m12">
                             <div class="school_social">
                                 <ul>
-                                    <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                  <!--  <li><a href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
                                     <li><a href="#" class="waves-effect waves-light btn light-blue darken-2"><i class="fa fa-envelope"></i> Mail</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
                                     <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
 
-                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
+                                    <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li>  -->
+                                    <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
+
+                                            <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
 
                                 </ul>
                             </div>
@@ -72,12 +81,13 @@
                                 </ul>-->
                             </div>
                         </div>
-                        <div class="col m12">
+
+                        <!-- <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Owner-Ship</h2>
                                 <p class="sch_country">Public</p>
                             </div>
-                        </div>
+                        </div> -->
 <!--                        <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">History</h2>
@@ -90,7 +100,7 @@
                                 <p>The school looks into the future with hope and will continue to make the sky the limit.</p>
                             </div>
                         </div>-->
-                        <div class="col m12">
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Programs Offered</h2>
                                 <p class="sch_country">Secondary Education</p>
@@ -105,8 +115,8 @@
                                     <li><i class="fa fa-graduation-cap "></i> Architecture</li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col m12">
+                        </div> -->
+                       <!--  <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Schools Facility</h2>
                                 <ul>
@@ -121,7 +131,33 @@
                                     <li><i class="fa fa-chevron-circle-right "></i> Other </li>
                                 </ul>
                             </div>
+                        </div> -->
+
+                      <?php              
+                       $str=$row['Program_tokenfield'];
+                                       $str=str_replace("," , "<br>",$str);
+                    ?>
+                       
+                         <div class="col m12">
+                            <div class="school_country">
+                                <h2 class="sch_det_title">Programs offered</h2>  
+                                <p><?php echo $str ?></p><br/>
+                            </div>
                         </div>
+
+
+                    <?php              
+                       $str=$row['school_facility'];
+                                       $str=str_replace("," , "<br>",$str);
+                    ?>
+                       
+                         <div class="col m12">
+                            <div class="school_country">
+                                <h2 class="sch_det_title">School facility</h2>  
+                                <p><?php echo $str ?></p><br/>
+                            </div>
+                        </div>
+
                         <div class="col m12">
                             <div class="school_country">
                                 <h2 class="sch_det_title">Student Population</h2>
@@ -195,13 +231,20 @@
                                 <p><i class="fa fa-phone"></i> Ph.No. <?php echo $row['school_number']?></p>
                             </div>
                         </div>
+                    <?php    if ($this->session->userdata('logged_in'))
+                        {  ?>
                         <div class="col m12">
                             <div class="school_country">
-                                <h2 class="sch_det_title">Inquiry</h2>
+                                <h2 class="sch_det_title">Enquiry</h2>
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
+
+                       <!--  <div class="coment_box row">
+
+                        <?php } ?>
                         <div class="coment_box row">
+
                             <div class="col m12">
                                 <h2>Add New Comment</h2>
                             </div>
@@ -226,60 +269,64 @@
                             </div>
 
 
-                        </div>
+                        </div> -->
 
 <?php } ?>
 
                     </div>
+                    <div class="coment_box row">
+                            <div class="col m12">
+                                <h2>Add New Comment</h2>
+                            </div>
+                            <div>
+                            <div class="course_info">
+        <!-- <p class="lead black-text"><h1 class = "page-heading">Question:<?php //echo $ques->question_desc ?></h1></p> --> </div>
+        <?php  $sname= $this->session->userdata('susername');?></div>
+        <div class="col m12 s12 card-panel"> <?php echo $comments ?> </div>
+         <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div> 
+         <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/>  
+                            <div class="coment_form">
+                                <form id="comment_form" action="#" method="post">
+                                    <div class="input-field col s12">
+                                        <label for="comment_name">Name:</label> 
+          <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
+                                    </div>
+                                   
+                                    <div class="input-field col s12">
+                                        <label for="comment"><i class='material-icons prefix'>mode_edit</i>Comment :</label> 
+           <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
+                                    </div>
+                        <input type='hidden' name='parent_id' value="0" id='parent_id' />
+                    <input type='hidden' name='response_type' value="answer" id='response_type' />
+                    <input type='hidden' name='response_like' value="0" id='response_like' />
+    <input type='hidden' name='question_id' id='parent_id' />     
+
+                 <div id='submit_button' class="margin-b-10"> 
+             <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
+             </div> 
+                                </form>
+                            </div>
+
+
+                        </div>
                 </div>
+                
+
+
                 <div class="col s12 m3 ">
                   <div class="latest_news_wrap ">
                         <h1 class="red_label_title">Latest News</h1>
                         <ul class="latest_news_list">
+                            <?php
+                                foreach ($news as $row){ ?>
                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
+                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
+                                    <span class="News_title"><?php echo $row['post_title']; ?></span>
+                                </a>
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_date']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                    </span></span>
                             </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                             <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
-                            <li class="Latest_news_content">
-                                <a href="#">IBBU Online Admission Screening ... </a>
-                                (8)
-                            </li>
+                            <?php } ?>
                             
                         </ul>
                     </div>
@@ -291,6 +338,15 @@
 <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script type='text/javascript'> 
+$(function () {
+  $("a.reply").click(function () 
+  { var id = $(this).attr("id"); 
+  $("#parent_id").attr("value", id); 
+  $("#name").focus();
+  }); 
+  }); 
+  </script>
 <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -327,3 +383,26 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
     </script>
+    <?php foreach ($sch_details as $row){
+    $post_desc = substr($row['school_desc'],0,100);
+                  $fdesc = $post_desc.'...';
+     ?>
+ ?>
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: '<?php echo $row['school_name']; ?>',
+link: ' <?php echo base_url(); ?>index.php/schooldetails?id=<?php echo $row['school_id']; ?>',
+picture: 'https://www.giz.de/static/en/images/images_References/toolbox_sponsor/Logo-MoE_rdax_205x194.jpg',
+caption: 'Ethio Edu Vacancy',
+description: '<?php echo $fdesc; ?>',
+message: ''
+});
+});
+});
+</script>
+<?php } ?>

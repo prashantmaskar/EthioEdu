@@ -48,6 +48,7 @@ class post_vacancy extends CI_Controller {
             'title' => 'Post Vacancy',
             'banners' => $banners
         );
+        $view_params['previous_vacancy'] = $this->init_models->get_previous_vacancy();
         $this->load->view('post_vacancy',$view_params);
 
 

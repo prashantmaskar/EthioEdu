@@ -90,14 +90,14 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="old_gist_list">
                         <h2 class="gist_post_title">Previously Posted Gists</h2>
-                    <ul class="gist_list">
+                    <ul class="latest_news_list">
                     <?php
                      foreach ($gist as $row){ ?>
-                            <li class="gist_content">
+                            <li class="Latest_news_content">
                                 <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
                                     <span class="gist_title"><?php echo $row['post_title']; ?></span>
                                 </a>
-                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong><?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_author']; ?></a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong><?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_author']; ?></a> | Comments [7]  
                                     </span></span>
                             </li>
                     <?php } ?>

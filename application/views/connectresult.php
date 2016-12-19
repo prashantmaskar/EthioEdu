@@ -25,10 +25,10 @@
                                         <img src="<?php echo base_url() ?>uploads/<?php echo $avatar?>">  
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#"><?php echo $row->first_name; ?> <span><?php echo $row->last_name; ?></span></a></p>
+                                        <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row->user_id; ?>"><?php echo $row->first_name; ?> <span><?php echo $row->last_name; ?></span></a></p>
                                         <p class="std_age">Age : <span><strong><?php echo $row->user_age?>| <?php echo $row->user_gender; ?></strong></span></p>
                                         <p class="std_school">Level: <span><strong><?php echo $row->user_level; ?></strong></span></p>
-                                        <p class="std_interaest">he is Interested In <?php echo $row->user_interest; ?> <span><a href="<?php echo base_url().'index.php/sdetail'?>">View Full profile</a></span></p>
+                                        <p class="std_interaest">he is Interested In <?php echo $row->user_interest; ?> <span><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row->user_id; ?>">View Full profile</a></span></p>
                                     </div>
                                 </div> 
                             </li> 
@@ -39,13 +39,6 @@
                             
                         </ul>
                       <!--  <ul class="pagination margin-b-10">
-                            <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-                            <li class="active"><a href="#!">1</a></li>
-                            <li class="waves-effect"><a href="#!">2</a></li>
-                            <li class="waves-effect"><a href="#!">3</a></li>
-                            <li class="waves-effect"><a href="#!">4</a></li>
-                            <li class="waves-effect"><a href="#!">5</a></li>
-                            <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
                         </ul> -->
                         <?php echo $pagination; ?>
                     </div>
@@ -153,12 +146,13 @@
 //print_r($related_users);
                        foreach ($related_res as $row){ ?>
                             <li>
+                            <?php $pimg = $row['user_avatar']; ?>
                                 <div class="row">
                                     <div class="col m3 s12 std_thumb">
-                                        <img src="<?php echo base_url() . 'images/user.jpg' ?>">  
+                                        <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $pimg; ?>">
                                     </div>
                                     <div class="col m9 std_details">
-                                        <p class="std_name"><a href="#"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
+                                        <p class="std_name"><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></a></p>
                                         <p class="std_university"><?php echo $row['user_gender']; ?></p>
                                         <p class="std_name"><?php echo $row['user_school']; ?></p>
                                     </div>

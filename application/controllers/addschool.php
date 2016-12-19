@@ -67,9 +67,9 @@ class addschool extends CI_Controller {
             'banners' => $banners,
             'captcha' => $this->captcha->main()
         );
-
+        $sessid= $this->session->userdata('suserid');
         $this->session->set_userdata('captcha_info', $view_params['captcha']);
-
+        $view_params['user_details'] = $this->init_models->getuserdetails($sessid);
         $this->load->view('addschool',$view_params);
     } 
 
@@ -103,7 +103,8 @@ class addschool extends CI_Controller {
           
 }
  function get_user_id(){
-    $ress = $this->init_models->getueserid();
+  $schooluseremailid = $this->input->post('email');
+    $ress = $this->init_models->getueserid($schooluseremailid);
         $data = array( 
 
            'uid'  => $ress['user_id'],
@@ -129,23 +130,17 @@ function insertschooldata(){
                  $config['file_name'] = $imagename; // set the name here
 
                 $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('fileformat'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-                         
-                       // $this->load->view('upload_form', $error);
-                }
-
-else{
-
-    $data1 = array('upload_data' => $this->upload->data());
+              if (!$this->upload->do_upload('fileformat') == ""){
+                $data1 = array('upload_data' => $this->upload->data());
 
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
+                      }else{
+                        $filedata= array(
+                            'file_name' => 'default-image.jpg',
+                            );
+                      }
 /*
         $date = date('d F, Y');
         date_default_timezone_set('Asia/Kolkata');
@@ -176,6 +171,8 @@ else{
                 'school_region' => $this->input->post('choice7'),
                 'school_type' => $this->input->post('choice8'),
                 'school_population' => $this->input->post('student_population'),
+                'Program_tokenfield' => $this->input->post('Program_tokenfield'),  
+                'school_facility' => $this->input->post('tokenfield'),
                 'teaching_staff' => $this->input->post('t_staff'),
                 'non_teaching_staff' => $this->input->post('non_teach'),
                 'school_awards' => $this->input->post('past_award'),
@@ -205,7 +202,7 @@ else{
                 redirect("index.php/addSchool");
 
             }
-        }
+        
 }
 
 

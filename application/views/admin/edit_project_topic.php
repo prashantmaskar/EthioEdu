@@ -15,10 +15,9 @@
                                 <div class="col s12 m12 l12">
                                     <h5 class="breadcrumbs-title">Edit Project Topic</h5>
                                     <ol class="breadcrumbs">
-                                        <li><a href="index.html">Dashboard</a>
+                                        <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
-                                        <li><a href="#">Edit Project Topic</a>
-                                        </li>
+                                      
                                     </ol>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                            <p class="caption" style="color:black"; >Fill all required fields.</p>
+                          
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -35,9 +34,9 @@
                                             <h4 class="header2">Edit Project Topic FORM</h4>
                                             <div class="row">
                                             <?php if(isset($_GET['id'])){$topic_id = $_GET['id'];}
-                        $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
-                        
-                                foreach ($query->result_array() as $row){ 
+                       /* $query = $this->db->query("select * from  tbl_projects where    project_id = '" .$topic_id. "'");
+                        */
+                                foreach ($project_details as $row){ 
                                     
                         ?>
 

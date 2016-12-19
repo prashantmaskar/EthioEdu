@@ -77,7 +77,7 @@
                                
                                    <ul class="project_list">
                                   <?php
-                                  if(isset($_POST['action'])){
+                                /*  if(isset($_POST['action'])){
 
                                        if(isset($_POST['project_name'])){
                                          $pname = $_POST['project_name'];
@@ -127,7 +127,7 @@
 
                                 }else{
                                     $query = $this->db->query("select * from tbl_projects where project_approve = 1");
-                                }
+                                }  */
 
                                     ?>
                                     <?php 
