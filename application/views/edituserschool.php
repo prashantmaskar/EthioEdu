@@ -64,12 +64,12 @@
                                                         <div style="position: relative;display: inline-block;">
                                                             <img class="edit-attach" src="http://localhost/ETHIO/uploads/<?php  echo $row['school_logo'];?>" height="42px" style="width:auto !important;" width="auto">
                                                             <a  href="javascript:void(0);" onclick="deleted(<?php echo $sch_id;?>,<?php echo "'$logoattachment'"; ?>);" style="background: red;
-    padding: 5px;
-    border-radius: 10px;
-    color: #fff;
-    position: absolute;
-    top: 0px;
-    right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                     padding: 5px;
+                                  border-radius: 10px;
+                                   color: #fff;
+                                   position: absolute;
+                                    top: 0px;
+                                right: 0px;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                         </div></div>
                                                     <?php }?>
                                                          
@@ -260,7 +260,7 @@
                                                           <input type="hidden" name="approve_status" value="0">
                                                     <div class="input-field col s4">
                                                         <div class="input-field col s12">
-                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Update</button>
+                                                            <button class="btn cyan waves-effect waves-light margin-b-10" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Update</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -342,6 +342,7 @@
             function deleted(id,userimg)
             {
                 var deleteuserimg_id = id;
+                //alert(deleteuserimg_id);
                 var image = userimg;
             if (confirm('Sure to Delete ?'))
                     {
@@ -352,7 +353,7 @@
                             data: {deleteuserimg_id, image},
                             success: function(data) {
                                 console.log(data);
-                                location.reload();
+                               location.reload();
 
 
                             }
