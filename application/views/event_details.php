@@ -43,10 +43,15 @@
                                     <div class="school_social">
                                         <ul>
                                             <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
+                                            <?php 
 
-                                            <li><a href="#" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+                                            $event_desc = substr($row['post_desc'],0,100);
+                                             $edesc = $event_desc.'...';
+                                            ?>
+                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url(uri_string()); ?>&title=<?php echo $row['post_title']; ?>&summary=<?php echo $edesc; ?>" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
-                                            <li><a href="#" class="waves-effect waves-light btn twitter darken-3"><i class="fa fa-twitter"></i> Twitter</a></li> 
+                                            <li><a href="https://twitter.com/intent/tweet?text=<?php echo $row['post_title']?>?url=<?php echo current_url(); ?>" data-show-count="false" class="waves-effect waves-light btn twitter darken-3 "><i class="fa fa-twitter"></i> Twitter</a></li> 
+                                           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                                             <li><a href="#" class="waves-effect waves-light btn googleplus darken-3"><i class="fa fa-google-plus"></i> Google</a></li> 
 
