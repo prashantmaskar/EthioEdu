@@ -313,9 +313,6 @@ img.edit-attach {
 }
 
 
-
-
-
 .review_info [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
     border: 0px !important;
 }
@@ -731,6 +728,25 @@ a.post-share.stumble span {
     color: #0A88FF;
 
 }
+
+#table_id_filter label {
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+#table_id_filter input {
+font-size: 14px;
+    font-weight: normal;
+    }
+    .dataTables_wrapper .dataTables_filter{
+            text-align: left;
+    }
+
+    div#table_id_length {
+    display: none;
+}
+
 
 .ui-autocomplete {
          background-color: #fff;

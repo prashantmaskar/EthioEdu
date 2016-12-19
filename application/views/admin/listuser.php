@@ -25,12 +25,11 @@
                     </div>
                     <div class="container">
                         <div class="section">
-                          <!--   <p class="caption black-text">List Of All Registered Users.</p> -->
                             <div class="divider"></div>
                             <div id="table-wrap">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
-                                        <table class="bordered">
+                                        <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
                                                     <th data-field="id">User Name</th>

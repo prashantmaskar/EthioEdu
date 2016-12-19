@@ -39,11 +39,12 @@ class ListEvent extends CI_Controller {
 
 	public function index()
 	{
+			$post_type = $_GET['post_type'];
              $view_params = array(
                 'm_title' => 'Admin List Event',
                 'title'   => 'Admin List Event'
             );
-              $view_params['event'] = $this->init_models->selectallevent();
+              $view_params['posts_details'] = $this->init_models->get_posts_details($post_type);
 		$this->load->view('admin/listevent',$view_params);
 	}
 }
