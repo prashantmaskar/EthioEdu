@@ -1,3 +1,4 @@
+<style>.ui-helper-hidden-accessible { display:none; }</style>
 <?php  $this->load->view('admin/header'); ?>
         <!--start main-->
         <div id="main">

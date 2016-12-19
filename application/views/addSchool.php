@@ -1,3 +1,6 @@
+<style>
+.ui-helper-hidden-accessible { display:none; }
+</style>
 <?php  $this->load->view('header'); ?>
 
         <div class="service-wrap ">
