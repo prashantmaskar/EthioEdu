@@ -65,9 +65,3 @@ $('.datepicker').pickadate({
          format: 'yyyy-mm-dd',
                 })
 });
-
-
-
-$(document).ready( function () {
-    $('#table_id').DataTable();
-} );
