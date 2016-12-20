@@ -44,7 +44,7 @@
                               <div class="row">
                                   <div class="col s12 m12 card-panel">
                                       <div class="container-header">
-                                      <?Php //print_r($query->result_array()); ?>
+                                      <?Php if(!$user_activity == ""){ ?>
                                           <?php foreach($user_activity as $row){ 
                                             $id = $row['id'];
                                             ?>
@@ -65,7 +65,7 @@
                                                   <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/news_detail?id='.$id?>"><?php echo $row['post_title']; ?></a> News </p>
+                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/news_detail?id='.$id?>"><?php echo $row['post_title']; ?></a> News </p>
                                                   <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
                                           </div>    
@@ -76,12 +76,15 @@
                                                   <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p><?php echo $sessname; ?>  Added <a href="<?php echo base_url() . 'index.php/gist'?>"><?php echo $row['post_title']; ?></a> Gist </p>
+                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/gist'?>"><?php echo $row['post_title']; ?></a> Gist </p>
                                                   <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
                                           </div>    
                                           <?php } ?>
-                                          <?php } ?>
+                                          <?php }}
+                                          else{
+                                            echo"No Result Found";
+                                            } ?>
                                       </div>
                                       <div class="container-content"></div>
                                   </div>
