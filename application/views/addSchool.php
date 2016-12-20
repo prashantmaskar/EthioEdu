@@ -235,7 +235,7 @@
                                                     <div class="tokenfield">
                                                        <div class="form-group input-field col s12">
                                                          
-                                                        <input type="text" class=" autocomplete" name="Program_tokenfield" id="Program_tokenfield" value="Computer Study Lab,Football Pitch "/ placeholder="Program offered">
+                                                        <input type="text" class=" autocomplete" name="Program_tokenfield" id="Program_tokenfield" value="primary,Nursary "/ placeholder="Program offered">
                                                         <!--label for="facilities">Facilities</label-->
                                                        </div>
                                                    </div>
