@@ -48,19 +48,19 @@ $(document).ready(function() {
                 }
              },
             
-             /*phone_number: {
-                validators: {
-                    digits:{
-                         message:'contact number is invalid'
-
-                    },
-                    stringLength: {
-                        min:10,
-                        max: 10,
-                        message: 'contact number must contains 10 digits'
+             phone_number:{
+    validators:{
+       /* notEmpty:{
+                        message:'phone number is required!!!'
+                    },*/
+        
+         stringLength: {
+                        min:14,
+                        max: 14,
+                        message: '+251 must have before ,contact number must correct .Number should have 9 digit after country code'
                     }
-                }
-            },*/
+    }
+},
              subject:{
                     validators:{
                         notEmpty:{

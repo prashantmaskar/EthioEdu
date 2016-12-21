@@ -146,7 +146,11 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter student_population!!!'
-                    }
+                    },
+                    digits:{
+                         message:'population should be in digit'
+
+                            }
                 }
              },
              t_staff:{
@@ -155,7 +159,7 @@ $(document).ready(function() {
                         message:  ' please Enter amount of teaching staff!!!'
                     },
                      digits:{
-                         message:'price invalid'
+                         message:'T-staff should be in digit'
 
                             }
                 }
@@ -166,7 +170,7 @@ $(document).ready(function() {
                         message:  ' please Enter amount of non_teaching staff!!!'
                     },
                      digits:{
-                         message:'price invalid'
+                         message:' non-teach staff should be in digit'
 
                             }
                 }
