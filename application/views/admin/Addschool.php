@@ -148,7 +148,7 @@
                                                              <select class="form-control browser-default" name="choice4">
                                                              <option value="">other catagory</option>
                                                             
-                                                              <option value="Account">Aviation</option>
+                                                              <option value="Aviation">Aviation</option>
                                                             <option value="Arts and Design">Arts and Design</option>
                                                              <option value="Health and Beauty">Health and Beauty</option>
                                                              <option value="Counsellling and Enterprenuership">Counsellling and Enterprenuership</option>
