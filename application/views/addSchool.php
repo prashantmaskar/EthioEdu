@@ -125,8 +125,8 @@
                                                             <option value="">School category</option>
                                                              <option value="KINDERGARTENS and NURSERY ">KINDERGARTENS and NURSERY </option>
                                                             <option value="PRIMARY">PRIMARY</option>
-                                                         <option value="PRIMARY">SECONDARY</option>
-                                                          <option value="PRIMARY">PREPARATORY</option>
+                                                         <option value="SECONDARY">SECONDARY</option>
+                                                          <option value="PREPARATORY">PREPARATORY</option>
                                                         </select>
                                                        </div>
 
@@ -145,13 +145,13 @@
 
                                                             <option value="">Colleges</option>
                                                              <option value="KINDERGARTENS and NURSERY ">Commerce and business </option>
-                                                            <option value="PRIMARY">Computer training and IT</option>
-                                                         <option value="PRIMARY">Distance education</option>
-                                                          <option value="PRIMARY">Engineering</option>
-                                                            <option value="PRIMARY">Medical schools</option>
-                                                              <option value="PRIMARY">University-Colleges</option>
-                                                                <option value="PRIMARY">Theology and bible</option>
-                                                                 <option value="PRIMARY">Agriculture</option>
+                                                            <option value="Computer training and IT">Computer training and IT</option>
+                                                         <option value="Distance education">Distance education</option>
+                                                          <option value="Engineering">Engineering</option>
+                                                            <option value="Medical schools">Medical schools</option>
+                                                              <option value="University-Colleges">University-Colleges</option>
+                                                                <option value="Theology and bible">Theology and bible</option>
+                                                                 <option value="Agriculture">Agriculture</option>
                                                         </select>
                                                        </div>                                                 
                                                                
@@ -210,8 +210,8 @@
                                                           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice8">
                                                             <option value="" >School type</option>
-                                                            <option value="Ethiopia">public</option>
-                                                            <option value="Kenya">private</option>
+                                                            <option value="public">public</option>
+                                                            <option value="private">private</option>
                                                          
                                                         </select>
                                                          

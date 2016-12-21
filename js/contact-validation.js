@@ -40,7 +40,7 @@ phone_number:{
 		 stringLength: {
                         min:14,
                         max: 14,
-                        message: '+251 must have before ,contact number must correct .No should have 9 digit after country code'
+                        message: '+251 must have before ,contact number must correct .Number should have 9 digit after country code'
                     }
 	}
 },

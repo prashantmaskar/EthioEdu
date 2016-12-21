@@ -132,7 +132,7 @@ $(document).ready(function() {
                     }*/
                      regexp:{
                      regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
-                           message:'invalid Phone number,!! You should enter country code space 9 digit contact number!!'
+                           message:'invalid Phone number,!! Number should have 9 digit after country code!!'
                       ,   }
                 }
             },
