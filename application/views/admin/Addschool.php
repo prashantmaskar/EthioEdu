@@ -85,9 +85,11 @@
                                                     <div class=" form-group input-field col s12">
                                                       <select class="form-control browser-default" name="choice1">
                                                              <option value="">School catagory</option>
-                                                              <option value="Account">Account</option>
-                                                            <option value="Agriculture">Agriculture</option>
-                                                             <option value="Account">Account</option>
+                                                              <option value="Kindergartens and Nursery">Kindergartens and Nursery</option>
+                                                            <option value="International">International</option>
+                                                             <option value="Primary">Primary</option>
+                                                             <option value="Secondary">Secondary</option>
+                                                             <option value="preparatory">preparatory</option>
                                                                 
                                                         </select>
 
@@ -146,10 +148,19 @@
                                                              <select class="form-control browser-default" name="choice4">
                                                              <option value="">other catagory</option>
                                                             
-                                                              <option value="Account">Account</option>
-                                                            <option value="Agriculture">Agriculture</option>
-                                                             <option value="Account">Account</option>
-
+                                                              <option value="Account">Aviation</option>
+                                                            <option value="Arts and Design">Arts and Design</option>
+                                                             <option value="Health and Beauty">Health and Beauty</option>
+                                                             <option value="Counsellling and Enterprenuership">Counsellling and Enterprenuership</option>
+                                                             <option value="Driving Schools">Driving Schools</option>
+                                                             <option value="Language,computer and IT training school">Language,computer and IT training schools</option>
+                                                             <option value="Tutorial centers">Tutorial centers</option>
+                                                             <option value="Hotel,tourism and Hospitality">Hotel,tourism and Hospitality</option>
+                                                             <option value="Accounts and Accountancy">Accounts and Accountancy</option>
+                                                             <option value="Mass media">Mass media</option>
+                                                             <option value="Music schools">Music schools</option>
+                                                             <option value="Vocational/technical">Vocational/technical</option>
+                                                                <option value="others">others</option>
                                                           
                                                         </select>
 
@@ -181,9 +192,17 @@
                                                     <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice7">
                                                             <option value="" >Choose Region</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Africa">Africa</option>
+                                                            <option value="ADDIS ABABA">ADDIS ABABA</option>
+                                                            <option value="OROMIA">OROMIA</option>
+                                                            <option value="AMHARA">AMHARA</option>
+                                                            <option value="TIGRAY">TIGRAY</option>
+                                                            <option value="SNNP">SNNP</option>
+                                                            <option value="SOMALI">SOMALI</option>
+                                                            <option value="AFAR">AFAR</option>
+                                                            <option value="BENISHANGUL-GUMUZ">BENISHANGUL-GUMUZ</option>
+                                                            <option value="DIRE DAWA">DIRE DAWA</option>
+                                                            <option value="GAMBELLA">GAMBELLA</option>
+                                                            <option value="HORARI">HORARI</option>
                                                         </select>
                                                     </div>
 
@@ -191,8 +210,12 @@
                                                           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="choice8">
                                                             <option value="" >School type</option>
-                                                            <option value="public">public</option>
-                                                            <option value="private">private</option>
+                                                            <option value="public">Day only</option>
+                                                            <option value="Day and night">Day and night</option>
+                                                            <option value="Boarding only">Boarding only</option>
+                                                            <option value="Boarding and day">Boarding and day</option>
+                                                            <option value="Boarding and day/night">Boarding and day/night</option>
+
                                                          
                                                         </select>
                                                     </div>

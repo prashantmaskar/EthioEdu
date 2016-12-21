@@ -352,7 +352,7 @@ $(document).ready(function() {
 
  $('#tokenfield').tokenfield({
   autocomplete:{
-    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library'],
+    source: ['Computer Study Lab',' Football Pitch ','Science Labs','Swimming Pool','Library','Basket ball court','Football pitch','design and technology lab','tennis court'],
     delay: 100
   },
   showAutocompleteOnFocus: true
