@@ -31,9 +31,9 @@ class edituserschool extends CI_Controller {
     { 
         redirect('index.php/login');
     }
-    if (!($this->session->userdata('role') == 'admin')){
+    /* if (!($this->session->userdata('role') == 'admin')){
       redirect('index.php/home');
-    }
+    } */
     }
 
 

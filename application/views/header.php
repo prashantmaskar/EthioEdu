@@ -82,8 +82,9 @@ document.getElementById('fb-root').appendChild(e);
  <ul id='dropdownl' class='dropdown-content'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
 
- <li><a href="<?php echo base_url() . 'index.php/edituserschool?id=7' ?>">Edit School()</a></li>
-
+ <!-- <li><a href="<?php //echo base_url() . 'index.php/edituserschool?id=7'?>">Edit School()</a></li> -->
+ 
+ <li><a href="<?php echo base_url() . 'index.php/userschoollist'?>">Edit School()</a></li>
 
     <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>
