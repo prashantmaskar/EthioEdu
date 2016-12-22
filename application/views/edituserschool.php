@@ -234,7 +234,7 @@
                                                    <div class="col m12">
                                                   <div class="school_country">
                                                  <h2 class="sch_det_title">Address</h2>
-                                                   <div id="address"><?php echo $row['school_address']; ?></p>
+                                                  <input id="address" type="text" class="validate" name="address" value="<?php echo $row['school_address']; ?>"</p>
                                               <div id="map" style="height:200px;width:100%;" ></div>
                                                   </div>
                                               </div></div>
