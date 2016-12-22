@@ -203,6 +203,12 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter Admission Procedures !!!'
+                    },
+                     stringLength:{
+                        message:'post tell us must be less than 200 characters',
+                        max:function(value,validator,$field){
+                            return 200 - (value.match(/\r/g) || []).length;
+                        }
                     }
                   
                     
@@ -212,6 +218,12 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter academic requierement descreeption !!!'
+                    },
+                      stringLength:{
+                        message:'requierement must be less than 200 characters',
+                        max:function(value,validator,$field){
+                            return 200 - (value.match(/\r/g) || []).length;
+                        }
                     }
                    
                     
@@ -221,6 +233,12 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please Enter scolership!!!'
+                    },
+                    stringLength:{
+                        message:'post  must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
                     }
                 }
              },
@@ -229,7 +247,12 @@ $(document).ready(function() {
                     notEmpty:{
                         message:  ' address required!!!'
                     },
-                  
+                    stringLength:{
+                        message:'address must be less than 60 characters',
+                        max:function(value,validator,$field){
+                            return 60 - (value.match(/\r/g) || []).length;
+                        }
+                    }
                     
                 }
              },
@@ -247,13 +270,13 @@ $(document).ready(function() {
                 validators:{
                     notEmpty:{
                         message:  ' please tell us about yourslef  !!!'
-                    }
-                   /* stringLength:{
+                    },
+                    stringLength:{
                         message:'post tell us must be less than 120 characters',
                         max:function(value,validator,$field){
                             return 120 - (value.match(/\r/g) || []).length;
                         }
-                    }*/
+                    }
                 }
              },
 

@@ -88,7 +88,7 @@
                                        <input type="file"  name="avatar" multiple>
                                  </div>
                                  <div class="file-path-wrapper">
-                                     <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>"">
+                                     <input class="file-path validate" name="imagename" type="text" placeholder="Upload Photo" value="<?php echo $row['post_attachment'];?>">
                                 </div>
                                </div>
                                                                        <?php }else{ ?>
@@ -171,7 +171,13 @@
                                 </section>
                             </div>
                         </div>
+                         
                         <?php  $this->load->view('admin/footer'); ?>
+
+                       
+
+
+
                         <script>
 
             function deleted(id,aboutattachment)
@@ -195,3 +201,60 @@
                         });
                     }
                 }</script>
+
+
+                <script>
+                $(document).ready(function() {
+
+    $('#addabout').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            caption: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please write event_name!!!..'
+                    }
+                }
+            },
+            
+ 
+                Description:{
+                validators:{
+                    notEmpty:{
+                        message:  ' Description required!!!'
+                    },
+                   stringLength:{
+                        message:'post Description must be less than 100 characters',
+                        max:function(value,validator,$field){
+                            return 100 - (value.match(/\r/g) || []).length;
+                        }
+                    }
+                }
+             },
+ 
+             avatar:{
+            validators:{
+                /*notEmpty:{
+                    message:'please select an image'
+                },*/
+                 file:{
+                        extension: 'jpeg,jpg,png',
+                        type: 'image/jpeg,image/png',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid'
+                    }
+                 }
+           },   
+                 
+
+
+
+
+        }
+    });
+});
+</script>
