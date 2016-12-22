@@ -40,7 +40,7 @@ class Addtips extends CI_Controller {
                 'm_title' => 'Admin Addtips',
                 'title'   => 'Admin Addtips'
             );
-		$this->load->view('admin/Addtips',$view_params);
+		$this->load->view('admin/addtips',$view_params);
 
     if(isset($_POST['action'])){
         $this->add();
@@ -99,7 +99,7 @@ class Addtips extends CI_Controller {
               if ($this->init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/Addtips");
+            redirect("index.php/admin/addtips");
             }
 
                

@@ -43,7 +43,7 @@ class Quesanswer extends CI_Controller {
                 'title'   => 'Admin Question-Answer'
             );
              $view_params['question'] = $this->init_models->selectallquestion();
-		$this->load->view('admin/Question-Answer',$view_params);
+		$this->load->view('admin/question-answer',$view_params);
 		if(isset($_POST['action'])){
 			$this->insertquestion();
 		}
@@ -70,7 +70,7 @@ class Quesanswer extends CI_Controller {
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/quesanswer");
+            redirect("index.php/admin/question-answer");
             }
 	}
 }

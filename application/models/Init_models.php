@@ -352,7 +352,12 @@ public function edit_front_user($data){
          return $query->result_array();
 
       }
+function getcontactdetails($sessid){
 
+        $query = $this->db->query("select tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_user_meta.mobile_no from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
+         return $query->result_array();
+
+      }
 
       function geteventdetails($event_id){
 

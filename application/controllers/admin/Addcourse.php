@@ -40,7 +40,7 @@ class Addcourse extends CI_Controller {
                 'm_title' => 'Admin Add course',
                 'title'   => 'Admin Add course'
             );
-		$this->load->view('admin/Addcourse',$view_params);
+		$this->load->view('admin/addcourse',$view_params);
 
         if(isset($_POST['action'])){
         $this->insertdata();
@@ -87,7 +87,7 @@ class Addcourse extends CI_Controller {
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/Addcourse");
+            redirect("index.php/admin/addcourse");
             }
   
 }

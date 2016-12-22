@@ -41,7 +41,7 @@ class Addgist extends CI_Controller {
                 'm_title' => 'Admin AddGist',
                 'title'   => 'Admin AddGist'
             );
-		$this->load->view('admin/AddGist',$view_params);
+		$this->load->view('admin/addgist',$view_params);
 		if(isset($_POST['action'])){
         $this->add();
         }
@@ -101,7 +101,7 @@ class Addgist extends CI_Controller {
          if ($this->init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/AddGist");
+            redirect("index.php/admin/addgist");
             }
 
     }

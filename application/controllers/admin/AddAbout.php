@@ -42,7 +42,7 @@ class AddAbout extends CI_Controller {
             );
     $view_params['add_about'] = $this->init_models->getaddabout();
     $view_params['about_count'] = $this->init_models->getaboutcount();
-		$this->load->view('admin/AddAbout',$view_params);
+		$this->load->view('admin/addAbout',$view_params);
 
     if(isset($_POST['addaction'])){
         $this->add();
@@ -173,7 +173,7 @@ class AddAbout extends CI_Controller {
 
                if(isset($isinserted)){
             echo"<script>alert('Data Edited Successfully');</script>";
-                redirect("index.php/admin/AddAbout");
+                redirect("index.php/admin/addAbout");
                }else{
                    echo"<script>alert('Failed');</script>";
                }

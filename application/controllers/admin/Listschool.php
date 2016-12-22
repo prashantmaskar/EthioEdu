@@ -44,6 +44,6 @@ class Listschool extends CI_Controller {
                 'title'   => 'Admin Listschool'
             );
              $view_params['school'] = $this->init_models->selectallschool();
-		$this->load->view('admin/Listschool',$view_params);
+		$this->load->view('admin/listschool',$view_params);
 	}
 }

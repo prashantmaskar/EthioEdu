@@ -40,7 +40,7 @@ class Addnews extends CI_Controller {
                 'm_title' => 'Admin AddNews',
                 'title'   => 'Admin AddNews'
             );
-		$this->load->view('admin/Addnews',$view_params);
+		$this->load->view('admin/addnews',$view_params);
 
     if(isset($_POST['action'])){
         $this->add();
@@ -101,7 +101,7 @@ class Addnews extends CI_Controller {
               if ($this->init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/Addnews");
+            redirect("index.php/admin/addnews");
             }
 }
                 

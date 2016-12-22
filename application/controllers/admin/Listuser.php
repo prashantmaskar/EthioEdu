@@ -44,6 +44,6 @@ class Listuser extends CI_Controller {
                 'title'   => 'Admin Listuser'
             );
              $view_params['user'] = $this->init_models->selectalluser();
-		$this->load->view('admin/Listuser',$view_params);
+		$this->load->view('admin/listuser',$view_params);
 	}
 }
