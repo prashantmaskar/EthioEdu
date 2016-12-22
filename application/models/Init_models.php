@@ -24,6 +24,17 @@
       {  
             return $this->db->insert('tbl_course', $data);
       }
+      //Insert course data
+      public function insert_category($data)  
+      {  
+            return $this->db->insert('tbl_category', $data);
+      }
+
+      public function get_categories()  
+      {  
+           $query = $this->db->query("SELECT * from tbl_category");
+            return $query->result_array();
+      }
        
       //Insert School Information data
       public function addschooluser($data)  
