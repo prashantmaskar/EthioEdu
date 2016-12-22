@@ -38,6 +38,15 @@
       {  
             return $this->db->insert('tbl_school_meta', $data);
       }
+
+
+      public function addusermeta($data)
+      {
+        return $this->db->insert('tbl_user_meta', $data);
+      }
+
+
+
        //Insert User registration data
       public function add_front_user($data)  
       {  
@@ -523,7 +532,8 @@ function get_all_users_count(){
          return $query->result()[0]->row_count;
 
       }
-
+      
+    
       function get_all_advertise_count(){
         $query = $this->db->query("select count(*) as row_count from tbl_advertise");
          return $query->result()[0]->row_count;

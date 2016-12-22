@@ -77,6 +77,7 @@ document.getElementById('fb-root').appendChild(e);
       $query2=$this->db->query("select count(*) as row_count from tbl_questions where user_id= '" .$sessid."'");
 
      $query3= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
+     $query4= $this->db->query("select count(*) as row_count from tbl_school_meta where user_id='".$sessid."'");
 
   ?>   
  <ul id='dropdownl' class='dropdown-content'>
@@ -84,7 +85,7 @@ document.getElementById('fb-root').appendChild(e);
 
  <!-- <li><a href="<?php //echo base_url() . 'index.php/edituserschool?id=7'?>">Edit School()</a></li> -->
  
- <li><a href="<?php echo base_url() . 'index.php/userschoollist'?>">Edit School()</a></li>
+ <li><a href="<?php echo base_url() . 'index.php/userschoollist'?>">MySchools(<?php echo $query4->result()[0]->row_count; ?>)</a></li>
 
     <li><a href="<?php echo base_url(). 'index.php/pminbox'?>">Inbox(<?php echo $query3->result()[0]->row_count; ?>)</a></li>
       <li class="divider"></li>

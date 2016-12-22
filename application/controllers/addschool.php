@@ -39,7 +39,10 @@ class addschool extends CI_Controller {
         }
         if(isset($_POST['action'])){
             $this->get_user_id();
-        }  
+        }
+          if(isset($_POST['action'])){
+            $this->insertusermeta();
+        }
 
         if(isset($_POST['action'])){
             $captcha_info = $this->session->userdata('captcha_info');
@@ -114,7 +117,16 @@ class addschool extends CI_Controller {
           
 }
 
+ function insertusermeta(){
+  $getid = $this->get_user_id();
+  $date = date('Y-m-d');
+        $data = array( 
+                'user_date' => $date,
+                'user_id' =>  $getid['uid'],
 
+            );
+        $this->init_models->addusermeta($data);
+}
 
 function insertschooldata(){
            date_default_timezone_set('Asia/Kolkata');
@@ -195,7 +207,7 @@ function insertschooldata(){
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-                redirect("index.php/addSchool");
+                redirect("index.php/addschool");
             }
             else{
                 $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 
