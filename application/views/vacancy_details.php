@@ -128,7 +128,7 @@
                         </ul>
                     </div>
 
-                    <div class="Most_news_wrap ">
+                  <!--  <div class="Most_news_wrap ">
                         <h1 class="red_label_title">Most Read</h1>
                         <ul class="Most_news_list">
                             <li class="Most_news_content">
@@ -176,7 +176,7 @@
                                 (8)
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
