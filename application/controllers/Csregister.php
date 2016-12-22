@@ -27,14 +27,14 @@ class Csregister extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
 
           
     }
     public function index() {
         $sessid= $this->session->userdata('suserid');
-        $banners = $this->init_models->getadvertisebanners();
-        $related_res = $this->init_models->related_users($sessid);
+        $banners = $this->Init_models->getadvertisebanners();
+        $related_res = $this->Init_models->related_users($sessid);
         $view_params = array(
             'm_title' => 'Registration',
             'title' => 'Registration',
@@ -80,13 +80,13 @@ if(isset($_POST['laction'])){
 
             );
 
-        $this->init_models->add_front_user($data);
+        $this->Init_models->add_front_user($data);
 }
 
 
        public function get_frontuser_id(){
             $emailid = $this->input->post('email');
-           $result_id = $this->init_models->getfrontueserid($emailid);
+           $result_id = $this->Init_models->getfrontueserid($emailid);
           echo $this->db->last_query();
         $data = array( 
 
@@ -158,7 +158,7 @@ if(isset($_POST['laction'])){
         
 
 
-             if ($this->init_models->adduserdetails($data))
+             if ($this->Init_models->adduserdetails($data))
             {
             $this->session->set_flashdata('message', 'Registration Successful'); 
             redirect("index.php/sregister");

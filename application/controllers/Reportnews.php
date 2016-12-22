@@ -25,7 +25,7 @@ class Reportnews extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
        if (!$this->session->userdata('logged_in'))
     { 
         $this->session->set_userdata('referred_from', current_url());
@@ -35,13 +35,13 @@ class Reportnews extends CI_Controller {
 
 
     public function index() {
-         $banners = $this->init_models->getadvertisebanners();
+         $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Report News',
             'title' => 'Report News',
             'banners' => $banners
         );
-        $view_params['news'] = $this->init_models->selectnews();
+        $view_params['news'] = $this->Init_models->selectnews();
         $this->load->view('reportnews',$view_params);
     }
        public function add()
@@ -94,7 +94,7 @@ class Reportnews extends CI_Controller {
         );
            
 
-           if ($this->init_models->add_anews($data))
+           if ($this->Init_models->add_anews($data))
 
             {
             $this->session->set_flashdata('message', 'News added Successfully'); 

@@ -26,7 +26,7 @@ class Edit_question extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_question extends CI_Controller {
                 'm_title' => 'Edit Question',
                 'title'   => 'Edit Question'
             );
-      $view_params['question_details'] = $this->init_models->get_question_details($ques_id);
+      $view_params['question_details'] = $this->Init_models->get_question_details($ques_id);
     $this->load->view('admin/edit_question',$view_params);
 if(isset($_POST['action'])){
         $this->edit_question();
@@ -65,7 +65,7 @@ if(isset($_POST['action'])){
                 'question_time' => $this->input->post('time')
                   
        );
-    if ($this->init_models->edit_question($data))
+    if ($this->Init_models->edit_question($data))
             {
     redirect('index.php/admin/quesanswer');
             }

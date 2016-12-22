@@ -26,7 +26,7 @@ class Event extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
@@ -40,7 +40,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
         'post_venue'=>'post_venue',
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Event Search',
                 'title'   => 'Event Search',
@@ -59,7 +59,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_event($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_event($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['event']= $results['rows'];
@@ -115,7 +115,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
         
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Events',
                 'title'   => 'Events',
@@ -134,7 +134,7 @@ function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $off
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_event($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_event($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['event']= $results['rows'];

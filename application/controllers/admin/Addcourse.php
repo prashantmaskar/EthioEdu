@@ -24,7 +24,7 @@ class Addcourse extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -40,7 +40,7 @@ class Addcourse extends CI_Controller {
                 'm_title' => 'Admin Add course',
                 'title'   => 'Admin Add course'
             );
-             $view_params['categories'] = $this->init_models->get_categories();
+             $view_params['categories'] = $this->Init_models->get_categories();
 		$this->load->view('admin/addcourse',$view_params);
 
         if(isset($_POST['action'])){
@@ -79,12 +79,12 @@ class Addcourse extends CI_Controller {
 
             );
 /*
-        if ($this->init_models->insertcourse($data))
+        if ($this->Init_models->insertcourse($data))
             {
     echo"<script>alert('Data Inserted Successfully');</script>";
             }
 */
-              if ($this->init_models->insertcourse($data))
+              if ($this->Init_models->insertcourse($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'course added Successfully'); 

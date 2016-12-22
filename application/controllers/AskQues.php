@@ -25,7 +25,7 @@ class AskQues extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if (!$this->session->userdata('logged_in'))
     {  
          $this->session->set_userdata('referred_from', current_url());
@@ -36,7 +36,7 @@ class AskQues extends CI_Controller {
 
 	public function index()
 	{
-		  $banners = $this->init_models->getadvertisebanners();
+		  $banners = $this->Init_models->getadvertisebanners();
                 $view_params = array(
                 'm_title' => 'askQues',
                 'title'   => 'askQues',
@@ -62,7 +62,7 @@ class AskQues extends CI_Controller {
 			'question_approve' => $this->input->post('approve_status'),
 		     'user_id' => $sessid
 			);
-		if ($this->init_models->insert_question($data))
+		if ($this->Init_models->insert_question($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Question asked Successfully'); 

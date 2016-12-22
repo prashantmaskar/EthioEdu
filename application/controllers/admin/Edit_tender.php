@@ -25,7 +25,7 @@ class Edit_tender extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -42,7 +42,7 @@ class Edit_tender extends CI_Controller {
                 'm_title' => 'Admin Edit Tender',
                 'title'   => 'Admin Edit Tender'
             );
-    $view_params['tender_details'] = $this->init_models->get_tender_details($vac_id);
+    $view_params['tender_details'] = $this->Init_models->get_tender_details($vac_id);
     $this->load->view('admin/edit_tender',$view_params);
 
         if(isset($_POST['action'])){
@@ -74,7 +74,7 @@ class Edit_tender extends CI_Controller {
 
             );
 
-        if ($this->init_models->edit_tender($data))
+        if ($this->Init_models->edit_tender($data))
             {
               redirect('index.php/admin/listtender');
             }

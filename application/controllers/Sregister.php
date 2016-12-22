@@ -26,15 +26,15 @@ class Sregister extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
 
     public function index() {
         $sessid= $this->session->userdata('suserid');
-        $banners = $this->init_models->getadvertisebanners();
-        $related_res = $this->init_models->related_users($sessid);
+        $banners = $this->Init_models->getadvertisebanners();
+        $related_res = $this->Init_models->related_users($sessid);
         $view_params = array(
             'm_title' => 'Register',
             'title' => 'Register',

@@ -31,20 +31,26 @@
                 }
             },
  
-phone_number:{
-	validators:{
-		notEmpty:{
-                        message:'phone number is required!!!'
+ phone_number: {
+                validators: {
+                    notEmpty: {
+                        message: 'contact required!!!..'
                     },
-		
-		 stringLength: {
+                    /*digits:{
+                         message:'contact number is invalid'
+
+                    },
+                    stringLength: {
                         min:14,
                         max: 14,
-                        message: '+251 must have before ,contact number must correct .Number should have 9 digit after country code'
-                    }
-	}
-},
-           
+                        message: 'contact number must contain correct digits'
+                    }*/
+                     regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! Number should have 9 digit after country code!!'
+                      ,   }
+                }
+            },
 
            
 

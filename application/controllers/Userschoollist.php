@@ -26,7 +26,7 @@ class Userschoollist extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -39,13 +39,13 @@ class Userschoollist extends CI_Controller {
 
     public function index()
     {
-                  $banners = $this->init_models->getadvertisebanners();
+                  $banners = $this->Init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Userschoollist',
                 'title'   => 'Userschoollist',
                  'banners' => $banners
             );
-             //$view_params['school'] = $this->init_models->selectallschool();
+             //$view_params['school'] = $this->Init_models->selectallschool();
         $this->load->view('userschoollist',$view_params);
     }
 }

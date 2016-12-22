@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class header extends CI_Controller {
+class Likeunlikenews extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -19,28 +19,20 @@ class header extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-      public function __construct()
+
+    public function __construct()
     {
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
+        $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
         $this->load->model('Init_models');
-       $sessname = $this->session->userdata('susername');
-        $sessid= $this->session->userdata('suserid');
     }
 
-
-    public function index() {
-         $banners = $this->Init_models->getadvertisebanners();
-
-        $view_params = array(
-            'm_title' => 'WelCome To EthioEdu',
-            'title' => 'WelCome To EthioEdu',
-            'banners' => $banners;
-        );
-        $this->load->view('header',$view_params);
-
-    }
+public function index(){
+        $this->load->view('likeunlikenews');
+}
 
 }
+?>

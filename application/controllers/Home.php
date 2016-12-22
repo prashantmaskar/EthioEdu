@@ -25,26 +25,26 @@ class Home extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         $sessname = $this->session->userdata('susername');
         $sessid= $this->session->userdata('suserid');
     }
 
 
     public function index() {
-         $banners = $this->init_models->getadvertisebanners();
+         $banners = $this->Init_models->getadvertisebanners();
 
         $view_params = array(
             'm_title' => 'WelCome To EthioEdu',
             'title' => 'WelCome To EthioEdu',
                'banners' => $banners    
         );
-        $view_params['homenews'] = $this->init_models->gethomenews();
-        $view_params['homeschool'] = $this->init_models->gethomeschool();
-        $view_params['homeprojects'] = $this->init_models->gethomeprojects();
-        $view_params['homeevents'] = $this->init_models->gethomeevents();
-        $view_params['homevacancy'] = $this->init_models->gethomevacancy();
-        $view_params['homequestions'] = $this->init_models->gethomequestion();
+        $view_params['homenews'] = $this->Init_models->gethomenews();
+        $view_params['homeschool'] = $this->Init_models->gethomeschool();
+        $view_params['homeprojects'] = $this->Init_models->gethomeprojects();
+        $view_params['homeevents'] = $this->Init_models->gethomeevents();
+        $view_params['homevacancy'] = $this->Init_models->gethomevacancy();
+        $view_params['homequestions'] = $this->Init_models->gethomequestion();
         $this->load->view('home',$view_params);
     }
 

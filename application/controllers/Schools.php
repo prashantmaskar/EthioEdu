@@ -27,7 +27,7 @@ class Schools extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -48,7 +48,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
         
        
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'School',
                 'title'   => 'School',
@@ -66,7 +66,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
     );
        //
 
-   $results = $this->init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
   // echo $this->db->last_query();
 
    $data['schools']= $results['rows'];
@@ -102,7 +102,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
- $data['homeschool'] = $this->init_models->gethomeschool();
+ $data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('schools',$data);
 
     }
@@ -123,7 +123,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'School',
                 'title'   => 'School',
@@ -141,7 +141,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
     );
        //
 
-   $results = $this->init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['schools']= $results['rows'];
@@ -177,7 +177,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
- $data['homeschool'] = $this->init_models->gethomeschool();
+ $data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('schools',$data);
     }
 

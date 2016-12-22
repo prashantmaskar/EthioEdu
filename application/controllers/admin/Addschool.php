@@ -25,7 +25,7 @@ class Addschool extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -62,12 +62,12 @@ class Addschool extends CI_Controller {
                 'user_role' => 'schooluser',
 
             );
-        $this->init_models->addschooluser($data);
+        $this->Init_models->addschooluser($data);
 }
 
 
  function get_user_id(){
-    $ress = $this->init_models->getueserid();
+    $ress = $this->Init_models->getueserid();
         $data = array( 
 
            'uid'  => $ress['user_id'],
@@ -153,7 +153,7 @@ else{
 
                 );
 /*
-     if ($this->init_models->addschooldata($data))
+     if ($this->Init_models->addschooldata($data))
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
@@ -164,7 +164,7 @@ else{
                 redirect("index.php/addSchool");
 
             }*/
-             if ($this->init_models->addschooldata($data))
+             if ($this->Init_models->addschooldata($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'School added Successfully'); 

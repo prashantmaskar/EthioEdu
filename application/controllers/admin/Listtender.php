@@ -25,7 +25,7 @@ class Listtender extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -41,7 +41,7 @@ class Listtender extends CI_Controller {
                 'm_title' => 'Admin List Tender',
                 'title'   => 'Admin List Tender'
             );
-             $view_params['tender'] = $this->init_models->selectalltender();
+             $view_params['tender'] = $this->Init_models->selectalltender();
 		$this->load->view('admin/listtender',$view_params);
 	}
 }

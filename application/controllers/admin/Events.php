@@ -26,7 +26,7 @@ class Events extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -102,7 +102,7 @@ class Events extends CI_Controller {
                     'user_id'=> $sessid
         );
                 
-if ($this->init_models->add_anews($data))
+if ($this->Init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Event added Successfully'); 
             redirect("index.php/admin/Events");

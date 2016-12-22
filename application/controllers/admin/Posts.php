@@ -26,7 +26,7 @@ class Posts extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Posts extends CI_Controller {
                 'm_title' => 'Post',
                 'title'   => 'Post'
             );
-       $view_params['posts_details'] = $this->init_models->get_posts_details($post_type);
+       $view_params['posts_details'] = $this->Init_models->get_posts_details($post_type);
 		$this->load->view('admin/posts',$view_params);
 	}
 }

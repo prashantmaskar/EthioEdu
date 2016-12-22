@@ -24,13 +24,13 @@ class Search extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email','pagination'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
 	public function index()
 	{
-		$banners = $this->init_models->getadvertisebanners();
+		$banners = $this->Init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Search',
                 'title'   => 'Search',

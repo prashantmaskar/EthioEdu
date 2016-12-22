@@ -26,7 +26,7 @@ class Vactender extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -42,7 +42,7 @@ class Vactender extends CI_Controller {
         'vacancy_desc'=>'vacancy_desc',
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Vacancy Search',
                 'title'   => 'Vacancy Search',
@@ -60,7 +60,7 @@ class Vactender extends CI_Controller {
     );
         //print_r($query_array);
 
-   $results = $this->init_models->search_vacancy($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_vacancy($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['vacancy']= $results['rows'];
@@ -116,7 +116,7 @@ class Vactender extends CI_Controller {
         
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Vacancy',
                 'title'   => 'Vacancy',
@@ -135,7 +135,7 @@ class Vactender extends CI_Controller {
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_vacancy($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_vacancy($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['vacancy']= $results['rows'];
@@ -201,13 +201,13 @@ class Vactender extends CI_Controller {
 
 /*
     public function index() {
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy/Tenders',
             'title' => 'Vacancy/Tenders',
             'banners' => $banners
         );
-        $view_params['tender'] = $this->init_models->selecttender();
+        $view_params['tender'] = $this->Init_models->selecttender();
         $this->load->view('vactender',$view_params);
     }
 */

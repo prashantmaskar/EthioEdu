@@ -25,7 +25,7 @@ class Edit_advertise extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -61,7 +61,7 @@ class Edit_advertise extends CI_Controller {
 
             );
 
-        if ($this->init_models->edit_tender($data))
+        if ($this->Init_models->edit_tender($data))
             {
               redirect('index.php/admin/listtender');
             }

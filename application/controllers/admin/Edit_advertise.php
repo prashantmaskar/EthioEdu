@@ -26,7 +26,7 @@ class Edit_advertise extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_advertise extends CI_Controller {
                 'm_title' => 'Edit Advertising',
                 'title'   => 'Edit Advertising'
             );
-    $view_params['advertise_details'] = $this->init_models->get_adevertise_details($add_id);
+    $view_params['advertise_details'] = $this->Init_models->get_adevertise_details($add_id);
     $this->load->view('admin/edit_advertise',$view_params);
 if(isset($_POST['action'])){
         $this->edit_advertise();
@@ -112,7 +112,7 @@ if(isset($_POST['action'])){
                   
                  
         );
-                  $isinserted = $this->init_models->edit_advertise($data);
+                  $isinserted = $this->Init_models->edit_advertise($data);
                         
 
                         

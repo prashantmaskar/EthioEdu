@@ -26,7 +26,7 @@ class Addcourse extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
 
         if ( !$this->session->userdata('logged_in'))
     { 
@@ -38,13 +38,13 @@ class Addcourse extends CI_Controller {
 
 
     public function index() {
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Add Course',
             'title' => 'Add Course',
             'banners' => $banners
         );
-        $view_params['categories'] = $this->init_models->get_categories();
+        $view_params['categories'] = $this->Init_models->get_categories();
         //print_r($view_params['categories']);
         $this->load->view('addcourse',$view_params);
 
@@ -87,7 +87,7 @@ $fduration = $cduration*30;
 
             );
 
-       if ($this->init_models->insertcourse($data))
+       if ($this->Init_models->insertcourse($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Course added Successfully'); 

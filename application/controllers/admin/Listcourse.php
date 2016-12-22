@@ -26,7 +26,7 @@ class Listcourse extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Listcourse extends CI_Controller {
                 'title'   => 'Admin listcourse'
             );
 
-       $view_params['course'] = $this->init_models->selectallcourse();
+       $view_params['course'] = $this->Init_models->selectallcourse();
     	$this->load->view('admin/listcourse',$view_params);
     	 $this->edit_course();
     }

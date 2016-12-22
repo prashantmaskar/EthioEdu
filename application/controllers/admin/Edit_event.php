@@ -26,7 +26,7 @@ class Edit_event extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_event extends CI_Controller {
                 'm_title' => 'Edit Event',
                 'title'   => 'Edit Event'
             );
-      $view_params['event_details'] = $this->init_models->get_event_details($event_id);
+      $view_params['event_details'] = $this->Init_models->get_event_details($event_id);
     $this->load->view('admin/edit_event',$view_params);
 if(isset($_POST['action'])){
         $this->edit_event();
@@ -108,7 +108,7 @@ if(isset($_POST['action'])){
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status')
         );
-                  $isinserted = $this->init_models->edit_event($data);
+                  $isinserted = $this->Init_models->edit_event($data);
                         
                if(isset($isinserted)){
                 redirect("index.php/admin/posts?post_type=event");

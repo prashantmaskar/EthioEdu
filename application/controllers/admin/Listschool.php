@@ -26,7 +26,7 @@ class Listschool extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -43,7 +43,7 @@ class Listschool extends CI_Controller {
                 'm_title' => 'Admin Listschool',
                 'title'   => 'Admin Listschool'
             );
-             $view_params['school'] = $this->init_models->selectallschool();
+             $view_params['school'] = $this->Init_models->selectallschool();
 		$this->load->view('admin/listschool',$view_params);
 	}
 }
