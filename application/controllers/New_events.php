@@ -90,6 +90,8 @@ class New_events extends CI_Controller {
                         'post_date' => $date,
                         'post_time' => $time,
                         'post_source' => '',
+                        'post_event_date'=>  $this->input->post('post_event_date'), 
+                        'post_event_time'=>  $this->input->post('post_event_time'), 
                         'post_venue' => $this->input->post('event_venue'),
                         'post_type'=>  $this->input->post('post_type'),
                         'post_approve' => $this->input->post('approve_status'),
@@ -98,7 +100,7 @@ class New_events extends CI_Controller {
                         
                        if ($this->init_models->add_anews($data))
             {
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'Event added Successfully'); 
             redirect("index.php/new_events");
             }
 

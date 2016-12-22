@@ -83,9 +83,12 @@
                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="status">
 
-                                                            <option value="">Currently single</option>
-                                                             <option value="Male">Male</option>
-                                                            <option value="female">female</option>
+                                                            <option value="">Currently</option>
+                                                             <option value="single">single</option>
+                                                            <option value="dating">dating</option>
+                                                            <option value="engaged">engaged</option>
+                                                           <option value="married">married</option>
+                                                             <option value="undecided">undecided</option>
                                                         
                                                         </select>
                                     </div>
@@ -93,8 +96,17 @@
                                                         <select class="form-control browser-default" name="interestedIn">
 
                                                             <option value="">Interested In</option>
-                                                             <option value="Male">Male</option>
-                                                            <option value="female">female</option>
+                                                             <option value="clubbing this weekend">clubbing this weekend</option>
+                                                            <option value="Hanging out this weekend">Hanging out this weekend</option>
+                                                            <option value="being chat pals">being chat pals</option>
+                                                            <option value="being study pals">being study pals</option>
+                                                            <option value="flirting">flirting</option>
+                                                            <option value="friendship">friendship</option>
+                                                            <option value="dating">dating</option>
+                                                            <option value="marriage">marriage</option>
+                                                            
+                                                            
+
                                                         
                                                         </select>
                                     </div>

@@ -13,6 +13,19 @@
                         </a>
                     </div>
                 </div>
+ <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+                
                 <div class="col s12 m10 grid-example z-depth-1">
                     <div class="school_category">
                         <div class="col m12 s12">
@@ -32,17 +45,11 @@
                         <div class="col m12">
                             <div class="school_category_box">
                                 <ul class="s_category_list">
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Degree (52)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Graduate Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Higher Diploma (15)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Advance Diploma (02)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Pre University (85   )</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Certificate (20)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Doctorate (20)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Masters(20)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/course/search?category=Degree' ?>">Bridging(20)</a></li>
-
+                                <?php foreach($categories as $row){
+                                    $c_id = $row['category_id'];
+                                    ?>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/course/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?> (52)</a></li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>

@@ -163,7 +163,7 @@ public function editfrontuser(){
 
              if ($this->init_models->updateuserdetails($data))
             {
-    $this->session->set_flashdata('message', 'Data Updated Successfully'); 
+    $this->session->set_flashdata('message', 'User Updated Successfully'); 
             redirect("index.php/edituser");            }
 
 

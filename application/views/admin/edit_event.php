@@ -90,7 +90,18 @@
                                                     <!-- <div class="form-group input-field col s12">
                                                             <input id="date" type="date" name="date" class="datepicker">
                                                             
-                                                    </div>-->
+                                                     </div>-->
+                                               <div class=" form-group input-field col s12">
+                                                        <input id="post_by" type="date" name="post_event_date" class="datepicker validate" value="<?php echo $row['post_event_date']?>">
+                                                        <label for="post_by">post event date</label>
+                                                    </div>
+                                                    <div class=" form-group input-field col s12">
+                                                        <input id="text" type="text" name="post_event_time" class="validate" value="<?php echo $row['post_event_time']?>">
+                                                        <label for="post_by">post event time</label>
+                                                    </div>
+
+
+
                                                     <div class=" form-group input-field col s12">
                                                         <input id="post_by" value="<?php echo $row['post_author'];?>" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>

@@ -65,7 +65,7 @@ class AskQues extends CI_Controller {
 		if ($this->init_models->insert_question($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Question added Successfully'); 
+            $this->session->set_flashdata('message', 'Question asked Successfully'); 
             redirect("index.php/QuesAns");
             }
 	}

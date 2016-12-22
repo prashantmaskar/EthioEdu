@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class composemail extends CI_Controller {
+class Composemail extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -34,8 +34,8 @@ class composemail extends CI_Controller {
 		$related_res = $this->init_models->related_users($sessid);
 		$banners = $this->init_models->getadvertisebanners();
             $view_params = array(
-                'm_title' => 'Compose Mail',
-                'title'   => 'Compose Mail',
+                'm_title' => 'Studenet inbox',
+                'title'   => 'Studenet inbox',
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
@@ -79,7 +79,7 @@ class composemail extends CI_Controller {
 				 if ($this->init_models->sendpmessage($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', ' Message sent Successfully'); 
             redirect("index.php/composemail");
             }
 

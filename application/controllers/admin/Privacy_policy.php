@@ -76,7 +76,7 @@ class Privacy_policy extends CI_Controller {
                         
               if ($this->init_models->add_anews($data))
             {
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'data added Successfully'); 
             redirect("index.php/admin/privacy_policy");
             }
 

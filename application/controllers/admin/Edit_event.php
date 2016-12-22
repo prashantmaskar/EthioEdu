@@ -102,6 +102,9 @@ if(isset($_POST['action'])){
                   'post_venue'=>  $this->input->post('event_venue'),
                   //'post_date' => $date,
                   //'post_time' => $this->input->post('time'),
+
+                   'post_event_date'=>  $this->input->post('post_event_date'), 
+                    'post_event_time'=>  $this->input->post('post_event_time'), 
                   'post_type'=>  $this->input->post('post_type'),
                    'post_approve' => $this->input->post('approve_status')
         );

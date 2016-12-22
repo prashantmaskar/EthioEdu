@@ -69,7 +69,7 @@
                                     <div class="event_date col m2">
                                         <div class="edate z-depth-1 red lighten-1 white-text center-align">
                                             <strong></strong><br>
-                                            <span class="b_date"><?php echo $row->post_date; ?></span><br>
+                                            <span class="b_date"><?php echo $row->post_event_date; ?><span><br><?php echo $row->post_event_time;?></span><br>
                                             <span></span>
                                         </div>
                                     </div>

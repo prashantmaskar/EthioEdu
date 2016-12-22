@@ -167,7 +167,7 @@ else{
              if ($this->init_models->addschooldata($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'School added Successfully'); 
             redirect("index.php/admin/Addschool");
             }
 
