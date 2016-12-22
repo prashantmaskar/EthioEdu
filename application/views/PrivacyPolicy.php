@@ -31,7 +31,6 @@
                         <div class="col s12 m12 ">
                             <p class="black-text">Last date Modified:  <?php echo $row['post_date']; ?></p>
                         </div>
-                        </div>
                         <div class="col m12 s12">
                             <p class="black-text"><?php echo $row['post_desc']; ?></p>
                         </div>
@@ -40,6 +39,7 @@
                         </div>
                         <?php } ?>
 
+                    </div>
                     </div>
                 
 
