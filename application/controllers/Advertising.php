@@ -60,6 +60,7 @@ class Advertising extends CI_Controller {
           'banners' => $banners,
           'captcha' => $this->captcha->main()
       );
+        $view_params['userdetails'] = $this->init_models->getadvertisingdetails($sessid);
       $this->session->set_userdata('captcha_info', $view_params['captcha']);
       $this->load->view('Advertising',$view_params);
 
