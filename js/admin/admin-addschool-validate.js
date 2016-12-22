@@ -185,6 +185,11 @@ $(document).ready(function() {
                     },
                     digits:{
                       message:'should be in year format'
+                    },
+                     between:{
+                           min:2016,
+                        max: 2050,
+                        message: 'year must be in range ,please enter present year or next'
                     }
                 }
              },

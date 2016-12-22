@@ -52,8 +52,13 @@
                                         <select class="form-control" name="interest">
                                             <option value="" disabled selected>Special Interest In</option>
                                             <option value="Anything">Anything</option>
-                                            <option value="Friendship">Friendship</option>
-                                            <option value="Dating">Dating</option>
+                                            <option value="clubbing this weekend">clubbing this weekend</option>
+                                            <option value="hanging out this weekend">hanging out this weekend</option>
+                                              <option value="Being chat pals">Being chat pals</option>
+                                                <option value="Flirting">Flirting</option>
+                                                  <option value="Friendship">Friendship</option>
+                                                    <option value="Dating">Dating</option>
+                                                      <option value="Marriage">Marriage</option>
                                         </select>
                                         <label>Special Interest In</label>
                                     </div>
