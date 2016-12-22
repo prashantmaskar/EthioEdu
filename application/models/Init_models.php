@@ -1338,6 +1338,15 @@ $q->where('question_date <=', $query_array['end_date']);
     //print_r($query->result_array());
     return $query->result_array();
      } 
+//get all post gist,news,event
+      function get_all_news() 
+    { 
+    $query = $this->db->get('tbl_posts'); 
+   // $query = $this->db->query("SELECT * FROM tbl_posts where post_id = '".$post_id."' and post_type = 'news'");
+   // print_r($query);
+    //print_r($query->result_array());
+    return $query->result_array();
+     } 
      // get one news article by its id 
      function get_one($question_id) 
      { 
@@ -1350,6 +1359,22 @@ $q->where('question_date <=', $query_array['end_date']);
    function get_one_sch($school_id) 
      { 
       $query = $this->db->query("SELECT * FROM tbl_school_meta where school_id = '".$school_id."'");
+    // $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
+    // $query = $this->db->get('tbl_questions'); 
+    // print_r($query);
+     return $query->row(); 
+   } 
+   function get_one_news($post_id) 
+     { 
+      $query = $this->db->query("SELECT * FROM tbl_posts where post_id = '".$post_id."' and post_type = 'news'");
+    // $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
+    // $query = $this->db->get('tbl_questions'); 
+    // print_r($query);
+     return $query->row(); 
+   } 
+   function get_one_event($post_id) 
+     { 
+      $query = $this->db->query("SELECT * FROM tbl_posts where post_id = '".$post_id."' and post_type = 'event'");
     // $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
     // $query = $this->db->get('tbl_questions'); 
     // print_r($query);
@@ -1382,6 +1407,32 @@ $q->where('question_date <=', $query_array['end_date']);
 }
 
   } 
+   function tree_all_news($post_id)
+  { 
+  $result = $this->db->query("SELECT * FROM tbl_postresponse where post_id = $post_id and presponse_type = 'news'")->result_array(); 
+  if($result)
+ {
+  foreach ($result as $row) 
+  { 
+  $data[] = $row; 
+  } 
+  return $data;
+}
+
+  } 
+   function tree_all_event($post_id)
+  { 
+  $result = $this->db->query("SELECT * FROM tbl_postresponse where post_id = $post_id and presponse_type = 'event'")->result_array(); 
+  if($result)
+ {
+  foreach ($result as $row) 
+  { 
+  $data[] = $row; 
+  } 
+  return $data;
+}
+
+  }
   // to get child comments by entry id and parent id and news id 
   function tree_by_parent($question_id,$in_parent) 
   { 
@@ -1409,7 +1460,32 @@ $q->where('question_date <=', $query_array['end_date']);
     } 
     return $data; 
   }
+  function tree_by_parent_news($post_id,$in_parent) 
+  { 
+    $result = $this->db->query("SELECT tbl_postresponse.presponse_id , tbl_postresponse.presponse_title , tbl_postresponse.presponse_desc ,tbl_postresponse.presponse_like , tbl_postresponse.presponse_date , tbl_postresponse.presponse_time ,tbl_postresponse.pparent_id , tbl_postresponse.user_id , tbl_postresponse.post_id , tbl_user_meta.user_avatar  FROM tbl_postresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_postresponse.user_id  where tbl_postresponse.pparent_id = $in_parent AND tbl_postresponse.post_id = $post_id AND tbl_postresponse.presponse_type = 'news'")->result_array(); 
 
+ // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar  FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id  where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+
+
+   foreach ($result as $row) {
+    $data[] = $row; 
+    } 
+    return $data; 
+  }
+ function tree_by_parent_event($post_id,$in_parent) 
+  { 
+    $result = $this->db->query("SELECT tbl_postresponse.presponse_id , tbl_postresponse.presponse_title , tbl_postresponse.presponse_desc ,tbl_postresponse.presponse_like , tbl_postresponse.presponse_date , tbl_postresponse.presponse_time ,tbl_postresponse.pparent_id , tbl_postresponse.user_id , tbl_postresponse.post_id , tbl_user_meta.user_avatar  FROM tbl_postresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_postresponse.user_id  where tbl_postresponse.pparent_id = $in_parent AND tbl_postresponse.post_id = $post_id AND tbl_postresponse.presponse_type = 'event'")->result_array(); 
+
+ // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar  FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id  where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+
+
+   foreach ($result as $row) {
+    $data[] = $row; 
+    } 
+    return $data; 
+  }
 
   function add_new_comment()
     {
@@ -1450,8 +1526,45 @@ $q->where('question_date <=', $query_array['end_date']);
         $this->db->insert('tbl_schoolresponse');
         return $this->input->post('sparent_id');
     }
+      function add_new_news_comment()
+    {
+      $date = date('Y-m-d');
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date('h:i:s A', time());
+    $uid= $this->session->userdata('suserid');
+        
+        $this->db->set("post_id", $this->input->post('post_id'));
+        $this->db->set("pparent_id", $this->input->post('pparent_id'));
+        $this->db->set("presponse_title", $this->input->post('comment_name'));
+        $this->db->set("presponse_desc", $this->input->post('comment_body'));
+        $this->db->set("presponse_type", $this->input->post('presponse_type'));
+        $this->db->set("presponse_like", $this->input->post('presponse_like'));
+        $this->db->set("presponse_date",$date);
+        $this->db->set("presponse_time",$time);
+        $this->db->set("user_id", $uid);
+        $this->db->insert('tbl_postresponse');
+        return $this->input->post('pparent_id');
+    }
 
-
+function add_new_event_comment()
+    {
+      $date = date('Y-m-d');
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date('h:i:s A', time());
+    $uid= $this->session->userdata('suserid');
+        
+        $this->db->set("post_id", $this->input->post('post_id'));
+        $this->db->set("pparent_id", $this->input->post('pparent_id'));
+        $this->db->set("presponse_title", $this->input->post('comment_name'));
+        $this->db->set("presponse_desc", $this->input->post('comment_body'));
+        $this->db->set("presponse_type", $this->input->post('presponse_type'));
+        $this->db->set("presponse_like", $this->input->post('presponse_like'));
+        $this->db->set("presponse_date",$date);
+        $this->db->set("presponse_time",$time);
+        $this->db->set("user_id", $uid);
+        $this->db->insert('tbl_postresponse');
+        return $this->input->post('pparent_id');
+    }
 
    }  
 ?>  

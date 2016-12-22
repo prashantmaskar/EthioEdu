@@ -80,7 +80,8 @@
                                     
                                             <div class="elist_content row ">
                                                     <div class="elist_info col m12">
-                                                        <a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"> <?php echo $row->post_title; ?> <span class="green-text">Add Comment</span></a><br>
+                                                        <a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>"> <?php echo $row->post_title; ?> <span class="green-text">Add Comment</span></a><br>
+                                                         
                                                         <span>Posted By:<a href="#"><?php echo $row->post_author;?></a> Happening In <a href="#"><?php echo $row->post_venue;  ?></a></span><br>
                                                         <a href="#" class="green-text">Click here for news reference</a>
                                                     </div>  

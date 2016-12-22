@@ -30,15 +30,190 @@ class Event_details extends CI_Controller {
 
 
     public function index() {
-        $event_id = $_GET['id'];
+        //$event_id = $_GET['id'];
+         $e_id = $this->uri->segment('3');
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'event details',
             'title' => 'event details',
             'banners' =>$banners
         );
-        $view_params['eventid'] = $this->init_models->geteventdetails($event_id);
+        $view_params['eventid'] = $this->init_models->geteventdetails($e_id);
         $this->load->view('event_details',$view_params);
     }
+        
+
+function show_one($ne_id)
+ {
+    $data['banners'] = $this->init_models->getadvertisebanners();
+ // get a post news based on news id
+    //print_r("question Id" .$ne_id);
+  $data['ques'] = $this->init_models->get_one_event($ne_id);
+  //print_r($data['ques']);
+  // get a post COMMENTS based on news id and send it to view
+   $data['comments'] = $this->show_tree_event($ne_id);
+   //print_r($data);
+//$data['news'] = $this->init_models->selectnews();
+$e_id = $this->uri->segment('3');
+$data['eventid'] = $this->init_models->geteventdetails($e_id);
+  /* $sch_id = $this->uri->segment('3');
+        //$sch_id = $_GET['id'];
+        echo "sadfsd".$sch_id;
+        $banners = $this->init_models->getadvertisebanners();
+        $data = array(
+            'm_title' => 'School Details',
+            'title' => 'School Details',
+            'banners' => $banners
+        );
+        $data['news'] = $this->init_models->selectnews();
+        $data['sch_details'] = $this->init_models->getsch_details($sch_id);
+*/
+
+   $this->load->view('event_details', $data); 
+}
+
+function event_details($post_id)
+     { 
+    /*$question_id = $_GET['id'];*/
+    $data['banners'] = $this->init_models->getadvertisebanners();
+     $data['news'] = $this->init_models->get_one_event($post_id); 
+     // get a post Answers based on question_id and send it to view 
+     $data['comments'] = $this->show_tree_event($post_id); 
+     //print_r($data['comments']);
+     $this->load->view('event_details',$data); 
+    } 
+ function add_event_comment($ne_id)
+    {
+
+        // get a post id based on news id
+        $data['ques'] = $this->init_models->get_one_event($ne_id);
+        //set validation rules
+        $this->form_validation->set_rules('comment_name', 'Name', 'required|trim|htmlspecialchars');
+        $this->form_validation->set_rules('comment_body', 'comment_body', 'required|trim|htmlspecialchars');
+        if ($this->form_validation->run() == FALSE) {
+            // if not valid load comments
+            $this->session->set_flashdata('error_msg', validation_errors());
+            redirect("event_details/show_one/$ne_id");
+        } else {
+            //if valid send comment to admin to tak approve
+            $this->init_models->add_new_event_comment();
+            $this->session->set_flashdata('error_msg', 'Your comment is awaiting moderation.');
+            redirect("event_details/show_one/$ne_id");
+        }
+    }
+
+      function show_tree_event($post_id) 
+    { 
+    // create array to store all comments ids 
+    $store_all_id = array(); 
+    // get all parent comments ids by using news id 
+     
+    $id_result = $this->init_models->tree_all_event($post_id);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ($post_id); 
+    print_r($id_result);
+    if($id_result == null)
+    {
+        $html = ""; 
+        $html .= "<ul class='collection'>"; 
+        $html .= " <li class='collection-item'>
+<div class='row'>
+         <div class='col s12 m2 grid-example'>
+<div class='comment-body comment-avatar '> </div> </div>
+<div class='col s12 m8 grid-example'>
+<div class='aut'></div> 
+<div class='comment-body'></div> 
+<div class='timestamp blue-text'></div> 
+<div><a href='#comment_form' class='reply' id=''></a></div>
+<div></div></li></ul>"; 
+return $html;
+
+    }
+else{
+
+    // loop through all comments to save parent ids init_models$store_all_id array 
+    foreach ($id_result as $presponse_id) 
+    { 
+    array_push($store_all_id, $presponse_id['pparent_id']); 
+    } 
+    // return all hierarchical tree data from in_parent by sending 
+    // initiate parameters 0 is the main parent,news id, all parent ids 
+    return $this->in_parent(0,$post_id, $store_all_id); 
+}
+    } 
+
+                /* recursive function to loop through all comments and retrieve it */ 
+function in_parent($in_parent,$post_id,$store_all_id) 
+    { // this variable to save all concatenated html 
+    $html = ""; 
+    // build hierarchy html structure based on ul li (parent-child) nodes 
+    if (in_array($in_parent,$store_all_id)) 
+    { 
+           $result = $this->init_models->tree_by_parent_event($post_id,$in_parent); 
+           $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
+   foreach ($result as $re) 
+{ 
+                  $u_id = $re['user_id'];
+                  //echo "u_id".$u_id;
+                  $res_id =$re['presponse_id'];
+                  $par_id =$re['pparent_id'];
+                  $ques_id = $re['post_id'];
+                  $sessid= $this->session->userdata('suserid');
+                  $formdate = $re['presponse_date'];
+                  $adate = strtotime(date($formdate));
+                  $startdate = date('d-m-Y',$adate);
+
+
+$html .= " <li class='collection-item'>
+<div class='row'>
+         <div class='col s12 m2 grid-example'>
+<div class='comment-body comment-avatar '> <img class='circle responsive-img valign profile-image' src = ".'http://localhost/ETHIO/uploads/'.$re['user_avatar']."></div> </div>
+<div class='col s12 m8 grid-example'>
+<div class='aut'>".$re['presponse_title']." </div> 
+<div class='comment-body'>".$re['presponse_desc']." </div> 
+<div class='timestamp blue-text'>".$startdate."</div> 
+<div><a href='#comment_form' class='reply' id='" . $re['presponse_id'] . "'>&nbsp;Reply &nbsp;&nbsp;&nbsp;</a></div>
+<div>Likes(<a><span> ".$re['presponse_like']. "</span>)</a></div>"; 
+if( $sessid == '' ){
+    $html .="<p class='red-text'>For Like Or UnLike Please Login First</p>" ;
+}
+
+else{ 
+ 
+$html .="<div><a href='javascript:void(0);' class='green-text like' onclick = like(";
+
+$html .=  $ques_id.",".$sessid.",".$res_id .",". $par_id .",". 1 ;
+
+$html .= ");><span class='fa fa-thumbs-up green-text like'></span> Like</a>";
+$html .= "&nbsp &nbsp";        
+        
+  $html .= "<a href='javascript:void(0);' class='red-text unlike' onclick = unlike(";
+$html .=  $ques_id.",".$sessid.",".$res_id .",". $par_id .",". 0;
+   $html .=");><span class='fa fa-thumbs-down red-text'></span> Unlike</a></div></div></div>";
+ }         
+
+$html .=$this->in_parent($re['presponse_id'],$post_id, $store_all_id); 
+$html .= "</li>"; } $html .= "</ul>"; 
+
+
+} 
+return $html;
+    }
+
+function likeunlike()
+{
+$post_id = $this->input->post('ques_id');
+// 'user_id' => $this->input->post('u_id'),
+// 'res_id' => $this->input->post('res_id'),
+// 'like_stat' => $this->input->post('like_stat')
+// );
+return $post_id;
+ $checklike = $this->db->query('SELECT plike_id from tbl_postlikes where post_id = "'.$data_array['post_id'].'"');
+ $resultcheck = $checklike->num_rows();
+
+if($resultcheck == '0'){
+$query = $this->db->query('UPDATE tbl_postresponse SET presponse_like = presponse_like+1 where presponse_type = "event" AND presponse_id = "'.$data_array['res_id'].'"' );
+ $result=$query->result();
+}
+    
+   }  
 
 }

@@ -111,6 +111,7 @@ function schooldetails($school_id)
     $store_all_id = array(); 
     // get all parent comments ids by using news id 
     $id_result = $this->init_models->tree_all_sch($school_id); 
+    print_r($id_result);
     if($id_result == null)
     {
         $html = ""; 
