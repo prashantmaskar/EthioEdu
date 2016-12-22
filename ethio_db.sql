@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2016 at 06:48 AM
+-- Generation Time: Dec 22, 2016 at 02:15 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -142,7 +142,11 @@ INSERT INTO `ci_query` (`id`, `query_string`) VALUES
 (336, 'username=santosh'),
 (337, 'user_school=Ethiopian'),
 (338, 'school_name=&school_type1=private'),
-(339, 'school_name=&school_type1=public');
+(339, 'school_name=&school_type1=public'),
+(340, 'course_category=1'),
+(341, 'course_category=2'),
+(342, 'course_category=3'),
+(343, 'course_category=1');
 
 -- --------------------------------------------------------
 
@@ -174,6 +178,27 @@ INSERT INTO `tbl_advertise` (`advertise_id`, `advertise_name`, `advertise_email`
 (1, 'santosh', 'santosh.bhosale123@gmail.com', '7709326583', 'Part Time', 'Right', 'santosh', '', 'santosh', '28 November, 2016', '08:49:53 PM', 1, 1),
 (2, 'sssss', 'ss@gmail.com', '77777777', 'Part Time', 'Left', 'tst', 'vlcsnap-2016-09-14-17h19m45s1531.png', 'zzzzz', '29 November, 2016', '08:28:39 AM', 55, 1),
 (3, 'yf', 'fghg@gmail.com', '1234567890', 'General', 'Top', 'gssdgfcv ', 'default-image.jpg', 'gfdfg', '29 November, 2016', '08:39:57 AM', 55, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(100) NOT NULL,
+  `category_type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_category`
+--
+
+INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_type`) VALUES
+(1, 'Advance Diploma', 'course'),
+(2, 'Bridging', 'course'),
+(3, 'Diploma', 'course');
 
 -- --------------------------------------------------------
 
@@ -217,15 +242,14 @@ CREATE TABLE `tbl_course` (
 --
 
 INSERT INTO `tbl_course` (`course_id`, `course_name`, `course_subject`, `course_category`, `course_duration`, `course_school`, `course_university`, `course_desc`, `course_date`, `course_time`, `course_approve`, `user_id`) VALUES
-(4, 'test course', 'sdfsdf', 'bridging', 1095, 'Africa', 'Ethiopia', 'dsffd', '', '', '1', 1),
-(5, 'Android Course', 'Andorid Java', 'Degree', 2, 'Ethiopia', '1', 'Android Session For 2 Days', '17 Novembe', '03:44:12 P', '1', 1),
-(6, 'PHP', 'PHP', 'certificate', 120, 'Kenya', 'Kenya', 'test course', '2016-11-30', '05:32:17 PM', '1', 1),
-(7, 'angular js', 'java', 'graduatediploma', 2555, 'Kenya', 'Ethiopia', 'sss', '08 December, 2016', '10:21:40 AM', '1', 55),
-(8, 'javascript', 'java', 'higherdiploma', 60, 'Kenya', 'Ethiopia', 'logic', '08 December, 2016', '12:33:49 PM', '1', 70),
-(9, 'Test Course', 'JAVA', 'graduatediploma', 30, 'Ethiopia', 'Kenya', 'Test Course  Test Course Test Course ', '15 December, 2016', '04:31:16 PM', '1', 71),
-(10, '.Net Course', '.Net MVC', 'degree', 90, 'Kenya', 'Ethiopia', 'test', '19 December, 2016', '10:00:00 AM', '1', 1),
-(11, 'Hardware And Networking', 'Newtworking', 'certificate', 30, 'Ethiopia', 'Ethiopia', 'test', '19 December, 2016', '11:33:44 AM', '1', 1),
-(12, '', '', '', 0, '', '', '', '20 December, 2016', '11:14:37 AM', '0', 1);
+(4, 'test course', 'sdfsdf', '1', 1095, 'Africa', 'Ethiopia', 'dsffd', '', '', '1', 1),
+(5, 'Android Course', 'Andorid Java', '2', 2, 'Ethiopia', 'Kenya', 'Android Session For 2 Days', '1970-01-01', '03:44:12 P', '1', 1),
+(6, 'PHP', 'PHP', '1', 120, 'Kenya', 'Kenya', 'test course', '2016-11-30', '05:32:17 PM', '1', 1),
+(7, 'angular js', 'java', '1', 2555, 'Kenya', 'Ethiopia', 'sss', '08 December, 2016', '10:21:40 AM', '1', 55),
+(8, 'javascript', 'java', '1', 60, 'Kenya', 'Ethiopia', 'logic', '08 December, 2016', '12:33:49 PM', '1', 70),
+(9, 'Test Course', 'JAVA', '1', 30, 'Ethiopia', 'Kenya', 'Test Course  Test Course Test Course ', '15 December, 2016', '04:31:16 PM', '1', 71),
+(10, '.Net Course', '.Net MVC', '1', 90, 'Africa', 'Kenya', 'test', '2016-12-21', '10:00:00 AM', '1', 1),
+(11, 'Hardware And Networking', 'Newtworking', '1', 30, 'Ethiopia', 'Ethiopia', 'test', '19 December, 2016', '11:33:44 AM', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -326,6 +350,67 @@ CREATE TABLE `tbl_message` (
 
 INSERT INTO `tbl_message` (`pm_id`, `pm_subject`, `pm_message`, `pm_date`, `pm_time`, `pm_send_to`, `user_id`) VALUES
 (1, 'Hi..', 'Test ', '2016-12-21', '03:23:52 PM', '71', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_postlikes`
+--
+
+CREATE TABLE `tbl_postlikes` (
+  `plike_id` int(11) NOT NULL,
+  `presponse_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `plikes_count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_postlikes`
+--
+
+INSERT INTO `tbl_postlikes` (`plike_id`, `presponse_id`, `post_id`, `user_id`, `plikes_count`) VALUES
+(1, 2, 55, 1, 1),
+(3, 8, 71, 1, 1),
+(4, 13, 71, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_postresponse`
+--
+
+CREATE TABLE `tbl_postresponse` (
+  `presponse_id` int(11) NOT NULL,
+  `presponse_title` varchar(100) NOT NULL,
+  `presponse_desc` varchar(5000) NOT NULL,
+  `presponse_like` int(10) NOT NULL,
+  `presponse_type` varchar(50) NOT NULL,
+  `presponse_date` varchar(50) NOT NULL,
+  `presponse_time` varchar(50) NOT NULL,
+  `pparent_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_postresponse`
+--
+
+INSERT INTO `tbl_postresponse` (`presponse_id`, `presponse_title`, `presponse_desc`, `presponse_like`, `presponse_type`, `presponse_date`, `presponse_time`, `pparent_id`, `user_id`, `post_id`) VALUES
+(1, 'dnyanesh', 'rgsdg', 0, '', '2016-12-22', '03:01:26 PM', 0, 1, 55),
+(2, 'dnyanesh', 'jfjfjj', 1, '', '2016-12-22', '03:09:07 PM', 0, 1, 55),
+(3, 'dnyanesh', 'afasf', 0, 'news', '2016-12-22', '03:41:42 PM', 0, 1, 56),
+(4, 'dnyanesh', 'dasdasdasdasd', 0, 'news', '2016-12-22', '03:43:45 PM', 0, 1, 55),
+(5, 'dnyanesh', 'gdfgfdg', 0, 'news', '2016-12-22', '04:45:28 PM', 0, 1, 71),
+(6, 'dnyanesh', 'gdfgfdg', 0, 'event', '2016-12-22', '04:46:16 PM', 0, 1, 71),
+(7, 'dnyanesh', 'fghfghfgh', 0, 'event', '2016-12-22', '04:46:37 PM', 0, 1, 71),
+(8, 'dnyanesh', 'fghfghfgh', 1, 'event', '2016-12-22', '04:46:56 PM', 0, 1, 71),
+(9, 'dnyanesh', 'l.k;;l;kl;kl', 0, 'news', '2016-12-22', '04:47:50 PM', 4, 1, 55),
+(10, 'dnyanesh', 'kkkkkkkkkkk', 0, 'event', '2016-12-22', '04:48:23 PM', 0, 1, 72),
+(11, 'dnyanesh', 'hfghfg', 0, 'event', '2016-12-22', '04:49:20 PM', 0, 1, 72),
+(12, 'dnyanesh', 'fgjfgj', 0, 'event', '2016-12-22', '04:49:26 PM', 0, 1, 72),
+(13, 'dnyanesh', 'fghfg', 1, 'event', '2016-12-22', '04:50:58 PM', 8, 1, 71);
 
 -- --------------------------------------------------------
 
@@ -726,6 +811,12 @@ ALTER TABLE `tbl_advertise`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
 -- Indexes for table `tbl_contact`
 --
 ALTER TABLE `tbl_contact`
@@ -763,6 +854,20 @@ ALTER TABLE `tbl_likes`
 ALTER TABLE `tbl_message`
   ADD PRIMARY KEY (`pm_id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `tbl_postlikes`
+--
+ALTER TABLE `tbl_postlikes`
+  ADD PRIMARY KEY (`plike_id`);
+
+--
+-- Indexes for table `tbl_postresponse`
+--
+ALTER TABLE `tbl_postresponse`
+  ADD PRIMARY KEY (`presponse_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `post_id` (`post_id`);
 
 --
 -- Indexes for table `tbl_posts`
@@ -860,12 +965,17 @@ ALTER TABLE `tbl_vacancy`
 -- AUTO_INCREMENT for table `ci_query`
 --
 ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=340;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
 --
 -- AUTO_INCREMENT for table `tbl_advertise`
 --
 ALTER TABLE `tbl_advertise`
   MODIFY `advertise_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_contact`
 --
@@ -891,6 +1001,16 @@ ALTER TABLE `tbl_likes`
 --
 ALTER TABLE `tbl_message`
   MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tbl_postlikes`
+--
+ALTER TABLE `tbl_postlikes`
+  MODIFY `plike_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `tbl_postresponse`
+--
+ALTER TABLE `tbl_postresponse`
+  MODIFY `presponse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `tbl_posts`
 --
@@ -949,6 +1069,13 @@ ALTER TABLE `tbl_vacancy`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_postresponse`
+--
+ALTER TABLE `tbl_postresponse`
+  ADD CONSTRAINT `post_id` FOREIGN KEY (`post_id`) REFERENCES `tbl_posts` (`post_id`),
+  ADD CONSTRAINT `uid` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`user_id`);
 
 --
 -- Constraints for table `tbl_schoolresponse`
