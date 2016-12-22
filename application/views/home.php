@@ -118,16 +118,13 @@
                                     <ul> 
                                         <?php 
                                           $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 limit 10");
-
+                                              //print_r($query->result_array());
                                         foreach ($query->result_array() as $row){ 
 
                                           $event_id = $row['post_id'];
                                             ?>
-                                            <?php
-                                              $formdate = $row['post_date'];
-                                          $adate = strtotime($formdate);
-                                         $date = date('l Y/m/d',$adate); ?>
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $date ?></span><br><span class="monthyear"><?php echo $row['post_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
+
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
                                        
                                         </li>
                                           <?php } ?>

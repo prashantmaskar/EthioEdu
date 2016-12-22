@@ -56,6 +56,22 @@ $(document).ready(function() {
                     }
                  }
            },   */
+
+             post_event_date: {
+                validators: {
+                    notEmpty: {
+                        message: ' post your event date!!!..'
+                    }
+                }
+            },
+              post_event_time: {
+                validators: {
+                    notEmpty: {
+                        message: ' post your event time!!!..'
+                    }  
+
+                }
+            },
                  
                   eventby: {
                 validators: {
@@ -64,6 +80,7 @@ $(document).ready(function() {
                     }
                 }
             },
+
  
 
 

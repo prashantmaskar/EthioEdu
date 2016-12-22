@@ -69,10 +69,26 @@
                                                         <textarea id="Description" name="Description" class="materialize-textarea"></textarea>
                                                         <label for="Description">Description</label>
                                                     </div>
+                                                    
+                                                     <div class=" form-group input-field col s12">
+                                                        <input id="post_by" type="date" name="post_event_date" class="datepicker validate" >
+                                                        <label for="post_by">post event date</label>
+                                                    </div>
+                                                    <div class=" form-group input-field col s12">
+                                                        <input id="text" type="text" name="post_event_time" class="validate">
+                                                        <label for="post_by">post event time</label>
+                                                    </div>
+
+
                                                     <div class=" form-group input-field col s12">
                                                         <input id="post_by" type="text" name="eventby" class="validate">
                                                         <label for="post_by">Event Posted By</label>
                                                     </div>
+                                                       
+                                                      
+
+
+
                                                     <input type="hidden" name="post_type" value="event">
                                                      <input type="hidden" name="approve_status" value="0">
                                                     <div class="col s5 offset-s5">
@@ -89,4 +105,10 @@
                             </div>
                         </div>
                        <?php  $this->load->view('admin/footer'); ?>
-                       <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-event.js' ?>"></script>
+
+<script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css.map"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.css"></script>
+<script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-event.js' ?>"></script>

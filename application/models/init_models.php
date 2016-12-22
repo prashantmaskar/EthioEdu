@@ -1394,7 +1394,6 @@ $q->where('question_date <=', $query_array['end_date']);
   } 
   return $data;
 }
-
   } 
   // to get child comments by entry id and parent id and news id 
   function tree_by_parent($question_id,$in_parent) 

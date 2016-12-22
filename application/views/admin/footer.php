@@ -10,6 +10,7 @@
  <script type="text/javascript" src="<?php echo base_url() .'js/bootstrap-tokenfield.js' ?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'js/jquery.dataTables.min.js' ?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'js/admin/admin-custom-script.js' ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() .'js/admin/bootstrap-datetimepicker.min.js' ?>"></script>
 
  </body>
  </html>
