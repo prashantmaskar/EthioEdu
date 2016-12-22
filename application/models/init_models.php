@@ -1,5 +1,5 @@
 <?php  
-   class init_models extends CI_Model  
+   class Init_models extends CI_Model  
    {  
       function __construct()  
       {  
@@ -21,6 +21,20 @@
       {  
             return $this->db->insert('tbl_course', $data);
       }
+
+      //Insert course data
+      public function insert_category($data)  
+      {  
+            return $this->db->insert('tbl_category', $data);
+      }
+
+      public function get_categories()  
+      {  
+           $query = $this->db->query("SELECT * from tbl_category");
+            return $query->result_array();
+      }
+
+      
        
       //Insert School Information data
       public function addschooluser($data)  
@@ -38,15 +52,6 @@
       {  
             return $this->db->insert('tbl_school_meta', $data);
       }
-
-
-      public function addusermeta($data)
-      {
-        return $this->db->insert('tbl_user_meta', $data);
-      }
-
-
-
        //Insert User registration data
       public function add_front_user($data)  
       {  
@@ -218,7 +223,7 @@ function get_user_id_by_uname($uname){
       }
        public function selectallcourse()  
       {  
-        $query = $this->db->query("select * from tbl_course"); 
+        $query = $this->db->query("select * from tbl_course join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
         return $query->result_array();
       }
       public function selectquestion()  
@@ -361,7 +366,7 @@ public function edit_front_user($data){
          return $query->result_array();
 
       }
- function getcontactdetails($sessid){
+function getcontactdetails($sessid){
 
         $query = $this->db->query("select tbl_users.first_name, tbl_users.last_name, tbl_users.user_email, tbl_user_meta.mobile_no from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
          return $query->result_array();
@@ -537,8 +542,7 @@ function get_all_users_count(){
          return $query->result()[0]->row_count;
 
       }
-      
-    
+
       function get_all_advertise_count(){
         $query = $this->db->query("select count(*) as row_count from tbl_advertise");
          return $query->result()[0]->row_count;
@@ -656,6 +660,7 @@ function get_tips_details($tips_id){
       function getsch_details($sch_id){
 
         $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
+       // print_r($query->result_array());
          return $query->result_array();
       }
 
@@ -1339,30 +1344,78 @@ $q->where('question_date <=', $query_array['end_date']);
     print_r($query->result_array());
     return $query->result_array();
      } 
+
+     function get_all_sch() 
+    { 
+    $query = $this->db->get('tbl_school_meta'); 
+   // print_r($query);
+    //print_r($query->result_array());
+    return $query->result_array();
+     } 
      // get one news article by its id 
      function get_one($question_id) 
      { 
-     $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
-     $query = $this->db->get('tbl_questions'); 
-     print_r($query);
+      $query = $this->db->query("SELECT * FROM tbl_questions where question_id = '".$question_id."'");
+    // $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
+    // $query = $this->db->get('tbl_questions'); 
+    // print_r($query);
+     return $query->row(); 
+   } 
+   function get_one_sch($school_id) 
+     { 
+      $query = $this->db->query("SELECT * FROM tbl_school_meta where school_id = '".$school_id."'");
+    // $this->db->get_where('tbl_questions', array('question_id' => $question_id)); 
+    // $query = $this->db->get('tbl_questions'); 
+    // print_r($query);
      return $query->row(); 
    } 
   // get full tree comments based on news id 
   function tree_all($question_id)
   { 
   $result = $this->db->query("SELECT * FROM tbl_userresponse where question_id = $question_id")->result_array(); 
+
+ if($result)
+ {
   foreach ($result as $row) 
   { 
   $data[] = $row; 
   } 
   return $data;
+}
+  } 
+  function tree_all_sch($school_id)
+  { 
+  $result = $this->db->query("SELECT * FROM tbl_schoolresponse where school_id = $school_id")->result_array(); 
+  if($result)
+ {
+  foreach ($result as $row) 
+  { 
+  $data[] = $row; 
+  } 
+  return $data;
+}
 
   } 
   // to get child comments by entry id and parent id and news id 
   function tree_by_parent($question_id,$in_parent) 
   { 
-  $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
-  
+    $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar  FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id  where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+
+ // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar  FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id  where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+
+
+   foreach ($result as $row) {
+    $data[] = $row; 
+    } 
+    return $data; 
+  }
+  function tree_by_parent_sch($school_id,$in_parent) 
+  { 
+    $result = $this->db->query("SELECT tbl_schoolresponse.sresponse_id , tbl_schoolresponse.sresponse_title , tbl_schoolresponse.sresponse_desc ,tbl_schoolresponse.sresponse_like , tbl_schoolresponse.sresponse_date , tbl_schoolresponse.sresponse_time ,tbl_schoolresponse.sparent_id , tbl_schoolresponse.user_id , tbl_schoolresponse.school_id , tbl_user_meta.user_avatar  FROM tbl_schoolresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_schoolresponse.user_id  where tbl_schoolresponse.sparent_id = $in_parent AND tbl_schoolresponse.school_id = $school_id")->result_array(); 
+
+ // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar , tbl_likes.likes_count FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id LEFT JOIN tbl_likes ON tbl_likes.user_id = tbl_userresponse.user_id where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
+  // $result = $this->db->query("SELECT tbl_userresponse.response_id , tbl_userresponse.response_title , tbl_userresponse.response_desc ,tbl_userresponse.response_like , tbl_userresponse.response_date , tbl_userresponse.response_time ,tbl_userresponse.parent_id , tbl_userresponse.user_id , tbl_userresponse.question_id , tbl_user_meta.user_avatar  FROM tbl_userresponse LEFT JOIN tbl_user_meta ON tbl_user_meta.user_id = tbl_userresponse.user_id  where tbl_userresponse.parent_id = $in_parent AND tbl_userresponse.question_id = $question_id")->result_array(); 
 
 
    foreach ($result as $row) {
@@ -1390,6 +1443,26 @@ $q->where('question_date <=', $query_array['end_date']);
         $this->db->set("user_id", $uid);
         $this->db->insert('tbl_userresponse');
         return $this->input->post('parent_id');
+    }
+
+     function add_new_sch_comment()
+    {
+      $date = date('Y-m-d');
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date('h:i:s A', time());
+    $uid= $this->session->userdata('suserid');
+        
+        $this->db->set("school_id", $this->input->post('school_id'));
+        $this->db->set("sparent_id", $this->input->post('sparent_id'));
+        $this->db->set("sresponse_title", $this->input->post('comment_name'));
+        $this->db->set("sresponse_desc", $this->input->post('comment_body'));
+       // $this->db->set("response_type", $this->input->post('response_type'));
+        $this->db->set("sresponse_like", $this->input->post('sresponse_like'));
+        $this->db->set("sresponse_date",$date);
+        $this->db->set("sresponse_time",$time);
+        $this->db->set("user_id", $uid);
+        $this->db->insert('tbl_schoolresponse');
+        return $this->input->post('sparent_id');
     }
 
 

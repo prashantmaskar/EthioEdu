@@ -40,6 +40,7 @@ class Addcourse extends CI_Controller {
                 'm_title' => 'Admin Add course',
                 'title'   => 'Admin Add course'
             );
+             $view_params['categories'] = $this->init_models->get_categories();
 		$this->load->view('admin/addcourse',$view_params);
 
         if(isset($_POST['action'])){

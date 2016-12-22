@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class addschool extends CI_Controller {
+class Addschool extends CI_Controller {
     /**
      * Index Page for this controller.
      *
@@ -39,10 +39,7 @@ class addschool extends CI_Controller {
         }
         if(isset($_POST['action'])){
             $this->get_user_id();
-        }
-          if(isset($_POST['action'])){
-            $this->insertusermeta();
-        }
+        }  
 
         if(isset($_POST['action'])){
             $captcha_info = $this->session->userdata('captcha_info');
@@ -117,16 +114,7 @@ class addschool extends CI_Controller {
           
 }
 
- function insertusermeta(){
-  $getid = $this->get_user_id();
-  $date = date('Y-m-d');
-        $data = array( 
-                'user_date' => $date,
-                'user_id' =>  $getid['uid'],
 
-            );
-        $this->init_models->addusermeta($data);
-}
 
 function insertschooldata(){
            date_default_timezone_set('Asia/Kolkata');
@@ -207,7 +195,7 @@ function insertschooldata(){
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-                redirect("index.php/addschool");
+                redirect("index.php/addSchool");
             }
             else{
                 $this->session->set_flashdata('errormessage', 'Sorry !!! Error Occured'); 

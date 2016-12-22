@@ -40,7 +40,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
             );
         //print_r( $data['fields']);
 
-        
+            
 
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
@@ -97,6 +97,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
+     $data['categories'] = $this->init_models->get_categories();
      $data['pagination'] = $this->pagination->create_links();
     //$data['course_name']=$this->init_models->selectcourse();
        $this->load->view('course',$data);
@@ -115,7 +116,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
 
 
             );
-
+        
         $banners = $this->init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Course List',
@@ -171,6 +172,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
 $data['project_topics']=$this->init_models->selectproject();
+$data['categories'] = $this->init_models->get_categories();
        $this->load->view('course',$data);
     }
 

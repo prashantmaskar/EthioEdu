@@ -24,12 +24,14 @@
                         </div>
                     </div>
                     <div class="container">
+
                     <?php /* if(isset($_GET['id'])){$course1_id = $_GET['id'];}
                         $query = $this->db->query("select * from tbl_course where course_id = '" .$course1_id. "'"); */
                         
                                 foreach ($course_details as $row){ 
                         ?>
                         <div class="section">
+
                      
                             <div class="divider"></div>
                             <div id="form-wrap">
@@ -53,19 +55,15 @@
                                                     </div>-->
                                                     
                                                                <div class=" form-group input-field col s12">
-                                                               <?php  $options = $row['course_category']; ?>
+                                                               <?php   $options = $row['course_category']; ?>
+
                                                         <select class=" form-control browser-default" name="course_cat">
                                                             <option value="">Course Category</option>
-                                                            <option value="advancediploma" <?php if($options=="advancediploma") echo 'selected="selected"'; ?>>Advance Diploma</option>
-                                                            <option value="bridging" <?php if($options=="bridging") echo 'selected="selected"'; ?>>Bridging</option>
-                                                            <option value="certificate" <?php if($options=="certificate") echo 'selected="selected"'; ?>>Certificate</option>
-                                                            <option value="degree" <?php if($options=="degree") echo 'selected="selected"'; ?>>Degree</option>
-                                                            <option value="diploma" <?php if($options=="diploma") echo 'selected="selected"'; ?>>Diploma</option>
-                                                            <option value="graduatediploma" <?php if($options=="graduatediploma") echo 'selected="selected"'; ?>>Graduate Diploma</option>
-                                                            <option value="higherdiploma" <?php if($options=="higherdiploma") echo 'selected="selected"'; ?>>Higher Diploma</option>
-                                                            <option value="masters" <?php if($options=="masters") echo 'selected="selected"'; ?>>Masters</option>
-                                                            <option value="postgraduatediploma" <?php if($options=="postgraduatediploma") echo 'selected="selected"'; ?>>Post Graduate Diploma</option>
-                                                            <option value="preuniversity" <?php if($options=="preuniversity") echo 'selected="selected"'; ?>>Pre University</option>
+                                                            <?php } foreach($categories as $row){?>
+
+                                                            <option value="<?php echo $row['category_id']; ?>" <?php if($options==$row['category_id']) echo 'selected="selected"'; ?>><?php echo $row['category_name']; ?></option>
+                                                            <?php } foreach ($course_details as $row){
+                                                            ?>
                                                         </select>
                                                     </div>
                                                     
