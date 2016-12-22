@@ -3,10 +3,12 @@
             <div class="row">
                 <div class="col s12 m9 grid-example ">
                     <div class="row school_detail_wrap z-depth-1">
-                    <?php  $sch_id = $_GET['id'];
+                    <?php  //$sch_id = $_GET['id'];
+                   $sch_id = $this->uri->segment('3');
                        // $query = $this->db->query("select * from tbl_school_meta where school_id = '" .$sch_id. "'");
                         
                                 foreach ($sch_details as $row){ 
+
                                       
 
                                     
@@ -40,12 +42,12 @@
                                             $s_desc = substr($row['school_desc'],0,100);
                                              $edesc = $s_desc.'...';
                                             ?>
-                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>&title=<?php echo $row['school_name']; ?>&summary=<?php echo $edesc; ?>" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
+                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url();?>?id=<?php echo $this->uri->segment('3'); ?>&title=<?php echo $row['school_name']; ?>&summary=<?php echo $edesc; ?>" class="waves-effect waves-light btn linkedin darken-3"><i class="fa fa-linkedin"></i> Linkedin</a></li> 
 
-                                            <li><a href="https://twitter.com/intent/tweet?text=<?php echo $row['school_name']?>?url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>" data-show-count="false" class="waves-effect waves-light btn twitter darken-3 "><i class="fa fa-twitter"></i> Twitter</a></li> 
+                                            <li><a href="https://twitter.com/intent/tweet?text=<?php echo $row['school_name']?>?url=<?php echo base_url();?>?id=<?php echo $this->uri->segment('3'); ?>" data-show-count="false" class="waves-effect waves-light btn twitter darken-3 "><i class="fa fa-twitter"></i> Twitter</a></li> 
                                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-                                            <li><a href="https://plus.google.com/share?url=<?php echo base_url();?>?id=<?php echo $_GET['id'] ?>" class="waves-effect waves-light btn googleplus darken-3" onclick="javascript:window.open(this.href,
+                                            <li><a href="https://plus.google.com/share?url=<?php echo base_url();?>?id=<?php echo $this->uri->segment('3'); ?>" class="waves-effect waves-light btn googleplus darken-3" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus"></i> Google</a></li> 
 
                                 </ul>
@@ -246,11 +248,10 @@
                                 <p>Want More Details about School? &nbsp;<a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry</a></p>
                             </div>
                         </div>
-
-                       <!--  <div class="coment_box row">
+  <div class="coment_box row">
 
                         <?php } ?>
-                        <div class="coment_box row">
+                       <!--  <div class="coment_box row">
 
                             <div class="col m12">
                                 <h2>Add New Comment</h2>
@@ -276,7 +277,7 @@
                             </div>
 
 
-                        </div> -->
+                        </div>  -->
 
 <?php } ?>
 
@@ -293,20 +294,20 @@
          <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div> 
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/>  
                             <div class="coment_form">
-                                <form id="comment_form" action="#" method="post">
+                                <form id="comment_form" method="post" action="<?= base_url() ?>schooldetails/add_sch_comment/<?= $ques->school_id ?> " >
                                     <div class="input-field col s12">
                                         <label for="comment_name">Name:</label> 
           <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
                                     </div>
-                                   
-                                    <div class="input-field col s12">
-                                        <label for="comment"><i class='material-icons prefix'>mode_edit</i>Comment :</label> 
+                                 
+                                     <div class="form-group"> 
+           <label for="comment"><!-- <i class='material-icons prefix'>mode_edit</i> -->Comment :</label> 
            <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
-                                    </div>
-                        <input type='hidden' name='parent_id' value="0" id='parent_id' />
-                    <input type='hidden' name='response_type' value="answer" id='response_type' />
-                    <input type='hidden' name='response_like' value="0" id='response_like' />
-    <input type='hidden' name='question_id' id='parent_id' />     
+            </div>
+                        <input type='hidden' name='sparent_id' value="0" id='parent_id' />
+                    <input type='hidden' name='sresponse_type' value="answer" id='response_type' />
+                    <input type='hidden' name='sresponse_like' value="0" id='response_like' />
+    <input type='hidden' name='school_id' id='parent_id' value="<?= $ques->school_id ?>" />     
 
                  <div id='submit_button' class="margin-b-10"> 
              <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
@@ -317,6 +318,7 @@
 
                         </div>
                 </div>
+            </div>
                 
 
 
@@ -341,7 +343,7 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
 <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
@@ -353,6 +355,69 @@ $(function () {
   $("#name").focus();
   }); 
   }); 
+  </script>
+  <script>
+
+
+
+         function like(id1, id2, id3,id4,id5){                      
+                         var ques_id= id1
+                         var u_id = id2;
+                         var res_id = id3; 
+                         var par_id = id4;
+                         var like_stat = id5;
+
+                     if (confirm('Sure to Like ?'))
+                             {
+                                 $.ajax({
+                                     context: this,
+                                     type: 'POST',
+                                     url: 'http://localhost/ETHIO/index.php/Likeunlikeschool',
+                                     data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
+                                    
+                                     success: function(data) {
+                                      
+                                         console.log(data);
+                                       //location.reload();
+         
+                                     },
+                                     error:function(error){
+                                      alert("error" +error);
+                                     }
+                                 });
+                             }
+                         }
+                        
+         
+         
+                        function unlike(id1 ,id2,id3,id4,id5){
+                          var ques_id= id1
+                         var u_id = id2;
+                         var res_id = id3;
+                         var par_id = id4; 
+                         var like_stat = id5;
+
+
+                         
+                     if (confirm('Sure to Unlike ?'))
+                             {
+                              alert(like_stat);
+                                 $.ajax({
+                                     context: this,
+                                     type: 'POST',
+                                     url: 'http://localhost/ETHIO/index.php/Likeunlikeschool',
+                                     data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
+                                      success: function(msg) {
+                                         console.log(msg);
+                                       //location.reload();
+                               },
+                               error:function(error){
+                                      alert("fgfdg" +error);
+                                     }
+                             });
+                          }
+                     }
+
   </script>
 <script>
       function initMap() {

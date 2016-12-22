@@ -1,9 +1,9 @@
 <?php  $this->load->view('header'); ?>
 
   <style type='text/css'> 
-  /*a, a:visited { 
+  a, a:visited { 
   outline: none; color: #7d5f1e; 
-  } */
+  } 
   .clear { 
   clear: both;
   } 
@@ -22,11 +22,11 @@
   #comment_body { display: block; width: 100%; height: 150px;
   } 
 
- /*a {
+ a {
   color: #03658c;
   text-decoration: none;
  }
-*/
+
 ul {
   list-style-type: none;
 }
@@ -93,42 +93,26 @@ body {
              </div><!-- /.container --> 
              </div>
     </div>
-     <div class="col s12 m2 grid-example z-depth-1">
-     <?php
-     $que_id = $this->uri->segment('3') 
-     ?>
-      <div class="old_news_list">
-        <h2 class="news_post_title">Related Questions</h2>
-     <ul class="latest_news_list"><?php 
-    $query = $this->db->query("select * from tbl_questions where question_id='".$que_id."'");
-    $result = $query->result_array();
-    $qcat =  $result[0]["question_category"];
-     $query1 = $this->db->query("select * from tbl_questions where question_category='".$qcat."'");
-     foreach ($query1->result_array() as $row){ ?>
-     <li class="Latest_news_content"><?php echo $row['question_category']; ?>:
-   <a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>" class="news_link">  
-   <span class="News_title"><?php echo $row['question_desc']; ?></span>(7)
-   </a> 
-     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
-    <p class="green-text">Ans this</p></a></li>
-
-     
-
-     <?php } ?>
-     </ul>
-
-              <!--  <div class="service_col z-depth-1  darken-1">
+     <div class="col s12 m2 grid-example">
+               <div class="service_col z-depth-1  darken-1">
                   <a href="#">
-                  <img src="<?php //echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
+                  <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                   </a>
                </div>
                <div class="service_col z-depth-1  darken-1">
                   <a href="#">
-                  <img src="<?php //echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
+                  <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                   </a>
-              </div> -->
-</div>
+              </div>
         </div> 
+
+
+ 
+
+
+
+
+
   </div><!-- ok -->
 </div><!-- ok -->
      
@@ -146,27 +130,29 @@ $(function () {
 
 
 
-         function like(id1, id2, id3){                      
+         function like(id1, id2, id3,id4,id5){                      
                          var ques_id= id1
                          var u_id = id2;
                          var res_id = id3; 
-                        //alert(ques_id);
-                        //alert(u_id);
-                         //alert(res_id);
-                     if (confirm('Sure to Unlike ?'))
+                         var par_id = id4;
+                         var like_stat = id5;
+
+                     if (confirm('Sure to Like ?'))
                              {
                                  $.ajax({
                                      context: this,
                                      type: 'POST',
-                                     url: "http://localhost/ETHIO/like",
-                                     data: {ques_id, u_id, res_id},
-                                     success: function(meg) {
-                                         console.log(meg);
+                                     url: 'http://localhost/ETHIO/index.php/Likeunlike',
+                                     data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
+                                    
+                                     success: function(data) {
+                                      
+                                         console.log(data);
                                        //location.reload();
          
                                      },
                                      error:function(error){
-                                      alert(error);
+                                      alert("error" +error);
                                      }
                                  });
                              }
@@ -174,27 +160,29 @@ $(function () {
                         
          
          
-                        function unlike(id1 , id2, id3){
-                          var uques_id= id1
-                         var uu_id = id2;
-                         var ures_id = id3; 
-                       /*alert(id1);
-                         alert(id2);
-                         alert(id3);*/
-         
-                     if (confirm('Sure to Like ?'))
+                        function unlike(id1 ,id2,id3,id4,id5){
+                          var ques_id= id1
+                         var u_id = id2;
+                         var res_id = id3;
+                         var par_id = id4; 
+                         var like_stat = id5;
+
+
+                         
+                     if (confirm('Sure to Unlike ?'))
                              {
+                              alert(like_stat);
                                  $.ajax({
                                      context: this,
                                      type: 'POST',
-                                     url: "http://localhost/ETHIO/like",
-                                     data: {uques_id, uu_id, ures_id},
-                                      success: function(meg) {
-                                         console.log(meg);
+                                     url: 'http://localhost/ETHIO/index.php/Likeunlike',
+                                     data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
+                                      success: function(msg) {
+                                         console.log(msg);
                                        //location.reload();
                                },
                                error:function(error){
-                                      alert(error);
+                                      alert("fgfdg" +error);
                                      }
                              });
                           }

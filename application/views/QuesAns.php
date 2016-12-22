@@ -168,18 +168,28 @@
                                     } */
                                     $resultcount = count($question);
                                     if($resultcount >= 1){
-                                foreach ($question as $row){ ?>
+                                foreach ($question as $row){ 
+                                  $que_id = $row->question_id;
+                                    ?>
                                     <li class="QuesAns_content">
                                         <a href="#" class="QuesAns_link">
                                             <span class="QuesAns_title"><?php echo $row->question_desc; ?></span><br>
                                         </a>
-                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row->question_date;  ?>            <span>[<?php echo $row->question_time;?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row->question_category;?></a> | Answers [0]  
+                                        <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row->question_date;  ?>            <span>[<?php echo $row->question_time;?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row->question_category;?></a> <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" class="green-text">| Answer this</a>  
                                             </span></span>
                                     </li>
                                      <?php }}else{
 
                                         echo "Result Not Found";
                                         } ?>
+                                        <?php 
+                                     $query = $this->db->query("select * from tbl_questions where question_approve=1 limit 10");
+                                     foreach ($query->result_array() as $row){
+                                        $que_id=$row['question_id'];
+                                     ?>
+                                     
+
+                                     <?php } ?>
                               </ul>
 
                               <!--  <ul class="pagination">
