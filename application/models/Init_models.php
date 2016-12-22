@@ -16,6 +16,9 @@
          return $query->result_array();
       }
 
+    
+
+
       //Insert course data
       public function insertcourse($data)  
       {  
