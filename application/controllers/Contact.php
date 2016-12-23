@@ -30,12 +30,15 @@ class Contact extends CI_Controller {
 
 
     public function index() {
+        $sessid= $this->session->userdata('suserid');
         $banners = $this->init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Contact',
             'title' => 'Contact',
             'banners' => $banners
         );
+         $view_params['userdetails'] = $this->init_models->getcontactdetails($sessid);
+         //print_r($view_params['userdetails']);
            $this->load->view('contact',$view_params);
            if(isset($_POST['action']))
         {

@@ -34,8 +34,8 @@ class composemail extends CI_Controller {
 		$related_res = $this->init_models->related_users($sessid);
 		$banners = $this->init_models->getadvertisebanners();
             $view_params = array(
-                'm_title' => 'Studenet inbox',
-                'title'   => 'Studenet inbox',
+                'm_title' => 'Compose Mail',
+                'title'   => 'Compose Mail',
                 'banners' => $banners,
                 'related_res' => $related_res,
             );

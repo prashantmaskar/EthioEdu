@@ -70,7 +70,7 @@
                                     </div>
                                      <div class="form-group input-field col s12">
                                         <input id="Caption3" name="cpassword" type="password" class="validate">
-                                        <label for="Caption3"> verify password</label>
+                                        <label for="Caption3"> confirm password</label>
                                     </div>
                                       <div class=" col s2">
                                           <p class="right-align">Connect2Me</p>

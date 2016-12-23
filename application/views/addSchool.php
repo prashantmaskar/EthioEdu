@@ -314,7 +314,7 @@
                                                     <?php if (!$this->session->userdata('logged_in'))
                                                         { ?>
                                                      <div class=" form-group input-field col s12">
-                                                   <input id="password" name="password" type="password"  class="validate">
+                                                   <input id="password" name="password" type="password"  class="validate" minlength="6">
                                                 <label for="password">password</label>
                                                       </div>
                                                        <div class="form-group input-field col s12">
