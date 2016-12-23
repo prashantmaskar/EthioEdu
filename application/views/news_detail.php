@@ -90,7 +90,7 @@
            <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
             </div>
                         <input type='hidden' name='pparent_id' value="0" id='parent_id' />
-                    <input type='hidden' name='presponse_type' value="answer" id='response_type' />
+                   <!--  <input type='hidden' name='presponse_type' value="answer" id='response_type' /> -->
                     <input type='hidden' name='presponse_like' value="0" id='response_like' />
                       <input type='hidden' name='presponse_type' value="news" id='response_like' />
     <input type='hidden' name='post_id' id='parent_id' value="<?= $ques->post_id ?>" />     
