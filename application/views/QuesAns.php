@@ -172,7 +172,7 @@
                                   $que_id = $row->question_id;
                                     ?>
                                     <li class="QuesAns_content">
-                                        <a href="#" class="QuesAns_link">
+                                        <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" class="QuesAns_link">
                                             <span class="QuesAns_title"><?php echo $row->question_desc; ?></span><br>
                                         </a>
                                         <span id="QuesAnsinfo" class="hmForumDateFormat">by <strong><a href="#">serenityAliyu</a></strong> <?php echo $row->question_date;  ?>            <span>[<?php echo $row->question_time;?>]</span><span class="infoText1"> type  <a href="#"> <?php echo $row->question_category;?></a> <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" class="green-text">| Answer this</a>  

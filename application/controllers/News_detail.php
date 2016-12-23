@@ -45,40 +45,20 @@ class News_detail extends CI_Controller {
         function show_one($ne_id) {
     $data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
-    //print_r("question Id" .$ne_id);
   $data['ques'] = $this->Init_models->get_one_news($ne_id);
-  //print_r($data['ques']);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree_news($ne_id);
-   //print_r($data);
-//$data['news'] = $this->Init_models->selectnews();
 $n_id = $this->uri->segment('3');
-// $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
   $data['news_details'] = $this->Init_models->getnewsdetails($n_id);
-  /* $sch_id = $this->uri->segment('3');
-        //$sch_id = $_GET['id'];
-        echo "sadfsd".$sch_id;
-        $banners = $this->Init_models->getadvertisebanners();
-        $data = array(
-            'm_title' => 'School Details',
-            'title' => 'School Details',
-            'banners' => $banners
-        );
-        $data['news'] = $this->Init_models->selectnews();
-        $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
-*/
-
    $this->load->view('news_detail', $data); 
 }
 
 function news_detail($post_id)
      { 
-    /*$question_id = $_GET['id'];*/
     $data['banners'] = $this->Init_models->getadvertisebanners();
      $data['news'] = $this->Init_models->get_one_news($post_id); 
      // get a post Answers based on question_id and send it to view 
      $data['comments'] = $this->show_tree_news($post_id); 
-     //print_r($data['comments']);
      $this->load->view('news_detail',$data); 
     } 
 
@@ -109,8 +89,7 @@ function news_detail($post_id)
     // get all parent comments ids by using news id 
      
     $id_result = $this->Init_models->tree_all_news($post_id);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ($post_id); 
-    print_r($id_result);
-    if($id_result == null)
+   if($id_result == null)
     {
         $html = ""; 
         $html .= "<ul class='collection'>"; 
@@ -201,10 +180,6 @@ return $html;
     function likeunlike(){
 
 $post_id = $this->input->post('ques_id');
-// 'user_id' => $this->input->post('u_id'),
-// 'res_id' => $this->input->post('res_id'),
-// 'like_stat' => $this->input->post('like_stat')
-// );
 return $post_id;
  $checklike = $this->db->query('SELECT plike_id from tbl_postlikes where post_id = "'.$data_array['post_id'].'"');
  $resultcheck = $checklike->num_rows();

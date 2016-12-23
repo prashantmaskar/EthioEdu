@@ -20,11 +20,11 @@
                         $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
                          $id = $this->uri->segment('3');
                                 foreach ($news_details as $row){ 
-                                    
+                                     $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."'");
                         ?>
 
                             <div class="news_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | 155 Comments </span>
+                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
                                 <h1 ><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
 
                         <div class="comment_box row">
                             <div class="col m12">
-                                <h1>Add New Comment</h1>
+                                <h1 class="head_font">Add New Comment</h1>
                             </div>
                              <div>
                             <div class="course_info">
