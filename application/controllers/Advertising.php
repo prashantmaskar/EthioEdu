@@ -51,7 +51,7 @@ class Advertising extends CI_Controller {
     }
 
 
-
+$sessid= $this->session->userdata('suserid');
       $banners = $this->Init_models->getadvertisebanners();
       $this->load->library('captcha');
        $view_params = array(
