@@ -49,18 +49,41 @@
                                 </ul>
                                 <h4 class="ad_sbtitle red-text bo_bor padd_b5">Let's get started... Let's know what you need. Write us using the form below</h4>
                                 <form id="advertiseform" method="post"action="<?php echo site_url('index.php/Advertising')?>" class="col m12" enctype="multipart/form-data">
+                                     <?php if($this->session->userdata('logged_in')){
+                                         foreach ($userdetails as $row) {
+    ?>
                                     <div class=" form-group input-field col s12">
-                                        <input id="Caption" name="Caption" type="text" class="validate">
+                                        <input id="Caption" name="Caption" type="text" class="validate" value="<?php echo $row['first_name']; ?>">
                                         <label for="Caption">Name</label>
                                     </div>
                                 <div class="form-group input-field col s12">
-                                        <input id="Caption" name="email" type="email" class="validate">
+                                        <input id="Caption" name="email" type="email" class="validate" value="<?php echo $row['user_email']; ?>" >
                                         <label for="Caption">Email</label>
                                     </div>
                                       <div class="form-group input-field col s12">
-                                        <input id="Caption" name="contact" type="text" class="validate">
+                                        <input id="Caption" name="contact" type="text" class="validate" value="<?php echo $row['mobile_no']; ?>">
                                         <label for="Caption">Contact</label>
                                     </div>
+                                    <?php }} else{    ?>
+                                  
+
+                                   <div class=" form-group input-field col s12">
+                                        <input id="Caption" name="Caption" type="text" class="validate" >
+                                        <label for="Caption">Name</label>
+                                    </div>
+                                <div class="form-group input-field col s12">
+                                        <input id="Caption" name="email" type="email" class="validate"  >
+                                        <label for="Caption">Email</label>
+                                    </div>
+                                      <div class="form-group input-field col s12">
+                                        <input id="Caption" name="contact" type="text" class="validate" >
+                                        <label for="Caption">Contact</label>
+                                    </div>
+
+                                    
+                                       <?php } ?>
+
+
                                     <div class="form-group input-field col s12">
                                         <select class="form-control browser-default" name="catagory" >
                                             <option value="" disabled selected>Category</option>
