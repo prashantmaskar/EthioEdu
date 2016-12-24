@@ -79,7 +79,7 @@ class Composemail extends CI_Controller {
 				 if ($this->init_models->sendpmessage($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', ' Message sent Successfully'); 
             redirect("index.php/composemail");
             }
 

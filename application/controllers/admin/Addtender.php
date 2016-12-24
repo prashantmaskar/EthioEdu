@@ -80,7 +80,7 @@ class Addtender extends CI_Controller {
             if ($this->init_models->insertprivacy($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'tender added Successfully'); 
             redirect("index.php/admin/addtender");
             }
 

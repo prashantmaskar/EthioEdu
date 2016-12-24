@@ -31,9 +31,9 @@
                                                         <select class="form-control browser-default" name="schooltype">
 
                                                             <option value="">select your school type</option>
-                                                             <option value="anything">anything</option>
-                                                            <option value="friendship">friendship</option>
-                                                             <option value="friendship">friendship</option>
+                                                             <option value="anything">University</option>
+                                                            <option value="friendship">Polytechnic</option>
+                                                             <option value="friendship">college of education</option>
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
@@ -49,9 +49,17 @@
                                                         <select class="form-control browser-default" name="level">
 
                                                             <option value="">select level</option>
-                                                             <option value="anything">anything</option>
-                                                            <option value="friendship">friendship</option>
-                                                             <option value="friendship">friendship</option>
+                                                             <option value="aspirant">aspirant</option>
+                                                            <option value="student-100 level">student-100 level</option>
+                                                             <option value="student-200 level">student-200 level</option>
+                                                             <option value="student-300 level">student-300 level</option>
+                                                             <option value="student-400 level">student-400 level</option>
+                                                             <option value="student-500 level">student-500 level</option>
+                                                             <option value="student-600 level">student-600 level</option>
+                                                             <option value="student-700 level">student-700 level</option>
+                                                             <option value="student-800 level">student-800 level</option>
+                                                             <option value="graduate">graduate</option>
+                                                             <option value="classified">classified</option>
                                                         </select>
                                     </div>
                                     <div class="form-group input-field col s12">

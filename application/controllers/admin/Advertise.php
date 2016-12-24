@@ -105,7 +105,7 @@ class Advertise extends CI_Controller {
 }
                    if($isinserted = $this->init_models->add_advertise($data))
                         {
-                           $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                           $this->session->set_flashdata('message', 'Advertise added Successfully'); 
                             redirect("index.php/admin/advertise");
                       }
                

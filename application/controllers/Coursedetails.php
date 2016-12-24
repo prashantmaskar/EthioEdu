@@ -83,8 +83,8 @@ class Coursedetails extends CI_Controller {
        if($isinserted = $this->init_models->insertreview($data))
                         
                         {
-                           $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-                            redirect("index.php/coursedetails?id=$id");
+                           $this->session->set_flashdata('message', 'Review and rating added Successfully'); 
+                            redirect("index.php/course?id=$id");
                       }
              
     }

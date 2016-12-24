@@ -97,7 +97,7 @@ $sessid= $this->session->userdata('suserid');
  if ($this->init_models->insert_project($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'Topic added Successfully'); 
             redirect("index.php/project_topics");
             }
 

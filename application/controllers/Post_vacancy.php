@@ -88,7 +88,7 @@ class Post_vacancy extends CI_Controller {
 
         if ($this->init_models->insertprivacy($data))
             {
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'vacancy posted Successfully'); 
             redirect("index.php/post_vacancy");
             }
 

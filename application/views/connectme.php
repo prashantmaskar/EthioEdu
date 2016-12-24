@@ -101,8 +101,12 @@
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="col s12 m3 margin-t-15">
+                   
                     <div class="online_std z-depth-1">
+                         <center><h5>Connect to me<h5></center>
                         <ul class="online_std_list">
                        <?php 
 //print_r($related_users);

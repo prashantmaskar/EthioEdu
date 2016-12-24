@@ -130,7 +130,7 @@ if(isset($_POST['action'])){
      if ($this->init_models->edit_school($data))
             {
     //echo"<script>alert('Registration Success');</script>";
-                $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                $this->session->set_flashdata('message', 'School updated Successfully'); 
                 redirect("index.php/admin/listschool");
             }
             else{

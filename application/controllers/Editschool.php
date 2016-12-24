@@ -202,7 +202,7 @@ else{
      if ($this->init_models->addschooldata($data))
             {
     //echo"<script>alert('Registration Success');</script>";
-                $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+                $this->session->set_flashdata('message', 'School updated Successfully'); 
                 redirect("index.php/editschool");
             }
             else{

@@ -88,7 +88,7 @@ $fduration = $cduration*30;
        if ($this->init_models->insertcourse($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'Course added Successfully'); 
             redirect("index.php/addcourse");
             }
 

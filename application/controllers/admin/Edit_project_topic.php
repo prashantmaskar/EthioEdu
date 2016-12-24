@@ -100,7 +100,7 @@ if(isset($_POST['action'])){
                  if ($this->init_models->edit_project_topic($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Data updated successfully'); 
+            $this->session->set_flashdata('message', 'project_topic updated successfully'); 
             redirect("index.php/admin/project_topic");
             }
 

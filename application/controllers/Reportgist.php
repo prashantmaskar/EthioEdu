@@ -103,7 +103,7 @@ class Reportgist extends CI_Controller {
                       
                       if($this->init_models->add_anews($data));
                       {
-            $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+            $this->session->set_flashdata('message', 'gist added Successfully'); 
             redirect("index.php/reportgist");
             }
                         

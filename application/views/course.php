@@ -13,6 +13,19 @@
                         </a>
                     </div>
                 </div>
+ <?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+      <div class="message-data">
+        <p class="success-msg"><?php echo $this->session->flashdata('message'); ?></p>
+        <button class="btn success-close">Close</button>
+        </div>   
+        </div>
+    <?php
+    }
+?>
+                
                 <div class="col s12 m10 grid-example z-depth-1">
                     <div class="school_category">
                         <div class="col m12 s12">
