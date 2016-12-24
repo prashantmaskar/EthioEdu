@@ -25,7 +25,7 @@ class AddAbout extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -40,8 +40,8 @@ class AddAbout extends CI_Controller {
                 'm_title' => 'Admin AddAbout',
                 'title'   => 'Admin AddAbout'
             );
-    $view_params['add_about'] = $this->init_models->getaddabout();
-    $view_params['about_count'] = $this->init_models->getaboutcount();
+    $view_params['add_about'] = $this->Init_models->getaddabout();
+    $view_params['about_count'] = $this->Init_models->getaboutcount();
 		$this->load->view('admin/addAbout',$view_params);
 
     if(isset($_POST['addaction'])){
@@ -108,7 +108,7 @@ class AddAbout extends CI_Controller {
 
         );
                         
-              if ($this->init_models->add_anews($data))
+              if ($this->Init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/admin/AddAbout");
@@ -168,7 +168,7 @@ class AddAbout extends CI_Controller {
                   'post_time' => $time
              );
        
-                  $isinserted = $this->init_models->edit_about($data);
+                  $isinserted = $this->Init_models->edit_about($data);
 
 
                if(isset($isinserted)){

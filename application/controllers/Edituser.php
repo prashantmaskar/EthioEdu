@@ -24,7 +24,7 @@ class Edituser extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -35,15 +35,15 @@ class Edituser extends CI_Controller {
 	public function index()
 	{
         $sessid= $this->session->userdata('suserid');
-        $related_res = $this->init_models->related_users($sessid);
-        $banners = $this->init_models->getadvertisebanners();
+        $related_res = $this->Init_models->related_users($sessid);
+        $banners = $this->Init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'Edit UserProfile',
                 'title'   => 'Edit UserProfile',
                 'banners' => $banners,
                 'related_res' => $related_res,
             );
-        $view_params['user_details'] = $this->init_models->get_currentuser_details($sessid);
+        $view_params['user_details'] = $this->Init_models->get_currentuser_details($sessid);
 		$this->load->view('edituser',$view_params);
 
 
@@ -78,7 +78,7 @@ class Edituser extends CI_Controller {
 
 	            );
 
-        $this->init_models->update_front_user($data);
+        $this->Init_models->update_front_user($data);
 }
 
 
@@ -94,7 +94,7 @@ public function editfrontuser(){
 
                 );
 
-        $this->init_models->edit_front_user($data);
+        $this->Init_models->edit_front_user($data);
 }
 
 
@@ -161,7 +161,7 @@ public function editfrontuser(){
         
 
 
-             if ($this->init_models->updateuserdetails($data))
+             if ($this->Init_models->updateuserdetails($data))
             {
     $this->session->set_flashdata('message', 'User Updated Successfully'); 
             redirect("index.php/edituser");            }

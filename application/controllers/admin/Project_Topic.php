@@ -25,7 +25,7 @@ class Project_Topic extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -41,7 +41,7 @@ class Project_Topic extends CI_Controller {
                 'm_title' => 'Admin Project Topic',
                 'title'   => 'Admin Project Topic'
             );
-             $view_params['project_topics']=$this->init_models->selectallproject();
+             $view_params['project_topics']=$this->Init_models->selectallproject();
 		$this->load->view('admin/project-topic',$view_params);
 		if (isset($_POST['action'])){
 			$this->insertproject();
@@ -93,7 +93,7 @@ class Project_Topic extends CI_Controller {
             'user_id' => $sessid
 			);
         
-        if ($this->init_models->insert_project($data))
+        if ($this->Init_models->insert_project($data))
             {
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
             redirect("index.php/admin/project-topic");

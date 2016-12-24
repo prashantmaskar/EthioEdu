@@ -26,7 +26,7 @@ class Edit_course extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -45,9 +45,9 @@ class Edit_course extends CI_Controller {
                 'title'   => 'Edit Course'
             );
 
-    $view_params['categories'] = $this->init_models->get_categories();
+    $view_params['categories'] = $this->Init_models->get_categories();
     //print_r($view_params['categories']);
-    $view_params['course_details'] = $this->init_models->get_course_details($course_id);
+    $view_params['course_details'] = $this->Init_models->get_course_details($course_id);
     $this->load->view('admin/edit_course',$view_params);
 if(isset($_POST['action'])){
         $this->edit_course();
@@ -84,7 +84,7 @@ $fduration = $cduration*30;
 
             );
 
-        if ($this->init_models->edit_course($data))
+        if ($this->Init_models->edit_course($data))
             {
    redirect('index.php/admin/listcourse');
             }

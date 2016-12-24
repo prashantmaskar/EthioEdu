@@ -25,7 +25,7 @@ class Coursedetails extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
 
 
          /*if ( !$this->session->userdata('logged_in'))
@@ -51,17 +51,17 @@ class Coursedetails extends CI_Controller {
         }
         $course_id = $_GET['id'];
         $sessid= $this->session->userdata('suserid');
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Course Details',
             'title' => 'Course Details',
             'banners' => $banners,
             'cource_id' => $cource_id
         );
-        $view_params['course_count'] = $this->init_models->get_all_course_count($course_id, $sessid);
-        $view_params['course_details'] = $this->init_models->getcoursedetails($course_id);
-        $view_params['user_details'] = $this->init_models->getuserdetails($sessid);
-        $view_params['more_course'] = $this->init_models->getmorecourse($course_id);
+        $view_params['course_count'] = $this->Init_models->get_all_course_count($course_id, $sessid);
+        $view_params['course_details'] = $this->Init_models->getcoursedetails($course_id);
+        $view_params['user_details'] = $this->Init_models->getuserdetails($sessid);
+        $view_params['more_course'] = $this->Init_models->getmorecourse($course_id);
         $this->load->view('coursedetails',$view_params);
     }
        
@@ -80,7 +80,7 @@ class Coursedetails extends CI_Controller {
             );
             
                 $id = $_GET['id'];
-       if($isinserted = $this->init_models->insertreview($data))
+       if($isinserted = $this->Init_models->insertreview($data))
                         
                         {
                            $this->session->set_flashdata('message', 'Review and rating added Successfully'); 

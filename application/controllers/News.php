@@ -25,7 +25,7 @@ class News extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
     function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
@@ -39,7 +39,7 @@ class News extends CI_Controller {
         'news_category'=>'news_category',
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'News Search',
                 'title'   => 'News Search',
@@ -58,7 +58,7 @@ class News extends CI_Controller {
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_news($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_news($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['news']= $results['rows'];
@@ -115,7 +115,7 @@ class News extends CI_Controller {
         
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'News',
                 'title'   => 'News',
@@ -134,7 +134,7 @@ class News extends CI_Controller {
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_news($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_news($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['news']= $results['rows'];

@@ -26,7 +26,7 @@ class Listuser extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -43,7 +43,7 @@ class Listuser extends CI_Controller {
                 'm_title' => 'Admin Listuser',
                 'title'   => 'Admin Listuser'
             );
-             $view_params['user'] = $this->init_models->selectalluser();
+             $view_params['user'] = $this->Init_models->selectalluser();
 		$this->load->view('admin/listuser',$view_params);
 	}
 }

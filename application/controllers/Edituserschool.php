@@ -26,7 +26,7 @@ class Edituserschool extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -39,7 +39,7 @@ class Edituserschool extends CI_Controller {
 
   public function index()
   {
-     $banners = $this->init_models->getadvertisebanners();
+     $banners = $this->Init_models->getadvertisebanners();
             $sch_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'EditUserSchool',
@@ -47,7 +47,7 @@ class Edituserschool extends CI_Controller {
                  'banners' => $banners,
 
             );
-   $view_params['school_details'] = $this->init_models->get_school_details($sch_id);
+   $view_params['school_details'] = $this->Init_models->get_school_details($sch_id);
     $this->load->view('edituserschool',$view_params);
 if(isset($_POST['action'])){
         $this->edit_school();
@@ -129,7 +129,7 @@ if(isset($_POST['action'])){
                 'school_time' => $this->input->post('time')
                 );
 
-     if ($this->init_models->edit_school($data))
+     if ($this->Init_models->edit_school($data))
             {
     //echo"<script>alert('Registration Success');</script>";
                 $this->session->set_flashdata('message', 'School Updated Successfully'); 

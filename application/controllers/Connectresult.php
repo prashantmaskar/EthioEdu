@@ -26,7 +26,7 @@ class Connectresult extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -57,8 +57,8 @@ class Connectresult extends CI_Controller {
         //print_r( $data['fields']);
 
         $sessid= $this->session->userdata('suserid');
-        $related_res = $this->init_models->related_users($sessid);
-        $banners = $this->init_models->getadvertisebanners();
+        $related_res = $this->Init_models->related_users($sessid);
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',
                 'title'   => 'Connect Result',
@@ -81,7 +81,7 @@ class Connectresult extends CI_Controller {
     );
        //
 
-   $results = $this->init_models->search_result($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_result($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['conresult']= $results['rows'];
@@ -148,8 +148,8 @@ class Connectresult extends CI_Controller {
 
             );
         $sessid= $this->session->userdata('suserid');
-        $related_res = $this->init_models->related_users($sessid);
-        $banners = $this->init_models->getadvertisebanners();
+        $related_res = $this->Init_models->related_users($sessid);
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Connect Result',
                 'title'   => 'Connect Result',
@@ -172,7 +172,7 @@ class Connectresult extends CI_Controller {
     );
        //
 
-   $results = $this->init_models->search_result($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_result($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['conresult']= $results['rows'];

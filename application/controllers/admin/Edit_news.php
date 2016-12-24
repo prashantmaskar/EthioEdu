@@ -26,7 +26,7 @@ class Edit_news extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_news extends CI_Controller {
                 'm_title' => 'Edit News',
                 'title'   => 'Edit News'
             );
-    $view_params['news_details'] = $this->init_models->get_news_details($news_id);
+    $view_params['news_details'] = $this->Init_models->get_news_details($news_id);
     $this->load->view('admin/edit_news',$view_params);
 if(isset($_POST['action'])){
         $this->edit_news();
@@ -115,7 +115,7 @@ if(isset($_POST['action'])){
                //    'post_date' => $date,
                // 'post_time' => $this->input->post('time')
         );
-                  $isinserted = $this->init_models->edit_news($data);
+                  $isinserted = $this->Init_models->edit_news($data);
                         
 
                         

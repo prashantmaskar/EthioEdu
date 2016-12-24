@@ -25,48 +25,48 @@ class Event_details extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
     public function index() {
         //$event_id = $_GET['id'];
          $e_id = $this->uri->segment('3');
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'event details',
             'title' => 'event details',
             'banners' =>$banners
         );
-        $view_params['eventid'] = $this->init_models->geteventdetails($e_id);
+        $view_params['eventid'] = $this->Init_models->geteventdetails($e_id);
         $this->load->view('event_details',$view_params);
     }
         
 
 function show_one($ne_id)
  {
-    $data['banners'] = $this->init_models->getadvertisebanners();
+    $data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
     //print_r("question Id" .$ne_id);
-  $data['ques'] = $this->init_models->get_one_event($ne_id);
+  $data['ques'] = $this->Init_models->get_one_event($ne_id);
   //print_r($data['ques']);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree_event($ne_id);
    //print_r($data);
-//$data['news'] = $this->init_models->selectnews();
+//$data['news'] = $this->Init_models->selectnews();
 $e_id = $this->uri->segment('3');
-$data['eventid'] = $this->init_models->geteventdetails($e_id);
+$data['eventid'] = $this->Init_models->geteventdetails($e_id);
   /* $sch_id = $this->uri->segment('3');
         //$sch_id = $_GET['id'];
         echo "sadfsd".$sch_id;
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $data = array(
             'm_title' => 'School Details',
             'title' => 'School Details',
             'banners' => $banners
         );
-        $data['news'] = $this->init_models->selectnews();
-        $data['sch_details'] = $this->init_models->getsch_details($sch_id);
+        $data['news'] = $this->Init_models->selectnews();
+        $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
 */
 
    $this->load->view('event_details', $data); 
@@ -75,8 +75,8 @@ $data['eventid'] = $this->init_models->geteventdetails($e_id);
 function event_details($post_id)
      { 
     /*$question_id = $_GET['id'];*/
-    $data['banners'] = $this->init_models->getadvertisebanners();
-     $data['news'] = $this->init_models->get_one_event($post_id); 
+    $data['banners'] = $this->Init_models->getadvertisebanners();
+     $data['news'] = $this->Init_models->get_one_event($post_id); 
      // get a post Answers based on question_id and send it to view 
      $data['comments'] = $this->show_tree_event($post_id); 
      //print_r($data['comments']);
@@ -86,7 +86,7 @@ function event_details($post_id)
     {
 
         // get a post id based on news id
-        $data['ques'] = $this->init_models->get_one_event($ne_id);
+        $data['ques'] = $this->Init_models->get_one_event($ne_id);
         //set validation rules
         $this->form_validation->set_rules('comment_name', 'Name', 'required|trim|htmlspecialchars');
         $this->form_validation->set_rules('comment_body', 'comment_body', 'required|trim|htmlspecialchars');
@@ -96,7 +96,7 @@ function event_details($post_id)
             redirect("event_details/show_one/$ne_id");
         } else {
             //if valid send comment to admin to tak approve
-            $this->init_models->add_new_event_comment();
+            $this->Init_models->add_new_event_comment();
             $this->session->set_flashdata('error_msg', 'Your comment is awaiting moderation.');
             redirect("event_details/show_one/$ne_id");
         }
@@ -108,7 +108,7 @@ function event_details($post_id)
     $store_all_id = array(); 
     // get all parent comments ids by using news id 
      
-    $id_result = $this->init_models->tree_all_event($post_id);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ($post_id); 
+    $id_result = $this->Init_models->tree_all_event($post_id);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ($post_id); 
     print_r($id_result);
     if($id_result == null)
     {
@@ -129,7 +129,7 @@ return $html;
     }
 else{
 
-    // loop through all comments to save parent ids init_models$store_all_id array 
+    // loop through all comments to save parent ids Init_models$store_all_id array 
     foreach ($id_result as $presponse_id) 
     { 
     array_push($store_all_id, $presponse_id['pparent_id']); 
@@ -147,7 +147,7 @@ function in_parent($in_parent,$post_id,$store_all_id)
     // build hierarchy html structure based on ul li (parent-child) nodes 
     if (in_array($in_parent,$store_all_id)) 
     { 
-           $result = $this->init_models->tree_by_parent_event($post_id,$in_parent); 
+           $result = $this->Init_models->tree_by_parent_event($post_id,$in_parent); 
            $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
    foreach ($result as $re) 
 { 

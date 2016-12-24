@@ -25,29 +25,29 @@ class AnsQues extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         // $sessname = $this->session->userdata('susername');
     }
 
 
 	public function index()
 	{
-		  $banners = $this->init_models->getadvertisebanners();
+		  $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'ansQues',
                 'title'   => 'ansQues',
                 'banners' => $banners
             );
-                 $data['news'] = $this->init_models->get_all();
+                 $data['news'] = $this->Init_models->get_all();
                  $this->load->view('home', $data);
        }
 
 
 function show_one($ne_id) {
-	$data['banners'] = $this->init_models->getadvertisebanners();
+	$data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
 	//print_r("question Id" .$ne_id);
-  $data['ques'] = $this->init_models->get_one($ne_id);
+  $data['ques'] = $this->Init_models->get_one($ne_id);
   //print_r($data['ques']);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree($ne_id);
@@ -58,8 +58,8 @@ function show_one($ne_id) {
 	function ansQues($question_id )
 	 { 
 	/*$question_id = $_GET['id'];*/
-	$data['banners'] = $this->init_models->getadvertisebanners();
-	 $data['news'] = $this->init_models->get_one($question_id); 
+	$data['banners'] = $this->Init_models->getadvertisebanners();
+	 $data['news'] = $this->Init_models->get_one($question_id); 
 	 // get a post Answers based on question_id and send it to view 
 	 $data['comments'] = $this->show_tree($question_id); 
 	// print_r($data['news']);
@@ -86,7 +86,7 @@ function show_one($ne_id) {
 			'question_id' =>$this->input->post('question_id'),
 		    'user_id' => $sessid
 			);
-		if ($this->init_models->insert_response($data))
+		if ($this->Init_models->insert_response($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Answer posted Successfully'); 
@@ -97,7 +97,7 @@ function add_comment($ne_id)
     {
 
         // get a post id based on news id
-        $data['ques'] = $this->init_models->get_one($ne_id);
+        $data['ques'] = $this->Init_models->get_one($ne_id);
         //set validation rules
         $this->form_validation->set_rules('comment_name', 'Name', 'required|trim|htmlspecialchars');
         $this->form_validation->set_rules('comment_body', 'comment_body', 'required|trim|htmlspecialchars');
@@ -107,7 +107,7 @@ function add_comment($ne_id)
             redirect("ansQues/show_one/$ne_id");
         } else {
             //if valid send comment to admin to tak approve
-            $this->init_models->add_new_comment();
+            $this->Init_models->add_new_comment();
             $this->session->set_flashdata('error_msg', 'Your comment is awaiting moderation.');
             redirect("ansQues/show_one/$ne_id");
         }
@@ -118,9 +118,9 @@ function add_comment($ne_id)
 	// create array to store all comments ids 
 	$store_all_id = array(); 
 	// get all parent comments ids by using news id 
-	$id_result = $this->init_models->tree_all($question_id); 
+	$id_result = $this->Init_models->tree_all($question_id); 
 
-	// loop through all comments to save parent ids init_models$store_all_id array 
+	// loop through all comments to save parent ids Init_models$store_all_id array 
 	if($id_result == null)
 	{
 		$html = ""; 
@@ -160,7 +160,7 @@ function in_parent($in_parent,$question_id,$store_all_id)
 	// build hierarchy html structure based on ul li (parent-child) nodes 
 	if (in_array($in_parent,$store_all_id)) 
 	{ 
-           $result = $this->init_models->tree_by_parent($question_id,$in_parent); 
+           $result = $this->Init_models->tree_by_parent($question_id,$in_parent); 
            $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
    foreach ($result as $re) 
 { 

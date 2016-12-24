@@ -26,7 +26,7 @@ class Projectlist extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -47,7 +47,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
         
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Project List',
                 'title'   => 'Project List',
@@ -67,7 +67,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
         //print_r($query_array);
        //
 
-   $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['project']= $results['rows'];
@@ -103,7 +103,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-$data['project_topics']=$this->init_models->selectproject();
+$data['project_topics']=$this->Init_models->selectproject();
        $this->load->view('Projectlist',$data);
 
     }
@@ -123,7 +123,7 @@ $data['project_topics']=$this->init_models->selectproject();
 
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Project List',
                 'title'   => 'Project List',
@@ -142,7 +142,7 @@ $data['project_topics']=$this->init_models->selectproject();
     );
        //
 
-   $results = $this->init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_project($query_array, $limit, $offset, $sort_by, $sort_order);
     $this->db->last_query();
 
    $data['project']= $results['rows'];
@@ -178,7 +178,7 @@ $data['project_topics']=$this->init_models->selectproject();
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-$data['project_topics']=$this->init_models->selectproject();
+$data['project_topics']=$this->Init_models->selectproject();
        $this->load->view('Projectlist',$data);
     }
 

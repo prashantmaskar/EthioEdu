@@ -25,14 +25,14 @@ class header extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
        $sessname = $this->session->userdata('susername');
         $sessid= $this->session->userdata('suserid');
     }
 
 
     public function index() {
-         $banners = $this->init_models->getadvertisebanners();
+         $banners = $this->Init_models->getadvertisebanners();
 
         $view_params = array(
             'm_title' => 'WelCome To EthioEdu',

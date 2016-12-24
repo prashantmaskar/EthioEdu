@@ -25,7 +25,7 @@ class Advertise extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -41,7 +41,7 @@ class Advertise extends CI_Controller {
                 'm_title' => 'Admin Advertise',
                 'title'   => 'Admin Advertise'
             );
-              $view_params['advertise'] = $this->init_models->selectadvertise();
+              $view_params['advertise'] = $this->Init_models->selectadvertise();
 		$this->load->view('admin/advertise',$view_params);
 
 		if(isset($_POST['action'])){
@@ -103,7 +103,7 @@ class Advertise extends CI_Controller {
 
 
 }
-                   if($isinserted = $this->init_models->add_advertise($data))
+                   if($isinserted = $this->Init_models->add_advertise($data))
                         {
                            $this->session->set_flashdata('message', 'Advertise added Successfully'); 
                             redirect("index.php/admin/advertise");

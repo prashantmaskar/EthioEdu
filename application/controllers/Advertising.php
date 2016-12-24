@@ -24,7 +24,7 @@ class Advertising extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
@@ -52,7 +52,7 @@ class Advertising extends CI_Controller {
 
 
 
-      $banners = $this->init_models->getadvertisebanners();
+      $banners = $this->Init_models->getadvertisebanners();
       $this->load->library('captcha');
        $view_params = array(
           'm_title' => ' Advertising',
@@ -60,7 +60,7 @@ class Advertising extends CI_Controller {
           'banners' => $banners,
           'captcha' => $this->captcha->main()
       );
-        $view_params['userdetails'] = $this->init_models->getadvertisingdetails($sessid);
+        $view_params['userdetails'] = $this->Init_models->getadvertisingdetails($sessid);
       $this->session->set_userdata('captcha_info', $view_params['captcha']);
       $this->load->view('Advertising',$view_params);
 
@@ -125,7 +125,7 @@ class Advertising extends CI_Controller {
 
 }
   
-                        if($isinserted = $this->init_models->add_advertise($data));
+                        if($isinserted = $this->Init_models->add_advertise($data));
                         
                         {
                            $this->session->set_flashdata('message', 'Advertise added Successfully'); 

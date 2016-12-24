@@ -27,7 +27,7 @@ class QuesAns extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
  function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
@@ -41,7 +41,7 @@ class QuesAns extends CI_Controller {
         'question_category'=>'question_category',
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Question Search',
                 'title'   => 'Question Search',
@@ -61,7 +61,7 @@ class QuesAns extends CI_Controller {
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_question($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_question($query_array, $limit, $offset, $sort_by, $sort_order);
    //echo $this->db->last_query();
 
    $data['question']= $results['rows'];
@@ -118,7 +118,7 @@ class QuesAns extends CI_Controller {
         
             );
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Questions',
                 'title'   => 'Questions',
@@ -138,7 +138,7 @@ class QuesAns extends CI_Controller {
        //
         //print_r($query_array);
 
-   $results = $this->init_models->search_question($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_question($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
 
    $data['question']= $results['rows'];
@@ -216,13 +216,13 @@ class QuesAns extends CI_Controller {
 
 
     // public function index() {
-    //     $banners = $this->init_models->getadvertisebanners();
+    //     $banners = $this->Init_models->getadvertisebanners();
     //     $view_params = array(
     //         'm_title' => 'QuesAns',
     //         'title' => 'QuesAns',
     //         'banners' => $banners
     //     );
-    //         $view_params['question'] = $this->init_models->selectquestion();
+    //         $view_params['question'] = $this->Init_models->selectquestion();
     //     $this->load->view('QuesAns',$view_params);
     // }
 

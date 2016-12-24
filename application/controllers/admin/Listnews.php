@@ -26,7 +26,7 @@ class Listnews extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -43,7 +43,7 @@ class Listnews extends CI_Controller {
                 'm_title' => 'Post',
                 'title'   => 'Post'
             );
-        $view_params['news'] = $this->init_models->selectallnews();
+        $view_params['news'] = $this->Init_models->selectallnews();
 		$this->load->view('admin/post',$view_params);
 	}
 }

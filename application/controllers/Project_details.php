@@ -26,18 +26,18 @@ class project_details extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
     public function index() {
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Project Details',
             'title' => 'Project Details',
             'banners' => $banners
         );
-          $view_params['project_topics']=$this->init_models->selectproject();
+          $view_params['project_topics']=$this->Init_models->selectproject();
         $this->load->view('project_details',$view_params);
     }
 

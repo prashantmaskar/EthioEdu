@@ -26,7 +26,7 @@ class Edit_project_topic extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_project_topic extends CI_Controller {
                 'm_title' => 'Edit _project_topic',
                 'title'   => 'Edit_project_topic'
             );
-    $view_params['project_details'] = $this->init_models->get_project_details($topic_id);
+    $view_params['project_details'] = $this->Init_models->get_project_details($topic_id);
     $this->load->view('admin/edit_project_topic',$view_params);
 if(isset($_POST['action'])){
         $this->edit_project_topic();
@@ -97,7 +97,7 @@ if(isset($_POST['action'])){
                   
                  
         );
-                 if ($this->init_models->edit_project_topic($data))
+                 if ($this->Init_models->edit_project_topic($data))
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'project_topic updated successfully'); 

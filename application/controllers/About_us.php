@@ -24,19 +24,19 @@ class About_us extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
 	public function index()
 	{
-		 $banners = $this->init_models->getadvertisebanners();
+		 $banners = $this->Init_models->getadvertisebanners();
              $view_params = array(
                 'm_title' => 'About Us',
                 'title'   => 'About Us',
                 'banners' => $banners
             );
-              $view_params['about'] = $this->init_models->selectabout();
+              $view_params['about'] = $this->Init_models->selectabout();
 		$this->load->view('About_us',$view_params);
 	}
 }

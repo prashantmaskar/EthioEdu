@@ -26,51 +26,51 @@ class Schooldetails extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
     public function index() {
          $sch_id = $this->uri->segment('3');
         //$sch_id = $_GET['id'];
         echo "sadfsd".$sch_id;
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'School Details',
             'title' => 'School Details',
             'banners' => $banners
         );
-        $view_params['news'] = $this->init_models->selectnews();
-        $view_params['sch_details'] = $this->init_models->getsch_details($sch_id);
+        $view_params['news'] = $this->Init_models->selectnews();
+        $view_params['sch_details'] = $this->Init_models->getsch_details($sch_id);
 
         $this->load->view('schooldetails',$view_params);
 
-         //$data['news'] = $this->init_models->get_all_sch();
+         //$data['news'] = $this->Init_models->get_all_sch();
                 // $this->load->view('schooldetails', $data);
     }
 
     function show_one($ne_id) {
-    $data['banners'] = $this->init_models->getadvertisebanners();
+    $data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
     //print_r("question Id" .$ne_id);
-  $data['ques'] = $this->init_models->get_one_sch($ne_id);
+  $data['ques'] = $this->Init_models->get_one_sch($ne_id);
   //print_r($data['ques']);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree_sch($ne_id);
    //print_r($data);
-$data['news'] = $this->init_models->selectnews();
+$data['news'] = $this->Init_models->selectnews();
 $sch_id = $this->uri->segment('3');
- $data['sch_details'] = $this->init_models->getsch_details($sch_id);
+ $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
   /* $sch_id = $this->uri->segment('3');
         //$sch_id = $_GET['id'];
         echo "sadfsd".$sch_id;
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $data = array(
             'm_title' => 'School Details',
             'title' => 'School Details',
             'banners' => $banners
         );
-        $data['news'] = $this->init_models->selectnews();
-        $data['sch_details'] = $this->init_models->getsch_details($sch_id);
+        $data['news'] = $this->Init_models->selectnews();
+        $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
 */
 
    $this->load->view('schooldetails', $data); 
@@ -78,8 +78,8 @@ $sch_id = $this->uri->segment('3');
 function schooldetails($school_id)
      { 
     /*$question_id = $_GET['id'];*/
-    $data['banners'] = $this->init_models->getadvertisebanners();
-     $data['news'] = $this->init_models->get_one_sch($school_id); 
+    $data['banners'] = $this->Init_models->getadvertisebanners();
+     $data['news'] = $this->Init_models->get_one_sch($school_id); 
      // get a post Answers based on question_id and send it to view 
      $data['comments'] = $this->show_tree_sch($school_id); 
      //print_r($data['comments']);
@@ -89,7 +89,7 @@ function schooldetails($school_id)
     {
 
         // get a post id based on news id
-        $data['ques'] = $this->init_models->get_one_sch($ne_id);
+        $data['ques'] = $this->Init_models->get_one_sch($ne_id);
         //set validation rules
         $this->form_validation->set_rules('comment_name', 'Name', 'required|trim|htmlspecialchars');
         $this->form_validation->set_rules('comment_body', 'comment_body', 'required|trim|htmlspecialchars');
@@ -99,7 +99,7 @@ function schooldetails($school_id)
             redirect("schooldetails/show_one/$ne_id");
         } else {
             //if valid send comment to admin to tak approve
-            $this->init_models->add_new_sch_comment();
+            $this->Init_models->add_new_sch_comment();
             $this->session->set_flashdata('error_msg', 'Your comment is awaiting moderation.');
             redirect("schooldetails/show_one/$ne_id");
         }
@@ -110,7 +110,7 @@ function schooldetails($school_id)
     // create array to store all comments ids 
     $store_all_id = array(); 
     // get all parent comments ids by using news id 
-    $id_result = $this->init_models->tree_all_sch($school_id); 
+    $id_result = $this->Init_models->tree_all_sch($school_id); 
     print_r($id_result);
     if($id_result == null)
     {
@@ -131,7 +131,7 @@ return $html;
     }
 else{
 
-    // loop through all comments to save parent ids init_models$store_all_id array 
+    // loop through all comments to save parent ids Init_models$store_all_id array 
     foreach ($id_result as $sresponse_id) 
     { 
     array_push($store_all_id, $sresponse_id['sparent_id']); 
@@ -150,7 +150,7 @@ function in_parent($in_parent,$school_id,$store_all_id)
     // build hierarchy html structure based on ul li (parent-child) nodes 
     if (in_array($in_parent,$store_all_id)) 
     { 
-           $result = $this->init_models->tree_by_parent_sch($school_id,$in_parent); 
+           $result = $this->Init_models->tree_by_parent_sch($school_id,$in_parent); 
            $html .= $in_parent == 0 ? "<ul class='collection'>" : "<ul>"; 
    foreach ($result as $re) 
 { 

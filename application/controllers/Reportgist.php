@@ -25,7 +25,7 @@ class Reportgist extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
        if (!$this->session->userdata('logged_in'))
     { 
         $this->session->set_userdata('referred_from', current_url());
@@ -35,13 +35,13 @@ class Reportgist extends CI_Controller {
 
 
     public function index() {
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Report Gist',
             'title' => 'Report Gist',
             'banners' => $banners
         );
-          $view_params['gist'] = $this->init_models->selectgist();
+          $view_params['gist'] = $this->Init_models->selectgist();
         $this->load->view('reportgist',$view_params);
 
 
@@ -101,7 +101,7 @@ class Reportgist extends CI_Controller {
                         'user_id'=>  $sessid
         );
                       
-                      if($this->init_models->add_anews($data));
+                      if($this->Init_models->add_anews($data));
                       {
             $this->session->set_flashdata('message', 'gist added Successfully'); 
             redirect("index.php/reportgist");

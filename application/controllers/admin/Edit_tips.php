@@ -26,7 +26,7 @@ class Edit_tips extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -44,7 +44,7 @@ class Edit_tips extends CI_Controller {
                 'm_title' => 'Edit Tips',
                 'title'   => 'Edit Tips'
             );
-    $view_params['tips_details'] = $this->init_models->get_tips_details($tips_id);
+    $view_params['tips_details'] = $this->Init_models->get_tips_details($tips_id);
     $this->load->view('admin/edit_tips',$view_params);
 if(isset($_POST['action'])){
         $this->edit_tips();
@@ -99,7 +99,7 @@ if(isset($_POST['action'])){
                   'post_date' => $this->input->post('date'),
                   'post_time' => $this->input->post('time')
              );
-                  $isinserted = $this->init_models->edit_tips($data);
+                  $isinserted = $this->Init_models->edit_tips($data);
                         
 
                         

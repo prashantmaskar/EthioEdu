@@ -25,8 +25,8 @@ class Login extends CI_Controller {
         $this->load->helper(array('form','url'));
        $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
-           $this->load->model('init_models');
+        $this->load->model('Init_models');
+           $this->load->model('Init_models');
        if ($this->session->userdata('logged_in'))
     { 
        $this->session->sess_destroy();
@@ -68,7 +68,7 @@ if ($captcha_info['code'] != $this->input->post('captcha'))
           }
       else{
 
-       $usr_result = $this->init_models->get_user_credentials($username, $password);
+       $usr_result = $this->Init_models->get_user_credentials($username, $password);
      
 
       if ($usr_result){ 
@@ -128,14 +128,14 @@ $this->session->set_userdata('captcha_info', $view_params['captcha']);
   public function sendfergetemail(){
 
 
-     $usr_result = $this->init_models->get_userby_email($this->input->post('email'));
+     $usr_result = $this->Init_models->get_userby_email($this->input->post('email'));
      if(count($usr_result)>0){
 
         $from_email = "santosh.bhosale123@gmail.com"; 
         $to_email = $this->input->post('email');
         $key=md5(time());
 
-        if($this->init_models->setverificationkeyby_email($to_email,$key)){
+        if($this->Init_models->setverificationkeyby_email($to_email,$key)){
                //Load email library 
              $this->load->library('email'); 
              $this->email->set_mailtype("html");
@@ -169,7 +169,7 @@ $this->session->set_userdata('captcha_info', $view_params['captcha']);
   }
 
   public function resetpassword(){
-      $usr_result = $this->init_models->get_userby_email($this->input->get('email'));
+      $usr_result = $this->Init_models->get_userby_email($this->input->get('email'));
      if(count($usr_result)>0){
         
         if($usr_result[0]['verificationcode']==$this->input->get('key')){
@@ -202,12 +202,12 @@ $this->session->set_userdata('captcha_info', $view_params['captcha']);
     $key=$this->input->post('key');
     $email=$this->input->post('email');
     $password=$this->input->post('password');
-     $usr_result = $this->init_models->get_userby_email($email);
+     $usr_result = $this->Init_models->get_userby_email($email);
      if(count($usr_result)>0){
         
         if($usr_result[0]['verificationcode']==$key){
 
-          if($this->init_models->resetpassbykey($email,md5($password))){
+          if($this->Init_models->resetpassbykey($email,md5($password))){
               echo 'password changed successfully..';
           }else{
             $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Something went wrong!</div>');

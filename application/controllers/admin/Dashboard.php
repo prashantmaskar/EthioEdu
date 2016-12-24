@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -42,13 +42,13 @@ class Dashboard extends CI_Controller {
                 'm_title' => 'Admin Dashboard',
                 'title'   => 'Admin Dashboard'
             );
-             $view_params['devent_count'] = $this->init_models->get_all_event_count();
-             $view_params['daevent_count'] = $this->init_models->get_approved_event_count();
-             $view_params['all_users'] = $this->init_models->get_all_users_count();
-             $view_params['all_school'] = $this->init_models->get_all_school_count();
-             $view_params['approved_school'] = $this->init_models->get_approved_school_count();
-             $view_params['all_advertise'] = $this->init_models->get_all_advertise_count();
-             $view_params['approved_advertise'] = $this->init_models->get_approved_advertise_count();
+             $view_params['devent_count'] = $this->Init_models->get_all_event_count();
+             $view_params['daevent_count'] = $this->Init_models->get_approved_event_count();
+             $view_params['all_users'] = $this->Init_models->get_all_users_count();
+             $view_params['all_school'] = $this->Init_models->get_all_school_count();
+             $view_params['approved_school'] = $this->Init_models->get_approved_school_count();
+             $view_params['all_advertise'] = $this->Init_models->get_all_advertise_count();
+             $view_params['approved_advertise'] = $this->Init_models->get_approved_advertise_count();
 		$this->load->view('admin/dashboard',$view_params);
 	}
 }

@@ -26,21 +26,21 @@ class Vacancy_details extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
     }
 
 
 
     public function index() {
         $vac_id = $_GET['id'];
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'Vacancy Details',
             'title' => 'Vacancy Details',
             'banners' => $banners,
         );
-        $view_params['news'] = $this->init_models->selectnews();
-        $view_params['vacanyid'] = $this->init_models->getvacanydetails($vac_id);
+        $view_params['news'] = $this->Init_models->selectnews();
+        $view_params['vacanyid'] = $this->Init_models->getvacanydetails($vac_id);
         $this->load->view('vacancy_details',$view_params);
     }
 

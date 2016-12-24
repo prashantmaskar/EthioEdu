@@ -25,7 +25,7 @@ class Privacy_policy extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -40,8 +40,8 @@ class Privacy_policy extends CI_Controller {
                 'm_title' => 'Admin privacy_policy',
                 'title'   => 'Admin privacy_policy'
             );
-    $view_params['policy_details'] = $this->init_models->get_policy_details();
-    $view_params['policy_count'] = $this->init_models->get_policy_count();
+    $view_params['policy_details'] = $this->Init_models->get_policy_details();
+    $view_params['policy_count'] = $this->Init_models->get_policy_count();
 		$this->load->view('admin/privacy_policy',$view_params);
 
     if(isset($_POST['addaction'])){
@@ -74,7 +74,7 @@ class Privacy_policy extends CI_Controller {
 
         );
                         
-              if ($this->init_models->add_anews($data))
+              if ($this->Init_models->add_anews($data))
             {
             $this->session->set_flashdata('message', 'data added Successfully'); 
             redirect("index.php/admin/privacy_policy");
@@ -102,7 +102,7 @@ class Privacy_policy extends CI_Controller {
                   'post_date' => $date,
                   'post_time' => $time
              );
-                  $isinserted = $this->init_models->edit_privacy($data);
+                  $isinserted = $this->Init_models->edit_privacy($data);
                         
 
                         

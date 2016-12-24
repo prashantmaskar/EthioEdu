@@ -26,7 +26,7 @@ class Course extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email','pagination'));
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         // $this->load->library('pagination');
     }
 
@@ -42,7 +42,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
 
             
 
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Course List',
                 'title'   => 'Course List',
@@ -61,7 +61,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
         //print_r($query_array);
        //
 
-   $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
 
 
 
@@ -97,9 +97,9 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
-     $data['categories'] = $this->init_models->get_categories();
+     $data['categories'] = $this->Init_models->get_categories();
      $data['pagination'] = $this->pagination->create_links();
-    //$data['course_name']=$this->init_models->selectcourse();
+    //$data['course_name']=$this->Init_models->selectcourse();
        $this->load->view('course',$data);
 
     }
@@ -117,7 +117,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
 
             );
         
-        $banners = $this->init_models->getadvertisebanners();
+        $banners = $this->Init_models->getadvertisebanners();
                 $data = array(
                 'm_title' => 'Course List',
                 'title'   => 'Course List',
@@ -135,7 +135,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
     );
        
 
-   $results = $this->init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
+   $results = $this->Init_models->search_course($query_array, $limit, $offset, $sort_by, $sort_order);
     $this->db->last_query();
 
    $data['course']= $results['rows'];
@@ -171,8 +171,8 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-$data['project_topics']=$this->init_models->selectproject();
-$data['categories'] = $this->init_models->get_categories();
+$data['project_topics']=$this->Init_models->selectproject();
+$data['categories'] = $this->Init_models->get_categories();
        $this->load->view('course',$data);
     }
 

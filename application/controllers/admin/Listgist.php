@@ -25,7 +25,7 @@ class Listgist extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
-        $this->load->model('init_models');
+        $this->load->model('Init_models');
         if ( !$this->session->userdata('logged_in'))
     { 
         redirect('index.php/login');
@@ -42,7 +42,7 @@ class Listgist extends CI_Controller {
                 'm_title' => 'Admin ListGist',
                 'title'   => 'Admin ListGist'
             );
-        $view_params['gist'] = $this->init_models->selectallgist();
+        $view_params['gist'] = $this->Init_models->selectallgist();
 		$this->load->view('admin/listgist',$view_params);
 	}
 }
