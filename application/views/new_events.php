@@ -72,7 +72,17 @@
                                         <input id="date" type="date" name="date" class="datepicker">
                                         <label for="date">Date of Posting</label>
                                     </div>-->
-								
+								                      <div class=" form-group input-field col s12">
+                                                        <input id="post_by" type="date" name="post_event_date" class="datepicker validate" >
+                                                        <label for="post_by">post event date</label>
+                                                    </div>
+                                                    <div class=" form-group input-field col s12">
+                                                        <input id="text" type="text" name="post_event_time" class="validate">
+                                                        <label for="post_by">post event time</label>
+                                                    </div>
+
+
+
                                 <div class="form-group input-field col s12">
                                     <input id="postedby" name="postedby" type="text" class="validate">
                                     <label for="Caption">Posted by</label>
