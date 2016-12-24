@@ -44,6 +44,9 @@ class Edit_course extends CI_Controller {
                 'm_title' => 'Edit Course',
                 'title'   => 'Edit Course'
             );
+
+    $view_params['categories'] = $this->init_models->get_categories();
+    //print_r($view_params['categories']);
     $view_params['course_details'] = $this->init_models->get_course_details($course_id);
     $this->load->view('admin/edit_course',$view_params);
 if(isset($_POST['action'])){

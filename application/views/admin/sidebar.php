@@ -270,5 +270,23 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="bold">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        Manage Categories <?php if(!$ftendercount == 0){ ?><span class="count-indicator"><?php echo $ftendercount; ?></span><?php } ?>
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/addcategory' ?>">Add Category</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/listtender' ?>">List Categories</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>                   
                 </aside>

@@ -62,16 +62,9 @@
 													           <div class=" form-group input-field col s12">
                                                         <select class=" form-control browser-default" name="course_cat">
                                                             <option value="">Course Category</option>
-                                                            <option value="advancediploma">Advance Diploma</option>
-                                                            <option value="bridging">Bridging</option>
-                                                            <option value="certificate">Certificate</option>
-															<option value="degree">Degree</option>
-															<option value="diploma">Diploma</option>
-															<option value="graduatediploma">Graduate Diploma</option>
-															<option value="higherdiploma">Higher Diploma</option>
-															<option value="masters">Masters</option>
-															<option value="postgraduatediploma">Post Graduate Diploma</option>
-															<option value="preuniversity">Pre University</option>
+                                                        <?php foreach($categories as $row){?>
+                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <?php } ?>
                                                         </select>
                                                     </div>
 													

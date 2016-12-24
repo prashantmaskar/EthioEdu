@@ -21,6 +21,20 @@
       {  
             return $this->db->insert('tbl_course', $data);
       }
+
+      //Insert course data
+      public function insert_category($data)  
+      {  
+            return $this->db->insert('tbl_category', $data);
+      }
+
+      public function get_categories()  
+      {  
+           $query = $this->db->query("SELECT * from tbl_category");
+            return $query->result_array();
+      }
+
+      
        
       //Insert School Information data
       public function addschooluser($data)  
@@ -209,7 +223,7 @@ function get_user_id_by_uname($uname){
       }
        public function selectallcourse()  
       {  
-        $query = $this->db->query("select * from tbl_course"); 
+        $query = $this->db->query("select * from tbl_course join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
         return $query->result_array();
       }
       public function selectquestion()  
@@ -1380,7 +1394,6 @@ $q->where('question_date <=', $query_array['end_date']);
   } 
   return $data;
 }
-
   } 
   // to get child comments by entry id and parent id and news id 
   function tree_by_parent($question_id,$in_parent) 
