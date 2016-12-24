@@ -41,7 +41,7 @@ class Addtender extends CI_Controller {
                 'm_title' => 'Admin Add Tender',
                 'title'   => 'Admin Add Tender'
             );
-		$this->load->view('admin/Addtender',$view_params);
+		$this->load->view('admin/addtender',$view_params);
 
         if(isset($_POST['action'])){
 
@@ -81,7 +81,7 @@ class Addtender extends CI_Controller {
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/Addtender");
+            redirect("index.php/admin/addtender");
             }
 
 }

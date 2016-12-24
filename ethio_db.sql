@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2016 at 01:38 PM
+-- Generation Time: Dec 22, 2016 at 06:48 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -474,6 +474,57 @@ INSERT INTO `tbl_questions` (`question_id`, `question_type`, `question_category`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_schoollikes`
+--
+
+CREATE TABLE `tbl_schoollikes` (
+  `slike_id` int(11) NOT NULL,
+  `sresponse_id` int(11) NOT NULL,
+  `school_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `slikes_count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_schoollikes`
+--
+
+INSERT INTO `tbl_schoollikes` (`slike_id`, `sresponse_id`, `school_id`, `user_id`, `slikes_count`) VALUES
+(2, 4, 7, 1, 1),
+(3, 6, 8, 1, 1),
+(4, 7, 9, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_schoolresponse`
+--
+
+CREATE TABLE `tbl_schoolresponse` (
+  `sresponse_id` int(11) NOT NULL,
+  `sresponse_title` varchar(100) NOT NULL,
+  `sresponse_desc` varchar(5000) NOT NULL,
+  `sresponse_like` int(10) NOT NULL,
+  `sresponse_date` varchar(50) NOT NULL,
+  `sresponse_time` varchar(50) NOT NULL,
+  `sparent_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `school_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_schoolresponse`
+--
+
+INSERT INTO `tbl_schoolresponse` (`sresponse_id`, `sresponse_title`, `sresponse_desc`, `sresponse_like`, `sresponse_date`, `sresponse_time`, `sparent_id`, `user_id`, `school_id`) VALUES
+(3, 'dnyanesh', 'fdddddddddd', 0, '2016-12-21', '01:57:15 PM', 0, 1, 7),
+(4, 'dnyanesh', 'reply to dyanesh', 1, '2016-12-21', '03:09:13 PM', 3, 1, 7),
+(6, 'dnyanesh', 'dfgdfg', 1, '2016-12-21', '03:25:32 PM', 0, 1, 8),
+(7, 'dnyanesh', 'fkshdfkjshkfjh', 1, '2016-12-21', '07:16:00 PM', 0, 1, 9);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_school_comments`
 --
 
@@ -742,6 +793,23 @@ ALTER TABLE `tbl_questions`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `tbl_schoollikes`
+--
+ALTER TABLE `tbl_schoollikes`
+  ADD PRIMARY KEY (`slike_id`);
+
+--
+-- Indexes for table `tbl_schoolresponse`
+--
+ALTER TABLE `tbl_schoolresponse`
+  ADD PRIMARY KEY (`sresponse_id`),
+  ADD KEY `user_id` (`school_id`),
+  ADD KEY `school_id` (`school_id`),
+  ADD KEY `user_id_2` (`user_id`),
+  ADD KEY `user_id_3` (`user_id`),
+  ADD KEY `user_id_4` (`user_id`);
+
+--
 -- Indexes for table `tbl_school_comments`
 --
 ALTER TABLE `tbl_school_comments`
@@ -844,6 +912,16 @@ ALTER TABLE `tbl_projects`
 ALTER TABLE `tbl_questions`
   MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `tbl_schoollikes`
+--
+ALTER TABLE `tbl_schoollikes`
+  MODIFY `slike_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_schoolresponse`
+--
+ALTER TABLE `tbl_schoolresponse`
+  MODIFY `sresponse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `tbl_school_comments`
 --
 ALTER TABLE `tbl_school_comments`
@@ -871,6 +949,13 @@ ALTER TABLE `tbl_vacancy`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_schoolresponse`
+--
+ALTER TABLE `tbl_schoolresponse`
+  ADD CONSTRAINT `school_id` FOREIGN KEY (`school_id`) REFERENCES `tbl_school_meta` (`school_id`),
+  ADD CONSTRAINT `xcvxxvc` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`user_id`);
 
 --
 -- Constraints for table `tbl_userresponse`
