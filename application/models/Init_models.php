@@ -379,6 +379,7 @@ function getcontactdetails($sessid){
 
       }
 
+     
       function geteventdetails($event_id){
 
         $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");

@@ -84,7 +84,8 @@
 
 
                                 <div class="form-group input-field col s12">
-                                    <input id="postedby" name="postedby" type="text" class="validate">
+                                    <?php $sessname = $this->session->userdata('susername'); ?>
+                                    <input id="postedby" name="postedby" type="text" class="validate" value="<?php echo $sessname; ?>"  /readonly>
                                     <label for="Caption">Posted by</label>
                                 </div>
                                 <input type="hidden" name="post_type" value="event">
