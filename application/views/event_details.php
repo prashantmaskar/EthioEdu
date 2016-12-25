@@ -19,7 +19,9 @@
                         <?php /* $event_id = $_GET['id'];
                         $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
                         */$id = $this->uri->segment('3');
-                                foreach ($eventid as $row){ 
+
+                                foreach ($eventid as $row){
+                                 $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."'"); 
                                     
                         ?>
 
@@ -27,7 +29,7 @@
                         <meta property="og:image" content="<img scr="<?php //echo base_url(); ?>uploads/<?php //echo $row['post_attachment']; ?>"/>
                         <meta property="og:description" content="<?php //echo $row['post_title']; ?>"/> -->
                             <div class="event_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | 155 Comments </span>
+                                <span>Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
                                 <h1><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
@@ -70,7 +72,7 @@
 
                      <div class="comment_box row">
                             <div class="col m12">
-                                <h1>Add New Comment</h1>
+                                <h1 class="head_font">Add New Comment</h1>
                             </div>
                              <div>
                             <div class="course_info">
@@ -231,7 +233,7 @@ $(function () {
                                      success: function(data) {
                                       
                                          console.log(data);
-                                       //location.reload();
+                                       location.reload();
          
                                      },
                                      error:function(error){
@@ -250,8 +252,6 @@ $(function () {
                          var par_id = id4; 
                          var like_stat = id5;
 
-
-                         
                      if (confirm('Sure to Unlike ?'))
                              {
                               alert(like_stat);
@@ -262,10 +262,10 @@ $(function () {
                                      data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
                                       success: function(msg) {
                                          console.log(msg);
-                                       //location.reload();
+                                       location.reload();
                                },
                                error:function(error){
-                                      alert("fgfdg" +error);
+                                      alert("error" +error);
                                      }
                              });
                           }

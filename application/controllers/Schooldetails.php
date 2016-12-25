@@ -31,8 +31,6 @@ class Schooldetails extends CI_Controller {
 
     public function index() {
          $sch_id = $this->uri->segment('3');
-        //$sch_id = $_GET['id'];
-        echo "sadfsd".$sch_id;
         $banners = $this->Init_models->getadvertisebanners();
         $view_params = array(
             'm_title' => 'School Details',
@@ -41,49 +39,27 @@ class Schooldetails extends CI_Controller {
         );
         $view_params['news'] = $this->Init_models->selectnews();
         $view_params['sch_details'] = $this->Init_models->getsch_details($sch_id);
-
         $this->load->view('schooldetails',$view_params);
-
-         //$data['news'] = $this->Init_models->get_all_sch();
-                // $this->load->view('schooldetails', $data);
     }
 
     function show_one($ne_id) {
     $data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
-    //print_r("question Id" .$ne_id);
   $data['ques'] = $this->Init_models->get_one_sch($ne_id);
-  //print_r($data['ques']);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree_sch($ne_id);
-   //print_r($data);
 $data['news'] = $this->Init_models->selectnews();
 $sch_id = $this->uri->segment('3');
  $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
-  /* $sch_id = $this->uri->segment('3');
-        //$sch_id = $_GET['id'];
-        echo "sadfsd".$sch_id;
-        $banners = $this->Init_models->getadvertisebanners();
-        $data = array(
-            'm_title' => 'School Details',
-            'title' => 'School Details',
-            'banners' => $banners
-        );
-        $data['news'] = $this->Init_models->selectnews();
-        $data['sch_details'] = $this->Init_models->getsch_details($sch_id);
-*/
-
-   $this->load->view('schooldetails', $data); 
+  $this->load->view('schooldetails', $data); 
 } 
 function schooldetails($school_id)
      { 
-    /*$question_id = $_GET['id'];*/
     $data['banners'] = $this->Init_models->getadvertisebanners();
      $data['news'] = $this->Init_models->get_one_sch($school_id); 
      // get a post Answers based on question_id and send it to view 
      $data['comments'] = $this->show_tree_sch($school_id); 
-     //print_r($data['comments']);
-     $this->load->view('schooldetails',$data); 
+      $this->load->view('schooldetails',$data); 
     } 
  function add_sch_comment($ne_id)
     {
@@ -111,7 +87,6 @@ function schooldetails($school_id)
     $store_all_id = array(); 
     // get all parent comments ids by using news id 
     $id_result = $this->Init_models->tree_all_sch($school_id); 
-    print_r($id_result);
     if($id_result == null)
     {
         $html = ""; 
@@ -205,10 +180,6 @@ return $html;
  function likeunlike(){
 
 $school_id = $this->input->post('ques_id');
-// 'user_id' => $this->input->post('u_id'),
-// 'res_id' => $this->input->post('res_id'),
-// 'like_stat' => $this->input->post('like_stat')
-// );
 return $school_id;
  $checklike = $this->db->query('SELECT slike_id from tbl_schoollikes where school_id = "'.$data_array['school_id'].'"');
  $resultcheck = $checklike->num_rows();

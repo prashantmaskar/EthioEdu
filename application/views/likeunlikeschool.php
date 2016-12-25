@@ -27,7 +27,7 @@ else{
 $query = $this->db->query("select slike_id FROM tbl_schoollikes WHERE sresponse_id ='".$response_id."' && school_id= '".$qustion_id."' && user_id = '".$user_id."'");
 
 $rowcount = $query->num_rows();
-echo $rowcount;
+//echo $rowcount;
 if ($rowcount > 0){
 $query = $this->db->query("DELETE FROM tbl_schoollikes WHERE sresponse_id ='".$response_id."' && school_id= '".$qustion_id."' && user_id = '".$user_id."'");
 

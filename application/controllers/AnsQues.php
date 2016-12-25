@@ -46,53 +46,21 @@ class AnsQues extends CI_Controller {
 function show_one($ne_id) {
 	$data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
-	//print_r("question Id" .$ne_id);
-  $data['ques'] = $this->Init_models->get_one($ne_id);
-  //print_r($data['ques']);
+	 $data['ques'] = $this->Init_models->get_one($ne_id);
   // get a post COMMENTS based on news id and send it to view
    $data['comments'] = $this->show_tree($ne_id);
-   //print_r($data);
    $this->load->view('ansQues', $data); 
 } 
 
 	function ansQues($question_id )
 	 { 
-	/*$question_id = $_GET['id'];*/
 	$data['banners'] = $this->Init_models->getadvertisebanners();
 	 $data['news'] = $this->Init_models->get_one($question_id); 
 	 // get a post Answers based on question_id and send it to view 
 	 $data['comments'] = $this->show_tree($question_id); 
-	// print_r($data['news']);
 	 $this->load->view('ansQues',$data); 
 	} 
-
-
-
-
-	/*function insertAnswer()
-	{
-		$date = date('Y-m-d');
-		date_default_timezone_set('Asia/Kolkata');
-		$time = date('h:i:s A', time());
-		$sessid= $this->session->userdata('suserid');
-		$data=array(
-			'response_title' =>$this->input->post('caption'),
-			'response_desc' =>$this->input->post('Description'),
-			'response_like' =>$this->input->post('response_like'),
-			'parent_id' =>$this->input->post('parent_id'),
-             'response_type' =>$this->input->post('response_type'),
-			'response_date' => $date,
-			'response_time' => $time,
-			'question_id' =>$this->input->post('question_id'),
-		    'user_id' => $sessid
-			);
-		if ($this->Init_models->insert_response($data))
-            {
-    //echo"<script>alert('Data Inserted Successfully');</script>";
-            $this->session->set_flashdata('message', 'Answer posted Successfully'); 
-            redirect("index.php/home");
-            }
-	}*/
+	
 function add_comment($ne_id)
     {
 
@@ -119,8 +87,7 @@ function add_comment($ne_id)
 	$store_all_id = array(); 
 	// get all parent comments ids by using news id 
 	$id_result = $this->Init_models->tree_all($question_id); 
-
-	// loop through all comments to save parent ids Init_models$store_all_id array 
+// loop through all comments to save parent ids Init_models$store_all_id array 
 	if($id_result == null)
 	{
 		$html = ""; 
@@ -165,7 +132,6 @@ function in_parent($in_parent,$question_id,$store_all_id)
    foreach ($result as $re) 
 { 
 	              $u_id = $re['user_id'];
-	              //echo "u_id".$u_id;
                   $res_id =$re['response_id'];
                   $par_id =$re['parent_id'];
                   $ques_id = $re['question_id'];
@@ -213,10 +179,6 @@ return $html;
  function likeunlike(){
 
 $question_id = $this->input->post('ques_id');
-// 'user_id' => $this->input->post('u_id'),
-// 'res_id' => $this->input->post('res_id'),
-// 'like_stat' => $this->input->post('like_stat')
-// );
 return $question_id;
  $checklike = $this->db->query('SELECT like_id from tbl_likes where question_id = "'.$data_array['question_id'].'"');
  $resultcheck = $checklike->num_rows();
@@ -229,8 +191,4 @@ $query = $this->db->query('UPDATE tbl_userresponse SET response_like = response_
    }
 }
 
-/*$html = "<script> 
-         
-         
 
-</script>";*/
