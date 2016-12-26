@@ -45,6 +45,10 @@ $(document).ready(function() {
                     notEmpty:{ 
                         message:'please enter username!!'
 
+                    },
+                     regexp: {
+                     regexp: /^[\w]+$/,
+                        message: 'You can introduce just alphabetical characters, underscore, number but no spaces'
                     }
                   
                 }

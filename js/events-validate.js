@@ -44,6 +44,20 @@ $(document).ready(function() {
                     }*/
                 }
              },
+             post_event_date: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter date!!!..'
+                    }
+                }
+            },
+            post_event_time: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter time!!!..'
+                    }
+                }
+            },
 
           avatar:{
              validators:{
