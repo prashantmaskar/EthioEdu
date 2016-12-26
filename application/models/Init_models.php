@@ -486,7 +486,8 @@ function getcontactdetails($sessid){
 
       function getnewsdetails($news_id){
 
-        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'");
+        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); 
+        //$query = $this->db->query("select tbl_posts.post_id, tbl_posts.post_title, tbl_posts.post_desc, tbl_posts.post_category, tbl_posts.post_attachment, tbl_posts.post_author, tbl_posts.post_source, tbl_posts.post_event_date, tbl_posts.post_event_time,tbl_posts.post_date,tbl_posts.post_time,tbl_posts.post_venue,tbl_posts.post_type,tbl_posts.post_approve,tbl_posts.user_id , tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse On tbl_posts.post_id = tbl_postresponse.post_id where tbl_posts.post_type='news' and tbl_posts.post_id = '" .$news_id. "' ");
          return $query->result_array();
       }
 
