@@ -30,7 +30,13 @@ loop: true,
 });
 $('.datepicker').pickadate({
 selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        min: new Date(),
+        onSet: function () {
+        $('.datepicker').siblings('small.help-block').attr('style',"display:none;")
+        $('.datepicker').removeClass('invalid');
+        this.close();
+    }
 });
         $('.featured_slider').owlCarousel({
 loop: true,
