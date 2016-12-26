@@ -223,7 +223,7 @@ function get_user_id_by_uname($uname){
       }
        public function selectallcourse()  
       {  
-        $query = $this->db->query("select * from tbl_course"); 
+        $query = $this->db->query("select * from tbl_course join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
         return $query->result_array();
       }
       public function selectquestion()  
