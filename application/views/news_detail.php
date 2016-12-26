@@ -16,15 +16,14 @@
                 <div class="col s12 m8 grid-example">
                     <div class="news_details z-depth-1 row school_detail_wrap">
                         <div class="col m12 s12 ">
-                        <?php /* $news_id = $_GET['id'];
-                        $query = $this->db->query("select * from tbl_posts where post_type='news'  and post_id = '" .$news_id. "'"); */
+                        <?php 
                          $id = $this->uri->segment('3');
                                 foreach ($news_details as $row){ 
-                                     $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."'");
+                                     //$query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."' and pparent_id = '".$row['pparent_id']."'");
                         ?>
 
                             <div class="news_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
+                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $row['rowcount']; ?> Comments </span>
                                 <h1 ><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
@@ -36,12 +35,6 @@
                             <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>">
                         </div>
                         <div class="col s12">
-                         <!--   <a class="post-share facebook" href="http://www.facebook.com/plugins/like.php?href=http://medialoot.com/blog/&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');
-                                    return false;">Facebook<span>150</span></a> 
-                            <a class="post-share twitter" href="https://twitter.com/share?url=http://medialoot.com/blog/&text=Text for Twitter Here&via=medialoot" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
-                                    return false;">Twitter<span>250</span></a>
-                            <a class="post-share gplus" href="https://plus.google.com/share?url=http://medialoot.com/blog/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
-                                    return false;">Google Plus<span>120</span></a> -->
                                     <div class="school_social">
                                         <ul>
                                             <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
@@ -100,24 +93,6 @@
              </div> 
                                 </form>
                             </div>
-                            <!-- <div class="col m12">
-                                <h3>Leave a Reply</h3>
-                                <form id="newsdetails" method="post" action="#">
-                                <div class="input-field col m5">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" name="username" type="text" class="validate">
-                                    <label for="icon_prefix">Name</label>
-                                </div>
-                                <div class="input-field col m12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="icon_prefix2" name="comment" class="materialize-textarea"></textarea>
-                                    <label for="icon_prefix2">Comment</label>
-                                </div>
-                                <button class="btn waves-effect waves-light col m2 offset-m1 margin-b-10" type="submit" name="action">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                                </form>
-                            </div> -->
                         </div>
 
                     </div>

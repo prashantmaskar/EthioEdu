@@ -50,6 +50,8 @@ class News_detail extends CI_Controller {
    $data['comments'] = $this->show_tree_news($ne_id);
 $n_id = $this->uri->segment('3');
   $data['news_details'] = $this->Init_models->getnewsdetails($n_id);
+
+  //print_r($data['news_details']);
    $this->load->view('news_detail', $data); 
 }
 
