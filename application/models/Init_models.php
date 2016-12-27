@@ -1609,5 +1609,21 @@ function add_new_event_comment()
         return $this->input->post('pparent_id');
     }
 
+    function validateusername($username)
+    {
+      $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");
+
+      if ( $result->num_rows() > 0 )
+      {
+          return false;
+
+      }else{
+
+        return true;
+
+      }
+  
+    }
+
    }  
 ?>  

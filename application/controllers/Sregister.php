@@ -45,4 +45,13 @@ class Sregister extends CI_Controller {
         $this->load->view('sregister',$view_params);
     }
 
+    public function isvaludusername(){
+        $valid = true;
+        $username=$this->input->post('username');
+        $valid=$this->Init_models->validateusername($username);
+        echo json_encode(array(
+            'valid' => $valid,
+        ));
+    }
+
 }

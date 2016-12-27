@@ -31,9 +31,9 @@
                                                         <select class="form-control browser-default" name="schooltype">
 
                                                             <option value="">select your school type</option>
-                                                             <option value="anything">University</option>
-                                                            <option value="friendship">Polytechnic</option>
-                                                             <option value="friendship">college of education</option>
+                                                             <option value="University">University</option>
+                                                            <option value="Polytechnic">Polytechnic</option>
+                                                             <option value="college of education">college of education</option>
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
@@ -122,13 +122,13 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
-<script type="text/javascript" src="<?php echo base_url() .'js/sregister-validate.js' ?>"></script>
+<!--<script type="text/javascript" src="<?php //echo base_url() .'js/sregister-validate.js' ?>"></script>-->
 
 <script>
 
             $(document).ready(function(){
               //  alert('dfd');
-                $("#Caption1").blur(function(){
+                /*$("#Caption1").blur(function(){
                     if($(this).val() ){
                     var value = $("input[name=username]").val();
                         $.ajax({
@@ -156,7 +156,97 @@
                         }else{
                             $("#usernamemsg").html('');
                         }
-                        });
+                        });*/
+
+
+                        $('#sregister').bootstrapValidator({
+                                /*feedbackIcons: {
+                                    valid: 'glyphicon glyphicon-ok',
+                                    invalid: 'glyphicon glyphicon-remove',
+                                    validating: 'glyphicon glyphicon-refresh'
+                                },*/
+                                fields: {
+                                    schooltype: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Please enter schooltype!!!..'
+                                            }
+                                        }
+                                    },
+                                      school: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: ' please select school!!!..'
+                                            }
+                                        }
+                                    },
+                                      level: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: ' please select level!!!..'
+                                            }
+                                        }
+                                    },
+                         
+                                          
+                                      
+                                    department: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: ' required!!!..'
+                                            }
+                                        }
+                                    },
+                         
+                                       
+                                    username: {
+                                        validators: {
+                                            notEmpty:{ 
+                                                message:'please enter username!!'
+
+                                            },
+                                             regexp: {
+                                             regexp: /^[\w]+$/,
+                                                message: 'You can introduce just alphabetical characters, underscore, number but no spaces'
+                                            },
+                                            remote: {
+                                                type: 'POST',
+                                                url: '<?php echo base_url();?>index.php/sregister/isvaludusername',
+                                                message: 'The username is not available'
+                                            }
+                                          
+                                        }
+                                    },
+
+                              password: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'The password is required and can\'t be empty'
+                                            },
+                                            identical: {
+                                                field: 'cpassword',
+                                                message: 'The password and its confirm are not the same'
+                                            },
+                                            
+                                        }
+                                    },
+                                    cpassword: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'The confirm password is required and can\'t be empty'
+                                            },
+                                            identical: {
+                                                field: 'password',
+                                                message: 'The password and its confirm are not the same'
+                                            }
+                                        }
+                                    },
+                                          
+                                          
+
+
+                                }
+                            });
 
                     });
 
