@@ -46,7 +46,7 @@
                                             <h4 class="header2">Question FORM</h4>
                                             <div class="row">
    
-                                                <form id="Queans" class="col m12" action="<?php echo site_url('index.php/admin/quesanswer')?>" method="post">
+                                                <form id="Queans" class="col m12" action="<?php echo site_url('index.php/admin/Quesanswer')?>" method="post">
                                                      <div class="form-group input-field col s5">
                                                         <select class="form-control browser-default" name="quetype">
 
