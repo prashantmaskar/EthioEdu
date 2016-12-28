@@ -368,8 +368,7 @@ public function edit_front_user($data){
       }
 function getcontactdetails($sessid){
 
-       // $query = $this->db->query("select tbl_users.first_name, tbl_users.last_name, tbl_users.user_email,  tbl_advertise.advertise_number from tbl_users INNER JOIN  tbl_advertise On tbl_users.user_id =  tbl_advertise.user_id where tbl_users.user_id = '" .$sessid. "'");
-   $query = $this->db->query("select tbl_users.first_name,tbl_users.last_name,tbl_users.user_email, tbl_user_meta.mobile_no from tbl_users INNER JOIN tbl_user_meta On tbl_users.user_id = tbl_user_meta.user_id where tbl_users.user_id = '" .$sessid. "'");
+        $query = $this->db->query("select tbl_users.first_name, tbl_users.last_name, tbl_users.user_email,  tbl_advertise.advertise_number from tbl_users INNER JOIN  tbl_advertise On tbl_users.user_id =  tbl_advertise.user_id where tbl_users.user_id = '" .$sessid. "'");
          return $query->result_array();
 
       }
@@ -1607,22 +1606,6 @@ function add_new_event_comment()
         $this->db->set("user_id", $uid);
         $this->db->insert('tbl_postresponse');
         return $this->input->post('pparent_id');
-    }
-
-    function validateusername($username)
-    {
-      $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");
-
-      if ( $result->num_rows() > 0 )
-      {
-          return false;
-
-      }else{
-
-        return true;
-
-      }
-  
     }
 
    }  

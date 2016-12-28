@@ -81,6 +81,7 @@
                                  ?>
                                     <li class="news_content">
                                         <?php $news_id = $row->post_id;
+                                        echo $news_id;
                                         ?>
                                         <a  href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" class="news_link"><span class="News_title"><?php echo $row->post_title; ?> </span>
                                         </a>

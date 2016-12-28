@@ -137,7 +137,7 @@ class News extends CI_Controller {
 
    $results = $this->Init_models->search_news($query_array, $limit, $offset, $sort_by, $sort_order);
    $this->db->last_query();
-  // print_r($results);
+   //print_r($results);
 
    $data['news']= $results['rows'];
 

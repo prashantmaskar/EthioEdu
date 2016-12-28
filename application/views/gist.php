@@ -67,7 +67,7 @@
                                         <p class="black-text"><?php echo $row['post_desc']; ?></p>
                                     </div>
                                     <div class="social_share col m12">
-                                        <span><a href="#">Like(<?php echo $query1->result()[0]->row_count; ?> )</a></span>&nbsp;
+                                        <span>Likes(<?php echo $query1->result()[0]->row_count; ?> )</span>&nbsp;
                                         <span><a href="<?php echo base_url()?>gist_details/show_one/<?= $gist_id   ?>"><?php echo $query2->result()[0]->row_count; ?> Comments</a></span>&nbsp;
                                         <span><a href="<?php echo base_url()?>gist_details/show_one/<?= $gist_id   ?>">Reply</a></span>
                                     </div>
