@@ -1608,5 +1608,43 @@ function add_new_event_comment()
         return $this->input->post('pparent_id');
     }
 
+<<<<<<< HEAD
+=======
+    function validateusername($username)
+    {
+      $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");
+
+      if ( $result->num_rows() > 0 )
+      {
+          return false;
+
+      }else{
+
+        return true;
+
+      }
+  
+    }
+
+    function validateemail($email)
+    {
+      $result = $this->db->query("SELECT * FROM tbl_users where   user_email = '$email'");
+
+      if ( $result->num_rows() > 0 )
+      {
+          return false;
+
+      }else{
+
+        return true;
+
+      }
+  
+    }
+
+
+
+
+>>>>>>> 4d4542383017f83bcb767fb32ee61d5ce3f9bc2e
    }  
 ?>  
