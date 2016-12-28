@@ -61,7 +61,7 @@
 
                                         $news_id = $row['post_id'];
                                          ?>
-                                        <li><a href="<?php echo base_url().'index.php/news_detail?id='.$news_id ?>"><?php echo $row['post_title']; ?></a></li>
+                                        <li><a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>"><?php echo $row['post_title']; ?></a></li>
                                         <?php } ?>
                                          <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/News'?>">READ MORE</a>
                                     </li>
@@ -82,7 +82,7 @@
 
                                         ?>
 
-                                    <li><a href="<?php echo base_url().'index.php/schooldetails?id='.$sid?>"><?php echo $row['school_name'];?></a></li>
+                                    <li><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><?php echo $row['school_name'];?></a></li>
                                   
                                    <?php } ?>
                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
@@ -124,7 +124,7 @@
                                           $event_id = $row['post_id'];
                                             ?>
 
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url().'index.php/event_details?id='.$event_id?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
                                        
                                         </li>
                                           <?php } ?>

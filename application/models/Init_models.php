@@ -1097,26 +1097,24 @@ $q->where('project_approve = 1');
                      ->where('post_type="news" and post_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);*/
-    
-     $q = $this->db->select('*,tbl_postresponse.pparent_id')
-                     ->from('tbl_posts')
+                    $q=$this->db->query("select tbl_posts.*,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse ON tbl_postresponse.post_id = tbl_posts.post_id where post_type='news' and post_approve = 1 GROUP BY tbl_posts.post_id");
+    /* $q = $this->db->select('*,tbl_postresponse.pparent_id')
+                     ->from('tbl_posts,tbl_postresponse')
                      ->join('tbl_postresponse','tbl_posts.post_id = tbl_postresponse.post_id', 'left')
                      ->where('post_type="news" and post_approve = 1')
                      ->limit($limit , $offset)
                     ->group_by('tbl_posts.post_id')
                     ->order_by($sort_by , $sort_order);
-
+*/
     if(strlen($query_array['start_date'])){
 
 $q->where('post_date >=', $query_array['start_date']);
 $q->where('post_date <=', $query_array['end_date']);
     }
 
- 
-
-
-
-    $ret['rows']= $q->get()->result();
+$ret['rows']=$q->result_array();
+   //$ret['rows']= $q->get()->result();
+   // print_r($ret['rows']);
 
     //count result
 
@@ -1608,8 +1606,7 @@ function add_new_event_comment()
         return $this->input->post('pparent_id');
     }
 
-<<<<<<< HEAD
-=======
+
     function validateusername($username)
     {
       $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");
@@ -1642,9 +1639,5 @@ function add_new_event_comment()
   
     }
 
-
-
-
->>>>>>> 4d4542383017f83bcb767fb32ee61d5ce3f9bc2e
    }  
 ?>  
