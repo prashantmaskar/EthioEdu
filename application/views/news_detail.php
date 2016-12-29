@@ -73,17 +73,18 @@
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
            <div class="coment_form">
                                 <form id="comment_form" method="post" action="<?= base_url() ?>news_detail/add_news_comment/<?= $ques->post_id ?> " >
-                                    <div class="input-field col s12">
-                                        <label for="comment_name">Name:</label> 
+            <div class="input-field col s12">
+          
           <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
-                                    </div>
+          <label for="comment_name">Name:</label> 
+            </div>
                                  
-                                     <div class="form-group"> 
-           <label for="comment"><!-- <i class='material-icons prefix'>mode_edit</i> -->Comment :</label> 
-           <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
+            <div class="form-group"> 
+           <label for="comment">Comment :</label> 
+           <textarea id="Description" class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'></textarea>
             </div>
                         <input type='hidden' name='pparent_id' value="0" id='parent_id' />
-                   <!--  <input type='hidden' name='presponse_type' value="answer" id='response_type' /> -->
+                   
                     <input type='hidden' name='presponse_like' value="0" id='response_like' />
                       <input type='hidden' name='presponse_type' value="news" id='response_like' />
     <input type='hidden' name='post_id' id='parent_id' value="<?= $ques->post_id ?>" />     
@@ -113,7 +114,7 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
-<script type="text/javascript" src="<?php echo base_url() .'js/newsdetails-validate.js' ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() .'js/newsdetails.js' ?>"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 <?php foreach ($news_details as $row){
     $post_desc = substr($row['post_desc'],0,100);
