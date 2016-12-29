@@ -111,22 +111,24 @@
                 </div>
 
 
-                <div class="col s12 m3 z-depth-1">
-                    <div class="latest_news_wrap ">
-                        <h1 class="red_label_title">Latest News</h1>
+                
+                    <div class="col s12 m3 z-depth-1">
+                    <div class="old_news_list">
+                        <h2 class="news_post_title">Previous Vacancies</h2>
                         <ul class="latest_news_list">
-                            <?php
-                                foreach ($news as $row){ ?>
+                        <?php foreach($previous_vacancy as $row){ ?>
                             <li class="Latest_news_content">
-                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
-                                    <span class="News_title"><?php echo $row['post_title']; ?></span>
+                                <a href="<?php echo base_url(); ?>index.php/vacancy-details?id=<?php echo $row['vacancy_id']; ?>" class="news_link">
+                                    <span class="News_title"><?php echo $row['vacancy_name']; ?></span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_date']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="http://myschool.com.ng/members/show.php?profile=457324"><?php echo $row['username'];?></a></strong> On <?php echo $row['vacancy_date'];?> At <?php echo $row['vacancy_time']; ?><span class="infoText1">   
                                     </span></span>
                             </li>
                             <?php } ?>
                         </ul>
                     </div>
+                </div>
+                  
 
                   <!--  <div class="Most_news_wrap ">
                         <h1 class="red_label_title">Most Read</h1>

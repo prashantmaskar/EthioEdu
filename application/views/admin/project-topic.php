@@ -149,13 +149,13 @@
                                                                     <td><?php echo $row['project_course']; ?></td>
                                                                     <td><?php echo $row['project_year']; ?></td>
                                                    <td>
-                                             <a href="<?php echo base_url() . 'index.php/admin/Edit_project_topic?id='.$topic_id ?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                             <a href="<?php echo base_url() . 'index.php/admin/Edit_project_topic?id='.$topic_id ?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
                                                         <?php if($row['project_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $topic_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $topic_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Unapprove</span></a>
                                                         <?php }else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $topic_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $topic_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
                                                         <?php }?>
-                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $topic_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $topic_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td>
                                                                 </tr>
                                                             <?php } ?>
                                                             </tbody>

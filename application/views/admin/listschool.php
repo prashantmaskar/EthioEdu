@@ -51,9 +51,9 @@
                                                     <td>
                                                         <a href="<?php echo base_url() . 'index.php/admin/edit_school?id='.$school_id?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
                                                        <?php if($row['school_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $school_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Approve</span></a>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $school_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Unapprove</span></a>
                                                         <?php }else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $school_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Delete</span></a>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $school_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
                                                         <?php }?>
                                                         <a href="javascript:void(0);" onclick="deleted(<?php echo $school_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td>
                                                 </tr>

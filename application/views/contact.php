@@ -37,6 +37,8 @@
 	 <?php if($this->session->userdata('logged_in')){
 
     foreach ($userdetails as $row) {
+      //$m=$row['mobile_no'];
+      //echo $m;
     ?>
    <div class="form-group input-field col s12">
        <input id="full_name" name="full_name" type="text" class="validate" value="<?php echo $row['first_name']." ".$row['last_name']; ?>">

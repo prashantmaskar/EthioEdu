@@ -51,7 +51,7 @@
                                                      <td><?php echo $row['user_email']; ?></td>
                                                     <td>
                                                        
-                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $user_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $user_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

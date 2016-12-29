@@ -41,7 +41,7 @@
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">University</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Institutes</a></li>
 
-                                    <li class="catrgory_list_item"><b>Collages:</b></li>
+                                    <li class="catrgory_list_item"><b>Colleges:</b></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Commerce & Business</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Computer Training & IT</a></li>
                                     <li class="catrgory_list_item"><a href="<?php echo base_url() . 'index.php/schools/search?category=Account' ?>">Distance Education</a></li>

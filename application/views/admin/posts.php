@@ -102,31 +102,31 @@
                                                     <td><?php echo $row['post_author']; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>
                                                     <td><?php if($_GET['post_type'] == 'news'){  ?>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_news?id='.$post_id?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
                                                         <?php if($row['post_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Unapprove</span></a>
                                                         <?php }else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
                                                         <?php }?>
-                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a>
                                                      <?php   } ?>
                                                      <?php if($_GET['post_type'] == 'event'){  ?>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_event?id='.$post_id?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
                                                          <?php if($row['post_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Unapprove</span></a>
                                                         <?php }else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
                                                         <?php }?>
-                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a>
                                                      <?php   } ?>
                                                      <?php if($_GET['post_type'] == 'gist'){  ?>
-                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
+                                                        <a href="<?php echo base_url() . 'index.php/admin/edit_gist?id='.$post_id?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
                                                          <?php if($row['post_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $post_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">Unapprove</span></a>
                                                         <?php }else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $post_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
                                                         <?php }?>
-                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn" ><i class="small mdi-action-highlight-remove"></i></a>
+                                                        <a  href="javascript:void(0);" onclick="deleted(<?php echo $post_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a>
                                                      <?php   } ?>
                                                         </td>
                                                 </tr>

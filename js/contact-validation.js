@@ -1,5 +1,5 @@
   $(document).ready(function() {
-     $("#phone_number").val("+251  ");
+     //$("#phone_number").val("+251 ");
 
 
     $('#contactform').bootstrapValidator({

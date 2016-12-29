@@ -70,7 +70,7 @@ class Quesanswer extends CI_Controller {
             {
     //echo"<script>alert('Data Inserted Successfully');</script>";
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
-            redirect("index.php/admin/question-answer");
+            redirect("index.php/admin/Quesanswer");
             }
 	}
 }

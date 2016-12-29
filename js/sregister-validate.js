@@ -49,7 +49,7 @@ $(document).ready(function() {
                      regexp: {
                      regexp: /^[\w]+$/,
                         message: 'You can introduce just alphabetical characters, underscore, number but no spaces'
-                    }
+                    },
                   
                 }
             },

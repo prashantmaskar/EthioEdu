@@ -27,6 +27,13 @@ class Vacancy_details extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('Init_models');
+        /* $sessname = $this->session->userdata('susername');
+   if ( !$this->session->userdata('logged_in'))
+
+    { 
+        $this->session->set_userdata('referred_from', current_url());
+        redirect('index.php/login');
+    }*/
     }
 
 
@@ -39,6 +46,7 @@ class Vacancy_details extends CI_Controller {
             'title' => 'Vacancy Details',
             'banners' => $banners,
         );
+        $view_params['previous_vacancy'] = $this->Init_models->get_previous_vacancy();
         $view_params['news'] = $this->Init_models->selectnews();
         $view_params['vacanyid'] = $this->Init_models->getvacanydetails($vac_id);
         $this->load->view('vacancy_details',$view_params);

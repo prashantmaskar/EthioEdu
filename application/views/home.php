@@ -100,7 +100,7 @@
 
                                    <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php echo $row['project_title']; ?></a></li> 
                                      <?php } ?>
-                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
+                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/Projectlist'?>">READ MORE</a>
                                     </li>
                                         
                                 </ul></div>
