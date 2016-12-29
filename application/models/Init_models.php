@@ -32,7 +32,7 @@
 
       public function get_categories()  
       {  
-           $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
+           $query = $this->db->query("SELECT * from tbl_category join tbl_course on tbl_category.category_id = tbl_course.category_type where category_type='course'");
             return $query->result_array();
       }
        
