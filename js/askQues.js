@@ -34,7 +34,7 @@ $(document).ready(function(){
                
             },
              subject:{
-                required: "select  subject",
+                required: "select  question category",
                
             },
              question:{

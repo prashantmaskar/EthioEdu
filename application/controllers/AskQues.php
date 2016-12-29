@@ -42,6 +42,7 @@ class AskQues extends CI_Controller {
                 'title'   => 'askQues',
                 'banners' => $banners
             );
+                 $view_params['categories'] = $this->Init_models->get_Que_categories();
 		$this->load->view('askQues', $view_params);
 		
 		if(isset($_POST['action'])){
