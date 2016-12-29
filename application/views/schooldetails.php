@@ -345,6 +345,7 @@
     </div>
 <!-- </div> -->
 <?php $this->load->view('footer'); ?>
+<script type="text/javascript" src="<?php echo base_url() .'js/newsdetails.js' ?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'js/schooldetails.js'?>"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 <script type='text/javascript'> 

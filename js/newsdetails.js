@@ -1,38 +1,6 @@
-/*$(document).ready(function() {
-  //alert('in');
 
-
-    $('#comment_form').bootstrapValidator({
-
- alert('in');
-       
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        /*fields: {
-            comment_name: {
-                validators:{
-                    notEmpty:{
-                        message:'Name required'
-                    }
-                    
-                }
-            },
-            comment_body:{
-                validators:{
-                    notEmpty:{
-                        message:  ' please enter comment !!!'
-                    }
-                    
-                }
-             }
-         }
-         }); 
-});*/
 $(document).ready(function () {
-    alert('in');
+    //alert('in');
 
 $('#comment_form').validate({
     rules: {

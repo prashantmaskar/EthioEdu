@@ -117,6 +117,7 @@ body {
 </div><!-- ok -->
      
       <?php $this->load->view('footer'); ?>
+      <script type="text/javascript" src="<?php echo base_url() .'js/newsdetails.js' ?>"></script>
       <script> 
 $(function () {
   $("a.reply").click(function () 
