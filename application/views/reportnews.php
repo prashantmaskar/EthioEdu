@@ -96,9 +96,10 @@
                         <h2 class="news_post_title">Previously Posted News</h2>
                         <ul class="latest_news_list">
                         <?php
-                                foreach ($news as $row){ ?>
+                                foreach ($news as $row){ 
+                                    $news_id = $row['post_id'];?>
                             <li class="Latest_news_content">
-                                <a href="<?php echo base_url(); ?>index.php/news_detail?id=<?php echo $row['post_id']; ?>" class="news_link">
+                                <a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" class="news_link">
                                     <span class="News_title"><?php echo $row['post_title']; ?></span>
                                 </a>
                                 <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_time']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  

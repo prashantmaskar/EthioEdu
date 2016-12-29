@@ -446,7 +446,6 @@ page-heading-wrap page-heading
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
-
 .QuesAns_details .page-heading-wrap .page-heading{
 	 font-size: 24px;
     font-weight: bold;
@@ -812,6 +811,13 @@ font-size: 14px;
 .page-heading{
     line-height: 55px;
 }
+.p-h,.page-heading
+{
+    line-height: 30px;
+}
+.gist-heading{
+padding: 20px;
+}
 .school_short_info{
     margin-bottom: 10px;
     padding-bottom: 5px;
@@ -939,7 +945,7 @@ font-size: 14px;
     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
-    border-bottom: 2px solid red;
+   /* border-bottom: 2px solid red;*/
     margin: 10px 0px;
 }
 .b_date{

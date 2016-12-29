@@ -39,6 +39,7 @@ class News_detail extends CI_Controller {
             'banners' => $banners
         );
         $view_params['news_details'] = $this->Init_models->getnewsdetails($n_id);
+        $this->session->set_userdata('referred_from', current_url());
         $this->load->view('news_detail',$view_params);
     }
 
@@ -57,7 +58,7 @@ class News_detail extends CI_Controller {
    
 $n_id = $this->uri->segment('3');
   $data['news_details'] = $this->Init_models->getnewsdetails($n_id);
-
+  $this->session->set_userdata('referred_from', current_url());
   //print_r($data['news_details']);
    $this->load->view('news_detail', $data); 
 }

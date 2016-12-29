@@ -82,6 +82,13 @@
          <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div> 
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
            <div class="coment_form">
+            <?php  if ( !$this->session->userdata('logged_in')){?>
+ <div class="col m12">
+    <p class="black-text">Oops! You comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
+   
+</div>
+     <?php 
+    } else{?>
                                 <form id="comment_form" method="post" action="<?= base_url() ?>event_details/add_event_comment/<?= $ques->post_id ?> " >
                                     <div class="input-field col s12">
                                         <label for="comment_name">Name:</label> 
@@ -102,6 +109,7 @@
              <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
              </div> 
                                 </form>
+                                <?php }?>
                             </div>
                             
                         </div>

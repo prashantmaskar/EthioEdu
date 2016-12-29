@@ -1,9 +1,9 @@
 <?php  $this->load->view('header'); ?>
 
   <style type='text/css'> 
-  a, a:visited { 
+ /* a, a:visited { 
   outline: none; color: #7d5f1e; 
-  } 
+  } */
   .clear { 
   clear: both;
   } 
@@ -22,10 +22,10 @@
   #comment_body { display: block; width: 100%; height: 150px;
   } 
 
- a {
+ /*a {
   color: #03658c;
   text-decoration: none;
- }
+ }*/
 
 ul {
   list-style-type: none;
@@ -61,7 +61,10 @@ body {
        <!-- <h1><?php $news//->question_desc ?></h1>  --> 
       <!--  <?php //foreach($news as $row){?> -->
       <div class="course_info">
-         <p class="lead black-text"><h1 class = "page-heading">Question:<?php echo $ques->post_title ?></h1></p>  </div>
+        <span class="p-h">
+         <p class="lead black-text"><h1 class = "page-heading">Question:<?php echo $ques->post_title ?></h1></p>
+         </span>
+        </div>
         <!-- <p><img src="<?php //echo base_url(); ?>global/uploads/<?= $news//->ne_img ?>"/>
         </p>  -->
         <p> 
@@ -69,7 +72,14 @@ body {
         </div> 
         <div class="col m12 s12 card-panel"> <?php echo $comments ?> 
         <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div>  
-         <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
+         <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/>
+         <?php  if ( !$this->session->userdata('logged_in')){?>
+ <div class="col m12">
+    <p class="black-text gist-heading">Oops! You comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
+   
+</div>
+     <?php 
+    } else{?> 
          <form id="comment_form" action="<?= base_url() ?>gist_details/add_gist_comment/<?= $ques->post_id ?> " method="post" >
           <div class="form-group"> 
           <label for="comment_name">Name:</label> 
@@ -89,6 +99,7 @@ body {
              <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
              </div> 
              </form> 
+             <?php }?>
              </div> 
              </div><!-- /.container --> 
              </div>
