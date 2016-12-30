@@ -72,7 +72,7 @@
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
            <div class="coment_form"><?php  if ( !$this->session->userdata('logged_in')){?>
  <div class="col m12">
-    <p>Oops! You comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
+    <p>Oops! comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
    
 </div>
      <?php 

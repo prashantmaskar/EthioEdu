@@ -1,9 +1,9 @@
 <?php  $this->load->view('header'); ?>
 
   <style type='text/css'> 
-  a, a:visited { 
+  /*a, a:visited { 
   outline: none; color: #7d5f1e; 
-  } 
+  } */
   .clear { 
   clear: both;
   } 
@@ -22,10 +22,10 @@
   #comment_body { display: block; width: 100%; height: 150px;
   } 
 
- a {
+ /*a {
   color: #03658c;
   text-decoration: none;
- }
+ }*/
 
 ul {
   list-style-type: none;
@@ -70,6 +70,15 @@ body {
         <div class="col m12 s12 card-panel"> <?php echo $comments ?> 
         <div class="comment_info"><h3 class="page-heading"> Leave a Reply </h3></div>  
          <p class="notice error"><?php $this->session->flashdata('error_msg'); ?></p><br/> 
+          <div class="coment_form">
+            <?php  if ( !$this->session->userdata('logged_in')){?>
+ <div class="col m12">
+    <p class="black-text gist-heading">Oops! comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
+   
+</div>
+     <?php 
+    } else{?>
+             
          <form id="comment_form" action="<?= base_url() ?>ansQues/add_comment/<?= $ques->question_id ?>" method="post" >
           <div class="form-group"> 
           <label for="comment_name">Name:</label> 
@@ -88,7 +97,9 @@ body {
              <div id='submit_button' class="margin-b-10"> 
              <input class="btn btn-success" type="submit" name="submit" value="add comment"/> 
              </div> 
-             </form> 
+             </form>
+             <?php }?>
+           </div>
              </div> 
              </div><!-- /.container --> 
              </div>
