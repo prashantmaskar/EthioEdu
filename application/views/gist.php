@@ -56,8 +56,9 @@
                                           <?php 
                                           $gist_attachment = $row['post_attachment']; 
                                                $gist_id = $row['post_id'];
+                                                $p_id = $row['post_id'];
                                                $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
-                                                $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."'");
+                                                $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$p_id."' and pparent_id = '0'");
                                            ?>
                                           <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
                                         

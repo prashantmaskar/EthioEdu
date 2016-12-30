@@ -21,7 +21,9 @@
                         */$id = $this->uri->segment('3');
 
                                 foreach ($eventid as $row){
-                                 $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."'"); 
+
+                                     $p_id = $row['post_id'];
+                                 $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$p_id."' and pparent_id = '0'");
                                     
                         ?>
 

@@ -164,7 +164,8 @@ function get_user_id_by_uname($uname){
       }
        public function selectgist()  
       {  
-        $query = $this->db->query("select tbl_user_meta.user_id ,tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.post_attachment, tbl_posts.post_desc, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_user_meta join tbl_posts on tbl_user_meta.user_id = tbl_posts.user_id where tbl_posts.post_type = 'gist' && tbl_posts.post_approve = 1 limit 10");
+        //$query = $this->db->query("select tbl_user_meta.user_id ,tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.post_attachment, tbl_posts.post_desc, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_user_meta join tbl_posts on tbl_user_meta.user_id = tbl_posts.user_id where tbl_posts.post_type = 'gist' && tbl_posts.post_approve = 1 limit 10");
+        $query = $this->db->query("select tbl_posts.*,tbl_user_meta.user_id,tbl_user_meta.user_avatar,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' and post_approve = 1 GROUP BY tbl_posts.post_id");
          
         return $query->result_array();
       }
@@ -399,7 +400,8 @@ function getcontactdetails($sessid){
 
       function geteventdetails($event_id){
 
-        $query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+        //$query = $this->db->query("select * from tbl_posts where post_type='event'  and post_id = '" .$event_id. "'");
+        $query = $this->db->query("select tbl_posts.* , tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type='event' and tbl_posts.post_id = '" .$event_id. "' GROUP BY tbl_posts.post_id");
          return $query->result_array();
       }
 
