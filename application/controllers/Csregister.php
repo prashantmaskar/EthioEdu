@@ -62,8 +62,15 @@ if(isset($_POST['laction'])){
         $this->form_validation->set_rules('username', 'Username', 'required');
 
     }
+    public function isvaludemail(){
+        $valid = true;
+        $email=$this->input->post('email');
+        $valid=$this->Init_models->validateemail($email);
+        echo json_encode(array(
+            'valid' => $valid,
+            ));
 
-
+       }
 
  public function addfrontuser(){
 
