@@ -189,5 +189,11 @@ $query = $this->db->query("update tbl_posts set post_attachment = null where pos
 }
 
 
+$delete_cat_id = $_POST['delete_cat_id'];
+//$p_attach = $_POST['image'];
+ if(isset($delete_cat_id)){
+$query = $this->db->query("delete from tbl_category where category_id = '".$delete_cat_id."'");
+}
+
 ?>
 
