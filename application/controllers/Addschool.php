@@ -84,7 +84,14 @@ class Addschool extends CI_Controller {
             'valid' => $valid,
         ));
     }
-
+public function isvalid_school_email(){
+  $valid =true;
+  $email=$this->input->post('email');
+  $valid=$this->init_models->validate_school_email($email);
+  echo json_encode(array(
+    'valid'=>$valid,
+    ));
+}
         
 
      function insertuserdata(){

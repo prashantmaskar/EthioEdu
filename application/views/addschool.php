@@ -17,7 +17,7 @@
                         </a>
                     </div>
                 </div>
-                             <?php
+      <?php
     if ($this->session->flashdata('message')) {
     ?>
     <div class="message flash">
@@ -509,7 +509,13 @@ $(document).ready(function() {
                     },
                     emailAddress:{
                         message:'The input is Not a valid email adddress!!'
-                    }
+                    },
+                      remote: {
+                                                type: 'POST',
+                                                url: '<?php echo base_url();?>index.php/addschool/isvalid_school_email',
+                                                message: 'The email_id is not available'
+                                            }
+                                          
                 }
             },
             schoolname:{
