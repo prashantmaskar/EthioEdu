@@ -138,6 +138,59 @@
                         <div class="section">
                             <p class="caption black-text">List Of All Gist</p>
                             <div class="divider"></div>
+                            <div id="form-wrap">
+                                <div class="row">
+                                    <div class="col s12 m12 l12">
+                                        <div class="card-panel">
+                                            <h4 class="header2">Gist Search</h4>
+                                            <div class="row">
+   
+                                                <form id="Queans" class="col m12" action="<?php echo site_url('index.php/admin/Quesanswer')?>" method="post">
+
+
+                                    <div class="input-field col s12 m2">
+                                        <p>
+                                            <input type="radio" value="all" id="all" class="r1" name="school_type1"/>
+                                            <label for="all">All</label>
+                                        </p>
+                                    </div>
+                                                 <div class="input-field col s12 m2">
+                                        <p>
+                                            <input type="radio" id="today" value="today" class="r1" name="school_type1" />
+                                            <label for="today">Today</label>
+                                        </p>
+                                    </div>
+
+                                        
+                                            <div class="hiddenfields" style="display: none" class="input-field col s12 m2">
+                                            <input type="text" id="manual" value="" name="manual" />
+                                            <label for="manual">Manual</label>
+                                            </div>
+                                    <div class="input-field col s12 m2">
+                                        <p>
+                                            <input type="radio" value="tomorrow" id="tomorrow" class="r1" name="school_type1"/>
+                                            <label for="tomorrow">Tomorrow</label>
+                                        </p>
+                                    </div>
+                                     <div class="hiddenfields" style="display: none" class="input-field col s12 m2">
+                                                        <select class="form-control browser-default" name="duration">
+                                                            <option value="">select duration</option>
+                                                             <option value="year">year</option>
+                                                            <option value="Month">Month</option>
+                                                            <option value="Day">Day</option>
+                                                        </select>
+                                            </div>
+                                                    <div class="input-field col s4">
+                                                        <div class="input-field col s12">
+                                                            <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Add</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="table-wrap">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
@@ -155,19 +208,20 @@
                                                     <td>Gist Course Started </td>
                                                     <td>Course </td>
                                                     <td>5/sep/2016</td>
+                                                    <?php 
+                                                    $string = '';
+                                                    foreach($gist as $row){ 
+
+                                                    //$abc = $row['school_number'];
+                                                         $string .= $row['school_number'].',';
+
+                                                    ?>
                                                     <td>
                                                         <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
                                                         <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
                                                         <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gist Course Started </td>
-                                                    <td>Course </td>
-                                                    <td>5/sep/2016</td>
-                                                    <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
+                                                        <?php } ?>
+                                                        <?php echo $string; ?>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -180,3 +234,10 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
+       <script>
+       $(document).ready(function(){
+    $(".r1").click(function(){
+        $(this).closest('.r1').next(".hiddenfields").slideToggle(100);
+    });
+});
+</script>
