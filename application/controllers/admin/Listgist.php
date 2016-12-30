@@ -42,7 +42,8 @@ class Listgist extends CI_Controller {
                 'm_title' => 'Admin ListGist',
                 'title'   => 'Admin ListGist'
             );
-        $view_params['gist'] = $this->Init_models->selectallgist();
+        $view_params['gist'] = $this->Init_models->selectallschool();
+        //print_r($view_params['gist']);
 		$this->load->view('admin/listgist',$view_params);
 	}
 }
