@@ -325,7 +325,10 @@ $str=str_replace("," , "<br>",$str);
       <ul class="latest_news_list">
         <?php
 foreach ($news as $row){ 
-$news_id = $row['post_id'];?>
+$news_id = $row['post_id'];
+ $parent = $row['pparent_id'];
+$query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$news_id."' and pparent_id = '0'");
+?>
         <li class="Latest_news_content">
           <a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" class="news_link">
             <span class="News_title">
@@ -341,7 +344,7 @@ $news_id = $row['post_id'];?>
             <?php echo $row['post_date']; ?> At 
             <?php echo $row['post_date']; ?>
             <span class="infoText1"> for 
-              <?php echo $row['post_category'];?> | Comments [7]  
+              <?php echo $row['post_category'];?> | Comments [<?php echo $query2->result()[0]->row_count; ?>]  
             </span>
           </span>
         </li>
