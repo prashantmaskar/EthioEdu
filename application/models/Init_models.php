@@ -1654,7 +1654,7 @@ function add_new_event_comment()
     
 
 
-    function validateschoolusername($username)
+    function validate_school_username($username)
     {
       $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");
 

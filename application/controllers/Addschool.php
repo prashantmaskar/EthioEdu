@@ -76,6 +76,14 @@ class Addschool extends CI_Controller {
         $this->load->view('addschool',$view_params);
     } 
 
+ public function isvalud_school_username(){
+        $valid = true;
+        $username=$this->input->post('user_name');
+        $valid=$this->init_models->validate_school_username($username);
+        echo json_encode(array(
+            'valid' => $valid,
+        ));
+    }
 
         
 
