@@ -69,9 +69,11 @@
                                                         <label for="email">Email Id</label>
                                                     </div>-->
                                                     <div class=" form-group input-field col s12">
+                                                       
                                                         <input id="School_name" name="schoolname" type="text" class="validate">
                                                         <label for="School_name">School Name</label>
                                                     </div>
+
 
                                                    <div class="form-group file-field input-field col s12">
                                         <div class="btn">
@@ -86,12 +88,10 @@
                                                     <div class=" form-group input-field col s12">
                                                       <select class="form-control browser-default" name="choice1">
                                                              <option value="">School catagory</option>
-                                                              <option value="Kindergartens and Nursery">Kindergartens and Nursery</option>
-                                                            <option value="International">International</option>
-                                                             <option value="Primary">Primary</option>
-                                                             <option value="Secondary">Secondary</option>
-                                                             <option value="preparatory">preparatory</option>
-                                                                
+                                                             <!--<?php //print_r($categories); ?>-->
+                                                              <?php foreach($categories as $row){?>
+                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <?php } ?>
                                                         </select>
 
                                                     </div>

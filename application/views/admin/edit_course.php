@@ -59,6 +59,7 @@
 
                                                         <select class=" form-control browser-default" name="course_cat">
                                                             <option value="">Course Category</option>
+                                                                <!--<?php //print_r($categories); ?>-->
                                                             <?php } foreach($categories as $row){?>
 
                                                             <option value="<?php echo $row['category_id']; ?>" <?php if($options==$row['category_id']) echo 'selected="selected"'; ?>><?php echo $row['category_name']; ?></option>

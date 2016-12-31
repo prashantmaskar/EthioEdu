@@ -45,6 +45,7 @@
                             <p class="caption">Fill all required fields.</p>
                             <div class="divider"></div>
                             <div id="form-wrap">
+
                                 <div class="row">
                                     <div class="col s12 m12 l12">
                                         <div class="card-panel">
@@ -126,10 +127,11 @@
                                                         <select class="form-control browser-default" name="cat">
 
                                                             <option value="">School category</option>
-                                                             <option value="KINDERGARTENS and NURSERY ">KINDERGARTENS and NURSERY </option>
-                                                            <option value="PRIMARY">PRIMARY</option>
-                                                         <option value="SECONDARY">SECONDARY</option>
-                                                          <option value="PREPARATORY">PREPARATORY</option>
+                                                            <!--<?php //print_r($categories); ?>-->
+                                                             <?php foreach($categories as $row){?>  
+
+                                                             <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <?php } ?>
                                                         </select>
                                                        </div>
 

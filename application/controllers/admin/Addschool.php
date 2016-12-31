@@ -30,11 +30,18 @@ class Addschool extends CI_Controller {
 
 
     public function index() {
+       
         $view_params = array(
             'm_title' => 'Add School',
             'title' => 'Add School',
+            
         );
+        $view_params['categories'] = $this->Init_models->get_school_categories();
+        
+       
+        //print_r($view_params['categories']);
         $this->load->view('admin/addschool',$view_params);
+
     
     /*if(isset($_POST['action'])){
         $this->insertuserdata();

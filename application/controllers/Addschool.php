@@ -67,9 +67,12 @@ class Addschool extends CI_Controller {
             'banners' => $banners,
             'captcha' => $this->captcha->main()
         );
+        
         $sessid= $this->session->userdata('suserid');
         $this->session->set_userdata('captcha_info', $view_params['captcha']);
         $view_params['user_details'] = $this->init_models->getuserdetails($sessid);
+        $view_params['categories'] = $this->init_models->get_school_categories();
+        //print_r($view_params['categories']);
         $this->load->view('addschool',$view_params);
     } 
 

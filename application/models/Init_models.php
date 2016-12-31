@@ -32,10 +32,15 @@
 
       public function get_categories()  
       {  
-           $query = $this->db->query("SELECT * from tbl_category");
+           $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
             return $query->result_array();
       }
        
+       public function get_school_categories()  
+      {  
+           $query = $this->db->query("SELECT * from tbl_category where category_type='school'");
+            return $query->result_array();
+      }
       //Insert School Information data
       public function addschooluser($data)  
       {  
@@ -1606,7 +1611,7 @@ function add_new_event_comment()
         return $this->input->post('pparent_id');
     }
 
-
+//serverside validation for username ,email
     function validateusername($username)
     {
       $result = $this->db->query("SELECT * FROM tbl_users where username = '$username'");

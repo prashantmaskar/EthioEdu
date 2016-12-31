@@ -30,11 +30,12 @@
 "); */                /*      print_r($school_details);*/
                         
                                 foreach ($school_details as $row){ 
+
                                      $logoattachment =  $row['school_logo'];
                                     /* echo $row['school_facility'];*/
                         ?>
                         <div class="section">
-              
+        
                             <div class="divider"></div>
                             <div id="form-wrap">
                                 <div class="row">
@@ -47,6 +48,7 @@
                                                        <select class="form-control browser-default" name="choice">
                                                         <?php  $options = $row['registration_type']; ?>
                                                              <option value="">Registration type</option>
+                                                              
                                                             <option value="Normal Registration" <?php if($options=="Normal Registration") echo 'selected="selected"'; ?>>Normal Registration</option>
                                                             <option value="Premium Registration" <?php if($options=="Premium Registration") echo 'selected="selected"'; ?>>Premium Registration (1,000 Birr per year)</option>
 
@@ -59,8 +61,10 @@
                                                         <label for="user_name">User Name</label>
                                                     </div>
                                                   <div class= "form-group input-field col s12">
+
                                                         <input type="text"  id="firstname" name="firstname"  value="<?php echo $row['first_name'];?>"class="form-control" readonly>
                                                         <label for="firstname">First Name</label>
+
                                                     </div>
                                                      <div class= "form-group input-field col s12">
                                                         <input type="text"  id="lastname" name="lastname" value="<?php echo $row['last_name'];?>"  class="form-control" readonly>
@@ -70,7 +74,7 @@
                                                         <input id="email" type="text" name="email" class="form-control" value="<?php  echo $row['user_email'];?>" readonly>
                                                         <label for="email">Email Id</label>
                                                     </div>
-                                                    
+                                                 
 
                                                     <div class=" form-group input-field col s12">
                                                         <input id="School_name" name="schoolname" type="text" value="<?php  echo $row['school_name'];?>"  class="validate">
@@ -105,9 +109,13 @@
                                                     <?php  $options = $row['school_category']; ?>
                                                       <select class="form-control browser-default" name="choice1">
                                                              <option value="">School catagory</option>
-                                                              <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
-                                                            <option value="Agriculture" <?php if($options=="Agriculture") echo 'selected="selected"'; ?>>Agriculture</option>
-                                                             <option value="Account" <?php if($options=="Account") echo 'selected="selected"'; ?>>Account</option>
+
+
+                                                               <?php } foreach($categories as $row){?>
+
+                                                            <option value="<?php echo $row['category_id']; ?>" <?php if($options==$row['category_id']) echo 'selected="selected"'; ?>><?php echo $row['category_name']; ?></option>
+                                                            <?php } foreach ($school_details as $row){
+                                                            ?>
                                                                 
                                                         </select>
 
