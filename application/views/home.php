@@ -61,7 +61,9 @@
 
                                         $news_id = $row['post_id'];
                                          ?>
-                                        <li><a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>"><?php echo $row['post_title']; ?></a></li>
+                                        <li><a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,70);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc;?></a></li>
                                         <?php } ?>
                                          <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/News'?>">READ MORE</a>
                                     </li>
@@ -76,13 +78,11 @@
                                       $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1 limit 10");
                                        foreach ($query->result_array() as $row){ 
                                           $sid = $row['school_id'];
-
-
-
-
                                         ?>
 
-                                    <li><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><?php echo $row['school_name'];?></a></li>
+                                    <li><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><?php $desc=$row['school_name']; $limitdesc = substr($desc,0,70);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc;?></a></li>
                                   
                                    <?php } ?>
                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
@@ -98,7 +98,9 @@
                                           $pro_id = $row['project_id'];
                                  ?>
 
-                                   <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php echo $row['project_title']; ?></a></li> 
+                                   <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php $desc=$row['project_title']; $limitdesc = substr($desc,0,70);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc;?></a></li> 
                                      <?php } ?>
                                     <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/Projectlist'?>">READ MORE</a>
                                     </li>
@@ -117,14 +119,16 @@
                                     </h5>
                                     <ul> 
                                         <?php 
-                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 limit 10");
+                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 limit 5");
                                               //print_r($query->result_array());
                                         foreach ($query->result_array() as $row){ 
 
                                           $event_id = $row['post_id'];
                                             ?>
 
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>"><?php echo $row['post_title']; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php echo $row['post_author'];?></span></div> </div></li>
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,40);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php //echo $row['post_author'];?></span></div> </div></li>
                                        
                                         </li>
                                           <?php } ?>
@@ -143,7 +147,9 @@
                                           $vac_id = $row['vacancy_id'];
 
                                             ?>
-                                    <li><a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>"><?php echo $row['vacancy_name']; ?></a>
+                                    <li><a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>"><?php $desc=$row['vacancy_name']; $limitdesc = substr($desc,0,70);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc; ?></a>
                                     
                                     </li>
                                              <?php } ?>
@@ -160,7 +166,9 @@
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
                                      ?>
-                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php echo $row['question_desc']; ?>(7)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
+                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php $desc=$row['question_desc'];$limitdesc = substr($desc,0,70);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc; ?>(7)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
                                           
                                   
                                      <p class="green-text">Ans this</p></a></li> <?php } ?>

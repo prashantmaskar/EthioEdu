@@ -77,7 +77,11 @@
                                     <h4 class="red-text">Connect2Me Information</h4>
 
                                     <div class="form-group ">
+<<<<<<< HEAD
                                         <input type="date" class=" datepicker validate" name="Bdate" placeholder="birthdate">
+=======
+                                        <input type="date" id="datepicker" class="validate" name="Bdate" placeholder="birthdate">
+>>>>>>> a09520c61deb5b16df2f2dd8a21885a57bdc8119
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
@@ -352,6 +356,21 @@
 
         }
     });
+
+
+$('#datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+        selectYears: 60, // Creates a dropdown of 15 years to control year
+        max: new Date(),
+        onSet: function () {
+        $('.datepicker').siblings('small.help-block').attr('style',"display:none;")
+        $('.datepicker').removeClass('invalid');
+        this.close();
+    }
+});
+
+
+
 });
 
 

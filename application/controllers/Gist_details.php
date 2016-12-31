@@ -42,6 +42,12 @@ class Gist_details extends CI_Controller {
 
         function show_one($ne_id) {
     $data['banners'] = $this->Init_models->getadvertisebanners();
+    $banners = $this->Init_models->getadvertisebanners();
+        $data = array(
+            'm_title' => 'Gist Details',
+            'title' => 'Gist Details',
+            'banners' => $banners
+        );
  // get a post news based on news id
   $data['ques'] = $this->Init_models->get_one_gist($ne_id);
   // get a post COMMENTS based on news id and send it to view
