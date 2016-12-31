@@ -97,12 +97,16 @@
                         <ul class="latest_news_list">
                         <?php
                                 foreach ($news as $row){ 
-                                    $news_id = $row['post_id'];?>
+                                    $news_id = $row['post_id'];
+                                    $parent = $row['pparent_id'];
+                                  //  echo "$parent";
+                                  $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$news_id."' and pparent_id = '0'");
+                                    ?>
                             <li class="Latest_news_content">
                                 <a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" class="news_link">
                                     <span class="News_title"><?php echo $row['post_title']; ?></span>
                                 </a>
-                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_time']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [7]  
+                                <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="<?php echo base_url(); ?>index.php/userdashboard?uid=<?php echo $row['user_id']; ?>"><?php echo $row['post_author']; ?></a></strong> On <?php echo $row['post_date']; ?> At <?php echo $row['post_time']; ?><span class="infoText1"> for <?php echo $row['post_category'];?> | Comments [<?php echo $query2->result()[0]->row_count; ?>]  
                                     </span></span>
                             </li>
                             <?php } ?>

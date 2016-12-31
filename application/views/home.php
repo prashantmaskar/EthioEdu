@@ -163,12 +163,14 @@
                                 </h5>
                                 <ul><?php 
                                      $query = $this->db->query("select * from tbl_questions where question_approve=1 limit 10");
+
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
+                                         $query1 = $this->db->query("select count(*) as row_count from tbl_userresponse where question_id = '".$que_id."'");
                                      ?>
                                      <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>" data-toggle="tooltip" title="<?php echo $row['question_desc'];?>"><?php $desc=$row['question_desc'];$limitdesc = substr($desc,0,70);
                                         $etc = '...';
-                                        echo $limitdesc."".$etc; ?>(7)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
+                                        echo $limitdesc."".$etc; ?>(<?php echo $query1->result()[0]->row_count;?>)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
                                           
                                   
                                      <p class="green-text">Ans this</p></a></li> <?php } ?>
