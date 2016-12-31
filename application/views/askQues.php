@@ -45,35 +45,10 @@
                                     </div>
                                                  <div class="form-group col s12">
                                                    <select class="form-control " name="subject">
-                                            <option value="">Subject/Course category</option>
-                                            <option value="Accounting">Accounting</option>
-                                            <option value="Agri_Science">Agricultural Science</option>
-                                            <option value="Architecture">Architecture</option>
-                                            <option value="Art">Art </option>
-                                             <option value="Bio_Science">Biological Science</option>
-                                            <option value="Biology">Biology</option>
-                                            <option value="Chemistry">Chemistry</option>
-                                            <option value="Commerce">Commerce</option>
-                                            <option value="Computer">Computer</option>
-                                            <option value="CRK_CRS">CRK/CRS</option>
-                                            <option value="Current_Affairs">Current Affairs</option>
-                                            <option value="Economics">Economics</option>
-                                             <option value="Education">Education</option>
-                                            <option value="Engineering">Engineering</option>
-                                            <option value="English_Language">English Language</option>
-                                            <option value="Geography">Geography</option>
-                                          <option value="Government">Government</option>
-                                            <option value="IRK_IRS">IRK/IRS</option>
-                                            <option value="Language">Language</option>
-                                            <option value="Law">Law</option>
-                                             <option value="Literature_in_English">Literature in English</option>
-                                            <option value="Management">Management</option>
-                                            <option value="Mathematics">Mathematics</option>
-                                            <option value="Medical_Science">Medical Science</option>
-                                            <option value="Physical_Science ">Physical Science </option>
-                                            <option value="Social_Science">Social Science</option>
-                                          
-                                          
+                                            <option value="">Question category</option>
+                                            <?php foreach($categories as $row){?>
+                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <?php } ?>
                                         </select>
                                         <label>Question category</label>
                                     </div>
