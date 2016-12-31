@@ -82,3 +82,7 @@
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
 <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-course-validate.js' ?>"></script>
+
+
+
+<
