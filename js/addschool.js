@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //alert('in');
      $("#phone_number").val("+251 ");
     
 

@@ -61,7 +61,7 @@
 
                                         $news_id = $row['post_id'];
                                          ?>
-                                        <li><a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,70);
+                                        <li><a href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,70);
                                         $etc = '...';
                                         echo $limitdesc."".$etc;?></a></li>
                                         <?php } ?>
@@ -80,7 +80,7 @@
                                           $sid = $row['school_id'];
                                         ?>
 
-                                    <li><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><?php $desc=$row['school_name']; $limitdesc = substr($desc,0,70);
+                                    <li><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>" data-toggle="tooltip" title="<?php echo $row['school_name'];?>"><?php $desc=$row['school_name']; $limitdesc = substr($desc,0,70);
                                         $etc = '...';
                                         echo $limitdesc."".$etc;?></a></li>
                                   
@@ -98,7 +98,7 @@
                                           $pro_id = $row['project_id'];
                                  ?>
 
-                                   <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>"><?php $desc=$row['project_title']; $limitdesc = substr($desc,0,70);
+                                   <li><a href="<?php echo base_url() . 'index.php/Projectlist?id='.$pro_id ?>" data-toggle="tooltip" title="<?php echo $row['project_title'];?>"><?php $desc=$row['project_title']; $limitdesc = substr($desc,0,70);
                                         $etc = '...';
                                         echo $limitdesc."".$etc;?></a></li> 
                                      <?php } ?>
@@ -126,7 +126,7 @@
                                           $event_id = $row['post_id'];
                                             ?>
 
-                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,40);
+                                        <li><div class="row"> <div class="col l4 blue date"><div class="calender_bar"><span class="day"><?php echo $row['post_event_date']; ?></span><br><span class="monthyear"><?php echo $row['post_event_time']; ?></span></div></div> <div class="col l8 "><a href="<?php echo base_url()?>event_details/show_one/<?= $event_id   ?>" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,40);
                                         $etc = '...';
                                         echo $limitdesc."".$etc; ?></a><div class="happen_loc"><span>Happning at:<a href="#"><?php echo $row['post_venue'];  ?></a></span></div><div class="event_by"><span><?php //echo $row['post_author'];?></span></div> </div></li>
                                        
@@ -147,7 +147,7 @@
                                           $vac_id = $row['vacancy_id'];
 
                                             ?>
-                                    <li><a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>"><?php $desc=$row['vacancy_name']; $limitdesc = substr($desc,0,70);
+                                    <li><a href="<?php echo base_url() . 'index.php/vacancy-details?id='.$vac_id ?>" data-toggle="tooltip" title="<?php echo $row['vacancy_name'];?>"><?php $desc=$row['vacancy_name']; $limitdesc = substr($desc,0,70);
                                         $etc = '...';
                                         echo $limitdesc."".$etc; ?></a>
                                     
@@ -166,7 +166,7 @@
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
                                      ?>
-                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>"><?php $desc=$row['question_desc'];$limitdesc = substr($desc,0,70);
+                                     <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>" data-toggle="tooltip" title="<?php echo $row['question_desc'];?>"><?php $desc=$row['question_desc'];$limitdesc = substr($desc,0,70);
                                         $etc = '...';
                                         echo $limitdesc."".$etc; ?>(7)</a>     <a href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" >
                                           
