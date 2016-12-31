@@ -38,6 +38,11 @@ selectMonths: true, // Creates a dropdown to control month
         this.close();
     }
 });
+
+
+
+
+
         $('.featured_slider').owlCarousel({
 loop: true,
         margin: 10,

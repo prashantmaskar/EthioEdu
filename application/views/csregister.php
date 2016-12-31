@@ -77,7 +77,7 @@
                                     <h4 class="red-text">Connect2Me Information</h4>
 
                                     <div class="form-group ">
-                                        <input type="date" class=" datepicker validate" name="birth_date" placeholder="birthdate">
+                                        <input type="date" class=" datepicker validate" name="Bdate" placeholder="birthdate">
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
