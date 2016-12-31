@@ -45,7 +45,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                <form id="addcourseform" action="<?php echo site_url('index.php/admin/Addcategory')?>" method="post" class="col m12">
+                                                <form id="addcategory" action="<?php echo site_url('index.php/admin/Addcategory')?>" method="post" class="col m12">
                                                     <div class="form-group input-field col s12">
                                                         <input id="Course_name" name="category_name" type="text" class="validate">
                                                         <label for="Course_name">Category Name</label>
@@ -82,7 +82,4 @@
                             </div>
                         </div>
                         <?php  $this->load->view('admin/footer'); ?>
-<script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-course-validate.js' ?>"></script>
-
-
-
+                          <script type="text/javascript" src="<?php echo base_url().'/js/admin/category_validate.js' ?>"></script>
