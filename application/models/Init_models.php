@@ -44,6 +44,7 @@
        public function get_school_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='school'");
+           //print_r($query->result_array());
             return $query->result_array();
       }
       public function get_Que_categories()  
