@@ -53,9 +53,12 @@ class Addcategory extends CI_Controller {
                 'category_type' => $this->input->post('category_type'),
 
             );
+     
               if ($this->Init_models->insert_category($data))
             {
+
             $this->session->set_flashdata('message', 'Data Inserted Successfully'); 
+        
             redirect("index.php/admin/addcategory");
             }
   

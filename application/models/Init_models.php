@@ -46,6 +46,11 @@
            $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
             return $query->result_array();
       }
+       public function get_project_categories()  
+      {  
+           $query = $this->db->query("SELECT * from tbl_category where category_type='project'");
+            return $query->result_array();
+      }
       //Insert School Information data
       public function addschooluser($data)  
       {  

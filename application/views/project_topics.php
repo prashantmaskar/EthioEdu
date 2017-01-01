@@ -47,7 +47,7 @@
                                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="project_category">
                                                             <option  value="">Project Catagory</option>
-                                                    <option value="Administration">Administration </option>
+                                                    <!-- <option value="Administration">Administration </option>
                                                     <option value="Agriculture">Agriculture </option>
                                              <option value="Arts_Humanity ">Arts and humanity  </option>
                                                       <option value="Education">Education  </option>
@@ -55,7 +55,10 @@
                                                         <option value="Law">Law  </option>
                             <option value="MPH">Medical, pharmaceutical & Health sciences  </option>
                              <option value="Science">Science </option>
-                              <option value="SM">Social & management  </option>
+                              <option value="SM">Social & management  </option> -->
+                              <?php foreach($categories as $row){?>
+                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <?php } ?>
 
 
                                                         </select>

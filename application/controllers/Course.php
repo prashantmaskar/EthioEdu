@@ -171,7 +171,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
 
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
-$data['project_topics']=$this->Init_models->selectproject();
+//$data['project_topics']=$this->Init_models->selectproject();
 $data['categories'] = $this->Init_models->get_categories();
        $this->load->view('course',$data);
     }

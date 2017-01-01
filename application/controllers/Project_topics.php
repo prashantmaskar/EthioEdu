@@ -42,6 +42,7 @@ class Project_topics extends CI_Controller {
                 'title'   => ' Project Topic',
                 'banners' => $banners
             );
+             $view_params['categories'] = $this->Init_models->get_project_categories();
 		$this->load->view('project_topics',$view_params);
 		if (isset($_POST['action'])){
 			$this->insertproject();
