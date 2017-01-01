@@ -1670,5 +1670,26 @@ function add_new_event_comment()
   
     }
 
+function validate_school_email($email)
+{
+  $result=$this->db->query("SELECT * FROM tbl_users where   user_email = '$email'");
+  if( $result->num_rows() > 0)
+  {
+    return false;
+  }
+
+  else{
+    return true;
+  }
+}
+
+
+
+
+
+
+
+
+
    }  
 ?>  
