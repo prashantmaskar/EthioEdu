@@ -17,7 +17,7 @@
                         </a>
                     </div>
                 </div>
-                             <?php
+      <?php
     if ($this->session->flashdata('message')) {
     ?>
     <div class="message flash">
