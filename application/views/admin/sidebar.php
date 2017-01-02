@@ -251,7 +251,7 @@
                                             </li>
                                             <li><a href="#">Past Exam</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/quesanswer' ?>">Questions & Answers <?php if(!$fquestioncount == 0){ ?><span class="count-indicator"><?php echo $fquestioncount; ?></span><?php } ?></a>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/quesanswer' ?>">Question & Answer <?php if(!$fquestioncount == 0){ ?><span class="count-indicator"><?php echo $fquestioncount; ?></span><?php } ?></a>
                                             </li>
                                            
                                             

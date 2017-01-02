@@ -214,7 +214,7 @@ function get_user_id_by_uname($uname){
       }
        public function selecttender()  
       {  
-        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 " ); 
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
          return $query->result_array();
       }
       public function selectalltender()
@@ -249,7 +249,7 @@ function get_user_id_by_uname($uname){
       }
        public function selectallcourse()  
       {  
-        $query = $this->db->query("select * from tbl_course join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
+        $query = $this->db->query("select * from tbl_course left join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
         return $query->result_array();
       }
       public function selectquestion()  
@@ -357,7 +357,7 @@ function get_user_id_by_uname($uname){
 
 
       public function update_front_user($data){
-        echo $id = $data['user_id'];
+        $id = $data['user_id'];
         $this->db->where('user_id', $id);
         return $this->db->update('tbl_users', $data);
       }
@@ -379,7 +379,7 @@ public function edit_front_user($data){
       
 
       public function updateuserdetails($data){
-        echo $id = $data['user_id'];
+        $id = $data['user_id'];
         $this->db->where('user_id', $id);
         return $this->db->update('tbl_user_meta', $data);
       }
