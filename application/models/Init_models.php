@@ -35,7 +35,7 @@
           // $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course'");
             $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
-         
+
             
             return $query->result_array();
 
@@ -1298,6 +1298,7 @@ $q->where('vacancy_date <=', $query_array['end_date']);
                      ->where('question_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
+
    
 $sdate = $query_array['start_date'];
 if(!$sdate == ""){
