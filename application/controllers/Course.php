@@ -100,6 +100,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
      $data['categories'] = $this->Init_models->get_categories();
      $data['pagination'] = $this->pagination->create_links();
     //$data['course_name']=$this->Init_models->selectcourse();
+     $data['cat'] = $this->Init_models->get_cat();
        $this->load->view('course',$data);
 
     }
@@ -172,7 +173,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
 //$data['project_topics']=$this->Init_models->selectproject();
-$data['categories'] = $this->Init_models->get_categories();
+$data['cat'] = $this->Init_models->get_cat();
        $this->load->view('course',$data);
     }
 

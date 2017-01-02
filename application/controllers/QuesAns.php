@@ -96,7 +96,7 @@ class QuesAns extends CI_Controller {
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
-     $data['categories'] = $this->Init_models->get_Que_categories();
+     $data['categories'] = $this->Init_models->get_ques_cat();
      $data['pagination'] = $this->pagination->create_links();
 //print_r($data);
        $this->load->view('QuesAns',$data);
@@ -174,7 +174,7 @@ class QuesAns extends CI_Controller {
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
-      $data['categories'] = $this->Init_models->get_Que_categories();
+      $data['categories'] = $this->Init_models->get_ques_cat();
      $data['pagination'] = $this->pagination->create_links();
 //print_r($data);
        $this->load->view('QuesAns',$data);
