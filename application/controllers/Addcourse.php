@@ -44,7 +44,7 @@ class Addcourse extends CI_Controller {
             'title' => 'Add Course',
             'banners' => $banners
         );
-        $view_params['categories'] = $this->Init_models->get_course_categories();
+        $view_params['categories'] = $this->Init_models->get_categories();
         //print_r($view_params['categories']);
         $this->load->view('addcourse',$view_params);
 

@@ -97,7 +97,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
-     //$data['categories'] = $this->Init_models->get_categories();
+     $data['categories'] = $this->Init_models->get_categories();
      $data['pagination'] = $this->pagination->create_links();
     //$data['course_name']=$this->Init_models->selectcourse();
      $data['cat'] = $this->Init_models->get_cat();

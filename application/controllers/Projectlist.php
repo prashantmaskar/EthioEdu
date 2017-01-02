@@ -102,7 +102,7 @@ function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', 
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
-       $data['categories'] = $this->Init_models->get_project_categories();
+       $data['categories'] = $this->Init_models->get_project_cat();
      $data['pagination'] = $this->pagination->create_links();
 $data['project_topics']=$this->Init_models->selectproject();
        $this->load->view('Projectlist',$data);
@@ -180,7 +180,7 @@ $data['project_topics']=$this->Init_models->selectproject();
      $this->pagination->initialize($config);
      $data['pagination'] = $this->pagination->create_links();
 $data['project_topics']=$this->Init_models->selectproject();
-$data['categories'] = $this->Init_models->get_project_categories();
+$data['categories'] = $this->Init_models->get_project_cat();
        $this->load->view('Projectlist',$data);
     }
 

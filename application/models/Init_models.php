@@ -80,6 +80,12 @@ $query = $this->db->query("SELECT * from tbl_course GROUP BY course_category ");
 
             return $query->result_array();
       }
+       public function get_project_cat()  
+     
+      {  
+          $query = $this->db->query("SELECT * from tbl_projects GROUP BY project_category ");
+          return $query->result_array();
+        }
        public function get_project_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='project'");
