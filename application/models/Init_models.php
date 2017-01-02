@@ -232,6 +232,11 @@ function get_user_id_by_uname($uname){
         $query = $this->db->query("select * from  tbl_projects"); 
         return $query->result_array();
       }
+       public function selectallcategory()  
+      {  
+        $query = $this->db->query("select * from tbl_category"); 
+        return $query->result_array();
+      }
        public function selecttender()  
       {  
         $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
