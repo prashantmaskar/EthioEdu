@@ -42,6 +42,7 @@ class Quesanswer extends CI_Controller {
                 'm_title' => 'Admin Question-Answer',
                 'title'   => 'Admin Question-Answer'
             );
+              $view_params['categories'] = $this->Init_models->get_Que_categories();
              $view_params['question'] = $this->Init_models->selectallquestion();
 		$this->load->view('admin/question-answer',$view_params);
 		if(isset($_POST['action'])){

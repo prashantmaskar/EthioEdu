@@ -101,6 +101,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
+    
      $data['pagination'] = $this->pagination->create_links();
  $data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('schools',$data);
@@ -176,6 +177,8 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
         $config['num_tag_close'] = '</li>';
 
      $this->pagination->initialize($config);
+     $data['categories'] = $this->Init_models->get_school_categories();
+       //print_r( $data['categories']);
      $data['pagination'] = $this->pagination->create_links();
  $data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('schools',$data);

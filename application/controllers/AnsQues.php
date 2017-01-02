@@ -38,6 +38,7 @@ class AnsQues extends CI_Controller {
                 'title'   => 'ansQues',
                 'banners' => $banners
             );
+               $data['categories'] = $this->Init_models->get_Que_categories();
                  $data['news'] = $this->Init_models->get_all();
                  $this->load->view('home', $data);
        }
