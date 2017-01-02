@@ -36,12 +36,12 @@ class Edit_category extends CI_Controller {
     }
 
 	public function index()
-	{
+	{			$cat_id = $_GET['id'];
              $view_params = array(
                 'm_title' => 'Edit Category',
                 'title'   => 'Edit Category'
             );
-             //$view_params['getcategory_details'] = $this->Init_models->get_category_details();
+             $view_params['getcategory_details'] = $this->Init_models->get_category_details($cat_id);
 		$this->load->view('admin/edit_category',$view_params);
 
         if(isset($_POST['action'])){
@@ -53,16 +53,15 @@ class Edit_category extends CI_Controller {
 	function edit_category(){
 
         $data = array(
-                'vacancy_id' => $this->input->post('vacancy_id'),
-                'vacancy_approve' => $this->input->post('approve_status'),
-                'vacancy_date' => $this->input->post('date'),
-                'vacancy_time' => $this->input->post('time')
+                'category_id' => $this->input->post('category_id'),
+                'category_name' => $this->input->post('category_name'),
+                'category_type' => $this->input->post('category_type')
 
             );
 
-        if ($this->Init_models->edit_tender($data))
+        if ($this->Init_models->update_category($data))
             {
-              redirect('index.php/admin/listtender');
+              redirect('index.php/admin/listcategory');
             }
 
 }

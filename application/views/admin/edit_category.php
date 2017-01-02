@@ -46,19 +46,18 @@
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
                                             <?php
-                                            $query = $this->db->query("select * from tbl_category where category_id = '".$_GET['id']."'");
-                                           foreach ($query->result_array() as $row){ ?>
+                                           foreach ($getcategory_details as $row){ ?>
                                            <?php $cat_id = $row['category_id']; ?>
                                                 <form id="addcategory" action="<?php echo site_url('index.php/admin/Edit_Category')?>" method="post" class="col m12">
                                                     <div class="form-group input-field col s12">
+                                                    <input type="hidden" value="<?php echo $row['category_id']; ?>" name="category_id">
                                                         <input id="Course_name" name="category_name" type="text" value="<?php echo $row['category_name']; ?>" class="validate">
                                                         <label for="Course_name">Category Name</label>
                                                     </div>
 													   <div class=" form-group input-field col s12">
                                                         <select class="form-control browser-default" name="category_type">
                                                             <option value="">Category Type</option>
-                                                            <option value="course">Select Category</option>
-                                                            <option value="<?php echo $row['category_id']; ?>" <?php echo 'selected="selected"'; ?>><?php echo $row['category_type']; ?></option>
+                                                            <option value="<?php echo $row['category_type']; ?>" <?php echo 'selected="selected"'; ?>><?php echo $row['category_type']; ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="col s5 offset-s5 margin-t-10">

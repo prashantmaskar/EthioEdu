@@ -41,7 +41,7 @@ class Listcategory extends CI_Controller {
                 'm_title' => 'Admin List Category',
                 'title'   => 'Admin List Category'
             );
-             $view_params['tender'] = $this->Init_models->selectalltender();
+             $view_params['categorires'] = $this->Init_models->selectallcategory();
 		$this->load->view('admin/listcategory',$view_params);
 	}
 }

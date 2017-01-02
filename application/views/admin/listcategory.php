@@ -39,8 +39,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $query = $this->db->query("select * from tbl_category");
-                                           foreach ($query->result_array() as $row){ ?>
+                                           foreach ($categorires as $row){ ?>
                                            <?php $cat_id = $row['category_id']; ?>
                                                 <tr>
                                                     <td><?php echo $row['category_id']; ?></td>
