@@ -13,7 +13,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col s12 m12 l12">
-                                    <h5 class="breadcrumbs-title">Add Category</h5>
+                                    <h5 class="breadcrumbs-title">Edit Category</h5>
                                     <ol class="breadcrumbs">
                                         <li><a href="<?php echo base_url() . 'index.php/admin/dashboard' ?>">Dashboard</a>
                                         </li>
@@ -45,18 +45,20 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                <form id="addcategory" action="<?php echo site_url('index.php/admin/Addcategory')?>" method="post" class="col m12">
+                                            <?php
+                                            $query = $this->db->query("select * from tbl_category where category_id = '".$_GET['id']."'");
+                                           foreach ($query->result_array() as $row){ ?>
+                                           <?php $cat_id = $row['category_id']; ?>
+                                                <form id="addcategory" action="<?php echo site_url('index.php/admin/Edit_Category')?>" method="post" class="col m12">
                                                     <div class="form-group input-field col s12">
-                                                        <input id="Course_name" name="category_name" type="text" class="validate">
+                                                        <input id="Course_name" name="category_name" type="text" value="<?php echo $row['category_name']; ?>" class="validate">
                                                         <label for="Course_name">Category Name</label>
                                                     </div>
-													           <div class=" form-group input-field col s12">
-                                                        <select class=" form-control browser-default" name="category_type">
+													   <div class=" form-group input-field col s12">
+                                                        <select class="form-control browser-default" name="category_type">
                                                             <option value="">Category Type</option>
-                                                            <option value="course">Course Category</option>
-                                                            <option value="school">School Category</option>
-                                                            <option value="question">Question Category</option>
-                                                             <option value="project">Project Category</option>
+                                                            <option value="course">Select Category</option>
+                                                            <option value="<?php echo $row['category_id']; ?>" <?php echo 'selected="selected"'; ?>><?php echo $row['category_type']; ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="col s5 offset-s5 margin-t-10">
@@ -66,6 +68,7 @@
 
                                                     </div>
                                                 </form>
+                                                <?php } ?>
                                             </div> 
                                         </div>
                                     </div>
