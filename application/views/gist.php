@@ -95,19 +95,26 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="featured_gist row">
                         <div class="col m12">
-                            <h3 class="featured_gist_title">Student just gisted about..</h3>
+                            <h3 class="featured_gist_title">Most Liked G</h3>
                         </div>
                         <div class="fgist_list_wrap col m12">
                             <ul class="latest_news_list">
                               <?php  
-                               foreach ($gist as $row){ 
+                               foreach ($sidegist as $row){ 
 
-                                // $p_id = $row['post_id'];
-                                               $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
+                                
+
+                                              // $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
                                 ?>
                                 <li class="Latest_news_content">
                                     <div class="row">
                                         <div class="fgist col s12">
+                                            <div class="fgist_title col s9">
+                                                <h1><a href="#" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php echo $row['post_title'];?><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,2);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc;?></a></h1>
+
+                                            </div>
                                             <div class="fgist_info col s12">
                                             <?php if(! $row['post_date'] == ""){?>
                                                 <span class="green-text">On <?php echo $row['post_date'];?></span>
@@ -115,17 +122,14 @@
                                                 <?php if(! $row['post_time'] == ""){?>
                                                 <span class="green-text">At <?php echo $row['post_time'];?></span>
                                                 <?php } ?>
-                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>""><?php echo $row['post_author'];?></a>
+                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>"><?php echo $row['post_author'];?></a>
                                                 <span><?php echo $row['post_category'];?></span>
                                             </div>
                                             <div class="fgist_thumb col s3">
                                                 <?php //$gistattachment = $row['user_avatar']; ?>
                                             
                                             </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
-
-                                            </div>
+                                            
 
                                         </div>
                                     </div>

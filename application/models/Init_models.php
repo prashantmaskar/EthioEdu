@@ -219,9 +219,8 @@ function get_user_id_by_uname($uname){
       public function side_gist()  
       {  
        
-          //$query = $this->db->query("select tbl_posts.*,tbl_postlikes.post_id from tbl_posts LEFT JOIN tbl_postlikes on tbl_posts.post_id=tbl_postlikes.post_id where tbl_posts.post_type = 'gist'");
-
-          $query = $this->db->query("select tbl_posts.*,count(tbl_postlikes.post_id) as count from tbl_posts LEFT JOIN tbl_postlikes on tbl_posts.post_id=tbl_postlikes.post_id where tbl_posts.post_type = 'gist'and tbl_postlikes.post_id =tbl_posts.post_id ORDER BY count DESC");
+          
+          $query = $this->db->query("SELECT t1.post_id,t1.post_title, t1.post_type,t1.post_date,t1.post_time,t1.post_author,t1.user_id,t1.post_category,t2.plikes_count plikes_count FROM tbl_posts t1 LEFT JOIN tbl_postlikes t2 ON t2.post_id =t1.post_id WHERE t2.plikes_count = (SELECT MAX(plikes_count) FROM tbl_postlikes WHERE post_id = t1.post_id) AND t1.post_type= 'gist' LIMIT 10");
          
         return $query->result_array();
       }
