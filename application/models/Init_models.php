@@ -38,7 +38,7 @@
            // $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
 
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
-$query = $this->db->query("SELECT * from tbl_course GROUP BY course_category ");
+$query = $this->db->query("SELECT * from tbl_course where course_approve = '1' GROUP BY course_category ");
 
             
             return $query->result_array();
@@ -205,7 +205,23 @@ function get_user_id_by_uname($uname){
        public function selectgist()  
       {  
         //$query = $this->db->query("select tbl_user_meta.user_id ,tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.post_attachment, tbl_posts.post_desc, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_user_meta join tbl_posts on tbl_user_meta.user_id = tbl_posts.user_id where tbl_posts.post_type = 'gist' && tbl_posts.post_approve = 1 limit 10");
-        $query = $this->db->query("select tbl_posts.*,tbl_user_meta.user_id,tbl_user_meta.user_avatar,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' and post_approve = 1 GROUP BY tbl_posts.post_id");
+        $query = $this->db->query("select tbl_posts.*,tbl_user_meta.user_id,tbl_user_meta.user_avatar,
+          tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on 
+          tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on 
+          tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' 
+          and post_approve = 1 GROUP BY tbl_posts.post_id");
+
+         
+         
+        return $query->result_array();
+      }
+
+      public function side_gist()  
+      {  
+       
+          //$query = $this->db->query("select tbl_posts.*,tbl_postlikes.post_id from tbl_posts LEFT JOIN tbl_postlikes on tbl_posts.post_id=tbl_postlikes.post_id where tbl_posts.post_type = 'gist'");
+
+          $query = $this->db->query("select tbl_posts.*,count(tbl_postlikes.post_id) as count from tbl_posts LEFT JOIN tbl_postlikes on tbl_posts.post_id=tbl_postlikes.post_id where tbl_posts.post_type = 'gist'and tbl_postlikes.post_id =tbl_posts.post_id ORDER BY count DESC");
          
         return $query->result_array();
       }

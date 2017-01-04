@@ -38,6 +38,7 @@ class Gist extends CI_Controller {
             'banners' =>$banners
         );
         $view_params['gist'] = $this->Init_models->selectgist();
+        $view_params['sidegist'] = $this->Init_models->side_gist();
         $this->load->view('gist',$view_params);
     }
 
