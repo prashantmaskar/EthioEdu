@@ -30,7 +30,21 @@
             return $this->db->insert('tbl_category', $data);
       }
         //dynamic added categories
-      public function get_categories()  
+      public function get_cat()  
+
+      {  
+           //$query = $this->db->query("SELECT * from tbl_category where category_type='course'");
+            //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course'");
+           // $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
+
+            //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
+$query = $this->db->query("SELECT * from tbl_course GROUP BY course_category ");
+
+            
+            return $query->result_array();
+
+      }
+       public function get_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course'");
@@ -43,12 +57,19 @@
             return $query->result_array();
 
       }
+
        
        public function get_school_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='school'");
             return $query->result_array();
       }
+       public function get_ques_cat()  
+     
+      {  
+          $query = $this->db->query("SELECT * from tbl_questions GROUP BY question_category ");
+          return $query->result_array();
+        }
       public function get_Que_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
@@ -59,6 +80,12 @@
 
             return $query->result_array();
       }
+       public function get_project_cat()  
+     
+      {  
+          $query = $this->db->query("SELECT * from tbl_projects GROUP BY project_category ");
+          return $query->result_array();
+        }
        public function get_project_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='project'");

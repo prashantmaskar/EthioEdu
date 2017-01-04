@@ -25,9 +25,10 @@
                             <div class="school_category_box">
                                  <ul class="s_category_list">
                                 <?php foreach($categories as $row){
-                                    $c_id = $row['category_id'];
+                                    $pc_name = $row['project_category'];
+                                     $query2 = $this->db->query("select count(*) as row_count from tbl_projects where project_category = '".$pc_name."' GROUP BY project_category");
                                     ?>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/Projectlist/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?> (52)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/Projectlist/search?category=<?php echo $pc_name; ?>"><?php echo $pc_name; ?> (<?php echo $query2->result()[0]->row_count; ?>)</a></li>
                                     <?php } ?>
                                 </ul>
                             </div>
