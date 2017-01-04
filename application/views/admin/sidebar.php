@@ -79,14 +79,6 @@
                                        
                                         <i class="mdi-navigation-arrow-drop-down right"></i>
                                     </a>
-                                    <!-- <ul id="profile-dropdown" class="dropdown-content">
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi-action-face-unlock"></i>
-                                                Profile
-                                            </a>
-                                        </li>
-                                    </ul> -->
                                     <p class="user-roal">Administrator</p>
                                 </div>
                             </div>
@@ -106,8 +98,6 @@
                                     </a>
                                     <div class="collapsible-body" >
                                         <ul>
-                                           <!--  <li><a href="<?php //echo base_url() . 'index.php/admin/Addschool' ?>">Add School</a>
-                                            </li> -->
                                             <li><a href="<?php echo base_url() . 'index.php/admin/Listuser' ?>">List User</a>
                                             </li>
                                         </ul>
@@ -281,7 +271,7 @@
                                         <ul>
                                             <li><a href="<?php echo base_url() . 'index.php/admin/addcategory' ?>">Add Category</a>
                                             </li>
-                                            <li><a href="<?php echo base_url() . 'index.php/admin/listtender' ?>">List Categories</a>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/listcategory' ?>">List Categories</a>
                                             </li>
                                         </ul>
                                     </div>

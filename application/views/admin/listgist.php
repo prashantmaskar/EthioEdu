@@ -237,7 +237,8 @@
        <script>
        $(document).ready(function(){
     $(".r1").click(function(){
-        $(this).closest('.r1').next(".hiddenfields").slideToggle(100);
+         $(this).siblings().find('.hiddenfields').slideUp();
+    $(this).find('.hiddenfields').slideDown();
     });
 });
 </script>

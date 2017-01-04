@@ -30,20 +30,6 @@
                                     <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/Projectlist/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?> (52)</a></li>
                                     <?php } ?>
                                 </ul>
-                            
-                            <!-- <ul class="s_category_list">
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Administration Project Topics(2)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Agricultural' ?>">Agricultural Project Topics(3)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Art & Humanities Project Topics(23)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Education' ?>">Education Project Topics(12)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Engineering,Environment $ Technology Project Topics(1)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Low Project Topics(4)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Medical,Pharmaceutical & Health Science Project Topics(4)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Sciences Project Topics(5)</a></li>
-                                    <li class="catrgory_list_item"><a href="<?php //    echo base_url() . 'index.php/Projectlist/search?category=Administration' ?>">Social & Management Sciences Project Topics(66)</a></li>
-                                    
-
-                                </ul> -->
                             </div>
                         </div>
                         <datalist id="projectnames">
@@ -148,7 +134,7 @@
                                         <a href="#" class="vacancy_link">
                                             <span class="project_title"><?php echo $row->project_title;?></span><br>
                                         </a>
-                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Format: <a href="#"><?php echo $row->project_format;?></a> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
+                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Download: <a href="#"><?php echo $row->project_upload;?></a> Format: <strong class="green_text"><?php echo $row->project_format; ?></strong></span> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
                                     </li>
                                     <?php }}else{
 
