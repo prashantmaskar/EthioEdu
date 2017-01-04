@@ -46,13 +46,13 @@
                             <div class="school_category_box">
                                 <ul class="s_category_list">
                                 <?php foreach($categories as $row){
-                                    $cc_id = $row['course_category'];
+                                    //$cc_id = $row['course_category'];
                                     //echo "dfgdfg".$cc_id;
                                     $c_id = $row['category_id'];
-                                    $query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category='".$c_id."'");
+                                    //$query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category='".$c_id."'");
                                  
                                     ?>
-                                    <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/course/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?> (<?php echo $query2->result()[0]->row_count; ?>)</a></li>
+                                    <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/course/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?> <?php //echo $query2->result()[0]->row_count; ?>)</a></li>
                                     <?php } ?>
                                 </ul>
                             </div>

@@ -9,7 +9,7 @@
                     <div class="col m12 s12 card-panel edituser ">
                     <h1 class="page-title">Update Your Profile</h1>
                         <div class="basic-info">
-                                <p><strong>Brif Instruction</strong></p>
+                                <p><strong>Brief Instructions</strong></p>
                                 <p>
                                 1. Aspirants should select the institution they intend to get into.<br>
                                 2. Graduates should select the institution they graduated from.<br>

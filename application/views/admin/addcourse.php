@@ -63,7 +63,7 @@
                                                         <select class=" form-control browser-default" name="course_cat">
                                                             <option value="">Course Category</option>
                                                         <?php foreach($categories as $row){?>
-                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <option value="<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></option>
                                                             <?php } ?>
                                                         </select>
                                                     </div>

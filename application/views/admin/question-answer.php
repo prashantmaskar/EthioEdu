@@ -63,7 +63,7 @@
                                                             <option value="">Subject/course catagory</option>
                                                               <option value="">Question category</option>
                                             <?php foreach($categories as $row){?>
-                                                            <option value="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></option>
+                                                            <option value="<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></option>
                                                             <?php } ?>
                                                         
                                                         </select>

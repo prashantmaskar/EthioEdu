@@ -32,9 +32,9 @@
         //dynamic added categories
       public function get_categories()  
       {  
-          // $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
+           $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course'");
-            $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
+           // $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
          
             
             return $query->result_array();
@@ -49,8 +49,8 @@
       }
       public function get_Que_categories()  
       {  
-          // $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
-         $query = $this->db->query("SELECT tbl_category.*,tbl_questions.question_category FROM tbl_category LEFT JOIN tbl_questions ON tbl_category.category_id=tbl_questions.question_category where tbl_category.category_type='question' GROUP BY tbl_questions.question_category");
+           $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
+         //$query = $this->db->query("SELECT tbl_category.*,tbl_questions.question_category FROM tbl_category LEFT JOIN tbl_questions ON tbl_category.category_id=tbl_questions.question_category where tbl_category.category_type='question' GROUP BY tbl_questions.question_category");
             return $query->result_array();
       }
        public function get_project_categories()  
