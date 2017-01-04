@@ -40,7 +40,7 @@
 
                             <?php
                                 foreach ($gist as $row){ ?>
-                                <div class="gits_content row">
+                                <div class="gits_content row" id=<?php echo $row['post_id']; ?>>
                                     <div class="gist_ainfo">
                                         <div class="col s1">
                                         <?php $gistattachment = $row['user_avatar']; ?>
@@ -59,7 +59,7 @@
                                                 <span>Writes for School</span>
                                             </div>
                                             <div class="gist_title">
-                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
+                                                <h1><a href="#"><?php $row['post_id']; echo $row['post_title']; ?></a></h1>
                                             </div>
                                         </div>
                                     </div>
@@ -95,14 +95,14 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="featured_gist row">
                         <div class="col m12">
-                            <h3 class="featured_gist_title">Most Liked G</h3>
+                            <h3 class="featured_gist_title">Most Liked Gist</h3>
                         </div>
                         <div class="fgist_list_wrap col m12">
                             <ul class="latest_news_list">
                               <?php  
                                foreach ($sidegist as $row){ 
 
-                                
+                                $id = $row['post_id'];
 
                                               // $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
                                 ?>
@@ -110,7 +110,7 @@
                                     <div class="row">
                                         <div class="fgist col s12">
                                             <div class="fgist_title col s9">
-                                                <h1><a href="#" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php echo $row['post_title'];?><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,2);
+                                                <h1><a href="#<?php echo $row['post_id']; ?>" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php echo $row['post_title'];?><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,2);
                                         $etc = '...';
                                         echo $limitdesc."".$etc;?></a></h1>
 
