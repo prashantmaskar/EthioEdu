@@ -77,8 +77,10 @@
                                                         <label for="post_by">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
+                                                        <p><label for="post_by" >post event time</label></p>
+                                                        
                                                         <input id="text" type="time" name="post_event_time" class="validate">
-                                                        <label for="post_by">post event time</label>
+                                                         
                                                     </div>
 
 
@@ -86,7 +88,7 @@
                                 <div class="form-group input-field col s12">
                                     <?php $sessname = $this->session->userdata('susername'); ?>
                                     <input id="postedby" name="postedby" type="text" class="validate" value="<?php echo $sessname; ?>"  /readonly>
-                                    <label for="Caption">Posted by</label>
+                                   <label for="Caption">Posted by</label>
                                 </div>
                                 <input type="hidden" name="post_type" value="event">
                                 <input type="hidden" name="approve_status" value="0">

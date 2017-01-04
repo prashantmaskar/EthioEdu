@@ -96,7 +96,7 @@
                         <h2 class="news_post_title">Previously Posted News</h2>
                         <ul class="latest_news_list">
                         <?php
-                                foreach ($news as $row){ 
+                                foreach ($news as $row) { 
                                     $news_id = $row['post_id'];
                                     $parent = $row['pparent_id'];
                                   //  echo "$parent";
