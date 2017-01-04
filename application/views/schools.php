@@ -143,7 +143,7 @@
                         <div class="featured_slider">
                              <?php  foreach ($homeschool as $row){ 
                                           $sid = $row['school_id']; ?>
-                            <div class="item"><a href="<?php echo base_url(); ?>schooldetails?id=<?php echo $sid ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
+                            <div class="item"><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
                             <?php } ?>
                         </div>
                     </div>
