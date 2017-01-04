@@ -732,7 +732,9 @@ function get_tips_details($tips_id){
 
      function get_previous_vacancy(){
 
-        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_vacancy.vacancy_id, tbl_vacancy.vacancy_name, tbl_vacancy.vacancy_time, tbl_vacancy.vacancy_date from tbl_users join tbl_vacancy on tbl_users.user_id = tbl_vacancy.user_id where tbl_vacancy.vacancy_approve  = 1 order by rand() limit 10");
+        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_vacancy.vacancy_id, tbl_vacancy.vacancy_name, tbl_vacancy.vacancy_time, tbl_vacancy.vacancy_date from tbl_users join tbl_vacancy on tbl_users.user_id = tbl_vacancy.user_id where tbl_vacancy.vacancy_approve  = 1 ORDER BY tbl_vacancy.vacancy_date DESC,tbl_vacancy.vacancy_time DESC limit 10");
+
+
          return $query->result_array();
       }
 

@@ -67,7 +67,11 @@
                     <div class="old_news_list">
                         <h2 class="news_post_title">Previous Vacancies</h2>
                         <ul class="latest_news_list">
-                        <?php foreach($previous_vacancy as $row){ ?>
+                        <?php foreach($previous_vacancy as $row){ 
+                            $date = $row['vacancy_date'];
+                            echo $date;
+
+                            ?>
                             <li class="Latest_news_content">
                                 <a href="<?php echo base_url(); ?>index.php/vacancy-details?id=<?php echo $row['vacancy_id']; ?>" class="news_link">
                                     <span class="News_title"><?php echo $row['vacancy_name']; ?></span>
