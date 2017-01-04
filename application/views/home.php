@@ -55,9 +55,9 @@
                                     </h5>
                                     <ul>
                                         <?php 
-                                        $query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1 limit 10");
+                                        //$query = $this->db->query("select * from tbl_posts where post_type = 'news' and post_approve = 1 limit 10");
 
-                                        foreach ($query->result_array() as $row){
+                                        foreach ($news as $row){
 
                                         $news_id = $row['post_id'];
                                          ?>
@@ -75,7 +75,7 @@
                                     Search For School
                                 </h5>
                                 <ul><?php
-                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1 limit 10");
+                                      $query = $this->db->query("select school_name,school_id from tbl_school_meta where school_approve = 1 ORDER BY school_date DESC,school_time DESC limit 10");
                                        foreach ($query->result_array() as $row){ 
                                           $sid = $row['school_id'];
                                         ?>
@@ -93,7 +93,7 @@
                                   Latest Project Topics
                                 </h5>
                                 <ul><?php 
-                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1 limit 10");
+                                 $query = $this->db->query("select * from tbl_projects where project_approve = 1  ORDER BY project_date DESC , project_time DESC limit 10");
                                     foreach ($query->result_array() as $row){ 
                                           $pro_id = $row['project_id'];
                                  ?>
@@ -119,7 +119,7 @@
                                     </h5>
                                     <ul> 
                                         <?php 
-                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 limit 5");
+                                          $query = $this->db->query("select * from tbl_posts where post_type = 'event' and post_approve = 1 ORDER BY tbl_posts.post_date DESC,tbl_posts.post_time  DESC limit 5");
                                               //print_r($query->result_array());
                                         foreach ($query->result_array() as $row){ 
 
@@ -142,8 +142,8 @@
                                     List Of Vacancy/Tender
                                 </h5>
                                 <ul> <?php 
-                                 $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 limit 10");
-                                    foreach ($query->result_array() as $row){ 
+                                // $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 limit 10");
+                                    foreach ($previous_vacancy as $row){ 
                                           $vac_id = $row['vacancy_id'];
 
                                             ?>
@@ -162,11 +162,12 @@
                                    questions and answers
                                 </h5>
                                 <ul><?php 
-                                     $query = $this->db->query("select * from tbl_questions where question_approve=1 limit 10");
+                                     $query = $this->db->query("select * from tbl_questions where question_approve=1 ORDER BY question_date DESC,question_time DESC limit 10");
+                                     //$query = $this->db->query("select tbl_questions.* ,tbl_userresponse.question_id question_id from tbl_questions LEFT JOIN tbl_userresponse on tbl_userresponse.question_id=tbl_questions.question_id where tbl_userresponse.question_id = (SELECT MAX(question_id) FROM tbl_userresponse WHERE question_id = tbl_userresponse.question_id) AND question_approve=1 limit 10");
 
                                      foreach ($query->result_array() as $row){
                                         $que_id=$row['question_id'];
-                                         $query1 = $this->db->query("select count(*) as row_count from tbl_userresponse where question_id = '".$que_id."'");
+                                         $query1 = $this->db->query("select count(*) as row_count from tbl_userresponse where question_id = '".$que_id."' and response_like = '1'");
                                      ?>
                                      <li><?php echo $row['question_category']; ?>:<a href="<?php echo base_url() . 'index.php/QuesAns?id='.$que_id ?>" data-toggle="tooltip" title="<?php echo $row['question_desc'];?>"><?php $desc=$row['question_desc'];$limitdesc = substr($desc,0,70);
                                         $etc = '...';

@@ -132,7 +132,7 @@
                   </div>
                             <div class="featured_schools col s12 m12">
 
-                                <h5>Featured Course</h5>
+                                <h5>Featured Schools</h5>
                                  <div class="featured_slider">
                              <?php  foreach ($homeschool as $row){ 
                                           $sid = $row['school_id']; ?>

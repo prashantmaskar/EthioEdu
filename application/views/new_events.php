@@ -77,7 +77,7 @@
                                                         <label for="post_by">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="text" type="text" name="post_event_time" class="validate">
+                                                        <input id="text" type="time" name="post_event_time" class="validate">
                                                         <label for="post_by">post event time</label>
                                                     </div>
 
