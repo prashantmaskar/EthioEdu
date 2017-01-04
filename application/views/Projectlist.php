@@ -134,7 +134,8 @@
                                         <a href="#" class="vacancy_link">
                                             <span class="project_title"><?php echo $row->project_title;?></span><br>
                                         </a>
-                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Download: <a href="#"><?php echo $row->project_upload;?></a> Format: <strong class="green_text"><?php echo $row->project_format; ?></strong></span> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
+                                
+                                         <span class="project_sinfo">Course:<a href="#"><?php echo $row->project_course;?></a> Download: <a href="\ETHIO\uploads\Documents\<?php echo $row->project_upload;?>"><?php echo $row->project_upload;?> </a> Format: <strong class="green_text"><?php echo $row->project_format; ?></strong></span> Type:<a href="#">Project Topic</a> Price:<strong class="green_text">4000</strong></span>
                                     </li>
                                     <?php }}else{
 
