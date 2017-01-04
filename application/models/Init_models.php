@@ -34,8 +34,13 @@
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='course'");
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course'");
+<<<<<<< HEAD
            // $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
          
+=======
+            $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
+
+>>>>>>> 10658c84b17491b3550a4135d10473e944da6671
             
             return $query->result_array();
 
@@ -44,13 +49,17 @@
        public function get_school_categories()  
       {  
            $query = $this->db->query("SELECT * from tbl_category where category_type='school'");
-           //print_r($query->result_array());
             return $query->result_array();
       }
       public function get_Que_categories()  
       {  
+<<<<<<< HEAD
            $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
          //$query = $this->db->query("SELECT tbl_category.*,tbl_questions.question_category FROM tbl_category LEFT JOIN tbl_questions ON tbl_category.category_id=tbl_questions.question_category where tbl_category.category_type='question' GROUP BY tbl_questions.question_category");
+=======
+          // $query = $this->db->query("SELECT * from tbl_category where category_type='question'");
+         $query = $this->db->query("SELECT tbl_category.*,tbl_questions.question_category FROM tbl_category LEFT JOIN tbl_questions ON tbl_category.category_id=tbl_questions.question_category where category_type='question' GROUP BY tbl_questions.question_category");
+>>>>>>> 10658c84b17491b3550a4135d10473e944da6671
             return $query->result_array();
       }
        public function get_project_categories()  
@@ -214,7 +223,7 @@ function get_user_id_by_uname($uname){
       }
        public function selecttender()  
       {  
-        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1 " ); 
+        $query = $this->db->query("select * from tbl_vacancy where vacancy_approve = 1"); 
          return $query->result_array();
       }
       public function selectalltender()
@@ -228,7 +237,6 @@ function get_user_id_by_uname($uname){
         $query = $this->db->query("select * from tbl_users"); 
         return $query->result_array();
       }
-
 
       public function selectschool()  
       {  
@@ -249,7 +257,7 @@ function get_user_id_by_uname($uname){
       }
        public function selectallcourse()  
       {  
-        $query = $this->db->query("select * from tbl_course join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
+        $query = $this->db->query("select * from tbl_course left join tbl_category on tbl_course.course_category = tbl_category.category_id"); 
         return $query->result_array();
       }
       public function selectquestion()  
@@ -266,25 +274,6 @@ function get_user_id_by_uname($uname){
       {  
         $query = $this->db->query("select * from tbl_advertise"); 
         return $query->result_array();
-      }
-
-       public function selectallcategory()  
-      {  
-        $query = $this->db->query("select * from tbl_category"); 
-        return $query->result_array();
-      }
-
-       public function get_category_details($cat_id)  
-      {  
-        $query = $this->db->query("select * from tbl_category where category_id = '".$cat_id."'"); 
-        return $query->result_array();
-      }
-
-
-      public function update_category($data){
-        echo $id = $data['category_id'];
-        $this->db->where('category_id', $id);
-        return $this->db->update('tbl_category', $data);
       }
 
       public function edit_news($data){
@@ -357,7 +346,7 @@ function get_user_id_by_uname($uname){
 
 
       public function update_front_user($data){
-        echo $id = $data['user_id'];
+        $id = $data['user_id'];
         $this->db->where('user_id', $id);
         return $this->db->update('tbl_users', $data);
       }
@@ -379,7 +368,7 @@ public function edit_front_user($data){
       
 
       public function updateuserdetails($data){
-        echo $id = $data['user_id'];
+        $id = $data['user_id'];
         $this->db->where('user_id', $id);
         return $this->db->update('tbl_user_meta', $data);
       }
@@ -1298,6 +1287,7 @@ $q->where('vacancy_date <=', $query_array['end_date']);
                      ->where('question_approve = 1')
                      ->limit($limit , $offset)
                     ->order_by($sort_by , $sort_order);
+
    
 $sdate = $query_array['start_date'];
 if(!$sdate == ""){
