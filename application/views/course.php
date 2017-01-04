@@ -50,7 +50,7 @@
                                     
                                   
                                    // $c_id = $row['category_id'];
-                                   $query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category = '".$cc_name."' GROUP BY course_category");
+                                   $query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category = '".$cc_name."' and course_approve = '1' GROUP BY course_category ");
 
                                     ?>
                                     

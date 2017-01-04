@@ -1,3 +1,14 @@
+<style> 
+.scrolltodiv {
+    width: 110px;
+    height: 1200px;
+    border: thin solid black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+</style>
+
+
 <?php  $this->load->view('header'); ?>
         <div class="service-wrap ">
             <div class="row">
@@ -13,7 +24,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col s12 m7 grid-example">
+                <div class="col s12 m7 grid-example scrolltodiv">
                     <div class="news_details row z-depth-1">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
@@ -89,7 +100,11 @@
                         <div class="fgist_list_wrap col m12">
                             <ul class="latest_news_list">
                               <?php  
-                               foreach ($gist as $row){ ?>
+                               foreach ($gist as $row){ 
+
+                                // $p_id = $row['post_id'];
+                                               $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
+                                ?>
                                 <li class="Latest_news_content">
                                     <div class="row">
                                         <div class="fgist col s12">
@@ -104,8 +119,8 @@
                                                 <span><?php echo $row['post_category'];?></span>
                                             </div>
                                             <div class="fgist_thumb col s3">
-                                                <?php $gistattachment = $row['user_avatar']; ?>
-                                            <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
+                                                <?php //$gistattachment = $row['user_avatar']; ?>
+                                            
                                             </div>
                                             <div class="fgist_title col s9">
                                                 <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
