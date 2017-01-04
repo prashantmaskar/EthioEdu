@@ -45,6 +45,12 @@ class AnsQues extends CI_Controller {
 
 
 function show_one($ne_id) {
+
+	$data = array(
+                'm_title' => 'ansQues',
+                'title'   => 'ansQues',
+            );
+
 	$data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
 	 $data['ques'] = $this->Init_models->get_one($ne_id);
