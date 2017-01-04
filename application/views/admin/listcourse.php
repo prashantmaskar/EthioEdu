@@ -62,7 +62,7 @@
                                     ?>
                                                 <tr>
                                                     <td><?php echo $row['course_name']; ?></td>
-                                                    <td><?php echo $row['category_name']; ?></td>
+                                                    <td><?php echo $row['course_category']; ?></td>
                                                     <td><?php if(!$year == ""){
 
                                        echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";} 
@@ -78,15 +78,6 @@
                                                         <a  href="javascript:void(0);" onclick="deleted(<?php echo $course_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td>
                                                 </tr>
                                                  <?php } ?>
-                                             <!--   <tr>
-                                                    <td>Mater Science</td>
-                                                    <td>Science</td>
-                                                    <td>5 Month</td>
-                                                    <td>
-                                                        <a href="app-email.html" class="btn-floating blue" ><i class="small mdi-action-subject"></i></a>
-                                                        <a href="app-email.html" class="btn-floating green" ><i class="small mdi-action-done"></i></a>
-                                                        <a href="app-email.html" class="btn-floating red" ><i class="small mdi-action-highlight-remove"></i></a></td>
-                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>
