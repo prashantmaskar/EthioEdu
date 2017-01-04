@@ -98,7 +98,7 @@ $jsonEncodedData = json_encode($arrData);
 //print_r($jsonEncodedData);
 // Create the chart - Column 2D Chart with data given in constructor parameter 
 // Syntax for the constructor - new FusionCharts("type of chart", "unique chart id", "width of chart", "height of chart", "div id to render the chart", "type of data", "actual data")
-$columnChart = new FusionCharts("column2d", "ex1", "100%", 400, "chart-1", "json",$jsonEncodedData);
+$columnChart = new FusionCharts("pie3D", "ex1", "100%", 400, "chart-1", "json",$jsonEncodedData);
 
 //print_r($columnChart);
 // Render the chart
