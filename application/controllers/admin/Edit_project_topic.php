@@ -60,22 +60,29 @@ if(isset($_POST['action'])){
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('fileformat'))
+                if ($this->upload->do_upload('fileformat'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        var_dump($error);
-
-                       // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data1 = array('upload_data' => $this->upload->data());
-
+                      $data1 = array('upload_data' => $this->upload->data());
                         $filedata= array(
                             'file_name' => $data1['upload_data']['file_name'],
                             );
-
+                }
+                else
+                {
+                        if($this->input->post('fileformat') == ""){
+                          echo "<script>alert('in file name');</script>";
+                          $filedata= array(
+                            'file_name' => $this->input->post('filename'),
+                            );
+                                  
+                      }
+                    if($this->input->post('fileformat') == "" && $this->input->post('filename') == ""){
+                      echo "<script>alert('in else');</script>";
+                        $filedata= array(
+                            'file_name' => 'default_news.jpg',
+                            );
+                      }
+                    }
            $formdate = $this->input ->post('date');
                 $adate = strtotime($formdate);
                 $date = date('Y-m-d',$adate);
@@ -105,8 +112,7 @@ if(isset($_POST['action'])){
             }
 
 
-                        //
-                }
+                        
 
               /* if(isset($isinserted)){
                     echo"<script>alert('Success');</script>";

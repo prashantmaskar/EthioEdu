@@ -39,6 +39,14 @@ $(document).ready(function() {
                     }
                 }
             },
+
+             filename: {
+                validators: {
+                    notEmpty: {
+                        message: ' Please Select File!!!..'
+                    }
+                }
+            },
                    
                  fileformat: {
                 validators: {
@@ -48,9 +56,9 @@ $(document).ready(function() {
                           maxSize: 5120 * 5120 * 5120 * 5120 * 5120,   // 5 MB
                           message: 'The selected file is not valid, it should be (doc,docx,pdf,rtf) and 5 MB at maximum.'
                             },
-                          notEmpty: {
+                       /*   notEmpty: {
                         message: 'File is required.'
-                          }
+                          } */
                         }
                      }
                
