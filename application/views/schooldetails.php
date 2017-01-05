@@ -226,10 +226,10 @@ $str=str_replace("," , "<br>",$str);
                 <?php echo $row['school_address']; ?>
               </p>
             </div>
-            <div id="map" style="height:200px;width:100%;" >
+           <div id="map" style="height:200px;width:100%;" ></div>
             </div>
           </div>
-        </div>
+        
         <div class="col m12">
           <div class="school_country">
             <h2 class="sch_det_title">Website
@@ -431,46 +431,46 @@ $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse w
     }
   }
 </script>
+<?php foreach ($sch_details as $row){ ?>
 <script>
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: {
-        lat: -34.397, lng: 150.644}
-    }
-                                 );
-    var geocoder = new google.maps.Geocoder();
-    // document.getElementById('address').addEventListener("focusout", function() {
-    var address = "<?php echo $row['school_address'] ?>";
-    // alert(address);
-    if(address.length>2){
-      geocodeAddress(geocoder, map);
-    }
-    //  });
-  }
-  function geocodeAddress(geocoder, resultsMap) {
-    var address = "<?php echo $row['school_address'] ?>";
-    geocoder.geocode({
-      'address': address}
-                     , function(results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        }
-                                           );
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+        //document.getElementById('address').addEventListener("focusout", function() {
+            var address = "<?php echo $row['school_address'] ?>";
+            if(address.length>2){
+                geocodeAddress(geocoder, map);
+            }
+          
+        //});
       }
-      else {
-        alert('Geocode was not successful for the following reason: ' + status);
+
+      function geocodeAddress(geocoder, resultsMap) {
+          var address = "<?php echo $row['school_address'] ?>";
+        //var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
       }
-    }
-                    );
-  }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
-</script>
+    </script>
+    <?php } ?>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
+    </script>
+
+
 <?php foreach ($sch_details as $row){
 $post_desc = substr($row['school_desc'],0,100);
 $fdesc = $post_desc.'...';
