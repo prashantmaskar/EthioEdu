@@ -44,6 +44,12 @@ class Event_details extends CI_Controller {
 
 function show_one($ne_id)
  {
+
+    $data = array(
+            'm_title' => 'event details',
+            'title' => 'event details',
+        );
+
     $data['banners'] = $this->Init_models->getadvertisebanners();
  // get a post news based on news id
   $data['ques'] = $this->Init_models->get_one_event($ne_id);

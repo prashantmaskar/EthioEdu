@@ -58,6 +58,14 @@ $query = $this->db->query("SELECT * from tbl_course where course_approve = '1' G
 
       }
 
+
+      public function get_category_details($cat_id)  
+       {  
+        $query = $this->db->query("select * from tbl_category where category_id = '".$cat_id."'"); 
+       return $query->result_array();
+      }
+ 
+
        
        public function get_school_categories()  
       {  
