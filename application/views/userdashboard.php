@@ -54,7 +54,7 @@
                                                   <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/event_details?id='.$id?>"><?php echo $row['post_title']; ?></a> Event </p>
+                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>event_details/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> Event </p>
                                                   <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
                                           </div>    
@@ -65,7 +65,7 @@
                                                   <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/news_detail?id='.$id?>"><?php echo $row['post_title']; ?></a> News </p>
+                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>news_detail/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> News </p>
                                                   <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
                                           </div>    
@@ -76,7 +76,7 @@
                                                   <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
                                               </div>
                                               <div class="col s9">
-                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url() . 'index.php/gist'?>"><?php echo $row['post_title']; ?></a> Gist </p>
+                                                  <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>gist_details/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> Gist </p>
                                                   <p class="activity-date grey-text">Posted On: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> </p>
                                               </div>
                                           </div>    
