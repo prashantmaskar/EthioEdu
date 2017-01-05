@@ -64,6 +64,13 @@ $query = $this->db->query("SELECT * from tbl_course where course_approve = '1' G
         $query = $this->db->query("select * from tbl_category where category_id = '".$cat_id."'"); 
        return $query->result_array();
       }
+
+      public function update_category($data)  
+       {  
+        $id = $data['category_id'];
+        $this->db->where('category_id', $id);
+        return $this->db->update('tbl_category', $data);
+      }
  
 
        
