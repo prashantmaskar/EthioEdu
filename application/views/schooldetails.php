@@ -392,7 +392,7 @@ $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse w
         ,
         success: function(data) {
           console.log(data);
-          //location.reload();
+          location.reload();
         }
         ,
         error:function(error){
@@ -420,7 +420,7 @@ $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse w
         ,
         success: function(msg) {
           console.log(msg);
-          //location.reload();
+          location.reload();
         }
         ,
         error:function(error){
