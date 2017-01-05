@@ -120,6 +120,16 @@ $Adelete_id = $_POST['Adelete_id'];
 $query = $this->db->query("delete from tbl_advertise where advertise_id = '" .$Adelete_id. "'");
 }
 
+$status_id = $_POST['statusadvertise_id'];
+if(isset($status_id)){
+	
+$query = $this->db->query("UPDATE tbl_advertise set isactive = '1' where advertise_id = '" .$status_id. "'");
+}
+$ustatus_id = $_POST['unstatusadvertise_id'];
+if(isset($ustatus_id)){
+	
+$query = $this->db->query("UPDATE tbl_advertise set isactive = '0' where advertise_id = '" .$ustatus_id. "'");
+}
 
 
 
