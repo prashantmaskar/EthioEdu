@@ -160,7 +160,7 @@ $(function () {
                                      success: function(data) {
                                       
                                          console.log(data);
-                                       //location.reload();
+                                       location.reload();
          
                                      },
                                      error:function(error){
@@ -191,7 +191,7 @@ $(function () {
                                      data: {'ques_id': ques_id,'u_id':u_id,'res_id':res_id,'like_stat':like_stat,'parent_id':par_id},
                                       success: function(msg) {
                                          console.log(msg);
-                                       //location.reload();
+                                       location.reload();
                                },
                                error:function(error){
                                       alert("fgfdg" +error);

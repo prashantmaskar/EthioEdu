@@ -113,7 +113,7 @@
                                                         <label for="message">Message</label>
                                                     </div> 
 													<!-- <div class="captch">
-                                                     <img class="responsive-img" src="<?php echo base_url() . 'images/Captcha.png' ?>">
+                                                     <img class="responsive-img" src="<?php //echo base_url() . 'images/Captcha.png' ?>">
                                                        </div>
 													<div class=" form-group input-field col s12">
                                                  <input id="captch" type="text" name="captcha" class="validate">
@@ -160,11 +160,11 @@
                                                                     <td>M-Birr</td>
                                                                     <td>
                                                                         <a href="<?php echo base_url() . 'index.php/admin/Edit_advertise?id='.$adv_id ?>" class="btn-floating blue tooltip" ><i class="small mdi-action-subject"></i><span class="tooltiptext">Edit</span></a>
-                                                                       <!--  <?php //if($row['vacancy_approve'] == '1'){?>
-                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $vac_id;?>);" class="btn-floating green tooltipped" ><i class="small mdi-action-visibility"></i></a>
-                                                        <?php //}else{?>
-                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $vac_id;?>);" class="btn-floating red" ><i class="small mdi-action-visibility-off"></i></a>
-                                                        <?php //}?> -->
+                                                                         <?php if($row['isactive'] == '1'){?>
+                                                        <a href="javascript:void(0);"  onclick="custatus(<?php echo $adv_id;?>);" class="btn-floating green tooltip" ><i class="small mdi-action-visibility"></i><span class="tooltiptext">UnApprove</span></a>
+                                                        <?php }else{?>
+                                                        <a href="javascript:void(0);" onclick="cstatus(<?php echo $adv_id;?>);" class="btn-floating red tooltip" ><i class="small mdi-action-visibility-off"></i><span class="tooltiptext">Approve</span></a>
+                                                        <?php }?> 
                                                         <a  href="javascript:void(0);" onclick="deleted(<?php echo $adv_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td>
                                                                 </tr>
                                                          <?php } ?>
@@ -208,4 +208,49 @@
                         });
                     }
                 }
+                   
+                    function cstatus(id){
+                var statusadvertise_id = id;
+
+            if (confirm('Sure to Approve ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {statusadvertise_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+
+                function custatus(id){
+                var unstatusadvertise_id = id;
+                alert(unstatusadvertise_id);
+            if (confirm('Sure to Unapprove ?'))
+                    {
+                        $.ajax({
+                            context: this,
+                            type: 'POST',
+                            url: "approve_delete",
+                            data: {unstatusadvertise_id},
+                            success: function(data) {
+                                console.log(data);
+                                location.reload();
+
+
+                            }
+                        });
+                    }
+                }
+          
+
+
+
+
                 </script>
