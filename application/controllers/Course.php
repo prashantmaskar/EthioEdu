@@ -191,6 +191,8 @@ $data['homeschool'] = $this->Init_models->gethomeschool();
 
 
          $query_id = $this->input->save_query($query_array);
+         /*var_dump($query_id);
+         exit();*/
 
          redirect("index.php/course/display/$query_id");
 
