@@ -33,18 +33,22 @@
                                         <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
+                                                    <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">Tips Name</th>
                                                     <th data-field="name">Date</th>
                                                     <th data-field="price">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach ($tips as $row){  
+                                            <?php 
+                                             $serial_no = 1;
+                                            foreach ($tips as $row){  
 
                                                    $post_id=$row['post_id'];
                                                 ?>
                                                 <tr>
-                                                    <td><?php echo $row['post_title']; ?></td>
+                                                    <td><?php echo $serial_no++?></td>
+                                                    <td><a href="#" title="<?php echo $row['post_title']; ?>" class="black-text"><?php $desc=$row['post_title']; $limitdesc=substr($desc, 0,70);$etc="....";echo $limitdesc."".$etc; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>
                                                     
                                                     <td>

@@ -728,7 +728,7 @@ function get_tips_details($tips_id){
 
       function get_posts_details($post_type){
 
-        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
+        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "' ORDER BY post_date DESC");
          return $query->result_array();
       }
 
