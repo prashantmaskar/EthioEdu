@@ -92,12 +92,17 @@
                         <h2 class="gist_post_title">Previously Posted Gists</h2>
                     <ul class="latest_news_list">
                     <?php
-                     foreach ($gist as $row){ ?>
+                     foreach ($gist as $row){
+                      $gist_id = $row['post_id'];
+                                    $parent = $row['pparent_id'];
+
+                                     $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$gist_id."' and pparent_id = '0'");
+                      ?>
                             <li class="Latest_news_content">
                                 <a href="<?php echo base_url() . 'index.php/gist' ?>" class="gist_link">
                                     <span class="gist_title"><?php echo $row['post_title']; ?></span>
                                 </a>
-                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong><?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_author']; ?></a> | Comments [7]  
+                                <span id="gistdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row['post_author']; ?></a></strong><?php echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row['post_author']; ?></a> | Comments [<?php echo $query2->result()[0]->row_count; ?>]  
                                     </span></span>
                             </li>
                     <?php } ?>

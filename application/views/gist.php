@@ -73,13 +73,13 @@
                                            ?>
                                           <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
                                         
-                                        <span class="see_more"><a href="#">See More Photos</a></span>
+                                        <span class="see_more"><a href="#"><!-- See More Photos --></a></span>
                                     </div>
                                     <div class="col m12 git_desc">
                                         <p class="black-text"><?php echo $row['post_desc']; ?></p>
                                     </div>
                                     <div class="social_share col m12">
-                                        <span>Likes(<?php echo $query1->result()[0]->row_count; ?> )</span>&nbsp;
+                                        <!-- <span>Likes(<?php //echo $query1->result()[0]->row_count; ?> )</span>&nbsp; -->
                                         <span><a href="<?php echo base_url()?>gist_details/show_one/<?= $gist_id   ?>"><?php echo $query2->result()[0]->row_count; ?> Comments</a></span>&nbsp;
                                         <span><a href="<?php echo base_url()?>gist_details/show_one/<?= $gist_id   ?>">Reply</a></span>
                                     </div>

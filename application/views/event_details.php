@@ -86,7 +86,7 @@
            <div class="coment_form">
             <?php  if ( !$this->session->userdata('logged_in')){?>
  <div class="col m12">
-    <p class="black-text">Oops! You comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
+    <p class="black-text">Oops! comment box is not visible to you because you're not logged in  <a href="<?php echo base_url() ?>index.php/login">Login here</a></p>
    
 </div>
      <?php 
