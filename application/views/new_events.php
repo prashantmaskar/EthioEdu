@@ -71,15 +71,16 @@
                                 <!-- <div class="form-group input-field col s12">
                                         <input id="date" type="date" name="date" class="datepicker">
                                         <label for="date">Date of Posting</label>
-                                    </div>-->
+                                    </div>-->          
+
 								                      <div class=" form-group input-field col s12">
                                                         <input id="post_by" type="date" name="post_event_date" class="datepicker validate" >
-                                                        <label for="post_by">post event date</label>
+                                                        <label for="post_event_date">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <p><label for="post_by" >post event time</label></p>
+                                                        <p><label for="post_event_time" >post event time</label></p>
                                                         
-                                                        <input id="text" type="time" name="post_event_time" class="validate">
+                                                        <input id="time" type="time" name="post_event_time" class="validate">
                                                          
                                                     </div>
 
@@ -122,5 +123,18 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
+       <!-- <script type="text/javascript" src="<?php //echo base_url() . 'js/script.js' ?>"></script>-->
 <script type="text/javascript" src="<?php echo base_url() .'js/events-validate.js' ?>"></script>
                                     
+<script>
+$('.datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        min: new Date(),
+        onSet: function () {
+        $('.datepicker').siblings('small.help-block').attr('style',"display:none;")
+        $('.datepicker').removeClass('invalid');
+        this.close();
+    }
+});
+</script>

@@ -32,7 +32,8 @@
                                     <div class="col s12 m12 l12">
                                         <table class="bordered display" id="table_id">
                                             <thead>
-                                                <tr>
+                                                <tr> 
+                                                    <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">Vacancy Caption</th>
                                                     <th data-field="name">College Name</th>
                                                     <th data-field="price">No.Vacancy</th>
@@ -41,10 +42,11 @@
                                             </thead>
                                             <tbody>
                                             <?php
+                                            $serial_no =1;
                                            foreach ($tender as $row){ ?>
                                            <?php $vac_id = $row['vacancy_id']; ?>
-                                                <tr>
-                                                    <td><?php echo $row['vacancy_name']; ?></td>
+                                                <tr><td> <?php echo $serial_no++?></td>
+                                                    <td><a href="#" title="<?php echo $row['vacancy_name']; ?>" class="black-text"><?php $desc=$row['vacancy_name']; $limitdesc=substr($desc, 0,50);$etc="...."; echo $limitdesc."".$etc; ?></a></td>
                                                     <td><?php echo $row['vacancy_school_name']; ?></td>
                                                     <td><?php echo $row['vacancy_count']; ?></td>
                                                     <td>

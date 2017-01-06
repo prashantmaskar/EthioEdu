@@ -40,7 +40,11 @@ class Coursedetails extends CI_Controller {
     public function index() {
 
         if(isset($_GET['id'])){
-            $this->session->set_userdata('course_id', $_GET['id']);
+            $courseid=explode('$',$_GET['id']);
+            /*var_dump($courseid);
+            exit();*/
+            $this->session->set_userdata('course_id', $courseid[1]);
+            
         }
 
         $cource_id = $this->session->userdata('course_id');

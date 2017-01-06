@@ -33,6 +33,7 @@
                                         <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
+                                                     <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">School Name</th>
                                                     <th data-field="name">Email Id</th>
                                                     <th data-field="price">Country</th>
@@ -41,11 +42,13 @@
                                             </thead>
                                             <tbody>
                                             <?php
+                                            $serial_no = 1;
                                            foreach ($school as $row){
                                              $school_id = $row['school_id'];
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $row['school_name']; ?></td>
+                                                    <td><?php echo $serial_no++?></td>
+                                                    <td><a href="#" title="<?php echo $row['school_name']; ?>" class="black-text"><?php $desc=$row['school_name'];  $limitdesc = substr($desc,0,70);$etc = '...';echo $limitdesc."".$etc;?></a></td>
                                                     <td><?php echo $row['user_email']; ?></td>
                                                     <td><?php echo $row['school_country']; ?></td>
                                                     <td>

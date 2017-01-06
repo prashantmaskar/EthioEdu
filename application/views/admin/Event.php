@@ -71,18 +71,18 @@
                                                     </div>
                                                     
                                                      <div class=" form-group input-field col s12">
-                                                        <input id="post_by" type="date" name="post_event_date" class="datepicker " >
+                                                        <input id="post_by" type="text" name="post_event_date" class="datepicker " >
                                                         <label for="post_by">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="text" type="text" name="post_event_time" class="validate">
-                                                        <label for="post_by" position: static;>post event time</label>
+                                                        <input id="text" type="time" name="post_event_time" class="validate">
+                                                        <label for="post_event_time" position: static;>post event time</label>
                                                     </div>
 
 
                                                     <div class=" form-group input-field col s12">
                                                         <input id="post_by" type="text" name="eventby" class="validate">
-                                                        <label for="post_by">Event Posted By</label>
+                                                        <label for="eventby">Event Posted By</label>
                                                     </div>
                                                        
                                                       
@@ -112,3 +112,15 @@ https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css.map"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.css"></script>
 <script type="text/javascript" src="<?php echo base_url().'/js/admin/admin-event.js' ?>"></script>
+<script>
+$('.datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        min: new Date(),
+        onSet: function () {
+        $('.datepicker').siblings('small.help-block').attr('style',"display:none;")
+        $('.datepicker').removeClass('invalid');
+        this.close();
+    }
+});
+</script>

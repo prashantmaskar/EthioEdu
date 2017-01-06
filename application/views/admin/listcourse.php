@@ -33,6 +33,7 @@
                                         <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
+                                                    <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">Course Name</th>
                                                     <th data-field="name">Course Category</th>
                                                     <th data-field="price">Duration</th>
@@ -41,6 +42,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
+                                            $serial_no = 1;
                                 foreach ($course as $row){ 
                                     $course_id = $row['course_id'];
                                $duration = $row['course_duration'];
@@ -61,8 +63,9 @@
                                           } 
                                     ?>
                                                 <tr>
-                                                    <td><?php echo $row['course_name']; ?></td>
-                                                    <td><?php echo $row['course_category']; ?></td>
+                                                    <td><?php echo $serial_no++?></td>
+                                                    <td><a href="#" title="<?php echo $row['course_name']; ?>" class="black-text"><?php $desc=$row['course_name']; $limitdesc = substr($desc,0, 70); $etc ="...." ; echo $limitdesc."".$etc?></td>
+                                                    <td><?php echo $row['course_category']; ?></a></td>
                                                     <td><?php if(!$year == ""){
 
                                        echo $year." Year "; } if(isset($month) && $month!==0){echo $month." Month ";} 

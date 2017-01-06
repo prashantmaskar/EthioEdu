@@ -224,8 +224,8 @@ function get_user_id_by_uname($uname){
           tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on 
           tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on 
           tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' 
-          and post_approve = 1 GROUP BY tbl_posts.post_id ORDER BY tbl_posts.post_date DESC,tbl_posts.post_time DESC");
- 
+          and post_approve = 1 GROUP BY tbl_posts.post_id");
+
          
          
         return $query->result_array();
@@ -235,8 +235,7 @@ function get_user_id_by_uname($uname){
       {  
        
           
-          //$query = $this->db->query("SELECT t1.post_id,t1.post_title, t1.post_type,t1.post_date,t1.post_time,t1.post_author,t1.user_id,t1.post_category,t2.plikes_count plikes_count FROM tbl_posts t1 LEFT JOIN tbl_postlikes t2 ON t2.post_id =t1.post_id WHERE t2.plikes_count = (SELECT MAX(plikes_count) FROM tbl_postlikes WHERE post_id = t1.post_id) AND t1.post_type= 'gist' LIMIT 10");
-          $query=$this->db->query("select tbl_posts.post_id, tbl_posts.post_title,tbl_posts.post_type,tbl_posts.post_date,tbl_posts.post_time,tbl_posts.post_author,tbl_posts.user_id,tbl_posts.post_category,tbl_postlikes.post_id,tbl_postlikes.plike_id,count(tbl_postlikes.plikes_count) as maxcount from tbl_posts join tbl_postlikes on tbl_posts.post_id = tbl_postlikes.post_id where tbl_posts.post_type = 'gist' and tbl_posts.post_approve=1 group by tbl_postlikes.post_id order by maxcount desc");
+          $query = $this->db->query("select tbl_posts.post_id, tbl_posts.post_title,tbl_posts.post_type,tbl_posts.post_date,tbl_posts.post_time,tbl_posts.post_author,tbl_posts.post_category,tbl_posts.user_id,tbl_postlikes.post_id,tbl_postlikes.plike_id,count(tbl_postlikes.plikes_count) as maxcount from tbl_posts join tbl_postlikes on tbl_posts.post_id = tbl_postlikes.post_id where tbl_posts.post_type = 'gist' and tbl_posts.post_approve=1 group by tbl_postlikes.post_id order by maxcount desc");
          
         return $query->result_array();
       }
@@ -729,7 +728,7 @@ function get_tips_details($tips_id){
 
       function get_posts_details($post_type){
 
-        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
+        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "' ORDER BY post_date DESC");
          return $query->result_array();
       }
 
@@ -1192,28 +1191,40 @@ $q->where('project_approve = 1');
       $sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'post_date';
 
 
-      $q = $this->db->select('*')
+      /*$q = $this->db->select('*')
                      ->from('tbl_posts')
                      ->where('post_type="news" and post_approve = 1')
                      ->limit($limit , $offset)
-                    ->order_by($sort_by , $sort_order);
+                    ->order_by($sort_by , $sort_order);*/
+
                     //$q=$this->db->query("select tbl_posts.*,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse ON tbl_postresponse.post_id = tbl_posts.post_id where post_type='news' and post_approve = 1 GROUP BY tbl_posts.post_id");
     /*$q = $this->db->select('*,tbl_postresponse.pparent_id')
-                     ->from('tbl_posts,tbl_postresponse')
+                     ->from('tbl_posts')
+
+                    $q=$this->db->query("select tbl_posts.*,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse ON tbl_postresponse.post_id = tbl_posts.post_id where post_type='news' and post_approve = 1 GROUP BY tbl_posts.post_id");*/
+     $q = $this->db->select('*,tbl_postresponse.pparent_id')
+                     ->from('tbl_posts')
+
                      ->join('tbl_postresponse','tbl_posts.post_id = tbl_postresponse.post_id', 'left')
                      ->where('post_type="news" and post_approve = 1')
                      ->limit($limit , $offset)
                     ->group_by('tbl_posts.post_id')
-                    ->order_by($sort_by , $sort_order);*/
+                    ->order_by($sort_by , $sort_order);
+
+
+
+
 
     if(strlen($query_array['start_date'])){
 
 $q->where('post_date >=', $query_array['start_date']);
 $q->where('post_date <=', $query_array['end_date']);
     }
-
 //$ret['rows']=$q->result_array();
    $ret['rows']= $q->get()->result();
+
+//$ret['rows']=$q->result_array();
+   //$ret['rows']= $q->get()->result();
    // print_r($ret['rows']);
 
     //count result

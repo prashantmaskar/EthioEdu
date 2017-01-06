@@ -27,6 +27,7 @@ class Course extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'pagination', 'email','MY_Input'));
         $this->load->database();
         $this->load->model('Init_models');
+       
         // $this->load->library('pagination');
     }
 
@@ -191,6 +192,8 @@ $data['homeschool'] = $this->Init_models->gethomeschool();
 
 
          $query_id = $this->input->save_query($query_array);
+         /*var_dump($query_id);
+         exit();*/
 
          redirect("index.php/course/display/$query_id");
 

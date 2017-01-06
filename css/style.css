@@ -1,6 +1,9 @@
 body{
     background: #f0f0f0;
 }
+.select-wrapper form-control{
+    color:red;
+}
 .red-gradient-bg{
     
 
@@ -1320,3 +1323,4 @@ label.star:before {
     visibility: visible !important;
 }
     
+   
