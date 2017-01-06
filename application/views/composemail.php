@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div id="compose-mail" class="col m9 s10 card-panel">
-                            <form action="<?php echo site_url('index.php/composemail')?>" method="post" enctype="multipart/form-data">
+                            <form id="composemail" action="<?php echo site_url('index.php/composemail')?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group input-field col s6">
                                     <input id="username" type="text" class="validate" value="<?php if(isset($_GET['uname'])){echo $_GET['uname'];} ?>" name="username">
                                     <label for="username">EthioEdu UserName</label>
@@ -98,3 +98,36 @@
     </div>
 </div>
 <?php $this->load->view('footer'); ?>
+
+
+<script>
+$(document).ready(function() {
+
+    $('#composemail').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter  name!!!..'
+                    },
+                    
+                }
+            },
+           
+                   /* stringLength:{
+                        message:'post details must be less than 120 characters',
+                        max:function(value,validator,$field){
+                            return 120 - (value.match(/\r/g) || []).length;
+                        }
+                    }*/
+              
+        }
+    });
+});
+
+</script>

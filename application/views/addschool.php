@@ -459,13 +459,13 @@ $(document).ready(function() {
                     regexp: {
                                              regexp: /^[\w]+$/,
                                                 message: 'You can introduce just alphabetical characters, underscore, number but no spaces'
-                                            },
-                                            remote: {
+                                            }
+                                           /* remote: {
                                                 type: 'POST',
                                                 url: '<?php echo base_url();?>index.php/addschool/isvalud_school_username',
                                                 message: 'The username is not available'
                                             }
-                                          
+                                          */
                 }
             },
             firstname:{
