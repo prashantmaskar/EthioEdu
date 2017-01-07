@@ -38,7 +38,7 @@
            // $query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
 
             //$query = $this->db->query("SELECT tbl_category.*,tbl_course.course_category FROM tbl_category LEFT JOIN tbl_course ON tbl_category.category_id=tbl_course.course_category where category_type='course' GROUP BY tbl_course.course_category");
-$query = $this->db->query("SELECT * from tbl_course GROUP BY course_category ");
+$query = $this->db->query("SELECT * from tbl_course where course_approve = '1' GROUP BY course_category ");
 
             
             return $query->result_array();
@@ -57,6 +57,14 @@ $query = $this->db->query("SELECT * from tbl_course GROUP BY course_category ");
             return $query->result_array();
 
       }
+
+
+      public function get_category_details($cat_id)  
+       {  
+        $query = $this->db->query("select * from tbl_category where category_id = '".$cat_id."'"); 
+       return $query->result_array();
+      }
+ 
 
        
        public function get_school_categories()  
@@ -182,9 +190,9 @@ function get_user_id_by_uname($uname){
       
       public function selectnews()  
       {  
-       // $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_posts.post_id, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_users join tbl_posts on tbl_users.user_id = tbl_posts.user_id where tbl_posts.post_type = 'news' && tbl_posts.post_approve = 1 limit 10"); 
-        
-        $query = $this->db->query("select tbl_posts.*,tbl_users.user_id,tbl_users.username,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_users on tbl_users.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'news'&& tbl_posts.post_approve = 1 GROUP BY tbl_posts.post_id limit 10 "); 
+       
+        $query = $this->db->query("select tbl_posts.*,tbl_users.user_id,tbl_users.username,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_users on tbl_users.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'news'&& tbl_posts.post_approve = 1 GROUP BY tbl_posts.post_id ORDER BY tbl_posts.post_date DESC,tbl_posts.post_time  DESC limit 10 "); 
+       
         return $query->result_array();
       }
        public function selectallnews()  
@@ -205,7 +213,22 @@ function get_user_id_by_uname($uname){
        public function selectgist()  
       {  
         //$query = $this->db->query("select tbl_user_meta.user_id ,tbl_user_meta.user_avatar, tbl_posts.post_id, tbl_posts.post_attachment, tbl_posts.post_desc, tbl_posts.post_title, tbl_posts.post_author, tbl_posts.post_category, tbl_posts.post_time, tbl_posts.post_date from tbl_user_meta join tbl_posts on tbl_user_meta.user_id = tbl_posts.user_id where tbl_posts.post_type = 'gist' && tbl_posts.post_approve = 1 limit 10");
-        $query = $this->db->query("select tbl_posts.*,tbl_user_meta.user_id,tbl_user_meta.user_avatar,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' and post_approve = 1 GROUP BY tbl_posts.post_id");
+        $query = $this->db->query("select tbl_posts.*,tbl_user_meta.user_id,tbl_user_meta.user_avatar,
+          tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_user_meta on 
+          tbl_user_meta.user_id = tbl_posts.user_id LEFT JOIN tbl_postresponse on 
+          tbl_postresponse.post_id=tbl_posts.post_id where tbl_posts.post_type = 'gist' 
+          and post_approve = 1 GROUP BY tbl_posts.post_id");
+
+         
+         
+        return $query->result_array();
+      }
+
+      public function side_gist()  
+      {  
+       
+          
+          $query = $this->db->query("SELECT t1.post_id,t1.post_title, t1.post_type,t1.post_date,t1.post_time,t1.post_author,t1.user_id,t1.post_category,t2.plikes_count plikes_count FROM tbl_posts t1 LEFT JOIN tbl_postlikes t2 ON t2.post_id =t1.post_id WHERE t2.plikes_count = (SELECT MAX(plikes_count) FROM tbl_postlikes WHERE post_id = t1.post_id) AND t1.post_type= 'gist' LIMIT 10");
          
         return $query->result_array();
       }
@@ -719,7 +742,9 @@ function get_tips_details($tips_id){
 
      function get_previous_vacancy(){
 
-        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_vacancy.vacancy_id, tbl_vacancy.vacancy_name, tbl_vacancy.vacancy_time, tbl_vacancy.vacancy_date from tbl_users join tbl_vacancy on tbl_users.user_id = tbl_vacancy.user_id where tbl_vacancy.vacancy_approve  = 1 order by rand() limit 10");
+        $query = $this->db->query("select tbl_users.user_id, tbl_users.username, tbl_vacancy.vacancy_id, tbl_vacancy.vacancy_name, tbl_vacancy.vacancy_time, tbl_vacancy.vacancy_date from tbl_users join tbl_vacancy on tbl_users.user_id = tbl_vacancy.user_id where tbl_vacancy.vacancy_approve  = 1 ORDER BY tbl_vacancy.vacancy_date DESC,tbl_vacancy.vacancy_time DESC limit 10");
+
+
          return $query->result_array();
       }
 

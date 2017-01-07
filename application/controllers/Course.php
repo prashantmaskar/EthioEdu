@@ -101,6 +101,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
      $data['pagination'] = $this->pagination->create_links();
     //$data['course_name']=$this->Init_models->selectcourse();
      $data['cat'] = $this->Init_models->get_cat();
+     $data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('course',$data);
 
     }
@@ -174,6 +175,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
      $data['pagination'] = $this->pagination->create_links();
 //$data['project_topics']=$this->Init_models->selectproject();
 $data['cat'] = $this->Init_models->get_cat();
+$data['homeschool'] = $this->Init_models->gethomeschool();
        $this->load->view('course',$data);
     }
 

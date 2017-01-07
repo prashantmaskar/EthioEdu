@@ -32,7 +32,7 @@
                             <div class="school_category_box">
                                 <ul class="s_category_list">
                                 <?php foreach($categories as $row){
-                                    $c_id = $row['category_id'];
+                                    $c_id = $row['category_name'];
                                      ?>
                                      <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/schools/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?>
                                         <?php } ?>
@@ -126,15 +126,6 @@
                         </div>
                     </div>
                     <div>
-                          <!--  <ul class="pagination">
-                                <li><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-                                <li class="active"><a href="#!">1</a></li>
-                                <li class="waves-effect"><a href="#!">2</a></li>
-                                <li class="waves-effect"><a href="#!">3</a></li>
-                                <li class="waves-effect"><a href="#!">4</a></li>
-                                <li class="waves-effect"><a href="#!">5</a></li>
-                                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-                            </ul> -->
                             <?php echo $pagination; ?>
                   </div>
                     <div class="featured_schools col s12 m12">
@@ -143,7 +134,7 @@
                         <div class="featured_slider">
                              <?php  foreach ($homeschool as $row){ 
                                           $sid = $row['school_id']; ?>
-                            <div class="item"><a href="<?php echo base_url(); ?>schooldetails?id=<?php echo $sid ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
+                            <div class="item"><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
                             <?php } ?>
                         </div>
                     </div>

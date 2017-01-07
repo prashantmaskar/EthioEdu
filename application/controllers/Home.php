@@ -45,6 +45,8 @@ class Home extends CI_Controller {
         $view_params['homeevents'] = $this->Init_models->gethomeevents();
         $view_params['homevacancy'] = $this->Init_models->gethomevacancy();
         $view_params['homequestions'] = $this->Init_models->gethomequestion();
+        $view_params['news'] = $this->Init_models->selectnews();
+        $view_params['previous_vacancy'] = $this->Init_models->get_previous_vacancy();
         $this->load->view('home',$view_params);
     }
 

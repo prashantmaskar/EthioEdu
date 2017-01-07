@@ -50,7 +50,7 @@
                                     
                                   
                                    // $c_id = $row['category_id'];
-                                   $query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category = '".$cc_name."' GROUP BY course_category");
+                                   $query2 = $this->db->query("select count(*) as row_count from tbl_course where course_category = '".$cc_name."' and course_approve = '1' GROUP BY course_category ");
 
                                     ?>
                                     
@@ -132,14 +132,13 @@
                   </div>
                             <div class="featured_schools col s12 m12">
 
-                                <h5>Featured Course</h5>
-                                <div class="featured_slider">
-                                    <div class="item"><img src="<?php echo base_url(). 'images/slider_upper/featured_sc1.jpg'?>"></div>
-                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
-                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc3.png'?>"></div>
-                                    <div class="item"><img src="<?php echo base_url().'images/slider_upper/featured_sc2.jpg'?>"></div>
-
-                                </div>
+                                <h5>Featured Schools</h5>
+                                 <div class="featured_slider">
+                             <?php  foreach ($homeschool as $row){ 
+                                          $sid = $row['school_id']; ?>
+                            <div class="item"><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"><img src="<?php echo base_url();?>uploads/<?php echo $row['school_logo']; ?>"></a></div>
+                            <?php } ?>
+                        </div>
                             </div>
                         </div>
                     </div>

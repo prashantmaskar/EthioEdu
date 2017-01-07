@@ -9,17 +9,6 @@
                             <div class="row">
                                 <?php
                                 $sessid= $this->session->userdata('suserid');
-                               /* $query1 = $this->db->query("select count(*) as row_count from tbl_posts where post_type='event'");
-                                $query2 = $this->db->query("select count(*) as row_count from tbl_posts where post_type='event' and post_approve = 1"); 
-
-                              $query3 = $this->db->query("select count(*) as row_count from tbl_users");
-
-                             $query4 = $this->db->query("select count(*) as row_count from tbl_school_meta");
-                              $query5 = $this->db->query("select count(*) as row_count from tbl_school_meta where school_approve = 1");
-
-                              $query6 = $this->db->query("select count(*) as row_count from tbl_advertise");
-                                $query7 = $this->db->query("select count(*) as row_count from tbl_advertise where isactive = 1");  */
-
 
                                 ?>
                                 <div class="col s12 m6 l3">
@@ -85,38 +74,33 @@
 // to help us easily embed the charts.
 include("fusioncharts.php");
 
+$query = $this->db->query("SELECT post_type as label,COUNT(*) as value FROM tbl_posts GROUP BY post_type ORDER BY value DESC");
+          
+  $arrData = array(
+                "chart" => array(
+                    "caption"=> "Post Graph",
+                  "subCaption"=> "Count Of Event, Gist, News",
+                  "numberPrefix"=> "",
+                  "theme"=> "ocean"
+                )
+            );
+
+          $arrData['data'] = array();
+  foreach ($query->result_array() as $row) {
+                array_push($arrData['data'],
+                    array(
+                        'label' => $row['label'],
+                        'value' => $row['value']
+                    )
+                );
+            }
+$jsonEncodedData = json_encode($arrData);
+//print_r($jsonEncodedData);
 // Create the chart - Column 2D Chart with data given in constructor parameter 
 // Syntax for the constructor - new FusionCharts("type of chart", "unique chart id", "width of chart", "height of chart", "div id to render the chart", "type of data", "actual data")
-$columnChart = new FusionCharts("column2d", "ex1", "100%", 400, "chart-1", "json", '{  
-                "chart":{  
-                  "caption":"Harry\'s SuperMart",
-                  "subCaption":"Top 5 stores in last month by revenue",
-                  "numberPrefix":"$",
-                  "theme":"ocean"
-                },
-                "data":[  
-                  {  
-                     "label":"Bakersfield Central",
-                     "value":"880000"
-                  },
-                  {  
-                     "label":"Garden Groove harbour",
-                     "value":"730000"
-                  },
-                  {  
-                     "label":"Los Angeles Topanga",
-                     "value":"590000"
-                  },
-                  {  
-                     "label":"Compton-Rancho Dom",
-                     "value":"520000"
-                  },
-                  {  
-                     "label":"Daly City Serramonte",
-                     "value":"330000"
-                  }
-                ]
-            }');
+$columnChart = new FusionCharts("Column2d", "ex1", "100%", 400, "chart-1", "json",$jsonEncodedData);
+
+//print_r($columnChart);
 // Render the chart
 $columnChart->render("chart-1");
 ?>

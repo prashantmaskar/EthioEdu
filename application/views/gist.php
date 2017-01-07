@@ -1,3 +1,14 @@
+<style> 
+.scrolltodiv {
+    width: 110px;
+    height: 1200px;
+    border: thin solid black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+</style>
+
+
 <?php  $this->load->view('header'); ?>
         <div class="service-wrap ">
             <div class="row">
@@ -13,7 +24,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col s12 m7 grid-example">
+                <div class="col s12 m7 grid-example scrolltodiv">
                     <div class="news_details row z-depth-1">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
@@ -29,7 +40,7 @@
 
                             <?php
                                 foreach ($gist as $row){ ?>
-                                <div class="gits_content row">
+                                <div class="gits_content row" id=<?php echo $row['post_id']; ?>>
                                     <div class="gist_ainfo">
                                         <div class="col s1">
                                         <?php $gistattachment = $row['user_avatar']; ?>
@@ -48,7 +59,7 @@
                                                 <span>Writes for School</span>
                                             </div>
                                             <div class="gist_title">
-                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
+                                                <h1><a href="#"><?php $row['post_id']; echo $row['post_title']; ?></a></h1>
                                             </div>
                                         </div>
                                     </div>
@@ -84,15 +95,26 @@
                 <div class="col s12 m3 z-depth-1">
                     <div class="featured_gist row">
                         <div class="col m12">
-                            <h3 class="featured_gist_title">Student just gisted about..</h3>
+                            <h3 class="featured_gist_title">Most Liked Gist</h3>
                         </div>
                         <div class="fgist_list_wrap col m12">
                             <ul class="latest_news_list">
                               <?php  
-                               foreach ($gist as $row){ ?>
+                               foreach ($sidegist as $row){ 
+
+                                $id = $row['post_id'];
+
+                                              // $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
+                                ?>
                                 <li class="Latest_news_content">
                                     <div class="row">
                                         <div class="fgist col s12">
+                                            <div class="fgist_title col s9">
+                                                <h1><a href="#<?php echo $row['post_id']; ?>" data-toggle="tooltip" title="<?php echo $row['post_title'];?>"><?php echo $row['post_title'];?><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,2);
+                                        $etc = '...';
+                                        echo $limitdesc."".$etc;?></a></h1>
+
+                                            </div>
                                             <div class="fgist_info col s12">
                                             <?php if(! $row['post_date'] == ""){?>
                                                 <span class="green-text">On <?php echo $row['post_date'];?></span>
@@ -100,17 +122,14 @@
                                                 <?php if(! $row['post_time'] == ""){?>
                                                 <span class="green-text">At <?php echo $row['post_time'];?></span>
                                                 <?php } ?>
-                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>""><?php echo $row['post_author'];?></a>
+                                                By <a href="<?php echo base_url(); ?>userdashboard?uid=<?php echo $row['user_id'];?>"><?php echo $row['post_author'];?></a>
                                                 <span><?php echo $row['post_category'];?></span>
                                             </div>
                                             <div class="fgist_thumb col s3">
-                                                <?php $gistattachment = $row['user_avatar']; ?>
-                                            <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
+                                                <?php //$gistattachment = $row['user_avatar']; ?>
+                                            
                                             </div>
-                                            <div class="fgist_title col s9">
-                                                <h1><a href="#"><?php echo $row['post_title'];?></a></h1>
-
-                                            </div>
+                                            
 
                                         </div>
                                     </div>
