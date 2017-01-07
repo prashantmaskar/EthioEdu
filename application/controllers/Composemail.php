@@ -25,6 +25,12 @@ class Composemail extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('init_models');
+    if ( !$this->session->userdata('logged_in'))
+    { 
+        $this->session->set_userdata('referred_from', current_url());
+        redirect('index.php/login');
+    }
+
     }
 
 
