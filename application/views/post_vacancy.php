@@ -40,11 +40,11 @@
 
                                     <div class="form-group input-field col s12">
                                            <input id="startdate" type="date" class=" datepicker validate" name="sdate" >
-                                        <label for="Caption">Date of Bidding</label>
+                                        <label for="sdate">Date of Bidding</label>
                                     </div>
                                     <div class="form-group input-field col s12">
                                         <input id="enddate" type="date" class=" datepicker validate" name="edate">
-                                        <label for="Caption">Last Date of Bidding</label>
+                                        <label for="edate">Last Date of Bidding</label>
                                     </div>
                                     <div class="form-group input-field col s12">
                                         <textarea name="vdesc" id="Description" class="materialize-textarea"></textarea>

@@ -75,7 +75,7 @@
 
 								                      <div class=" form-group input-field col s12">
                                                         <input id="post_by" type="date" name="post_event_date" class="datepicker validate" >
-                                                        <label for="post_by">post event date</label>
+                                                        <label for="post_event_date">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
                                                         <p><label for="post_by" >post event time</label></p>
