@@ -248,7 +248,9 @@ function get_user_id_by_uname($uname){
        public function selectallcategory()  
       {  
         $query = $this->db->query("select * from tbl_category"); 
+        
         return $query->result_array();
+
       }
        public function selecttender()  
       {  

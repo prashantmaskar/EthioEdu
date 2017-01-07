@@ -45,6 +45,7 @@ class Listcourse extends CI_Controller {
             );
 
        $view_params['course'] = $this->Init_models->selectallcourse();
+    
     	$this->load->view('admin/listcourse',$view_params);
     	 $this->edit_course();
     }
