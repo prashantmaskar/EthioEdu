@@ -235,7 +235,7 @@ function get_user_id_by_uname($uname){
       {  
        
           
-          $query = $this->db->query("SELECT t1.post_id,t1.post_title, t1.post_type,t1.post_date,t1.post_time,t1.post_author,t1.user_id,t1.post_category,t2.plikes_count plikes_count FROM tbl_posts t1 LEFT JOIN tbl_postlikes t2 ON t2.post_id =t1.post_id WHERE t2.plikes_count = (SELECT MAX(plikes_count) FROM tbl_postlikes WHERE post_id = t1.post_id) AND t1.post_type= 'gist' LIMIT 10");
+          $query = $this->db->query("select tbl_posts.post_id, tbl_posts.post_title,tbl_posts.post_type,tbl_posts.post_date,tbl_posts.post_time,tbl_posts.post_author,tbl_posts.post_category,tbl_posts.user_id,tbl_postlikes.post_id,tbl_postlikes.plike_id,count(tbl_postlikes.plikes_count) as maxcount from tbl_posts join tbl_postlikes on tbl_posts.post_id = tbl_postlikes.post_id where tbl_posts.post_type = 'gist' and tbl_posts.post_approve=1 group by tbl_postlikes.post_id order by maxcount desc");
          
         return $query->result_array();
       }
@@ -728,7 +728,7 @@ function get_tips_details($tips_id){
 
       function get_posts_details($post_type){
 
-        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
+        $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "' ORDER BY post_date DESC");
          return $query->result_array();
       }
 

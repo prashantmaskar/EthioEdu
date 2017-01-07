@@ -78,6 +78,7 @@
                                         <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
+                                                    <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">Post Title</th>
                                                     <!--<th data-field="name">Post Category</th> -->
                                                     <th data-field="name">Author</th>
@@ -90,14 +91,14 @@
                                              $post_type = $_GET['post_type'];
                                             }
                        // $query = $this->db->query("select * from tbl_posts where post_type = '" .$post_type. "'");
-                        
+                        $serial_no = 1;
                                 foreach ($posts_details as $row){ 
                                     $post_id = $row['post_id'];
-                                    
+
                         ?>
 
-                                                <tr>
-                                                    <td><?php echo $row['post_title']; ?></td>
+                                                <tr><td><?php echo $serial_no++; ?></td>
+                                                    <td><a href="#" title ="<?php echo $row['post_title'];?>" class="black-text"><?php $desc=$row['post_title']; $limitdesc = substr($desc,0,70);$etc = '...';echo $limitdesc."".$etc;?></td>
                                                    <!-- <td><?php //echo $row['post_category']; ?></td> -->
                                                     <td><?php echo $row['post_author']; ?></td>
                                                     <td><?php echo $row['post_date']; ?></td>

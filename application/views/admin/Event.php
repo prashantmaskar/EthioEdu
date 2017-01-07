@@ -71,18 +71,18 @@
                                                     </div>
                                                     
                                                      <div class=" form-group input-field col s12">
-                                                        <input id="post_by" type="date" name="post_event_date" class="datepicker " >
+                                                        <input id="post_by" type="text" name="post_event_date" class="datepicker " >
                                                         <label for="post_by">post event date</label>
                                                     </div>
                                                     <div class=" form-group input-field col s12">
-                                                        <input id="text" type="text" name="post_event_time" class="validate">
-                                                        <label for="post_by" position: static;>post event time</label>
+                                                        <input id="text" type="time" name="post_event_time" class="validate">
+                                                        <label for="post_event_time" position: static;>post event time</label>
                                                     </div>
 
 
                                                     <div class=" form-group input-field col s12">
                                                         <input id="post_by" type="text" name="eventby" class="validate">
-                                                        <label for="post_by">Event Posted By</label>
+                                                        <label for="eventby">Event Posted By</label>
                                                     </div>
                                                        
                                                       
