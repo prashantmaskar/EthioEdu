@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2017 at 10:47 AM
+-- Generation Time: Jan 09, 2017 at 06:02 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -161,7 +161,24 @@ INSERT INTO `ci_query` (`id`, `query_string`) VALUES
 (355, 'course_category=3'),
 (356, 'project_category=5'),
 (357, 'project_category=5'),
-(358, 'question_category=6');
+(358, 'question_category=6'),
+(359, 'school_category=4'),
+(360, 'school_category=4'),
+(361, 'school_category=+Commerce+'),
+(362, 'school_category=Account'),
+(363, 'school_category=Agriculture'),
+(364, 'school_category=Account'),
+(365, 'project_category=1'),
+(366, 'project_category=1'),
+(367, 'project_category='),
+(368, 'username='),
+(369, 'course_category=Test+Course'),
+(370, 'course_category=Test+Course'),
+(371, 'start_date=2017-01-23&end_date=2017-01-20'),
+(372, 'school_name=&school_type1=private'),
+(373, 'school_name=&school_type1=public'),
+(374, 'start_date=1970-01-01&end_date=2017-01-21'),
+(375, '');
 
 -- --------------------------------------------------------
 
@@ -215,7 +232,9 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_type`) VAL
 (5, ' Accounting', 'project'),
 (6, 'Graduation', 'question'),
 (7, 'Test Course category', 'course'),
-(8, 'Test Course ', 'course');
+(8, 'Test Course ', 'course'),
+(9, 'Account', 'school'),
+(10, 'Agriculture', 'school');
 
 -- --------------------------------------------------------
 
@@ -266,7 +285,8 @@ INSERT INTO `tbl_course` (`course_id`, `course_name`, `course_subject`, `course_
 (8, 'javascript', 'java', 'Test Course', 60, 'Kenya', 'Ethiopia', 'logic', '08 December, 2016', '12:33:49 PM', '1', 70),
 (9, 'Test Course', 'JAVA', 'Test Course', 30, 'Ethiopia', 'Kenya', 'Test Course  Test Course Test Course ', '15 December, 2016', '04:31:16 PM', '1', 71),
 (10, '.Net Course', '.Net MVC', 'Test Course', 90, 'Africa', 'Kenya', 'test', '2016-12-21', '10:00:00 AM', '1', 1),
-(11, 'Hardware And Networking', 'Newtworking', 'Test Course', 30, 'Ethiopia', 'Ethiopia', 'test', '19 December, 2016', '11:33:44 AM', '1', 1);
+(11, 'Hardware And Networking', 'Newtworking', 'Test Course', 30, 'Ethiopia', 'Ethiopia', 'test', '19 December, 2016', '11:33:44 AM', '1', 1),
+(12, 'Selenium', 'QA', 'Test Course ', 90, 'Kenya', 'Ethiopia', 'Test Course for QA', '04 January, 2017', '06:34:12 PM', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -366,7 +386,8 @@ CREATE TABLE `tbl_message` (
 --
 
 INSERT INTO `tbl_message` (`pm_id`, `pm_subject`, `pm_message`, `pm_date`, `pm_time`, `pm_send_to`, `user_id`) VALUES
-(1, 'Hi..', 'Test ', '2016-12-21', '03:23:52 PM', '71', 1);
+(1, 'Hi..', 'Test ', '2016-12-21', '03:23:52 PM', '71', 1),
+(2, '', '', '2017-01-05', '04:40:05 PM', '70', 1);
 
 -- --------------------------------------------------------
 
@@ -389,7 +410,14 @@ CREATE TABLE `tbl_postlikes` (
 INSERT INTO `tbl_postlikes` (`plike_id`, `presponse_id`, `post_id`, `user_id`, `plikes_count`) VALUES
 (1, 2, 55, 1, 1),
 (3, 8, 71, 1, 1),
-(4, 13, 71, 1, 1);
+(4, 13, 71, 1, 1),
+(5, 18, 86, 1, 1),
+(6, 19, 86, 1, 1),
+(7, 20, 87, 1, 1),
+(8, 21, 93, 1, 1),
+(9, 22, 93, 70, 1),
+(10, 22, 93, 71, 1),
+(11, 23, 93, 71, 1);
 
 -- --------------------------------------------------------
 
@@ -431,7 +459,13 @@ INSERT INTO `tbl_postresponse` (`presponse_id`, `presponse_title`, `presponse_de
 (14, 'dnyanesh', 'test coment', 0, 'news', '2016-12-30', '10:42:21 AM', 0, 1, 58),
 (15, 'dnyanesh', 'reply to test comment', 0, 'news', '2016-12-30', '10:42:33 AM', 14, 1, 58),
 (16, 'dnyanesh', 'reply to reply test comment', 0, 'news', '2016-12-30', '10:42:44 AM', 15, 1, 58),
-(17, 'dnyanesh', 'reply to second reply', 0, 'news', '2016-12-30', '10:43:03 AM', 15, 1, 58);
+(17, 'dnyanesh', 'reply to second reply', 0, 'news', '2016-12-30', '10:43:03 AM', 15, 1, 58),
+(18, 'dnyanesh', 'guyghjghj', 1, 'gist', '2017-01-05', '03:05:43 PM', 0, 1, 86),
+(19, 'dnyanesh', 'ghyguj', 1, 'gist', '2017-01-05', '03:44:37 PM', 0, 1, 86),
+(20, 'dnyanesh', 'test comment', 1, 'gist', '2017-01-05', '05:09:39 PM', 0, 1, 87),
+(21, 'dnyanesh', 'test comment on 93', 1, 'gist', '2017-01-05', '05:12:44 PM', 0, 1, 93),
+(22, 'santosh', 'test comment by Santosh on 93', 2, 'gist', '2017-01-05', '05:14:13 PM', 0, 70, 93),
+(23, 'pallavi', 'test comment by Pallavi on 93', 1, 'gist', '2017-01-05', '05:15:07 PM', 0, 71, 93);
 
 -- --------------------------------------------------------
 
@@ -506,7 +540,8 @@ INSERT INTO `tbl_posts` (`post_id`, `post_title`, `post_desc`, `post_category`, 
 (97, 'Esut Admitted Mechanical and Production Engineering Freshers, Drop your numbers for our dedicated wh', 'To bring together Esuties Mechanical and Production Engineering Freshers, to share relevant infos and to help each other \r\n\r\nCompete to win from N50,000 Weekly by answering few CBT questions. Click Here to Enter for Free!', 'Pre Degree', 'default-image.jpg', 'Pallavi', 'http://myschool.com.ng/', '', '', '2016-12-16', '06:19:15 PM', '', 'gist', '1', 71),
 (98, 'rsust aspirants group..', 'THIS POST IS FOR ALL RSUST ASPIRANTS/FRESHERS , WE HAVE A WHATSAPP GROUP (THE OFFICIAL RSUST ASPIRANTS/FRESHERS GROUP)WITH LOTS OF MEMBERS, WHERE YOU COME IN AND SHARE YOUR THOUGHTS IDEAS, HAVE FUN, MEET NEW PEOPLE AND MAKE NEW FRIENDS AND ALSO ASK QUESTIONS AND DO REGISTRATIONS', 'Pre Degree', 'default-image.jpg', 'Pallavi', 'http://myschool.com.ng/', '', '', '2016-12-16', '06:19:40 PM', '', 'gist', '1', 71),
 (99, 'Uniosun pdites group 2016/2017', 'Please, drop your number here. ', 'Full Time', 'default-image.jpg', 'Pallavi', 'http://myschool.com.ng/', '', '', '2016-12-16', '06:20:02 PM', '', 'gist', '1', 71),
-(100, 'AAUA ECONOMICS AND ECO EDUCATION admitted candidates group', 'Congratulations once again to those admitted into the prestigious and outstanding department in Adekunle ajasin. Economics department houses the best amongst the rest and I believe you are lucky to be among. A group will be created for you guys on Whatsapp to meet each other and know what''s up in school as to the course. kindly message this number on Whatsapp ( 08060548106) to get added on the group . I am Bidemi, current class governor for 200level economics .', 'Sport', 'default-image.jpg', 'Pallavi', 'http://myschool.com.ng/', '', '', '2016-12-16', '06:20:24 PM', '', 'gist', '1', 71);
+(100, 'AAUA ECONOMICS AND ECO EDUCATION admitted candidates group', 'Congratulations once again to those admitted into the prestigious and outstanding department in Adekunle ajasin. Economics department houses the best amongst the rest and I believe you are lucky to be among. A group will be created for you guys on Whatsapp to meet each other and know what''s up in school as to the course. kindly message this number on Whatsapp ( 08060548106) to get added on the group . I am Bidemi, current class governor for 200level economics .', 'Sport', 'default-image.jpg', 'Pallavi', 'http://myschool.com.ng/', '', '', '2016-12-16', '06:20:24 PM', '', 'gist', '1', 71),
+(101, 'Test Privacy Policy', 'Test Test Test', '', '', '', '', '', '', '2017-01-04', '04:51:41 PM', '', 'privacy', '', 1);
 
 -- --------------------------------------------------------
 
@@ -548,9 +583,9 @@ CREATE TABLE `tbl_projects` (
 --
 
 INSERT INTO `tbl_projects` (`project_id`, `project_title`, `project_course`, `project_category`, `project_year`, `project_format`, `project_upload`, `project_date`, `project_time`, `project_approve`, `user_id`) VALUES
-(3, 'College Management Sytem', 'ICT Course', '1', '2016', 'word', '02-12-2016-06-31-321.docx', '2016-12-02', '11:05:28 AM', '1', 1),
+(3, 'College Management Sytem', 'ICT Course', '', '2016', 'word', 'gg5.docx', '2016-12-02', '11:05:28 AM', '1', 1),
 (4, 'Hospital Management System', 'Android Course', '1', '2016', 'word', 'test1.docx', '02 December, 2016', '11:06:05 AM', '1', 1),
-(5, 'Gift Management System', 'PHP', '1', '2016', 'word', 'test2.docx', '02 December, 2016', '11:06:44 AM', '1', 1);
+(5, 'Gift Management System', 'PHP', '', '2016', 'word', '', '2017-12-02', '11:06:44 AM', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -695,7 +730,7 @@ CREATE TABLE `tbl_school_meta` (
 INSERT INTO `tbl_school_meta` (`school_id`, `registration_type`, `school_name`, `school_logo`, `school_category`, `school_university`, `school_institute`, `other_category`, `school_number`, `school_country`, `school_city`, `school_region`, `school_type`, `Program_tokenfield`, `school_facility`, `school_population`, `teaching_staff`, `non_teaching_staff`, `school_awards`, `school_acadamic_year`, `school_acadamic_fee`, `admission_procedure`, `acadamic_requirment`, `school_scholarship`, `school_address`, `school_url`, `school_desc`, `school_date`, `school_time`, `school_approve`, `user_id`) VALUES
 (7, 'Normal Registration', 'Adarsh Vidhyalaya', '06-12-2016-10-21-15.jpg', 'Account', 'Agriculture', 'Account', 'Account', '2222222222', 'Ethiopia', 'Kenya', 'Kenya', 'private', '', '', 55, 2, 33, '2', '2016', '80000', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '50%', '', 'http://www.ddd.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '22 November, 2016', '12:19:42 PM', '1', 1),
 (8, 'Normal Registration', 'SDVL', 'default-image.jpg', 'Agriculture', 'Account', 'Account', 'Account', '1111111111', 'Kenya', 'Ethiopia', 'Ethiopia', 'public', '', '', 30, 34, 4, '3', '2016', '124444', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '50%', '', 'http://www.ddd.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '22 November, 2016', '12:28:58 PM', '1', 1),
-(9, 'Normal Registration', 'test school', 'default-image.jpg', 'Account', 'Account', 'Account', 'Account', '+251 454545454', 'Kenya', 'Kenya', 'Ethiopia', 'private', '', 'Computer Study Lab,Football Pitch ', 345, 4, 5, '6', '2016', '45666', 'test procedure', 'test requirment', '50%', '', 'http://www.ddd.com', 'test yourself', '2016-12-16', '10:46:10 AM', '0', 73);
+(9, 'Normal Registration', 'test school', 'default-image.jpg', 'Account', 'Account', 'Account', 'Account', '+251 454545454', 'Kenya', 'Kenya', 'Ethiopia', 'private', '', 'Computer Study Lab,Football Pitch ', 345, 4, 5, '6', '2016', '45666', 'test procedure', 'test requirment', '50%', '', 'http://www.ddd.com', 'test yourself', '2016-12-16', '10:46:10 AM', '1', 73);
 
 -- --------------------------------------------------------
 
@@ -988,7 +1023,7 @@ ALTER TABLE `tbl_vacancy`
 -- AUTO_INCREMENT for table `ci_query`
 --
 ALTER TABLE `ci_query`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=376;
 --
 -- AUTO_INCREMENT for table `tbl_advertise`
 --
@@ -998,7 +1033,7 @@ ALTER TABLE `tbl_advertise`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbl_contact`
 --
@@ -1008,7 +1043,7 @@ ALTER TABLE `tbl_contact`
 -- AUTO_INCREMENT for table `tbl_course`
 --
 ALTER TABLE `tbl_course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_enquiry`
 --
@@ -1023,22 +1058,22 @@ ALTER TABLE `tbl_likes`
 -- AUTO_INCREMENT for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
-  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_postlikes`
 --
 ALTER TABLE `tbl_postlikes`
-  MODIFY `plike_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `plike_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tbl_postresponse`
 --
 ALTER TABLE `tbl_postresponse`
-  MODIFY `presponse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `presponse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `tbl_posts`
 --
 ALTER TABLE `tbl_posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT for table `tbl_posts_comments`
 --
