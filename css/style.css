@@ -1079,7 +1079,7 @@ connect2Me List and Form Csss
     width: 80%;
     margin: 30px auto;
 }
-#connectme .form-error, #userform .form-error, #schooldetails .form-error, #askque .form-error{
+#connectme .form-error, #userform .form-error, #schooldetails .form-error, #askque .form-error,#postvacancyform .form-error{
     color: #D8000C;
 }
 .form_heading{
