@@ -1202,7 +1202,7 @@ $q->where('project_approve = 1');
                      ->from('tbl_posts')
 
                     $q=$this->db->query("select tbl_posts.*,tbl_postresponse.pparent_id from tbl_posts LEFT JOIN tbl_postresponse ON tbl_postresponse.post_id = tbl_posts.post_id where post_type='news' and post_approve = 1 GROUP BY tbl_posts.post_id");*/
-     $q = $this->db->select('*,tbl_postresponse.pparent_id')
+     $q = $this->db->select('tbl_posts.*,tbl_postresponse.pparent_id')
                      ->from('tbl_posts')
 
                      ->join('tbl_postresponse','tbl_posts.post_id = tbl_postresponse.post_id', 'left')
@@ -1210,7 +1210,6 @@ $q->where('project_approve = 1');
                      ->limit($limit , $offset)
                     ->group_by('tbl_posts.post_id')
                     ->order_by($sort_by , $sort_order);
-
 
 
 
@@ -1497,8 +1496,9 @@ $q->where('question_date <=', $query_array['end_date']);
    function get_one_news($post_id) 
      { 
       $query = $this->db->query("SELECT * FROM tbl_posts where post_id = '".$post_id."' and post_type = 'news'");
-  
+
      return $query->row(); 
+
    } 
    function get_one_event($post_id) 
      { 
