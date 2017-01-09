@@ -113,7 +113,7 @@ function display($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $o
     public function index($query_id = 0, $sort_by = 'school_name',$sort_order = 'asc', $offset = 0 ) {
        
    
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'school_id'=>'school_id',
         'school_name'=>'school_name',

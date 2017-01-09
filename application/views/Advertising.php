@@ -85,7 +85,7 @@
 
 
                                     <div class="form-group input-field col s12">
-                                        <select class="form-control browser-default" name="catagory" >
+                                        <select class="form-control browser-default ddl" name="catagory" >
                                             <option value="" disabled selected>Category</option>
                                             <option value="Admission">Admission</option>
                                             <option value="Departmental">Departmental</option>
@@ -103,7 +103,7 @@
                                         <!--<label>Category</label>-->
                                     </div>
 									<div class="form-group input-field col s12">
-                                        <select class="form-control browser-default" name="addposition" >
+                                        <select class="form-control browser-default ddl" name="addposition" >
                                            <option  value="" disabled="" selected="">Add Position</option>
                                                             <option value="Top">Top</option>
                                                             <option value="Left">Left</option>
@@ -112,7 +112,7 @@
                                       <!--  <label>Add Position</label>-->
                                     </div>
 									<div class="form-group input-field col s12">
-                                        <select class="form-control browser-default " name="paymentmethod" >
+                                        <select class="form-control browser-default ddl" name="paymentmethod" >
                                            <option  value="" disabled="" selected="">Payment Method</option>
                                                             <option value="1">M-Birr</option>
                                                             <option value="2">Hello-Cash</option>

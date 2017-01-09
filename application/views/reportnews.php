@@ -34,7 +34,7 @@
                                         <label for="Description">Description</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                        <select class="form-control browser-default" name="catagory">
+                                        <select class="form-control browser-default ddl" name="catagory" >
                                             <option value="">Catagory</option>
                                            
                                             <option value="Admission">Admission</option>

@@ -45,7 +45,7 @@
                                                     </div>
                                                      
                                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="project_category">
+                                                        <select class="form-control browser-default ddl" name="project_category">
                                                             <option  value="">Project Catagory</option>
                                                     <!-- <option value="Administration">Administration </option>
                                                     <option value="Agriculture">Agriculture </option>
@@ -65,7 +65,7 @@
 
                                                     </div>
                                                <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="Year">
+                                                        <select class="form-control browser-default ddl" name="Year">
                                                             <option  value="">Year</option>
                                                             <option value="2016">2016</option>
                                                             <option value="2017">2017</option>
@@ -74,7 +74,7 @@
 
                                                     </div>
 													 <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="format_type">
+                                                        <select class="form-control browser-default ddl" name="format_type">
                                                             <option  value="">Format type</option>
                                                             <option value="pdf">PDF</option>
                                                             <option value="word">WORD</option>

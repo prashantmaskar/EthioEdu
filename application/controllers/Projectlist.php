@@ -34,7 +34,7 @@ class Projectlist extends CI_Controller {
 function display($query_id = 0, $sort_by = 'project_title',$sort_order = 'asc', $offset = 0 ){
 
 //echo"<script>alert($this->input->get('cat'));</script>";
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'project_id'=>'project_id',
         'project_title'=>'project_title',

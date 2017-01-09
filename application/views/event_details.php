@@ -30,9 +30,9 @@
                        <!-- <meta property="og:title" content="<?php //echo $row['post_title']; ?>"/>
                         <meta property="og:image" content="<img scr="<?php //echo base_url(); ?>uploads/<?php //echo $row['post_attachment']; ?>"/>
                         <meta property="og:description" content="<?php //echo $row['post_title']; ?>"/> -->
-                            <div class="events_heading ">
-                                <span class="event_subheading">Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
-                                <h1><?php echo $row['post_title']; ?></h1>
+                            <div class="event_info ">
+                               Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments 
+                                <h1 class="page-heading"><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
 
