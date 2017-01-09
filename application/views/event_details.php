@@ -30,8 +30,8 @@
                        <!-- <meta property="og:title" content="<?php //echo $row['post_title']; ?>"/>
                         <meta property="og:image" content="<img scr="<?php //echo base_url(); ?>uploads/<?php //echo $row['post_attachment']; ?>"/>
                         <meta property="og:description" content="<?php //echo $row['post_title']; ?>"/> -->
-                            <div class="event_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
+                            <div class="events_heading ">
+                                <span class="event_subheading">Posted: <?php echo $row['post_date']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $query2->result()[0]->row_count; ?> Comments </span>
                                 <h1><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                         <div class="event_img">
                         <?php 
                         $news_attachment = $row['post_attachment'];  ?>
-                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>"> 
+                            <img src="<?php echo base_url() .'uploads/'.$news_attachment ?>" > 
                         </div>
                         <div class="col s12">
                           <!--  <a class="post-share facebook" href="http://www.facebook.com/plugins/like.php?href=http://medialoot.com/blog/&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');
@@ -49,7 +49,7 @@
                             <a class="post-share gplus" href="https://plus.google.com/share?url=http://medialoot.com/blog/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
                                     return false;">Google Plus<span>120</span></a>  -->
                                     <div class="school_social">
-                                        <ul>
+                                        <ul >
                                             <li><a id = "share_button" href="#" class="waves-effect waves-light btn facebook darken-3"><i class="fa fa-facebook-square"></i> Facebook</a></li> 
                                             <?php 
 
@@ -93,7 +93,7 @@
     } else{?>
                                 <form id="comment_form" method="post" action="<?= base_url() ?>event_details/add_event_comment/<?= $ques->post_id ?> " >
                                     <div class="input-field col s12">
-                                        <label for="comment_name">Name:</label> 
+                                        <label for="comment_name"><!-- Name: --></label> 
           <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
                                     </div>
                                  

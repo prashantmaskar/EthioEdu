@@ -903,8 +903,17 @@ padding: 20px;
 .news_details .news_heading h1, .event_details .event_heading h1{
     font-size: 36px;
 }
+.events_heading h1 {
+     font-size: 26px;
+}
+.news_subheading {
+     font-weight: 300;
+}
 
-
+.event_subheading {
+     font-weight: 300;
+         font-size: large;
+}
 .captch img{
     width: 250px;
 }

@@ -23,7 +23,7 @@
                         ?>
 
                             <div class="news_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $row['rowcount']; ?> Comments </span>
+                                <span class="news_subheading">Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $row['rowcount']; ?> Comments </span>
                                 <h1 ><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
