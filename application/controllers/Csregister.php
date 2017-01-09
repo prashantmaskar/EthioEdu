@@ -28,6 +28,7 @@ class Csregister extends CI_Controller {
         $this->load->library(array('session', 'form_validation', 'email'));
         $this->load->database();
         $this->load->model('Init_models');
+        
 
           
     }
