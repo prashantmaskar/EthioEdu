@@ -148,7 +148,7 @@
                                                       <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice3">
 
-                                                            <option value="">Colleges</option>
+                                                            <option value="">Institutes</option>
                                                              <option value="KINDERGARTENS and NURSERY ">Commerce and business </option>
                                                             <option value="Computer training and IT">Computer training and IT</option>
                                                          <option value="Distance education">Distance education</option>
@@ -301,7 +301,7 @@
                                                     </div>
                                                     <div class="form-group input-field col s12">
                                                         <input id="address" type="text" class="validate" name="address">
-                                                        <label for="password">Address</label>
+                                                        <label for="address">Address</label>
                                                     </div>
                                                     <div id="map" style="height:200px;width:100%;" ></div>
                                                     <!-- <div id="map"class="col m12">     

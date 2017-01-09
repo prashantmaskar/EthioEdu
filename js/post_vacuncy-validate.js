@@ -1,83 +1,75 @@
-$(document).ready(function() {
+$(document).ready(function(){
+    //alert('in');
+    $.validator.setDefaults({
+        ignore: []
+    });
 
-    $('#postvacuncy').bootstrapValidator({
-        /*feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },*/
-        fields: {
+ $("#postvacuncy").validate({
+        rules: {
             title: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter caption!!!..'
-                    }
-                }
+                required: true,
+               
             },
-
             sname: {
-                validators: {
-                    notEmpty: {
-                        message: ' you must enter name!!!..'
-                    }
-                }
+                required: true,
+                
             },
-
 
             vcount: {
-                validators: {
-                    notEmpty: {
-                        message: ' please enter no of vacuncy !!!..'
-                    },
-                    digits:{
-                         message:'invalid input'
-
-                            }
-                }
+                required: true,
+                 digits: true
+                
             },
-             
             sdate: {
-                validators: {
-                    notEmpty: {
-                        message: ' date can not be Empty!!!..'
-                    }
-                }
+                required: true,
+                
             },
-                edate: {
-                validators: {
-                    notEmpty: {
-                        message: ' enter last date of Binding !!!..'
-                    }
-                }
+            edate: {
+                required: true,
+                
             },
-                vstatus: {
-                validators: {
-                    notEmpty: {
-                        message: ' enter Status!..'
-                    }
-                }
+             vdesc: {
+                required: true,
+                
             },
-
-
+        },
+        //For custom messages
+        messages: {
+            title:{
+                required: "title required",
                
-         vdesc:{
-                validators:{
-                    notEmpty:{
-                        message:  ' Description required!!!'
-                    }
-                   /* stringLength:{
-                        message:'post Description must be less than 120 characters',
-                        max:function(value,validator,$field){
-                            return 120 - (value.match(/\r/g) || []).length;
-                        }
-                    }*/
-                }
-             },
-             
+            },
+             sname:{
+                required: "name required",
+               
+            },
+            vcount:{
+                required: "field compulsary",
+                ispass:"should be in digit"
+               
+            },
+             sdate:{
+                required: "select to date",
+               
+            },
+            edate:{
+                required: "select from date",
+               
+            },
+             vdesc:{
+                required: "required",
+               
+            }
+        },
+        //For custom messages
+       errorClass:"invalid form-error",
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          error.appendTo( element.parent() );
+          }
+        
+     });
 
 
-
-
-             }
-    });
 });
+     
