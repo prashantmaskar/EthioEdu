@@ -22,9 +22,9 @@
                                      //$query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$row['post_id']."' and pparent_id = '".$row['pparent_id']."'");
                         ?>
 
-                            <div class="news_heading ">
-                                <span>Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $row['rowcount']; ?> Comments </span>
-                                <h1 ><?php echo $row['post_title']; ?></h1>
+                            <div class="news_info ">
+                               Posted: <?php echo $row['post_date']; ?> at <?php echo $row['post_time']; ?> into <?php echo $row['post_category'];?> by <?php echo $row['post_author']; ?> | <?php echo $row['rowcount']; ?> Comments 
+                                <h1 class="page-heading"><?php echo $row['post_title']; ?></h1>
                             </div>
                         </div>
 

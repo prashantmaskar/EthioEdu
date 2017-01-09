@@ -33,7 +33,7 @@ class QuesAns extends CI_Controller {
  function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
 
 
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'question_id'=>'question_id',
         'question_desc'=>'question_desc',
@@ -109,7 +109,7 @@ class QuesAns extends CI_Controller {
     {
  
 
-        $limit = 1;
+        $limit = 5;
         
         $data['fields']= array(
         'question_id'=>'question_id',

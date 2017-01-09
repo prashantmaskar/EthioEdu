@@ -34,7 +34,7 @@ class Course extends CI_Controller {
 function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $offset = 0 ){
 
 //echo"<script>alert($this->input->get('cat'));</script>";
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'course_id'=>'course_id',
         'course_name'=>'course_name',
@@ -112,7 +112,7 @@ function display($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $o
     public function index($query_id = 0, $sort_by = 'course_name',$sort_order = 'asc', $offset = 0 ) {
     
    //echo"sdfsdf". $this->input->post('cat');
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'course_id'=>'course_id',
         'course_name'=>'course_name',

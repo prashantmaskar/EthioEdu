@@ -34,7 +34,7 @@ class Vactender extends CI_Controller {
     function display($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 ){
 
 
-        $limit = 1;
+        $limit = 5;
         $data['fields']= array(
         'vacancy_id'=>'vacancy_id',
         'vacancy_name'=>'vacancy_name',
@@ -106,7 +106,7 @@ class Vactender extends CI_Controller {
     public function index($query_id = 0, $sort_by = 'post_date',$sort_order = 'asc', $offset = 0 )
     {
  
-        $limit = 1;
+        $limit = 5;
         
         $data['fields']= array(
         'vacancy_id'=>'vacancy_id',

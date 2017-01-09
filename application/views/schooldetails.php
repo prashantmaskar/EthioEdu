@@ -66,47 +66,51 @@ $edesc = $s_desc.'...';
         </div>
         <div class="col m12">
           <div class="school_desc">
+<<<<<<< HEAD
             <h2 class="sch_det_title">Description
+=======
+            <h2 class="sch_det_title">Description/Background : <span class="sch_det_retrived_data" ><?php echo $row['school_desc']?></span>
+>>>>>>> 1514ea122a467da5754527920cf6afe46db979a1
             </h2>
-            <p class="sch_desc">
-              <?php echo $row['school_desc']?>
-            </p>
+            <!-- <p class="sch_desc">
+              <?php// echo $row['school_desc']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Country
+            <h2 class="sch_det_title">Country:<span class="sch_det_retrived_data"> <?php echo $row['school_country']?></span>
             </h2>
-            <p class="sch_country">
-              <?php echo $row['school_country']?>
-            </p>
+           <!--  <p class="sch_country">
+              <?php //echo $row['school_country']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">City
+            <h2 class="sch_det_title">City: <span class="sch_det_retrived_data"><?php echo $row['school_city']?></span>
             </h2>
-            <p class="sch_country">
-              <?php echo $row['school_city']?>
-            </p>
+            <!-- <p class="sch_country">
+              <?php //echo $row['school_city']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Region
+            <h2 class="sch_det_title">Region: <span class="sch_det_retrived_data"><?php echo $row['school_region']?></span>
             </h2>
-            <p class="sch_country">
-              <?php echo $row['school_region']?>
-            </p>
+           <!--  <p class="sch_country">
+              <?php //echo $row['school_region']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Type
+            <h2 class="sch_det_title">Type: <span class="sch_det_retrived_data"><?php echo $row['school_type']?></span>
             </h2>
-            <p class="sch_country">
-              <?php echo $row['school_type']?>
-            </p>
+            <!-- <p class="sch_country">
+              <?php //echo $row['school_type']?>
+            </p> -->
           </div>
         </div>
         <?php              
@@ -115,11 +119,11 @@ $str=str_replace("," , "<br>",$str);
 ?>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Programs offered
+            <h2 class="sch_det_title">Programs offered:<span class="sch_det_retrived_data"><?php echo $str ?></span>
             </h2>  
-            <p>
-              <?php echo $str ?>
-            </p>
+            <!-- <p>
+              <?php //echo $str ?>
+            </p> -->
             <br/>
           </div>
         </div>
@@ -129,102 +133,102 @@ $str=str_replace("," , "<br>",$str);
 ?>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">School facility
+            <h2 class="sch_det_title">School facility:<span class="sch_det_retrived_data"><?php echo $str ?></span>
             </h2>  
-            <p>
-              <?php echo $str ?>
-            </p>
+            <!-- <p>
+              <?php// echo $str ?>
+            </p> -->
             <br/>
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Student Population
+            <h2 class="sch_det_title">Student Population: <span class="sch_det_retrived_data"><?php echo $row['school_population']?></span>
             </h2>
-            <p>
-              <?php echo $row['school_population']?>
-            </p>
+           <!--  <p>
+              <?php //echo $row['school_population']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Teaching Staff
+            <h2 class="sch_det_title">Teaching Staff:<span class="sch_det_retrived_data"><?php echo $row['teaching_staff']?></span>
             </h2>
-            <p>
-              <?php echo $row['teaching_staff']?>
-            </p>
+            <!-- <p>
+              <?php //echo $row['teaching_staff']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Non-Teaching Staff
+            <h2 class="sch_det_title">Non-Teaching Staff:<span class="sch_det_retrived_data"> <?php echo $row['non_teaching_staff']?></span>
             </h2>
-            <p>
-              <?php echo $row['non_teaching_staff']?>
-            </p>
+            <!-- <p>
+              <?php //echo $row['non_teaching_staff']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Admission Fees
+            <h2 class="sch_det_title">Admission Fees:<span class="sch_det_retrived_data"><?php echo $row['school_acadamic_fee']?></span>
             </h2>
-            <p>
-              <?php echo $row['school_acadamic_fee']?>
-            </p>
+            <!-- <p>
+              <?php //echo $row['school_acadamic_fee']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Admission Requirement
+            <h2 class="sch_det_title">Admission Requirement:<span class="sch_det_retrived_data"><?php echo $row['acadamic_requirment']?></span>
             </h2>
-            <p>
-              <?php echo $row['acadamic_requirment']?>
-            </p>
+           <!--  <p>
+              <?php //echo $row['acadamic_requirment']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Admission Procedure
+            <h2 class="sch_det_title">Admission Procedure:<span class="sch_det_retrived_data"><?php echo $row['admission_procedure']?></span>
             </h2>
-            <p>
-              <?php echo $row['admission_procedure']?>
-            </p>
+           <!--  <p>
+              <?php //echo $row['admission_procedure']?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Academic Year
+            <h2 class="sch_det_title">Academic Year :<span class="sch_det_retrived_data"> <?php echo $row['school_acadamic_year']; ?></span>
             </h2>
-            <p>August 2016
-            </p>
+           <!--  <p>August 2016
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Past Awards
+            <h2 class="sch_det_title">Past Awards: <span class="sch_det_retrived_data"><?php echo $row['school_awards']; ?></span>
             </h2>
-            <p>
-              <?php echo $row['school_awards']; ?>
-            </p>
+           <!--  <p>
+              <?php //echo $row['school_awards']; ?>
+            </p> -->
           </div>
         </div>                     
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Scholarships
+            <h2 class="sch_det_title">Scholarships: <span class="sch_det_retrived_data"><?php echo $row['school_scholarship']; ?></span>
             </h2>
-            <p>
-              <?php echo $row['school_scholarship']; ?>
-            </p>
+           <!--  <p>
+              <?php //echo $row['school_scholarship']; ?>
+            </p> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Address
+            <h2 class="sch_det_title">Address : <?php echo $row['school_address']; ?>
             </h2>
             <div id="address">
-              <p>
-                <?php echo $row['school_address']; ?>
-              </p>
+              <!-- <p>
+                <?php// echo $row['school_address']; ?>
+              </p> -->
             </div>
            <div id="map" style="height:200px;width:100%;" ></div>
             </div>
@@ -232,22 +236,24 @@ $str=str_replace("," , "<br>",$str);
         
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Website
+            <h2 class="sch_det_title">Website :<span class="sch_det_retrived_data"><?php echo $row['school_url']?></span>
             </h2>
-            <a href="#" target="_blank">
-              <?php echo $row['school_url']?>
-            </a>
+            <!-- <a href="#" target="_blank">
+               <?php //echo $row['school_url']?>
+            </a> -->
           </div>
         </div>
         <div class="col m12">
           <div class="school_country">
-            <h2 class="sch_det_title">Contact
+            <h2 class="sch_det_title">Contact :<span class="sch_det_retrived_data"><i class="fa fa-phone">
+              </i> Ph.No. 
+              <?php echo $row['school_number']?></span>
             </h2>
-            <p>
+            <!-- <p>
               <i class="fa fa-phone">
               </i> Ph.No. 
-              <?php echo $row['school_number']?>
-            </p>
+              <?php //echo $row['school_number']?>
+            </p> -->
           </div>
         </div>
         <?php    if ($this->session->userdata('logged_in'))
@@ -256,7 +262,7 @@ $str=str_replace("," , "<br>",$str);
           <div class="school_country">
             <h2 class="sch_det_title">Enquiry
             </h2>
-            <p>Want More Details about School? &nbsp;
+            <p class="black-text">Want More Details about School? &nbsp;
               <a href="<?php echo base_url() ?>index.php/enquiry?id=<?php echo $sch_id; ?>&name=<?php echo $row['school_name']?>" class="waves-effect waves-light btn red darken-3">Make Enquiry
               </a>
             </p>

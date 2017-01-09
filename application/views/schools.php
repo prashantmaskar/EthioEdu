@@ -93,6 +93,7 @@
                                 foreach ($schools as $row){ ?>
                                         <div class="col m3">
                                             <div class="row">
+                                                <div class="s_detail">
                                                 <div class="col m6 offset-m2">
                                                     <div class="s_logo">
                                                     <?php $img = $row->school_logo;  ?>
@@ -104,7 +105,7 @@
                                                 </div>
                 
                                                 <div class="col m12">
-                                                    <div class="s_detail">
+                                                    
                                                     <?php $sid = $row->school_id;?>
                                                         <h1><?php echo $row->school_name;?></h1>
                                                         <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row->user_email;?></p>

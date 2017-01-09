@@ -71,6 +71,7 @@
                                     //$parent = $row->pparent_id;
                                   //  $parent = $row['pparent_id'];
                                     $p_id = $row->post_id;
+                                   
                                     //$p_id = $row['post_id'];
                                   //$pid = $row['pparent_id'];
                                     //$pid = $row['pparent_id'];
@@ -83,11 +84,11 @@
 
                                  ?>
                                     <li class="news_content">
-                                        <?php $news_id = $row->post_id;
+                                        <?php //$news_id = $row->post_id;
                                          //$news_id = $row['post_id'];
                                         //echo $news_id;
                                         ?>
-                                        <a  href="<?php echo base_url()?>news_detail/show_one/<?= $news_id   ?>" class="news_link"><span class="News_title"><?php echo $row->post_title;//echo $row['post_title']; ?> </span>
+                                        <a  href="<?php echo base_url()?>news_detail/show_one/<?= $p_id   ?>" class="news_link"><span class="News_title"><?php echo $row->post_title;//echo $row['post_title']; ?> </span>
                                         </a>
                                        
                                         <span id="newsdetailinfo" class="hmForumDateFormat">by <strong><a href="#"><?php echo $row->post_author;//echo $row['post_author']; ?></a></strong> <?php echo $row->post_date;//echo $row['post_date']; ?><span class="infoText1"> for <a href="#"><?php echo $row->post_category;//echo $row['post_category'];?></a>  | Comments  [<?php echo $query2->result()[0]->row_count; ?>]   
