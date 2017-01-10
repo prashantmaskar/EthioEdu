@@ -9,7 +9,7 @@ foreach ($sch_details as $row){
 ?>
         <div class="school_banner col m12">
           <?php $img=$row['school_logo'] ?>
-          <img src="<?php echo base_url().'uploads/'.$img ?>" class="responsive-img" />
+          <center><img class="school-dtls-img responsive-img" src="<?php echo base_url().'uploads/'.$img ?>"  /></center>
         </div>
         <div class="school_name-wrap col m12">
           <div class="red col m12">

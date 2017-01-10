@@ -134,6 +134,14 @@ nav .brand-logo {
 
 
 }
+.school-dtls-img{
+     max-width: 100%;
+    vertical-align: middle;
+    width: 300px; 
+    height: 300px;
+
+
+}
 
 .std_thumb img.circle.responsive-img.valign.profile-image {
     height: 50px;
