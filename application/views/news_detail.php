@@ -79,7 +79,7 @@
     } else{?>
              
                                 <form id="comment_form" method="post" action="<?= base_url() ?>news_detail/add_news_comment/<?= $ques->post_id ?> " >
-            <div class="input-field col s12">
+            <div class=" form-group input-field col s12">
           
           <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
           <label for="comment_name">Name:</label> 
@@ -122,7 +122,7 @@
             </div>
         </div>
         <?php $this->load->view('footer'); ?>
-<script type="text/javascript" src="<?php echo base_url() .'js/newsdetails.js' ?>"></script>
+<!--<script type="text/javascript" src="<?php //echo base_url() .'js/newsdetails.js' ?>"></script>-->
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 <?php foreach ($news_details as $row){
     $post_desc = substr($row['post_desc'],0,100);
@@ -230,3 +230,38 @@ $(function () {
 
 
 
+<script>
+$(document).ready(function() {
+
+    $('#comment_form').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            comment_name: {
+                validators:{
+                    notEmpty:{
+                        message:'name required'
+                    }
+                   /* regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
+                    }*/
+                }
+            },
+              comment_body: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter comment!!!..'
+                    }
+                }
+            },
+              
+
+        }
+    });
+});
+
+                     </script>

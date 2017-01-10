@@ -142,6 +142,7 @@
                                                         <table class="bordered display" id="table_id">
                                                             <thead>
                                                                 <tr>
+                                                                    <th data-field="srno">Sr.No.</th>
                                                                     <th data-field="id">Client Name</th>
                                                                     <th data-field="name">Email Id</th>
                                                                     <th data-field="price">Add Position</th>
@@ -151,9 +152,11 @@
                                                             </thead>
                                                             <tbody>
                                                              <?php
+                                                            $sr_no = 1;
                                                         foreach ($advertise as $row){ 
                                                          $adv_id = $row['advertise_id'];  ?>
                                                                 <tr>
+                                                                    <td> <?php echo $sr_no++?></td>
                                                             <td><?php echo $row['advertise_name']; ?></td>
                                                             <td><?php echo $row['advertise_email']; ?></td>
                                                         <td><?php echo $row['advertise_position']; ?></td>

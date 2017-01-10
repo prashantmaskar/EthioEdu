@@ -9,7 +9,7 @@ foreach ($sch_details as $row){
 ?>
         <div class="school_banner col m12">
           <?php $img=$row['school_logo'] ?>
-          <img src="<?php echo base_url().'uploads/'.$img ?>" class="responsive-img" />
+          <center><img class="school-dtls-img responsive-img" src="<?php echo base_url().'uploads/'.$img ?>"  /></center>
         </div>
         <div class="school_name-wrap col m12">
           <div class="red col m12">
@@ -66,7 +66,10 @@ $edesc = $s_desc.'...';
         </div>
         <div class="col m12">
           <div class="school_desc">
+            <h2 class="sch_det_title">Description
+
             <h2 class="sch_det_title">Description/Background : <span class="sch_det_retrived_data" ><?php echo $row['school_desc']?></span>
+
             </h2>
             <!-- <p class="sch_desc">
               <?php// echo $row['school_desc']?>
@@ -266,7 +269,7 @@ $str=str_replace("," , "<br>",$str);
         </div>
           <?php }} ?>
         <div class="coment_box row">
-          <div class="col m12">
+          <div class="col m12">  
             <h2>Add New Comment
             </h2>
           </div>
@@ -296,7 +299,7 @@ $str=str_replace("," , "<br>",$str);
           <?php 
 } else{?>
           <form id="comment_form" method="post" action="<?= base_url() ?>schooldetails/add_sch_comment/<?= $ques->school_id ?> " >
-            <div class="input-field col s12">
+            <div class=" form-group input-field col s12">
               <label for="comment_name">Name:
               </label> 
               <input class="form-control" type="text"  name="comment_name" id='name' value="<?php echo $sname ?>" readonly />
@@ -305,7 +308,7 @@ $str=str_replace("," , "<br>",$str);
               <label for="comment">
                 <!-- <i class='material-icons prefix'>mode_edit</i> -->Comment :
               </label> 
-              <textarea class="form-control" name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'>
+              <textarea class name="comment_body" value="<?php set_value("comment_body"); ?>" id='comment'>
               </textarea>
             </div>
             <input type='hidden' name='sparent_id' value="0" id='parent_id' />
@@ -356,6 +359,9 @@ $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse w
   </div>
   </div> 
 </div>
+
+
+
 <!-- </div> -->
 <?php $this->load->view('footer'); ?>
 <script type="text/javascript" src="<?php echo base_url() .'js/newsdetails.js' ?>">
@@ -505,3 +511,39 @@ window.open( url, "myWindow", "status = 1, height = 500, width = 360, resizable 
 }
     
 </script>
+
+<script>
+$(document).ready(function() {
+
+    $('#comment_form').bootstrapValidator({
+        /*feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },*/
+        fields: {
+            comment_name: {
+                validators:{
+                    notEmpty:{
+                        message:'name required'
+                    }
+                   /* regexp:{
+                              regexp: /^[a-z\s]+$/i,
+                                message: 'The  name can consist of alphabetical characters and spaces only'
+                    }*/
+                }
+            },
+              comment_body: {
+                validators: {
+                    notEmpty: {
+                        message: ' please enter comment!!!..'
+                    }
+                }
+            },
+              
+
+        }
+    });
+});
+
+                     </script>

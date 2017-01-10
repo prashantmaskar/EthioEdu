@@ -119,6 +119,29 @@ nav .brand-logo {
     vertical-align: middle;
     width: 28px;
 }
+.school-logo{
+     max-width: 100%;
+    vertical-align: middle;
+    width: 106px; height: 106px;
+
+
+}
+.school-featured{
+     max-width: 100%;
+    vertical-align: middle;
+    width: 106px; 
+    height: 150px;
+
+
+}
+.school-dtls-img{
+     max-width: 100%;
+    vertical-align: middle;
+    width: 300px; 
+    height: 300px;
+
+
+}
 
 .std_thumb img.circle.responsive-img.valign.profile-image {
     height: 50px;
@@ -452,14 +475,14 @@ page-heading-wrap page-heading
     margin: 10px 0px;
 }
 .QuesAns_details .page-heading-wrap .page-heading{
-	 font-size: 24px;
+     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
 .tips_details .page-heading-wrap .page-heading,.Privacy_Policy_details .page-heading-wrap .page-heading,.advertise_details .page-heading-wrap .page-heading{
-	 font-size: 24px;
+     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
     border-bottom: 2px solid red;
@@ -472,7 +495,7 @@ page-heading-wrap page-heading
 }
 .QuesAns_details .page-heading-wrap .page-heading span
 {
-	 float:right;
+     float:right;
     font-size: 12px;
     margin-top: -12px;
 }
@@ -564,8 +587,8 @@ page-heading-wrap page-heading
 }
 .news_sort_form,.QuesAns_sort_form,.project_sort_form,.event_sort_form {
     border-bottom:  1px solid red;
-	
-	
+    
+    
 }
 .project_sort_form{
     border-top:  1px solid red;
@@ -573,7 +596,7 @@ page-heading-wrap page-heading
 }
 .message.flash  p{
     color: #2bbbad;
-	font-size: 18px;
+    font-size: 18px;
 }
 .message-data {
     margin-top: 50px;
@@ -588,19 +611,19 @@ button.btn.success-close{
     position: absolute;
     height: 200px;
     z-index: 2;    
-	top: 50%;
+    top: 50%;
     left: 40%;
     -webkit-box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.75);
     right: auto;
-	text-align:center;
+    text-align:center;
 }
 
 
 .QuesAns_sort_form {
  border-top: 1px solid red;
-	
+    
 }
 .news_sort_form ,.project_sort_form p{
     margin-top: 20px;
@@ -1351,3 +1374,6 @@ label.star:before {
     border-radius: 10px;
 }
    
+    max-width: 100%;
+    vertical-align: middle;
+    width: 28px;

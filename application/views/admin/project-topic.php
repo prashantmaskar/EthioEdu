@@ -128,7 +128,8 @@
                                                     <div class="col s12 m12 l12">
                                                         <table class="bordered display" id="table_id">
                                                             <thead>
-                                                                <tr>
+                                                                <tr> 
+                                                                    <th data-field="srno">Sr.No.</th>
                                                                     <th data-field="id">Project Name</th>
                                                                     <th data-field="name">Course Name</th>
                                                                     <th data-field="price">Year</th>
@@ -137,10 +138,11 @@
                                                             </thead>
                                                             <tbody>
                                                             <?php
+                                                            $s_no = 1;
                                                         foreach ($project_topics as $row){ 
                                              $topic_id = $row['project_id'];
                                                             ?>
-                                                                <tr>
+                                                                <tr><td><?php echo $s_no++?></td>
                                                                     <td><?php echo $row['project_title']; ?></td>
                                                                     <td><?php echo $row['project_course']; ?></td>
                                                                     <td><?php echo $row['project_year']; ?></td>
