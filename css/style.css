@@ -1377,6 +1377,4 @@ label.star:before {
     border-radius: 10px;
 }
    
-    max-width: 100%;
-    vertical-align: middle;
-    width: 28px;
+        .ul_home_user{overflow-x: hidden;}

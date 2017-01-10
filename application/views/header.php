@@ -80,7 +80,7 @@ document.getElementById('fb-root').appendChild(e);
      $query4= $this->db->query("select count(*) as row_count from tbl_school_meta where user_id='".$sessid."'");
 
   ?>   
- <ul id='dropdownl' class='dropdown-content'>
+ <ul id='dropdownl' class='dropdown-content ul_home_user'>
  <li><a href="<?php echo base_url() . 'index.php/edituser' ?>">Edit Profile</a></li>
  <li class="divider"></li>
  <!-- <li><a href="<?php //echo base_url() . 'index.php/edituserschool?id=7'?>">Edit School()</a></li> -->
