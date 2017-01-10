@@ -62,7 +62,7 @@ body {
       <!--  <?php //foreach($news as $row){?> -->
       <div class="course_info">
         <span class="p-h">
-         <p class="lead black-text"><h1 class = "page-heading">Question:<?php echo $ques->post_title ?></h1></p>
+         <p class="lead black-text"><h1 class = "page-heading">Gist:<?php echo $ques->post_title ?></h1></p>
          </span>
         </div>
         <!-- <p><img src="<?php //echo base_url(); ?>global/uploads/<?= $news//->ne_img ?>"/>

@@ -16,9 +16,7 @@ background: linear-gradient(to left, #e43a15 , #e65245); /* W3C, IE 10+/ Edge, F
     font-size: 40px;
 
 }
-.news_subheading .event_subheading{
-     font-weight: 300;
-}
+
 p{
     margin: 0px;
     color: #000;
@@ -695,16 +693,6 @@ a.post-share.stumble span {
     border-bottom: 2px solid red;
     margin: 10px 0px;
 }
-.event_info .page-heading,.news_info .page-heading {
-    font-size: 24px;
-    font-weight: bold;
-    color: #57ade6;
-    border-top: 2px solid #ee6e73;;
-    border-bottom: 2px solid #ee6e73;;
-    margin: 10px 0px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
 .comment_info .page-heading{
     font-size: 24px;
     font-weight: bold;
@@ -810,7 +798,7 @@ font-size: 14px;
     margin: 10px;
 }
 .sch_det_title{
-    font-size: 20px;
+    font-size: 24px;
     padding-bottom: 5px;
     border-bottom: 1px dashed red;
 }
@@ -913,7 +901,7 @@ padding: 20px;
 }
 
 .news_details .news_heading h1, .event_details .event_heading h1{
-    font-size: 26px;
+    font-size: 36px;
 }
 
 
@@ -960,7 +948,7 @@ padding: 20px;
     font-size: 24px;
     font-weight: bold;
     color: #57ade6;
-    border-bottom: 2px solid red;
+   /* border-bottom: 2px solid red;*/
     margin: 10px 0px;
 }
 .b_date{
@@ -1082,7 +1070,7 @@ connect2Me List and Form Csss
     width: 80%;
     margin: 30px auto;
 }
-#connectme .form-error, #userform .form-error, #schooldetails .form-error, #askque .form-error,#post{
+#connectme .form-error, #userform .form-error, #schooldetails .form-error, #askque .form-error,#postvacancyform .form-error,#comment_form .form-error{
     color: #D8000C;
 }
 .form_heading{
@@ -1334,6 +1322,7 @@ label.star:before {
 .tooltip:hover .tooltiptext {
     visibility: visible !important;
 }
+<<<<<<< HEAD
     .ddl{background-color:rgba(0, 0, 0, 0); color: #9e9e9e; border-bottom-style: groove;} 
 .sch_det_retrived_data
 {
@@ -1350,4 +1339,4 @@ label.star:before {
 .roundElement   {
     border-radius: 10px;
 }
-   
+

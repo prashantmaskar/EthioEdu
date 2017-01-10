@@ -198,7 +198,7 @@
 
 
            $(document).ready(function() {
-
+     $("#phone_number").val("+251 ");
     $('#csregister').bootstrapValidator({
         /*feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -237,7 +237,7 @@
                     notEmpty: {
                         message: 'contact required!!!..'
                     },
-                    digits:{
+                   /* digits:{
                          message:'contact number is invalid'
 
                     },
@@ -247,6 +247,12 @@
                         message: 'contact number must contains 10 digits'
                     }
 
+                }
+            },*/
+            regexp:{
+                     regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
+                           message:'invalid Phone number,!! Number should have 9 digit after country code!!'
+                      ,   }
                 }
             },
                email:{
