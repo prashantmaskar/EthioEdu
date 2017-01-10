@@ -81,7 +81,7 @@
                             </form>
                         </div>
                     </div>
-
+                   
                     <div class="school_search_result">
                         <div class="row">
                             <div class="col m12">
@@ -111,7 +111,7 @@
                                                         <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row->user_email;?></p>
                                                         <p><i class=" red-text fa fa-phone"></i> <?php echo $row->school_number;?></p>
                                                         <p><?php echo $row->school_desc;?></p>
-                                                        <a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>">View More >></a>
+                                                        <a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"> View More >>></a>
                                                    <!--      href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" -->
                                                     </div>
                                                 </div>

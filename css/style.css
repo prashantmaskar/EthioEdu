@@ -1347,5 +1347,7 @@ label.star:before {
       /*   padding-bottom:150px; margin-bottom:-150px;*/
          
     }
-
+.roundElement   {
+    border-radius: 10px;
+}
    
