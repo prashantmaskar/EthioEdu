@@ -66,11 +66,10 @@ $edesc = $s_desc.'...';
         </div>
         <div class="col m12">
           <div class="school_desc">
-<<<<<<< HEAD
             <h2 class="sch_det_title">Description
-=======
+
             <h2 class="sch_det_title">Description/Background : <span class="sch_det_retrived_data" ><?php echo $row['school_desc']?></span>
->>>>>>> 1514ea122a467da5754527920cf6afe46db979a1
+
             </h2>
             <!-- <p class="sch_desc">
               <?php// echo $row['school_desc']?>
@@ -270,7 +269,7 @@ $str=str_replace("," , "<br>",$str);
         </div>
           <?php }} ?>
         <div class="coment_box row">
-          <div class="col m12">
+          <div class="col m12">  
             <h2>Add New Comment
             </h2>
           </div>
