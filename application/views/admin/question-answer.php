@@ -97,6 +97,7 @@
                                                         <table class="bordered display" id="table_id">
                                                             <thead>
                                                                 <tr>
+                                                                    <th data-field="srno">Sr.No.</th>
                                                                     <th data-field="id">Question Type</th>
                                                                     <th data-field="name">Subject/Course Category</th>
                                                                     <th data-field="price">Question</th>
@@ -105,10 +106,12 @@
                                                             </thead>
                                                             <tbody>
                                                             <?php
+                                                            $sr_no = 1;
                                                         foreach ($question as $row){ 
                                                                 $question_id = $row['question_id'];
                                                             ?>
                                                                 <tr>
+                                                                    <td><?php echo $sr_no++?></td>
                                                                 <td><?php echo $row['question_type']; ?></td>
                                                             <td><?php echo $row['question_category']; ?></td>
                                                             

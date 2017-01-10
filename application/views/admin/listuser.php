@@ -32,6 +32,7 @@
                                         <table class="bordered display" id="table_id">
                                             <thead>
                                                 <tr>
+                                                    <th data-field="srno">Sr.No.</th>
                                                     <th data-field="id">User Name</th>
                                                     <th data-field="name">First Name</th>
                                                     <th data-field="price">Last Name</th>
@@ -41,10 +42,12 @@
                                             </thead>
                                             <tbody>
                                             <?php
+                                            $serial_no =1;
                                            foreach ($user as $row){
                                              $user_id = $row['user_id'];
                                             ?>
                                                 <tr>
+                                                    <td><?php echo $serial_no++ ?></td>
                                                     <td><?php echo $row['username']; ?></td>
                                                     <td><?php echo $row['first_name']; ?></td>
                                                     <td><?php echo $row['last_name']; ?></td>
