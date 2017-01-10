@@ -51,7 +51,7 @@
                                         <div class="card-panel">
                                             <h4 class="header2">BASIC FORM</h4>
                                             <div class="row">
-                                                 <form id="homeaddschoolform" action="<?php echo site_url('index.php/addschool')?>" method="post" enctype="multipart/form-data">
+                                                 <form id="homeaddschoolform" action="<?php echo site_url('index.php/Addschool')?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group input-field col s12">
                                                         <select class="form-control browser-default" name="choice">
 

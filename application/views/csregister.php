@@ -47,7 +47,7 @@
                                         <label for="Caption"> Last Name</label>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="gender">
+                                                        <select class="form-control browser-default ddl" name="gender">
 
                                                             <option value="">Gender</option>
                                                              <option value="Male">Male</option>
@@ -82,7 +82,7 @@
                                         <label for="date">Date of birth</label>
                                     </div>
                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="status">
+                                                        <select class="form-control browser-default ddl" name="status">
 
                                                             <option value="">Currently</option>
                                                              <option value="single">single</option>
@@ -94,7 +94,7 @@
                                                         </select>
                                     </div>
                                      <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="interestedIn">
+                                                        <select class="form-control browser-default ddl" name="interestedIn">
 
                                                             <option value="">Interested In</option>
                                                              <option value="clubbing this weekend">clubbing this weekend</option>

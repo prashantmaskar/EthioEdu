@@ -9,8 +9,8 @@ body{
 
 background: #e43a15; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #e43a15 , #e65245); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #e43a15 , #e65245); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+background: linear-gradient(to left, #ee6e73 , #ff6666); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     
 }
 .head_font{
     font-size: 40px;
@@ -38,6 +38,7 @@ a:hover{
 .navbar-fix ul li a:hover{
     color: red;  
 }
+.user-opt-list
 .navbar-fix ul li .active{
     color: red;  
 }
@@ -110,6 +111,7 @@ nav .brand-logo {
     padding: 0px 5px;
     color: #fff;
     font-size: 12px;
+        font-weight: 500;
 
 }
 
@@ -190,6 +192,7 @@ nav .brand-logo {
 
 .dropdown-menu{
     width: 200px !important;
+    margin-top: 50px;
 }
 .dropdown-menu  li a{
     color: red !important;

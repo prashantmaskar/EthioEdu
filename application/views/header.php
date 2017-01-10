@@ -109,7 +109,7 @@ document.getElementById('fb-root').appendChild(e);
 
             <div class="row">
                 <div class="col s3 ">
-                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar roundElement" src="<?php echo base_url() . 'images/logo.png' ?>" ></a>
+                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar roundElement" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a>
                 </div>
                 <div class="col s9 ">
                     <div class="upper_slider">

@@ -28,7 +28,7 @@
                                     <h4 class="red-text">Community Information</h4>
 
                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="schooltype">
+                                                        <select class="form-control browser-default ddl" name="schooltype">
 
                                                             <option value="">select your school type</option>
                                                              <option value="University">University</option>
@@ -36,8 +36,8 @@
                                                              <option value="college of education">college of education</option>
                                                         </select>
                                     </div>
-                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="school">
+                                     <div class="form-group input-field col s12 ">
+                                                        <select class="form-control browser-default ddl" name="school">
 
                                                             <option value="">select your school</option>
                                                              <option value="anything">anything</option>
@@ -45,8 +45,8 @@
                                                              <option value="friendship">friendship</option>
                                                         </select>
                                     </div>
-                                     <div class="form-group input-field col s12">
-                                                        <select class="form-control browser-default" name="level">
+                                     <div class="form-group input-field col s12 ">
+                                                        <select class="form-control browser-default ddl" name="level">
 
                                                             <option value="">select level</option>
                                                              <option value="aspirant">aspirant</option>
