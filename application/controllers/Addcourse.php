@@ -56,6 +56,8 @@ class Addcourse extends CI_Controller {
 
 
      function insertdata(){
+        $details= $this->input->post('details');
+        $det=trim( $details);
         $duration = $this->input->post('duration');
         $cduration = $this->input->post('c_duration');
         if($duration == 'year'){
@@ -79,7 +81,7 @@ $fduration = $cduration*30;
                 'course_duration' => $fduration,
                 'course_school' => $this->input->post('addschool'),
                 'course_university' => $this->input->post('adduniversity'),
-                'course_desc' => $this->input->post('details'),
+                'course_desc' => $det,
                 'course_date' => $date,
                 'course_time' => $time,
                  'course_approve' => $this->input->post('approve_status'),

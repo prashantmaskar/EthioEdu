@@ -47,7 +47,7 @@
                     }*/
                      regexp:{
                      regexp:/^\+251?([- ]{1})?([0-9]{9})$/,
-                           message:'invalid Phone number,!! Number should have 9 digit after country code!!'
+                           message:'invalid Phone number,!! Number should have 9 digit after country code +251!!'
                       ,   }
                 }
             },

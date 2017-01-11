@@ -81,11 +81,16 @@ class Addgist extends CI_Controller {
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
                         $sessid= $this->session->userdata('suserid');
+                        
+                        //trim
+                        $desc= $this->input->post('Description');
+                        $gist_desc=trim($desc);
+
                      
                         $data=array(
 
                         'post_title' => $this->input->post('caption'),
-                        'post_desc'  => $this->input->post('Description'),
+                        'post_desc'  =>$gist_desc,
                         'post_category'=>$this->input->post('catagory'),
                         'post_attachment' => $filedata['file_name'],
                         'post_author'=>  $this->input->post('author'),

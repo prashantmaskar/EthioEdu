@@ -80,7 +80,8 @@ class Reportgist extends CI_Controller {
 
                       }
                         
-
+                        $report_gist=$this->input->post('Description');
+                        $rep_g=trim( $report_gist);
                         $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -88,7 +89,7 @@ class Reportgist extends CI_Controller {
                      
                         $data=array(
                         'post_title' => $this->input->post('caption'),
-                        'post_desc'  => $this->input->post('Description'),
+                        'post_desc'  =>$rep_g,
                         'post_category'=>$this->input->post('catagory'),
                         'post_attachment' => $filedata['file_name'],
                         'post_author'=>  $this->input->post('auther'),

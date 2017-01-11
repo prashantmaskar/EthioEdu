@@ -61,6 +61,7 @@ class Post_vacancy extends CI_Controller {
 
     }
 
+
     function insertdata(){
         $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
@@ -72,6 +73,9 @@ class Post_vacancy extends CI_Controller {
         $totimedate1 = strtotime($formdate1);
         $f1date = date("Y-m-d", $totimedate1);
         $sessid= $this->session->userdata('suserid');
+        //trim description
+        $vac_desc=$this->input->post('vdesc');
+        $desc=trim($vac_desc);
         $data = array(
                 'vacancy_name' => $this->input->post('title'),
                 'vacancy_school_name' => $this->input->post('sname'),
@@ -80,7 +84,7 @@ class Post_vacancy extends CI_Controller {
                 'vacancy_to_date' => $f1date,
                 'vacancy_date' => $date,
                 'vacancy_time' => $time,
-                 'vacancy_desc' => $this->input->post('vdesc'),
+                 'vacancy_desc' =>$desc,
                  'vacancy_approve' => $this->input->post('approve_status'),
                 'user_id' => $sessid
 

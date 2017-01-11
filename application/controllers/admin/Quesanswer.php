@@ -50,6 +50,8 @@ class Quesanswer extends CI_Controller {
 		}
 	}
 	function insertquestion(){
+		$que_desc=$this->input->post('question');
+		$q_desc=trim($que_desc);
 		$date = date('Y-m-d');
 		date_default_timezone_set('Asia/Kolkata');
 		$time = date('h:i:s A', time());
@@ -57,7 +59,7 @@ class Quesanswer extends CI_Controller {
 		$data=array(
 			'question_type' =>$this->input->post('quetype'),
 			'question_category' =>$this->input->post('subcat'),
-			'question_desc' =>$this->input->post('question'),
+			'question_desc' =>$q_desc,
 			'question_date' => $date,
 			'question_time' => $time,
 			 'question_approve'=>$this->input->post('approve_status'),

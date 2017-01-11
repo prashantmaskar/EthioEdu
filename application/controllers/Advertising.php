@@ -104,7 +104,8 @@ $sessid= $this->session->userdata('suserid');
                     $time = date('h:i:s A', time());
                             $sessid= $this->session->userdata('suserid');
 
-
+                    $adv_desc=$this->input->post('message');
+                    $msg=trim($adv_desc);
 
                   
                         $data=array(
@@ -115,7 +116,7 @@ $sessid= $this->session->userdata('suserid');
                  'advertise_position'=>  $this->input->post('addposition'),
                 'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
-                 'advertise_desc'=>  $this->input->post('message'),
+                 'advertise_desc'=>$msg,
                  'advertise_date' => $date,
                  'advertise_time' => $time,
                  'user_id'=> $sessid

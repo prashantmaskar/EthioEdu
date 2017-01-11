@@ -61,6 +61,9 @@ class Addcourse extends CI_Controller {
         {
          $fduration = $cduration;
         }
+        $details=$this->input->post('details');
+        $c_details=trim($details);
+
         $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
@@ -72,7 +75,7 @@ class Addcourse extends CI_Controller {
                 'course_duration' => $fduration,
                 'course_school' => $this->input->post('addschool'),
                 'course_university' => $this->input->post('adduniversity'),
-                'course_desc' => $this->input->post('details'),
+                'course_desc' =>$c_details,
                 'course_approve' => $this->input->post('approve_status'),
                 'course_date' => $date,
                 'course_time' => $time,

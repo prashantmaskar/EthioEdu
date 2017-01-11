@@ -43,7 +43,7 @@ class Coursedetails extends CI_Controller {
             $courseid=explode('$',$_GET['id']);
             /*var_dump($courseid);
             exit();*/
-            $this->session->set_userdata('course_id', $courseid[1]);
+            $this->session->set_userdata('course_id', $courseid[0]);
             
         }
 

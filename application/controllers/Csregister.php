@@ -127,6 +127,15 @@ if(isset($_POST['laction'])){
                             'file_name' => 'default-avatar.png',
                             );
                       }
+               //trim 
+                      $abt_me=$this->input->post('aboutme');
+                      $about_me=trim($abt_me);
+
+                      $interest= $this->input->post('myinterest');
+                      $int_in=trim($interest);
+
+                      $hobby= $this->input->post('myhobby');
+                      $my_hobby=trim($hobby);
 
 
                 $formdata =  date('d F, Y');
@@ -156,9 +165,9 @@ if(isset($_POST['laction'])){
                 'user_avatar' => $filedata['file_name'],
                 'marital_status' => $this->input->post('status'),
                 'interested_in' => $this->input->post('interestedIn'),
-                'about_user' => $this->input->post('aboutme'),
-                'user_interest' => $this->input->post('myinterest'),
-                'user_hobby' => $this->input->post('myhobby'),
+                'about_user' => $about_me,
+                'user_interest' => $int_in,
+                'user_hobby' =>$my_hobby,
                 'user_date' => $date,
                 'user_time' => $time,
                 'user_id' => $getid['uid']

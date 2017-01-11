@@ -46,11 +46,16 @@ class Contact extends CI_Controller {
         }
     }
     function insertcontact(){
+              
+              $contact_desc=$this->input->post('description');
+              $c_desc=trim($contact_desc);
+
+
         $data=array(
             'contact_person_name' =>$this->input->post('full_name'),
             'contact_person_email' =>$this->input->post('email'),
             'contact_number' =>$this->input->post('phone_number'),
-            'contact_desc' =>$this->input->post('description'),
+            'contact_desc' =>$c_desc,
              
             );
         if ($this->Init_models->insert_contact($data))

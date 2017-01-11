@@ -123,6 +123,15 @@ else{
         $time = date('h:i:s A', time());
 
          $sessid= $this->session->userdata('suserid');
+         //trim
+         $adm_proc=$this->input->post('Admissios_pro');
+         $admiss_pro=trim($adm_proc);
+
+         $adm_req=$this->input->post('Description');
+         $admiss_req=trim($adm_req);
+
+          $tell=$this->input->post('tell_us');
+          $t_us=trim($tell);
     
 
    // $getid = $this->get_user_id();
@@ -145,8 +154,8 @@ else{
                 'school_awards' => $this->input->post('past_award'),
                 'school_acadamic_year' => $this->input->post('year'),
                 'school_acadamic_fee' => $this->input->post('fee'),
-                'admission_procedure' => $this->input->post('Admissios_pro'),
-                'acadamic_requirment' => $this->input->post('Description'),
+                'admission_procedure' =>$admiss_pro,
+                'acadamic_requirment' =>$admiss_req,
                  'Program_tokenfield' => $this->input->post('Programoffered'),
                   'school_facility' => $this->input->post('tokenfield'),
                 'school_date' => $date,
@@ -154,7 +163,7 @@ else{
                 'school_scholarship' => $this->input->post('scolership'),
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
-                'school_desc' => $this->input->post('tell_us'),
+                'school_desc' =>$t_us,
                 'school_approve'=>$this->input->post('approve_status'),
                 'user_id' => $sessid
 

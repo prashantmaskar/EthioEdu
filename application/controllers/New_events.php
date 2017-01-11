@@ -75,6 +75,8 @@ class New_events extends CI_Controller {
                             'file_name' => 'default-event.jpg',
                             );
                       }
+                      $event_desc=$this->input->post('Description');
+                      $desc=trim($event_desc);
                       $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -82,7 +84,7 @@ class New_events extends CI_Controller {
                      
                         $data=array(
                         'post_title' => $this->input->post('event_title'),
-                        'post_desc'  => $this->input->post('Description'),
+                        'post_desc'  => $desc,
                         'post_category'=>'',
                         'post_attachment' => $filedata['file_name'],
                         'post_author'=>  $this->input->post('postedby'),

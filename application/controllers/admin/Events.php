@@ -84,6 +84,9 @@ class Events extends CI_Controller {
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
                         $sessid= $this->session->userdata('suserid');
+
+                
+
                      
                         $data=array(
                     'post_title' => $this->input->post('event_tital'),

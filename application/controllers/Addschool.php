@@ -175,6 +175,19 @@ function insertschooldata(){
         $date = date('Y-m-d');
         date_default_timezone_set('Asia/Kolkata');
         $time = date('h:i:s A', time());
+        //trim for adm_procedure
+        $adm_procedure=$this->input->post('Admissios_pro');
+        $adm_procd=trim($adm_procedure);
+                 
+        //trim for description
+        $adm_desciption=$this->input->post('Description');
+        $adm_desc=trim($adm_desciption);
+
+        //trim for tell me about urself
+        $tell= $this->input->post('tell_us');
+        $tell_me=trim($tell);
+
+
      $data = array( 
                 'registration_type' => $this->input->post('choice'),
                 'school_name' => $this->input->post('schoolname'),
@@ -196,14 +209,14 @@ function insertschooldata(){
                 'school_awards' => $this->input->post('past_award'),
                 'school_acadamic_year' => $this->input->post('year'),
                 'school_acadamic_fee' => $this->input->post('fee'),
-                'admission_procedure' => $this->input->post('Admissios_pro'),
-                'acadamic_requirment' => $this->input->post('Description'),
+                'admission_procedure' =>$adm_procd,
+                'acadamic_requirment' =>$adm_desc,
                 'school_date' => $date,
                 'school_time' => $time,
                 'school_scholarship' => $this->input->post('scolership'),
                 'school_address' => $this->input->post('address'),
                 'school_url' => $this->input->post('website'),
-                'school_desc' => $this->input->post('tell_us'),
+                'school_desc' => $tell_me,
                   'school_approve' => $this->input->post('approve_status'),
                   'user_id' => $getid['uid'],
                       
