@@ -57,7 +57,7 @@
                         </div>
                         <div class="news_detal_content">
                             <p class="black-text"></p>
-                           <?php echo $row['post_desc']; ?>
+                           <blockquote><?php echo $row['post_desc']; ?></blockquote>
                         </div>
            <div class="comment_box row">
                             <div class="col m12">
