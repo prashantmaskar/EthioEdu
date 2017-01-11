@@ -1378,3 +1378,15 @@ label.star:before {
 }
    
         .ul_home_user{overflow-x: hidden;}
+
+
+/*.top-nav li ul { 
+    position: absolute;
+    background: #ccc;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    display: none; }
+   .top-nav li:hover ul { display: block; }
+    .top-nav li ul a:hover { display: block; }
+*/
