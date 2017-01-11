@@ -56,8 +56,10 @@ class Privacy_policy extends CI_Controller {
     public function add()
        {
             
-
-                
+                                        
+                        //trim
+                        $p_desc= $this->input->post('Description') ;   
+                        $privacy_desc=trim($p_desc);            
                          $date = date('Y-m-d');
                         date_default_timezone_set('Asia/Kolkata');
                         $time = date('h:i:s A', time());
@@ -65,7 +67,7 @@ class Privacy_policy extends CI_Controller {
                      
                         $data=array(
                 'post_title' => $this->input->post('caption'),
-                'post_desc'  => $this->input->post('Description'),
+                'post_desc'  =>$privacy_desc,
                
                'post_date' => $date,
                 'post_time' => $time,

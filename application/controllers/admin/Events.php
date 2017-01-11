@@ -86,11 +86,12 @@ class Events extends CI_Controller {
                         $sessid= $this->session->userdata('suserid');
 
                 
-
+                           $e_desc=$this->input->post('Description');
+                           $event_desc=trim($e_desc);
                      
                         $data=array(
                     'post_title' => $this->input->post('event_tital'),
-                    'post_desc'  => $this->input->post('Description'),
+                    'post_desc'  =>$event_desc,
                     'post_category'=>'',
                     'post_attachment' => $filedata['file_name'],
                     'post_author'=>  $this->input->post('eventby'), 

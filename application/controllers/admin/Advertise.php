@@ -84,6 +84,10 @@ class Advertise extends CI_Controller {
         $time = date('h:i:s A', time());
                             $sessid= $this->session->userdata('suserid');
 
+                            $msg=$this->input->post('message');
+                            $adv_msg=trim($msg);
+
+
 
 
                   
@@ -95,7 +99,7 @@ class Advertise extends CI_Controller {
                  'advertise_position'=>  $this->input->post('addposition'),
                 'advertise_subject' => $this->input->post('subject'),
                   'advertise_attachment' => $filedata['file_name'],
-                 'advertise_desc'=>  $this->input->post('message'),
+                 'advertise_desc'=>$adv_msg,
                  'advertise_date' =>$date,
                  'advertise_time' =>$time,
                  'user_id'=> $sessid
