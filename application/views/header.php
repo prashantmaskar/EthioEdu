@@ -110,10 +110,10 @@ document.getElementById('fb-root').appendChild(e);
         <div class="header-top1 grey darken-4 ">
 
             <div class="row">
-                <div class="col s3 ">
-                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar roundElement" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a>
+                <div class="col m3 hide-on-small-only ">
+                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar roundElement responsive-img" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a>
                 </div>
-                <div class="col s9 ">
+                <div class="col m9 s12 ">
                     <div class="upper_slider">
                          <?php foreach ($banners as $key => $value) {
                                 if($value['advertise_position']=='Top')
