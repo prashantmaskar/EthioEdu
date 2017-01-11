@@ -101,6 +101,8 @@ document.getElementById('fb-root').appendChild(e);
                             
                             <?php } ?>
                     </ul>
+                    </li>
+                    </ul>
 
                 </div>
             </div>
