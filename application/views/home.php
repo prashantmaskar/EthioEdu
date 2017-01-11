@@ -1,8 +1,8 @@
 <?php  $this->load->view('header'); ?>
         <div class="service-wrap ">
             <div class="row">
-                <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                <div class="col s12 m2  grid-example">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <?php foreach ($banners as $key => $value) {
                             if($value['advertise_position']=='Left')
@@ -12,7 +12,7 @@
 
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only ">
                         <a href="#"> 
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>"> 
                         </a>
@@ -71,7 +71,9 @@
 
                                 </div>
                             </div>
-                            <div class="col sm12 m4 z-pad z-depth-1"><h5>
+                            <div class="col sm12 m4 z-pad z-depth-1">
+                               <div class="row">
+                                <h5>
                                     Search For School
                                 </h5>
                                 <ul><?php
@@ -88,8 +90,13 @@
                                    <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/schools'?>">READ MORE</a>
                                     </li>
 
-                                </ul></div>
-                            <div class="col sm12 m4  z-depth-1"><h5>
+                                </ul>
+                                </div>
+                            </div>
+                            <div class="col sm12 m4 z-pad z-depth-1">
+                                  <div class="row">
+                                <h5>
+
                                   Latest Project Topics
                                 </h5>
                                 <ul><?php 
@@ -105,7 +112,9 @@
                                     <li class=" center-align"><a class=" center-align waves-effect waves-light btn red darken-2" href="<?php echo base_url().'/index.php/Projectlist'?>">READ MORE</a>
                                     </li>
                                         
-                                </ul></div>
+                                </ul>
+                                   </div>
+                            </div>
 
                         </div>
 
@@ -158,7 +167,7 @@
 
 
                                 </ul></div>
-                            <div class="col sm12 m4  z-depth-1"><h5>
+                            <div class="col sm12 m4 z-pad z-depth-1"><h5>
                                    questions and answers
                                 </h5>
                                 <ul><?php 
@@ -199,7 +208,7 @@
                     </div>
                 </div>
                 <div class="col s12 m2 ">
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                             <?php foreach ($banners as $key => $value) {
                             if($value['advertise_position']=='Right')
@@ -208,7 +217,7 @@
                             <!-- <img src="<?php //echo base_url().'images/slider/Banner-Vertical.jpg' ?>"> -->
                         </a>
                     </div>
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url().'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
