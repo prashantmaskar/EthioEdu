@@ -5,7 +5,7 @@
 
 
                 </div>
-                <div class="col l2 s12">
+                <div class="col l2 s6">
                     <h5 class="red-text">Navigation</h5>
                     <ul>
                         <li><a class="white-text" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
@@ -21,7 +21,7 @@
                     </ul>
 
                 </div>
-                <div class="col l3 s12">
+                <div class="col l3 s6">
                     <h5 class="red-text">Get In Touch</h5>
                     <ul class="white-text">
                         <li>2144 - 007 - 1566</li>

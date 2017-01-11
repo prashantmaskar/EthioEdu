@@ -2,12 +2,12 @@
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -17,7 +17,7 @@
                     <div class="event_details col m12 z-depth-1">
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">Upcoming Events In Schools<span class="Event-button"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">Post A New Event</a></span></h1>
+                                <h1 class="page-heading">Upcoming Events In Schools<div class="col s12"><span class="Event-button"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">Post A New Event</a></span></div></h1>
                             </div>
                         </div>
                           <div class="col m12 s12">
@@ -101,12 +101,12 @@
                     </div>
             
                 <div class="col s12 m2 ">
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg'?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                            <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg'?>">
                         </a>

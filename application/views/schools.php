@@ -2,12 +2,12 @@
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -36,8 +36,9 @@
                                      ?>
                                      <li class="catrgory_list_item"><a href="<?php echo base_url(); ?>index.php/schools/search?category=<?php echo $c_id; ?>"><?php echo $row['category_name']; ?>
                                         <?php } ?>
-                                        </ul>
-                                <p><span class="News-button"><a class="waves-effect waves-light btn" href="<?php echo base_url() . 'index.php/addschool' ?>">Add School</a></span></p>
+                                      </ul>
+                                       <div class="col s12"> 
+                                <p><span class="News-button"><a class="waves-effect waves-light btn" href="<?php echo base_url() . 'index.php/addschool' ?>">Add School</a></span></p></div >
                              </div>
                         
                         </div>
@@ -73,7 +74,7 @@
                                         </p>
                                     </div>
 
-                                    <div class="input-field col s2">
+                                    <div class="input-field col s2 offset-s8 m3">
                                         <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@
                                         <div class="col m3">
                                             <div class="row">
                                                 <div class="s_detail">
-                                                <div class="col m6 offset-m2">
+                                                <div class="col m6 offset-m2 s6">
                                                     <div class="s_logo">
                                                     <?php $img = $row->school_logo;  ?>
                                                         <img  class="school-logo" src="<?php echo base_url().'uploads/'.$img ?>" >
@@ -104,14 +105,14 @@
 
                                                 </div>
                 
-                                                <div class="col m12">
+                                                <div class="col m12 s12">
                                                     
                                                     <?php $sid = $row->school_id;?>
-                                                        <h1><?php echo $row->school_name;?></h1>
-                                                        <p>  <i class="red-text fa fa-envelope"></i> <?php echo $row->user_email;?></p>
-                                                        <p><i class=" red-text fa fa-phone"></i> <?php echo $row->school_number;?></p>
-                                                        <p><?php echo $row->school_desc;?></p>
-                                                        <a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"> View More >>></a>
+                                                        <div class="col s12 offset-s1"><h1><?php echo $row->school_name;?></h1></div>
+                                                        <div class="col s12 offset-s1"><p>  <i class="red-text fa fa-envelope"></i> <?php echo $row->user_email;?></p></div>
+                                                        <div class="col s12 offset-s1"><p><i class=" red-text fa fa-phone"></i> <?php echo $row->school_number;?></p></div>
+                                                        <div class="col s12 offset-s1"><p><?php echo $row->school_desc;?></p></div>
+                                                        <div class="col s12 offset-s1"><a href="<?php echo base_url()?>Schooldetails/show_one/<?= $sid   ?>"> View More >>></a></div>
                                                    <!--      href="<?= base_url() ?>ansQues/show_one/<?= $que_id   ?>" -->
                                                     </div>
                                                 </div>

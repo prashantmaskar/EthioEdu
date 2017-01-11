@@ -48,7 +48,7 @@
                     </div>
                     <div class="content_sec">
                         <div class="row">
-                            <div class="col sm12 m4 z-pad z-depth-1">
+                            <div class="col s12 m4 z-pad z-depth-1">
                                 <div class="news_container ">
                                     <h5>
                                         Latest News
@@ -71,7 +71,7 @@
 
                                 </div>
                             </div>
-                            <div class="col sm12 m4 z-pad z-depth-1">
+                            <div class="col s12 m4 z-pad z-depth-1">
                                <div class="row">
                                 <h5>
                                     Search For School
@@ -93,7 +93,7 @@
                                 </ul>
                                 </div>
                             </div>
-                            <div class="col sm12 m4 z-pad z-depth-1">
+                            <div class="col s12 m4 z-pad z-depth-1">
                                   <div class="row">
                                 <h5>
 
@@ -121,7 +121,7 @@
                     </div>
                     <div class="content_sec">
                         <div class="row">
-                            <div class="col sm12 m4 z-pad z-depth-1">
+                            <div class="col s12 m4 z-pad z-depth-1">
                                 <div class="event_container ">
                                     <h5>
                                         Coming Events
@@ -147,7 +147,7 @@
 
                                 </div>
                             </div>
-                            <div class="col sm12 m4 z-pad z-depth-1"><h5>
+                            <div class="col s12 m4 z-pad z-depth-1"><h5>
                                     List Of Vacancy/Tender
                                 </h5>
                                 <ul> <?php 
@@ -167,7 +167,7 @@
 
 
                                 </ul></div>
-                            <div class="col sm12 m4 z-pad z-depth-1"><h5>
+                            <div class="col s12 m4 z-pad z-depth-1"><h5>
                                    questions and answers
                                 </h5>
                                 <ul><?php 

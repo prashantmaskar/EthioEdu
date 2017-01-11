@@ -2,12 +2,12 @@
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -51,15 +51,15 @@
                                 <div class="col s2">
                                     <p class="black-text">Search Projects:</p>
                                 </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s5">
                                         <input list="projectnames" id="startdate" type="text" class=" validate" name="project_name" >
                                         <label for="Caption">Project Name</label>
                                     </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s5">
                                         <input list="coursenames" id="enddate" type="text" class=" validate" name="course_name">
                                         <label for="Caption">Course Name</label>
                                     </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s12 offset-s8">
                                          <button class="btn waves-effect waves-light" type="submit" name="action">search
                                             <i class="material-icons ">search</i>
                                         </button>
@@ -163,12 +163,12 @@
                 </div>
 
                <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>

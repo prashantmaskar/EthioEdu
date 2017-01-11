@@ -2,12 +2,12 @@
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -42,7 +42,7 @@
                                 <h1 class="page-heading">Course Category <span class="News-button"><a class="waves-effect waves-light btn" href="<?php echo base_url() . 'index.php/addcourse' ?>">Add Course</a></span></h1>
                             </div>
                         </div>
-                        <div class="col m12">
+                        <div class="col m12 s12">
                             <div class="school_category_box">
                                 <ul class="s_category_list">
                                 <?php foreach($cat as $row){
@@ -74,13 +74,13 @@
                                     <div class="page-heading-wrap col s12 m2">
                                         <h6 class="page-heading">Course Name:</h6>
                                     </div>
-                                    <div class="input-field col s12 m3">
+                                    <div class="input-field col s8 m3">
                                         <input id="Course_name" name="course_name" type="text" list="coursenames" class="validate">
                                         <label for="Course_name">Course Name</label>
                                     </div>
 
 
-                                    <div class="input-field col s2">
+                                    <div class="input-field col s2 offset-s1">
                                         <button class="waves-effect waves-light btn margin-t-15" type="submit" name="search">Search</button>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="course_search_result">
                         <div class="row">
-                            <div class="col m12">
+                            <div class="col m12 s12">
                                 <div class="collection">
                                     <h4>Course Name</h4>
                              
@@ -128,7 +128,7 @@
                                 <li class="waves-effect"><a href="#!">3</a></li>
                                 <li class="waves-effect"><a href="#!">4</a></li>
                                 <li class="waves-effect"><a href="#!">5</a></li>
-                                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li> --><?php echo $pagination?>
+                                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li> --><div class="col s12"><?php echo $pagination?></div>
                            
                   </div>
                             <div class="featured_schools col s12 m12">
