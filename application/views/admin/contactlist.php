@@ -37,14 +37,14 @@
                                                     <th data-field="name">phone Number</th>
                                                     <th data-field="price">Description</th>
                                                     <th data-field="price">EmailAdress</th>
-                                                    <!-- <th data-field="price">Action</th> -->
+                                                     <th data-field="price">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             <?php
                                             $serial_no =1;
                                            foreach ($user as $row){
-                                            // $user_id = $row['user_id'];
+                                             $contact_id = $row['contact_id'];
                                             ?>
                                                 <tr>
                                                     <td><?php echo $serial_no++ ?></td>
@@ -53,10 +53,10 @@
                                                       <td><?php echo $row['contact_desc']; ?></td>
                                                    <!--  <td><?php //echo $row['last_name']; ?></td> -->
                                                      <td><?php echo $row['contact_person_email']; ?></td>
-                                                    <!-- <td>
+                                                     <td>
                                                        
                                                         <a  href="javascript:void(0);" onclick="deleted(<?php 
-                                                        //echo $user_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td> -->
+                                                        echo $contact_id;?>);" class="btn-floating red delete-btn tooltip" ><i class="small mdi-action-highlight-remove"></i><span class="tooltiptext">Delete</span></a></td> 
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -70,18 +70,18 @@
             </div>
         </div>
        <?php  $this->load->view('admin/footer'); ?>
-       <!--<script>
+       <script>
 
             function deleted(id)
             {
-                var deleteuser_id = id;
+                var deletecintact_id = id;
             if (confirm('Sure to Delete ?'))
                     {
                         $.ajax({
                             context: this,
                             type: 'POST',
                             url: "approve_delete",
-                            data: {deleteuser_id},
+                            data: {deletecintact_id},
                             success: function(data) {
                                 console.log(data);
                                 location.reload();
@@ -91,4 +91,4 @@
                         });
                     }
                 }
- </script>-->
+ </script>
