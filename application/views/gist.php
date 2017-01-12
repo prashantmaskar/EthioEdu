@@ -10,15 +10,16 @@
 
 
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -27,8 +28,9 @@
                 <div class="col s12 m7 grid-example scrolltodiv">
                     <div class="news_details row z-depth-1">
                         <div class="col m12 s12">
+                           <div class="col s12 offset-s6 hide-on-med-and-up"> <a class="waves-effect waves-light btn "href="<?php echo site_url('index.php/reportgist')?>">Report Gist</a></div>
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">  Featured Gist from Student Bloggers<span class="News-button"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportgist')?>">Report Gist</a></span> </h1>
+                                <h1 class="page-heading">  Featured Gist from Student Bloggers<span class="News-button hide-on-small-only"><a class="waves-effect waves-light btn"href="<?php echo site_url('index.php/reportgist')?>">Report Gist</a></span> </h1>
                             </div>
                             <div class="gistbrdr_bottom">
                             <p class="black-text">Gist us about your day. Become an Eye Withness, Report your School, Riots, Queues, SUG, Stress, Roads, Groove, Parties, Events, Student Celebrities, Lectures, Tests, Exams, Hook-ups, break-ups, Outings... Anything.</p>
@@ -44,7 +46,7 @@
                                     <div class="gist_ainfo">
                                         <div class="col s1">
                                         <?php $gistattachment = $row['user_avatar']; ?>
-                                            <img class="circle responsive-img valign profile-image" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
+                                            <img class="circle responsive-img valign profile-image hide-on-small-only" src="<?php echo base_url();?>uploads/<?php echo $gistattachment; ?>"> 
 
                                         </div>
                                         <div class="col s11">
@@ -71,7 +73,8 @@
                                                $query1 = $this->db->query("select count(*) as row_count from tbl_postlikes where post_id = '".$row['post_id']."'");
                                                 $query2 = $this->db->query("select count(*) as row_count from tbl_postresponse where post_id = '".$p_id."' and pparent_id = '0'");
                                            ?>
-                                          <img class="materialboxed" src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
+                                           
+                                          <img class="materialboxed responsive-img " src="<?php echo base_url() . 'uploads/'.$gist_attachment ?>">
                                         
                                         <span class="see_more"><a href="#"><!-- See More Photos --></a></span>
                                     </div>

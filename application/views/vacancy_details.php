@@ -2,12 +2,12 @@
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -34,8 +34,8 @@
                                     </div>
                                 </div>
                                 <div class="vcount_wrap col m12">
-                                    <div class="col m4 s4">
-                                        <div class="vacancy_count">
+                                    <div class="col m4 s12">
+                                        <div class="vacancy_count no-border">
                                             <span class="icon_wrap">
                                                 <i class="fa fa-users fa-2x"></i>
                                             </span>
@@ -43,8 +43,8 @@
                                             <span class="count"><?php echo $row['vacancy_count']; ?></span>
                                         </div>
                                     </div>
-                                    <div class="col m4 s4">
-                                        <div class="vacancy_count">
+                                    <div class="col m4 s12">
+                                        <div class="vacancy_count no-border">
                                             <span class="icon_wrap">
                                                 <i class="fa fa-calendar fa-2x"></i>
                                             </span>
@@ -52,7 +52,7 @@
                                             <span class="count"><?php echo $row['vacancy_to_date']; ?></span>
                                         </div>
                                     </div>
-                                    <div class="col m4 s4">
+                                    <div class="col m4 s12">
                                         <div class="vacancy_count no-border">
                                             <span class="icon_wrap">
                                                 <i class="fa fa-cog fa-2x"></i>
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col m12">
+                                <div class="col m12 s12">
                                     <div class="vacn_details">
                                         <h2>Vacancy Details</h2>
                                         <p></p>
@@ -112,7 +112,7 @@
 
 
                 
-                    <div class="col s12 m3 z-depth-1">
+                    <div class="col s12 m3 z-depth-1 ">
                     <div class="old_news_list">
                         <h2 class="news_post_title">Previous Vacancies</h2>
                         <ul class="latest_news_list">

@@ -1,4 +1,5 @@
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
@@ -14,16 +15,20 @@
                     </div>
                 </div>
                 <div class="col s12 m8 grid-example">
+
                     <div class="event_details col m12 z-depth-1">
+                         <div class="col s12 offset-s5 hide-on-med-and-up"> <span class="Event-button col s12"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">
+                            Post A New Event</a></span></div>
+
                         <div class="col m12 s12">
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">Upcoming Events In Schools<div class="col s12"><span class="Event-button"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">Post A New Event</a></span></div></h1>
+                                <h1 class="page-heading">Upcoming Events In Schools<span class="Event-button hide-on-small-only"><a href="<?php echo base_url().'index.php/new_events'?>"class="waves-effect waves-light btn">Post A New Event</a></span></h1>
                             </div>
                         </div>
                           <div class="col m12 s12">
                             <div class="event_sort_form col m12">
                             <form id="sortevent" method="post" action="<?php echo base_url() . 'index.php/event/search' ?>">
-                                <div class="col s2">
+                                <div class="col s4">
                                     <p class="black-text">Sort Events:</p>
                                 </div>
                                 
@@ -35,13 +40,14 @@
                                         <input id="enddate" type="date" class=" datepicker validate" name="eventd2">
                                         <label for="Caption">Event To</label>
                                     </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col m12 offset-m9 s12 offset-s7">
                                          <button class="btn waves-effect waves-light" type="submit" name="searchaction">search
                                             <i class="material-icons ">search</i>
                                         </button>
                                     </div></form>
                             </div>
                         </div>
+                       
                         <div class="col s12 m12 ">
                             <div class="event_list">
                             <?php
@@ -66,7 +72,7 @@
                            <?php $event_id = $row->post_id;
                                         ?>
                                    <div class="col m12 event_content">
-                                    <div class="event_date col m2">
+                                    <div class="event_date col m2 s4 offset-s4">
                                         <div class="edate z-depth-1 red lighten-1 white-text center-align">
                                             <strong></strong><br>
                                             <span class="b_date"><?php echo $row->post_event_date; ?><span><br><?php echo $row->post_event_time;?></span><br>
@@ -115,5 +121,6 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
        <?php $this->load->view('footer'); ?>

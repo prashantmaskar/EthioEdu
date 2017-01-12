@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">        
+<html lang="en">   
+<meta name="viewport" content="width=device-width">     
     <head>
         <?php
                 header("Cache-Control:no-cache, no-store, must-revalidate");
@@ -42,12 +43,15 @@ document.getElementById('fb-root').appendChild(e);
             <div class="row">
                 <div class="col s12 ">
                     <ul class="top-nav">
+                        <div class="col s4 hide-on-med-and-up ">
+                            <li class="hide-on-med-only">
+                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar_small roundElement responsive-img" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a></div>
                         <li><a href="#">INFO@ETHIOEDU.COM</a></li>
 
 
-                        <li><a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
-                        <li><a class="<?php if($this->uri->segment(1)=="About_us"){echo "active";}?>" href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
-                        <li><a class="<?php if($this->uri->segment(1)=="contact"){echo "active";}?>" href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
+                        <li  class="hide-on-small-only"><a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
+                        <li class="hide-on-small-only"><a class="<?php if($this->uri->segment(1)=="About_us"){echo "active";}?>" href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
+                        <li class="hide-on-small-only"><a class="<?php if($this->uri->segment(1)=="contact"){echo "active";}?>" href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
                             <?php if (!$this->session->userdata('logged_in'))
                              { ?>
                         <li><a class="<?php if($this->uri->segment(1)=="sregister"){echo "active";}?>" href="<?php echo base_url() . 'index.php/sregister' ?>">REGISTER </a></li>
@@ -102,6 +106,8 @@ document.getElementById('fb-root').appendChild(e);
                             <?php } ?>
                     </ul>
                     </li>
+                 <!--   <li> <a href="#" data-activates="nav-mobile" class="button-collapse  hide-on-med-only"><i class="material-icons">menu</i></a>
+                </li> -->
                     </ul>
 
                 </div>
@@ -160,16 +166,23 @@ document.getElementById('fb-root').appendChild(e);
                     </ul>
 
                     <ul id="nav-mobile" class="side-nav mobile-nav">
-                        <li><a href="#">HOME</a></li>
+                        <li><a  class="<?php if($this->uri->segment(1)=="home"){echo "active";}?>" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
 
-                        <li><a class="dropdown-button home-btn" href="#!" >LATEST NEWS</a></li>
+                        <li><a class="dropdown-button home-btn <?php if($this->uri->segment(1)=="news" || $this->uri->segment(1)=="reportnews" || $this->uri->segment(1)=="gist"){echo "active";}?>" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS</a></li>
                         <li><a href="#">SCHOOLS</a></li>
                         <li><a href="#">COURSES</a></li>
                         <li><a href="#">VACANCY/TENDER</a></li>
                         <li><a href="#">CONNECT TO ME</a></li>
                         <li><a class="dropdown-button home-btn" href="#!">SERVICE</a></li>
+                       <li> <a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
+                       <li><a class="<?php if($this->uri->segment(1)=="About_us"){echo "active";}?>" href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
+                       <li><a class="<?php if($this->uri->segment(1)=="contact"){echo "active";}?>" href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>
                     </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                    
+                    
+                   <div class="col s4  hide-on-med-only "><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a></div>
+                </div>
+                    
                 </div>
             </nav>
         </div>

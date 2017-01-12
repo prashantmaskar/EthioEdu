@@ -55,6 +55,11 @@ nav .brand-logo {
     width: 70%;
     margin-left: 25px;
 }
+.logo_bar_small{
+    height: 150px;
+    width: 50%;
+    margin-left: none;
+}
 .header-top1{
     height: 110px;
     color: #fff;
@@ -516,6 +521,12 @@ page-heading-wrap page-heading
     display: inline-block;
 }
 .social_button_list li a{
+    background: #0A88FF;
+    color: #fff;
+    padding: 10px 25px;
+
+}
+.social_button_list_small li a{
     background: #0A88FF;
     color: #fff;
     padding: 10px 25px;
@@ -1130,9 +1141,13 @@ connect2Me List and Form Csss
 
 .online_std_list{
     padding:20px;
+
 }
 .vr-line img{
     width: 50%;
+}
+.hr-line img{
+    width: 100%;
 }
 .lr_link-wrap{
     margin-top: 30px;

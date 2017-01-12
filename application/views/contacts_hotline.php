@@ -1,13 +1,14 @@
 <?php  $this->load->view('header'); ?>
-        <div class="service-wrap ">
+<meta name="viewport" content="width=device-width">
+    <div class="service-wrap ">
             <div class="row">
 			<div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -39,21 +40,23 @@
                         <div class="col s12 m12 contant_hotline_social">
                             <div class="social_button_wrap">
                                 <ul class="social_button_list">
+                                    <div class="col s12">
                                     <li class="social_mail">
-                                        <a href="#"><i class="fa fa-envelope"></i> Mail</a>
+                                        <a href="#"><i class="fa fa-envelope"></i> <span class="hide-on-small-only">Mail</span>&nbsp</a>
                                     </li>
                                       <li class="social_facbook">
-                                        <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#"><i class="fa fa-facebook"></i> <span class="hide-on-small-only">Facebook</span>&nbsp</a>
                                     </li>
                                       <li class="social_linkedin">
-                                        <a href="#"><i class="fa fa-linkedin"></i> Linkedin</a>
+                                        <a href="#"><i class="fa fa-linkedin"></i> <span class="hide-on-small-only">Linkedin </span>&nbsp </a>
                                     </li>
                                       <li class="social_twitter">
-                                        <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                                        <a href="#"><i class="fa fa-twitter"></i> <span class="hide-on-small-only">Twitter</span>&nbsp</a>
                                     </li>
                                       <li class="social_google">
-                                        <a href="#"><i class="fa fa-google-plus"></i> Google+</a>
+                                        <a href="#"><i class="fa fa-google-plus"></i> <span class="hide-on-small-only">Google+</span>&nbsp</a>
                                     </li>
+                                </div>
                                 </ul>
                             </div>
                         </div>
@@ -61,12 +64,12 @@
                 </div>
 
                 <div class="col s12 m2 ">
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url().'images/slider/Banner-Vertical.jpg'?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1 darken-1">
+                    <div class="service_col z-depth-1 darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url().'images/slider/Banner_Vertical.jpg'?>">
                         </a>

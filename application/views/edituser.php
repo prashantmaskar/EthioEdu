@@ -1,6 +1,7 @@
 
 
  <?php $this->load->view('header');?>
+ <meta name="viewport" content="width=device-width">
 <div class="sdetails-wrap">
     <div class="row">
         <div class="col s12 m9 margin-t-15">
@@ -128,7 +129,7 @@
 
                                    <div class="form-group file-field input-field col s10">
                                         <div class="btn">
-                                            <span>Attach Photo</span>
+                                            <span></span>>Attach Photo</span>
                                             <input name="attach" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">

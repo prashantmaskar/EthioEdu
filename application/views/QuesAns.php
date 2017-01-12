@@ -1,13 +1,14 @@
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -16,8 +17,9 @@
                 <div class="col s12 m8 grid-example z-depth-1">
                     <div class="QuesAns_details">
                         <div class="col m12 s12">
+                            <div class="col s12 offset-s6 hide-on-med-and-up"><span class="QuesAns-button "><a class="waves-effect waves-light btn"href="<?php echo base_url().'index.php/askQues'?>">Ask a question</a></span></div>
                             <div class="page-heading-wrap">
-                                <h1 class="page-heading">Questions Categories <span class="QuesAns-button"><a class="waves-effect waves-light btn"href="<?php echo base_url().'index.php/askQues'?>">Ask a question</a></span></h1>
+                                <h1 class="page-heading">Questions Categories <span class="QuesAns-button hide-on-small-only"><a class="waves-effect waves-light btn"href="<?php echo base_url().'index.php/askQues'?>">Ask a question</a></span></h1>
                             </div>
                         </div>
 						<div class="col m12 s12">
@@ -138,18 +140,18 @@
 					<form id="sortquesitons" method="post" action="<?php echo base_url() . 'index.php/QuesAns/search' ?>">
                         <div class="col m12 s12">
                             <div class="QuesAns_sort_form col m12">
-                                <div class="col s2">
+                                <div class="col s3 m2">
                                     <p class="black-text">Sort Questions:</p>
                                 </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s5 m4">
                                         <input id="Caption" type="date" class=" datepicker validate" name="sdate">
                                         <label for="Caption">Questions From</label>
                                     </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s4 m4 ">
                                         <input id="Caption" type="date" class=" datepicker validate" name="edate">
                                         <label for="Caption">Questions To</label>
                                     </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s12 offset-s6 m2">
                                          <button class="btn waves-effect waves-light" type="submit" name="action">search
                                             <i class="material-icons ">search</i>
                                         </button>
@@ -222,12 +224,12 @@
                 </div>
 
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>">
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>

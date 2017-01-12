@@ -1,4 +1,5 @@
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2  grid-example">

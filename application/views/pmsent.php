@@ -6,7 +6,8 @@
                 <div class="row">
                     <div class="col m12 s12 ">
                         <div class="col s12 m12 card-panel">
-                            <h2 class="inbox-title">Private Messages (PM)</h2>
+                            <span class="hide-on-small-only"><h2 class="inbox-title">Private Messages (PM)</h2></span>
+                           <span class="col s12 hide-on-med-and-up"> <h class="inbox-title">Private Messages (PM)</h><span>
                         </div>
 
 <?php              /*  $sessid= $this->session->userdata('suserid');
@@ -22,7 +23,7 @@
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
                                 $inboxitem = $query2->result()[0]->row_count; */
                         ?>
-                        <div id="inbox-action" class="col m3 s5">
+                        <div id="inbox-action" class="col m3 s12">
                             <div class="card-panel">
                                 <ul class="collection">
                                     <li class="collection-item">
@@ -51,7 +52,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="inbox-list" class="col m9 s10 card-panel">
+                        <div id="inbox-list" class="col m9 s12 card-panel">
                             <ul class="collection">
                             <?php if(!$getsentmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">

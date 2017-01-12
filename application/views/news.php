@@ -1,4 +1,5 @@
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
@@ -26,15 +27,15 @@
                                 <div class="col s2">
                                     <p class="black-text">Sort News:</p>
                                 </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s5">
                                            <input id="startdate" type="date" class=" datepicker validate" name="newsd1" >
                                         <label for="Caption">News From</label>
                                     </div>
-                                <div class="input-field col s4">
+                                <div class="input-field col s5">
                                         <input id="enddate" type="date" class=" datepicker validate" name="newsd2">
                                         <label for="Caption">News To</label>
                                     </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s12 offset-s6">
                                          <button class="btn waves-effect waves-light" type="submit" name="action">search
                                             <i class="material-icons ">search</i>
                                         </button>

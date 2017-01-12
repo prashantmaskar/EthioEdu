@@ -1,8 +1,9 @@
 <?php  $this->load->view('header'); ?>
+<meta name="viewport" content="width=device-width">
         <div class="service-wrap ">
             <div class="row">
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <?php foreach ($banners as $key => $value) {
                                 if($value['advertise_position']=='Right')
@@ -11,7 +12,7 @@
                             
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
@@ -160,7 +161,7 @@
                 </div>
 
                 <div class="col s12 m2 grid-example">
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <?php foreach ($banners as $key => $value) {
                                 if($value['advertise_position']=='Left')
@@ -169,7 +170,7 @@
                         <!-- <img src="<?php //echo base_url() . 'images/slider/Banner_Vertical.jpg' ?>"> -->
                         </a>
                     </div>
-                    <div class="service_col z-depth-1  darken-1">
+                    <div class="service_col z-depth-1  darken-1 hide-on-small-only">
                         <a href="#">
                             <img src="<?php echo base_url() . 'images/slider/Banner-Vertical.jpg' ?>">
                         </a>
