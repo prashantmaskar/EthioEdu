@@ -1784,8 +1784,16 @@ function validate_school_email($email)
 
 
 
-
-
+ public function selectallcontact()
+      {  
+        $query = $this->db->query("select * from tbl_contact"); 
+        return $query->result_array();
+      }
+public function selectallenquiry()
+      {  
+        $query = $this->db->query("select * from tbl_enquiry"); 
+        return $query->result_array();
+      }
 
 
 
