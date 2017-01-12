@@ -285,7 +285,7 @@
                                 <li class="bold">
                                     <a class="collapsible-header waves-effect waves-cyan">
                                         <i class="mdi-action-wallet-travel"></i>
-                                        contacts nad Enquiries 
+                                        contacts and Enquiries 
                                     </a>
                                     <div class="collapsible-body" >
                                         <ul>
