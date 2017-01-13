@@ -139,6 +139,19 @@ $user_id = $_POST['deleteuser_id'];
 $query = $this->db->query("delete from tbl_users where user_id = '" .$user_id . "'");
 }
 
+//contactlist
+$contact_id = $_POST['deletecintact_id'];
+ if(isset($contact_id)){
+$query = $this->db->query("delete from tbl_contact where contact_id = '" .$contact_id . "'");
+}
+
+//enquirylist
+$enquiry_id = $_POST['deleteenquiry_id'];
+ if(isset($enquiry_id)){
+$query = $this->db->query("delete from tbl_enquiry where enquiry_id = '" .$enquiry_id . "'");
+}
+
+
 //listtips
 $tips_id = $_POST['deletetips_id'];
  if(isset($tips_id)){

@@ -27,7 +27,7 @@
     }
 ?>
 
-                <div class="col s12 m8 z-depth-1 white ">
+        <div class="col s12 m8 z-depth-1 white ">
 
                     <div class="content_sec add-school">
                         <h1 class="add_title">Add/Edit Course</h1>

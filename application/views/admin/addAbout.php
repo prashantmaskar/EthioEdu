@@ -228,9 +228,9 @@
                         message:  ' Description required!!!'
                     },
                    stringLength:{
-                        message:'post Description must be less than 100 characters',
+                        message:'post Description must be less than 300 characters',
                         max:function(value,validator,$field){
-                            return 100 - (value.match(/\r/g) || []).length;
+                            return 300 - (value.match(/\r/g) || []).length;
                         }
                     }
                 }

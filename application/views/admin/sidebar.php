@@ -278,5 +278,47 @@
                                 </li>
                             </ul>
                         </li>
+
+
+                         <li class="bold">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-cyan">
+                                        <i class="mdi-action-wallet-travel"></i>
+                                        contacts and Enquiries 
+                                    </a>
+                                    <div class="collapsible-body" >
+                                        <ul>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/contactlist' ?>">contact list</a>
+                                            </li>
+                                            <li><a href="<?php echo base_url() . 'index.php/admin/enquirylist' ?>">Enquiry listcategory</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </ul>                   
                 </aside>
