@@ -23,7 +23,7 @@ and open the template in the editor.
             <div class="navbar-fixed">
                 <nav class="navbar-color">
                     <div class="nav-wrapper">
-
+                            <div class="col s4  hide-on-med-only "><a href="#" data-activates="nav-mobile" class="button-collapse admin-menu-small"><i class="material-icons">menu</i></a></div>
                         <ul class="left">
                             <li>
 
@@ -66,3 +66,4 @@ and open the template in the editor.
 
         </header>
         <!--header End-->
+

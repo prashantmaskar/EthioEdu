@@ -517,27 +517,19 @@ page-heading-wrap page-heading
     padding: 10px;
     color: #000;
 }
-.social_button_list li{
+
+.social_button_list   li{
     display: inline-block;
 }
 .social_button_list li a{
     background: #0A88FF;
     color: #fff;
-    padding: 10px 25px;
+    padding: 10px 25px;}
 
-}
-.social_button_list_small li a{
-    background: #0A88FF;
-    color: #fff;
-    padding: 10px 25px;
-
-}
-.social_button_list .social_facbook a{
+.social_button_list  .social_facbook a{
     background:#306199;
 }
-.social_button_list .social_mail a{
-    background:#0A88FF;
-}
+
 .social_button_list .social_linkedin a{
     background:#007BB6;
 }
@@ -547,6 +539,45 @@ page-heading-wrap page-heading
 .social_button_list .social_google a{
     background:#E93F2E;
 }
+@media screen and (max-width:736px){
+    .social_button_list li a{
+    background: #0A88FF;
+    color: #fff;
+    padding: 10px 20px; 
+}
+span.icon_name {
+    display: none;
+}
+.upper_slider .item img {
+    height: 60px;
+}
+.header-top1.grey.darken-4 {
+    height: 75px;
+}
+#main {
+    padding-left: 0px;
+    overflow-x: hidden;
+} 
+
+
+.side-nav.fixed {
+    left: 0%;
+    display:none;
+}
+.new_account.input-field.col.s12 {
+    padding-bottom: 10px;
+}
+.online_std_list {
+    margin-left: 70px;
+}
+.inbox-title{font-size: 2rem;}
+.about_details .social_button_list li a
+{
+    display:block;
+}
+
+}
+
 .t20margin{
     margin-top: 20px;
 }
@@ -1405,3 +1436,12 @@ label.star:before {
    .top-nav li:hover ul { display: block; }
     .top-nav li ul a:hover { display: block; }
 */
+.Contacts_Hotline_details .contant_hotline_social {
+    padding-bottom: 30px;
+}
+
+.udetail_container .card-panel .row.no-margin {
+    border-bottom: 1px solid #f44336;
+    padding: 15px 0px;
+    border-bottom-style: dashed;
+}

@@ -66,3 +66,17 @@ $('.datepicker').pickadate({
          format: 'yyyy-mm-dd',
                 })
 });
+
+
+ $('.admin-menu-small').click(function(){
+    //alert("dfgdfg");
+
+//$('.side-nav').css("display","block");
+$('.side-nav').toggle();
+
+    $('.collapsible').collapsible();
+
+
+
+});
+

@@ -58,7 +58,7 @@
                             <p class="margin medium-small"><a href="../sregister">Register Now!</a></p>
                         </div>
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a href="<?php echo site_url('index.php/login/fergot_password')?>">Forgot password ?</a></p>
+                            <p class="margin right-align medium-small"><a href="<?php echo site_url('index.php/login/fergot_password')?>">Forgot password?</a></p>
                         </div>          
                     </div>
                 </form>

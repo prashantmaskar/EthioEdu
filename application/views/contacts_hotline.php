@@ -22,7 +22,7 @@
                             </div>
                         </div>
                        <!-- <div class="col s12 m12 "><div class="about-image z-depth-1"><img class="responsive-img" src="http://localhost/ETHIO/images/about.jpg"></div></div>-->
-                        <div class="col s6 m6 t20margin">
+                        <div class="col s12 m6 t20margin">
                             <div class="contacts_hotline_content_left z-depth-1">
                            <!-- <p>ETHIOEDU.com is a community website dedicated to providing free information on educational institutions in ETHIOPIA. Our free online directory contains very useful information on all schools, colleges and universities in ETHIOPIA. ETHIOEDU.com also contains very useful resources such as past examinations question papers for schools, colleges and universities. We also have a very interactive and mederated discussion forum. ETHIOEDU.com was started with the aim of easing the process of searching for educational information in ETHIOPIA. We hope that you will find information on this website useful. Please feel free to Contact Us in case of any queries, comments or suggestions.</p>
                             <p >ETHIOEDU.com is a community website dedicated to providing free information on educational institutions in ETHIOPIA. Our free online directory contains very useful information on all schools, colleges and universities in ETHIOPIA. ETHIOEDU.com also contains very useful resources such as past examinations question papers for schools, colleges and universities. We also have a very interactive and mederated discussion forum. ETHIOEDU.com was started with the aim of easing the process of searching for educational information in ETHIOPIA. We hope that you will find information on this website useful. Please feel free to Contact Us in case of any queries, comments or suggestions.</p>-->
@@ -31,7 +31,7 @@
 							
 							                            </div>
                         </div>
-						<div class="col s6 m6 t20margin">
+						<div class="col s12 m6 t20margin">
 						 <div class="contacts_hotline_content_right z-depth-1">
 						 <p class="black-text"><span>Address:</span><span>    <i class="fa fa-map-marker" ></i><br>        No 48 Season street,<br>Living stone,<br>Ethiopia,Africa</span></p>
 						 </div>
@@ -39,25 +39,26 @@
 						
                         <div class="col s12 m12 contant_hotline_social">
                             <div class="social_button_wrap">
-                                <ul class="social_button_list">
+                                <ul class="social_button_list ">
                                     <div class="col s12">
                                     <li class="social_mail">
-                                        <a href="#"><i class="fa fa-envelope"></i> <span class="hide-on-small-only">Mail</span>&nbsp</a>
+                                        <a href="#"><i class="fa fa-envelope"></i> <span class="icon_name">Mail</span>&nbsp</a>
                                     </li>
                                       <li class="social_facbook">
-                                        <a href="#"><i class="fa fa-facebook"></i> <span class="hide-on-small-only">Facebook</span>&nbsp</a>
+                                        <a href="#"><i class="fa fa-facebook"></i> <span class="icon_name">Facebook</span>&nbsp</a>
                                     </li>
                                       <li class="social_linkedin">
-                                        <a href="#"><i class="fa fa-linkedin"></i> <span class="hide-on-small-only">Linkedin </span>&nbsp </a>
+                                        <a href="#"><i class="fa fa-linkedin"></i> <span class="icon_name">Linkedin </span>&nbsp </a>
                                     </li>
                                       <li class="social_twitter">
-                                        <a href="#"><i class="fa fa-twitter"></i> <span class="hide-on-small-only">Twitter</span>&nbsp</a>
+                                        <a href="#"><i class="fa fa-twitter"></i> <span class="icon_name">Twitter</span>&nbsp</a>
                                     </li>
                                       <li class="social_google">
-                                        <a href="#"><i class="fa fa-google-plus"></i> <span class="hide-on-small-only">Google+</span>&nbsp</a>
+                                        <a href="#"><i class="fa fa-google-plus"></i> <span class="icon_name">Google+</span>&nbsp</a>
                                     </li>
                                 </div>
                                 </ul>
+
                             </div>
                         </div>
                     </div>

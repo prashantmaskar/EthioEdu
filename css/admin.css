@@ -52,6 +52,7 @@ Main style
 #main{
     padding-left: 240px;
 }
+
 #leftside-nav{
     position: fixed;
     width: 100px;
@@ -200,4 +201,14 @@ ul.side-nav .collapsible-header {
     .container {
         width: 98%;
     }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 640px){
+    #main {
+    padding-left: 0px !important;
+}
+.dataTables_wrapper {
+    
+    overflow-x: scroll;
+} 
 }

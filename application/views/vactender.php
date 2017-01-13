@@ -25,18 +25,18 @@
 						<form id="sorttender" method="post" action="<?php echo base_url() . 'index.php/vactender/search' ?>">
                         <div class="col m12 s12">
                             <div class="news_sort_form col m12">
-                                <div class="col s3">
+                                <div class="col s4 ">
                                     <p class="black-text">Sort Tenders:</p>
                                 </div>
-                                <div class="form-control input-field col s3">
+                                <div class="form-control input-field col s4">
                                     <input id="startdate" type="date" class="datepicker validate" name="vacd1">
                                     <label for="Caption"> From</label>
                                 </div>
-                                <div class="form-control  input-field col s3">
+                                <div class="form-control  input-field col s4">
                                     <input id="enddate" type="date" class=" datepicker validate" name="vacd2">
                                     <label for="Caption"> To</label>
                                 </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s12 offset-s6 m12 offset-m8">
                                     <button class="btn waves-effect waves-light" type="submit" name="searchaction">search
                                         <i class="material-icons">search</i>
                                     </button>

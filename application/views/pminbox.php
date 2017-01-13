@@ -18,7 +18,7 @@
                                 $query2= $this->db->query("select count(*) as row_count from tbl_message where pm_send_to = '" .$sessid. "'");
                                 $inboxitem = $query2->result()[0]->row_count; */
                         ?>
-                        <div id="inbox-action" class="col m3 s5">
+                        <div id="inbox-action" class="col m3 s12">
                             <div class="card-panel">
                                 <ul class="collection">
                                     <li class="collection-item">
@@ -38,7 +38,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="inbox-list" class="col m9 s10 card-panel">
+                        <div id="inbox-list" class="col m9 s12 card-panel">
                             <ul class="collection">
                             <?php if(!$getinboxmsg == ""){ ?>
                             <li class="collection-item" style="text-align:right;">

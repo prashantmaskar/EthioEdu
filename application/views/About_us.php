@@ -34,19 +34,19 @@
                             <div class="social_button_wrap">
                                 <ul class="social_button_list">
                                     <li class="social_mail">
-                                        <a href="#"><i class="fa fa-envelope"></i> Mail</a>
+                                        <a href="#"><i class="fa fa-envelope"></i><span class="icon_name">Mail</span></a>
                                     </li>
                                       <li class="social_facbook">
-                                        <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#"><i class="fa fa-facebook"></i><span class="icon_name">Facebook</span></a>
                                     </li>
                                       <li class="social_linkedin">
-                                        <a href="#"><i class="fa fa-linkedin"></i> Linkedin</a>
+                                        <a href="#"><i class="fa fa-linkedin"></i><span class="icon_name">Linkedin</span></a>
                                     </li>
                                       <li class="social_twitter">
-                                        <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                                        <a href="#"><i class="fa fa-twitter"></i><span class="icon_name"> Twitter</span></a>
                                     </li>
                                       <li class="social_google">
-                                        <a href="#"><i class="fa fa-google-plus"></i> Google+</a>
+                                        <a href="#"><i class="fa fa-google-plus"></i><span class="icon_name">Google+</span></a>
                                     </li>
                                 </ul>
                             </div>

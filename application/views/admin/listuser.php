@@ -1,12 +1,13 @@
 <?php  $this->load->view('admin/header'); ?>
         <!--start main-->
+        
         <div id="main">
             <div class="wrapper">
              <?php  $this->load->view('admin/sidebar'); ?>
-                <section id="content">
-                    <div id="breadcrumbs-wrapper">
+                <section id="content" >
+                    <div id="breadcrumbs-wrapper" class="col s12">
                         <!-- Search for small screen -->
-                        <div class="header-search-wrapper grey hide-on-large-only">
+                        <div class="header-search-wrapper col s12 grey hide-on-large-only hide-on-small-only">
                             <i class="mdi-action-search active"></i>
                             <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
                         </div>

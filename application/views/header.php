@@ -43,9 +43,9 @@ document.getElementById('fb-root').appendChild(e);
             <div class="row">
                 <div class="col s12 ">
                     <ul class="top-nav">
-                        <div class="col s4 hide-on-med-and-up ">
+                      <!--   <div class="col s4 hide-on-med-and-up ">
                             <li class="hide-on-med-only">
-                   <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar_small roundElement responsive-img" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a></div>
+                   <a href="<?php //echo base_url().'index.php/home'?>"> <img class="logo_bar_small roundElement responsive-img" src="<?php //echo base_url() . 'images/ethio_logo.jpg' ?>" ></a></div> -->
                         <li><a href="#">INFO@ETHIOEDU.COM</a></li>
 
 
@@ -116,10 +116,10 @@ document.getElementById('fb-root').appendChild(e);
         <div class="header-top1 grey darken-4 ">
 
             <div class="row">
-                <div class="col m3 hide-on-small-only ">
+                <div class="col m3 s3 ">
                    <a href="<?php echo base_url().'index.php/home'?>"> <img class="logo_bar roundElement responsive-img" src="<?php echo base_url() . 'images/ethio_logo.jpg' ?>" ></a>
                 </div>
-                <div class="col m9 s12 ">
+                <div class="col m9 s9 ">
                     <div class="upper_slider">
                          <?php foreach ($banners as $key => $value) {
                                 if($value['advertise_position']=='Top')
@@ -165,15 +165,34 @@ document.getElementById('fb-root').appendChild(e);
 
                     </ul>
 
-                    <ul id="nav-mobile" class="side-nav mobile-nav">
+                    <ul id="nav-mobile" class="side-nav collapsible mobile-nav" data-collapsible="accordion">
                         <li><a  class="<?php if($this->uri->segment(1)=="home"){echo "active";}?>" href="<?php echo base_url() . 'index.php/home' ?>">HOME</a></li>
 
-                        <li><a class="dropdown-button home-btn <?php if($this->uri->segment(1)=="news" || $this->uri->segment(1)=="reportnews" || $this->uri->segment(1)=="gist"){echo "active";}?>" href="#!" data-hover="true" data-activates="dropdown1">LATEST NEWS</a></li>
+                        <li><a  href="#!" class="collapsible-header">LATEST NEWS</a>
+                          <div class="collapsible-body">
+                       <ul >
+                        <li><a href="<?php echo base_url() . 'index.php/news' ?>">Latest News</a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/reportnews' ?>">Report News</a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo base_url() . 'index.php/gist' ?>">Latest Gist & Gossip</a></li>
+                    </ul>
+                       </div>
+                        </li>
                         <li><a href="#">SCHOOLS</a></li>
                         <li><a href="#">COURSES</a></li>
                         <li><a href="#">VACANCY/TENDER</a></li>
                         <li><a href="#">CONNECT TO ME</a></li>
-                        <li><a class="dropdown-button home-btn" href="#!">SERVICE</a></li>
+                        <li><a href="#!" class="collapsible-header">SERVICE</a>
+                          <div class="collapsible-body">
+                            <ul >
+                        <li><a href="<?php echo base_url() . 'index.php/Projectlist' ?>">Project Topics</a></li>
+            <li><a href="<?php echo base_url() . 'index.php/event' ?>">Events</a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/tips' ?>">Tips</a></li>
+                        <li><a href="<?php echo base_url() . 'index.php/QuesAns' ?>">Questions & Answers</a></li>
+            <li><a href="<?php echo base_url() . 'index.php/advertising' ?>">Advertise with us</a></li>
+                    </ul>
+                  </div>
+                        </li>
                        <li> <a class="<?php if($this->uri->segment(1)=="Contacts_Hotline"){echo "active";}?>" href="<?php echo base_url() . 'index.php/Contacts_Hotline' ?>">CONTACT/HOTLINE</a></li>
                        <li><a class="<?php if($this->uri->segment(1)=="About_us"){echo "active";}?>" href="<?php echo base_url() . 'index.php/About_us' ?>">ABOUT US</a></li>
                        <li><a class="<?php if($this->uri->segment(1)=="contact"){echo "active";}?>" href="<?php echo base_url() . 'index.php/contact' ?>">CONTACT US</a></li>

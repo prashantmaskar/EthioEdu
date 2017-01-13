@@ -28,7 +28,7 @@
                             <div id="table-wrap">
                                 <div class="row">
                                     <div class="col s12 m12 l12">
-                                        <table class="bordered display" id="table_id">
+                                        <table class="bordered responsive display" id="table_id">
                                             <thead>
                                                 <tr>
                                                     <th data-field="id">Category Id</th>
@@ -63,6 +63,11 @@
         </div>
        <?php  $this->load->view('admin/footer'); ?>
        <script>
+
+
+$('#table_id').DataTable( {
+    responsive: true
+} );
 
             function deleted(id)
             {

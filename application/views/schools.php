@@ -27,7 +27,7 @@
                                 <h1 class="page-heading">School Categories </h1>
                             </div>
                         </div>
-                        <div class="col m12">
+                        <div class="col m12 s12">
                              
                             <div class="school_category_box">
                                 <ul class="s_category_list">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="serch_schools col m12 " style="border-bottom: 1px solid #4c4e4e;">
+                    <div class="serch_schools col m12 s12" style="border-bottom: 1px solid #4c4e4e;">
                         <div class="row">
 <datalist id="schoolnames">
     <?php  foreach ($schools as $row){ ?>
@@ -85,7 +85,7 @@
                    
                     <div class="school_search_result">
                         <div class="row">
-                            <div class="col m12">
+                            <div class="col m12 s12">
                                 <div class="school_short_info ">
                                     <div class="row schools-row">
                                 <?php

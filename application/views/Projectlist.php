@@ -47,19 +47,19 @@
 </datalist>
 <form id="sortproject" method="post" action="<?php echo base_url() . 'index.php/Projectlist/search' ?>">
                          <div class="col m12 s12">
-                            <div class="project_sort_form col m12">
-                                <div class="col s2">
+                            <div class="project_sort_form col m12 s12">
+                                <div class="col s12">
                                     <p class="black-text">Search Projects:</p>
                                 </div>
-                                <div class="input-field col s5">
+                                <div class="input-field col s6">
                                         <input list="projectnames" id="startdate" type="text" class=" validate" name="project_name" >
                                         <label for="Caption">Project Name</label>
                                     </div>
-                                <div class="input-field col s5">
+                                <div class="input-field col s6">
                                         <input list="coursenames" id="enddate" type="text" class=" validate" name="course_name">
                                         <label for="Caption">Course Name</label>
                                     </div>
-                                <div class="input-field col s12 offset-s8">
+                                <div class="input-field col s12 offset-s5">
                                          <button class="btn waves-effect waves-light" type="submit" name="action">search
                                             <i class="material-icons ">search</i>
                                         </button>

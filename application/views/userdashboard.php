@@ -51,7 +51,7 @@
                                             <?php if($row['type'] == 'event'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle hide-on-small-only"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>event_details/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> Event </p>
@@ -62,7 +62,7 @@
                                           <?php if($row['type'] == 'news'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle hide-on-small-only"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>news_detail/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> News </p>
@@ -73,7 +73,7 @@
                                           <?php if($row['type'] == 'gist'){?>
                                           <div class="row no-margin">
                                               <div class="col s1">
-                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle"> 
+                                                  <img src="<?php echo base_url(); ?>uploads/<?php echo $row['user_avatar']; ?>" class=" user-icon circle hide-on-small-only"> 
                                               </div>
                                               <div class="col s9">
                                                   <p><?php echo $row['username']; ?>  Added <a href="<?php echo base_url()?>gist_details/show_one/<?= $id   ?>"><?php echo $row['post_title']; ?></a> Gist </p>
