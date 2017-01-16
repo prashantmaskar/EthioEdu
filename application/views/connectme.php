@@ -73,9 +73,9 @@
                             <div class="vr-line col m1 hide-on-small-only">
                                 <img src="<?php echo base_url() . 'images/or-vertical.png' ?>">
                             </div>
-                             <!-- <div class="hr-line col s12 hide-on-med-only">
-                                <img src="<?php// echo base_url() . 'images/or_horizontal.png' ?>">
-                            </div> -->
+                             <div class="hr-line col s12 hide-on-med-and-up">
+                                <img src="<?php echo base_url() . 'images/or_horizontal.png' ?>">
+                            </div>
                             <div class="col m5 s12">
 
                                 <h3>Find User Name</h3>

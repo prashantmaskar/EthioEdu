@@ -143,7 +143,7 @@ document.getElementById('fb-root').appendChild(e);
                     <ul id="dropdown1" class="dropdown-content dropdown-menu">
                         <li><a href="<?php echo base_url() . 'index.php/news' ?>">Latest News</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/reportnews' ?>">Report News</a></li>
-                        <li class="divider"></li>
+                       <!--  <li class="divider"></li> -->
                         <li><a href="<?php echo base_url() . 'index.php/gist' ?>">Latest Gist & Gossip</a></li>
                     </ul>
 					<ul id="dropdown2" class="dropdown-content dropdown-menu">
@@ -173,8 +173,8 @@ document.getElementById('fb-root').appendChild(e);
                        <ul >
                         <li><a href="<?php echo base_url() . 'index.php/news' ?>">Latest News</a></li>
                         <li><a href="<?php echo base_url() . 'index.php/reportnews' ?>">Report News</a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo base_url() . 'index.php/gist' ?>">Latest Gist & Gossip</a></li>
+                       <!--  <li class="divider"></li> -->
+                        <li><a href="<?php echo base_url() . 'index.php/gist' ?>">Latest Gist     & Gossip</a></li>
                     </ul>
                        </div>
                         </li>
